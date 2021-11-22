@@ -1,0 +1,12 @@
+score,creation_date,body
+60,2020-12-07 19:21:20.960000+00:00,"Using lombok 1.18.16 did not work for me. I added the argument below in the build process VM options in
+Setting:-
+Build, Execution, Deployment -&gt; Compiler -&gt; Shared build process VM
+options
+and it worked
+https://github.com/rzwitserloot/lombok/issues/2592"
+1,2020-12-31 16:32:50.713000+00:00,Thanks this worked for me
+7,2020-12-30 13:35:56.990000+00:00,Better solution than the accepted one since you don't have to modify your project files.
+0,2021-01-12 12:40:50.523000+00:00,Worked also for me without changing dependencies... Thank you!
+1,2021-01-04 14:45:59.963000+00:00,Should have been the accepted answer I think.
+0,2021-02-14 15:11:02.787000+00:00,Thanks for this!

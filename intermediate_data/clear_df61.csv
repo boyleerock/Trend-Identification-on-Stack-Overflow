@@ -1,0 +1,53 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+65275331,PHP Pagination Link Rendering Bug,"I'm new to php and I'm looking to create a php pagination program. although i've encountered an error. The $last_page = 7 although when i go to echo $centerpages only 2 of the pages render, it only displays links 1 , 2 and next , if you have any advice on how to render the rest of the links please let me know.
+Source code:",,0,3,,2020-12-13 12:00:02.003000+00:00,,2020-12-13 12:08:58.293000+00:00,2020-12-13 12:08:58.293000+00:00,,87189.0,,14817603,,1,1,php|mysql|mysqli|pagination,30
+65275335,How to update values of ref objectId's in mongoose,"I have this Schema:
+My question is how can I edit the values of the 'bets' ref?
+lets say I have bets:
+Now I want to edit the values of each bet being referenced here (let's say edit ) how can I do that?",,0,0,,2020-12-13 12:00:20.020000+00:00,,2020-12-13 12:46:06.503000+00:00,2020-12-13 12:46:06.503000+00:00,,8987128.0,,14691353,,1,0,mongoose|edit|relation|populate|ref,13
+65275336,Raycast ignores all layers when trying to exclude just one,"I have the following raycast:
+The layer variable is a public variable and in the inspector I set it to layer 8. I want to raycast to all layers except layer 8 which I want to ignore, but when I raycast as shown it ignores all the layers.
+Can you help?",65275723.0,1,0,,2020-12-13 12:00:29.710000+00:00,,2020-12-13 12:41:43.267000+00:00,,,,,10756677,,1,0,c#|unity3d,27
+65275338,file .h not found xcode,"I received an Xcode project from my friend, supposed to work successfully without error,
+but when I run it for the first time, there is an error,
+an import file in PrefixHeader.pch not found!
+&quot;'FAButton.h' file not found&quot;
+but the library is existing in the pod file
+I tried to delete the pod file, and reinstall it from the command line,
+but the error still appears.
+I don't have a lot of knowledge about Xcode and swift,
+I think there are some steps I should do when the run project for the first time,
+but I don't know what is the problem
+anyone can help me ??",65275478.0,1,1,,2020-12-13 12:00:46.580000+00:00,,2021-01-03 09:19:18.407000+00:00,2021-01-03 09:19:18.407000+00:00,,213269.0,,14705339,,1,0,ios|swift|xcode|cocoapods,65
+65275340,How to back scale the coefficient after feature normalization in Multivariate Linear Regression,"I have written below python code to find function of Multivariate Linear Regression using gradient descent. I have used feature normalization on input features and able to come up with w1,w2,w0 that minimize the loss. However, these number of w1,w2,w0 are the weights calculated after the x1, x2, and y are normalized.
+My goal is to get simple number of the coefficient (w1,w2) of x1, x2, and intercept(w0) to form a linear equation, which predicts y from raw input features (x1,x2). I have tried converting w1,w2,w0 by multiply it with std, then plus mean. However, the result wasn't right. I think I need to back scale the coefficient to get what I want. However, I am stuck, and hope someone could help me with this.
+Below are the code, and the result.
+Result:",,0,1,,2020-12-13 12:00:51.620000+00:00,,2020-12-18 14:18:41.927000+00:00,2020-12-18 14:18:41.927000+00:00,,14816312.0,,14816312,,1,0,python|normalization|scaling|gradient-descent|feature-engineering,53
+65275330,,"So, basically, Camelot is pretty good with Cyrillic.
+The output will be pretty raw, needs cleaning, but symbols won't be broken which I assume is a good result.",,,0,,2020-12-13 12:00:01.483000+00:00,,2020-12-13 12:00:01.483000+00:00,,,,,11858026,65269488,2,0,,
+65275332,,"There are 2 main options here, and as a first step I would see if you can make the first option work, in line with Mohammad's comment:
+OPTION 1: SIMPLE LOGOUT
+Just remove any stored tokens from your app. The problem with this is that it does not remove the Authorization Server Session Cookie. So by default you cannot force another login prompt, eg to sign in as a new user. One way around this is to send prompt=login as a parameter when performing the login redirect.
+OPTION 2: FULL LOGOUT
+A full logout involves both of these actions and may require you to dig into AppAuth internals:
+Remove stored tokens from your app
+Redirect to remove the Authorization Server session cookie, via an End Session Request
+Here is some sample Android code of mine to spin up a Chrome Custom Tab for a logout redirect.
+There are other potential issues, such as intermittent Chrome white screens that fail to return to the app after logout, due to a missing user gesture.
+FURTHER INFO
+My blog posts have some further details on AppAuth integration, along with code samples you can run, in case any of this is useful. I am using AppAuth libraries directly from Kotlin / Swift, whereas you need to deal with an additional layer of the Flutter Plugin:
+Android AppAuth Advanced Sample
+iOS AppAuth Advanced Sample",,,0,,2020-12-13 12:00:09.103000+00:00,,2020-12-13 12:00:09.103000+00:00,,,,,9019885,65262852,2,2,,
+65275333,,"You may use this recursive regex in :
+Output:
+RegEx Demo",,,0,,2020-12-13 12:00:13.287000+00:00,,2020-12-13 12:00:13.287000+00:00,,,,,548225,65275195,2,1,,
+65275334,,"The problem was
+This sends one response to the server and
+Sends a second response. The error thus comes from sending two responses when I am only allowed one.
+Rewriting the code to
+Solves the problem by passing a  sting into the input and converting it into a Javascript object",,,0,,2020-12-13 12:00:19.557000+00:00,,2020-12-13 12:00:19.557000+00:00,,,,,12146388,65274343,2,0,,
+65275342,,"It usually have nothing to do with  itself.
+If your camera support  then you need some  code to capture video from. Additionally, you need a RTSP connection url like this:
+So, you better to find a  library for it, like 
+Update
+AFAIK to use libraries such as , you are not forced to use them via . They are just js files which can be imported to your  front-end.",,,2,,2020-12-13 12:00:55.493000+00:00,,2020-12-16 13:01:42.147000+00:00,2020-12-16 13:01:42.147000+00:00,,167670.0,,167670,65235789,2,0,,

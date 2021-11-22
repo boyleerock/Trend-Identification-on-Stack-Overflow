@@ -1,0 +1,224 @@
+score,creation_date,body
+0.0,2020-02-21 12:41:40.133000+00:00,"there is a project on Github that works stably. Below is a composer file:
+The problem is that after each successful installation of the project through the composer, you have to do the following command:
+After that, all all classes will work correctly. Log from the console:
+Question: how do I avoid entering this command every time, and everything worked correctly during normal installation?"
+0.0,2018-10-20 04:15:54.347000+00:00,"I have four radio buttons. I am getting the radio button value from the database and according to the value radio button will check. Now the first radio button is checked. I need  value of the radio button which is selected. So that I can show the div. So I tried below code but it displays . I have to add the class  to the Id value.
+Onload I am getting the radio button value. Now how do I get the  value without change?
+For example, the first radio button is . so  value is . So I need  to show in the div.
+Would you help me out on this issue?"
+5.0,2018-08-14 08:39:19.373000+00:00,"I'm running into an issue fetching a file from the local filesystem using React-Native 0.56.0.
+The file uri has the format , and calling  throws an error in React's bundled whatwg-fetch library. The trace itself looks like:
+It looks like the whatwg-fetch lib is eating the underlying error, and when I went in and logged the event that triggered this error, it contained the message:
+.
+I have a feeling that the issue may be related to a recent upgrade from RN 0.55.4 to RN 0.56.0, but I haven't been able to successfully downgrade and test yet, and wondering if anybody's seen this issue before.
+My goal is to get a local video file as a blob, check the size, and then upload the file to Firebase storage. The flow looks something as follows:
+The  from the  library is happily playing the video at , so it doesn't seem to me like an issue with the uri itself."
+0.0,2016-06-20 15:10:34.700000+00:00,"I have been able in the past to create connections and pull in whole tables or even just a column or two from SQL into Excel.
+Now what I want to for a user to input an ID into a Userform and then the VBA to run SQL code grabbing the cooresponding ID, FirstName, LastName. It should then paste that info into the first blank row of A,B,C on the ""Entry"" sheet.
+I am getting an error on this line of code stating: Run-time error '1004' Application-defined or object-defined error.
+Most of this I do not understand it is simply some hand me down code that I am trying to re-purpose. The old code which still works is this:
+The difference between these is that instead of just dropping it in one set cell with the code pulling over couple hundred thousand lines of data is I want the code to be in the first blank row and only pull over that one record. But each time it runs it needs to go to the next row.
+With the old code it made an actual table which I am guessing is related to the fact that at the end it states QueryTable. I would rather just have the data and not the table format. If there is a way to change it to do this that would be great.
+Also in the previous version of this the query only pulled from one table and the  link to the file. The new code will need to link to two tables so there are two files as I was unable to have it make a connection file with two tables selected. If you can help with that as well that would be great.
+I am using Excel 2013 Standard and  SQL Server 2012. Please let me know if you need any more info.
+So This is what I have so far trying the ADO method suggested by @Kyle. The OCR is the variable input from the Userform in previous code. When this runs it gives no error but it paste no data.
+End Sub"
+0.0,2017-02-15 22:41:28.280000+00:00,"i newly installed android studio and i receive that i cant install haxm because i dont have nx 
+i have intel core (TM) i3 , but i cant enable this feature on bios , how can i enable this feature? 
+my cpu doesn't support that ?
+please help me to understand this problem.
+i check that with coreinfo and it shows that nx is disable , but after i go to the bios, after hours i cant enable nx in bios, and i dont see any options that can help me , so after that i search , and i cant see problems that as silimar as me , and i asked this question
+could you help me to solve this problem ?"
+2.0,2016-12-05 11:41:09.507000+00:00,"I have a ""custom"" string that has the following format. Example:
+I would like to replace/parse the string:
+the  (%NUM_d) would be replaced with a random 5-digit decimal 
+the  (%NUM_s) would be replaced with a random 8-chars
+the  (%NUM_x) would be replaced with a random 8-digit hexadecimal
+Is there any function that helps me parse those ""special marks""? Not sure if I would have to parse the string char by char and check for every possible combination. "
+-2.0,2017-09-22 00:13:18.703000+00:00,"I'm trying to sort a struct from a number (code) that the user will enter and I'm using bubble sort for this. I want the program to print all the data sorted by the number (code) but it only sorts the number (code). Can someone help me sort the other elements from the number (code)?
+CODE:"
+0.0,2015-10-28 12:12:03.390000+00:00,"I wants to show all available categories in multi select field in admin form. I have tried but have got an empty multiselect. 
+Please help me to solve this.
+Folder structure of my Modules Block folder as,
+ 
+In Form.php I have created my form fields as,
+Here I am succeed to show store views but I wants to show categories. 
+I have created a Category.php file in Model folder as,
+This Category.php file run properly when I have added them in system.config as  field.
+But when tried to add this to form field its not work.
+Please help me where I missed the step."
+1.0,2015-01-09 22:12:17.420000+00:00,"I have a custom cell for my TableView app.  The TableViewController is called ""BlogView"".  My custom cell has a few buttons on it, one being a share button.  I want to present a UIActivityViewController when one of the buttons is pressed.
+In the header for my custom cell, I have a property:
+In the custom cell, I have for layoutSubview:
+For the selector didTapCommentButtonAction I have:
+In BlogView.m
+I get no warnings or errors, but when I click on the button, nothing happens."
+0.0,2020-01-03 13:07:42.783000+00:00,"I have a simple question,
+Is it possible to track a user using their userID in Flurry?
+I know I can user setUserID in my event but is it possible to see all the events from a user say abc@xyz.com has gone through?
+Currently, I can see it as Following For User 036(is there a way to find the same using userID):"
+0.0,2020-07-19 17:19:07.310000+00:00,"How do I using scale_y_datetime breaks time 1 hours.
+Data Power Bi
+I want it to Y axis in breaks time 1 hours.
+I don't know how to using scale_y_datetime."
+0.0,2018-06-30 10:57:48.010000+00:00,"Hi i am using codeigniter framework. I am running one query and request data from mysql. I have lot of data. It is running but gives the error as below.
+A PHP Error was encountered
+Severity: Warning
+I have asked my service provider to increase  size. Previously I've . they increased it . But there are problems with restarting the server. So, i want to increase it without restarting the server. Is it possible?. If it is possible please suggest how to set and where to set."
+-2.0,2018-11-20 09:51:10.540000+00:00,"I'm creating a table with a query.
+Example (with a basic query below):
+Alright, we created the table as teste.
+Now I will run this query in ever 1 hour;
+But It says 'Table already exist"" of course.
+I want to update this table with overwritten new rows.
+I can't use 
+If the table exists DROP TABLE 
+Because, before my query run table goes drop and if someone wants to show this table It will produce an error.
+I don't wanna keep old rows data, I want to overwrite new rows data as new rows.
+When new query result is ready after that delete old rows and add new rows.
+Looking for your answers. 
+Have a nice day!
+Edit:
+Simple example:
+This table has Top 10 selling products, there's a query working every 1 hour. It's got top 10 selling products with a lot of Joins, Subqueries etc when the query result is ready then overwrite new Top 10 selling products to old Top 10 selling products. I mean this top 10 selling product table can be never empty. (Like truncate first)"
+4.0,2017-01-11 14:21:56.850000+00:00,"Edit: HAS to be a stored proc, NOT a function, sorry!
+I have a table:
+I want the following output (as a View):
+I have a stored procedure to do this:
+My end goal is to populate the col via stored proc, e.g.:
+Obviously this doesn't work. How do I accomplish this.
+P.S. Please don't tell me &quot;just do:
+&quot;
+I am well aware I can do that - this is obviously an example, the real code is much more complicated and requires a STORED PROCEDURE. Note, I intentionally return a string from the sample stored proc - I need complex values, not just .
+Edit:
+SQL Server 2012
+Functions are NOT an option. I apologize for the confusion. My &quot;function&quot; needs to call built in Stored Procs, and functions can't do that.
+Edit 2: The reason I need an SP, rather than a function, is because I need to dynamically find the primary key of some table, so I need to use dynamic SQL. I thought this was too much info, but looks like it's necessary:
+Edit: In the end, I was trying to do something that can't be done with openrowset, which is a dirty, dirty hack. I ended up writing a stored proc which writes to a table every 5 mins, and the third-party software uses that table. I appreciate all the help. I accepted the answer which helped me most, but the while-loop answer was also helpful and got me what I need, albeit at unacceptable performance."
+0.0,2014-11-16 21:58:40.863000+00:00,"I'm trying to create an RMI factory but I keep getting the following error:
+I've never worked with the RMI protocol before so has been a lot of guess work to get to this state but now I'm completely lost as to why $Proxy0 can't correctly be cast? 
+All the reading and other examples I've looked are not trying to implement via a factory pattern so I'm not sure that is where my issue is?  
+The main entry point to the application:
+Here is the run method from the FactoryTest class that I'm running
+This creates an instance of ContractDataFactory which looks like:
+and ContractDataRemote looks like:
+DB is simply another interface with all the actual methods required to do the work. 
+Hopefully this is enough information to help me solve this? 
+Cheers. 
+Edit:
+Included the contents of ContractDataFactoryImpl"
+0.0,2015-10-07 16:28:38.900000+00:00,"Using the TweenMax library, I am unable to kill or stop a  when the end of the data object is reached instead of looping because it is a self calling function.
+https://jsfiddle.net/rdzo13cf/6/
+In the example above the last item in the data is not displayed."
+1.0,2017-05-07 21:21:21.563000+00:00,"I'm using Spring Data and JPA with Spring Boot 1.5.3.RELEASE, 
+I have 3 entities declared like this:
+Class A:
+Class B:
+Class C:
+and added my repositories and services like this :
+:
+:
+:
+And the last class is  for SpringBoot:
+When i execute , I want to get all records of  with  fetched if exist and I want a list of  in  not initialised (just a proxy).
+Also, I want the   not  in  for the item .
+But what I got is a select query (there is Join) and Spring Data trying to load all  objects in ,
+and this exception:
+Have anyone any idea how I can change my config to get what I want?"
+1.0,2016-08-26 12:14:51.757000+00:00,"I am using Botan-1.4.12 alongwith GNU gcc/g++ 2.95.3 for some legacy code. Will change to newer version of compiler as well newer version of botan later. But, with the legacy code and Botan-1.4.12, I am getting some strange parse error as explained bwlow.
+In my codebase, I have used the following include files:
+And, I get the following error:
+The reason is (in /opt/botan/include/botan/enums.h)
+If I change PRIVATE = 0xC0 to say ZPRIVATE = 0xC0
+the problem gets apparently solved.
+Any better remedy?"
+0.0,2016-10-11 13:43:10.493000+00:00,"I am using Authorize.net payment gateway in my wordpress woocommerce site.
+I want to have feature like ARB , CIM and subscription, so i got a plugin named  i have installed it.
+I have used sample credit card number but still it giving error  . I have already enabled TEST mode.
+So i have 2 question:-
+Is Authorize Net plugin for subscription is not free ? coz internet has so many plugins free, not able to take out which one to use for ARB,CIM amnd subscriptions.
+Why i am getting the  issue."
+0.0,2020-10-23 09:57:55.773000+00:00,"I am trying to save an image from a picturebox1 element in a windows form, but the  method throws a parameter not valid exception and I can't work out why.
+This is the error message that I am getting:"
+0.0,2016-11-14 02:10:43.833000+00:00,"I've form with date field and select box and there's and add row, once i clicked add row it'll add a new row with the same field. 
+the problem is , the select box doesn't working.
+here's my view code :
+and here's my jquery to add new row so far :
+any idea ?"
+1.0,2017-03-09 11:01:01.057000+00:00,"I am using Joomla 3 on the template ""Pajuh"" the template comes with Virtuemart installed so decided to use this for the customers products, when you hover over a product image in the category you get an overlay, and once clicked this takes you to a large image of the product. I need to be able to change this so that when you click the product image you go to the ""Product Details"" page. I have tried everything to remove this overlay, but cannot find where to remove it! 
+This image shows the overlay on the product image1
+I am sure this section of code at the bottom of the page is dealing with the overlay but I have no idea where to find it in the file structure to remove;
+Section of code that is creating the overlay2
+Any help on this would be awsome! If you have any questions about the problem please ask and I can provide more info. "
+1.0,2016-08-25 12:27:24.777000+00:00,"My idea is to write a maven plugin that generates code (just simple json) based on some annotations in my Java code. The annotated classes may be part of a used library or in my own code.
+What I want is a plugin that gets a fixed set of class names (by configuration in pom). It walks through these classes, searches it for annotations on properties and generates code based on the gathered information.
+Is that possible?
+How can I achieve this?
+Is there an existing plugin that does something like that?"
+0.0,2020-03-31 18:26:31.540000+00:00,"Good day,
+I am currently trying to figure out a way to make non blocking requests inside a simple script of mitmproxy, but the documentation doesn't seem to be clear for me for the first look.
+I think it's probably the easiest if I show my current code and describe my issue below:
+Basically I would like to intercept any HTTP(S) request done and make a non blocking request to an API endpoint at https://my.api.xyz/ which should take all original headers and return a png screenshot of the originally requested URL.
+However the code above produces an empty content and the print returns nothing either.
+My issue seems to be related to: mtmproxy http get request in script and Resubmitting a request from a response in mitmproxy but I still couldn't figure out a proper way of sending requests inside mitmproxy."
+1.0,2019-08-27 18:11:01.070000+00:00,"I want to create multiple debezium connector with different replication slot. But I am Unable to create multiple replication slot for postgres debezium connector.
+I am using docker container for Postgres &amp; kafka. I tried setting up max_replication_slots = 2 in postgressql.conf file &amp; also different slot.name. but still it did not create 2 replication slot for me. 
+It creates multiple connector but not multiple replication slot even after giving different slot name. Do I need to do anything over here."
+0.0,2018-05-14 00:41:27.673000+00:00,"I've got a working model of an MVC application working with Authentication (using Azure B2C).  In order to authenticate my client, I need to add a 'Bearer' token to the header like so:
+I don't want to create a proxy for every CRUD operation I have and I want to use the Kendo UI products which have a pretty slick RESTful API.  Is there some way to automatically add the bearer token to the header in every HTTP operation so I don't have to make proxies and can use a proper RESTful API?"
+2.0,2020-05-27 12:37:23.573000+00:00,"Is it possible, given a loaded module, to get its file path?
+I saw require.resolve but I need the opposite lookup...
+Any ideas?
+Thanks!"
+0.0,2015-10-11 10:43:02.550000+00:00,"Currently, I'm dynamically inserting PartialViews like this:
+But I'm not able to update them after inserting like I could be able using 
+So how could I insert them dynamically and still be able to update them?"
+2.0,2015-09-24 21:24:47.713000+00:00,"I have successfully implemented FizzBuzz in angular, and was wondering if I am doing everything according to Angular Best Practices.  My questions:
+1) Is there any way to set $scope.display in the factory directly instead of returning something? so instead of ""return FIZZ"" could I do $scope.display = ""FIZZ"" there?
+2) do i really need separate $scope.counter and $scope.display variables?
+Code: 
+//HTML:
+Update:
+Took Shaun's suggestion to try this but it did not display anything:"
+0.0,2018-12-05 21:12:35.503000+00:00,"I used scikit-learn CountVectorizer function to count word frequency in raw text, and it seems to be working when printed, but i can't find how to convert it to a dictionary or an array i could work with. 
+I tried .toarray() but this only returns the values, not the word position associated with it. 
+the output of print is :
+I'd like to get a dictionary where i can see the tuples assiciated with values but couldn't find the right function in the doc"
+1.0,2019-11-05 06:08:21.540000+00:00,"My Maven Project Structure is Like Below.I want To Load Css In mainMenu.jsp File.  
+Above Line Is Not Working.So How Can I Load Main.css in mainMenu?"
+0.0,2015-06-14 13:24:00.817000+00:00,"I have an array of the following structure --
+The structure of the array is following - 
+I have to sort the columns. How can I go about it?
+ng-repeat for this array looks like the following --"
+1.0,2015-01-15 16:09:02.320000+00:00,"I've got 3 interconnected methods inside an object:
+They handle rotation based on mouse pointer position. I can't figure out what to do to have access to original this inside dragMoveHandler and be able to remove the element listener at the same time.
+I tried using .bind(this) but it returns anonymous function which I can't remove inside dragEndHandler.
+Is there a technique I'm not aware of?"
+1.0,2020-02-21 12:50:21.430000+00:00,"It could be because you're using the `-o` flag. From the manual about that flag: _""Convert PSR-0/4 autoloading to classmap to get a faster autoloade""_. If you're on in development environment, you don't need that flag. That flag mostly make sense in production."
+0.0,2018-10-14 04:59:13.240000+00:00,"@0xori, unfortunately I have not figured it out yet XD I just disabled the client-side filesize check that was depending on fetch."
+0.0,2016-06-20 17:42:41.747000+00:00,"If you take a stab and post back any issues, I'm more than happy to help get your code working. The connection strings are boilerplate, and then it's just executing a SQL string and using a method to get the data in. It can be a little touchy sometimes, but that's where I should be able to help."
+0.0,2017-02-16 09:22:42.320000+00:00,"i try to solve my problem with your way but i it doesnt work and my problem still exists !! i really need to solve because i want to use virtual device in android studio and this problem dont allow me , so its really bothering me , please help me ..."
+0.0,2016-12-05 11:52:04.770000+00:00,"@Robin, printf doesn't generate any random things according to format."
+3.0,2017-09-22 01:28:26.723000+00:00,Sidenote: `fflush(stdin);` -> undefined bahviour (don't!)
+0.0,2015-10-28 12:52:22.180000+00:00,:( .. No I am still facing the same error. is that so My prepareform() method is in Form.php and not in /Tab/Main.php file?
+0.0,2015-01-09 22:23:20.507000+00:00,Do you have any other code? I think you would need a property for your button inside of the custom cell class. Then perhaps you could add a selector to that property button. Inside the selector method you could launch the ActivityViewController
+0.0,2020-07-19 18:39:44.397000+00:00,There is an option `scale_y_date(limits = )` where you can set `lims`
+0.0,2018-06-30 11:12:57.913000+00:00,"You can use `ini_set( string $varname , string $newvalue )` function to override the `php.ini` settings in your php file or you can define you changes in `.htaccess` file. [Click here to see](https://stackoverflow.com/a/8812260/3453169)"
+0.0,2018-11-20 13:04:05.403000+00:00,Here's a fiddle which disproves what you think. http://sqlfiddle.com/#!9/9ed9a2/2
+0.0,2017-10-02 20:37:21.157000+00:00,"OK. And all the tables have different layout etc I presume, so you need to build code dynamically to get the right fields etc for each table. I'd suggest to simply do all that in the 1 stored procedure and have that one return the data. Where does the view come into play? Views have a fixed ""layout"", so you can't adjust the fields in the view according to whatever table the data might be coming out of."
+0.0,2014-11-16 22:59:55.010000+00:00,@AnubianNoob The error is thrown at the class cast which is about line 5 of the run method in FactoryTest
+0.0,2017-05-08 06:14:21.417000+00:00,"@NeilStockton Thanks, I get it. But I'v known it, what I want to say is a hint to OP, not an answer."
+0.0,2016-08-26 12:17:51.333000+00:00,The problem is solved with other letters? I mean CPRIVATE and so on?
+1.0,2016-10-11 14:00:42.020000+00:00,"**I don't really know about your plugin** *(as you don't give any details and/or links)*. What I know is that list give you all plugins (free or commercial) with the links, that are compatible with WooCommerce Subscriptions. If your plugin is not in that list (linked), may be is not compatible with it, as it is, and you will have to get one from this list."
+0.0,2020-10-25 09:49:53.713000+00:00,"the picturebox holds a frame from a live feed of the computer's webcam, in a videosourceplayer (using the Aforge libraries). I think it's a bitmap image, but I want to save it as a jpeg. `pathfolder` is the path of the folder that I'm saving the image in, and `name` is the name of the file, together they are supposed to be the `string filename` parameter of image.save"
+0.0,2016-11-14 02:47:55.600000+00:00,@JoseRojas so far there's no error at console.
+0.0,2017-03-09 12:14:59.417000+00:00,"embed your relevant code as a snippet, nobody is going to try zooming in and reading the code in that image"
+2.0,2016-08-25 12:40:54.617000+00:00,You probably want an *annotation processor* instead of a Maven plugin.
+0.0,2019-08-28 19:09:10.743000+00:00,I try to change that as well. i.e. having different slot name. But still it didn't help
+0.0,2018-05-21 16:51:59.667000+00:00,"If you are using a client side JS framework, like Angular, then easily yes. But otherwise I'm not sure, you would have to write some JS to listen/intercept HTTP calls or explicitly add it somehow."
+0.0,2015-10-11 11:10:51.360000+00:00,"@Stephen No, you see, I've used the .load() method it worked as a charm. But then if I will try to update the PartitialView(call return PartialView()) I get on only that PartitialView and nothing else and loose the rest of the page,"
+1.0,2015-09-24 22:29:52.840000+00:00,seems like this is better suited for http://codereview.stackexchange.com/
+0.0,2018-12-05 21:19:10.957000+00:00,Is `CountVectorizer.get_feature_names()` what you are looking for? [This method](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html#sklearn.feature_extraction.text.CountVectorizer.get_feature_names) maps from the integer indices to the feature names.
+0.0,2015-06-14 14:05:22.520000+00:00,maybe you could benefit from lodash: https://lodash.com/
+0.0,2015-01-19 11:40:34.377000+00:00,"This is a great aproach - easy to understand, controll and reuse. Post it as an answer so I can accept this and let others learn."

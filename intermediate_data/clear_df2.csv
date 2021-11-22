@@ -1,0 +1,415 @@
+score,creation_date,body
+-4.0,2016-02-04 13:45:54+00:00,Well I write a script which works very well.
+0.0,2015-05-09 06:24:42.513000+00:00,"The problem with the code above was:
+Mutable object ( list, dict) : and all the callbacks were changing that same object in each loop hence ...first and second level of data was being overwritten in last third loop ( mp3_son_url) ...(this was my failed attempt)
+the solution was to use simple copy.deepcopy and create a new object from response.meta object in callback method and not change the base_item object
+will try to explain the full answer when i get some time.."
+0.0,2016-11-19 05:44:16.597000+00:00,"I have search and found this thing its work in Xampp localhost.This will be helpful.
+http://forum.directadmin.com/showthread.php?t=48001"
+52.0,2016-09-16 13:25:30.073000+00:00,It is also possible to select holding .
+0.0,2016-04-22 05:58:15.223000+00:00,"As I noted in a comment  is deprecated in favor of wp_authenticate.
+Additionally, WordPress has an amazing Capabilities API that goes far beyond Roles.  I would strongly recommend reading up on it.
+For a brief example, if I wanted to grant a user access to manage WordPress options (a capability called  that is inherited from the Administrator role), all I have to do is say  or use the  function. 
+Matching based on capabilities is usually much more flexible that matching on a Role... for example imagine my site had a second role called ""Developers"". If you gated access based on roles, and you wanted to give users in the developer role access to your feature, you would need to add a second check whenever you need to verify a users permissions: 
+So, if you have a user logged in already then you can always verify their capabilities with:
+or define your own custom cap, give it to all administrators:
+and check the custom cap against the current user
+The added benefit to capabilities is that WordPress will automatically check the current user's permissions when rendering the WP Admin menu if you register your admin section with one of the add_*_page functions (add_menu_page()) and a capability like 'manage_options'
+Lastly, It was a bit unclear as to whether you were logging in users yourself, if so I would propose this alternative if you are logging in the user from scratch (i.e. not using WordPress's login form):
+You will also need to call  during every page load of your custom admin to verify that the user is logged in and has permissions, if that fails, then direct them to your custom login page... or possibly, the wordpress login page with auth_redirect()."
+0.0,2017-02-04 07:05:24.467000+00:00,"Vertical centering is notoriously tricky. Your issues revolve around the viewport height being shorter than the content. Here are a couple of solutions:
+1) Add a media-query conditional (such as ) around the vertical centering block of CSS so that it becomes disabled on shorter screens, and reverts to a normal scrollable page.
+2) Use a full-height flexbox container to control the centering instead of relative positioning. If done correctly, it can have the same effect with a lot less code.
+Regarding the pipe-separated list, I'll go out on a limb and guess you're using the latest Bootstrap 4 alpha, in which case each  needs a class of  for some strange reason."
+1.0,2020-11-06 03:09:30.407000+00:00,"The msg needs to be flattened to a string before passing it to the sendmail method:
+Also, you'll probably want to set some headers on the msg object:
+Enabling the debug output for the SMTP object would help to track down these problems, try inserting this line above the server.login call:
+If you're going to be working with email though it may be worth looking in to the email.message.EmailMessage class."
+0.0,2017-02-03 22:58:48.547000+00:00,"If you agree to an assumption that  equals to the type name, you can use this approach. It lets you define and inherit ID property in the base class.
+Though I agree this might look quite strange at first sight.
+Expression  will return , and  will return ."
+3.0,2019-12-06 03:36:38.083000+00:00,"The problem is that you are never checking to see if you are encountering a nullptr.
+Something like this would fix the issue:"
+0.0,2018-09-28 07:06:47.490000+00:00,"(Wanted to make a comment, but it has become too long...)
+Anyway, it currently seems to work on the test servers without WP. Like the code is: 
+As you can see, I added a replace at the end, and cut the WP function at the start. The end result is:
+which means, it currently works, I think you want this to happen. Please note, that if two tags have the same content, they will also have the same name. If this is not what you want, please explain what is the final state you want to achieve."
+1.0,2016-06-09 20:56:21.720000+00:00,"Flink's DataStream API can process events of finite streams without any problems. The DataStream program will simply terminate when the stream reached its end.
+You can simulate this behavior if you use a  to read text data from a socket. Once you close the socket, the program will terminate. Alternatively, you can also read data from a file which is also some kind of finite stream. However, keep in mind that incomplete windows will not be automatically evaluated. So you have to make sure that you do not lose data in windows if you use them."
+0.0,2017-12-19 21:57:56.887000+00:00,"Yes, it is possible by targeting via the CSS attribute selector. For example:
+The above code would be inserted via the CSS Editor. The  value corresponds the URL Slug of the index page section (see image).
+You can inspect the code of the page user your browser's developer tools (often by hitting F12 or CTRL+SHIFT+I). That will help you explore the code of the page for this and other similar issues/customization."
+0.0,2019-02-05 21:51:47.960000+00:00,"Looking at the worker node security groups is where I think I found the issue.
+The AWS EKS kube-dns endpoints and pods were on the private subnet. 
+I have two CloudFormation stacks: one for autoscaling nodes in the private subnets and one for autoscaling nodes in the public subnets.
+They didn't have a common security group so the pods running in the public nodes weren't able to access the kube-dns pods running on the private nodes.
+Once I update the worker node security groups to allow cross communication the DNS started working.
+Please post if anyone sees any unintended consequences."
+0.0,2017-07-27 05:50:00.320000+00:00,Looks like your statement can not be prepared. You should check SQL for errors. (For example in post  used instead of ).
+1.0,2015-09-12 12:57:57.807000+00:00,"You would want to use  as the return type. This will let you pick the return type on the fly.
+Here is a brief tutorial about using generic types in java by Oracle.
+https://docs.oracle.com/javase/tutorial/java/generics/types.html"
+0.0,2015-06-26 07:52:51.917000+00:00,"I don't know if there is a possibility to delete classes from the output. I do this by simply excluding the source files containing the unwanted classes. 
+Go to the Expert tab, choose Input and exclude all the files containing your unwanted classes."
+1.0,2016-05-12 18:54:05.170000+00:00,"It is rather confusing and Protractor documentation is not very clear on this but Protractor waits for page to synchronize only when using  or  commands. In your case, you are using  command to load a new page so Protractor won't wait for the new page to synchronize before proceeding. See the reasoning for this behaviour from a Protractor developer.
+So in your case, you need to take care of that either in your test or in page object. In either case you can use something like this after the click:
+This will poll for the current URL as often as possible (in practice around once every 500ms) for up to 10 seconds. When it finds the ""Slink"" string in the current URL it will proceed on to the next command."
+4.0,2019-10-10 23:01:30.673000+00:00,"C compilers have special cases for , because they expect programmers to understand the idiom of  and exploit it. 
+Code like:
+would not pass review by competent C coders; three or four reviewers would simultaneously exclaim ""this should be a !""
+It's not worth it for C compilers to analyze the structure of  statements for conversion to a jump table. The conditions for that have to be just right, and the amount of variation that is possible in a bunch of  statements is astronomical. The analysis is both complicated and likely to come up negative (as in: ""no, we can't convert these s to a "")."
+2.0,2019-02-04 06:41:18.823000+00:00,"Setting  option to  in Elasticsearch 2.x or to  in Elasticsearch > 5.x will not create an inverted index for that field which means you cannot perform searching or filtering on it. But you can do sorting and aggregations by creating a view on the data called using doc_values  which is where  of the field matters.     I created  with  and ran a search query by setting the field's to  once and to  the next time. 
+Elasticsearch raised a  giving the expected reason:"
+1.0,2017-06-02 12:41:53.063000+00:00," will give you false positive like you are getting for  &amp;  and hence you need a more robust check.
+Is this what you are trying?
+Screenshot"
+1.0,2015-07-01 12:31:38.640000+00:00,"Since the UILabel is not created yet when you call init method. the way to do it is to keep text in the NSString property.
+In you PopoverViewController, create the init method like this
+In the implementation file, keep hold of the text in the property and on viewDidLoad, you could set the text to the label."
+0.0,2020-10-30 20:08:08.697000+00:00,"Try:
+UPDATE:
+But why your ID of your User class doesn't have attribute [Key] and CreateDate doesn't have attribut   [Column(TypeName = &quot;datetime&quot;)] ?. What kind of validations do you have? Can you post some of _context that is relevant to User?"
+2.0,2016-08-31 11:50:43.777000+00:00,Use attribute routing for it
+0.0,2017-01-30 10:11:04.297000+00:00,"So this is how I did it, "
+-1.0,2015-10-08 03:19:02.290000+00:00,"If you don't understand this code please comment, I'm 24x7 online for you.  "
+2.0,2019-01-25 13:05:41.110000+00:00,"The exception is because of you saved your mysql enum value as string ,  and this is not parsed by enum in c# so that error comes.
+So if there is possible then change the enum in MySQL like 
+And then set your c# enum member value to , like
+Edit:
+One way is that just keep you mysql enum as it is like
+And keep your class property datatype to 
+And keep your c# enum with respect to mysql enum 
+And now just add one more property to your class object that can cast your  to  like 
+And above property need a helper function that can convert your string to enum 
+Output: (from Debugger)"
+0.0,2019-04-06 20:43:12.237000+00:00,"The best way to do this, would be to add a  method:
+Then on your model you can use anywhere:
+For an easy way to always add  attribute when you retrieve this model, add it to  method:  
+(Also on your model)"
+2.0,2018-11-13 07:44:52.363000+00:00,"If you use Angular's , you can use an interceptor:
+HTTP Interception is a major feature of @angular/common/http. With interception, you declare interceptors that inspect and transform HTTP requests from your application to the server. The same interceptors may also inspect and transform the server's responses on their way back to the application. Multiple interceptors form a forward-and-backward chain of request/response handlers.
+The documentation has some examples, like caching, logging, and others."
+9.0,2015-05-10 00:38:12.953000+00:00,"Without seeing your implementation, the trivial way to do this is:
+Otherwise, you could traverse the list to the xth node, but there's no reason you can't do it this way."
+0.0,2018-07-02 14:02:01.990000+00:00,Because you are passing rejected promise. Pass the resolved promise if you want  block to run.
+2.0,2017-09-07 16:15:55.777000+00:00,"I analyzed the site you want to scrape, I found out that the site does have a page like a Terms and Condition that you need to agree before viewing the content. To be able to ""agree"" to that there is a need to submit a form. Thus, create a solution with 3 levels of fetches or retrieval of page source.
+I used  and  on this example because it's easy to use. You can install them using 
+The last part is the parsing of the table and similar to what you did.
+If you have any questions or encountered errors, just let me know. If this solved your issue, please mark it as answer. Thanks!"
+0.0,2019-05-01 21:36:39.840000+00:00,"I think this is handled with the score() method
+This will return the R^2 value for your model. It looks like in your case you only have an x_test though.
+Note that this is not the accuracy. Regression models do not use accuracy like classification models. Instead different metrics are computed such as, mean square error or coefficient of determination. These metrics can show how accurately predicted values match known values or how closely a regression model fits a regression line."
+0.0,2016-10-13 11:05:11.490000+00:00,"You used 
+Set the title for the document. The title is displayed at the top of the Adobe Reader screen when viewing the PDF file, and is include in the document metadata, which can be seen when inspecting the document properties in Adobe Reader.
+So, Try this : "
+4.0,2016-01-29 20:28:35.613000+00:00,"Fixtures are only for initial data for completely new database instances, e g when running tests. To modify existing data use migrations."
+1.0,2019-09-04 07:41:20.387000+00:00,"You are overrunning the buffer for  (length 1), which is in this case corrupting the memory-adjacent , causing the string length to change by overwriting its nul terminator.
+Then because you are reevaluating the string length on each iteration, the loop will run for a non-deterministic number of iterations - in your case just 6, but it could be worse; the behaviour you have observed is just one of several possibilities - it is undefined.
+Apart from correcting the buffer length for , it is best practice to evaluate loop-invariants once (although in this case the string length is not invariant due to a bug).  So the following:
+will run for 4 iterations regardless of the buffer overrun bug because the length is not reevaluated following the corruption. Re-evaluating loop-invariants can lead to very slow code execution."
+3.0,2015-03-10 09:19:27.640000+00:00,"The constructor for  that you call is this one:
+The  argument is . If a BOM is encountered, that will determine the encoding. Otherwise the file will be treated as . Your files don't have BOMs. Therefore you are getting exactly what you asked for. Namely that the file is treated as UTF-8.
+If you want the file treated as ANSI you must specify the encoding:
+Or if you want to default to ANSI if no BOM is found, otherwise respect the BOM, you can do it like this:
+Why does your code work with one file but not the other? Presumably one file is entirely in the ASCII range, and the other has characters outside that range. UTF-8 encodes characters in the ASCII range in a single byte which means that ASCII encoded files are correctly interpreted by the UTF-8 encoding. That was one of the primary design goals of UTF-8."
+2.0,2020-05-11 00:35:35.137000+00:00,"From the pyviz documentation you can set the optional parameter  to  in the  constructor, and if you're in a jupyter notebook it will display it:"
+30.0,2016-03-04 12:33:55.760000+00:00,You can do it in this way 
+1.0,2018-08-15 16:20:25.713000+00:00,"Ubuntu 14.4 is rather old now, consider a newer one, if possible. I don't know if updates for it are being published now.
+If you have to use it, you might not be able to pull updates for it anymore. If there are no updates, the latest versions of all packages (at the time the last updates were published) should be available on archive.ubunut.com. There may be a handy replacement for  somewhere that is configured to use the archive and works for Ubuntu 14. "
+0.0,2019-02-05 08:21:06.833000+00:00,"What I see is that  contains an  sign which shouldn't be there...
+It should be: 
+More, in a command you use  file, which is never created by your script..."
+0.0,2019-07-21 07:13:04.333000+00:00,"Try it yourself and see if it works.
+If you import all the classes then they all behave just like a single file. The segregation is just for maintaining and management of code as the size of your app grows.
+So, IMO it will work just the same."
+3.0,2017-11-05 04:03:15.927000+00:00,"If we assume that all properties are strings, then you might do in the following way
+Update: alternative solution with RegExp and more old-school :) but 2x faster"
+82.0,2016-09-30 08:11:50.167000+00:00,"You can write a Vue method and that method can be called on the keypress event. Check out this fiddle.
+Update:
+adding source code:
+HTML
+Vue.js"
+31.0,2018-02-14 16:14:29.320000+00:00,"The problem is that while pandas in general directly wraps the matplotlib plotting methods, this is not the case for plots with dates. As soon as dates are involved, pandas uses a totally different numerical representation of dates and hence also uses its own locators for the ticks. 
+In case you want to use   formatters or locators on plots created with pandas you may use the  option in pandas plots.
+This allows to use the  formatters or locators as shown below.
+Else you may replace  by
+Complete example:
+If the motivation to use pandas here is (as stated in the comments below) to be able to use , the equivalent for matplotlib plots would be a twin axes ."
+0.0,2016-05-23 13:07:30.653000+00:00,"In this example think as a customer orders a item from our store. Then you should be able to track the items in the order, Customer details, quantity and etc. So we can do this by using the following classes.
+Customer
+Order
+Order_item
+Item
+So first we have to mention the database relationships in the model. e.g. a customer have many orders. So in Customer model indicate it as a function as follows.
+public function order(){
+} 
+Also in the Order Model 
+public function  customer(){
+}
+When crating the migration file you should leave unsigned intiger column for customer_id in the orders table. When saving the data you should save the relevant customer_id in the order details. e.g.
+orders table will look like follows.
+id(unsigned, aoutoincrement, integer)
+customer_id(unsigned, integer)
+total_price
+etc
+And keep in mind that to save the auto increment id in the customer table to orders table customer_id. Or let laravel do this for you by using the handy method or like,
+$order->customer_id=$customer->id //assuming that you have the customer object crated above.
+However i prefer to save the id manually since its more clear for me.
+So when ever you want to find the customer of the certain order look back in the customer table with the customer id. e.g.
+$customer=Customer::where('id',$order->customer_id)->first();
+If you want to find the orders of a particular Customer you can do it like ,
+$orders_array= Order::where('customer_id', $customer->id)-get();
+So you can traverse both sides easily. I didn't get what you meant by pivot table. Is that Pivot tables in Excel would like to help if you could describe more. "
+0.0,2016-08-09 08:22:52.800000+00:00,"Got the answer...
+in views.py
+In the above code  get the current fig manager which is same everytime that is why it was plotting over old image instead of creating new image. So i changed the code as
+This has worked for me"
+0.0,2020-01-09 15:32:31.720000+00:00,"I wasn't able to get this working, so have decided to re-write the program using Swing rather than JavaFX."
+2.0,2014-11-12 08:44:15.463000+00:00,"You can use grunt or gulp and concatenate all the js files you want from bower_components. And just have a single include in your html.  You don't need everything in the folders typically the files you want is the same name as the component. Sometimes located in a dist folder. I Would recommend not using minified while developing, because then it may be harder to debug "
+3.0,2017-07-28 16:28:55.617000+00:00," is a proxy object that uses the Method Resolution Order (MRO) to determine what method to call when you perform a call on .
+If we inspect the  of , we get:
+Or made it shorter myself (not the Python output):
+Now  is a proxy object that uses the MRO from (but excluding) . So that means that  is a proxy object that works with:
+What will happen if you query an attribute (a method is also an attribute) of a class is that Python will walk through the MRO and inspect whether the element has such attribute. So it will first inspect whether  has an  attribute, if not it will continue to look for it in  and so on. From the moment it finds such attribute it will stop, and return it.
+So  will return the  method. The MRO is also used to find methods, attributes, etc. that are not defined on the class level. So if you use  and  is not an attribute of the object nor of the  object, it will again walk through the MRO in search for .
+If you want to call the  of all the direct parents of  you can use:
+Which is probably the most elegant, since if the bases change, it will still work. Note that you have to make sure that  exists for every parent. Since it is however defined at the  level, we can safely assume this. For other attributes however, we can not make that assumption.
+EDIT: Mind that as a result  does not necessary points to the parents, grandparents and/or ancestors of that class. But to parent classes of the object.
+The  in the  class, will - given it is an  object, work with the same mro (since it takes the  from the ). So  will inspect the following sequence of classes:
+For instance, if we write (out of the scope of any class) , we get:"
+0.0,2016-06-24 20:21:50.490000+00:00,"A div is naturally a block element, which means it won't allow anything else on its line. To fix this, you'll need to make it an inline (or inline-block) element.
+The element in question is the  div, which contains only a text input (for providing city name, it looks like). For some reason, you've set that element's display-type to . The  display-type is a sub-type of , and it also prevents anything else from being on the same line.
+The display type you want is probably  (which keeps the sizing properties of a block element but the line-breaking properties of an inline element). In the example below, I've only edited line 9 of the CSS.
+It seems to me that you tried applying  to all  elements; this is unnecessary because inputs are inline by default. The wrapper div itself is what was causing the line to break, so that is what you need to apply the rule to."
+3.0,2017-03-04 22:33:17.850000+00:00,"what you're looking for is the ScreenToWorldPoint method
+Here's the documantation in case you need it
+https://docs.unity3d.com/ScriptReference/Camera.ScreenToWorldPoint.html"
+1.0,2017-09-30 23:30:12.040000+00:00,"Because the logic of how sorted(by:) is doing the comparison is related to the logic of the equality of the given elements, (you cannot sort an array of non-comparable elements), the output would be based on how strings comparing should be -since the given  keys are strings- (""1"" character is less than ""2"").
+However, you might need to cast the key values to Ints and then sort:
+At this point the sort should be valid even if the key value is uncastable to Int."
+11.0,2019-07-13 17:43:27.203000+00:00,"This is because a period of years or months is always the same amount of time (the same period) for any given date. A year is always 12 months, 12 months are always a year, thus these parts of the period can easily be normalized.
+However days are variable in relation to months and years. If you have a period of 1 year, 1 month and 32 days, you cannot normalize this to 1 year, 2 months and then a fixed amount of days, because it might be 1 day, 2 days, 3 days or 4 days, depending on which date you will apply the period on.
+A month can be 28, 29, 30 or 31 days. A year can be 365 or 366 days. And since a period is independent of any fixed date, there is no way to decide these relations.
+Example:
+2019-01-01 + 01-01-32 is 2020-03-04
+2020-01-01 + 01-01-32 is 2021-03-03
+2020-02-01 + 01-01-32 is 2021-04-02
+2020-03-01 + 01-01-32 is 2021-05-03
+As you can see the days resulting from applying the same period to different dates varies depending on the month and on if it's a leap year.
+Thus it is impossible to normalize days in a period and the days are not touched when normalizing."
+3.0,2017-07-14 06:26:41.803000+00:00,"Above the fold content means, what you presently seeing on the screen without scrolling down.the styles for the above the fold content is necessary for the initial load, other styles can be download later.so what you can do, have two style sheets one contain the styles for the initial page load and the other style sheet will have the rest of the styles.the second style sheet you can include through javascript 
+How to optimize you css files for better performance
+instead of having so many external files ,combine those in to a single file.this will reduce the number of request to the server
+Minify your css files (This will remove the unwanted space)
+Remove unused css. you might have used a front end framework like twitter bootstrap and foundation.there are lot of addons to identify the list of unused css."
+2.0,2015-04-24 20:05:16.100000+00:00,"here is a quick example of trying to parse a file and do what you want.  This has a lot of bad practices, such has the way I am concatenating the output string, but you should get the idea."
+1.0,2017-03-18 05:36:48.983000+00:00,"Permissions that are added automatically on Android map to very specific Codename One API's used by you or by a cn1lib you included the list of the full set of API maps to permissions is in the Advanced section of the developer guide under permissions.
+If you've set a permission manually you can remove permissions from the properties as shown in attached image"
+1.0,2015-08-26 07:49:11.583000+00:00,"I think what you are trying to do is to submit the form when the file is selected, in that case just call submit method of the form element in the change handler
+Note: May not work in IE&lt;10"
+1.0,2015-10-30 14:00:55.963000+00:00,"Once you have registered your application in Azure Active Directory, the API have to authenticate the Power BI user in order to access to user tiles.
+  All of the Power BI APIs mentioned below require an application
+  registered in AAD. Your application needs to login a Power BI user and
+  make the API calls to access the user’s account.
+Reference"
+2.0,2015-01-27 17:38:37.580000+00:00,"No, you cannot. There is no mechanism to do a single server side operation against two different tables. Furthermore, there is no mechanism to do a single service side operation against two different tablets. If you need to access two different 'datasets' in a single iterator, you must colocate them in such a way that related tablets are one in the same.
+This is covered with one strategy of having source tables and then combined indexes, which would satisfy that purpose. "
+2.0,2014-11-20 09:03:18.377000+00:00,"Using  as a font property in iText was a design flaw. I am responsible for that poor design choice, mea culpa. If you consult ISO-32000-1, you'll notice that strikethru is not a property of a font (), nor is it possible to set that property on a field. Hence, it is impossible to fill out a field with ""stroked through"" content, unless you'd find a font that contains such characters (as indicated by mkl in his comment).
+There are two other possible workarounds depending on the final result you want to get.
+You can define your own default appearance () for the form field. In this appearance, you could draw the text and a line that strikes through it. I am not going to give you an example on how to do this, because it is not a good solution: the form remains interactive and the moment the end user clicks the field, Adobe Reader will replace the  with an appearance created on the fly in the viewer. This appearance will show the text without the strikethru.
+If it is acceptable for you that the form is flattened, then I would fill out the field the hard way. That is: retrieve the coordinates of the field and draw the text at those coordinates using . For an example, see my answer to this question: How to continue field output on a second page?"
+6.0,2015-01-21 20:32:33.547000+00:00,"A trie node stores a map of existing out characters and a flag indicating if the node corresponds to a word in the trie.
+Now insertion is similar to what you'd do with a static array, except that you are using a map here."
+4.0,2015-07-25 02:26:26.723000+00:00,"If ,  and  all have shape (18, 75), then  should return mean of all the values in all the arrays. (I'm not sure what you mean by ""the result is same as the empty array"".)   will convert  into a 3-d array with shape (3, 18, 75).  To get  to average only along the first axis, use the argument :
+Or, you could simply write:"
+0.0,2020-12-21 16:50:19.633000+00:00,"You are correct!
+Number of times the first loop executes = N.
+Number of times the second loop executes = N/2.
+Number of times the third loop executes = log2(N).
+Therefore, time complexity = O(N * (N/2) * log2(N)) = O((N^2)/2 * log2(N)).
+After neglecting constants for the highest power of N, time complexity = O((N^2) * log2(N))."
+1.0,2020-10-15 17:26:07.093000+00:00,"You have a couple of issues:
+The package name  is misspelled in your example 
+You must compose the IN-predicate with the same number of question-mark parameter markers as the number of values you intend to bind.
+In your example, you intend to bind the three values contained in the  variable, so you must compose the IN-predicate with three question-mark parameter markers.
+Generally speaking, you should dynamically compose the IN-predicate with the number of question-mark parameter markers equal to the number of values in the parameter-value list that you will bind.
+Below is a modified version of your example that corrects these two issues. I actually ran this example and verified that it works.
+This example produces the following output:"
+1.0,2015-07-17 05:59:44.927000+00:00,"Remove the  from this:
+So you have:
+What you wrote is basically a double negative.   returns  when it doesn't find anything.  You would never use  with  because it can never return ."
+2.0,2017-10-04 16:02:29.313000+00:00,"I had a similar issue. Here's how I fixed it on my Mac OS Sierra. I guess you run into the same issue with El Capitan. By running the install in verbose mode I recognised missing dependencies. The following actions fixed it on my end:
+Uninstall python-qpid-proton: 
+Install missing dependencies (swig + pkg-config) via brew:
+Install python-qpid-proton and pip disable cache to force rebuild of lib:"
+3.0,2017-07-24 20:44:52.017000+00:00,"Nesting promises is a known anti-pattern, you should chain them instead:
+Returning a promise from the callback passed to  adds that promise to the chain.
+Using arrow functions would clean this up further:
+But note that using named functions would be a better approach for debugging purposes because of a more readable stack trace."
+0.0,2020-09-14 08:43:21.950000+00:00,"For future questions you should format your script to be more readable.
+I believe I have done it quite well below:
+[EDIT] Seems that something gone wrong with displaying your question on my laptop. Just after my answer, the formatting is almost the same as provided below.
+To be honest I do not understand why you are using pipe at line 4.
+Regarding your question, you should puy Where-Object clause before you will go to second for each loop."
+0.0,2015-11-15 14:36:36.613000+00:00,"You can use lib https://github.com/kssource/BitSequence. It accept a number and return bynary string, padded and/or grouped.  "
+2.0,2015-12-04 03:46:12.393000+00:00,"Your variable device isn't in EF context, so EF doesnt know about it, and he will never change the device.
+You can try something like this:"
+0.0,2016-06-08 16:35:40.403000+00:00,"I think the issue is that you're using , which will give you the list of subscriptions to your channel, not the list that your account is subscribed to. (And it makes sense that you can't delete subscriptions other people have made to your channel.) Instead, use  to get your account's subscriptions."
+1.0,2017-11-05 08:40:56.073000+00:00,You can download latest version of android sdk separately and then specify the path of this in android studio.
+1.0,2020-11-05 21:17:14.327000+00:00,"I would collect the controls into different arrays so that I have a button array, a text field array and so on and then loop over the arrays to set the properties"
+2.0,2016-11-13 12:48:51.067000+00:00,"Finally I solved my problem. There are two reasons for this problem.
+1. The first one is related to DataFX library version. 
+2. The second problem is initialize mehtod. When DataFX is start to create controller class instance initialize method will be called by javafx FXMLLoader.load() method and this happen before init ViewFlowContext so that I got NullPointerException. In other word if you use @PostConstruct annotation and call your method with name initialize, like me, your method will be called two times one is when new controller class instance created(context has not init yet) and other one is when @PostConstruct method will be invoked(context has created). This correct for DataFX flow lib 8.0b8 version. I checked this version lib 8.0.7 but I get NullPointerException again. So that I changed my lib version and now everything is ok"
+2.0,2018-05-17 13:01:43.540000+00:00,"Your code have some problems.
+1-$('.show-more').css(""display"", ""block"");
+2-$(this).text($(this).text() === 'Show more' ? 'Show less' : 'Show more');
+3- Remove  from css."
+0.0,2017-08-06 11:27:04.113000+00:00,"From the stacktrace:
+It is failing when it tries to write the generated artifact to wherever you have specified they should be placed."
+0.0,2018-01-23 11:19:12.937000+00:00,Try with this:
+0.0,2015-08-22 00:13:49.007000+00:00,"Not exactly as far as i know
+Instead use
+sometime not.Instead use can use odbc_connect it works. tested. You can check out example :https://jewelhuq.wordpress.com/2015/05/07/how-to-connect-mssql-using-php/"
+0.0,2017-01-31 08:25:07.237000+00:00,"You can use Glide or Picasso.
+https://github.com/bumptech/glide
+Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+https://github.com/square/picasso
+Picasso: A powerful image downloading and caching library for Android"
+-2.0,2017-09-05 11:03:45.287000+00:00,"EDIT to provide some solution in answer.
+This tutorial shows you how to properly implement SQLite and use Linq extensions to interact with your database tables. I have copied the relevant parts below. Once you have your database connection open, and have created your data first tables, you can then interact with the table as you would with any IEnumerable with Linq. It does also provide an option of passing in SQL as a string, however as this is not checked at compile time, you run the risk of having runtime errors. 
+https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/databases/
+The TodoItemDatabase constructor is shown below:
+This approach creates a single database connection that is kept open while the application runs, therefore avoiding the expense of opening and closing the database file each time a database operation is performed.
+The remainder of the TodoItemDatabase class contains SQLite queries that run cross-platform. Example query code is shown below (more details on the syntax can be found in the Using SQLite.NET article):"
+1.0,2019-05-02 09:45:23.013000+00:00," returns two values, which cannot be stored in a single variable 'values', so instead make  return a  of those two values
+You don't need  since it will get overridden anyways by "
+2.0,2015-03-27 19:15:37.530000+00:00,Like this.
+4.0,2017-09-28 08:15:43.270000+00:00,"Not the perfect answer but works better for people using Github:
+Go to your repo: "
+0.0,2015-10-07 06:01:49.807000+00:00,"You can implement  to resize your list when you switch tabs (note: it should work by default though):
+iron-list lays out the items when it receives a notification via the resize event. This event is fired by any element that implements IronResizableBehavior.
+By default, elements such as iron-pages, paper-tabs or paper-dialog will trigger this event automatically. If you hide the list manually (e.g. you use display: none) you might want to implement IronResizableBehavior or fire this event manually right after the list became visible again. e.g."
+433.0,2015-07-11 16:04:12.660000+00:00,"This is not programmatically but I think it could help a lot of people anyway.
+I tried a lot and the most efficient way was to add this lines to my ProgressBar in the .xml File:
+So in the end this code did it for me:
+This solution works for API 21+"
+0.0,2016-12-28 06:52:37.553000+00:00,Change your onBindViewHolder() as below. Then it will solve your issue.
+0.0,2017-11-16 18:23:14.943000+00:00,You could reduce the solution values on all threads using the  operator:
+1.0,2019-03-12 05:22:20.100000+00:00,Try this :
+0.0,2017-07-04 15:33:27.443000+00:00,"You need to share more details on what the exact error is. Start by figuring out, what the sub status code really is? whether it is 403.7 or 403.13 or something else
+You can enable the logging for the site hosted on the web role and check what is the sub-status code (403.??). 
+Also you mentioned that the client is an Azure Web Site, so I guess you can enable System.Net tracing to gather more details and share it here. Add the following on the client web app's web.config."
+0.0,2019-07-25 05:13:32.480000+00:00,"Simple function with no error handling that seems to be what you're after. 
+ = 
+ = "
+1.0,2017-01-20 06:29:54.073000+00:00,"Seems you're on the wrong path...
+Templates are used to generate different result files, based on input data.
+You are not supposed to  templates locally.
+Modify your  template to have:
+Then in your playbook:
+This way  at target host will have appropriate value."
+24.0,2018-05-11 16:13:49.577000+00:00," is just a convenient helper to get the widget tree rebuilt when a Future completes.
+You can use
+or 
+The main limitation is that you can't return the value directly to the caller without a , because there is no way to get back from async execution to sync execution."
+0.0,2016-02-04 13:48:41.583000+00:00,don't use the back code in front of each line.. that's a mistake. and I am too lazy to remove it.
+0.0,2017-09-15 12:28:14.990000+00:00,I should probably not hold my breath for the explanation :)
+0.0,2016-11-19 05:46:37.910000+00:00,I am not understanding the difference in your example. How would you transform bob@rogers_com to bob@rogers.com?
+0.0,2016-04-26 03:18:47.623000+00:00,"I tried combining the two arguments, can you please have a look here: http://stackoverflow.com/questions/36854379/using-wordpress-authentication-while-checking-is-user-is-an-administrator"
+0.0,2020-11-06 14:38:41.073000+00:00,Converting the `msg` to a string with `str()` did the trick!
+1.0,2019-12-06 03:37:30.063000+00:00,"Ahh. That makes sense. 
+I'll get to work on it. Thank you."
+0.0,2018-09-28 15:25:16.413000+00:00,":) I guess the php approach is not ideal. As suggested by Ramraider, the Javascript approach works great."
+0.0,2016-06-10 02:57:59.127000+00:00,"I looked into `SocketTextStreamFunction` implementation and came up with the below strategy for my use case. Do you think this is the way to go?
+1. Each vote from the participant is sent as a single event to my `SourceFunction`.
+2. When the host user closes a vote, a special event that contains a terminate signal in its payload is sent to my `SourceFunction`, which causes it to drop out of `run` method.
+3. My window should have an additional trigger that fires upon accepting the terminate event so as not to lose data."
+0.0,2017-12-20 04:25:31.670000+00:00,"Thanks! I was able to get the ""titles"" section working with:
+    section#titles {
+        background-color: lightblue !important;
+    }"
+0.0,2019-02-07 09:47:28.723000+00:00,"Could you please share what you did here:
+""Once I update the worker node security groups to allow cross communication the dns started working""
+I think I am facing a similar issue."
+0.0,2015-09-12 15:03:17.203000+00:00,"Look at your answer, you are passing a parameter... If you just copy-paste random stuff from the doc without showing how this is useful to the question, this is a bad answer anyway. And I maintain your answer is wrong. Try removing your parameter, put this method on a non-generic abstract class, and implement the method with two different return type in two subclasses. This is impossible, try it. The parent class has to be generic. What you have shown indeed exists but is not relevant in this case"
+0.0,2015-06-27 14:14:33.310000+00:00,Why not? Do you run doxygen by yourself or do you simply get the .html files?
+0.0,2016-05-15 07:26:21.347000+00:00,"@alecxe That's why I wrote ""as often as possible"" in my original post."
+0.0,2019-10-10 23:33:56.097000+00:00,"I thought about that, but this is the most complex case. The values are already well optimized such that the other similar tests I perform are trivial."
+0.0,2019-02-04 10:29:12.257000+00:00,Thanks for the clarification. There would be no difference if you're not using doc_values. I have edited the answer with further explanation.
+0.0,2017-06-05 08:55:46.790000+00:00,Just noticed that some error codes are shown blank though it has values in it. Please help in checking it...
+0.0,2015-07-01 12:37:06.843000+00:00,this comes close but its not working yet. The _popoverText is a variable thats undeclared at this point ?
+0.0,2020-10-30 22:46:59.900000+00:00,This default values are very tricky. In order to trigger default value you have to post null value. DateTime by default has a very strange date so you have to change your class property to DateTime? or assign the real value before adding.
+2.0,2016-08-31 12:00:35.950000+00:00,The 'useful' edit is not useful at all - it's identical to the original `return View(id);` code
+0.0,2015-10-08 07:21:32.043000+00:00,"use this link [link](http://stackoverflow.com/questions/9280654/c-printing-bits), [link](http://stackoverflow.com/questions/1024389/print-an-int-in-binary-representation-using-c), [link](http://stackoverflow.com/questions/6373093/how-to-print-binary-number-via-printf)"
+0.0,2019-01-25 14:28:06.733000+00:00,Answer updated as your need kindly view **Edit** section and let me know
+0.0,2019-04-11 22:54:42.347000+00:00,"@HasnainKahn I updated my answer one more time, now it should work"
+0.0,2015-05-10 00:50:52.643000+00:00,"Ya I'm gonna throw in all the exception checks, just wanted to get the base down. Thanks for the help."
+0.0,2018-07-02 14:26:37.963000+00:00,But then why should the OP call `example` at all if it is already known that the process has to be canceled?
+0.0,2017-09-07 17:54:53.120000+00:00,The code uses a session request and that needs to be preserved until the end of the code. When you typed it line by line there is a huge chance that the session will break somewhere in the middle.
+1.0,2019-05-01 21:49:01.373000+00:00,I meant to put MSE or R^2. They indeed are not one in the same.
+0.0,2016-02-01 09:09:27.380000+00:00,"SO, in order to actually change the initial data of the application, I need to wipe my database ?"
+0.0,2015-03-10 09:47:38.537000+00:00,"Well, csv files from Excel are always going to be ANSI I think.  Of course, you might not know which ANSI code page.  Auto detecting encoding is in general impossible to get exactly correct.  I don't really want to give you any more advice because I don't know your problem in detail. I don't know where the files come from, whether it is practical to ask the user to specify encoding and so on."
+0.0,2021-01-16 13:51:22.027000+00:00,"-1. This is a very bad answer. The text field state is owned by text field element! You should not duplicate it in the main element - this is a very bad design and causes issues above. Instead use inputRef={this.textFieldRef). Now the text content is under this.textFieldRef.current.value, you can set and read it as you wish."
+0.0,2018-08-15 18:00:53.953000+00:00,There may be something wrong with accessing the Ubuntu servers in general from your location. You may want to check if there's any firewall or proxy that blocks this access.
+0.0,2019-02-05 09:52:09.993000+00:00,"Thanks @MarcoS
+Whenever I use an echo command I was getting the username in the output.
+But when I use the curl command directly without echo command it gives me the output as ""username"":[Enter a valid username]"
+0.0,2019-07-22 17:46:00.973000+00:00,yeah try it and let everyone know. Mark  the answer if it works
+0.0,2017-11-05 05:43:59.687000+00:00,"If you remove escaping, it should be a bit faster than @guest271314 solution. Actually his solution should have the escaping too."
+0.0,2016-10-04 11:30:28.387000+00:00,"i still can input character like a, b, c"
+0.0,2018-02-14 16:27:30.490000+00:00,I would like to keep the Pandas constructor because I use extensively the `secondary_y` argument of plot to show multiple times series...
+0.0,2016-05-24 06:21:28.240000+00:00,"More about pivot table  here:
+http://laraveldaily.com/pivot-tables-and-many-to-many-relationships/
+Now in laravel we can easily get the records from the pivot table using its parent relation/model. But we cant easily get record directly from the pivot table. Thats what I want to do. I think i should make a model and try with that. 
+Thanks."
+0.0,2017-07-29 04:53:36.730000+00:00,@WillemVanOnsem: Brilliant supplement. It makes scene now. Thanks a lot.
+2.0,2017-03-04 22:53:58.163000+00:00,"This is right. [`Sprite.pivot`](https://docs.unity3d.com/ScriptReference/Sprite-pivot.html) is returned in pixels and needs `ScreenToWorldPoint` to convert it to a normal world pos. Depending on what OP is doing, OP may also have to convert the world pos to the local position of the Sprite with [`InverseTransformPoint`](https://docs.unity3d.com/ScriptReference/Transform.InverseTransformPoint.html)."
+1.0,2019-07-13 17:56:01.987000+00:00,"That makes sense. But this means, that the ""day"" part of a `Period` can be anything between Integer.MIN_VALUE and Integer.MAX_VALUE making some quite interesting constellations possible even after normalization, right? (I.e., if your API accepts `Period` objects, you must essentially sanity-check them?)"
+0.0,2017-07-14 06:39:46.850000+00:00,"@Intem ,we can do lot of things to optimize the site, there very good article in the this site  https://varvy.com/pagespeed/"
+0.0,2015-04-24 20:20:49.767000+00:00,"Plus, I hope you realize that you want to use * to compute commission vs /.  Image you sold a $200 item.  If you divide, then with 0.05 %, you would get $4000 commission.  You should be multiplying."
+0.0,2017-03-18 05:48:14.980000+00:00,Edited the answer to include another option
+0.0,2015-08-26 09:48:58.567000+00:00,"Yes, is the solution (please fixed your answer)."
+0.0,2015-01-27 21:10:33.217000+00:00,"This would be a manual process. It comes with the territory of the architecture - it's a datastore, not a database, so you need to come up with your own indexing strategy.
+In your case, if you have 2 tables you're joining, you may want to consider creating a third table optimized for the query you're trying to do."
+0.0,2014-11-20 09:35:59.597000+00:00,"There are two options: if you use `ColumnText` in *text mode*, you can define the alignment at the level of the column. If you use `ColumnText` in *composite mode*, you should wrap the `Chunk` inside a `Phrase` or `Paragraph` and define the alignment at the level of that element. You can not define an alignment at the level of the `Chunk` object."
+0.0,2015-07-25 03:57:16.543000+00:00,"Thank you Warren. This is the answer what I would like to,"
+0.0,2020-10-22 16:31:56.623000+00:00,Thank you. it works and i also found another way to make it works as well.
+0.0,2015-07-17 18:11:13.010000+00:00,I posted code. Not sure when It is not working with what i have currently written.
+0.0,2020-10-20 10:43:57.727000+00:00,the same happens for me to following this solution: `proton._exceptions.SSLUnavailable: amqps: SSL libraries not found`
+0.0,2017-07-25 13:49:53.530000+00:00,"Thanks, do you have any suggestions as for https://stackoverflow.com/questions/45292024/mocha-sinon-unit-tests-for-chained-promise?"
+0.0,2020-09-14 10:25:22.770000+00:00,"This does not provide an answer to the question. Once you have sufficient [reputation](https://stackoverflow.com/help/whats-reputation) you will be able to [comment on any post](https://stackoverflow.com/help/privileges/comment); instead, [provide answers that don't require clarification from the asker](https://meta.stackexchange.com/questions/214173/why-do-i-need-50-reputation-to-comment-what-can-i-do-instead). - [From Review](/review/low-quality-posts/27158327)"
+0.0,2015-12-04 04:16:52.603000+00:00,"I just wanted to help, and i am happy that you solved the problem!!"
+0.0,2016-06-08 20:29:46.117000+00:00,"Aaaaah makes sense! Thanks, this solved the problem! :-)"
+1.0,2020-11-05 21:46:15.963000+00:00,"Actually, it was the labels I was thinking about - I have no outlets for them.  Yes, everything else does have an outlet.  I could use tags on the labels and outlets for everything else."
+0.0,2017-12-30 09:59:02.190000+00:00,"I tried to add register it before `flowHandler.start` like you but not working `context.register(""model"",mymodel);`  and also returned by null"
+0.0,2018-05-17 13:12:29.003000+00:00,"sir. thank you.. .filterDiv {
+  float: left;
+  background-color: #ffffff;
+  color: #ffffff;
+  width: 450px;
+  text-align: center;
+  margin: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  border:2.5px solid #0f2f16;
+}"
+0.0,2017-08-06 12:15:48.003000+00:00,Strange. what even more strange that mvn works fine now... I will look in to it.
+0.0,2017-01-31 08:39:55.897000+00:00,You can use https://github.com/daimajia/AndroidImageSlider if you want it specifically for Image sliding.
+0.0,2017-09-05 13:02:48.050000+00:00,"well, it's a different package and class (don't have SQLiteAsyncConnection) but I think I can spot there that you simple use regular LINQ expressions on the DB object. I will try it to see if this works."
+0.0,2015-03-27 19:19:15.113000+00:00,But the OP is actually adding `Form` into `List`
+0.0,2019-01-09 17:22:54.337000+00:00,@esseara  I'm a big hugger too :)) You are welcome :D
+0.0,2015-10-07 07:51:34.917000+00:00,"document.querySelector('iron-list') returns null, how do i access the same?"
+0.0,2018-06-15 20:40:28.647000+00:00,"It is a good answer, just use @TargetApi anotation in the method that change the color so when it is less API 21 it doesn't crash"
+0.0,2016-12-28 08:01:57.063000+00:00,"before 'mChildEventListener = new ChildEventListener() ' use a class level boolean variable and set it to true. 
+like  private 'boolean isFirstTime= true; ' 
+and in 'public void onChildAdded(DataSnapshot dataSnapshot, String s)
+{   if (isFirstTime) {
+                isFirstTime= false;
+                return;
+            }
+//rest of ur code
+}"
+0.0,2017-11-16 19:29:56.913000+00:00,I think the `solution = false` branches are wrong. Also there's still two race conditions (note how `row`/`col` is the same for each thread).
+0.0,2019-07-25 05:16:56.313000+00:00,"Note this assumes that you want to start counting hours from the beginning of the provided day, but that can be changed easily if that's not the case.    (Instead of checking hours < 24, just check if the end date is different to the start and it will work from any time that is passed in)"
+0.0,2017-01-21 08:37:20.467000+00:00,There was a typo in a single quote after DevMaster1
+0.0,2018-05-11 18:40:35.123000+00:00,"You can't access servers over the network sync and if you could, this would block the UI until the response arrives."

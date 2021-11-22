@@ -1,0 +1,466 @@
+score,creation_date,body
+0.0,2008-08-09 00:05:04.847000+00:00,"Regarding Kevin's idea of passing the parameter to a function that splits the text into a table, here's my implementation of that function from a few years back. Works a treat.
+Splitting Text into Words in SQL"
+-4.0,2008-08-09 00:29:38.633000+00:00,"Yes, there are differences between the two.
+Both are anonymous functions and execute in the exact same way. But, the difference between the two is that in the second case scope of the variables is restricted to the anonymous function itself. There is no chance of accidentally adding variables to the global scope.
+This implies that by using the second method, you are not cluttering up the global variables scope which is good as these global variable values can interfere with some other global variables that you may use in some other library or are being used in a third party library.
+Example:
+In the above code the output is something like:
+  Hello Inside Function
+  Hello Outside Function
+  World Inside Function
+... then, you get an error as 'b' is not defined outside the function!
+Thus, I believe that the second method is better... safer!"
+29.0,2008-08-09 00:46:46.260000+00:00,"It's a ""quirk"" in the way the JVM looks up the zoneinfo file.  See Bug ID 6456628.
+The easiest workaround is to make /etc/localtime a symlink to the correct zoneinfo file.  For Pacific time, the following commands should work:
+I haven't had any problems with the symlink approach.
+Edit: Added ""sudo"" to the commands."
+0.0,2008-08-09 01:01:17.587000+00:00,"It may help to double-check the timezone rules your OS is using.
+This file should contain your daylight savings rules, like this one for the year 2080:
+You can compare this with the timezone rules you think you should be using. They can be found in /usr/share/zoneinfo/."
+14.0,2008-08-09 01:03:18.317000+00:00,"The result of a DCT is a transformation of the original source into the frequency domain. The top left entry stores the ""amplitude"" the ""base"" frequency and frequency increases both along the horizontal and vertical axes. The outcome of the DCT is usually a collection of amplitudes at the more usual lower frequencies (the top left quadrant) and less entries at the higher frequencies. As lassevk mentioned, it is usual to just zero out these higher frequencies as they typically constitute very minor parts of the source. However, this does result in loss of information. To complete the compression it is usual to use a lossless compression over the DCT'd source. This is where the compression comes in as all those runs of zeros get packed down to almost nothing.
+One possible advantage of using the DCT to find similar regions is that you can do a first pass match on low frequency values (top-left corner). This reduces the number of values you need to match against. If you find matches of low frequency values, you can increase into comparing the higher frequencies.
+Hope this helps"
+2.0,2008-08-09 01:12:26.863000+00:00,"Well, I don't really have an expert opinion on this.
+I usually end up using closures based approach just because it keeps the code simpler to manager. But, I have found myself using prototypes for methods that have loads of lines of code."
+5.0,2008-08-09 01:12:37.393000+00:00,"I occasionally get similar things, usually with files that nobody has been near in weeks. Generally, if you know you haven't been working in the directory in question, you can just delete the directory with the problem and run 
+to recreate it.
+If you have live changes in the directory then as lassevk and you yourself suggested, a more careful approach is required.
+Generally speaking I would say it's a good idea not to leave edited files uncommitted, and keep the working copy tidy - don't add a whole bunch of extra files into the working copy that you aren't going to use. Commit regularly, and then if the working copy goes tits up, you can just delete the whole thing and start over without worrying about what you might or might not be losing, and without the pain of trying to figure out what files to save."
+0.0,2008-08-09 01:28:45.113000+00:00,"Sorry, but what could lead for a need to replicated the exact same build in the future?
+In my experience, either you keep your product installers safe or start a new build from scratch.
+Also IMO the only way to replicated the exact same build in the future is to run your build machine on a Virtual Machine and keep the VM backup around.
+I think that most softwares you will need to replicate the exact same build in the future will not be available anymore, so you will need to keep a copy of every software versio you install in this machine.
+Could you be more specific about the problem you are trying to solve?"
+1.0,2008-08-09 01:29:33.537000+00:00,Use an explicit stack instead.
+2.0,2008-08-09 01:32:17.120000+00:00,"You also have the choice of:
+Which is probably just as slow as example two, but it looks more like Java/C# and is a bit more explicit."
+4.0,2008-08-09 01:37:07.920000+00:00,"I'd just let him write tons of code. Let him drive in everything you guys do, and just be available to answer questions.
+Believe it or not, after a few months of writings tons of crappy code, he'll start to get the idea and start writing better programs. At that point, you can get bogged down in details (memory, etc), and also talk about general design principles.
+I've heard that what separates the great artists from the mediocre ones, is that every time they practice, they improve on something, no matter how small. Let your brother practice, and he'll improve every time he sits down at the keyboard.
+  Edit: [Justin Standard]
+  
+  Esteban, this reminds me of a recent coding horror post, and I do think you are right.  But I think its still worthwhile to find methods to guide his practice.  No question, I want him writing as much code as he knows how to do.  Thats one reason I'm asking for sample projects."
+10.0,2008-08-09 02:05:33.840000+00:00,"Assigning functions to the prototype is better (for public methods) because all instances of the class will share the same copy of the method. If you assign the function inside the constructor as in the second example, every time you create a new instance, the constructor creates a new copy of the length function and assigns it to just that one instance.
+However this latter technique is useful if you want each copy to have it's own copy, the main use of that being to do private/privileges methods which have access to private variables declared inside the constructor and inherited via the closure mechanism.
+Douglas Crockford has a good summary."
+3.0,2008-08-09 02:09:04.673000+00:00,"Fortunately I get to use prototype.js, which provides some nice wrappers. So you can do this:
+ Documentation: Defining classes and inheritance"
+7.0,2008-08-09 02:10:12.800000+00:00,App_Data folder on the root of the project. It isn't served to web requests; so other people can't snoop for it.
+0.0,2008-08-09 02:17:38.293000+00:00,"  Is there anything about WinForms 3.0 that is so much better than in 1.1
+I don't know about 3.0, but you can write code in VS 2008 which runs on the .NET 2.0 framework. (So, you get to use the latest C# language, but you can only use the 2.0 libraries)
+This gets you Generics ( instead of those GodAwful ArrayLists) and a ton of other stuff, you'll literally end up writing 3x less code."
+3.0,2008-08-09 02:20:29.597000+00:00,"They both create a closure by executing the code block. As a matter of style I much prefer the second for a couple of reasons:
+It's not immediately obvious by glancing at the first that the code will actually be executed; the line looks like it is creating a new function, rather than executing it as a constructor, but that's not what's actually happening. Avoid code that doesn't do what it looks like it's doing!
+Also the  ...  make nice bookend tokens so that you can immediately see that you're entering and leaving a closure scope. This is good because it alerts the programmer reading it to the scope change, and is especially useful if you're doing some postprocessing of the file, eg for minification."
+0.0,2008-08-09 02:21:32.853000+00:00,"Is there a way to implement a sealed class from an interface... and mock the interface instead?
+Something in me feels that having sealed classes is wrong in the first place, but that's just me :)"
+1.0,2008-08-09 02:23:54.160000+00:00,"I was taught by learning how to solve problems in a language agnostic way using flowcharts and PDL (Program Design Language).  After a couple weeks of that, I learned to convert the PDL I had written to a language.  I am glad I learned that way because I have spent the majority of my years programming, solving problems without being tied to a language.  What language I use has always been an implementation detail and not part of the design. 
+Having to solve the problem by breaking it down into it's basic steps is a key skill.  I think it is one of the things that separates those that can program from those that can't.
+As far as how you tackle the order of concepts of a language I believe the easiest way is to decide that is to have a project in mind and tackle the concepts as they are needed.  This lets you apply them as they are needed on something that you are interested in doing.  When learning a language it is good to have several simple projects in mind and a few with progressive complexity.  Deciding on those will help you map out the concepts that are needed and their order."
+2.0,2008-08-09 02:29:48.110000+00:00,"They each break when dropped from the same height, or are they different?
+If they're the same, I go to the 50th floor and drop the first marble.  If it doesn't break, I go to the 75th floor and do the same, as long as it keeps not breaking I keep going up by 50% of what's left.  When it does break, I go back to one higher than where I was previously (so if it broke at the 75th floor I go back to the 51st floor) and drop the second marble and move up a floor at a time until it breaks, at which point I know the highest floor I can drop from with no marble breakage.
+Probably not the best answer, I'm curious to see how others answer."
+5.0,2008-08-09 02:31:13.537000+00:00,"Ruby unfortunately is a bit different. 
+PS: My memory is a bit hazy on this so apologies if I'm wrong
+instead of break/continue, it has break/next, which behave the same in terms of loops
+Loops (like everything else) are expressions, and ""return"" the last thing that they did. Most of the time, getting the return value from a loop is pointless, so everyone just does this
+You can however do this
+HOWEVER, a lot of ruby code 'emulates' a loop by using a block.
+The canonical example is
+As it is much more common for people to want to do things with the result of a block, this is where it gets messy.
+break/next mean different things in the context of a block.
+break will jump out of the code that called the block
+next will skip the rest of the code in the block, and 'return' what you specify to the caller of the block. This doesn't make any sense without examples.
+So yeah. Ruby is awesome, but it has some awful corner-cases. This is the second worst one I've seen in my years of using it :-)"
+1.0,2008-08-09 02:37:41.760000+00:00,"I'm personally not very big a fan of such puzzle questions, I prefer actual programming exercises in interviews.
+That said, first it would depend on if I can tell if they are broken or not from the floor I am dropping them at.  I will presume I can.
+I would go up to the second floor, drop the first marble.  If it broke I would try the first floor.  If that broke I would know it was no floor.
+If the first didn't break, I would go to the 4th floor and drop from there.  If that broke, I would go back down and get the other marble, then drop at the 3rd floor, breaking or not I would know which is the limit.
+If neither broke, I would go get both, and do the same process, this time starting at the 6th floor.
+This way, I can skip every other floor until I get a marble that breaks.
+This would be optimized for if the marble breaks early... I suppose there is probably an optimal amount of floors I could skip to get the most for each skip... but then if one breaks, I would have to check each floor individually from the first floor above the last known floor... which of course would be a pain if I skipped too many floors (sorry, not going to figure out the optimal solution right now).
+Ideally, I would want a whole bag of marbles, then I could use a binary search algorithm and divide the number of floors in half with each drop... but then, that wasn't the question, was it?"
+11.0,2008-08-09 02:38:02.883000+00:00,"The reason is that a generic class like  is, for most purposes, treated externally as a normal class. e.g. when you say  the compiler says  (which contains strings). [Technical folk: this is an extremely plain-English-ified version of what's going on]
+Consequently, obviously the compiler can't be smart enough to convert a ListString to a ListObject by casting the items of its internal collection.
+That's why there's extension methods for IEnumerable like Convert() that allow you to easily supply conversion for the items stored inside a collection, which could be as simple as casting from one to another."
+2.0,2008-08-09 02:40:56.653000+00:00,"I think the real question is how accurate do you want the answer.  Because your efficiency is going to really depend on that.
+I'm going to agree with Justin if you want 100% accuracy on the marbles then once the first marble breaks your going to have to go up 1 floor at a time from the last known ""good"" floor until you find out which floor is the ""winner.""  Maybe even throw in some statistics and start at the 25th floor instead of the 50th floor so that you're worst case scenario would be 24 instead of 49.
+If you're answer can be plus or minus a floor or two then there could be some optimizations.
+Secondly, does walking up/down the stairs count against your efficiency?  In that case always drop both marbles and pick up both marbles on every up/down trip."
+52.0,2008-08-09 02:45:43.070000+00:00,"The interesting thing here is how you can do it in the least amount of drops possible. Going to the 50th floor and dropping the first would be disastrous if the breaking floor is the 49th, resulting in us having to do 50 drops. We should drop the first marble at floor n, where n is the max amount of drops required. If the marble breaks at floor n, we may have to make n-1 drops after that. If the marble doesn't break we go up to floor 2n-1 and if it breaks here we have to drop the second marble n-2 times in the worst case. We continue like this up to the 100th floor and try to break it at 3n-2, 4n-3....
+and n+(n-1)+(n-2)+...1 &lt;=100
+n=14 Is the maximum drops required"
+18.0,2008-08-09 02:49:25.903000+00:00,"I remember reading an article that may be of help to you: Cheney on the M.T.A. :-)
+Some implementations of Scheme I know of, such as SISC, allocate their call frames on the heap.
+@ollie: You don't need to do the hoisting if all your call frames are on the heap. There's a tradeoff in performance, of course: the time to hoist, versus the overhead required to allocate all frames on the heap. Maybe it should be a tunable runtime parameter in the interpreter. :-P"
+39.0,2008-08-09 02:50:14.903000+00:00,"Think of it this way, if you were to do such a cast, and then add an object of type Foo to the list, the list of strings is no longer consistent.  If you were to iterate the first reference, you would get a class cast exception because once you hit the Foo instance, the Foo could not be converted to string!
+As a side note, I think it would be more significant whether or not you can do the reverse cast:
+I haven't used C# in a while, so I don't know if that is legal, but that sort of cast is actually (potentially) useful.  In this case, you are going from a more general class (object) to a more specific class (string) that extends from the general one.  In this way, if you add to the list of strings, you are not violating the list of objects.
+Does anybody know or can test if such a cast is legal in C#?"
+5.0,2008-08-09 02:51:15.417000+00:00,My Apache had something like this in httpd.conf. Just change the ErrorLog and CustomLog settings 
+3.0,2008-08-09 02:53:18.237000+00:00,"Mike - I believe contravariance isn't allowed in C# either
+See Generic type parameter variance in the CLR for some more info."
+1.0,2008-08-09 02:55:01.947000+00:00,"Patrick is correct, the only way you can really do this is to use an explicit stack in your interpreter, and hoist the appropriate segment of stack into the heap when you need to convert to a continuation.
+This is basically the same as what is needed to support closures in languages that support them (closures and continuations being somewhat related)."
+6.0,2008-08-09 02:58:26.463000+00:00,"This has a lot to do with covariance, e.g., generic types are considered as parameters, and if the parameters do not resolve properly to a more specific type then the operation fails. The implication of such is that you really cannot cast to a more general type like object. And as stated by Rex, the List object won't convert each object for you.
+You might want to try the ff code instead:
+or:
+ol will (theoretically) copy all the contents of sl without problems."
+7.0,2008-08-09 03:00:11.030000+00:00,"FLOSS Weekly
+Pragmatic Podcasts
+Rails Envy
+Webdev Radio"
+36.0,2008-08-09 03:07:44.337000+00:00,"If you're using .NET 3.5 have a look at the Enumerable.Cast method. It's an extension method so you can call it directly on the List.
+It's not exactly what you asked for but should do the trick.
+Edit: As noted by Zooba, you can then call ol.ToList() to get a List"
+6.0,2008-08-09 03:21:59.923000+00:00,Scrum because it shows where the slackers are. It also identifies much faster that the business unit usually doesn't have a clue what they really want delivered
+7.0,2008-08-09 03:22:14.510000+00:00,"Git also makes branching and merging really easy. Subversion 1.5 just added merge tracking, but Git is still better. With Git branching is very fast and cheap. It makes creating a branch for each new feature more feasible. Oh and Git repositories are very efficient with storage space as compared to Subversion."
+2.0,2008-08-09 03:28:43.640000+00:00,"If you you use session_set_save_handler() you can set your own session handler. For example you could store your sessions in the database. Refer to the php.net comments for examples of a database session handler.
+DB sessions are also good if you have multiple servers otherwise if you are using file based sessions you would need to make sure that each webserver had access to the same filesystem to read/write the sessions."
+7.0,2008-08-09 03:39:44.600000+00:00,"I've been involved with quite a few organisations which claimed to work in an 'agile' way, and their processed usually seemed to be base on XP (extreme programming), but none of them ever followed anywhere near all the practices.
+That said, I can probably comment on a few of the XP practices
+Unit testing seems to prove very useful if it's done from the start of a project, but it seems very difficult to come into an existing code-base and start trying to add unit tests. If you get the opportunity to start from scratch, test driven development is a real help.
+Continuous integration seems to be a really good thing (or rather, the lack of it is really bad). That said, the organisations I've seen have usually been so small as to make any other approach seem foolish.
+User story cards are nice in that it's great to have a physical object to throw around for prioritisation, but they're not nearly detailed enough unless your developer really knows the domain, or you've got an onsite customer (which I've never actually seen).
+Standup meetings tend to be really useful for new team members to get to know everyone, and what they work on. The old hands very quickly slack off, and just say things like 'I'm still working on X', which they've been doing for the past week - It takes a strong leader to force them to delve into details.
+Refactoring is now a really misused term, but when you've got sufficient unit tests, it's really useful to conceptually separate the activity of 'changing the design of the existing code without changing the functionality' from 'adding new functionality'"
+6.0,2008-08-09 03:48:10.417000+00:00,"Objective-C uses Reference Counting, which means each Object has a reference count. When an object is created, it has a reference count of ""1"". Simply speaking, when an object is referred to (ie, stored somewhere), it gets ""retained"" which means its reference count is increased by one. When an object is no longer needed, it is ""released"" which means its reference count is decreased by one.
+When an object's reference count is 0, the object is freed. This is basic reference counting.
+For some languages, references are automatically increased and decreased, but objective-c is not one of those languages. Thus the programmer is responsible for retaining and releasing.
+A typical way to write a method is:
+The problem of needing to remember to release any acquired resources inside of code is both tedious and error-prone. Objective-C introduces another concept aimed at making this much easier: Autorelease Pools. Autorelease pools are special objects that are installed on each thread. They are a fairly simple class, if you look up NSAutoreleasePool.
+When an object gets an ""autorelease"" message sent to it, the object will look for any autorelease pools sitting on the stack for this current thread. It will add the object to the list as an object to send a ""release"" message to at some point in the future, which is generally when the pool itself is released.
+Taking the code above, you can rewrite it to be shorter and easier to read by saying:
+Because the object is autoreleased, we no longer need to explicitly call ""release"" on it. This is because we know some autorelease pool will do it for us later.
+Hopefully this helps. The Wikipedia article is pretty good about reference counting. More information about autorelease pools can be found here. Also note that if you are building for Mac OS X 10.5 and later, you can tell Xcode to build with garbage collection enabled, allowing you to completely ignore retain/release/autorelease."
+6.0,2008-08-09 03:59:35.683000+00:00,"Joshua (#6591) - The Garbage collection stuff in Mac OS X 10.5 seems pretty cool, but isn't available for the iPhone (or if you want your app to run on pre-10.5 versions of Mac OS X).
+Also, if you're writing a library or something that might be reused, using the GC mode locks anyone using the code into also using the GC mode, so as I understand it, anyone trying to write widely reusable code tends to go for managing memory manually."
+1.0,2008-08-09 04:12:31.290000+00:00,"We had an app that relied heavily on the PHP 4 XML DOM functions and it required a lot of retooling to change over PHP 5.
+Beyond that most changes were improvements to things like error handling (to take advantage of exceptions) and PHP Classes."
+4.0,2008-08-09 04:25:46.537000+00:00,"NilObject's answer is a good start. Here's some supplemental info pertaining to manual memory management (required on the iPhone).
+If you personally  an object, it comes with a reference count of 1. You are responsible for cleaning up after it when it's no longer needed, either by calling  or . release cleans it up right away, whereas autorelease adds the object to the autorelease pool, which will automatically release it at a later time. 
+autorelease is primarily for when you have a method that needs to return the object in question (so you can't manually release it, else you'll be returning a nil object) but you don't want to hold on to it, either.
+If you acquire an object where you did not call alloc/init to get it -- for example:
+but you want to hang on to this object, you need to call [foo retain]. Otherwise, it's possible it will get  and you'll be holding on to a nil reference (as it would in the above  example). When you no longer need it, call ."
+148.0,2008-08-09 04:40:49.250000+00:00,"Let's start with  and ;  is really just a special case once you understand the basic concepts.  
+In Cocoa, each object keeps track of how many times it is being referenced (specifically, the  base class implements this).  By calling  on an object, you are telling it that you want to up its reference count by one.  By calling , you tell the object you are letting go of it, and its reference count is decremented.  If, after calling , the reference count is now zero, then that object's memory is freed by the system.
+The basic way this differs from  and  is that any given object doesn't need to worry about other parts of the system crashing because you've freed memory they were using.  Assuming everyone is playing along and retaining/releasing according to the rules, when one piece of code retains and then releases the object, any other piece of code also referencing the object will be unaffected.
+What can sometimes be confusing is knowing the circumstances under which you should call  and .  My general rule of thumb is that if I want to hang on to an object for some length of time (if it's a member variable in a class, for instance), then I need to make sure the object's reference count knows about me.  As described above, an object's reference count is incremented by calling .  By convention, it is also incremented (set to 1, really) when the object is created with an ""init"" method.  In either of these cases, it is my responsibility to call  on the object when I'm done with it.  If I don't, there will be a memory leak.
+Example of object creation:
+Now for .  Autorelease is used as a convenient (and sometimes necessary) way to tell the system to free this object up after a little while.  From a plumbing perspective, when  is called, the current thread's  is alerted of the call.  The  now knows that once it gets an opportunity (after the current iteration of the event loop), it can call  on the object.  From our perspective as programmers, it takes care of calling  for us, so we don't have to (and in fact, we shouldn't).
+What's important to note is that (again, by convention) all object creation class methods return an autoreleased object.  For example, in the following example, the variable ""s"" has a reference count of 1, but after the event loop completes, it will be destroyed.
+If you want to hang onto that string, you'd need to call  explicitly, and then explicitly  it when you're done.
+Consider the following (very contrived) bit of code, and you'll see a situation where  is required:
+I realize all of this is a bit confusing - at some point, though, it will click.  Here are a few references to get you going:
+Apple's introduction to memory management.
+Cocoa Programming for Mac OS X (4th Edition), by Aaron Hillegas - a very well written book with lots of great examples.  It reads like a tutorial.
+If you're truly diving in, you could head to Big Nerd Ranch.  This is a training facility run by Aaron Hillegas - the author of the book mentioned above.  I attended the Intro to Cocoa course there several years ago, and it was a great way to learn."
+4.0,2008-08-09 04:44:41.740000+00:00,XML User Interface Language. Don't know much about it so not sure if it meets your desires. Post back with your experience if you play with it.
+8.0,2008-08-09 04:44:49.710000+00:00,"I also once worked on an app which used PHP4's XML support quite heavily, and would have required quite a bit of work to move to PHP5.
+One of the other significant changes I was looking at at the time was the change of the default handling of function parameters. In PHP4 if I remember, they were pass-by-copy unless you specified otherwise, but in PHP5 is changed to pass-by-reference by default. In well written code, that probably won't make a big difference to you, but it could certainly cause problems.
+I think one other thing I found changed is that objects are no longer allowed to overwrite their 'this' field. I would say that was a really bad idea to begin with (and I think it may have not been an intentional feature in PHP4), but I certainly found a few parts of our system that relied on it.
+Hope some of that helps."
+66.0,2008-08-09 04:49:02.557000+00:00,I really really like DejaVu Sans Mono. It is very clean and easy on the eyes.
+41.0,2008-08-09 04:51:59.773000+00:00,"Pros of config file:  
+Easy to do. Don't need to know any Windows API calls. You just need to know the file I/O interface of your programming language.  
+Portable. If you port your application to another OS, you don't need to change your settings format.  
+User-editable. The user can edit the config file outside of the program executing.
+Pros of registry:  
+Secure. The user can't accidentally delete the config file or corrupt the data unless he/she knows about regedit. And then the user is just asking for trouble.  
+I'm no expert Windows programmer, but I'm sure that using the registry makes it easier to do other Windows-specific things (user-specific settings, network administration stuff like group policy, or whatever else).
+If you just need a simple way to store config information, I would recommend a config file, using INI or XML as the format. I suggest using the registry only if there is something specific you want to get out of using the registry."
+4.0,2008-08-09 04:52:54.610000+00:00,"Scrum.
+The daily standup meeting is a great way to make sure things stay on track and progress is being made. I also think it's key to get the product/market folks involved in the process in a real, meaningful way. It'll create a more collaborative environment and removes a lot of the adversarial garbage that comes up when the product team and the dev teams are separate ""silos""."
+4.0,2008-08-09 04:54:24.090000+00:00,"According to the documentation for GetPrivateProfileString, you should use the registry for storing initialisation information.
+However, in so saying, if you still want to use .ini files, and use the standard profile APIs (, , and the like) for accessing them, they provide built-in ways to automatically provide ""virtual .ini files"" backed by the registry. Win-win!"
+2.0,2008-08-09 05:00:11.927000+00:00,"The best advice I could give anyone working with PHP4 is this:
+It pretty much will tell you exactly what you need to do."
+2.0,2008-08-09 05:01:10.910000+00:00,"I have a bit of experience with both Haley Expert Rules and Haley Office Rules. Both nice systems, but I'd need to know a bit more abut what you want to use them for to answer definitively (See http://www.haley.com)
+They both support C# and Java (and I think also a web service api).
+The difference between the two is mostly around how much natural language modelling you want to get into. Office rules lets business users write rules in an Office document, and is mostly focused around legislative requirements modelling. Expert rules can be a bit more flexible in definition how it handles natural language, but requires more work defining language structures up front.
+Hope some of that helps."
+0.0,2008-08-09 05:05:38.203000+00:00,"If $index is a string there is no difference because $index, ""$index"", and ""{$index}"" all evaluate to the same string. If $index is a number, for example 10, the first line will evaluate to $array[10] and the other two lines will evaluate to $array[""10""] which is a different element than $array[10]."
+3.0,2008-08-09 05:11:00.360000+00:00,Lucida Sans Typewriter
+402.0,2008-08-09 05:30:13.707000+00:00,"What you want to do is to specify the sha1 of the commit you want to restore to.  You can get the sha1 by examining the reflog () and then doing 
+But don't wait too long... after a few weeks git will eventually see that commit as unreferenced and delete all the blobs."
+-6.0,2008-08-09 05:30:38.450000+00:00,"I believe from a performance perspective that $array[""$index""] is faster than $array[$index] See Best practices to optimize PHP code performance
+Another variation that I use sometimes when I have an array inside a string is:
+Edit: What I meant to say is $row[’id’] is faster than $row[id]"
+1.0,2008-08-09 05:33:15.027000+00:00,"I just tried Consolas and Envy - Envy seems ""too narrow"" to my eyes, but Consolas looks great (I am on a mac). Thanks for the tips !"
+56.0,2008-08-09 05:35:50.623000+00:00,"The short answer
+Use one of these two methods:
+For example:
+--
+The long answer
+Typically, one would not want to load files using absolute paths. For example, don’t do this if you can help it:
+This technique is not recommended for at least two reasons. First, it creates a dependency on a particular operating system, which prevents the application from easily moving to another operating system. One of Java’s main benefits is the ability to run the same bytecode on many different platforms. Using an absolute path like this makes the code much less portable.
+Second, depending on the relative location of the file, this technique might create an external dependency and limit the application’s mobility. If the file exists outside the application’s current directory, this creates an external dependency and one would have to be aware of the dependency in order to move the application to another machine (error prone).
+Instead, use the  methods in the  class. This makes the application much more portable. It  can be moved to different platforms, machines, or directories and still function correctly."
+0.0,2008-08-09 05:44:56.983000+00:00,This is how they're doing it right here on Stack Overflow:
+0.0,2008-08-09 05:46:52.003000+00:00,"Well, the file is in the root so it does not show whether the tag works or if the browser just got the icon from the usual location (the root).
+Edit: I'll try it and see if it works.
+Edit 2: Using both tags make it work even for any file name as long as the file is an icon for IE7: I tried using  files and it only worked with Firefox."
+15.0,2008-08-09 05:48:15.433000+00:00,"This is what I always use:  
+The second one is for IE. The first one is for other browsers."
+1.0,2008-08-09 05:48:21.487000+00:00,"Response to the Update:
+Oh, you're right, I guess PHP must convert array index strings to numbers if they contain only digits. I tried this code:
+And the output was:
+I've done some more tests and found that if an array index (or key) is made up of only digits, it's always converted to an integer, otherwise it's a string.
+ejunker:
+Can you explain why that's faster? Doesn't it take the interpreter an extra step to parse &quot;$index&quot; into the string to use as an index instead of just using $index as the index?"
+0.0,2008-08-09 05:52:00.340000+00:00,"I used JFreeChart (http://www.jfree.org/jfreechart/) on a previous project.  It has some very good built-in capabilities, and the design was WAY extensible so you could always roll your own extension later if you needed some custom chart annotation or wanted an axis to render differently, or whatever.  It's definitely worth checking out."
+34.0,2008-08-09 05:55:24.187000+00:00,"see @svec and @jeremy above.  All array indices are of type 'int' first, then type 'string', and will be cast to that as PHP sees fit.
+Performance wise, $index should be faster than ""$index"" and ""{$index}"" (which are the same).  
+Once you start a double-quote string, PHP will go into interpolation mode and treat it as a string first, but looking for variable markers ($, {}, etc) to replace from the local scope.  This is why in most discussions, true 'static' strings should always be single quotes unless you need the escape-shortcuts like ""\n"" or ""\t"", because PHP will not need to try to interpolate the string at runtime and the full string can be compiled statically.
+In this case, doublequoting will first copy the $index into that string, then return the string, where directly using $index will just return the string."
+28.0,2008-08-09 06:10:22.237000+00:00,"I timed the 3 ways of using an index like this:
+The first set of tests used , the second set used , and the third set used .  Timing was done using  diffs.  I'm using WinXP, PHP 5.2, Apache 2.2, and Vim.  :-)
+And here are the results:
+Using 
+Using 
+Using 
+So  is the hands-down winner of the performance competition, at least on my machine. (The results were very repeatable, BTW, I ran it 3 or 4 times and got the same results.)"
+4.0,2008-08-09 06:14:12.917000+00:00,"There's a nice comparison between git, hg and bzr in this InfoQ article.  They all have their strengths and weaknesses.  You'll have to think about your project and your workflows and choose the best fit.  The good news is that they're all fairly good."
+17.0,2008-08-09 06:23:19.140000+00:00,"I've had success using JFreeChart on multiple projects. It is very configurable. JFreeChart is open source, but they charge for the developer guide. If you're doing something simple, the sample code is probably good enough. Otherwise, $50 for the developer guide is a pretty good bargain.
+With respect to ""real-time"" data, I've also used JFreeChart for these sorts of applications. Unfortunately, I had to create some custom data models with appropriate synchronization mechanisms to avoid race conditions. However, it wasn't terribly difficult and JFreeChart would still be my first choice. However, as the FAQ suggests, JFreeChart might not give you the best performance if that is a big concern."
+6.0,2008-08-09 06:30:12.010000+00:00,"  When will the different indexing methods resolve to different indices?
+According to http://php.net/types.array, an array index can only be an integer or a string. If you try to use a float as an index, it will truncate it to integer. So if  is a float with the value 3.14, then  will evaluate to  and  will evaluate to . Here is some code that confirms this:
+The output:"
+20.0,2008-08-09 06:33:50.787000+00:00,"First I would say, don't rewrite all your tests just to suit the latest fad.  Junit3 works perfectly well, and the introduction of annotations in 4 doesn't buy you very much (in my opinion).  It is much more important that you guys write tests, and it sounds like you do.  
+Use whatever seems most natural and helps you get your work done.
+I can't comment on TestNG b/c I haven't used it.  But I would recommend unitils, a great wrapper for JUnit/TestNG/DBUnit/EasyMock, regardless of which route you take. (It supports all the flavors mentioned above)"
+0.0,2008-08-09 06:37:00.203000+00:00,"If you're looking for client-side check out flotr which is based on prototype javascript library or flot which is based on jQuery. Both work well, though flot seems like its got a bigger backing."
+10.0,2008-08-09 06:42:20.003000+00:00,W3Schools seems to have a good Javascript events reference: HTML DOM Events
+0.0,2008-08-09 06:50:10.300000+00:00,"Drop the first marble from the 3rd floor.  If it breaks, you know it's floor 1 or 2, so drop the other marble from floor 2.  If it doesn't break you've found that floor 2 is the highest.  If it does break, you've found that floor 1 is the highest.  2 drops.
+If dropping from the 3rd floor does not break the marble, drop from floor 6.  If it breaks, you know floor 4 or 5 is the highest.  Drop the second marble from floor 5.  If it doesn't break you've found that 5 is the highest.  If it does, floor 4 is the highest.  4 drops.
+Continue.
+3 floors - maximum of 2 drops
+6 floors - maximum of 4 drops
+9 floors - maximum of 6 drops
+12 floors - maximum of 8 drops
+etc.
+3x floors - maximum of 2x drops
+So for a 99 floor building you'd have a maximum of 66 drops.  And that is the maximum.  You'd likely have less drops than that.  Oh, and 66 is the maximum for a 100 story building too.  You'd only need 66 drops if the break floor was floor 98 or 97.  If the break floor was 100 you'd use 34 drops.
+Even though you said it didn't matter, this would probably require the least amount of walking and you don't have to know how high the building is.
+Part of the problem is how you define efficiency.  Is it more ""efficient"" to always have a solution in less than x drops, or is it it more efficient to have a good chance at having a solution in y drops where y &lt; x with the caveat that you could have more than x drops?"
+0.0,2008-08-09 06:52:29.203000+00:00,"First off, I think there has already been some great answers, so I will try not to dupe too much.
+Get them to write lots of code, keep them asking questions to keep the brain juices flowing.
+I would say dont get bogged down with the really detailed information until they either run in to the implications of them, or they ask.
+I think one of the biggest points I would ensure is that they understand the core concepts of a framework. I know you are working in Python (which I have no clue about) but for example, with ASP.NET getting people to understand the page/code behind model can be a real challenge, but its critical that they understand it. As an example, I recently had a question on a forum about ""where do I put my data-access code, in the 'cs' file or the 'aspx' file"".
+So I would say, for the most part, let them guide the way, just be there to support them where needed, and prompt more questions to maintain interest. Just ensure they have the fundamentals down, and dont let them run before they can walk.
+Good Luck!"
+67.0,2008-08-09 07:00:34.087000+00:00,"I've used both, but I have to agree with Justin Standard that you shouldn't really consider rewriting your existing tests to any new format.  Regardless of the decision, it is pretty trivial to run both.  TestNG strives to be much more configurable than JUnit, but in the end they both work equally well.
+TestNG has a neat feature where you can mark tests as a particular group, and then easily run all tests of a specific group, or exclude tests of a particular group.  Thus you can mark tests that run slowly as in the ""slow"" group and then ignore them when you want quick results.  A suggestion from their documentation is to mark some subset as ""checkin"" tests which should be run whenever you check new files in.  I never saw such a feature in JUnit, but then again, if you don't have it, you don't REALLY miss it.
+For all its claims of high configuration, I did run into a corner case the a couple weeks ago where I couldn't do what I wanted to do... I wish I could remember what it is, but I wanted to bring it up so you know that it's not perfect.
+The biggest advantage TestNG has is annotations... which JUnit added in version 4 anyways."
+4.0,2008-08-09 07:00:44.163000+00:00,"Here is a pretty good JavaScript event reference with the elements they are for:
+JavaScript Tutorial >> JavaScript Events"
+0.0,2008-08-09 07:01:06.503000+00:00,"I know that there's a way to set php.ini values for that script with a certain command, I thus went looking and found this too - Goto last post on page
+I also found the following post which may be of use - Goto last post on the page
+I will add to this more if nobody has found an answer but I must now catch a train."
+19.0,2008-08-09 07:01:57+00:00,"Another respondent (McDowell) said that polymorphism only works for object instances.  That should be qualified; there are languages that do treat classes as instances of a ""Class"" or ""Metaclass"" type.  These languages do support polymorphism for both instance and class (static) methods.
+C#, like Java and C++ before it, is not such a language; the  keyword is used explicitly to denote that the method is statically-bound rather than dynamic/virtual."
+7.0,2008-08-09 07:05:44.483000+00:00,"  I believe from a performance
+  perspective that $array[""$index""] is
+  faster than $array[$index] See Best
+  practices to optimize PHP code
+  performance
+Don't believe everything you read so blindly... I think you misinterpreted that.  The article says $array['index'] is faster than $array[index] where index is a string, not a variable.  That's because if you don't wrap it in quotes PHP looks for a constant var and can't find one so assumes you meant to make it a string."
+9.0,2008-08-09 07:18:04.550000+00:00,"getResource is fine, but using relative paths will work just as well too, as long as you can control where your working directory is (which you usually can).
+Furthermore the platform dependence regarding the separator character can be gotten around using File.separator, File.separatorChar, or System.getProperty(""file.separator"")."
+0.0,2008-08-09 07:41:29.310000+00:00,"I've used JFreeChart in a rather complex application that needed to visualize data streams and calculations based on the data. We implemented the ability to visually edit the data plots by mouse and had a very large set of data points. JFreeChart handled it very well.
+Unfortunately I was stuck with v0.7, but the newest release are sooo much better when it comes to API clarity. The community is very helpful and the developers are responding to mails too.
+If you're doing a web application and don't want to bother with libraries, you can check the Google Chart API. Didn't use it myself, but I started some tests which were very promising."
+4.0,2008-08-09 07:49:41.023000+00:00,"This Javascript Cheat Sheet has a complete list of of event handlers. Nearly all of them can be used on any html element except for one or two.
+If you want to use a lightweight javascript library, DOMAssistant is very lightweight and allows you to add events to elements very easily. Like so:"
+5.0,2008-08-09 07:50:31.647000+00:00,"I haven't done this before, but I found this site on the web giving an explanation."
+1.0,2008-08-09 07:53:27.367000+00:00,"Courier New for me as well, it's well spaced."
+1.0,2008-08-09 08:06:50.147000+00:00,"I think the most reliable method is the simply added the favicon.ico file to the root of your website.
+I don't think there is any need for a meta tag unless you want to manually override the default favicon, but I was unable to find any research to support my argument."
+6.0,2008-08-09 08:11:55.487000+00:00,"If you set error reporting to E_ALL, it warns in the error log about undefined variables complete with filename and line number (assuming you are logging to a file). However, it will warn only if when it comes across an undefined variable, so I think you will have to test each code path. Running php from the command line doesn't seem to help also.
+There is a debugging tool named xdebug, haven't tried it, but maybe that can be useful?"
+1.0,2008-08-09 08:17:05.883000+00:00,"I would recommend also watching some screencasts - they are generally created in context of a specific technology not a language, though if there's Python code displayed, that'll do :). The point is - they're created by some good programmers and watching how good programmers program is a good thing. You and your brother could do some peer programming as well, that might be an even better idea. Just don't forget to explain WHY you do something this way and not that way.
+I think the best way to learn programming is from good examples and try not to even see the bad ones."
+11.0,2008-08-09 08:29:10.880000+00:00,Quirksmode has a nice event-compatibility table and an introduction.
+2783.0,2008-08-09 08:31:04.577000+00:00,"The most robust answer (i.e. that captures the intent of what you're trying to do while causing the fewest bugs) would be:
+There's a sort of convention in JavaScript that you don't add things to Object.prototype, because it can break enumerations in various libraries. Adding methods to Object is usually safe, though.
+Here's an update as of 2016 and widespread deployment of ES5 and beyond.  For IE9+ and all other modern ES5+ capable browsers, you can use  so the above code just becomes:
+This doesn't have to modify any existing prototype since  is now built-in.
+Edit: Objects can have symbolic properties that can not be returned via Object.key method. So the answer would be incomplete without mentioning them.
+Symbol type was added to the language to create unique identifiers for object properties. The main benefit of the Symbol type is the prevention of overwrites.
+ or  does not work for symbolic properties. To return them you need to use ."
+9.0,2008-08-09 08:35:18.077000+00:00,"The Pros of doing all by yourself is:
+No learning curve
+Very flexible
+The Pros of WCF are:
+Costs less time in the longer run
+Switch protocols without programming
+A disadvantage of WCF: some static property names can be pretty lengthy...
+To summarize: WCF lets you focus on programming, but you need to learn it first ;-)"
+1.0,2008-08-09 08:47:31.670000+00:00,"I would suggest putting the log file onto a seperate disk, though should give you a little performance gain so that your not trying to both read and write to the same disk as the website. If you cannot put the log file on a seperate disk, then I would simply choose a folder of your choice.
+In any case, you will have to give the ""Network Service"" account ""Modify"" permissions to the desired folder.
+If on the other hand, you have access to a databse, then log the information there. It will be much quicker than accessing the hard drive and won't be publically available. You'll also be able to report from the data quite easily."
+5.0,2008-08-09 08:58:24.707000+00:00,"You are on the right track.  To get the data from the proxy object back into one of your own objects, you have to do left-hand-right-hand code.  i.e. copy property values.  I'll bet you that there is already a generic method out there that uses reflection.
+Some people will use something other than a web service (.net remoting) if they just want to get a business object across the wire.  Or they'll use binary serialization.  I'm guessing you are using the web service for a reason, so you'll have to do property copying."
+5.0,2008-08-09 09:07:27.653000+00:00,"I think it fits best when you are modeling something cohesive with state and associated actions on those states.  I guess that's kind of vague, but I'm not sure there is a perfect answer here.
+The thing about OOP is that it lets you encapsulate and abstract data and information away, which is a real boon in building a large system.  You can do the same with other paradigms, but it seems OOP is especially helpful in this category.
+It also kind of depends on the language you are using.  If it is a language with rich OOP support, you should probably use that to your advantage.  If it doesn't, then you may need to find other mechanisms to help break up the problem into smaller, easily testable pieces."
+3.0,2008-08-09 09:16:10.023000+00:00,"I haven't had a problem just using Unix-style path separators, even on Windows (though it is good practice to check File.separatorChar).
+The technique of using ClassLoader.getResource() is best for read-only resources that are going to be loaded from JAR files. Sometimes, you can programmatically determine the application directory, which is useful for admin-configurable files or server applications. (Of course, user-editable files should be stored somewhere in the System.getProperty(&quot;user.home&quot;) directory.)"
+18.0,2008-08-09 09:33:28.257000+00:00,"About a year ago, we had the same problem. I spent sometime considering which move was better, and eventually we realized that TestNG has no 'killer features'. It's nice, and has some features JUnit 4 doesn't have, but we don't need them.
+We didn't want people to feel uncomfortable writing tests while getting to know TestNG because we wanted them to keep writing a lot of tests.
+Also, JUnit is pretty much the de-facto standard in the Java world. There's no decent tool that doesn't support it from the box, you can find a lot of help on the web and they added a lot of new features in the past year which shows it's alive.
+We decided to stick with JUnit and never looked back."
+13.0,2008-08-09 09:40:37.727000+00:00,"My general rule of thumb is that objects that I need to mock should have a common interface too. I think this is right design-wise and makes tests a lot easier (and is usually what you get if you do TDD). More about this can be read in the Google Testing Blog latest post (See point 9).
+Also, I've been working mainly in Java in the past 4 years and I can say that I can count on one hand the number of times I've created a final (sealed) class. Another rule here is I should always have a good reason to seal a class, as opposed to sealing it by default."
+6.0,2008-08-09 09:55:02.660000+00:00,I'm pretty sure I've only used master pages in the context of ASP.NET MVC so I'm not sure if it differs from web forms but in my experience they are not only excellent but I couldn't imagine not using them.  Master pages are code inheritance to web pages.
+1.0,2008-08-09 10:34:06.527000+00:00,"Not a technology podcast, but I really have to mention FreelanceRadio. A really great and sometimes hilarious resource. I'm listening to them in the morning, on the way to work. And sometimes feel really stupid just giggling by myself :P"
+9.0,2008-08-09 10:47:26.860000+00:00,"Your code not really compliant with full CSV format. If you are just generating CSV from data that has no commas, leading/trailing spaces, tabs, newlines or quotes, it should be fine. However, in most real-world data-exchange scenarios, you do need the full imlementation. 
+For generation to proper CSV, you can use this:
+Might not be world's most efficient code, but it has been tested. Real world sucks compared to quick sample code :)"
+1.0,2008-08-09 10:50:00.880000+00:00,"@Curt: I think you came the closest. I haven't tested this but I think I sort of gave the answer in my original question.
+GetMessage is a define in Windows.h wrapped in a ifndef block to switch between Ansi (GetMessageA) and Unicode (GetMessageW)."
+28.0,2008-08-09 11:06:58.973000+00:00,"I know you asked for Java, but this strikes me as a task well suited to a scripting language. Here is a quick (very simple) solution written in Groovy.
+test.csv
+csvtoxml.groovy
+Writes the following XML to stdout:
+However, the code does very simple parsing (not taking into account quoted or escaped commas) and it does not account for possible absent data."
+7.0,2008-08-09 11:16:04.837000+00:00,"In general, there's no need to null objects after use, but in some cases I find it's a good practice.
+If an object implements IDisposable and is stored in a field, I think it's good to null it, just to avoid using the disposed object. The bugs of the following sort can be painful:
+It's good to null the field after disposing it, and get a NullPtrEx right at the line where the field is used again. Otherwise, you might run into some cryptic bug down the line (depending on exactly what DoSomething does)."
+2.0,2008-08-09 11:27:21.833000+00:00,"We have an in-house designer that does ours, although we also use freelance designers, too.
+You could try starting a design competition on 99 Designs?
+There are also some free icon sets available, like these.
+If you google around, you'll also find quite a few commercially available icon sets that you can use (although obviously neither of the icon set options will get you an icon specific to your app!).
+Hope that helps!"
+5.0,2008-08-09 11:33:35.393000+00:00,"Try taking a look at this previous Question, which shows you must put two meta tags in your html in order for it to work across all browsers and operating systems."
+1.0,2008-08-09 11:41:25.470000+00:00,"They are extremely useful, especially in a CMS environment and for large sites, and as MattMitchell says it's inconceivable that you would build a large site without them.
+Select template, each template has different editable areas, job done.  Master pages can also be inherited, so you can have a Style.Master, derive a Header.Master, then derive all of your layout-based templates from that."
+4.0,2008-08-09 12:03:33.007000+00:00,"If you have money, definitely go with a professional designer. At first if you don't have too many projects requiring a designer, just hire one on a contract basis. If you start feeling the need for a full-time designer then it's going to be beneficial to hire one.
+Good looking free icon sets are available, but you should shop around for a decent icon set which you can reuse for most of your projects.
+Finally, if you don't have access to a designer, just keep the look very clean and simple, because chances are that you can't do a good looking design (since you're not an artist)."
+46.0,2008-08-09 12:04:18.780000+00:00,"Good icons are hard to design. I have tried to design my own, and have used in-house graphics designers as well. However, building a good icon set takes a lot of work, even for the graphic designer.
+I believe your best solution is to buy/find a set of icons for use in your projects.
+The silk icon set is a good, free set and can be found at FamFamFam. There are over 1000 icons in this set, and it is very popular.
+If you are looking for something ""different"", you can purchase icon sets for a couple hundred bucks. Considering the cost of having a designer create them for you, or doing them yourself, the cost of these sets is cheap!
+Here's a few icon designers I've come across of the web:
+Icon Factory
+Icon Experience
+Icon Buffet"
+7.0,2008-08-09 12:13:12.553000+00:00,"Chances are that your code is not structured tightly enough if you feel the need to  variables.
+There are a number of ways to limit the scope of a variable:
+As mentioned by Steve Tranby
+Similarly, you can simply use curly brackets:
+I find that using curly brackets without any ""heading"" to really clean out the code and help make it more understandable."
+0.0,2008-08-09 12:13:13.597000+00:00,"Master Pages have made building template-able websites easy.
+I think the trickiest part in building a website using master pages is knowing when to put things into the master page and when to put things into the ContentPlaceHolder on the child page. Generally, dynamic stuff goes into the placeholder while static items go into the master page, but there is sometimes a gray area. It's mostly a design/architecture question."
+1.0,2010-05-19 13:43:28.153000+00:00,"-1 This is due to omitting ""var"" before ""a"" making it global and is unrelated to the question."
+0.0,2013-07-20 15:37:17.427000+00:00,The bug is noted as closed in Java version 7 (b72).
+0.0,2014-09-01 10:13:21.240000+00:00,"Changing /etc/localtime to a symlink; you might expect to break things in more modern Linux systems (eg, when packages get upgraded, or possibly at startup -- I suspect the reason for changing from a symlink to a copy of a file would have to do with startup sequencing and dependencies (particularly if /usr/ is on a different filesystem).
+I find it more useful to set the TZ environment variable."
+0.0,2010-03-31 22:25:08.180000+00:00,"+1: I just ran into this on a fully updated Ubuntu 9.10 server. Sun JDK 1.6.0_15-b03, System is configured at installation time for US/Eastern timezone. /etc/localtime contains the identical contents of /usr/share/zoneinfo/US/Eastern. Java produces incorrect results for dates between March 15, 2010 and April 25. After replacing the file with a symlink to /usr/share/zoneinfo/US/Eastern, I now get correct results.
+I am astounded this bug is a) still open, b)  affects a fully updated Ubuntu server (9.10 - Karmic)."
+0.0,2016-08-18 18:25:07.060000+00:00,I get an error: ** Previous operation has not finished; run 'cleanup' if it was interrupted**
+0.0,2016-10-11 13:19:45.403000+00:00,hey @IgorGanapolsky best ask a new question if you're wanting help with that
+4.0,2009-12-26 18:11:22.020000+00:00,-1: An explicit stack is what?  A heap-allocated data structure modelling a stack?  A heap-allocated data structure modelling the history of stack usages?  Relevance to the question?
+0.0,2008-09-08 03:49:39.053000+00:00,"Yes, I know which post you're talking about Justin. Reading it reminded me how most of the things I've learned have come from trying and learning from my own mistakes. I really can't emphasize enought the importance of learning by doing!"
+0.0,2011-01-20 20:10:48.600000+00:00,"I don't think OP was asking for a wrapper that hides the details. He wanted to know why you would choose either approach, so he can weigh out the benefits"
+2.0,2009-11-22 07:53:40.947000+00:00,I think sealed classes are great ... the problem is testing.  It stinks that we have to change our entire design because of limitations in testing .NET projects.  In many cases D.I. is simply a way to get around the fact that static classes/methods are hard to test.
+3.0,2015-04-22 07:07:47.687000+00:00,can you please explain the the reason for the equation `n+(n-1)+(n-2)+...1 <=100`?
+1.0,2017-08-08 15:34:45.510000+00:00,"@Geek say n is the worst outcome allowed. So you try and make that worst case the worst for each of a number of segments. To maintain that maximum worst case for each segment tested,  you have to use 1 less drop for each segment tested. Test the first segment at that value of n, if it breaks you then test from 1 up to n-1. So your final max drops is 1 + (n-1) = n. If it didn't break at n, but at 2n, then you've already done 1 drop at n, so to stick to the worst case of n drops, you've only got n-1 remaining. At 3n, you've already done 2 drops so to stick to worst case have n-2 drops remaining."
+1.0,2017-08-08 15:49:31.393000+00:00,"I can't edit that first comment. This part is wrong: ""if it didn't break at n, but at 2n"" . Sorry 2n is not right, it should be ""but at n+(n-1)"""
+0.0,2017-08-08 15:38:22.657000+00:00,"Logically the marble hits the ground harder the higher you go up, so you start low and work your way up. So the segments start low and go up as well. The more segments you test, the fewer drops remaining, so the higher segments are forced to be smaller and smaller. The bottom segment is the largest, equal to n. Each step up is one less, because you are working your way up."
+0.0,2017-08-08 15:46:20.810000+00:00,"The goal then is to minimize n. You can run through this manually by charting the results of each of these: `n=100` , `n+(n-1)=100` , `n+(n-1)+(n-2)=100` , `n+(n-1)+(n-2)+(n-3)=100` ,etc etc. Rearrange each of those equations to `n=100` , `n=101/2`, `n=103/3`, `n=106/4` . Keep going, the value of n will get smaller, until it reaches a minimum, and then will go higher after that. That minimum solution is the optimal. The solution is 13.64, but there is no 13.64 floor, so 14. The number of segments required is the same as the number of terms to find the minimum, e.g. `n+(n-1)` is 2 terms..."
+0.0,2013-08-02 17:45:20.897000+00:00,"With that change, it compiles but throws an `InvalidCastException` because the runtime type of `ol` is still `List`."
+4.0,2008-09-30 16:40:51.490000+00:00,"I think your example suffers from the same problem.  What happens if ol has something in it that is not a string?  The problem is some methods on List would work fine, such as adding/inserting.  But iterating might be a real problem."
+3.0,2008-09-30 16:44:20.093000+00:00,"Eric Lippert has a great series of blog posts about this topic: why it might work to add covariance and contravariance contraints to generic methods, but may never work the way we'd like at the class level. http://is.gd/3kQc"
+0.0,2013-08-02 17:44:00.063000+00:00,"@ChrisAmmerman: If `ol` had something in it that's not a string, I suppose I would expect the cast to fail at runtime.  But where you really would run into trouble is if the cast succeeded, and *then* something were added to `ol` that's not a string.  Because `sl` references the same object, now your `List` would contain a non-string.  The `Add` is the problem, which I guess justifies why this code won't compile, but it will compile if you change `List ol` to `IEnumerable ol`, which doesn't have an `Add`. (I checked this in C# 4.)"
+1.0,2011-03-31 09:16:13.350000+00:00,"We're talking about the PHP log, not the Apache log here."
+0.0,2008-10-01 17:25:06.383000+00:00,"But, to support closures, couldn't you just do lambda lifting?"
+2.0,2008-11-19 09:35:59.597000+00:00,"This is just wrong.
+There is no need to send someObject release or autorlease in either of the examples shown."
+2.0,2008-10-20 00:43:02.137000+00:00,It is perfectly possible to write a hybrid framework that supports both GC and reference counting.
+0.0,2009-05-14 23:21:07.160000+00:00,"It's not the init instance method that increases the retain count, but the alloc class method. Apple's rules are linked below, but the summary is ""If you alloc, retain, or copy it, it's your job to release it. Otherwise it isn't."" -- http://www.stepwise.com/Articles/Technical/2001-03-11.01.html
+Apple's docs:
+http://developer.apple.com/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html#//apple_ref/doc/uid/20000994"
+2.0,2008-10-20 00:35:44.350000+00:00,"""Now for autorelease. Autorelease is used as a convenient (and sometimes necessary) way to tell the system to free this object up after a little while.""
+As a lead-in sentence, this is wrong.  It doesn't tell the system to ""free [it] up"", it tells it to decrement the retain count."
+3.0,2010-05-05 09:46:46.060000+00:00,"Thanks a lot for the good explanation. Just one thing that is still unclear. If `NSString* s = [[NSString alloc] initWithString:@""Hello World""];` returns an autoreleased object (as you write it) why do I have to do a `return [s autorelease];` and set it ""autorelease"" again and not just `return s`?"
+0.0,2010-05-06 15:43:09.880000+00:00,"Sorry, my fault. You're totally right. I somehow read `stringWithString` from the above example and didn't look closely enough to notice that it is an `initWithString`."
+8.0,2008-10-13 09:47:57.873000+00:00,"You wrote: ""By calling autorelease, we temporarily bump the reference count"". I think this is wrong; autorelease only marks the object to be released in the future, it doesn't increase the ref count:
+http://cocoadev.com/index.pl?AutoRelease"
+0.0,2008-12-08 20:47:25.380000+00:00,"Similarly, your last code example releases the NSString one too many times--once in the NSAutorelease pool via autorelease and directly via release :("
+0.0,2008-12-09 18:49:57.880000+00:00,"You are absolutely right, thanks.  I'm not sure how I missed that with my last edit."
+3.0,2010-05-05 19:57:42.313000+00:00,"@Stefan: `[[NSString alloc] initWithString:@""Hello World""]` will NOT return an autoreleased object.  Whenever `alloc` is called, the reference count is set to 1, and it is the responsibility of that code to make sure it gets released.  The `[NSString stringWithString:]` call, on the other hand, _does_ return an autoreleased object."
+6.0,2010-07-11 23:37:55.380000+00:00,"Fun trivia:  Since the answer uses @"""" and NSString, the strings are constant throughout and, thus, the absolute retain count will be both constant and entirely irrelevant.... doesn't make the answer wrong, by any means, just reinforces the fact that absolute retain counts are never really something you should worry about."
+0.0,2009-11-19 05:20:13.003000+00:00,Your example isn't well chosen. In Core Foundation objects built with a `CFClassCreateInstance` method have a retain count of 1 that has to be released by the calling code.
+0.0,2011-04-23 05:40:56.987000+00:00,I just happened to notice this post at the top of Google search results when I searched for PHP4 vs PHP5 passing arguments to function behavior. [the php manual](http://php.net/manual/en/functions.arguments.php) states otherwise; passing by value (pass-by-copy) is _still_ the default.
+1.0,2010-02-25 14:27:13.493000+00:00,"I like the DejaVu fonts a lot better than the Consolas; I'm not sure why so many people like Consolas so much, actually."
+1.0,2011-07-13 20:17:22.223000+00:00,"I also like this one more than Consolas. Additionally, it has a wide range of rarer characters like arrows that are nice when using things like `font-lock-symbol-mode` for Haskell. Being able to use the same typeface for Cyrillic as well is also really nice."
+0.0,2011-11-02 13:54:02.087000+00:00,"Excellent font. Bye, bye Courier New"
+1.0,2015-01-16 21:12:55.653000+00:00,INI files are a better system.  The application upon a successful boot can simply save a backup of the INI to protect against corruption.
+3.0,2015-01-08 05:40:55.663000+00:00,"missing points: re-install of fresh windows dont kill ini files. A centralized database needs to be mutexed, and we are not talking Oracle quality with multi level rollbackable transactions here. Cleaner/antivirus tools love to mess with people's registry, not so much scattered ini files. the registry is just a filesystem in a filesystem, this is an antipattern http://en.wikipedia.org/wiki/Inner-platform_effect..."
+0.0,2017-09-02 03:34:54.303000+00:00,"Another point on 'portable' is that application settings can be kept in a .ini file in the application directory itself, so if (possibly multiple versions/copies of) the application run from a flash drive or network share, settings stored in the .ini files stay with the application, and therefore possibly with the user's removable storage, rather than with the computer.  You can also keep multiple versions of the .ini files and revert to one if they get corrupted."
+5.0,2014-08-22 18:55:00.467000+00:00,JSON is another widely used format for simple data files nowadays.
+0.0,2017-08-24 13:24:22.280000+00:00,"replying to a very old answer here... but:   `$array[""10""]` and `$array[10]` ARE equivalent.  ""10"", being a numeric integer will be typecast to `10`  (per http://php.net/manual/en/language.types.array.php)"
+3.0,2018-01-09 10:20:49.533000+00:00,**warning** for myself a few minutes ago: this will reset all modifications. it won't touch the untracked files though.
+1.0,2013-05-31 13:45:39.497000+00:00,"Can also use it like this:
+`getClass().getClassLoader().getResource(""image.jpg"");`"
+0.0,2017-07-01 20:44:53.147000+00:00,"Well it should be pointed out that if you're on Windows NT or newer, you *can* use the / character as a separator. So there's no OS that I know of that has both a JRE and won't understand images/splashimage.png for example."
+7.0,2009-05-02 07:38:47.130000+00:00,Esp. don't do File(“C:\Users\Joe\image.jpg”) because the \U \J and \i are all escapes and you'll get an error. 
+0.0,2013-08-08 02:28:37.790000+00:00,"@AntonyCarthy the example you've given is not reparsed in the loop. It's parsed once, then opcodes are generated for emitting constant and variable parts of the string, and PHP runs opcodes from there."
+7.0,2009-08-17 09:20:08.197000+00:00,"as much as I agree with your aversion to micro optimisation porneL, some strings need to be reinterpreted in a loop, e.g.:
+$x = array(""w"", ""y"", ""x"", ""z"");
+for ($i = 0; $i < 100; $i++)
+{
+    echo ""hello world {$x[$i%4]}\n"";
+}"
+0.0,2013-08-07 13:04:55.160000+00:00,"@porneL, where's the proof?"
+14.0,2008-11-30 03:28:50.303000+00:00,"Please, no the string myth again! There's no measurable speed difference between use of one or another kind of strings. Even if there was, strings are parsed once program is loaded, and not reparsed in loops, so it's all moot."
+0.0,2010-08-03 07:23:08.367000+00:00,"When you are using $idx = ""blah"", I think **$array[""$idx""]** or **$array[""{$idx}""]** should be used instead of *$array[$idx]*. If you try to run your tests in any project, where a lot of complicacies & logics are present, along with lot of files, then you will find that use of *$array[$idx]* is somewhat bad idea, considering the efficiency / executing factor. **But nice test results.**"
+1.0,2013-08-07 13:06:16.603000+00:00,"@KnowledgeCraving, Exactly why is it a bad idea?"
+0.0,2010-10-01 08:50:46.833000+00:00,JFreeChart is good enough for real-time data display if your chart update interval is 1 sec or more.
+0.0,2011-10-04 13:58:40.267000+00:00,"Just for anyone finding this answer in 2011, I checked, and the latest unitils version (3.2), has a release date of: 2011-09-29.  So it *is* being actively maintained."
+1.0,2011-02-08 18:40:03.050000+00:00,Unitils doesn't look like it has been updated in a while; will it work with newer versions of JUnit/TestNG?
+9.0,2009-01-23 21:19:23.683000+00:00,"The biggest advantage TestNG has over JUnit is the ability to dynanmically generate test data for parameterized tests.  Each test data element is a different ""test"", so it makes it really easy to create data-driven tests http://testng.org/doc/documentation-main.html#parameters"
+14.0,2008-09-10 22:46:00.770000+00:00,"JUnit can do the grouping thing you are talking about by defining a test suite and then adding the tests in the desired group to that suite.  You can then set up a target in your ant script that only runs that suite, and set up your source control to run that target upon checkin."
+0.0,2017-06-16 16:22:05.157000+00:00,"Some things not mentioned: I think TestNG's best advantage is being able to pass the same parameters that you passed into each test method, also into the before/after test configuration methods:  this is great help in setup and teardown, IMHO very powerful. If you dont understand that, you might think you dont need it.  Also, I like how you can define test suites in code."
+6.0,2009-08-05 12:34:25.827000+00:00,"Parametrized tests are easy done with Theories, that are integrated in newer versions of Junit (but are experimental at the moment)."
+9.0,2010-02-01 13:16:18.737000+00:00,TestNG groups can be done in JUnit 4.8 with Categories: http://kentbeck.github.com/junit/doc/ReleaseNotes4.8.html.
+1.0,2015-08-18 11:17:17.333000+00:00,http://docs.oracle.com/javase/7/docs/api/java/lang/ClassLoader.html#getResource(java.lang.String) says: `The name of a resource is a '/'-separated path name that identifies the resource`. So don't use File.separator.
+2.0,2018-05-23 18:48:33.553000+00:00,"@Przemek I don't understand what you mean. `Object.keys(new Date()).length` gives `0`, `x = new Date(); Object.keys(x).length` also gives `0`."
+0.0,2020-12-10 07:57:44.027000+00:00,"I like that ""while causing the fewest bugs"""
+1.0,2016-01-09 06:06:38.527000+00:00,Re Object.keys(obj).length: That's because IE8 don't support this method.
+3.0,2013-05-31 15:55:19.190000+00:00,@alexserver I guess he's just maintaining proper structure. This function returns size of an object so it makes sense to make it an extension of Object. Keep your code clean and maintainable.
+36.0,2015-05-09 01:53:56.690000+00:00,"@MuhammadUmer Probably because that method didn't even exist when this answer was written. Even today, using it will probably require a polyfill for old browsers."
+19.0,2011-06-24 02:03:57.260000+00:00,@vsync You are very correct. One should always implement necessary sanity checks :)
+0.0,2018-05-20 20:27:40.167000+00:00,"Nor `Object.keys()` nor `getOwnProperty*()` functions will give you the correct answer if their parameter will be `new Date()`, which of course IS an object (`typeof new Date() === 'object'`). Freaky…"
+0.0,2019-12-18 14:59:24.243000+00:00,"That happens because none of Date properties are enumerable. For example:
+`Object.getOwnPropertyDescriptor(new Date().__proto__, 'getDay')`"
+3.0,2013-03-14 18:07:43.617000+00:00,@James Coglan why are you declaring the function within Object class and not just as a regular function ? i.e. function getSize(obj) {...} ?
+1.0,2012-07-05 14:39:32.507000+00:00,"I wrapped this answer as a jQuery plugin, for those that don't like messing around with `Object`: http://stackoverflow.com/a/11346637/11236"
+147.0,2015-02-25 00:14:15.500000+00:00,Why is everyone ignoring this: `Object.keys(obj).length`
+1.0,2018-04-04 08:52:37.287000+00:00,Not sure if it has been mentioned already because TL;DR but extending JavaScript's built in objects is frowned upon.
+22.0,2016-01-19 09:08:39.287000+00:00,"@stonyau IE8, IE9, IE10 are dead browsers that don't get support from Microsoft. IE8, IE9, IE10 user gets notification from Microsoft, that they use old, unsupported browser and should expect that stuff will not work for them. https://support.microsoft.com/en-us/kb/3123303"
+0.0,2017-07-26 14:46:51.357000+00:00,"Yeah, it's 2017.  Nobody should be using anything other than `Object.keys(myObj).length`.  This answer was correct in 2008 but not any more."
+65.0,2011-06-14 11:30:19.310000+00:00,"@Tres - your code can be broken if someone would come and overide the 'size' property without knowing you declared it already somewhere in the code, so it's always worth checking if it's already defined"
+0.0,2014-01-28 14:13:53.523000+00:00,"This method is however more buggy, especially when hasownprop seldom clears out when deleting object keys with delete keyword."
+1.0,2009-05-02 07:41:14.333000+00:00,"In practice using forward slashes works on every Java platform (and I have used them Windows 2000, XP, Vista, Mobile, CE, Linux, OSX, OS/400)."
+1.0,2019-07-15 19:07:07.133000+00:00,"IMHO, TestNG's killer feature is the ability to pass context args in via Before and After setup methods.  You can do a lot of neat magic tricks there that Junit cannot do.  95% of people don't bother to learn TestNG that well and are ignorant of it.   Also, TestNG has a neat way of threading via DataProvider, but only if you take advantage of it.  Also, testng.xml can contain Beanshell."
+2.0,2009-11-22 07:48:09.243000+00:00,"Bryan - so how would you mock a sealed class then?  I agree with you from a theoretical standpoint, but if you write something dependent on your sealed class then your tests depend on the sealed class as well."
+9.0,2015-04-22 09:58:03.440000+00:00,@BryanWatts I disagree strongly with this.  Sealing a class simply denies coders the opportunity to inherit the class.  They might find extending it useful in a way you haven't foreseen.  You don't need to worry about them somehow screwing things up; it's (probably) not your responsibility.  I'd actually do away with the `sealed` keyword.
+30.0,2009-05-26 14:46:46.640000+00:00,"I would argue that you should have a good reason *not* to seal a class. Leaving a class open means you need to think about how it will be used by inheritors, which opens up a floodgate of decisions about all the code in the class (virtuality, protected properties or private member variables, etc.) It is *hard* to properly design a class for inheritance. You shouldn't be able to extend a class just for extension's sake; derivation should mean something specific to the problem being modeled. Otherwise, favor composition instead."
+3.0,2015-04-22 21:14:49.597000+00:00,"@Jez: If I hadn't considered extension when writing the class, what reason is there to trust it?"
+7.0,2011-07-07 13:39:39.430000+00:00,"@abyx: Unfortunately, it is not always the developer's choice whether a class is sealed or not. Take, e.g., System.Web.HttpServerUtility in ASP.NET..."
+2.0,2018-10-18 11:56:23.880000+00:00,"Strongly agree with @Jez.
+Happy to see the official guideline shares the same opinion: ""DO NOT seal classes without having a good reason to do so. Sealing a class because you cannot think of an extensibility scenario is not a good reason."" (https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/sealing)
+To protect methods from being misused by subclass, just leave them private. Isn't it enough?"
+1.0,2013-03-13 02:04:26.367000+00:00,"These two subroutines finally solved the issue I have been chasing.  True, a bit longer then simply lick-and-stick all the data together with commas, but handled my 400,000 row export without issue."
+0.0,2008-09-22 19:19:12.843000+00:00,"As posted in another answer, there are libraries to do this (eg: OpenCSV) and they actually have test frameworks / unit tests too."
+0.0,2008-09-30 22:55:40.607000+00:00,So you could call a CSV library to do the parsing and then use the markup builder. Maybe you could edit your answer to show this.
+3.0,2016-01-11 16:54:17.657000+00:00,"Ctrl+F for `.Dispose()`.  If you find it, you aren't using IDisposable correctly.  The only use for a disposable object should be in the confines of a using-block.  And after the using-block, you don't even have access to `myField` anymore.  And within the using block, setting to `null` is not required, the using-block will dispose the object for you."
+8.0,2011-04-05 17:01:34.440000+00:00,"Well, a disposed object should throw ObjectDisposedException if it has already been disposed.  This does, as far as I know, require boilerplate code all over the place, but then again, Disposed is a badly thought-out paradigm anyway."
+0.0,2008-10-25 11:13:34.140000+00:00,We recently used 99 designs for our new company logo and not sure it is the best process in the world - took far to much management.
+0.0,2016-01-11 16:58:00.180000+00:00,"On another note: This is because the c# compiler will find local-scoped variables that implement IDisposable, and will call .Dispose (MOST Of the time) when their scope ends.  However... SQL Connections are one big time when .Dispose() is never optimized-in.  There are some types that require explicit attention, so I personally always do things explicitly just so I don't get bitten."
+0.0,2016-01-11 16:56:20.717000+00:00,I tried using custom local scopes once (mostly being a smarta$$).  The company exploded.

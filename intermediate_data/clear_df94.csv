@@ -1,0 +1,1017 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+65452705,"Pandas: go through column and if nan value appears, send the remaning column values to new column","In case I have a dataframe as
+How can I set new columns in a new dataframe for each vector with values different than nan?
+The solution would something like the following:",,2,1,,2020-12-25 23:59:31.683000+00:00,,2020-12-26 01:08:53.453000+00:00,,,,,14889779.0,,1,1,python|pandas|dataframe|nan,63
+65452704,Call Python script with filename argument when using bash script,"I am trying to run my Python script () via a Bash Shell script () that calls my Python script. In the script, I request an input for a filename.
+The bash script is below:
+The beginning of my Python script that calls for the input is below:
+I have been trying to run on command line as, but I get error: :
+I would like to be able to define that filename input in the command line when running the Bash Shell script (). Is there a better way to do this? If I can just type , that would be ideal.",,2,5,,2020-12-25 23:59:12.947000+00:00,,2020-12-26 02:02:32.270000+00:00,2020-12-26 01:36:25.637000+00:00,,13290657.0,,13290657.0,,1,0,python|shell|input|command-line|argparse,59
+65452701,with versus attach binding time,"What accounts for this difference in the semantics of  versus ?
+Both put the objects in the argument list into a surrounding namespace, but it seems bindings occur at different times. I am trying to use lists to pass a list of parameters to a function. Eg,
+might get passed to a function
+. I know R now has some OOP subsystem but I can avoid learning/dealing with it if I can just use lists.",65453279.0,1,0,,2020-12-25 23:57:45.320000+00:00,,2020-12-28 20:06:19.400000+00:00,2020-12-28 20:06:19.400000+00:00,,7088159.0,,7088159.0,,1,1,r,24
+65452700,AttributeError: 'NoneType' object has no attribute 'latitude',Running the code below but I am getting this error: AttributeError: 'NoneType' object has no attribute 'latitude',,0,0,,2020-12-25 23:57:39.470000+00:00,,2020-12-25 23:57:39.470000+00:00,,,,,14889793.0,,1,0,object|latitude-longitude|attributeerror|nonetype,37
+65452699,Deduct format string from given results,"Is there an existing algorithm to do something like this, from a number of results, recreate the original format string.
+For example, here are the input:
+=&gt; output:
+There are multiple format strings that work, but we should get the one with highest number of characters that do not belong to place holders, and lowest number of place holders.
+since in python, we have:
+or even better in C, assuming with enough inputs, we can get",65453141.0,1,0,,2020-12-25 23:57:20.173000+00:00,0.0,2020-12-26 02:03:29.453000+00:00,2020-12-26 00:18:58.437000+00:00,,2280305.0,,2280305.0,,1,4,algorithm|format|printf,51
+65452693,content.select() not working on a <code> element,"I'm trying to make a button to select the contents of a  element. However, it's not working and I am getting &quot; is not a function
+No idea why this wouldn't work,  automatically gets filled with text by my template serve.r",65452928.0,2,1,,2020-12-25 23:56:27.110000+00:00,,2020-12-26 01:07:16.933000+00:00,,,,,13521980.0,,1,3,javascript|html,45
+65452692,Rust lazy_static and tokio::sync::mpsc::channel in tokio::select,"I started coding with rust lately and I'm loving it. I'm coding on a project where I want to &quot;wrap&quot; a C-API. In one case I have to define callbacks in Rust, which C can call. I let bindgen created the callbacks. Since the code need to run somewhat asynchronous, I'm using tokio for that.
+What I want to achieve
+I create the the main function as tokio::main. In the main function i create 2 async tasks, one listens for channels, the other triggers the message queue in the C-API. If messages are available I want to send them via a channel on the callback function, so I can receive the message on the task, where I am listening for events. Later I want to send these messages via SSE or a GraphQL subscription to several clients.
+I can't change the C-Callbacks as they need to be passable to the C-API, and I have to use callbacks, otherwise I don't get the messages.
+My latest approach looks simplified like that:
+The problem:
+I understand the message and why this happens, but I can't think of a solution how this could work.
+I have a working example that uses crossbeam channels, but i'd rather use async channels from tokio, so i don't have so many dependencies and everything is async.
+Working example:
+Alternative
+One alternative, that i have not get to work either, would be to use some sort of local function or to work with closures. But I'm not sure if, and even if, how this would even work. Maybe someone has an idea. It would be nice, if something like this would work, so i dont have to work with lazy_static (i'd rather not have global/static variables in my code)
+The problem with this approach
+It would be nice, if someone had a solution to either of my problems. If it's a completely new approach, that would be fine either. If channels or tokio or whatever is not the way to go, that's also fine. Mainly I used tokio, because a crate I'm also using tokio, so I don't have to have many more dependencies.
+Already thank you, for reading until here.",65456463.0,1,0,,2020-12-25 23:56:17.890000+00:00,,2021-01-19 20:26:24.603000+00:00,2021-01-19 20:26:24.603000+00:00,,13302.0,,8708326.0,,1,1,asynchronous|rust|channels|rust-tokio|lazy-static,138
+65452689,ImportError: cannot import name 'RegisterWindow' from partially initialized module 'src.windows',"I have this error in my project with circular imports, but I'm not able to find it.
+The errors after execution are:
+Traceback (most recent call last):
+File &quot;....\main.py&quot;, line 5, in 
+from src.windows import MainWindow
+File &quot;...\src\windows\ __init __.py&quot;, line 1, in 
+from .main_window import MainWindow
+File &quot;....\src\windows\main_window.py&quot;, line 5, in 
+from . import LoginWindow
+ImportError: cannot import name 'LoginWindow' from partially initialized module 'src.windows' (most likely due to a circular import)
+Could anyone explain to me, what is wrong? I tried to route my imports and to my eye they look fine.
+My imports are like this:
+main.py
+src\windows\ __init __.py
+src\windows\main_window.py
+src\windows\login_window.py
+src\windows\register_window.py
+src\handlers\ __init __.py
+To get the whole picture of my files, they look like this:",,0,2,,2020-12-25 23:55:54.840000+00:00,,2020-12-25 23:55:54.840000+00:00,,,,,13637791.0,,1,0,python|python-3.x,31
+65452688,"Stop carousel autoplay using R's bsplus, Shiny and JavaScript","Using @YBS suggestion to put, &quot;bs_carousel(...) inside a renderUI&quot;
+Here is my attempt. The slides render and autoplay is off at first. However, click the right chevron and autoplay begins.
+Original Question
+I am using the carousel from R's bsplus package. I want to stop the auto play. Various solutions have been mentioned here.
+I am trying, without success, to implement one of them below.",65462522.0,1,4,,2020-12-25 23:55:37.187000+00:00,,2020-12-27 04:20:17.923000+00:00,2020-12-26 02:38:06.620000+00:00,,5057346.0,,5057346.0,,1,3,javascript|r|shiny|carousel,44
+65452687,How to display list of texts in a recycler view vertical without separation like Mus'haf,"I'm getting list of objects from api (quranic objects that contains ayahs of quran) and i wanna display them like real Mus'haf , i tried doing this with recycler view but it divide each object and i used a lot of layout managers like grid and staggered grid , not good as well ,i want to display ayahs like the image below , any help ??quranic page",,0,0,,2020-12-25 23:55:19.710000+00:00,,2020-12-27 10:36:43.640000+00:00,2020-12-27 10:36:43.640000+00:00,,9043330.0,,9043330.0,,1,0,android|api|android-recyclerview,26
+65452686,Ingress doesn't route to service on EKS,"I'm trying to run ingress on EKS, such that when you enter to the website, with prefix  (i.e. ), it will route to the  service.
+But for some reason when I enter to , I get .
+The service () is NodePort, but when I changed it to , I could enter to the deployment via the LoadBalancer link, so I think its only problem with the ingress.
+This is the yamls:",,0,3,,2020-12-25 23:55:05.617000+00:00,,2020-12-26 00:00:17.457000+00:00,2020-12-26 00:00:17.457000+00:00,,14883734.0,,14883734.0,,1,0,kubernetes|kubernetes-ingress|amazon-eks,48
+65452683,how to shift a time series data by a month in python,"I tried using the  function with  but when i offset by 1 month, the date get offset to the end of the month and not to the same date of the next month.
+Is there any way I can offset by a exactly 1 month. i.e. if I have a time series dataframe and the 1st index value is , after shifting for a month, I want the the value of index at  to come in front of value of index at .
+Please suggest a way to do that. It'll save a lot of time as otherwise, I'll have to use a loop.
+I want to create a new column in this dataframe such that the value in the new column corresponding to the index 20-10-01 10:00:00 and ticker AAPL should be the value of the column 'c' at time 20-11-01 10:00:00 and ticker AAPL. and so on for the other rows. Example data:
+this is the dataset
+and the expected new column is: 62.35
+63.3099, 63.9725, 64.025 and so on
+I want the values of 1 month ahead
+but using  doesn't do the job",,2,9,,2020-12-25 23:53:54.503000+00:00,,2020-12-26 06:56:59.467000+00:00,2020-12-26 02:06:46.603000+00:00,,1307020.0,,14434543.0,,1,1,python|pandas|time-series,75
+65452682,"Track changes on worksheet, copy active cell change Column Header & NewColumnValue","REF: Track changes on worksheet, copy cell that is not the active cell in active cell row and record value
+I have revamped my worksheet and hoping to get insight to how to get values in cells upon change event of...
+NewColumn__Value - currently none are pulling correct value.  active cell impacts results and want pre &amp; post event change to compare later. i know it is currenlly outputting the same as the corresponding OldVColumn_Value, but left in to help with conveying of ask.
+ColumnHeader - currently not pulling any value. header is in 2nd row of 'target.value
+any thoughts on code consolidation is greatly appreciated. to  i'm forced to do 'long division' approach and so great to see how to get to 'calculator' approach, helps me learn.",65455193.0,1,5,,2020-12-25 23:53:54.157000+00:00,,2020-12-28 00:06:40.443000+00:00,,,,,14884364.0,,1,0,excel|vba|events|target|worksheet-function,69
+65452681,Expand and hide collapsable,"I have many collapsable buttons in my page, belonging to the class &quot;collapsible&quot;.
+I need to programmatically expand / hide the content of a specific collapsable having id=&quot;collapsibleViewer&quot;. How can I accomplish this?",,0,1,,2020-12-25 23:53:23.973000+00:00,,2020-12-25 23:53:23.973000+00:00,,,,,986060.0,,1,0,html|jquery|collapsable,37
+65452676,"collectionViewCell subview is shown despite a .isHidden = true, when CV contentInset is updated (with video)","I'm making a chat app like iMessage. I use a  with a vertical  Each cell is a stack view containing (1) a &quot;header&quot; view (that contains a date UILabel, like in iMessage) , and (2), under it, the bubble UILabel in which I put the message text.
+Here is the code I use to dequeue cell :
+Like in iMessage, I display it if the date of the previous message is not the same or if it's the first message (user scrolled to top).
+I use an  keyboard, with a bottom bar as an . In order to always have the last message right above the bottom bar, I implemented this listener for notification  :
+When the user sends like 15 messages (so all the messages cells inserted doesn't fit into the screen), then after that, quickly close the keyboard, the CV contentInset is adjusted to decrease (to display the last message close to the bottom bar). Due to that contentInset decrease, new cells are inserted to the top of the CV because there is space available.
+Some of these news cells inserted in the top automatically have their headerView shown, despite cellForItem function explicitly told to . With the debugger, I could see that these header do have their isHidden set to true, but they are shown anyway. Moreover, these header are not detected in the layout inspector..
+Anyone has an idea of what's wrong ?",,0,7,,2020-12-25 23:52:02.927000+00:00,,2020-12-26 15:50:01.217000+00:00,2020-12-26 15:50:01.217000+00:00,,4508962.0,,4508962.0,,1,0,swift|uicollectionview|thread-safety,48
+65452672,WPF changing background of ListBoxItem on mouse hover,"I have a ListBox, where I want to change the background of a ListBoxItem when the user hovers over it. Here is the code for the ListBox:
+I've came across this question: ListBox mouse over background color , but I don't quite understand what I'm doing wrong.",,1,0,,2020-12-25 23:51:03.287000+00:00,,2020-12-26 00:14:51.120000+00:00,,,,,14461709.0,,1,0,c#|wpf|triggers|listbox|listboxitem,23
+65452671,std::cout does not print float as excepted,"Why does  print  to the console?
+It Works fine with , Its only after it exceeds a certain precision when it stops printing it properly.
+These numbers are hard coded, so this question is not a duplicate. In that question, an irrational number was produced because two floating point numbers were added, which means the numbers could not be stored properly, but in my case the numbers are hard coded, so what is the reason for not being able to print (or store maybe) a float explicitly initialised as ?.
+Is it just  failing to print the value or is it really an ?
+Consider the following program
+ prints  but the complier does not give a warning about conversion from  to  in , so I think that  must be a . Does that mean it's just a problem with ? Am I safe to assume that internally  is actually  even though it prints  to the console?
+My complier is visual studio 2019's inbuilt one.",65452876.0,2,6,,2020-12-25 23:50:47.897000+00:00,,2020-12-26 00:52:36.423000+00:00,2020-12-26 00:22:47.757000+00:00,,14859499.0,,14859499.0,,1,6,c++,140
+65452659,Apollo graphql query with parameters,"I am following along with this Graphql intro https://www.apollographql.com/docs/apollo-server/getting-started/. I've got my files set up (slightly modified), and the base query is working on http://localhost:4000/.
+My next question after getting through the basics was, how do I get data based on parameters? I've gotten this far, but the query in playground doesn't return results.
+index.js
+Then I'm running this query in playground. (mostly working from https://graphql.org/graphql-js/passing-arguments/)
+I get a successful response but no data. As mentioned, logging  in the itemsSearch resolver prints undefined.
+Any idea how I can pass that param  to the resolver and get results? Thanks in advance.",65452838.0,1,4,,2020-12-25 23:46:37.987000+00:00,,2020-12-26 01:17:06.617000+00:00,2020-12-26 01:17:06.617000+00:00,,1067590.0,,1067590.0,,1,0,graphql|apollo-server,147
+65452658,tensorflow argsort confusion in sort?,"I must be missing something rather obvious, however argsort() seems to behave inconsistently.
+here is a simple example of 5 float numbers, where the first example shows expected results, however the second example seems mixed up...
+This yields...
+where I would expect:
+Could someone explain this behavior?",65452702.0,1,0,,2020-12-25 23:46:31.457000+00:00,,2020-12-26 09:31:50.803000+00:00,,,,,1725944.0,,1,1,python|tensorflow,27
+65452654,Mocking $emit event of a child component in VueJS,"I have a snackbar component which I am writing tests for. It contains a child component (A button, when clicked closes the snackbar).
+This button emits a  event which the parent listens to and runs a method to either close the snackbar or open another.
+Is there a way of mocking the ? I can't seem to find something anywhere related to this.
+This is the template of the component:
+Additional Info:
+This component is never unmounted. Closing it means setting the  value to  which hides it.",,2,0,,2020-12-25 23:44:51.157000+00:00,,2021-01-14 15:45:38.263000+00:00,2020-12-26 00:33:29.787000+00:00,,12369920.0,,12369920.0,,1,2,javascript|vue.js,53
+65452652,How get the selected text option with Selenium using Python?,"I have this option in a web page
+screenshot html code
+I am trying to extract the selected text in the SELECTBOX with this code:
+but I get nothing, not even errors. The text is empty.
+screenshot html code full page",65452684.0,1,0,,2020-12-25 23:44:07.707000+00:00,,2020-12-26 00:19:25.510000+00:00,2020-12-25 23:59:48.597000+00:00,,10072982.0,,10072982.0,,1,0,python|selenium|google-chrome|option|gettext,25
+65452650,Lag when displaying many images in JavaFX GridPane,"I'm trying to display a bunch of images with JavaFX in a GridPane using constraints, and my code does show them perfectly. However, for some reason the images cause my stage to lag, despite my code working. Is there a way I could get around this?
+For context, &quot;arr&quot; is a 2d ArrayList that I've made to have strings, and checkBoxList contains some checkboxes arranged in columns of around 40 each, with a spacing of 2 in between them.",,1,7,,2020-12-25 23:43:47.413000+00:00,,2020-12-26 03:21:50.033000+00:00,2020-12-26 03:21:50.033000+00:00,,3659807.0,,14889770.0,,1,1,java|user-interface|javafx,55
+65452643,Im having difficulty figuring out how to set my embed thumbnail to a array how would I do this?,On set thumbnail how would I turn that into a array? Ive tried multiple different sites discord servers and people but none of them can help me.,,1,1,,2020-12-25 23:41:33.720000+00:00,,2020-12-27 01:03:43.367000+00:00,2020-12-27 01:03:43.367000+00:00,,441430.0,,14889766.0,,1,-1,arrays,19
+65452642,Adding buildFeatures { compose true } causes build to take indefinitely. How to investigate issue?,"After having a good experience with Jetpack Compose in new projects I decided to add Compose to an existing project of my company. After making all the necessary changes and writing the first lines of compose code I tried to build the project for the first time. Unfortunately, the build process gets stuck during ui:compileDebugKotlin multiple times (I waited for almost 45m and then stopped the build).
+I never got any error message, all I could conclude is, that the problem arises after adding  to my modules . Without this line the build finishes within 3 seconds (-&gt; It's not a performance issue)
+I currently have no clue where to start cause I got no error. I cannot reproduce the issue in a plain project. How can I find the cause of this issue?",65461305.0,1,0,,2020-12-25 23:41:21.203000+00:00,,2020-12-26 22:35:56.047000+00:00,,,,,5131883.0,,1,0,android|gradle|android-gradle-plugin|android-jetpack-compose,59
+65452640,React Native tipsi-stripe - null is not an object (evaluating 'StripeModule.paymentRequestWithCardForm'),See the answer below to resolve this  issue with React Native.,,2,0,,2020-12-25 23:41:10.007000+00:00,,2021-02-03 15:51:04.143000+00:00,,,,,12614482.0,,1,0,react-native|stripe-payments,73
+65452639,Customizing a chart circle,"I'm using fl_chart package, and it has been helpful, but it lacks the possibility to edit the circular chart styling to make the edges more circular, so if anyone could point out to a better way to achieve this design :
+What I achieved so far",65453538.0,1,0,,2020-12-25 23:41:05.440000+00:00,,2020-12-26 04:03:53.197000+00:00,2020-12-26 00:46:08.853000+00:00,,62576.0,,13072765.0,,1,1,flutter|dart,28
+65452636,using node.js to query a google sheet and return row,"So I am building a discord bot which is using google sheets like a database. I would like the user to be able to enter a command with a unique ID which every row will have and then return all the values of said row and store than as a variable. which will then later be used elsewhere.
+The command the user would run is &quot;&gt;Read (UNIQUEID)&quot;, then I would like the bot to reply with, &quot;(UNIQUEID) has been found&quot; if it is found and &quot;(UNIQUEID) can not be found&quot;.
+The user would then use the second command &quot;&gt;Upload&quot; to essentially upload that entire row to a new spreadsheet.
+I am confident I can finish the &gt;Upload code by myself, but for the life of me I dont know how to query using the google sheets api. for some reference below I have attached an image of my sheet I want to read from.
+Google Sheet To Read From
+There would also be a lot more information in the google sheet, but for testing purposes I left it with only one entry.
+Edit 1: I have been looking into the Google Visualization API, I did a bit of research but Im not sure this would actually work with sheets? From some of the documentation it seems like its for charts..",65467208.0,1,4,,2020-12-25 23:40:39.953000+00:00,,2020-12-27 15:13:04.033000+00:00,2020-12-25 23:46:01.210000+00:00,,14880721.0,,14880721.0,,1,0,node.js|google-sheets|google-api,56
+65452632,Unable to merge dex error in Android Studio,"I am trying to build my mobile project in Android Studio but i am having this error
+Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'.
+java.lang.RuntimeException: com.android.builder.dexing.DexArchiveMergerException: Unable to merge dex
+dependencies",,0,1,,2020-12-25 23:40:16.207000+00:00,,2020-12-31 10:16:51.840000+00:00,2020-12-31 10:16:51.840000+00:00,,6296561.0,,10671704.0,,1,0,java|android|kotlin|androidx,22
+65452631,Specific Word Filter,"How to make this code find specific words instead of checking in between words ?
+Example:
+Filtrated word is d**k this code counted Dickinson as a bad word.
+I want it to find specific words with its same functions like ( show + counting words in alert window )",,1,1,,2020-12-25 23:40:14.900000+00:00,,2020-12-26 00:05:54.033000+00:00,,,,,6774544.0,,1,3,javascript|html|css,61
+65452630,In functional component useContext works in console.log but returns error on render,"I have been looking around, but can't find a definite answer. I have wrapped my app in , I have passed props and tried  but nothing works, just getting the same  over and over again. Am I doing something fundamentally wrong here or is there a simple answer to this?",,1,2,,2020-12-25 23:39:39.260000+00:00,,2020-12-26 01:36:52.490000+00:00,,,,,12836811.0,,1,3,javascript|reactjs|use-context,45
+65452626,Timeout value in powerbi service,"I have a dataset for 3 days I can not update it on Power BI service, knowing that on DESKTOP it is normally updated in 30 minutes. the dataset is powered from a SQL server database, via a data gateway. the data gateway is well updated. the incremental update is activated and the dataset retrieves only the data of the last 3 days to each update.
+Here is the generated error message :
+Data source error: The XML for Analysis request timed out before it was completed. Timeout value: 17998 sec.
+Cluster URI: WABI-WEST-EUROPE-B-PRIMARY-redirect.analysis.windows.net
+Activity ID: 680ec1d7-edea-4d7c-b87e-859ad2dee192
+Application ID: fcde3b0f-874b-9321-6ee4-e506b0782dac
+Time: 2020-12-24 19:03:30Z
+What is the solution to this problem please.
+Thank you",,1,1,,2020-12-25 23:38:46.897000+00:00,,2020-12-27 18:37:15.330000+00:00,,,,,10983721.0,,1,1,powerbi,70
+65452625,How do I use the root Uri of the SD card to find a file inside a folder,I need to rename files that are in subfolders in the SD card so I got the root Uri of the Sd card with the permission . Whenever I use  it only finds files that are in the root path(files that are not in subfolders).How do I find other files that are not in the root path.,,1,3,,2020-12-25 23:38:35.733000+00:00,,2020-12-28 10:08:01.780000+00:00,2020-12-28 10:08:01.780000+00:00,,6296561.0,,12369854.0,,1,1,android|android-sdcard,46
+65452622,Softether VPN Setup: Automatic Script executed from git,"Am kind of new to bash scripting but i was wondering if it is possible to create automatic installations script for softether vpn server on raspberry pi to be executed from git and if it is possible how do you create one as I cant find any of the tutorial online to implement what i want, I tried to create mine and I failed miserably. any help will be appreciated.Thanks",,0,3,,2020-12-25 23:37:39.380000+00:00,,2020-12-25 23:37:39.380000+00:00,,,,,5897603.0,,1,0,bash|git|shell|scripting|raspberry-pi3,50
+65452618,Disable Google Analytics on localhost in Angular,"I'd like to prevent Google Analytics from logging events when developing my Angular 11 app on localhost. How do I do this?
+So far, I've tried this:
+which gives me the error:
+Thanks in advance!",65452875.0,2,1,,2020-12-25 23:36:58.463000+00:00,,2020-12-26 12:15:53.403000+00:00,,,,,13991522.0,,1,1,javascript|angular|google-analytics,76
+65452615,"Unable to install angular/cli, ng issue","Could someone help me?
+I am unable to install angular and I am not understanding my error:",,1,2,,2020-12-25 23:36:10.300000+00:00,,2020-12-26 03:52:47.473000+00:00,,,,,11171948.0,,1,0,angular,88
+65452608,Best solution for selecting the columns that contain at least one True value in a pandas DataFrame,"The code under [6] does what I want. My question, however, is: is there a better solution? That is, more concise and/or more elegant.",65452624.0,1,2,,2020-12-25 23:35:19.333000+00:00,,2020-12-25 23:40:42.400000+00:00,2020-12-25 23:40:42.400000+00:00,,4909087.0,,3246135.0,,1,3,python|pandas|dataframe,35
+65452607,Why is my test changing the length of a byte array?,"I have the following test:
+When I debug the test the byte array changes and becomes this slice:
+What's going on here, why the change?",65453136.0,1,4,,2020-12-25 23:35:14.320000+00:00,,2020-12-26 02:02:41.583000+00:00,,,,,70600.0,,1,0,rust,43
+65452602,How can I pass data through a Navigation Link with FetchedResults and CoreData?,"I'm trying to pass FetchResult Data from one screen to another, through a Navigation Link in a ScrollView.
+When I try to call the passed data in the DetailView screen, I get the following error:
+Code below - Saved Poem List
+and Code for the Detail View
+Am I missing anything? How can I resolve this issue, and pass the data from the Fetchedresults in the list view to the detailed screen?
+Thanks in advance.
+EDITED CODE FOR REPLY
+SavedPoemList:
+DetailView",65452655.0,1,0,,2020-12-25 23:34:32.583000+00:00,,2020-12-26 00:04:54.773000+00:00,2020-12-26 00:04:54.773000+00:00,,14726817.0,,14726817.0,,1,0,swift|core-data|swiftui,41
+65452594,Add seperate image for each price of product in stripe,"I want to add image to each of my  (plan) in stripe. I know I could add an image to the product but I don't want this.
+Basically I have 3  for my  (e.g. Single device, 3 devices and 7 devices )
+and I want to add image representing 1, 3 and 7 devices respectively to show on the front-end.
+Is it really possible in  without hardcoding images mapped with product IDs on my front-end?",,1,0,,2020-12-25 23:32:29.487000+00:00,,2020-12-26 21:51:38.757000+00:00,,,,,8684521.0,,1,1,javascript|stripe-payments,23
+65452588,precedence of local providers in directives and components,"I think the local provider for a directive is to provide services for its content children, for example:
+ has a dependency of  in its contructor:
+So if I define a directive as:
+and apply it as:
+then  in 's constructor can be resolved.
+But if there is a component also define  in its local providers and apply it as:
+since both the  and  can provider the service for , so which one will  choose, local provider of   or ?",65539487.0,1,1,,2020-12-25 23:31:51.663000+00:00,,2021-01-02 13:16:22.193000+00:00,2020-12-26 13:01:21.047000+00:00,,4019404.0,,9623401.0,,1,3,angular|angular-directive,24
+65452587,What trait prevents arguments from including pointers to heap-allocated data?,"I am writing code that only works if the argument passed in doesn't include any pointers. The following is ok:
+The following is not ok:
+What type should I give to the first argument of  such that the bad examples are rejected?",,1,4,,2020-12-25 23:31:44.783000+00:00,,2020-12-26 23:11:33.453000+00:00,2020-12-26 01:05:32.513000+00:00,,2470818.0,,1526986.0,,1,0,rust|traits|heap-memory,51
+65452585,Inner Shadow effect like Figma in native Android,"I wonder if there is a way to create a view container with an Inner Shadow like in Figma in native Android.
+I have already spent the whole day trying layer-list with different items (linear, radial gradients, shapes, bitmaps) but nothing seems to be similar to what I need.
+Please check the attachment, pay attention to container's inner shadow, this is what I really need:
+Links or parts of code/xml will be appreciated.
+Thanks in advance!",,0,0,,2020-12-25 23:31:15.770000+00:00,,2020-12-25 23:31:15.770000+00:00,,,,,8452377.0,,1,1,java|android|kotlin|drawable|figma,39
+65452577,How to sort date data type?,I've been trying to sort dates on A1 but it sorts based on text not the value,65453425.0,2,11,,2020-12-25 23:29:31.767000+00:00,,2020-12-26 04:26:11.010000+00:00,2020-12-26 01:31:06.523000+00:00,,445425.0,,13243343.0,,1,0,excel|vba|sorting|range,65
+65452575,How to keep virtualenv prompt indication after customizing PS1?,"I have modified PS1 with the following code. It creates two lines if the directory I am in becomse too long.
+The problem is, I have lost virtualenv indication when it is activated and I cannot figure out why it is gone.
+The default one works correctly, I don't see why the one above functions differently.",,0,0,,2020-12-25 23:29:03.007000+00:00,1.0,2020-12-25 23:29:03.007000+00:00,,,,,2829082.0,,1,0,python|linux|virtualenv|python-venv|ps1,15
+65452570,Express session does not show session variables when called from React app but does from browser,"I have a simple endpoint where I am trying to check if a session variable is present and return a  if so and return a  if not.
+Right now I am simply logging the  like so.
+When I fetch this endpoint from my React app () the  in my server does not show the values even though I know that I am signed in and the variables are present.
+But if I go directly to the route in my browser  then the  successfully logs the session values.
+My React application is not showing a CORS issue.
+Any ideas on what is going on?",,1,0,,2020-12-25 23:27:38.727000+00:00,,2020-12-25 23:31:02.867000+00:00,,,,,12954021.0,,1,0,node.js|express|session|session-cookies|session-variables,12
+65452566,C enum debugging,"I want to change my enum code with related values and want to get same output like before change. But i am getting different output. Codes before change were showed in comment lines. How and why it can be? I give the values to get same output. I can't understand why didn't i get the same output? (Random number not a problem. After change, it is not printing the board, just printing first user value not continue, not getting an error just keeping to look like the ss)
+First output:
+Output after change:",,0,16,,2020-12-25 23:26:33.110000+00:00,,2020-12-25 23:43:05.777000+00:00,2020-12-25 23:43:05.777000+00:00,,14644403.0,,14644403.0,,1,1,c|debugging|enums|enumeration,49
+65452561,Why is my app still considering the user as logged in even after deleting their account?,"I deleted all my collections and also went to the authentication tab in Firebase and deleted all users. I then went to Android studio and hit the stop button, then hit the play button again. Upon start, Logcat says that the user is still logged in:
+And the app stays on the Groups activity too (the app's launcher acitivty), instead of going to the login/signup activity. What am I doing wrong? Why isn't the app recognizing that the user's account was deleted?",,0,1,,2020-12-25 23:26:05.033000+00:00,,2020-12-26 01:40:05.447000+00:00,2020-12-26 01:40:05.447000+00:00,,807126.0,,4838216.0,,1,1,android|firebase|firebase-authentication,31
+65452550,"python3.7.3 ssl.SSLContext() get ""killed""","I try to use ssl module with urllib.request , And my script always die.
+So i found this:
+That all infomation i got. And I've g00gle about this , nothing I can found in the world.
+Can somebody help me with this trouble? I really need someone help me.",,0,2,,2020-12-25 23:23:59.283000+00:00,,2020-12-25 23:23:59.283000+00:00,,,,,14465132.0,,1,0,python|ssl|arm,17
+65452543,Anaconda Navigator launch problem Windows 10,"Can't Open anaconda, when i tried from the promp this appears:
+Traceback (most recent call last):   File
+&quot;C:\ProgramData\Anaconda3\lib\site-packages\qtpy_init_.py&quot;, line
+204, in 
+from PySide import version as PYSIDE_VERSION  # analysis:ignore ModuleNotFoundError: No module named 'PySide'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):   File
+&quot;C:\ProgramData\Anaconda3\Scripts\anaconda-navigator-script.py&quot;, line
+6, in module
+from anaconda_navigator.app.main import main   File &quot;C:\ProgramData\Anaconda3\lib\site-packages\anaconda_navigator\app\main.py&quot;,
+line 22, in module
+from anaconda_navigator.utils.conda import is_conda_available   File
+&quot;C:\ProgramData\Anaconda3\lib\site-packages\anaconda_navigator\utils_init_.py&quot;,
+line 15, in module
+from qtpy.QtGui import QIcon   File &quot;C:\ProgramData\Anaconda3\lib\site-packages\qtpy_init_.py&quot;, line
+210, in module
+raise PythonQtError('No Qt bindings could be found') qtpy.PythonQtError: No Qt bindings could be found",,0,3,,2020-12-25 23:21:59.643000+00:00,,2020-12-26 10:03:55.277000+00:00,2020-12-26 10:03:55.277000+00:00,,5652480.0,,14889738.0,,1,0,python|anaconda,32
+65452541,Changing viewBox of an svg in javaScript,I am trying to change my  using JS without any success,,2,0,,2020-12-25 23:21:46.303000+00:00,,2020-12-26 07:43:30.527000+00:00,2020-12-25 23:25:38.613000+00:00,,1043231.0,,13759874.0,,1,1,javascript|svg|viewbox,54
+65452540,Restricting Mondays and Specific Days on a Woocommerce Datepicker - (Created by Checkout fields plugin),"I m trying to extend the functionality of a datepicker that's created by WooCommerce Checkout Fields.
+The weird thing about this code is that it's written alittle differently from most of the resources I can find and using an array of dates don't seem to work
+I have tried implementing code similar to the this:
+However, having the above adapted to my code just doesnt seem to work at all.
+I m trying to block out specific dates and Mondays. This should be relatively easy but I m working via the functions file in wordpress to rewrite the datepicker field that's created by a plugin and as such, the approach to modifying the datepicker is not so straightforward.
+Here's what I have tried but didnt work
+It seems that the code has to be written in the way it is written below with attributes, otherwise it will not even work. So i m stuck with not being able to add blocking specific dates on my code.
+Any help would be greatly appreciated. Thank you!",,0,0,,2020-12-25 23:21:37.933000+00:00,,2020-12-25 23:33:51.410000+00:00,2020-12-25 23:33:51.410000+00:00,,3448267.0,,3448267.0,,1,0,woocommerce|datepicker,15
+65452539,"How to set multiple ""Set-Cookie"" headers on single response","How do I set multiple  headers like google does. Tried doing it in Go and Node.js but it doesn't seem possible.
+Is it possible to do this without any framework(s)?
+Go
+Node.js",,2,4,,2020-12-25 23:21:32.353000+00:00,,2020-12-26 02:06:05.520000+00:00,2020-12-26 01:02:12.897000+00:00,,6790436.0,,6790436.0,,1,-1,node.js|http|go,54
+65452537,Can't send remote notifications to iOS using POST request to Firebase Cloud Messaging,"TL;DR: React native app, sending remote push notifications works for Android, not for iOS.
+Hi, I am developing react-native app and trying to send notification to other users after a user makes a specific action. I have no backend, just Firestore and Firebase Cloud Messaging.
+For android it works just by sending a POST request from the app like this:
+But for iOS it does not work (even though I have requested notifications permissions). Also it is really hard to test, since I can't send push notification to an emulated iPhone, so I need to release new version after each change.
+Any thoughts about this?
+Thanks
+Edit: Here are picture of my projects capabilities in Xcode and my certificates for notifications on Apple Developer website:",,1,2,,2020-12-25 23:21:17.433000+00:00,,2020-12-26 23:07:21.347000+00:00,2020-12-26 23:07:21.347000+00:00,,12076097.0,,12076097.0,,1,2,ios|react-native|post|firebase-cloud-messaging|apple-push-notifications,66
+65452530,relative units in html5 canvas,"Is there a way that I can use relative units like vh or vw to draw on the canvas? I tried this:
+and even without the quotations but it only works if I use pixels. I need  the shape to resize according to the viewport.
+Thanks in advance.",,0,2,,2020-12-25 23:19:58.677000+00:00,,2020-12-25 23:19:58.677000+00:00,,,,,14748873.0,,1,0,javascript|html5-canvas,27
+65452528,Backend Sonata Event is not executed,"I have created a bundle to create a backend view that should display a custom page.
+In my respective template file, that gets loaded correctly, I have this code:
+I have created a new  compared to existing Sylius files, and modified it to my needs, to look like this:
+However, in the backend the respective output remains empty. The  variable returns that the content has been fired, yet the content of  is not being returned. In fact, no matter how I change the config.yml above, no output changes, even if I insert the configuration file of other modules that are working as of now, so either the config.yml is not being respected (I haven't declared it anywhere that it should be loaded explicitly and haven't found code examples where it should have been loaded explicitly).
+What do I need to do in order to register AND have Sylius respect my Sonata configuration?",,0,0,,2020-12-25 23:18:52.827000+00:00,,2020-12-25 23:18:52.827000+00:00,,,,,2760682.0,,1,0,sylius,10
+65452525,How to retrieve RecyclerView position,"I am trying to get the position of items in my , mainly those that are at [0], [1], and [2] positions. The reason being is currently I am creating a leader board that will highlight the top 3 players with the highest score.
+I have tried calling  but I guess I am using it incorrectly.
+I would greatly appreciate if someone could point me to the right direction. Thank you.
+Edit 1:
+My UserAdapter
+list_leaderboard_single.xml
+fragment_leaderboard.xml",65452590.0,1,3,,2020-12-25 23:18:17.703000+00:00,,2020-12-25 23:59:36.453000+00:00,2020-12-25 23:59:36.453000+00:00,,9541438.0,,9541438.0,,1,2,java|android|android-recyclerview|position,49
+65452524,Property 'getTime' does not exist on type 'number | Date',"Now I have this error: 
+Based on this Link I also tried to declare Date but didn't work.
+Any idea would be appreciated.",65452548.0,2,2,,2020-12-25 23:18:14.197000+00:00,,2020-12-25 23:33:40.283000+00:00,,,,,3037686.0,,1,0,javascript|typescript|oop,68
+65452523,Find all the positions where a substring matches a stirng,"I want to get the indexes for all the ocurrencies of substring inside a string
+I also want the function to start counting on 1, as in the previous example, instead of 0.
+This is what I managed:
+This is working, but I would like a way of doing this without using any , as well as starting at 1 instead of 0.",,2,3,,2020-12-25 23:18:08.093000+00:00,,2020-12-25 23:40:05.960000+00:00,,,,,14888814.0,,1,0,python,60
+65452515,AWS SQS FIFO can't receive all messages,"I'm learning AWS SQS and I've sent  messages to a FIFO queue, with the same . But when I try to poll for messages, I can only receive 2 of them (Why? I set the  using  API, but I can only receive 2. How can I receive all of the messages?). 
+(As shown in this picture, I have 5 messages available, but I can only receive 2 messages.)
+I tried to delete one of two received messages and poll again. The deleted one is gone, and I received a new message. But in total, it's still 2 messages.",65453892.0,2,2,,2020-12-25 23:16:40.300000+00:00,,2020-12-26 05:39:28.173000+00:00,,,,,12162096.0,,1,1,amazon-web-services|amazon-sqs,57
+65452514,Nextjs css flickering,"I'm building a react app using material ui and nextjs. I'm using  component, provided by material UI and override some its styles with my own like this:
+ is a prop, which gets passed to the component and  is a variable, which get imported from the css module: .
+Now, when I'm working on this locally everything looks great:
+But, after I deploy it to production via  I start experiencing &quot;flickering&quot; effect when for like 1/3 of a second my page looks like this:
+My guess is that it might be related to the fact that nextjs export my css to several files on production:
+How can I solve that?",,1,0,,2020-12-25 23:16:37.133000+00:00,,2020-12-26 00:52:54.723000+00:00,,,,,999223.0,,1,1,reactjs|material-ui|next.js|css-modules,209
+65452513,PostgreSQL: How do I have my function return the id of the new row I inserted?,"I'm new to sql
+This is my error
+SQL Error [42601]: ERROR: syntax error at or near &quot;(&quot;",65452579.0,2,0,,2020-12-25 23:15:59.033000+00:00,,2020-12-25 23:50:35.007000+00:00,2020-12-25 23:50:35.007000+00:00,,10676716.0,,13478560.0,,1,0,sql|postgresql|sql-insert|sql-function,35
+65452510,How to extract and save LBP features of multiple images?,"I have a folder of 200 images, I want to extract the LBP features of each image and save them in an excel sheet so that I can use them as a DB features and retrieve, based on them, the accurate images in a CBIR project on MATLAB. I used this code for the extraction but the output gives me the feature vector of only one image.
+my second question is how to store them in excel (in order to have the feature vectors of the 200 images), I used the :
+but as I said, it gives me the vector of only one images with a value of 1x3776",,0,5,,2020-12-25 23:14:44.867000+00:00,,2020-12-27 00:30:53.893000+00:00,2020-12-27 00:30:53.893000+00:00,,13011231.0,,14889648.0,,1,0,excel|matlab,39
+65452508,Multiple conditions for joined the table's column in SQLAlchemy,"I have two models:
+For example: I have one row in the  table with . And I have two rows in the  table: the first one with  and the second one with . And the  column of the each row in the room_participants table equals to . I know this two s. And now I need to do something like: &quot;give me a row from the  table, which have the row with  and the row with  from the  table as a relationship&quot;.
+What should the SQLAlchemy query look like? And is it even possible?
+Thanks in advance)",,1,0,,2020-12-25 23:14:25.993000+00:00,,2020-12-29 23:30:14.370000+00:00,,,,,9703655.0,,1,0,python|sql|join|sqlalchemy,34
+65452505,GitHub Actions jobs sequence,"I'm trying to implement sequence of jobs on GitHub Actions: checkout and upload arm-none-eabi-gcc compiler, next build matrix of different targets, next create release and upload release assets (matrix).
+For checkout I use  with clean false flag, to split jobs  of course.  - uploads gcc.
+I have two splits at build and at upload jobs.
+Is it possible to create this sequence in github actions?
+How can I disable Post checkout cleanup to store uploaded compiler?",,0,1,,2020-12-25 23:13:49.407000+00:00,1.0,2020-12-29 16:20:36.520000+00:00,2020-12-29 16:20:36.520000+00:00,,3241243.0,,12362573.0,,1,1,github|build|github-actions|arm-none-eabi-gcc,34
+65452504,Bloomberg excel add-in BDH,"I was given a funds prices historical database from 2000 to nov/2020 using the BDH function of Bloomberg's excel add-in. The problem is that there are many cases where a fund repeats last price from funds extintion 'till nov/2020.
+For example, lets say a fund was extinted in 2015 at a price of 5.25, then 5.25 is shown from 2015 to nov/2020, which is clearly useless.
+I want to know if it is a problem caused by BDH function parameterization or this function always outputs information like this.
+Below is an image of a section of the database",65475805.0,1,4,,2020-12-25 23:13:12.423000+00:00,,2020-12-28 09:56:50.453000+00:00,2020-12-26 00:13:07.860000+00:00,,2872922.0,,14889269.0,,1,0,excel|excel-addins|bloomberg,58
+65452503,Is there any polymorphic wrapper for stl iterator from any container?,"I need a virtual function accepting  input iterators as arguments but I don't want to tie it with a specific container's iterator class.
+Is there anything in the standard (modern) C++ library that allows hiding specific iterator class from the client and behave as GenericInputIterator, GenericForwardIterator, etc? I suppose it should be sth polymorphic.",,1,6,,2020-12-25 23:13:07.807000+00:00,,2020-12-25 23:31:35.847000+00:00,2020-12-25 23:25:21.903000+00:00,,727238.0,,727238.0,,1,1,c++,67
+65452502,Python pyqt5 reset all widget inputs,"I am using this method to have multiple windows GUI in a python script.
+With a button press, I open one of the two forms, that have multiple textEdits and comboBoxes, used to fill a word teamplate easier.
+Now, I want to reset all the inputs after I finished filling the form, and save the document.
+What behaviour I want:
+From main window, open one of the forms depending on 2 ComboBoxes index (type of document, and the client's gender).
+After I fill the form and exit it, I go back to the main window, and when I open again a form, the text edits are empty and the combo boxes are on index 0.
+But i can't make it to work, either the inputs are not resetted, either I kill the popup window and the main window.
+I can't only kill the popup, I can only hide it and show it again.",,1,0,,2020-12-25 23:12:54.413000+00:00,,2020-12-26 00:18:16.830000+00:00,,,,,14889702.0,,1,0,python|pyqt5,25
+65452501,How do you get a display an SignInFailure error message in Firebase-ui web?,"Firstly, using firebaseui-angular package to implement FirebaseUI.
+I've set up anonymous guest accounts and I'm working on upgrading these accounts to real accounts. In my application, I do not want to merge accounts - if the user tries to upgrade an anonymous account to one that already exists I want to display an error message.
+This is my code
+login.component.html
+login.component.ts
+I can confirm that if they are an anonymous user and they try to upgrade with an account that already exists they get a signInFailure event with anonymous-upgrade-merge-conflict.
+This is consistent with the documentation (https://firebase.google.com/docs/auth/web/firebaseui#handling_anonymous_user_upgrade_merge_conflicts)
+My problem is I don't want to continue merging the account, I want to display an error message telling them they can't merge.
+How do I display a custom error message on SignInFailure? Does the package support this?  Do I need to display my own error message outside of FirebaseUI?",,0,0,,2020-12-25 23:12:48.090000+00:00,,2020-12-26 01:46:46.347000+00:00,2020-12-26 01:46:46.347000+00:00,,209103.0,,279911.0,,1,0,javascript|angular|firebase-authentication|firebaseui,23
+65452498,AttributeError: 'SQL' object has no attribute '_session' for Flask App while deploying on Heroku,"Is anyone know how I can solve this issue? It's been 3 days and I am still trying to deploy my app on Heroku.
+Currently trying to upload it with this instruction for CS50 Finance. My app is pretty much the same with Finance on configuration.
+Note: Build log is working fine. This error I shared above is from the Application Logs section of Heroku.
+Python Codes
+The codes in the application.py is down below;",,0,0,,2020-12-25 23:12:17.407000+00:00,,2020-12-25 23:12:17.407000+00:00,,,,,14889686.0,,1,0,python|sql|session|flask|heroku,18
+65452494,Reflection - How to copy common properties from one class to another when there are subclasses,"I'm working on a c# application and trying to make this code working. It fails when it tries to copy a property which is a list of a subclass object.
+I'm able to check the common properties in both classes and the code works fine for most types I've used, even . When I have properties of type e.g. it fails. The code fails also for simple objects of the Subclass.
+I assume this is achievable but I'm struggling to find a way to identify the type of property and when to cast the  to the correct type here .  should probably be casted as a .
+The error thrown by the compiler is:
+System.ArgumentException: 'Object of type 'System.Collections.Generic.List1[Questions.Class2+SubClass]'
+Can anyone help?  Much appreciated.",,1,7,,2020-12-25 23:11:52.750000+00:00,,2021-01-01 13:31:38.707000+00:00,2020-12-26 00:21:15.010000+00:00,,585968.0,,7269923.0,,1,0,c#|reflection,54
+65452489,Gitlab CICD - denied when I push image into container registry,"I am using gitlab.com ci/cd to push images into gitlab registry. I had 2 repositories already and pushing images into registries as registry.gitlab.com/group1/project1 and registry.gitlab.com/group1/project2.
+Now I have another 2 repos up and running. I want to run CI/CD for the new projects. I also want to push images into different registries and names them as follows : registry.gitlab.com/group2/project1 and registry.gitlab.com/group2/project2
+And I am getting following error:
+Does free gitlab provide only 2 registries? Do I need to pay to create more registries ?",,1,0,,2020-12-25 23:10:05.707000+00:00,,2020-12-26 00:40:33.937000+00:00,2020-12-26 00:40:33.937000+00:00,,14729145.0,,236085.0,,1,0,gitlab|gitlab-ci,73
+65452487,Error with Springboot 2.4.0 incompatible versions,"I have followed the below link and have updated the dependent jar versions respectively for spring boot 2.4.0.
+But I get the following error while starting the service:
+So, I would like to understand where I will get compatible versions while upgrading to 2.4.0?
+For example, I have updated these versions:",,1,1,,2020-12-25 23:09:55.073000+00:00,1.0,2020-12-26 12:06:17.137000+00:00,2020-12-26 12:06:17.137000+00:00,,4850040.0,,14889688.0,,1,0,spring-boot,62
+65452486,React Hot reload doesn't apply changes,"I created an app with create-react-app --template typescript and then ejected.
+I noticed that, when I change tsx everything is good. But with ts files, it's not working properly. For example, if I put a new line with console.log, it will print in the browser.
+But if I change some logic in the function, I will see the old behavior. In source of browser I see new  file. So it was delivered to the client, but did not get applied.
+Please give me an advice on where I should search next or which plugin I should explore for webpack!",,1,0,,2020-12-25 23:09:41.197000+00:00,,2020-12-26 23:43:46.307000+00:00,2020-12-26 09:56:15.317000+00:00,,14729145.0,,11865838.0,,1,0,reactjs|webpack|hot-reload,43
+65452485,"How to resolve ""Please provide either 'type' or 'entity' attribute in EntityName.id"" error when creating migration in MikroORM?","I've been following Ben Awad Fullstack tutorial and have run into an issue. So, I have installed MikroORM and am using PostgreSQL database. The problem is that  command returns the following error:
+I have created Post entity that looks like this:
+I have also created config file for MikroORM like so:
+It's all being put together in the index.ts script:
+I've tried changing the Post entity id to uuid and adding the corresponding object parameter to the @PrimaryKey decorator but the error stays the same.
+At the moment I am only using MikroORM and ts-node dependecies.
+Thanks in advance.",65457102.0,2,0,,2020-12-25 23:09:39.217000+00:00,,2020-12-26 13:56:25.620000+00:00,,,,,14889691.0,,1,0,node.js|typescript|postgresql|mikro-orm,176
+65452481,Mocking Functions that take keyword Arguments in python,"I'm trying to unit test a Discord bot. However, my test keeps failing with:
+send() takes no keyword arguments.
+The function works just fine in practice, and the docs do specify the keyword arguments.
+How can I make this work?
+Test:
+Failing code being tested:",,0,2,,2020-12-25 23:08:41.893000+00:00,,2020-12-25 23:30:06.203000+00:00,2020-12-25 23:30:06.203000+00:00,,2089675.0,,14889708.0,,1,1,python|discord|discord.py,54
+65452480,SQL query. Should I loop through specific date range?,"I am making a hotel management system. I need your help with appropriate statement to execute. Can you please have a look?
+This is all room_types = 3, their check-in and check-out date 
+If I make query &quot;SELECT * from rooms WHERE room_type = 3 AND check_in_date BETWEEN '2021-02-12' AND '2021-02-13'&quot; this is what it returns
+it returns only one room
+but BETWEEN '2021-02-12' AND '2021-02-13'&quot; there will 5 rooms with room_type = 3 in house. How can write a query that returns it?
+I need to return these
+Because all those 4 rooms with type=3 will be in house BETWEEN '2021-02-12' AND '2021-02-13'
+I am using MariaDB with ORACLE syntax.
+Thank you!",65452496.0,2,5,,2020-12-25 23:08:30.720000+00:00,,2020-12-25 23:33:14.830000+00:00,2020-12-25 23:33:14.830000+00:00,,10676716.0,,14889632.0,,1,-2,mysql|sql|oracle|datetime|mariadb,39
+65452478,Orient and Organize Tkinter frames,"I would like to know how to create frames that align to grid and fill space I dictate. I am having a hard time grasping frame orientation within a window. I can make all the frames, but if I pack, they are all on left or in a line/on right. I played with that and decided on grid(). I set the window geometry and then use grid for frames. However, my frames all collapse down  to the top left or my initial frame fills the whole space and the other two squeeze in around the edges. I tried using window geometry of 1024 and 768, then allotting width and height for my first frame to be 512 and 384. Then setting the next two to have width 512 and height of 192. I also saw in other articles that weight is important and tried iterations of code to alter that, but was unsuccessful. Rowspan and columnspan helped me get the background colors to appear so that I could visualize the space being occupied by each.
+Anyway, code is below:",65452888.0,1,3,,2020-12-25 23:07:58.733000+00:00,,2020-12-26 01:56:05.720000+00:00,,,,,14338124.0,,1,0,python|tkinter|frame|frames,48
+65452477,Download image from HTTP request triggering a breakpoint,"I am trying to download an image onto the user's desktop from a URL using Win32. I have taken care of all the HTTP request stuff and know for a fact that it is all working well. When I go to call  the Visual Studios debugger just says &quot;Exception: Application.exe has triggered a breakpoint&quot; and that it will resume on the CreateFile() line. Also there is an error code &quot;Critical error detected c0000374&quot;
+Here is my code:
+Am I doing anything wrong?",65452583.0,1,3,,2020-12-25 23:07:19.387000+00:00,,2020-12-26 01:59:34.700000+00:00,,,,,9191617.0,,1,0,c++|image|winapi,35
+65452476,Dropping a column from a data.frame causes unwanted loss of an attribute,"I want to drop a column from a data.frame.  But when I do, an attribute of the data.frame is lost, which I don't want.  First the setup:
+The  attribute is present:
+Now I want to remove the second column - but most ways destroy that attribute:
+I found one way to preserve it:
+Why does the  get dropped in the first two cases, but not when using this last method?",65453477.0,1,1,,2020-12-25 23:06:58.460000+00:00,1.0,2020-12-26 03:47:27.587000+00:00,2020-12-26 01:26:23.283000+00:00,,4470365.0,,4470365.0,,1,6,r|dataframe|attr,75
+65452473,how to click button in c# webview,"I'm working on trying to write an c# program that will click a button on a webpage automatically. I know I could use a chrome driver, but I don't want this to turn into a browser and version specific application.
+This is what I came up with so far, but I'm having some difficulty determining how to be able to trigger that button to be clicked once I have found the correct button.
+EDIT
+This is what I'm basing my project off currently, but I can't find a button based on innerText and then simulate button click.",,1,2,,2020-12-25 23:06:38.473000+00:00,,2020-12-28 03:56:28.680000+00:00,2020-12-27 04:04:51.430000+00:00,,10496382.0,,10496382.0,,1,0,c#|webview,209
+65452470,Is there a way to see when the channel starts to have channel membership?,Been trying to find when the channel starts to have channel membership. Could not find such function in the API. Is there any potential workaround? Thanks,,0,0,,2020-12-25 23:06:07.647000+00:00,,2020-12-25 23:06:07.647000+00:00,,,,,6705830.0,,1,0,youtube-api,9
+65452457,Upgrade swi-prolog to a version above the existing one?,"I use LinuxMint 19.1
+Currently have :
+This is the latest ver available in the default repo .
+How to upgrade prolog to a version above it &gt; 8.03
+SOLVED : https://launchpad.net/~swi-prolog/+archive/ubuntu/stable",,0,0,,2020-12-25 23:02:15.113000+00:00,,2020-12-26 01:11:09.093000+00:00,2020-12-26 01:11:09.093000+00:00,,1019129.0,,1019129.0,,1,0,ubuntu|upgrade|linux-mint|swi-prolog,18
+65452454,Firebase saving auto generated id to it's collection when creating collection,"Here is my code.
+When setting document to firebase, is there any ways that I can save my document's randomly generated id to the collection?
+For example if my generated id is &quot;hello world&quot;
+my collection has
+caption:'blah blah'
+timeStamp:'blah blah'
+user: 'uid'
+id: 'hello world'",65452475.0,1,0,,2020-12-25 23:01:40.553000+00:00,,2020-12-25 23:06:57.033000+00:00,2020-12-25 23:05:14.493000+00:00,,209103.0,,12568731.0,,1,0,javascript|firebase|google-cloud-firestore|async-await,25
+65452449,how do i use regex to get a string inside two character and remove certain characters inside that string,"I have a long string that I want to filter using regex
+I want to keep the text that in-between the ` characters
+only issue is that in-between every character in the part of the string I want there is an invisible character.
+you can see the invisible characters in regex101: https://regex101.com/r/rAYrMT/1
+So in short: keep everything between ` except for the invisible characters info on which can be found here: https://apps.timwhitlock.info/unicode/inspect?s=%EF%BB%BF",65452549.0,2,2,,2020-12-25 23:00:32.887000+00:00,,2020-12-28 09:52:57.347000+00:00,2020-12-28 09:52:57.347000+00:00,,5424988.0,,14859434.0,,1,0,python|python-3.x|regex|re,60
+65452448,Servlet with Guice and Jetty Embedded,"I am trying to use Guice Servlet with Jetty to inject some object inside a servlet.
+I have created the servlet in this way:
+The Jetty server is started in this way:
+And the  is this one:
+The App start and jetty wait for the first post, unfortunately as soon as the post arrive a Null pointer exception has fired:
+I can't understand what this null pointer came from and where is the error.
+Thanks,
+Stefano",,1,0,,2020-12-25 23:00:30.357000+00:00,,2020-12-26 20:45:07.700000+00:00,,,,,9614332.0,,1,0,servlets|guice|servlet-filters|embedded-jetty,20
+65452441,Select value with prefix separated by dot in postgresql,"I have a table t_table :
+This is the query code :
+and the result is below
+I want to select the code with suffix &quot;.b&quot; only. How to do it?
+I am new to postgreSQL",65452463.0,1,1,,2020-12-25 22:59:26.120000+00:00,,2020-12-25 23:43:37.787000+00:00,2020-12-25 23:43:37.787000+00:00,,10676716.0,,14889662.0,,1,0,sql|string|postgresql|where-clause,18
+65452439,bundle update and install hang forever on Rails 5,"My screen has been stuck here for over 10 minutes.
+I'm in US and internet speed is 100MB,
+Ruby version ruby 2.4.3p205
+Not sure what can i do to fix this deprecate web project.",,0,4,,2020-12-25 22:59:08.607000+00:00,,2020-12-25 22:59:08.607000+00:00,,,,,551273.0,,1,0,ruby-on-rails|rubygems|ruby-on-rails-5,30
+65452435,Return count of 1's preceding 0's for each group and each zero within group,"i work on a big data file (10 millions rows), here is the two columns i care about for now:
+...
+i want to create a column (with a smaller size),  that contains how many  precedes each  in the  column, for each  . for example the result for  will be like:
+the now column
+0
+0
+1
+2
+I tried to do this with nested loops but it failed, i stopped the execution after 10 hours of run. and i'm looking for fast alternatives.
+thanks.",65452709.0,1,4,,2020-12-25 22:58:23.847000+00:00,,2020-12-26 00:18:44.983000+00:00,2020-12-26 00:18:44.983000+00:00,,6366770.0,,14030805.0,,1,1,python|pandas|dataframe,56
+65452433,How do I pull tiles from a custom OSM tile server? My URL string doesn't seem to be working,"We have a custom OSM tile server set up on AWS and pointed to a subdomain URL.  If I type the URL in a browser, the map appears fine.
+Now I need to access the tile server, both with Leaflet and OSMDROID (website and app).  But in neither case do the  map images appear.  Given the similarity in how a tile server is called, I think I am making the same mistake for both.  My code for Leaflet is:
+Any suggestions?  Or someplace else where I should be looking to correct this?  Using the default OSM public map works for both.
+Thanks",65452722.0,1,6,,2020-12-25 22:58:12.503000+00:00,,2020-12-26 00:04:45.543000+00:00,,,,,3398945.0,,1,0,leaflet|openstreetmap|osmdroid,42
+65452432,React input saves the input at first click then shows it in the UI on second click... WHY ?!!! and how to fix it,"I'm making a todo List App with react and i faced this kind of bug when you type in an input then click on the button to make a new todoItem object it shows an empty object then saves that input in the todoList object variable inside production code then that first todo element appears in the UI on 2nd click, and on 3rd click appears the 2nd todoItem, 4th click 3rd element and so forth... i don't know why is that happening and i wish to solve this, here is my code guys:",65452596.0,1,0,,2020-12-25 22:57:49.297000+00:00,,2020-12-25 23:39:46.320000+00:00,2020-12-25 23:05:27.637000+00:00,,13021632.0,,13021632.0,,1,0,javascript|reactjs|object|input|rendering,43
+65452427,Typescript types for Ramda chain when using own Monad,"I'm trying to understand more about functional programing in typescript. So as an exercise I have written a  monad. But I'm having trouble with the types when working with ramda. Not sure how to understand the error message I'm getting. Hope someone can point me in the right direction.
+Below is one of my tests. I have two functions that depend on values from the Reader and I want to pipe them. So I have to use chain for the second function. If I use my own  I don't get any errors but when I try ramda  I get an error from typescript, but the program works.
+Error message for  line:
+code for my Reader implementation, most relevant will be the chain method, I removed methods that are not relevant:
+I don't understand the error message and hope someone has an idea how to fix it or where i can read more about it.",,0,6,,2020-12-25 22:57:12.283000+00:00,,2020-12-25 22:57:12.283000+00:00,,,,,14435206.0,,1,0,typescript|functional-programming|ramda.js,55
+65452424,Project Euler: Find the thirteen adjacent digits in the 1000-digit number that have the greatest product,"I haven't been able to get this to work but I'm not sure where the problem lie.
+The answer should be 23514624000. This prints 2144416768.
+Update: Got it working. Thanks for the help!",,2,1,,2020-12-25 22:56:32.233000+00:00,,2020-12-25 23:10:31.530000+00:00,2020-12-25 23:10:31.530000+00:00,user14881922,,user14881922,,,1,-2,c++,31
+65452423,Catching classes that do not inherit from BaseException is not allowed with Redis in Django Rest Framework,"so i'm working on a small DRF application, and I've implemented a custom config backend using redis:
+It all works fine until I quit the server with CTRL-C, at which point, I get this rather unsavoury exception:
+I have no idea what I can do to fix this. Any ideas? I already tried closing the socket in the  method of the config backend, but no dice.",,0,0,,2020-12-25 22:56:31.950000+00:00,,2020-12-25 22:56:31.950000+00:00,,,,,6291432.0,,1,0,python|django|redis,196
+65452422,jquery enable method doesn't work on higher node.js & jquery version,"I have a code like this;
+It works well on node.js version v8.17.0 and &quot;jquery&quot;: &quot;^3.2.1&quot;.
+But in Node.js v14.15.3 and &quot;jquery&quot;: &quot;3.5.1&quot;, it doesn't work and show following error:
+How can I fix this?",,0,0,,2020-12-25 22:56:30.423000+00:00,,2020-12-25 22:56:30.423000+00:00,,,,,7810708.0,,1,0,javascript|jquery|node.js|npm|color-picker,16
+65452421,Clustering performance evaluation with affinity matrix and labels,"I have multiple representations for the data, and with a multi-view clutering algorithm, an affinity matrix is obtained. I performed Spectral clustering with the affinity matrix, but the ground truth labels are unknown. Metrics like Silhouette, Calinski-Harabasz or Davies-Bouldin are based on distances between the data.
+How can I evaluate the clustering performance with the similarity matrix? Can I use the eigenvectors? Or I must obtain a metric per view?",,0,0,,2020-12-25 22:56:26.353000+00:00,,2020-12-25 22:56:26.353000+00:00,,,,,10841013.0,,1,0,cluster-analysis|multiview|multimodal,18
+65452419,Alternative to eval when using an id in a function,"I know that there are plenty of questions on &quot;alternatives to eval&quot; but so far I haven't found something corresponding to my case. I am using `CircleType.js. Basically, in my case, the user provides a string corresponding to a part of the id of the element that has the circletype effect. Then, I paste a prefix to that string. After that, I need to use this string to destroy the circletype effect.
+This is what I have:
+This is working, but I saw that  is &quot;evil&quot; and quite controversial. Therefore, I tried some stuff, such as:
+to follow this answer but no success. Is there an alternative to  in this case?",65452598.0,1,0,,2020-12-25 22:56:24.500000+00:00,,2020-12-26 16:00:53.897000+00:00,2020-12-26 16:00:53.897000+00:00,,10587413.0,,11598948.0,,1,0,javascript|circletype,58
+65452417,I'm having a problem inserting a dropdown value to database,"So I've got this code:
+Basically I wanted to fetch the category id using the category name and use it to set the value of the item_cat_id column in the products table.
+But when I click save I get this error instead:
+Fatal error: Uncaught Error: Object of class mysqli_result could not
+be converted to string in C:\xampp\htdocs\jst\server.php:23Stack
+trace:#0 {main} thrown in C:\xampp\htdocs\jst\server.php on line 23
+Any help would be appreciated!",65452751.0,1,4,,2020-12-25 22:55:23.620000+00:00,,2020-12-26 00:10:41.683000+00:00,2020-12-25 22:59:12.767000+00:00,,14847770.0,,14847770.0,,1,-2,php|mysql,37
+65452415,"Understanding the output of println(""${Thread.currentThread()}"")","When I print a coroutine thread out
+It will show
+I know that
+ is the Thread currently running in
+ is the coroutine name
+ is the priority of the thread it is running in
+ -- what is this referring to? the launching thread?
+I don't understand what  is for, although I know that refers to the  thread.
+Is it the parent thread? (I doubt so, as I try using a non-main parent thread, it still show ) 
+Is it the launching thread? 
+If not, what is it?",65452472.0,1,2,,2020-12-25 22:55:05.297000+00:00,,2020-12-25 23:06:22.087000+00:00,,,,,3286489.0,,1,2,multithreading|kotlin|coroutine,50
+65452412,"SQLite decimal(12,2) , how it actually works?","I suppose that create table query with column decimal(12,2) means number with maximum 12 digits and 2 of that are decimal, right?
+When I use update statement on this column, like
+&quot;update table set 'x' = 'x' + 0.01 where.....&quot;&quot;
+I always get a number with 12 digits behind decimal .
+like, 0 = 0 + 0.01
+result is 0.010000000001
+which is not big problem for me but that 1 digit on the end is.
+Should I change my create table statement cause obviously that 12 number doesn't work right thing for me,
+thank you",,1,4,,2020-12-25 22:54:54.480000+00:00,0.0,2020-12-28 09:20:44.170000+00:00,,,,,14884068.0,,1,-2,sqlite,33
+65452409,Update changes every row in DataGridView,"Im relatively new to c# and im working on a project at my university, which consist in verifying a switchboard, im working on CRUD right now to edit, create and delete items for one column in a datagridview, so here is my problem.
+i have a button that works as my update on my crud, it takes the text from a textbox and replace the text in a row for the text in the textbox, so basically when i click on the row i want to change and then type the new text, when i click the button to update, it updates all the rows on my datagridview, so my objective is to edit only one row with the text from the textbox.
+so heres the code of the update, thanks for your time.",,1,7,,2020-12-25 22:54:45.327000+00:00,,2020-12-26 00:18:12.197000+00:00,2020-12-25 23:02:26.677000+00:00,,4671754.0,,14866607.0,,1,1,c#|ms-access|datagridview|oledb|crud,67
+65452407,Installl .exe app to remote computers - Powershell,"I've been slamming my head against the wall with this one.
+EXPECTED:
+I want this to simply grab a file from my \DC\ShareDrive - Copy it to the computer on C:\temp and run it
+WHAT IS ACTUALLY DOING:
+The script is able to create the temp folder across all 3 computers but only runs it on DC01 which is where I am running the script from.
+SERVERS.txt - Contains w/o spaces
+USER01
+DC01
+EX01",,1,5,,2020-12-25 22:54:36.153000+00:00,,2020-12-27 13:20:13.900000+00:00,2020-12-25 23:21:43.057000+00:00,,12346567.0,,12346567.0,,1,0,powershell,40
+65452403,Jupyter lab failed to load jupyter_hhtp_over_ws,"When I start Jupyter lab I get &quot;Error loading server extension jupyter_http_over_ws&quot;
+(Jupyter Lab starts but I cannot connect to local server).
+Is anything wrong with my configuration?",,0,0,,2020-12-25 22:54:07.743000+00:00,,2020-12-25 22:54:07.743000+00:00,,,,,5059031.0,,1,0,jupyter-lab,51
+65452402,Rust: is `Box<T>` really similar to `&'static T`?,"I can understand why this code does not compile:
+I can understand that  at line 34 does not outlive than .
+But at line 26,  should the  lifetime cause  lives on the heap with .
+Compiler says that  should live as long as  and i don't understand why cause  is a reference on the element which is on the heap.
+Where am i wrong ?",65452657.0,1,6,,2020-12-25 22:54:02.887000+00:00,,2020-12-25 23:46:23.120000+00:00,,,,,2010478.0,,1,-1,rust|lifetime,62
+65452401,TCP Proxy for sharing a Socket across several Clients,"I am trying to implement my own client software for an online game.
+In order to do this, I need to rely on the connection made by the original client software and the traffic which is sent and received through it. The game uses TCP sockets.
+I would like to intercept the traffic and send it to the original client AND my mock client in order to see how my mock client would behave when receiving the traffic. Also I would like to have the ability to send traffic back from my mock client through the connection made by the vanilla client.
+I thought of programming my own proxy software for this, but maybe there already exists a solution for this kind of task?
+This image describes the whole constellation (i do not have enough rep for posting images). The game client connects to one of the game servers. I would like to intercept that connection and let all traffic through, but allow a different piece of software to access that same socket.
+Thank you in advance for any help given.",,0,0,,2020-12-25 22:54:01.750000+00:00,,2020-12-25 22:54:01.750000+00:00,,,,,8141251.0,,1,0,sockets|tcp|proxy|packet-sniffers|intercept,20
+65452399,"Scanner not taking input when use ""try {} catch (Exception e) {}""","For some reason when I use  and catch with this scanner it instantly jumps to the  without even taking the input within 
+This code is supposed to check if the input happens to be a different type other than int
+I seemed to have forgotten to clarify that the code works when I remove the  and ",,1,8,,2020-12-25 22:53:45.950000+00:00,,2021-01-13 23:44:21.213000+00:00,2021-01-13 23:44:21.213000+00:00,,6622587.0,,11680182.0,,1,-3,java,76
+65452397,Neo4J TimeTree Queries,"I want to create log-event in a Neo4J application. The idea is to have a timetree and to attach a log-event-node to the according time-node at the second level. So for example a logevent happening today at 11 pm and 43 minutes would be attached to the 20 seconds level of that branch:
+2020 - 12 - 25 - 11 - 43 - 20 &lt;-- Event-Node
+In order to be flexible I do not want to create a fix timetree which needs maintenance and extension but adding nodes to the timetree on demand.
+I start with checking, if the requested node(seconds) is existing on a branch:
+Having a COUNT result &gt; 1 means the node exists so I can attach my logevent-node. If it doesnt I need to create that node.
+Approach one was to use MERGE in ordert to avoid redundant nodes. When I merge the whole path I always get for every new constellation a complete path - this results in having for every second a complete path with all redundant nodes of minutes, hours, days etc.
+Trying a MERGE on each node and also on the relation between the nodes avoids this but leads to unwandted links, e.g.
+Here I get e.g. the node 9 of seconds connected to different minute-nodes as 9 exists and the merge would not make a new 9-node but connect the existing one to both paths. This will lead to problems in following a path upwards.
+Is there a chance to make a query that checks, if the requested nodes exist and if not generates them but keep a tree structure without lateral relations between the nodes?
+I can of course make several queries that check every constellation but this has no real beauty :)",,0,0,,2020-12-25 22:53:18.157000+00:00,,2020-12-25 22:53:18.157000+00:00,,,,,4183601.0,,1,0,neo4j,11
+65452389,Easiest way to see if SQL field changed False to True for certain users over time?,"I have a Table with Users,Date, and IS_MEMBER.
+Certain users went from IS_MEMBER False -&gt; True.
+I want to make a new field to identify these users (set BECAME_MEMBER to True).
+I don't want this new field set to True for users who stopped becoming members, already were members, or any other behavior besides simply becoming and staying members at any Date.
+Simplified example, though real table is much larger:
+Desired result:
+What is the best way to create a SQL statement for this? I'm using SnowSQL but any RDMS language is ok for an answer.",,2,0,,2020-12-25 22:51:58.580000+00:00,,2020-12-25 22:59:54.637000+00:00,2020-12-25 22:59:54.637000+00:00,,9682236.0,,9682236.0,,1,0,sql|snowflake-cloud-data-platform,47
+65452387,Gensim import failed,"I want to import Word2Vec from gensim.models. The interpreter is telling me that there is an error like this:
+from gensim.models import Word2Vec
+ImportError: cannot import name 'open' from 'smart_open' (C:\Users\DELL\anaconda3\envs\tensoflow\lib\site-packages\smart_open_init_.py)",,0,1,,2020-12-25 22:51:22.790000+00:00,,2020-12-26 12:01:17.663000+00:00,2020-12-26 12:01:17.663000+00:00,,3789665.0,,14855431.0,,1,0,gensim,23
+65452384,Save Prometheus Metrics,"I am trying to setup prometheus and grafana to save metrics from an express app
+Here is my docker-compose.yml file
+Here is my express app code
+This runs perfectly but the issue is that when i stop the express app the the metrics/logs in prometheus is empty, i was expecting to see old logs from prometheus. Probably saved in the mounted volume.
+What am i missing?",,2,0,,2020-12-25 22:49:50.227000+00:00,,2020-12-27 01:36:26.717000+00:00,,,,,2840934.0,,1,0,docker|devops|monitoring|prometheus|grafana,60
+65452383,MacOS 11 or later required! error on PyCharm,"I am learning how to use python by watching some online videos.  When I run the code below using PyCharm, I get the following:
+macOS 11 or later required!
+Process finished with exit code 134 (interrupted by signal 6: SIGABRT)
+I have an M1 Mac mini with macOS Big Sur 11.1.  This was happening when I had Python 3.8.2.  Then, I installed Python 3.9.1.  I keep getting the same error. How can I fix this?",65461452.0,2,3,,2020-12-25 22:49:47.383000+00:00,2.0,2021-01-24 19:28:10.210000+00:00,2020-12-25 23:22:03.707000+00:00,,14875279.0,,14875279.0,,1,5,python|macos,2352
+65452377,How do you maximize tidymodels performance?,"Is there any guidance for what makes a high-performance workstation for tidymodels.  For example what's more important RAM, Cores, GPU for good performance. I've read about doParallel, but have not heard much about GPU computing and tidymodels.",,0,1,,2020-12-25 22:48:33.193000+00:00,,2021-01-04 00:58:12.683000+00:00,2021-01-04 00:58:12.683000+00:00,,12258459.0,,292973.0,,1,0,r-caret|tidymodels,33
+65452376,"Add bundles, minifications and compressions over Azure CDN","I want to enable CDN for my web app in Azure. The app is a asp.net MVC project, in .NET Framework. I have some trouble because I find a lot of old versions explain how to implement Azure CDN.
+I am following step by step these guides:
+https://docs.microsoft.com/en-us/azure/cdn/cdn-add-to-web-app
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/performance/bundling-and-minification#controlling-bundling-and-minification
+I like this solution because does not use Azure Storages.
+Here the step I am doing to obtain bundles, minifications and compressions.
+For minification and bundling I am enabling optimazion in the global.asax
+For compression over CDN, I have enabled compression but the default compression is gzip. I would prefere br over gzip instead. I am using Azure CDN Standard from Microsoft.
+Two questions:
+How can I use br compression over gzip?
+How can I be sure I am using correctly CDN? I would expect to see the url of CDN for my js in the Developer tool of Chrome. But I see the url of my web site. However when I navigate the url of the CDN I correctly see a &quot;copy&quot; of the web site. But it is not a sufficient proof to me.
+Any help please?
+EDIT
+Even if I disable compression in my cdn, I purge the cdn and then I wait 10 minutes I still receive a gzip as response.
+When I disable the whole CDN I take control over web site again. I mean that my js are not compressed anymore.
+EDIT AGAIN
+If I navigate the CDN, I see this in the developer tool:",,0,2,,2020-12-25 22:48:29.237000+00:00,,2020-12-26 07:26:35.913000+00:00,2020-12-26 07:26:35.913000+00:00,,968759.0,,968759.0,,1,0,c#|azure|compression|azure-cdn,30
+65452375,Passing Pandas Data Frame to Angular,"Someone can explain why my function is not working?
+I want to get some data (pandas data frame and plot) from my django back-end to angular front-end.
+Plot is working correctly, but I have a problem with data frame.
+In the browser console I have no notifications about this endpoint.",,0,0,,2020-12-25 22:47:53.257000+00:00,,2020-12-25 23:06:17.510000+00:00,2020-12-25 23:06:17.510000+00:00,,14729145.0,,8245529.0,,1,0,django|angular|pandas|typescript|observable,53
+65452374,How the linker find the correct library?,"I know what preprocessing is, how compiler works, and how linker links the object files
+But what I still haven't been able to answer is :
+In an IDE like VS
+suppose we have a library called  that implemented a function called  and have a header file called 
+and we have other libraries that implemented the  function
+but we don't include their header files in our code
+suppose we include the  header in our code and we use the  function in our main function
+NOW! if there are several libraries that have implemented this function.
+after compiling the code, how does the linker find out which library this code is related to and with which file should it link?
+The reason that I ask this question is that the header file doesn't connect to DariushTest.o file and the compiler doesn't care about it.
+So how linker links the  function from  not from other libraries?
+How the linker find the correct library?",65452425.0,1,0,,2020-12-25 22:47:43.110000+00:00,,2020-12-25 23:00:16.423000+00:00,,,,,12109178.0,,1,2,c++|c++11|visual-c++|ide|lib,50
+65452372,VS Code: Problems with filesystem in C++,"First of all I ask you to be patient with my English since I'm  not very good at speaking this language.
+I'm new in the world of VS Code but I wanted to build a little program that should take a directory from keyboard-input, find it and do some stuff with every file inside this directory .
+Before debugging, the program doesn't show any error (it even try to autocomplete the world filesystem here it is what I mean), but when I try to debug, I receive the error: &quot;'filesystem' is not a namespace-name&quot;.
+I already searched for a problem like this one but I couldn't find anyone with the same problem.
+The version of g++ I'm using is the 9.2.0, I set c++17 like many others users told to do (Here's the setup). The library  works just fine. So I honestly don't know what I can do now to resolve this problem. Here's the code:
+[Edit]: Here's the task.json and launch.json, it's almost (if not all) generated automatically.",,1,2,,2020-12-25 22:47:26.850000+00:00,,2020-12-26 17:42:02.557000+00:00,2020-12-26 17:42:02.557000+00:00,,14889597.0,,14889597.0,,1,0,c++|visual-studio-code|filesystems,106
+65452371,Adding SQL query to JSON Payload,"I need to send SQL query to REST API in JSON format, it worked for simple query but I am trying to use WHERE clause with IN operator. It is working in Postman if I hardcode the value but it seems not working as expected when I pass array of Input to IN operator.
+This is Output:
+This is expected output: can anyone help if anything wrong in passing array.",,1,2,,2020-12-25 22:47:20.910000+00:00,,2020-12-25 22:59:12.450000+00:00,,,,,10620984.0,,1,0,javascript|json|rest,41
+65452369,Is it possible to move a command prompt window created in a batch file to another workspace (Windows 10)?,"I have a .bat file, where currently it opens two command prompts and it runs a separate command in each of them. My code right now is:
+It asks for the name of a folder inside . It then opens two command prompts inside the directory made with the output and runs  and .
+How would I move both of these created windows to another workspace (virtual desktop)?",,0,0,,2020-12-25 22:46:29.073000+00:00,,2020-12-26 00:52:05.947000+00:00,2020-12-26 00:52:05.947000+00:00,,62576.0,,14889657.0,,1,0,batch-file,56
+65452367,When to ask the client their preferred currency if no country code in `accept-language` header?,"What my code is doing: Determining Client Currency
+I'm getting the clients preferred locale from the  header. From the  header, I get the language and country code to help me figure out their preferred currency.  would be US dollars,  Canadian dollars, etc.
+Here's the code for my middleware that gets the preferred locale:
+In another middleware I use country code to determine the currency.
+The Problem
+But sometimes the user might only have a language code in the header and no country code- like  for English. You need the country to determine the currency. So what do you do?
+In this case you either have to
+guess the country based on language- easy for some languages, harder for others
+get the client to request  and get the country code from the response
+ask the client to specify their currency
+I am going with either of the last two. But I'm having trouble figuring out when I do either of those.
+What I could do if this was a route
+If cookies were set by some route like  then this would be easy: the response could specify to the client what are the next steps. For example, the server could send a 200 status with a JSON object like . Then the client could know that more steps need to be taken.
+But this is a general middleware
+But cookies are typically not set in specific route requests. They are set on any first request made from that client to the server in middleware called on every request. This leaves me confused. We can detect in the middleware that there is no countryCode, but then what?
+Solutions?
+Do I hijack the request and send a response right from the middleware telling the frontend what to do? This seems complicated because we would have to have every fetch request on the front end set up to handle this response.
+What are possible solutions to this?",65471353.0,1,2,,2020-12-25 22:46:20.033000+00:00,1.0,2020-12-29 16:16:34.333000+00:00,,,,,5004011.0,,1,1,node.js|rest|express|cookies|api-design,92
+65452365,Group object by a csv column and select maximum value from the other one,"I again need your help.
+I'm trying to group by &quot;Users&quot; column, showing the maximum &quot;LastAccessTime&quot; value and corresponding &quot;FullName&quot;.
+MyCSV.csv below contains:
+""Users"",""FullName"",""LastAccessTime""
+""user1"",""c:\felder1\Sub1"",""20201203""
+""user1"",""c:\folder1\Sub1a"",""20201223""
+""user1"",""c:\folder1\Sub1b"",""20201123""
+""user2"",""c:\folder2\Sub2"",""20201218""
+""user2"",""c:\folder2\Sub2a"",""20201228""
+""user3"",""c:\folder3\Sub3"",""20201212""
+""user3"",""c:\folder3\Sub3a"",""20201214""
+""user3"",""c:\folder3\Sub3b"",""20201215""
+""user3"",""c:\folder3\Sub3c"",""20201011""
+It works with this code except &quot;FullName&quot; refers only first line when it match due to 
+In fact the result is:
+""User"",""FullName"",""LastAccessTime""
+""user1"",""c:\felder1\Sub1"",""20201223""
+""user2"",""c:\folder2\Sub2"",""20201228""
+""user3"",""c:\folder3\Sub3"",""20201215""
+but I wish it were so:
+""User"",""FullName"",""LastAccessTime""
+""user1"",""c:\felder1\Sub1"",""20201223""
+""user2"",""c:\folder2\Sub2a"",""20201228""
+""user3"",""c:\folder3\Sub3b"",""20201215""
+what should i change?",65452718.0,1,0,,2020-12-25 22:46:13.963000+00:00,,2020-12-26 00:03:46.960000+00:00,,,,,14874627.0,,1,1,powershell|csv,42
+65452364,Streaming a html5 animation with a loop,"I am working on a website that keeps looping an animation.
+I want users who access this website anytime, to show them from where the animation stops not start the animation again.
+This is not only restricted to animation but other event.
+I do not have the best way to ask this question, so pardon me.
+Let's say a website runs a countup from 1 to infinity.
+Let anyone who visit the website see from where the countup count is, not starting the countup from 1 again.
+I do not know how to go about this and will appreciate some help.
+I know it has to do with real time.
+I have also searched google but not getting exactly what i want probably due to the incorrect keywords.
+I will be available to answer any follow up questions you have.
+Examples can be made JS or another relatable framework
+EDIT: Had to add this scenario to have a better understanding.
+Let's say the website shows a live stream of a movie being recorded with a camera.(Event not initiated by the client or the server).
+Users will always see the same thing and the current scene of that movie without storing any data of users.
+I can't determine what triggers it as the animation in this instance should have no beginning and end.
+Another example is seeing a Simulated virtual soccer site. Everyone sees the same state of the game even though its not played live and it keeps loading new events to be bet on.
+EDIT2:
+Like i said, i do not have the best way to ask this question. Thanks to Randy for bringing up the way the question should be.
+Question: How do i stream a html5 animation that also shows the same state of anim to all users while it keeps looping.
+I know the  should do something like this but i do not have an idea of how to go about streaming created animation that are not from a valid source but probably a canvas tag.
+EDIT 3: I think the issue shouldn't be how the animation is created. But this is an example:",,2,8,,2020-12-25 22:46:09.037000+00:00,,2020-12-27 11:00:04.477000+00:00,2020-12-26 01:21:16.420000+00:00,,6174290.0,,6174290.0,,1,-1,javascript,68
+65452361,"SML/NJ : Calling function directly, versus using ""val _ = fn....""","A content question (not a homework question) from a Coursera course on programming languages (taught at U of Washington) - I'm getting no response on the Coursera forum....
+Abridged code (variable 'cbs' is a list reference that is already defined before this):
+Professor writes, &quot;The 'val _ = e' idiom is common for executing an expression just for its side-effect, in this case registering a callback.
+What I do not understand is why not just call the function above directly, as in:
+Why call it by binding it to &quot;_&quot;  ?
+Professor says this is a style thing, but it seems completely unnecessary and complicating.
+Thanks for any feedback on this.",,0,2,,2020-12-25 22:45:46.793000+00:00,,2020-12-25 22:45:46.793000+00:00,,,,,10361495.0,,1,0,function|binding|sml|side-effects,32
+65452359,Error using Apollo Angular 2 for Angular ts-invariant/lib/invariant.d.ts:7:78,I am unsure as to why I am getting this error please help.,,1,0,,2020-12-25 22:45:22.477000+00:00,,2021-01-03 11:13:25.173000+00:00,,,,,11690412.0,,1,0,angular|typescript|apollo|apollo-client|gql,189
+65452352,"Lookup Excel Column, Row","Having a bit of a struggle.
+I really have no clue how to do this type of lookup.
+I want to lookup the date in column, find the value 1 within that column and return the name on the same row to the left.
+Is it possible to do this or do I need to redesign the table?",65452758.0,1,0,,2020-12-25 22:44:09.593000+00:00,,2020-12-26 00:11:54+00:00,,,,,12877169.0,,1,0,excel|excel-formula,33
+65452350,How to run a script with additional environment variable Debug=* in VSCode in Node.js?,"this is my code :
+i want to add an environment variable Debug=*, how can i set it and make this script run with it ?",65452436.0,1,1,,2020-12-25 22:43:49.197000+00:00,,2020-12-26 13:29:11.073000+00:00,,,,,14334595.0,,1,0,node.js|environment-variables|visual-studio-debugging,47
+65452346,How to scale text in figures with preserving the aspect ratio in Latex?,"I have a problem whith figures in latex: When I insert a figure I have the problem of text scaling without preserving the aspect ratio. The text size in each figure is different from the other figures due to its different scale. Could you please tell me how can I solve this issue?
+Thank you",65452520.0,1,0,,2020-12-25 22:43:28.073000+00:00,,2020-12-25 23:17:25.133000+00:00,,,,,14889653.0,,1,1,text|latex|scaling|figure,32
+65452345,how to change status by a link or a button in django,"So I want to make a link or a button that should be able to change status from 1 to 0 in the database actually I have the link like this  and in url.py now I want to make a function in views.py that change the status to 0 whenever the link is clicked
+models.py",65452398.0,2,4,,2020-12-25 22:43:04.603000+00:00,1.0,2020-12-26 22:09:45.523000+00:00,2020-12-26 22:09:45.523000+00:00,,10755628.0,,13592734.0,,1,2,django,31
+65452344,Difference b/w Method[Int]() vs Method() in scala?,"After seeing the method signature of map in scala as
+my layman undersanting of [A, B] in above is that they signal the method that we'll be exclusively working with generic Type A and B in the defined method.
+Now I go on to implement a method to add values from two lists consquetively (basically zipWith) using similar coding pattern.
+but get this error while adding the elements in the last match:
+type mismatch found: Int Required: String
+Removeing the [Int] from the mehtod sigature fixes this error.
+I'm sure there are holes in my understanding of generic Types and when to add them to the method signature. I'd appreciate if someone can walk me through this and explain why the  method with [Int] errors out but works fine without it?",65479678.0,1,6,,2020-12-25 22:42:28.550000+00:00,1.0,2020-12-28 15:05:18.117000+00:00,,,,,6186705.0,,1,0,scala|functional-programming,82
+65452339,Property current does not exist on type never - React useRef(),"I know there are quiet lot of articles and related questions out there, but I am coming to you looking for help, I am having a hard time typing a custom hook which adds an event listener to the attached window. But I am getting this error.
+I have tried many things but nothing seems to work, and my library does not compile. I guess this is related to having the strict flag on.
+The function is the following.
+Also when I pass null as default value, I get another error saying that current is a read-only property. If I remove the null, the error goes away.
+I have tried everything and still the error won't go away. I appreciate if you have experienced this or can help me in any way. Last, I attach the error image",,1,0,,2020-12-25 22:41:43.167000+00:00,,2020-12-29 09:45:17.830000+00:00,,,,,4910896.0,,1,0,reactjs|typescript|react-hooks|strict,78
+65452338,OLS prediction plot conditional on covariates,"I am fitting a linear model 
+this is my output.
+How can I create a plot of
+-predicted value plot( pred(mpg(y)) ~ disp(x) where vs =0,  wt = average of wt )
+-predicted value plot( pred(mpg(y)) ~ disp(x) where vs =0,  wt = 10th percentile of wt",65452416.0,1,0,,2020-12-25 22:41:22.117000+00:00,1.0,2020-12-25 22:55:05.723000+00:00,,,,,14889594.0,,1,0,r|ggplot2|plot,34
+65452335,Retrieving and display a sum of values with AJAX and CodeIgniter 3,"I don't know if I am using the correct syntax but I would like to retrieve a sum of values and display it in a view.
+Controller code:
+Model code:
+AJAX fetch code in the view:
+Would there be an error in my code since each time I have a null value which appears when I launch a  in my jQuery script",65453935.0,1,4,,2020-12-25 22:40:09.540000+00:00,,2020-12-31 15:38:51.773000+00:00,2020-12-31 15:38:51.773000+00:00,,1839439.0,,13505238.0,,1,-1,javascript|php|json|ajax|codeigniter,36
+65452333,Dynamic resize of image or video with flex-wrap columns,"I'm trying to get an image element to dynamically change width as new columns are formed from a flex-wrap. At the moment, this works as expected if I don't include an image element, but as soon as I add one, it's not behaving as expected. I want the image to take up the maximum width possible - ie, if the elements can fit in one column then the image takes up the entire width. If elements start to wrap and form a new column, the image should get smaller to allow the new column. The minimum image width should be 10px.
+I've created a sandbox for you to see what I'm working with. Any help is much appreciated!
+https://codesandbox.io/s/flex-wrap-with-bootsrap-uvn1b?file=/src/App.js
+See code below:
+CSS here:",,0,0,,2020-12-25 22:40:06.350000+00:00,,2020-12-26 06:51:31.470000+00:00,2020-12-26 06:51:31.470000+00:00,,4844470.0,,2489238.0,,1,0,css|reactjs|bootstrap-4|flexbox|react-bootstrap,22
+65452332,Protecting software code and IP freelancers and outsourcing,"While hiring freelancers to work on a software project, what is the way to enable them to work on the project but project software IP. If we provide them access to the full code, the developer can easily download the entire code to the local computer.",,1,4,,2020-12-25 22:40:00.007000+00:00,,2020-12-25 22:44:34.393000+00:00,,,,,547198.0,,1,-4,virtual-machine|virtualhost|virtualization,23
+65452329,VBA run time error 50290 when minimizing the workbook,"in excel VBA , When I minimize the workbook, the macro crash and run time error 50290 occurred, and the debug point to line -&gt;&gt;TSCol = .[TimeStamp].Column line ....What i missing here ?",,0,1,,2020-12-25 22:38:32.997000+00:00,,2020-12-25 22:38:32.997000+00:00,,,,,14889565.0,,1,0,excel|vba,28
+65452325,Create Javascript template literal with a Popup Modal button,"I have a Javascript template literal which will loop through the objects and display the content. Now I need to display a button for each object and when clicked, it will do a modal pop-up with details of the content.
+However, I am not able to open the popup modal when the button is clicked. Here is my code.
+//Javascript
+//function for display content
+//description details
+My problem is that the modal is picking up only the first object even if I clicked on the second object button",,0,3,,2020-12-25 22:38:13.807000+00:00,,2020-12-25 23:16:05.537000+00:00,2020-12-25 23:16:05.537000+00:00,,9616205.0,,9616205.0,,1,1,javascript,45
+65452323,I have a question aout the keyword 'extends',"How am I supposed to use the keyword 'extends' in this JavaScript Code? I tried really hard to understand and to find the answer but I still can't find it.
+}
+}
+This is what I tried. I don't know what is the mistake and can't understand what I am supposed to do.
+}
+I know that it is so long but please try to find out what's the mistake and help!!!  :)",,0,0,,2020-12-25 22:38:10.923000+00:00,,2020-12-25 23:33:14.807000+00:00,2020-12-25 23:33:14.807000+00:00,,6391256.0,,14889633.0,,1,0,javascript|class|extends,26
+65452322,JUnit5: Forward every method call on object to wrapper function,"I have the following situation:
+I have a class I want to test with JUnit/Mockito but I want to add some code that should be executed on every method call to that object.
+For example say I want the test to fail if a call to the tested class takes more than a specific amount of time (ignore that functionality similar to that with  already exists, its just a simple example). What I have done until now is writing a method that takes a method/lambda as argument and does just that. A call would look like this:
+This has the drawback of me needing to remember to wrap every method call. Is there a better way that circumvents this? The ideal behavior I would want is something like this:
+It would be greatly appreciated if someone could let me know if this or a feature that would solve my problem exists.",65458878.0,1,2,,2020-12-25 22:38:00.830000+00:00,,2020-12-26 17:32:14.507000+00:00,,,,,6860084.0,,1,0,java|junit|mockito|junit5,68
+65452320,"JavaScript ""load"" event listener is not triggered when page is visited from a relative path link","I wrote a chrome extension that runs a function called , on every page load.
+However, when navigating between the site pages the function is not called again, unless refreshing the destination page.
+All pages have the same domain.
+manifest.js:
+find_agent.js:",,0,4,,2020-12-25 22:37:00.900000+00:00,,2020-12-25 22:37:00.900000+00:00,,,,,2633360.0,,1,0,javascript|google-chrome-extension|listener|onload-event,18
+65452317,Having problems creating a mechanic filter in Dart,"The main problem it's in the notasBoasFn, it's showing a red line saying that &quot;The argument type 'dynamic Function(dynamic)' can't be assigned to the parameter type 'double Function(double)&quot;
+I've tried to change the Function, making it return a bool, but the error continues.What am i doing wrong?",,0,3,,2020-12-25 22:35:42.883000+00:00,,2020-12-25 22:35:42.883000+00:00,,,,,14885205.0,,1,0,flutter|dart,18
+65452314,Flutter Hive retrieve box elements and obtain key when using ListView.builder,"Using Hive, I can  to then pass into a  and cast the entry to a Model to get the required information for my view like this:
+This works great, but I really need to be able to get the box's entry  record. All of my records are being saved with a key like . How would I refactor this to still be able to pass in the box itself, and not have to do additional mapping or manipulation of the data being passed into the ?",,0,2,,2020-12-25 22:34:31.450000+00:00,,2021-01-16 11:39:41.323000+00:00,2020-12-26 16:58:31.720000+00:00,,151438.0,,151438.0,,1,2,flutter|flutter-hive,224
+65452313,JavaScript filter not filtering false comparison out,"So I have am trying to filter an array as shown here:
+This is the  variable:
+And this is what the  logs after running it:
+Why, if the  variable is 51, is a  of , is the first override being filtered out, but not the second one?
+Thank you!",65452488.0,1,1,,2020-12-25 22:34:16.970000+00:00,,2020-12-25 23:10:03.860000+00:00,2020-12-25 22:59:42.747000+00:00,,11710822.0,,11710822.0,,1,0,javascript,40
+65452312,Ionic Vue: How to handle text wrap for long labels and select options?,"I have an  that contains an  and an :
+Before selection:
+During selection:
+After selection:
+As you can see, it looks nice before selection (due to ) and also during selection. However, after selection, I cannot read the whole answer - and I can't figure out what to do to change this. How can I text wrap the selected option?
+I was also wondering if it might be better to place the question outside of the item with the selection. Whould you agree?
+Thanks a lot!",,0,0,,2020-12-25 22:33:53.370000+00:00,,2020-12-25 22:33:53.370000+00:00,,,,,7945506.0,,1,0,vue.js|ionic-framework|ion-select,21
+65452311,Remove buttons line above cell in Jupyter in VSCode,"I am trying to remove this annoying line above every cell when sing Jupyter in VSCode:
+It just clutters the whole notebook unnecessarily and I use shortcuts for everything anyways. I want that entire line above the cell gone so it looks just like when you open a Jupyter notebook in the browser. Does anyone know how to get rid of this? Thank you!",65731532.0,1,2,,2020-12-25 22:33:50.753000+00:00,,2021-01-15 06:38:50.117000+00:00,,,,,4015156.0,,1,0,python|visual-studio-code|jupyter-notebook|jupyter,58
+65452303,Update ASP.NET from Database without refreshing,"I am sure this question is widely known and commenly answered..
+However, I have a webpage which is concurrently viewed by two users... Let us say they are viewing shop requests..
+User A has some options to set the current situation of a request (like: pending, delivered, on process, suspended.. Etc)..
+What I need is to make user B view the current situation of the request once changed by user A without refreshing the page...in other words: User B is seeing live data
+I do not know if updatepanel will help in this case, as I know it will work only for the user updating the page.. Not the other party.. Please correct me if I am wrong.
+Thanks in advance",,0,1,,2020-12-25 22:33:07.340000+00:00,,2020-12-25 22:33:07.340000+00:00,,,,,7668351.0,,1,0,javascript|asp.net|ajax|vb.net|updatepanel,32
+65452302,Removing <U+????> like in R dataset,"I am working on a corpus of tweets containing what I suppose to be unicode characters like and more. They don't follow the same pattern, some are between sentences, some at the end while others at the beginning. Is there a way to remove all of them?
+I found many similar questions, but none of them seems to work in my case, or at least not for all.
+I tried using gsub and sub in tm_map like this:
+But this does not work.",,1,0,,2020-12-25 22:32:52.263000+00:00,,2020-12-26 01:12:04.407000+00:00,,,,,13551483.0,,1,1,r,28
+65452300,Reorder matrix values by indices in Python,"If I have this matrix:
+Then, the flattened array of A is:
+And I want to find one list of lists that indicates the index of each distinct value and a vector with the the repetitions of those.
+The list of lists with the indices must be (where the index of each list is referred to the taken value: list's index 0 for value 0, list's index 1 for value 1... etc):
+and the vector of repetitions must be (where the index in reps array indicates the value in the matrix A: index 0 for value 0, index 2 for value 2... etc)
+my first approach to solve this have been iterating the A flattened matrix to get the index and populate the list of lists. Once populated the list, I iterate it to get the longs of each list to find the repetitions of each value in matrix A. The code is:
+Problem: I have very large matrices: thousands rows by hundreds columns... Efficient way to solve this? I believe the fastest way is with a loop in C++ because methods such as  and similars has obtained a poor perfomance in my tests.",,1,0,,2020-12-25 22:32:23.587000+00:00,,2020-12-26 07:38:34.547000+00:00,2020-12-26 07:38:34.547000+00:00,,11149943.0,,11149943.0,,1,1,python|list|numpy|loops|matrix,57
+65452295,My register.php doesn't add username to my database,"I'm using XAMPP, and this code doesn't add username, email and password to the database. It worked the first time, but when I reinstalled XAMPP with admin privileges to try and fix another issue where the client wasn't able to connect it stopped working. I changed it to 'localhost', 'root','','dwellers'.",,1,2,,2020-12-25 22:31:30.973000+00:00,,2020-12-25 23:06:06.083000+00:00,,,,,12917198.0,,1,-2,php,26
+65452293,Tree implementation without using pointers?,"I found this code somewhere that is a simple implementation of a tree. Is there a reason why the  and  have to be pointers to ? In other words, can you still implement a tree without  and  being pointers and just being of type ? If so, could someone please provide an example
+All help is appreciated, thanks!",65452362.0,1,6,,2020-12-25 22:31:13.867000+00:00,,2020-12-25 22:45:53.280000+00:00,,,,,13760130.0,,1,-1,c++|pointers|reference,37
+65452291,how can I call my button value that is on another page?,"I'm new on Reactjs and i came across this issue, i made the function of an input on page number 1, where I type a numeric value, I call this function on the second page where I call the function and where I also define the paypal parameters:
+Function input of the first page:
+Then i call this function on the second page:
+I would like to be able to take the value of the 'textbox' and finally pass it as a parameter inside the paypal 'amount', thanks!!",65452380.0,1,0,,2020-12-25 22:31:11.110000+00:00,,2020-12-26 05:17:29.523000+00:00,2020-12-26 05:17:29.523000+00:00,,4176291.0,,14159335.0,,1,0,javascript|html|reactjs,43
+65452289,Why is my GPU getting interrupted when training my data?,"I spent hours configuring my computer and finally got to make python train data on GPUs instead of CPU. However, for some reason my models keep getting interrupted halfway during the middle of their epochs and I cannot complete the training of the models.
+Waiting for the computer does not solve this problem and I cannot interrupt the kernel either. I tried other people's solution and still don't have much luck.
+I can train my model normally if I'm using a CPU (at a crawling rate), but when I switch to GPU my model trains really fast before they hang up half way, not completing all the epochs that are required. My python kernel also gets stuck on running after that and I cannot interrupt it unless I terminate the whole thing from task manager.
+From my task manager performance history, during training there is a sustained spike at my GPU, which is expected. But when it hangs up my GPU activity goes back to 0, even though my kernel indicates that the training is still in the middle of its epoch. This happens randomly and is not dependent on the timing or the number of epochs, although it is more likely to happen the longer I train the data.
+Here is my sequential model.
+During training, I also get a warning message and I don't know what it means.
+I am currently using tensorflow 2.4, CUDA 11.2,",65463996.0,1,5,,2020-12-25 22:30:54.980000+00:00,,2020-12-27 08:24:31.643000+00:00,2020-12-27 08:03:51.033000+00:00,,12965213.0,,12965213.0,,1,1,python|tensorflow|gpu,71
+65452287,Standard Webpack config vs vue-cli config,"I have a vue project that currently I build with webpack using standard webpack.config.js style files. Now I want to create create a webcomponent using
+However doing that I now get
+So I wonder how can I tell vue-cli-service to use my existing webpack config file to make sure it is loaded correctly instead of whatever config it has internally",,0,0,,2020-12-25 22:30:28.780000+00:00,,2020-12-26 11:14:39.043000+00:00,2020-12-26 11:14:39.043000+00:00,,6447259.0,,6447259.0,,1,0,webpack|vuejs2,55
+65452286,"How to mock ""NOW()"" for TypeORM MySQL?","I use Jest for testing and TypeORM as ORM, MySQL is the database.
+I have a time-dependent query, which will return the results if the  is lesser than 27.
+I don't want my tests to break on 28th, how should I mock/replace it on Database?
+Is there more elegant way?",65452589.0,1,0,,2020-12-25 22:30:23.053000+00:00,,2020-12-25 23:33:05.323000+00:00,2020-12-25 23:07:55.550000+00:00,,3001761.0,,6805606.0,,1,0,mysql|node.js|testing|jestjs|typeorm,53
+65452284,How do you change the timeout in Apache2,I've been searching how to change Apache2 timeout. The articles I found were old and referred to php.ini and httpd.conf. I found the answer and thought it would be good to have one on stack overflow so people could quickly find an answer that is not outdated.,,1,0,,2020-12-25 22:30:20.923000+00:00,,2020-12-25 22:30:20.923000+00:00,,,,,2662728.0,,1,0,apache|timeout,12
+65452276,An error occurs :Cannot use instance member 'card0' within property initializer; property initializers run before 'self' is available,"I have a problem with following error:
+Cannot use instance member 'card0' within property initializer; property initializers run before 'self' is available
+I am freshman, so I would be very thankful for advices and tips :)
+Code:
+View Controller:",65452378.0,1,1,,2020-12-25 22:29:10.237000+00:00,,2020-12-25 22:56:58.363000+00:00,2020-12-25 22:56:58.363000+00:00,,8160613.0,,14889614.0,,1,0,ios|swift|iphone|xcode,58
+65452273,Avoiding SSL errors in Xcode's Preview window,"I'm pretty new to Swift/SwiftUI programming so I used a URLImage package from https://github.com/dmytro-anokhin/url-image-demo in which I want to display images from my local computer. The images would have the following path: https://myserver.local/path/img1.jpg
+The easiest way to make me self-signed cert work was to create a CA Root Cert and install it on simulator within Xcode and enable Full Trust. It's taken me half a day to configure the certs correctly, but in the end my code works when I start debugging in the simulator.
+But during preview/live preview this results in this error:
+An SSL error has occurred and a secure connection to the server cannot be made.
+However all of the following are true:
+I can access the image without SSL issue in Chrome, Safari on my macOS host (CA Cert is installed in System keychain and is trusted for all users; the web server has SSL cert signed by my CA Cert)
+I can access the image without SSL error from Safari on the simulator (after CA Cert was installed and fully trusted)
+As mentioned above I can access without SSL error the image when I run app in the debug mode in the simulator from Xcode.
+If I choose an image on a website which has a third-party signed SSL cert then the image is displayed correctly in both simulator and preview pane.
+This leads to me to believe that Xcode's Preview pane uses some other repository where I would need to put my CA Cert to make it work. If such an option exists at all.
+I'm using iPhone 11 Pro Max as the preview scheme/simulator, iOS deployment target 14.3 is selected.
+Thank you in advance for any help.",,0,2,,2020-12-25 22:28:40.447000+00:00,,2020-12-25 22:56:42.537000+00:00,2020-12-25 22:56:42.537000+00:00,,6791677.0,,659570.0,,1,1,swift|xcode|swiftui|ssl-certificate,36
+65452272,Iterating over vectors in a parameter pack,"I have a function that takes in a parameter pack of vectors, These vectors will be of the same length, and I want to call a function with the values of both of these vectors at each index.
+For example I pass in a function which prints out two integers that I pass in. I would put in two vectors of integers to the function, and it will call the function I pass in for each of the indexes, The code may help explain what i want to do",65452390.0,2,0,,2020-12-25 22:28:39.597000+00:00,,2020-12-26 00:49:32.350000+00:00,,,,,13185261.0,,1,1,c++|function|templates|vector|variadic-templates,59
+65452269,How to get the value returned by an async/await function?,"I know an async/await function only returns a promise, and that I need to add a .then() to update a variable or a state with the value. But in a React app, it obliges me to perform a useEffect and then to update a state. If I return a formatted object such as: , would it be possible to directly access it this way:
+How would you allow direct access to an object from such a function:",,2,3,,2020-12-25 22:27:56.013000+00:00,,2020-12-27 02:13:02.713000+00:00,,,,,12768467.0,,1,1,reactjs|asynchronous|async-await,42
+65452267,"""Invalid argument false with type bool."" when flutter application starts","When I run my application, I get the following output.
+Here's what the flutter doctor says.
+Do I need to do something about this? Thank you.",65452358.0,1,0,,2020-12-25 22:27:41.657000+00:00,,2020-12-25 22:44:53.820000+00:00,,,,,12004339.0,,1,1,android|flutter|dart,100
+65452266,multiple sample files for input data,"I am using IBM cloud pak for data for my ML project.
+For my project, I have multiple sample files for the input data.
+However, most of the IBM examples have only one file as the input data.
+One possible solution I could think of is to get 700 files to one file and do some preprocessing. Then, I can upload the resulting file to the cloud pak for data, and do the training and test.
+Is it possible to upload all sample files to the cloud and perform preprocessing (e.g. masking) with a customized python notebook script in the cloud pak?",,0,0,,2020-12-25 22:27:41.573000+00:00,,2021-02-22 14:21:54.713000+00:00,2020-12-26 05:24:40.387000+00:00,,14729145.0,,12462053.0,,1,0,python|cloud|ibm-cloud,23
+65452264,"IF time is after 4 PM then show this cell, if false show this cell",I am trading stocks and I want to show extended hours price of a stock if the time is 4:00PM or higher. During the hours before 4pm I want to just show the price. I currently have this formula  but it is not functioning properly. If it's after 4pm it will show the extended price of a stock but when its before 4pm I am getting . Can someone help me come up with the proper formula?,,0,3,,2020-12-25 22:27:35.233000+00:00,1.0,2020-12-25 22:29:01.093000+00:00,2020-12-25 22:29:01.093000+00:00,,3001761.0,,14889620.0,,1,1,excel|excel-formula,30
+65452258,Importing darknet giving error: name 'DARKNET_FORCE_CPU' is not defined,"I have installed AlexeyAB darknet and when importing it through python I am getting this error:
+Microsoft Windows [Version 10.0.18363.1256]
+(c) 2019 Microsoft Corporation. All rights reserved.
+D:\Yolov4\darknet\build\darknet\x64&gt;python
+Python 3.7.7 (tags/v3.7.7:d7c567b08f, Mar 10 2020, 10:41:24) [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+import darknet
+name 'DARKNET_FORCE_CPU' is not defined
+Anyone know any solution to it or any work around to it please help!!",65556142.0,1,0,,2020-12-25 22:26:15.773000+00:00,,2021-01-05 02:49:20.260000+00:00,,,,,11081197.0,,1,0,python|yolo|darknet,426
+65452255,"MANOVA in R. How do I solve this error: ""Error in 1L:object$rank""","I am running  in R. When I use  I get the following error: 
+Here is the data
+( and  are factors)
+, , and  all work, but not .
+This is a problem because I need the readouts on the individual data columns (e.g., p-values of the coefficeints).
+Any idea how to fix? Much appreciated!",,1,0,,2020-12-25 22:25:45.670000+00:00,,2020-12-26 08:44:46.137000+00:00,2020-12-26 00:51:32.530000+00:00,,14889609.0,,14889609.0,,1,0,r|manova,45
+65452250,How to Create a String From Iterator in Python?,"How to create a string from an iterator over string in Python?
+I am currently just trying to create a reversed copy of a string, I know I could just use slice:
+I could also create a list from the iterator and join the list:
+But when I try to create a string from the iterator directly, it just gives a string representation of the iterator, if I do this:
+ will give a string representation of the iterator instead of iterating the iterator to create a string.
+Output
+Furthermore
+Output
+Therefore, I just want to know if there is a Pythonic way to create a string from an iterator?",,1,11,,2020-12-25 22:25:23.670000+00:00,,2020-12-25 23:15:46.673000+00:00,2020-12-25 23:15:46.673000+00:00,,7523400.0,,7523400.0,,1,0,python|string|iterator,73
+65452248,C# Windows Forms LiveCharts GeoMap,"simply this works:
+And this doesn't
+In list  I contain list of countries that have names and tags of countries.
+This wont work when using for loop, but it works when I set the values manually.",65452327.0,1,0,,2020-12-25 22:25:01.327000+00:00,,2020-12-25 22:38:27.103000+00:00,,,,,14794499.0,,1,0,c#|winforms|livecharts,46
+65452247,"Return only data or errors in Graphql response, .NET Core","When I make any graphql query I always get a full response with the information from my DocumentExecuter:
+But I want to get only data or errors (if there are any) in my response.
+I want to achieve it because this response is too large and it just looks weird - I don't want to see any information about all this stuff on the client-side.
+Previously I used GraphQL package 2.x version and there was no such problem.
+Now moved to the latest 3.2 version.
+Of course, I can just set all properties that are not needed as nulls by the end of the controller action to make a response compact but I hope there is another way to do it.
+Here is the controller code:
+The constructor:",,0,0,,2020-12-25 22:24:58.463000+00:00,,2020-12-28 21:32:25.913000+00:00,2020-12-28 21:32:25.913000+00:00,,2756409.0,,11018209.0,,1,0,.net-core|graphql|graphiql,22
+65452246,Why doesn't my input take into account the manual changes to the store?,"I have a Form system made with Redux. Basically, the Form is a context, we take all the values contained in the form when we want to send the data, etc.
+So, we handle the data in the form by using Redux. When I retrieve data from the database, I want to change the data contained in the input. To do that, I make a call to my database and on what is returned, I attach that to my form. According to the Redux Devtools, the changes are made properly to the state (the input get the right values). However, they aren't applied in what we actually see on the page (empty fields).
+So, how can I display the data in the inputs when the page is done loading?
+Thanks!",,0,0,,2020-12-25 22:24:57.213000+00:00,,2020-12-25 22:24:57.213000+00:00,,,,,9165569.0,,1,0,javascript|reactjs|redux,19
+65452245,How to handle long messages in Telegraf,"I'm trying to send a super long text as a message after clicking the Telegraf Markup callback button.
+But I got 
+I am new to Telegraf. Is there any way how to handle it? I will be glad to any advice.",,1,0,,2020-12-25 22:24:50.907000+00:00,,2021-02-20 22:43:27.740000+00:00,,,,,12658092.0,,1,0,node.js|telegram-bot|telegraf|telegraf.js,42
+65452243,Do TWA's have access to IndexedDB?,"I have read conflicting answers on this. On the google site it says that TWAs do not have access to things like local browser storage. However i have read elsewhere that the TWA portion of the app doesnt the the PWA inside of it does have access.
+Could anyone clear this up for me?
+The app relies on local storage so im wondering if i need to migrate to react native",,1,0,,2020-12-25 22:24:18.127000+00:00,,2021-02-23 08:33:57.987000+00:00,,,,,14883464.0,,1,1,reactjs|react-native|progressive-web-apps|twa,19
+65452242,Wordpress Custom Fields like functionality,"I am trying to create a custom functionality using jQuery whereby I can add two fields dynamically and whatever I input in these fields I later grab as a key-value pair, something akin to WordPress custom fields. Can anybody point me to the right direction
+thanks",,1,0,,2020-12-25 22:24:13.780000+00:00,,2020-12-26 08:55:45.893000+00:00,2020-12-26 08:55:45.893000+00:00,,606371.0,,2293554.0,,1,-2,jquery|wordpress,20
+65452240,Efficient way to do multiple logical operations,"Suppose that I have three vectors of the same length
+I want to compare vec1[x] with vec2[x] using the operator in vec3[x], to check if all are true. My current solution is the following
+output is
+It works but it's slow if vectors are larger and you have to do many. Is there a better way to do it?
+The vectors are sorted in such a way that the comparisons that are most likely to return FALSE come first.
+I'll add that in practice the vectors are of length 28. vec2 and vec3 are constant and vec1 is variable.",,3,2,,2020-12-25 22:24:04.890000+00:00,,2020-12-25 23:04:45.323000+00:00,,,,,11928310.0,,1,1,r|performance,55
+65452239,How to list a row values and add as a new column in a DataFrame?,"I have a dataset as following:
+I want to have a new column which is a  of all numbers in the same row. So my desired output would be as following:
+I already developed the following code:
+I am getting the following error:
+&quot;ValueError: setting an array element with a sequence.&quot;
+Even if this functions works I think there should be a way using  function so I can get rid of this loop.",65452294.0,2,1,,2020-12-25 22:23:41.897000+00:00,,2020-12-26 01:31:27.960000+00:00,2020-12-25 22:28:55.053000+00:00,,4968908.0,,4968908.0,,1,0,python|pandas|list|dataframe,45
+65452234,Visual Code C/C++ formatting of braces {},"In VSCode, I wanted my opening curly braces  to be in the same line, instead of a new line and for that I changed  from Visual Studio to LLVM, which seemed to work.
+But it does this thing which I don't want, which is it formats my if-else statements like this:
+Instead, I want it to be like this:
+Basically I want each closing bracket to be on it's on line, whether it's for if-else statements or try-catch, or whatever.
+How do I do that?",65483176.0,1,0,,2020-12-25 22:22:18.237000+00:00,,2020-12-28 22:15:54.770000+00:00,2020-12-28 22:15:54.770000+00:00,,11650562.0,,6717535.0,,1,0,c++|c|visual-studio-code|vscode-settings,99
+65452226,apache_beam.io.WriteToText() name of file as template parameter,"I have a apache_beam template executed on DataFlow. I need to pass the name of a file to be written to as a template parameter. Something like
+The value of  can be accessed through PipelineOptions something like
+If I need to use the  in a  something like this
+it is not allowed as we can read  only as a runtime value and an error would be thrown, if we attempt to deployed this code as a template.
+Considering this is a very common use-case I assume there may be a common library or solution to this. Does anybody have a work around?",,1,0,,2020-12-25 22:20:10.203000+00:00,,2020-12-29 18:01:58.717000+00:00,,,,,9111014.0,,1,0,python-3.x|google-cloud-dataflow|apache-beam,27
+65452220,Passing variable from Post method to EJS template,"I was trying to render a variable from my post method to my EJS template when I run my app using nodemon app.js it shows imgPath not defined. I tried passing that variable to my .get route as I am also using authentication in my app to let users log in. I am new to EJS I am learning but I am stuck with this problem. Here the code that I wrote:
+My post method logs the following JSON data:",,0,0,,2020-12-25 22:18:54.150000+00:00,,2020-12-26 10:25:25.803000+00:00,2020-12-26 10:25:25.803000+00:00,,13780821.0,,13780821.0,,1,0,node.js|rest|express|ejs|multer,31
+65452217,Getting Video to work inline for iphone/mobile,"I'm working on an online portfolio that requires user input to click through different videos.
+It works perfectly fine on a computer, but now I'm working on mobile and
+the muted, webm videos (Friend.webm, Resume.webm, Loading.webm and gmail.webm) don't seem to autoplay/work at all
+the videos that do work play full screen, even with playsinline in the  tag
+Below is the html: the website is http://yourfriendnoah.me
+Any help is appreciated!",65452288.0,2,0,,2020-12-25 22:17:49.913000+00:00,,2020-12-25 22:36:03.470000+00:00,2020-12-25 22:21:17.140000+00:00,,14857986.0,,14857986.0,,1,0,html|css|video|mobile,37
+65452211,How do I execute a function from external Javascript file using Python and Selenium?,"I am new to Selenium and am stuck trying to get it to automatically open links that look like this:
+The  function is in an external .js file. I couldn't fetch it from the server (this is material for another question) so I copied and pasted it into a text file that I have saved on my hard drive. I load and run it with
+which runs without a problem. But then when I try to run
+I get the following error:
+Shouldn't it have been imported when I have executed the external .js file? How do I get my code to see it?",,0,5,,2020-12-25 22:16:10.787000+00:00,,2020-12-25 22:16:44.730000+00:00,2020-12-25 22:16:44.730000+00:00,,3001761.0,,4097158.0,,1,0,javascript|python|selenium-webdriver,36
+65452210,.htaccess port rewrite for subdomains,"I am trying to redirect all SUBDOMAINS, except portal.example.com from any port (usually it's 80 or 443) to port 30000.
+e.g.
+example.com: (any port) shall have no change
+www.example.com: (any port) shall have no change
+portal.example.com (any port) shall have no change
+a.example.com (any port) shall be updated to a.example.com:30000
+b.example.com (any port) shall be updated to b.example.com:30000
+*.example.com (any port) shall be updated to *.example.com:30000
+etc.
+I currently have following , directing example.com and *.example.com without change:",65459978.0,2,0,,2020-12-25 22:15:37.330000+00:00,,2021-01-01 18:49:06.103000+00:00,2021-01-01 18:49:06.103000+00:00,,5866580.0,,11846629.0,,1,2,apache|.htaccess|redirect|mod-rewrite|url-rewriting,62
+65452208,i want to insert multiple rows in a table,"i have wishlist.php that shows the items in the wishlist, and if the users press on a button called &quot;add to cart&quot; all of these items would be inserted into a table called wishlist, i know that i'll have to use arrays but i dont exactly know how..
+the following snippet will retrieve the data from items table,
+i want to add the same rows to a different table..",,0,1,,2020-12-25 22:15:17.337000+00:00,,2020-12-25 22:18:42.413000+00:00,2020-12-25 22:18:42.413000+00:00,,7644018.0,,14889578.0,,1,0,php|html|sql|database|insert,47
+65452204,Inherent Spacing Between Inputs CSS,"I am working on a simple form with a text input and a submit button. I am trying to completely reset all the CSS and strip them down to nothing. But, for some reason I can't seem to get rid of a 2px margin between the two inputs despite using every CSS rule I know. Here is the current CSS I am working with:
+As you can see from the commented out code, I can technically get rid of this space between by just moving them both 1px over. But, I want a more elegant solution and I also want to understand why this is happening. Here is a link to the Codepen that this is a part of: https://codepen.io/hudsontay/pen/mdrWeRY?editors=1100",,0,1,,2020-12-25 22:14:40.980000+00:00,,2020-12-25 22:14:40.980000+00:00,,,,,6158687.0,,1,0,html|css,13
+65452203,Unity enum dropdown with float values,"In Unity / C#, is there a better way to do the following, currently involving and enum and a switch statement?
+I want to be able to select the &quot;Jump Distance&quot; from a dropdown in the Unity inspector, but I want each of the values to be a float, not an int. Is there a better data structure or a different approach to achieve this?",65454882.0,4,1,,2020-12-25 22:14:38.170000+00:00,,2020-12-26 12:00:35.300000+00:00,,,,,795016.0,,1,-1,c#|unity3d,129
+65452199,How to use Leaflet?,"I found a reference to Leaflet in a interactive map shown in a page of the town of Berlin: https://www.berlin.de/landesdenkmalamt/denkmale/liste-karte-datenbank/denkmaldatenbank/denkmalkarte.php
+Zooming into this map, one gets popups that show the name of a monument, which is also a link to a record in a database with a description of the monument.
+This kind of map is exactly what I am thinking to realise, although in my project popup wouldn't point o monuments but to other kind of thinks.
+Now: the Startguide and the Tutorial of Leaflet I see lines of code that one should insert somewhere: this is my newbie-newbie question: WHERE? In the html code of the page where the map should be shown? Or where else?
+I'd be grateful if somebody would answer such a basic question. That would also allow me to understand if I'm equal to this task.",,0,2,,2020-12-25 22:13:48.823000+00:00,,2020-12-25 22:13:48.823000+00:00,,,,,14889564.0,,1,0,leaflet|popup,31
+65452195,javax/xml/bind/JAXBException,"I created dynamic project by using Eclipse. In this project , I have added the hibernate Configuration for mysql database. I am using the servlet for crud operations. I know in maven project the required dependency can be added but not for web applications. I have added the Java.persistance jar files into lib folder. Here is the project structure..
+Here is the Hibernate code.
+Here is the servlet.
+Here is the result when I run the applications.",65452451.0,1,4,,2020-12-25 22:12:56.447000+00:00,,2021-01-06 07:30:27.960000+00:00,2021-01-06 07:30:27.960000+00:00,,5779732.0,,8705895.0,,1,-1,java|hibernate|servlets,62
+65452192,"Hello to everyone, what do you recommend to put after the empty for loop(I don't know what to put there)?",This is  a code for calculating distance between two coordinates using distance formula.,65452279.0,1,1,,2020-12-25 22:12:22.050000+00:00,,2020-12-26 04:50:52.897000+00:00,2020-12-26 04:50:52.897000+00:00,,11567994.0,,14889577.0,,1,-2,python|class|for-loop,39
+65452190,React-Redux: Attempted import error: './components/Score' does not contain a default export (imported as 'Score'),"I know there are a lot of similar posts, but none of them seem to be similar to this one.
+Using react redux to use mapStateToProps.
+in my App.js I use  in order to import the component.
+The component is in a folder called Score, where it contains  and . Inside  I have:
+Inside my  I have:
+But I get the error:
+I have triple checked and the file path is correct. I'm not sure why I'm getting this error.",65452233.0,2,1,,2020-12-25 22:12:05.903000+00:00,,2020-12-25 22:28:06.710000+00:00,,,,,13649400.0,,1,0,javascript|reactjs|react-native|react-redux|importerror,113
+65452187,AWS EC2: How to Combine Several RI (Reserved Instances) into a Larger one (ex: 4x t2.small into a 1x t2.Large instance),"I read (official AWS docs, source: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html) that it is indeed possible to &quot;merge&quot; several smaller RIs into a larger one (under certain rules, which I think are all met, like &quot;same family of instances, etc.).
+Dedspite that, I´ve been having strange behaviours with my RI grid list, that is: some RI are &quot;dissapearing&quot; and turnig into the new type / size I need, but nothing seems to bring it to the great finalle of finally having my new &quot;larger RI&quot; build from the 4 other smaller RIs I´ve got today.
+Cropped Screenshot of my Reserved Instances of interest for this question
+All your help will be greatly appreciated! And Merry Xmas to all!",,0,0,,2020-12-25 22:11:56.900000+00:00,1.0,2020-12-25 22:11:56.900000+00:00,,,,,14889581.0,,1,0,amazon-ec2|aws-reserved-instances,5
+65452186,Weighted Euclidean Distance while Merging Feature Vectors?,"I have two groups of features (describing an image, in a machine learning context). The first group A, consisting of 3 features, and group B consisting of 15 features.
+Currently, I am simply concatenating both groups to a combined feature group C:
+I want to compare images using the resulting feature groups Cn (nx18 dimensions) via Euclidean distances.
+B has 5x the number of features compared to A and I am wondering how to weight groups A and B equally within the Euclidean Distance calculation? I thought about doing C=A+A+A+A+A+B, or concatenating the unit vector of A and unit vector of B. Are these approaches correct, or is there a better approach?
+(Goal distance as function, however due to certain constraints I need to express this function only through a combined vector C.)",,1,0,,2020-12-25 22:11:48.280000+00:00,,2020-12-25 23:22:52.793000+00:00,,,,,10492911.0,,1,0,numpy|machine-learning|vector|euclidean-distance|cosine-similarity,41
+65452183,How to group dataframe rows into series in pandas groupby,"I am trying to group by data into series. A similar question can be found on stackoverflow here but it groupby data into a list and I want into series. Any idea.
+For list, the solution is like this
+I tried something like this
+But its not working
+So I tried this
+But I want to convert to sereis
+I want output like this",,1,0,,2020-12-25 22:11:28.917000+00:00,,2020-12-27 17:44:37.780000+00:00,2020-12-27 17:44:37.780000+00:00,,11170350.0,,11170350.0,,1,0,pandas,44
+65452179,"Xcode giving ""Cannot find type 'TYPE' in scope"" errors with Swift Package","I have been doing server-side development for some years now using server-side Swift, using Xcode as a convenient editing tool.  And now that Xcode has support for Swift packages, the situation has generally improved. I'm not targeting any traditional Apple hardware so that might be the source of my problem, but seeing as this problem has only recently started to arise, I'm reporting it in case others are also running into it.
+With one of my packages:
+http://github.com/SyncServerII/ServerDropboxAccount.git
+I can no longer build it with Xcode.
+My intent in this is primarily to edit and get syntax errors out-- i.e., I'm using Xcode as an editor. In some cases with these server-side packages, I can run unit tests in Xcode. In some cases, I have to run the tests on my Ubuntu target platform.
+Just in the past few days I can no longer build this specific package in Xcode, nor at the command line on Mac OS.
+I get errors like this:
+I get the same errors when I use  at the command line on Mac OS. However, when I use  on Ubuntu, I get no errors-- the package builds cleanly.
+On Mac OS:
+On Ubuntu:
+This may be a fringe use case, but before I full-fledged move away from using Xcode for this, I'd like to understand why this is happening. Thoughts are appreciated. Thanks!
+I'm including a tag in this question for  because my server is Kitura-based. And because Kitura has been undergoing some transitions lately in moving away from IBM to being community supported.",,1,0,,2020-12-25 22:10:59.877000+00:00,,2020-12-26 04:36:50.770000+00:00,,,,,1675875.0,,1,1,swift|xcode12|kitura|server-side-swift,975
+65452178,Updating several model data at one ActiveForm,"It's possible, to update or get data by post request from something like this?
+Why I'm asking about that?
+HTML name, id attributes have the same, similar values.",65463672.0,2,1,,2020-12-25 22:10:57.393000+00:00,,2020-12-27 07:25:32.117000+00:00,,,,,9306912.0,,1,0,php|yii2,29
+65452177,React bug: setState - setInterval simultaneously,"I have a small react program. After click on start, there is a ball moving down the screen. When it reaches certain point, it should disappear and start from begin. However doesn't work like expected. The movement is created by setInterval function and increasing position in state. However it is strange. Ball is moving, but at the place where is console.log made, state.position is always 0. It should be current value of state. Why is it all the time 0?
+Lastly, I shouldn't change state format. I know it's not usual state format, but I need this format for some other reasons.",,2,1,,2020-12-25 22:10:51.853000+00:00,1.0,2020-12-26 10:43:35.783000+00:00,,,,,14889574.0,,1,0,reactjs|setinterval,44
+65452174,Use ws for send messages to a discord bot,"i use ws module to send messages from my discord.js bot to my website, but how can i do the opposite? 
+Here the line to connect the bot with the website:
+I define WebSocket here: 
+I need to insert an url (is a mandatory parameter) instead of 
+What should I put?
+P.S i use heroku for host it (i don't know if it's useful information)
+Thanks in advice and sorry for bad english
+and happy Christmas!",,1,1,,2020-12-25 22:10:05.360000+00:00,,2020-12-27 08:14:02.590000+00:00,,,,,14692300.0,,1,0,websocket|discord.js|ws,74
+65452173,JPA composite key from two foreign keys in many-to-many table,"I currently have a simple database with three tables setup as below. I am simply trying to store the details of a sale (what products are purchased in the sale) via a many-to-many table that stores the saleid and the productid, along with how much of the product was purchased. This is the table setup:
+I am using JPA with the clipselink implementation, I set the entities up this way:
+Sale_id is the primary key for sales, product_id is the primary key for products, saleid_fk and productid_fk are both foreign keys that form a composite key.
+Sale entity:
+Products  entity:
+Sale_Details Entity
+The problem when is when I tested by running this code to create a new sale,
+i get the following error:
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a
+foreign key constraint fails (., CONSTRAINT
+ FOREIGN KEY () REFERENCES  ())
+Error Code: 1452
+From what I understand reading other stackoverflow posts this is because JPA cannot determine the foreign keys of Sale and Product to create a composite primary key? But since I know that both the Sale and Product already Exist, what is going wrong here?",,0,2,,2020-12-25 22:10:02.930000+00:00,,2020-12-25 22:10:02.930000+00:00,,,,,14725183.0,,1,1,mysql|database|hibernate|jpa|eclipselink,29
+65452167,How does POSIX distinguish files from directories?,"How does POSIX distinguish files from directories?
+On DOS and Windows, a directory is nothing more than a file with the D attribute. I tried to figure out how to differ them on POSIX-compatible operating systems like Linux and BSD, but it doesn't look as a quick and simple task. (This is probably because I don't use such an operating system, and therefore cannot test anything myself.)
+I ask this question to improve my manual about naming files. Currently, it has the following passage:
+Directory names can also be referred as file names; directories are nothing more than files with the D attribute.
+I'm not sure this quote would be correct for POSIX.",,1,1,,2020-12-25 22:08:58.650000+00:00,,2020-12-25 22:31:31.760000+00:00,2020-12-25 22:14:18.163000+00:00,,5615565.0,,5615565.0,,1,2,file|directory|posix|file-attributes,39
+65452166,Neo4J Plugin Graphaware TimeTree: Problems when calling ga.timetree,"I am using NEO4J in version 4.2.1 (community edition). I wanted to use the plugin TimeTree from Graphaware and copied
+in the plugin folder. I also added
+in the config and restartet the neo4j-server.
+When I start to do a test e.g. with
+I always run into the error
+Searching the web I only found one explanation which points to Failed to invoke procedure `ga.timetree.now`: java.lang.NoClassDefFoundError: com.graphaware.module.timetree.SingleTimeTree which explains to use the community edition of Neo4j instead of the Enterprise edition. I checked twice and I am pretty sure I run the community edition (Neo4j Server version: 4.2.1 (community)).
+Does anyone has an idea what I need to change to get it running?
+Thanks
+Balael",,1,3,,2020-12-25 22:08:57.363000+00:00,,2020-12-26 11:40:05.660000+00:00,,,,,4183601.0,,1,0,neo4j|graphaware,27
+65452165,Blazor onpointerenter event not firing,".Net 5, Blazor (actual latest)
+I would like to trigger an event when the pointer enters in an area.
+For example:
+Whatever I do it isn't firing, although it is working with javascript.
+(Mouse events are not an option, I want to use it with touch/pen inputs as well).
+Can you tell me what am I missing and how can I make it work?",,0,2,,2020-12-25 22:08:45.010000+00:00,,2020-12-25 22:14:24.067000+00:00,2020-12-25 22:14:24.067000+00:00,,6432344.0,,6432344.0,,1,0,events|blazor|webassembly,33
+65452164,"What happened on a INSERT ... ON DUPLICATE KEY UPDATE Query, Was it INSERT or UPDATE?","I am doing a Mysql Query of the Type &quot;INSERT ... ON DUPLICATE KEY UPDATE&quot; and I want to know what exactly happened, if it was a INSERT or a UPDATE.
+How can I find that out ?
+Does it produce a Warning in case of duplicate Key?",,0,0,,2020-12-25 22:08:42.377000+00:00,,2020-12-25 22:08:42.377000+00:00,,,,,1986815.0,,1,0,mysql,11
+65452158,Unity IAP not working on Android(i import androidX if it is important),This is logical result...,,0,0,,2020-12-25 22:07:54.183000+00:00,,2020-12-25 23:07:56.147000+00:00,2020-12-25 23:07:56.147000+00:00,,5015238.0,,14889582.0,,1,0,c#|android|unity3d|in-app-purchase,22
+65452156,"chrome extension, work in background with firebase","I have a little problem. I want my chrome extension to run in the background all the time and listen for changes to the database. If it happens, a notification will be displayed. Anyone know how to run a script to keep it running all the time?
+If I run the popup in it, I will hit the button and run the content script there. Then the script in the background and this method in it. This do it once and it don't listen to changes.
+And I want it to work all the time.
+Anyone know how to do it? How in Chrom you can run a script that works all the time?
+Thanks for your help and hints.",,0,1,,2020-12-25 22:07:37.017000+00:00,,2020-12-25 23:07:59.510000+00:00,2020-12-25 23:07:59.510000+00:00,,209103.0,,14065795.0,,1,0,javascript|firebase|firebase-realtime-database|google-chrome-extension,17
+65452155,Getting array element from parsed json returns undefined,"So, I have this json string:
+I use this code to parse it:
+When I log in console this:
+I get this in console:
+But when I try this (I even tried using get path option from console to get title):
+I get undefined.
+What am I missing here?",65452191.0,1,0,,2020-12-25 22:07:29.023000+00:00,,2020-12-25 22:12:12.470000+00:00,,,,,9458184.0,,1,0,javascript|json,34
+65452153,How does stdio buffer works in this case?,"I've been studying how stdio buffering works. I read the links [1] and [2] below but there are two points I still don't understand.
+In [2], he uses the following bash script to write output intermittently and then he uses the piped commands:
+I understand why he had to use --line-buffered with grep, but why doesn't he have to do something similar about the stdout buffer from &quot;bash generator.bash&quot;? I can only imagine that this stdout buffer is line buffered but I couldn't find anything to confirm this.
+Also, are the stdin buffers of grep and cut line buffered as well? I couldn't find anything to confirm if this is true or not but if it isn't line buffered then what is the point of making the stdout buffer line buffered if the stdin on the other side is block buffered?
+[1] https://www.pixelbeat.org/programming/stdio_buffering/
+[2] https://blog.jpalardy.com/posts/grep-and-output-buffering/",65452391.0,1,1,,2020-12-25 22:07:15.973000+00:00,,2020-12-25 22:52:02.483000+00:00,2020-12-25 22:13:18.623000+00:00,,3776858.0,,14889467.0,,1,0,bash|buffer,42
+65452151,ASP.NET Core 5.0 Web API - Enable Authentication Redirect,"In Visual Studio 2019, when creating new ASP.NET Core 5.0 Web API &amp; enabling authentication as shown in image below, the default behavior is to get 401 when you start website locally &amp; navigate to https://localhost:44380/WeatherForecast.
+Is there any way to configure it to redirect to Azure login page?  I can configure Postman to access site w/ OAuth2.0, so there must be some way to make the Web API itself do redirection to get user's token when accessed directly from a browser.
+UPDATE:
+After following link Yinqui mentions in comment I was able to get it to redirect by adjusting the default ConfigureServices method in Startup.cs to code below.  However, after logging in I cannot find the custom API scope  from HttpContext.User.Identity.Claims (via the Postman request I do see it) - any ideas?:",,0,1,,2020-12-25 22:07:05.163000+00:00,,2020-12-29 22:31:46.313000+00:00,2020-12-29 22:31:46.313000+00:00,,4354987.0,,4354987.0,,1,0,authentication|.net-core|visual-studio-2019|asp.net-core-webapi,53

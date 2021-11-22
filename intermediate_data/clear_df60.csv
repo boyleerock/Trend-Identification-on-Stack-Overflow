@@ -1,0 +1,473 @@
+score,creation_date,body
+0.0,2010-04-14 00:59:35.587000+00:00,"Solved. I'd been missing the obvious: the major difference between the active and inactive tabs is visibility, so adding :visible to the penultimate selector (for the tab divs) is all it took."
+1.0,2010-01-07 17:33:58.807000+00:00,"This is an md5 hash of the entire binary contents of the file. The point is that if two files have different md5 hashes, they are different. This helps you determine whether a local file on your computer is the same as the file on the website, without having to download it again. For instance:
+You downloaded your local copy somewhere else and think there might be a virus inside.
+Your connection is lossy and you fear the file might be corrupted by the download.
+You have changed the local file name and want to know which version you have. "
+3.0,2013-08-23 11:35:03.580000+00:00,"You have two commata, but you only need one."
+1.0,2011-10-07 21:08:20.323000+00:00,"are you not missing a
+at the beginning of your  file?"
+0.0,2013-03-20 03:39:04.607000+00:00,You could use the following:
+3.0,2012-01-17 12:30:44.730000+00:00,"From RFC 1738 section 3.10:
+A file URL takes the form:
+where host is the fully qualified domain name of the system on
+   which the path is accessible, and path is a hierarchical
+   directory path of the form directory/directory/.../name.
+So it's file:///path/from/root just like http://host/path/from/root because there's an implicit 'localhost' between the second and third slash. But as mentioned above, use Uri.FromFile() to build it."
+1.0,2010-02-18 19:00:41.830000+00:00,You may also use this approach to increase readability and up to certain point independence from the implementation using a more common regexp subset
+68.0,2014-08-11 14:26:39.137000+00:00,"If you're using .net framework 4 or above you could use 
+This could be more efficient than using  since you  avoid iterating trough the entire file list."
+1.0,2014-02-14 00:01:44.227000+00:00,"You should check the following two things:
+1) Use generics for the Deque:
+2) Ensure you overwrote the toString()-method in Level, so that the level returns its representation in a String similar to the one used in the constructor:
+EDIT:
+I think the main problem is, that the method which calculates the number of rows and columns of your field fails and therefor the initialization of the workerLocation-array in the Level-class is skipped. So if you try to access it the first time a Null Pointer Exception occures. Try to get the values of rows amd columns in the Level-class."
+0.0,2011-03-24 09:21:55.943000+00:00,Here is a solution:
+39.0,2010-03-08 11:26:25.080000+00:00,"Since you can't define a  directly in WPF, you need to obtain a , and add a hook to it :"
+3.0,2012-11-13 18:56:58.593000+00:00,"To update table you can do this
+And to select"
+25.0,2013-11-01 11:45:32.137000+00:00,"There seems to be an issue with the new user agent string (most sites don’t recognize the new IE) and thus MVC doesn’t enable cookies by default 
+Force the use of cookies in the authentication token by adding the cookieless attribute in your forms authentication element as follows
+Source: http://botsikas.blogspot.co.uk/2013/09/ie11-and-aspnet-session-cookies.html "
+1.0,2011-02-26 21:39:08.303000+00:00,"Look at SessionManager.m in the GKRocket example in the docs. Especially the implementations of
+and"
+1.0,2011-11-24 14:47:50.863000+00:00,The last URI should work with 'Resource' build action. Try code from this answer.
+0.0,2014-02-04 18:58:15.390000+00:00,"Use !newstate! to get variable value, instead of  %newstate%. This is the way of getting delayed variables values. 
+Keep using ""setlocal enabledelayedexpansion""."
+15.0,2014-06-06 20:05:17.957000+00:00,"Thanks.  As mentioned, tests can inject  for  using .  For posterity,  is not available via  but instead must be injected into a function argument to :"
+0.0,2012-04-17 18:00:00.920000+00:00,Instead of DateTime.Parse() try instantiating a new DateTime.
+3.0,2012-01-11 13:06:23.277000+00:00,There is no  system call on Windows.
+2.0,2013-11-25 07:23:04.290000+00:00,"The point of the problem is that you can't pass a list to your function. Your function wants an integer value.
+As expected. So you should pass just a number (n) to your function to calculate fibonacci of it."
+1.0,2012-12-11 15:15:58.067000+00:00,"If you are under IE you may have hit the 31 stylesheets limitation this browser has. Add a RadStyleSheetManager to your page to combine the requests in a single file. Confirm this by testing in Firefox or Chrome as well. Also, make sure your requests are ok, your stylesheets may not be present on the page in case you are adding them dynamically and something goes wrong with your code."
+3.0,2013-12-25 15:39:58.453000+00:00,"Try to run  in your project root (where project  is located) via cmd. If succeeded, it will download all your dependencies into your local repository. Then you should search for maven repository configuration in netbeans options  and make sure that your local repository is added there."
+1.0,2009-02-13 20:40:45.650000+00:00,"IIS, by default, runs your application within the default Application Pool. On 64-bit Windows, that Application Pool is, by default, 64-bit.
+You should create a new Application Pool, and configure IIS to run your 32-bit website in your new 32-bit Application Pool."
+45.0,2009-07-24 21:30:21.673000+00:00,"Find the vertex with smallest y (and largest x if there are ties). Let the vertex be  and the previous vertex in the list be  and the next vertex in the list be . Now compute the sign of the cross product of  and .
+References:
+How do I find the orientation of a simple polygon? in 
+Frequently Asked Questions: comp.graphics.algorithms.
+Curve orientation at Wikipedia."
+-1.0,2010-09-29 11:24:35.387000+00:00,"You don't install fonts on your website, if you want the text on your site to show up in a non-standard font every visitor has to have it on their local machine.
+It's easiest to stick to the standard fonts, and any small amounts of text you want in a special font you have to make as images.
+If you are still not satisfied then have a look here: http://novemberborn.net/2006/12/sifr3beta1-110
+Beware it is a mission!"
+2.0,2012-08-11 21:55:24.043000+00:00,"I think you have a recursion's ring (infinite recursion), not a really stack overflow error. If you are got more memory for stack - you will get the overflow error too.
+For test it:
+Declare a global variable for storing a operable objects:"
+0.0,2011-06-28 18:13:04.520000+00:00,"Take a look at the Pager example: http://jquery.malsup.com/cycle/pager2.html
+The pager features takes the user to a specific image in the cycle, which is what you want to do.
+However, you might only want to implement a single pager link, not a link for each image in the cycle."
+4.0,2010-10-02 12:54:30.280000+00:00,"Good question.
+From my (somewhat limited knowledge) of the ""under-the-hood"" working of a SQL Connection, many steps are involved, such as:
+The Steps Under the Hood
+Physical socket/pipe is opened (using given drivers, eg ODBC)
+Handshake with SQL Server
+Connection string/credentials negotiated
+Transaction scoping
+Not to mention connection pooling, i believe there is some kind of alogrithm involved (if the connection string matches one for an already existing pool, the connection is added to the pool, otherwise new one is created)
+IDiposable
+With regards to SQL Connections, we implement IDisposable so that when we call dispose (either via the using directive, or explicity), it places the connection back into the connection pool. This is in stark contrast with just the plain old sqlConnection.Close() - as all this does is close it temporarily, but reserves that connection for later use.
+From my understanding, .Close() closes the connection to the database, whereas .Dispose() calls .Close(), and then releases unmanaged resources.
+Those points in mind, at the very least it is good practice to implement IDisposable."
+14.0,2012-02-07 08:18:02.670000+00:00," constructor isn't defined in the context of SDK modules. You can still get it using chrome authority however:
+ documentation.
+That said, your approach with  should work as well. You used the  operator incorrectly however, the way you wrote it a new ""require object"" is being created. This way it should work however:
+Please consider using an asynchronous  object however, use  to attach your listener (the  module currently doesn't support other types of listeners or )."
+0.0,2014-03-03 08:15:15.647000+00:00,"AS Vishrant mentioned *Java follows Zero indexing. So in your case question and responses array is of size 10 which means it will iterate from 0 to 9 *
+in your tester class, you are trying to access 10th index in loop in 2 places
+You should to write
+EDIT Addition
+}"
+4.0,2010-10-04 05:16:53.580000+00:00,"I'm not sure if you've found much by way of google but this search bought up this page as hit 1: http://www.oreillynet.com/xml/blog/2006/03/more_statistics_on_user_clicks.html
+Incidentally this question is on page one of the search too :)
+Its from 2006, but the first bit has a little about the font size settings in IE.
+I doubt there is any documented data for this specific thing. 
+One thing I can tell you is that in over 10 years of working around computers I've seen about 1 in 10 users having a above default DPI setting. eg. 120 that caused the font size to be bigger than 16px in their browser. It also caused layouts that weren't styled properly to break."
+2.0,2012-07-09 23:30:19.373000+00:00,"EDITED several times. I think this is all you need to do:
+Find all the pieces that can only fall mutually dependent on each other and combine them into an equivalent larger piece (e.g. the  and backwards  in your picture.)
+Iterate through all the pieces, moving them the maximum direction down before they hit something. Repeat until nothing moves."
+4.0,2012-08-22 05:22:54.100000+00:00,"You have to escape the /'s in the regex code.
+-EDIT-
+ascii-lime also pointed out that you can change the delimiter to another non-alphanumeric character(with exceptions). To do this change the / at the start and end of the expression to the character of choice. Example:
+to"
+0.0,2012-02-17 02:58:22.920000+00:00,"The simplest answers are to change your queries for your datasets so they don't return multiple rows: combine the rows in your query.
+The really simple version of this is to just wrap your existing query for Dataset2 in an outer Select ... Group By:
+Slightly revised Dataset2:
+A little bigger rewrite would give you:
+Either of those queries above will work nicely with a lookup function.
+But if your database1 and database2
+are the same for all of the ten queries, then I would try to combine them. Maybe something like:"
+10.0,2010-06-22 20:35:06.760000+00:00,"In an .xcconfig file, you can have 
+Any build setting can be conditional on a number of things, for example the shortname for an sdk. The device SDKs are named iphoneos-4.0 for example, and sim iphonesimulator-4.0. The above thus gets you the 'foobar' as CFLAG for the device, and 'barfoo' for the sim.
+To get started with xcconfigs quickly: 
+New file > Other > Configuration Settings File
+Open the project or target editor (cmd-alt-E for the target one)
+Select a setting you want to customize (like cflags), and copy it with cmd-c
+Paste in the new xcconfig file
+Modify as above
+In your project or target editor's lower right corner, select your xcconfig file as ""Based On"". 
+Notice how the build settings UI now lets you edit the conditionals... You can create new conditionals with the lower left button, but it won't let you set ""iphoneos*"" for example, only specific versions.
+Note that the magical $(inherited) lets you make a setting that inherits project settings but overrides just a part of it, like so:
+I don't know a good resource for xcconfigs, but this'll get you started anyway: http://robnapier.net/blog/build-system-1-build-panel-360#more-360"
+0.0,2010-03-20 20:19:19.413000+00:00,"I've found it helpful to work with different languages, since they each have their strengths.  Python is extremely powerful, but relies heavily on good coding conventions and practices to keep code maintainable.  In particular, it does not enforce type safety or insulation, which means it is easy to abuse.  C# is a modern object oriented language, with strong typing and other features to help enforce insulation and encapsulation.  It's not as wildly flexible, but I've also found that larger C# programs are much easier to maintain (especially when you inherit them from other developers.)"
+0.0,2011-12-02 06:11:53.267000+00:00,"The Declaration for the dc_card Function should be:
+You should be passing the icdev you got from the dc_init function, and the mode of 0, your information will be in the snr variable and the status will be in st.
+in your declares:"
+0.0,2013-10-22 17:00:22.030000+00:00,"Seems pretty straightforward to me.
+This is simply a bool that returns true if the left mouse button is being held down in the current frame.
+I think what you really want to do is when they move the mouse while the left mouse button is down so you simply need to check both conditions:
+I assume you already have code to check if the mouse moved (comparing the old position to the new position)."
+0.0,2013-03-31 17:01:33.460000+00:00,The proper thing to do would be to make this a stored procedure at the database and have your C# run that sproc.
+0.0,2011-08-29 15:22:31.083000+00:00,"It seems it doesn't sort very well... 
+But you can easily make it sort ok:"
+2.0,2011-05-17 02:25:29.393000+00:00,"I don't think that WPF is actually that hard. I think it's just that WPF definitely requires a slightly different way of thinking. You can tell that it was built with certain principles in mind (like MVVM, as another poster mentioned), and it's very different from most other frameworks. If you try to do it like you did Windows Forms or MFC or ASP.NET or whatever... you'll struggle. You need to be willing to change your mind on how things work.
+Frankly, I think the only way to learn it is with experimentation. Come up with some side project to work on using WPF and try your hand at it. Learn a bit and refactor it. Get a good book, read the WPF disciples list, read anything that Sacha Barber writes, read the WPF section here on SO.
+When you have your first ""ah ha!"" moment where you decide to write an Attached Property to solve some obscure problem you're having, you'll know you've finally understood it :)"
+0.0,2013-03-06 08:26:55.957000+00:00,What's the meaning to catch OutOfMemoryError and do some work in your catch block if your heap space or perm gen space is full? Actually You cannot guess where can this exception actually happen. There is no logic to catch this exception.
+1.0,2014-05-09 19:48:53.540000+00:00,or you might just want to enter date
+3.0,2010-11-09 02:09:42.907000+00:00,"I think that when it comes down it, it it really depends on your target audience. If you know that your target audience is most likely to have JavaScript enabled, then so be it.
+I have a situation at work, however, where I know that some of the people I develop for may be using old browsers and whether I like it or not, I cannot force them to upgrade.
+You also want to consider allowing your site to be accessible to all platforms and browsers and this includes audio and text based browsers. It's possible that your site will be inaccessible to people with disabilities. 
+Whether that's important enough for you to develop a non-JavaScript version of your site, that's up to you."
+4.0,2014-02-05 08:35:44.877000+00:00,"There is no problem with the map projection, but the tiles are cut according the TMS notation (with tile [0,0] in the bottom left) in GDAL2Tiles.
+Some tools expect the Google XYZ notation (with tile [0,0] in the upper left corner).
+The tiles are otherwise equal, they have just flipped Y coordinate in the file name.
+Have a look at this:
+I prepared a website which shows visually the difference and also explains the problem. Have a look at:
+http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/
+There is also a source code for how the tiles and all coordinates are calculated. It is part of the GDAL2Tiles which you mentioned above - which is a code I created some years back.
+Your second question is was about MBTiles. The mbutil utility has a parameter ""--scheme tms"" which allows to create the MBTiles file from tiles rendered with gdal2tiles.py.
+GDAL reads just the KAP file, where each represents a map in the sheet (in case there are insets).
+BTW Do you know that there is http://www.maptiler.com/ which solves the problems mentioned above directly? You can just drag&amp;drop into the GUI or pass on the command line the KAP file as it is and choose whether you want tiles in directory or MBTiles and it will directly render the output. The tiles are directly optimised as well, there is support for rendering multiple input files into a single layer and rendering is of magnitude faster then with GDAL2Tiles. "
+3.0,2013-01-25 16:35:37.657000+00:00,"This is NOT guaranteed. It is for a SortedDictionary&lt;>, of course, and also for arrays and lists. But NOT for a Dictionary.
+Chances are, it will be stable if the dictionary is not changed - but it's just not guaranteed. You have to ask yourself - do you feel lucky? ;)"
+1.0,2009-06-10 03:53:47.430000+00:00,"Check out http://activescaffold.com/  and Streamlined -- http://streamlinedframework.org/
+both support nested models on a page.
+Note that you probably need some training for your users. A 4 level deep model is not something that people run into every day."
+0.0,2012-02-25 00:47:48.393000+00:00,
+0.0,2014-07-11 09:31:55.560000+00:00,You can redirect in  like this
+3.0,2009-08-30 17:17:27.243000+00:00,"ok, this should show you can really get another category of numbers with other aproaches ...
+the limit here is not the number of stars, the limit is density, i.e. the number of stars visible at the same time ... with text disabled, i can get up to 700 @ 30fps, on a Core2Duo, with quite a recent version of the debug player ...
+i realized, flash player is not very good at clipping ... and that actually, using the most simple way, you spend a whole lot of time moving around objects, that are far from being visible ...
+to really be able to optimize things, i chose to use MVC here ... not in the classic bloated way ... the idea is to handle the model, and if any elements are visible, create views for them ...
+now the best aproach is to build up a spatial tree ... 
+you have leaves, containing objects, and nodes containing leaves or nodes
+if you add an object to a leaf and it surpases a certain size, you turn it into a node with nn leaves, redestributing its children between 
+any object added to the background will be added to a grid, determined by the object's coordinates ... grids are created just-in-time, an start off as leaves
+the big advantage of this is, that you can quickly isolate the visible nodes/leaves.
+in each iteration, only the nodes/leaves which either turn visible, or are already visible (and may become invisible), are interesting. you need not do any updates in the rest of the tree. after finding all the visible objects, you create views for objects that turn visible, update the position of those that simply stay visible, and destroy views for objects that become invisible ...
+this saves an awful lot of everything ... memory and computation power ...
+if you try with a huge world size (100000), you will see, that you run out of RAM quickly, long before CPU does anything ... instantiating 500000 stars uses 700MB ram, with about 50 stars visible, running at 70 fps without any tremendous CPU usage ...
+the engine is just a proof of concept ... and code looks awful ... the only feature i am currently proud about is, that it supports object to occupate a certain area, which is why an object can be part of several leafs ... i think, this is something i will remove though, because it should give me a great speed up ... you also see, it stalls a little, while adding stars, which happens, when leafs flip to nodes ...
+i am quite sure, this is not the best way for a spatial subdivision tree, it's just that everything i found seemed kind of useless to me ... probably someone who studied (and understood) CS, can refine my approach ... :)
+other than that, i used an object pool for the views, and Haxe, since it performs better ... a thing that probably is not so clever, is to move all the views individually, instead of putting them on one layer and moving that around ...
+some people also render things into s manually, to gain performance, which seems to work quite well (just can't find the question right now) ... you should however consider using  instead of  ...
+hope this helps ... ;)
+edit: i decided to turn my detailed answer into a blog post ... have fun reading ... ;)"
+1.0,2014-02-27 06:43:54.350000+00:00,"Client side javascript validation is not manditory. It just prevents the client (whose JS is enabled) to submit or reload the page. Server side validation is the most important as JS validation can be bypassed by simply turning off JS. The JavaScript Validation should never be relied alone. 
+The PHP Validation (server Side Validation) is robest &amp; cant be manipulated by the client. If its not implemented, you may end up with worse data &amp; more worse will be SQL Injection. So in practive we tend to use both JS &amp; PHP validation together "
+4.0,2013-03-05 17:06:31.817000+00:00,"Yes, you're missing something
+You should try testing your server with something else than a full-blown web browser. try  for example.
+Chrome does a lot of other things than doing what you told it to do."
+0.0,2014-08-29 16:05:10.117000+00:00,"You are doing couple of things wrong here.
+Don't leave exception blocks empty. It hides all the error. Use Log.e to print that.
+Don't use System.out.println. Use Log.* only for logging. 
+Don't use AsyncTask to upload your file. Use IntentService Instead. And using localbroadcastmanager broadcast upload events for your activity to listen. It will be more configuration change friendly.
+Instead of doing all this file upload sorcery yourself. Use httpmime library instead. It works simply awesome on android. I have my apps on production using this. Something like this you have to do.
+You will have your everything in 'response' for you to read.
+From here you can download this library http://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.2.5/"
+6.0,2010-10-29 20:43:04.993000+00:00,"perl6 is still a work in progress, so even though perl6 has much improved support for functional programming at the language level (see perlgeek.de on currying in perl6, for example), you'll probably want to start now with perl5 so you can get to work with what's out there. i recommend looking into cpan for higher-level library support...Array::Utils and others (there's a lot!)"
+1.0,2011-08-07 00:41:34.960000+00:00,"Did you check permissions/owner?
+From the PHP manual: Note: The results of this function are cached."
+0.0,2012-11-05 12:01:48.007000+00:00,Try this: 
+2.0,2012-11-26 05:27:06.513000+00:00,"Try this:
+EDIT
+http://blog.gerv.net/2006/10/firefox_reload_behaviour/ read the article and first comment by Jason"
+1.0,2013-07-26 22:06:23.810000+00:00,"Use operator.itemgetter:
+Outputs:"
+0.0,2014-05-19 12:46:48.720000+00:00,"I think your problem is that you are not separating your items, so your SQL ends up looking like:
+Whereas what you would really want is 
+If you are using SQL Server 2008 or later then I would recommend using table-valued parameters. The first step would be to create your type:
+I tend to just create generic types that can be easily reused, but this would be your call.
+Then in your method you would need to split your values into an array and add them to a datatable:
+You can then add this table to your command as a parameter:
+Finally, You can reduce your code by just initialising the SqlDataAdapter with your SQL and connection:"
+0.0,2013-06-04 14:19:22.393000+00:00,"Try setting a 'default' , so no gradient for IE10"
+33.0,2012-01-30 16:46:58.090000+00:00,Search path is indeed what you want:
+2.0,2013-06-15 18:53:50.053000+00:00,"Below is a simplistic, and perhaps slow, example of counting individual letters (and some other characters) in a document.
+Change to 
+to display the characters themselves.
+It may be possible to use  (somehow) to count occurrences of characters; otherwise it would require Regex.
+Alternative using Replace:"
+0.0,2011-12-21 07:37:34.373000+00:00,"You need to make some form of path with a list of points, and then move the ""pencil"" from the first to the last.
+Read about linked lists in java, it's easy and everything will be clear. The only problem is making the path. You might have to write some tool in your pc to transform images into paths.
+Another way to achieve this effect, but a bit bolder, is to pick random points in the edges of the picture, sort them, and then move the pencil from the beginning to the end."
+1.0,2013-08-13 15:07:17.870000+00:00,"Totally failed to actually write the link in the comment. Here are some tips for speeding up your site: https://stackoverflow.com/a/16240746/1037489 And of course, the prebuilt version is the one to use, should be much faster. Click-to-build command is your friend. Make sure you have a source enlistment to be able to use it. "
+5.0,2011-06-06 06:21:33.720000+00:00,"No there is problem with throwing a  array. Just that you should receive as,
+1st  is to add ability to receive any  array    
+2nd  is to specify that  is not intended to change within  block"
+5.0,2013-05-28 18:30:36.443000+00:00,"This is a generic method (based on another SO answer which I can't find) which you can call on any enum.
+By the way, the Browsable attribute is already defined in System.ComponentModel.
+For example:"
+9.0,2010-04-18 23:45:24.540000+00:00,"Yes, Sun can (Oracle now, I guess):
+fdlibm, the ""freely distributable math library"", has sqrt and pow, along with many other math functions. 
+They're fairly high-tech implementations, though, and of course nothing is ever the ""most efficient"" implementation of something like this. Are you after source code to get it done, or are you really not so much looking for  and , but actually looking for an education in floating-point algorithms programming?"
+2.0,2014-08-27 13:51:10.267000+00:00,"Assuming you get a valid JSON array, a custom converter with JSON.NET would work as well:
+Usage:
+Example: https://dotnetfiddle.net/TEbNsH"
+2.0,2013-02-25 14:20:27.623000+00:00,"Figured it out.  Here is simplified version.
+If you change {rendererFactory} (updating existing or creating new), it will not trigger refresh.  After making changes to the factory, i did myDatagrid.rendererProviders=myDatagrid.rendererProviders and that triggered the update and recycled the renderers."
+0.0,2014-07-31 19:39:54.170000+00:00,"The best solution probably depends on what exactly you mean by ""a merge operation"". 
+If what you mean is that you want to insert entities from the set (table, csv-file or whatever)  which aren't already present in set , you could 
+define suitable  and  methods for your entities
+read all existing records in  into memory in one go (assuming they fit in memory), putting them in a 
+read all entities from , calculate , which should be very fast, and then insert  into , possibly using the bulk insert library.
+The key here is to avoid having to do database lookups for each element in ."
+0.0,2013-10-15 13:15:47.867000+00:00,Turns out all I needed to make it work were these two lines of code:
+3.0,2012-05-08 12:31:44.190000+00:00,"You cannot change the initial key name of an Amazon EC2 instance as shown in the AWS Management Console.
+However, as you've already explored, it is not a problem to add another key for every day usage and won't be a problem in the long run either; in fact, you could also delete the former key pair via the AWS Management Console with zero impact on your already created instances, please see Eric Hammond's answer to consequences of deleted key pair on ec2 instance for more details on the subject matter."
+1.0,2012-07-11 19:00:43.057000+00:00,
+6.0,2013-06-11 10:46:54.087000+00:00,"Most likely the project was imported into IDEA, but it's not a pure Java project.
+Note that non-Java projects cannot be imported from the existing sources using the Import option.
+You should create a new project, select the appropriate module type and then point to the existing directory with the code when creating the module.
+Other options are to import from Maven/Eclipse/Gradle.
+There is a known issue logged.
+If it's not the case, please share a sample project (zipped) that will reproduce the problem."
+0.0,2013-06-06 08:19:40.273000+00:00,"Share the code you are using plz. The description is very brief. BTW, you can have a look at this link how to save state with onSaveInstanceState and onRestoreInstanceState while orientation change"
+2.0,2011-06-11 13:27:29.233000+00:00,"Check out the jQuery hotkeys plugin
+http://plugins.jquery.com/project/hotkeys"
+3.0,2010-09-28 11:26:20.690000+00:00,"I'm using MvcExtensions. One of the features is a nice way to describe metadata like this:
+Neat thing is - this allows to use resources for localization in strongly typed fashion.
+Drawback for using this - there's bunch of other things bundled which You might not want to use."
+36.0,2013-10-24 03:24:07.620000+00:00,"As José Valim said, you can call  inside iex."
+4.0,2010-06-30 10:56:27.370000+00:00,You can change culture for thread:
+1.0,2013-11-24 00:46:31.243000+00:00,"I think the best way to explain why this problem occurs is to go through what is happening step-by-step:
+The main window is built.
+The user clicks either the  button or the  button.
+The  function, which each button is hooked up to, is invoked.
+The function runs through to this line: .
+Since the user hasn't entered anything yet,  returns an empty string.  Empty strings cannot be made into floats, so a  is thrown.
+So, summed up, the problem is that you are not adding any safeties for if  returns a string that cannot be converted into a float (i.e. an empty string, a string with letters in it, etc.).
+You can create a safety like this:
+or, like this:
+Regardless of how you choose to solve this problem, you need to do something for when the return value of  cannot be converted into a float."
+1.0,2010-12-07 21:18:44.187000+00:00,"I suspect that the PDFs in question are ""web enabled"", AKA ""linearized""... possibly including the ones with the ""page 2 bug"".
+Basically, a linearized PDF has a bunch of ""hints"" at the beginning of the file giving byte offsets to various relevant bits, particularly the byte range needed to display the first page (which is required to be at the front of the PDF).
+Requests to read these byte ranges may be broken up into any number of HTTP requests (including ""one"").  It's not particularly odd that iframe &amp; object tags behave differently.  In one case, the PDF gets an entire window to itself, in the other it must share with HTML content: however thinly wrapped, it is wrapped.
+Alternatively, one of the requests could be for the beginning of the PDF rather than the entire thing, again related to linearized PDFs (attempting to determine if the PDF is linearized, then reading the whole thing).
+In either of the above cases, this is normal behavior.  OTOH, if it's requesting the entire PDF twice, that's A Bad Thing... quite possibly a bug in the PDF plugin."
+11.0,2010-09-02 18:56:59.687000+00:00,"Sure, but you might want to rewrite it as
+which does the exact same thing."
+2.0,2013-03-28 14:10:35.603000+00:00,"Since you are making several calls to a database file (that isn't going to change), I'd start out by defining your connection string and your SQL statements at the top of your class as global values:
+These never change, so there is no reason to define them again each time you call your routine.
+Personally, I do not like inserting values into SQL statements, like you have shown. Rather, try to use Parameters.
+To use Parameters, you'll need to look into your database to see what type of columns  and  are. My guess is that they are both int values, but these could be GUID like values, requiring  type strings. If these are strings, you should write down what sizes the columns are defined as.
+For example: Below, my  column is the  and the size is 50. An  for this column would be:
+Since I did not know what type of data you use, I created an enumerated type to show how each method would be used. If you do not have access to the table's design, the last resort is ""AddWithValue"" (I personally hate that one, because it makes me look like I don't know what my database has inside).
+To use this enumerated type, I modified the signature of your method to pass in that value:
+Obviously, you will not need this, because you should know what technique you are going to be coding with.
+I wasn't able to figure out what your  object was. Initially, I thought this was your , but that does not have an  method, so I just commented it out:
+Speaking of ...
+I combined your  instance with your  instance. Less code typically means fewer errors:
+The , by default, is , so this line is unnecessary:
+I moved most of your variable reading outside of the  routine, as none of that should ever cause an exception to be generated.
+Also, I used the more targeted  instead of the general . The only thing that could fail in the block is something  related, and the  will give you better/more specific error messages than the general  object will.
+So, what does it look like all put together?
+Code:
+Happy Coding!"
+0.0,2012-09-30 16:23:28.343000+00:00,you can use it like this 
+2.0,2011-10-12 16:17:25.353000+00:00,"Why are they might be different:
+http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.16  
+  Floating point is an approximation...  
+http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17  
+  The reason floating point will surprise you is that float and double
+  values are normally represented using a finite precision binary
+  format. In other words, floating point numbers are not real numbers.
+  For example, in your machine's floating point format it might be
+  impossible to exactly represent the number 0.1. By way of analogy,
+  it's impossible to exactly represent the number one third in decimal
+  format (unless you use an infinite number of digits)....
+  The message is that some floating point numbers cannot always be
+  represented exactly, so comparisons don't always do what you'd like
+  them to do. In other words, if the computer actually multiplies 10.0
+  by 1.0/10.0, it might not exactly get 1.0 back.
+How to compare floating point:
+http://c-faq.com/fp/strangefp.html  
+  ...some machines have more precision available in floating-point
+  computation registers than in double values stored in memory, which
+  can lead to floating-point inequalities when it would seem that two
+  values just have to be equal.
+http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17
+Here's the wrong way to do it:
+If what you really want is to make sure they're ""very close"" to each other (e.g., if variable a contains the value 1.0 / 10.0 and you want to see if (10*a == 1)), you'll probably want to do something fancier than the above:
+There are many ways to define the isEqual() function, including:
+Note: the above solution is not completely symmetric, meaning it is possible for isEqual(x,y) != isEqual(y,x). From a practical standpoint, does not usually occur when the magnitudes of x and y are significantly larger than epsilon, but your mileage may vary."
+0.0,2011-03-01 14:17:27.270000+00:00,"You could explode with 
+and strip_tags() to get the rows (ignoring the first one), and loop through them and explode with 
+to get the cols."
+0.0,2012-04-01 11:17:49.907000+00:00,"Your code:
+Prepared statements (in-and-of-themselves) don't protect against SQL injections. You need to bind the parameters. Check out: http://php.net/manual/en/pdostatement.bindparam.php.
+In your example above, SQL injection is entirely possible. I can't see where you define  or , so I can't tell for sure whether or not it's safe."
+1.0,2014-01-14 07:37:31.193000+00:00,Place this rule in your  file:
+7.0,2010-12-14 03:26:38.590000+00:00,"Your  is a special case of .
+You can usually find this sort of thing through Hoogle, but it seems to be a little broken at the moment.  The command-line version I have installed on my system gives  as the first result for the query .
+And sure, you can define that operator, it's just  (or )."
+0.0,2014-09-30 09:16:36.373000+00:00,"Ok , but you specified very minimum information to solve this kind of problem , since i have not understood it fully , i have the following suggestion.
+How about using before and after interceptor on grails.
+let me know anything if u need more help . . . "
+2.0,2011-08-06 09:28:38.357000+00:00,"As the syntax of a roll is fairly complex, why not write a parser instead of using a huge regular expression?"
+0.0,2011-12-08 03:44:21.643000+00:00,"If you are launching PreCamera activity from TcpClient activity:
+Try this"
+2.0,2010-08-06 12:30:22.323000+00:00,You can delegate the sorting to your own sort function:
+1.0,2010-11-19 20:04:23.200000+00:00,"If you run ProcessExplorer on your server you will notice that an out of band process called nunit-agent is spawned which ends up blocking the nunit runner. 
+I have not validated that this is fixed in 2.5.9, but it might be some info that could be helpful."
+4.0,2013-08-18 04:58:38.890000+00:00,You can follow the step-by-step tutorial / wizard at http://www.buildmypinnedsite.com
+34.0,2010-08-25 10:02:07.370000+00:00,"MichaC's and Anderson's version placed the underline slightly wrong, here is an updated version that will just add an underline to any  that are inside the ."
+8.0,2011-11-03 10:32:56.673000+00:00,"Short answer: no.
+Long answer:
+There is limited introspection available at compilation time, and you can for example (using function overload resolution) detects if a class B is an accessible base class of another class D.
+However that's about it.
+The Standard does not require full introspection, and notably:
+you cannot list the (direct) base classes of a class
+you cannot know whether a class has only one or several base classes
+you cannot even know if a base class is the first base or not
+And of course, there is the issue that the object layout is more or less unspecified, anyway (though C++11 adds the ability to distinguish between trivial layout and class with virtual methods if I remember correctly, which helps a bit here!)
+Using Clang, and its AST inspection capabilities, I think you could write a dedicated checker, but this seems quite complicated, and is of course totally non-portable.
+Therefore, despite your bold claim P.S. Please don't reply with ""why do you want to do this"" or ""this is against the standard"". I know what what all this for, and I have my reasons to do this., you will have to adapt your ways.
+Of course, if we were given a broader picture of your usage of this class, we might be able to pool our brains together and help you figure a better solution.
+How to implement a similar system ?
+I would propose, first, a simple solution:
+ is the owner class, non-copyable, non-convertible
+ implements a proxy over an existing  (as long as  is convertible to ) and provide the conversions facilities.
+We will use the fact that all pointers to be manipulated inherit from  (this is a crucial information!)
+Code:
+Now that we laid down the foundations, we can make our adaptive proxy. Because we will only manipulate everything through , we ensure the type-safety (and the meaningful-ness of our ) by checking conversions through  and  in the template constructors:
+It might be tweaked according to your needs, for example you could remove the ability to Copy and Move the  class to avoid situation where it point to a no longer valid .
+On the other hand, you could also enrich this using a / approach in order to be able to copy and move the wrapper and still guarantee the availability (but beware of memory leaks).
+Note: it is intentional that  does not provide an  method, such a method cannot be used with a base class. Otherwise with both  and  deriving from , you could attach a  through a  even though the original  was a ...
+Note: this is easy because of the common  base class! This is what gives us a common denominator ()."
+3.0,2014-06-29 11:59:02.513000+00:00,"Unfortunately, the REST API is still a long ways behind the Classic API with features it provides.  These features you mentioned are things I've seen come up quite a bit, and to my knowledge they are not yet available with the REST services.  
+I personally have stuck with Classic as they provide everything and I really see no advantage to using REST myself.  If you happen to be working with PHP (which I always do) you may be interested in my class library for PayPal.  It makes all of the Classic API calls very quick and easy for you, and it's available on Packagist so you can use with Composer easily.  "
+4.0,2012-06-07 13:58:00.433000+00:00,"You can change the ""Delete on Termination"" setting for your instance to keep an EBS volume even if your instance gets terminated. If you are using the command line tool, you can use the ec2-modify-instance-attribute --block-device-mapping command. Here is a link to Amazon's documentation on this subject. http://docs.amazonwebservices.com/AWSEC2/latest/CommandLineReference/ApiReference-cmd-ModifyInstanceAttribute.html?r=4426"
+5.0,2013-03-21 10:44:28.360000+00:00,"Just use  instead of . And for passing them to a PHP script you have multiple ways. first you can create a query to send them with JQuery, like:
+Second you can create hidden input elements, and post them with a form."
+0.0,2012-01-13 05:57:25.423000+00:00,"First of all, Git is not lying to you. The file really is tracked in the branch, and really does exist in the work tree, and really is untracked.
+Given that you suggest in comments elsewhere that the file doesn't show up in diffs or even , it sounds like you've added it to your gitignore (maybe unintentionally via a wildcard pattern). I know you said you didn't, but if it doesn't show up in the output of  as an untracked file, then it's untracked and ignored. To verify this, you can list all files ignored by .gitignore:
+You can also list all untracked files, ignored or not:
+(You seem to say that you're very sure the file is tracked - if it really were,  would show the committed contents of the file. I suspect, however, that that will instead tell ""fatal: Path 'path/to/file' does not exist in 'HEAD'"".)
+Another way to verify that the file is untracked and ignored is simply to rename it, then see if  reports it as deleted; if it doesn't, it wasn't tracked.
+Assuming this does list the file in question, you should examine the file in your work tree. You can see what version of the file the other branch has using , to compare. If you're satisfied that you don't need the version in your work tree, simply remove it. If you're worried you might need it, rename it or move it out of the directory. If you realize you do need it, you should figure out what ignore pattern is ignoring it, remove that, add it, and commit it. In any case, once you've dealt with the file, you'll be able to switch branches."
+1.0,2013-02-08 02:44:28.507000+00:00,"here's a simple version.
+for better performance, add an  on columns 
+UPDATE 1
+and"
+3.0,2014-07-03 07:41:27.947000+00:00,"For 180s... you must ""create"" an iOS Background Task.
+Please, modify your code whit this:
+From here:  http://hayageek.com/ios-background-task/"
+10.0,2010-05-20 05:15:46.923000+00:00,"Code a little game like tic-tac-toe or pong.  Lots of fun and a sense of accomplishment when you are done, but complex enough to keep you working at it for a while :)
+There are also code competition sites like topcode at google and such to keep practiced.  Heck, code kata could help as well.  Like playing an instrument, you must keep practicing to get better.  Ideally, you'd get an entry level / internship position to further improve your abilities under a mentorship.
+If you lack a compiler, microsoft has a free version of the latest dev studio available for download.  It can do c, c++, c# and anything in between.  Also, the suggestion of gcc is a good one as it is widely used in various open source developments over at source forge - another place to go and sign up for a project and help out a group project."
+0.0,2014-08-29 11:55:18.133000+00:00,"You could use correlated subqueries for this:
+Alternatively, group by the date, and count how many rows in the group have the desired status:"
+0.0,2011-06-22 16:13:18.923000+00:00,"This'll turn your server into a wide open door for anyone to grab any file they want, but... it does what you want.
+Enjoy..."
+7.0,2013-06-05 06:22:35.187000+00:00,"There are definitely four options here:
+Abandon  and just have a //:
+Put just a / block inside the  block:
+The same as the second option, but with the / outside the  block instead of inside. I don't think it makes much difference which you use, to be honest.
+Catch the exception at a higher level anyway, e.g. in the calling method. Often this is a better approach, as you may well want to handle one type of exception from multiple ""small"" operations in the same way from the perspective of the ""larger"" operation.
+Personally I generally favour the second approach or the fourth. It's a consistent change: when I want to catch an exception, I introduce a / block. The fact that it happens to be inside a  statement is neither here nor there. It ends up with more nesting, but I find it happens rarely enough that that's not a problem."
+13.0,2010-04-04 23:09:13.993000+00:00,"What you seem to be looking for is called Homomorphic Encryption: an encryption scheme which allows you to perform operations on encrypted data, with the encrypted result as the outcome. 
+Such a scheme would allow you to give encrypted data to a 3rd party, which could then do computations on it for you without knowing what they were computing.
+In your case, you need two operations: addition and division. Until recently, homomorphic encryption schemes typically supported only 1 operation. But in september 2009 IMB announced the first fully homomorphic cryptosystem. Other researches published another system soon after that.
+These cryptosystems might be be able to do what you want, but it is all cutting edge computer science research."
+0.0,2011-06-30 11:47:24.023000+00:00,"Instead of ""max-width: 32%"", what if you put ""width: 100%""? If you want an image to fit it's container's width, you should put it's width as 100%. However, I can't visualize your layout properly, so this may not be what you are looking for."
+0.0,2013-08-23 11:36:09.447000+00:00,"Ah that work, thanks. I was sure I was doing something silly :)"
+0.0,2011-10-08 14:51:55.723000+00:00,"hi,thanks for your response.  I only included the code that had my service in it because I thought the rest was boilerplate.  the schema definition is indeed in my file and I have updated my question with the full file.  Thanks, P."
+0.0,2012-08-17 07:05:32.123000+00:00,The part about 3 slash is what I want. Thank you.
+0.0,2010-02-18 19:27:14.017000+00:00,"Ahhhh - I think this is what I'm looking for. I'll try it tomorrow, now I'll get for a Pizza an Beer. It's evening here..."
+4.0,2017-09-22 02:19:35.357000+00:00,"@Kostadin: missed to answer this before... he doesn't  want to get all files matching a pattern, he wants to know if there is ANY"
+0.0,2014-02-14 11:37:31.930000+00:00,You should edit your post and add the code for the rows and columns count.
+0.0,2013-05-29 17:51:52.727000+00:00,"Ah, stupid me! I was combining the code from two posts, and commented on the wrong one! Thanks again :)"
+1.0,2012-11-13 19:02:50.683000+00:00,I like `ISNULL` over `COALESCE`
+0.0,2016-01-08 07:14:20.713000+00:00,"Hi all, may i know, why facebook login page display as blank n asp.net(4.0) in IE11? thanks."
+0.0,2011-11-25 20:26:21.707000+00:00,"This works if the image is actually included in the project but fails when you include the file by using ""Add Existing Item"" then clicking ""Add As Link""."
+0.0,2014-02-07 14:03:37.597000+00:00,"""IP works and hostname does not work"" - indicates there's a problem with DNS functions. You should check in that area. Do all hosts resolve to correct IPs. No conflicts/duplicates etc."
+0.0,2016-06-01 18:15:35.643000+00:00,"Yes, I built on the earlier answer because it was not obvious to me how to properly override the `$log` service in a test.  As mentioned here, `$provide` must be injected using `module`."
+0.0,2013-07-26 00:19:25.757000+00:00,Why is this marked as the accepted answer? ZVenue should provide an answer to his own question describing the WFNSRAON method and choose that one as accepted.
+0.0,2012-01-11 13:08:12.867000+00:00,@larsmans: Does windows has any other system call which can replace fork() and sleep()?
+0.0,2013-12-25 16:36:35.540000+00:00,My repository local path is correct: C:\User\user\m2\repository. But why maven did not download all described libs.
+0.0,2019-02-06 03:51:32.213000+00:00,An implementation of this answer: [c# code to find corner vertex and calculate determinant of angle at that vertex.](https://stackoverflow.com/a/54546353/199364)
+0.0,2012-08-11 22:34:28.020000+00:00,Just test it - add to global `var operableIds = Dictionary`- before call recursion's method and remove after. And if we have a ring when we add a object id into `operableIds` it is in dictionary.
+0.0,2010-10-02 12:56:45.890000+00:00,"@Jon Hanna - does not (AFAIK), i will find an article proving that."
+0.0,2012-02-07 14:12:40.010000+00:00,@canuckistani: Now if only `xhr` implemented proper `onload` and `onevent` properties ;) Web developers might be used to `onreadystatechange` but I consider it an ugly solution.
+0.0,2014-03-03 08:21:42.013000+00:00,How can we know which is line number 168??? You Should to show some of your stack trace
+0.0,2010-10-04 16:40:07.970000+00:00,"1 in 10 seems about right in my experience as well, maybe a little lower like 1 in 15 at my current job.  I think it would be higher if more people realized the could change it."
+0.0,2012-07-09 23:51:31.090000+00:00,"Piece combination is probably the way to go. You'd have something like `if (pieceA.dependsOn(pieceB) && pieceB.dependsOn(pieceA)) combine(pieceA, pieceB);`"
+0.0,2012-08-22 05:43:36.767000+00:00,@RMDan Learn something every day :)
+0.0,2012-02-17 03:31:51.103000+00:00,"Thanks Jamie, that work for now!!   I tested only with 2 dataset, I will go to test with more now!!"
+0.0,2010-06-23 03:49:35.480000+00:00,ok turns out that xcode doesnt like having the BASE_SDK set in the xcconfig file. if you totally remove it from build settings the dropdown doesnt ive you a choice what basesdk to compile against (simulator or device)
+1.0,2010-03-21 00:14:59.787000+00:00,"It is, but the notion of a 'type' is much more mutable, since fields appear by usage rather than definition.  In this sense, Python is strongly typed, but the types themselves are subject to change.  This can be very powerful, but there are also advantages to working within a language with well thought out restrictions."
+0.0,2011-12-02 07:12:31.130000+00:00,"I'm sorry but in VB.NET  i cannot do this things :
+st = dc_card(ByVal icdev, cardmode, snr)
+no like in VB6, i can write ByVal when calling dc_card function, but in VB.NET it's not allowed.
+Now i'm passing to another method to finish this proeject. Thanks anyway fot your answer Mark :)"
+0.0,2013-10-22 17:21:08.997000+00:00,"Trevor i have the mousemove i can do it with this variables i have:  previousState = currentState;
+            currentState = Mouse.GetState();  but in the IF statemwnt that check if mouse move and leftdown how do i know if i rotate the terrain left right up down like i did with the keys ? with keys its simple W is UP S is DOWN but with the mouse how do i know when i moved the mouse left right up down inside the IF statement ?"
+0.0,2013-03-31 17:21:33.283000+00:00,I thought that may be the case.
+0.0,2011-08-29 15:43:15.020000+00:00,I think it depends on how the algorithm handles equal values. But your function will basically return `0` when `a` is smaller which means that `a` and `b` are equal. The fact that  I cannot find a counter example does not mean that your method will always work ;)
+0.0,2011-05-17 13:37:58.413000+00:00,"@Digital Stone - My only change I would make to what you said in your second comment there is that I would make sure to read about MVVM or MVP or similar BEFORE you start learning WPF/XAML. You don't need to go in-depth into it, but just make sure you understand the general concepts. It'll make your life alot easier in understanding why people wrote the WPF/XAML code the way they did when you're looking at examples."
+0.0,2014-05-09 20:14:51.677000+00:00,That's it.  Thanks so much!!
+0.0,2010-11-09 02:34:17.620000+00:00,"@davivid - That's important too but not everything. For example, you need to be considerate about putting appropriate `alt=""""` attributes in images so that if a text reader or screen reader comes across it, it'll know (and more importantly the USER will know) what it is. Check out [this site](http://www.w3.org/WAI/intro/wcag.php) for some more info on web accessibility."
+0.0,2019-04-25 20:28:28.137000+00:00,"The  ""--scheme tms"" parameter solved everything for me, Thanks!"
+0.0,2013-01-25 18:00:40.377000+00:00,@MiguelMatos that is correct. Order doesn't matter as long as it's consistent
+0.0,2009-06-10 04:11:02.523000+00:00,"+1 for ActiveScaffold. For a newspaper website, I've done Issue -> Section -> Article -> Image in nested scaffolding."
+0.0,2009-08-30 20:12:24.257000+00:00,"...since it will only change the master container's X and Y, not actually causing the non-visible parts to be rendered, right? It's just a variable. Question 4: the link of what you made looks nice. Is the source public? Or can I see how you've done it? Would maybe answer some of my questions. Question 5: what do you mean with an object pool, just an array with objects? Question 6: haXe looks great, first time I see it. Do you recommend me to learn that language and rewrite the whole client again with that language? It's meant for a huge project, a 2d game as you probably know by now. Thanks!"
+1.0,2014-02-27 06:51:15.663000+00:00,"Just to add to this, JavaScript validation is usually used for the visual aspect of form validation, such as highlighting the text area red if the input was wrong, or some other similar visual effect. PHP is used for the security aspect, ie the actual validation of the form, and is also great for adding dynamic text as it can be imbedded straight into your HTML form"
+0.0,2013-03-05 17:17:56.657000+00:00,"I believe you, it makes sense."
+0.0,2014-08-29 16:50:45.900000+00:00,"""just logging the error is effectively the same as hiding it"" - No It isn't. Many a time we don't want to handle the exception or do something when exception occurs. But its important to know if there is anything wrong happening around. So whatever be the case. One should log the exception trace."
+0.0,2011-08-07 00:48:35.123000+00:00,"i changed permissions on those symlinks and their associated dirs to 777. That should be enough, no?"
+0.0,2012-11-05 13:11:35.917000+00:00,column percentage-c shows the percentage when I type = 'C' and porcentagem pourcentage when I display type = 'M' for the sum works perfectly
+0.0,2012-11-26 05:39:03.023000+00:00,"Another strange thing I'm not understanding-when I refresh the page, the checkbox is staying checked.  It should be unchecked..."
+0.0,2014-05-20 12:14:01.593000+00:00,"I have edited to show the full method that should work. If it does not work still please can you provide more helpful feedback than ""I have an error"", what the error message is, where it is thrown etc. Thanks"
+0.0,2013-06-04 14:27:33.530000+00:00,I just named it color2. but are your calling the navlinks with classes like color2? otherwise you have to change the class name :) I don't know how your style class is called :)
+2.0,2012-01-31 12:03:30.263000+00:00,"You can also make it the default for a database: `ALTER DATABASE db SET search_path = ...` or even for a particular user/database combination (on 9.1): `ALTER ROLE user IN DATABASE db SET search_path = ...`, but if you use these settings too much they can cause confusion, and note that it's not clear when they get dumped."
+0.0,2013-06-16 18:44:50.973000+00:00,"@DougGlancy Yes, I originally had `Count > 0` but there is always at least one character left. It could be worked around, but I'm not too concerned now. My original intention was to `Duplicate` the entire Range and use Replace on this, but this method only copies the range-markers and properties, not the content. It then occurred to me to create a new document and copy the content to this, so that I could perform the replacements without having to Undo. Anyway, I was just exploring the possibilities. Never mind. Regards, Andy."
+0.0,2011-12-21 07:43:29.623000+00:00,Thanks alfa it may be happen...but i am new to android so for me it is impossible but anyway thanks for your time
+1.0,2011-06-06 09:10:40.757000+00:00,"@Tony I think the reason is to maintain coherence between the declarations and the definition, while not exposing the internal details (the const-ness).  The alternative, IMHO, would be to ban the const on the declarations, but use it on the definition (but I think one compiler rejects this, even if it is legal).  Anyway, you're right that it doesn't apply here: there is no externally visible declaration, separate from the catch block."
+0.0,2010-04-19 20:56:19.007000+00:00,"Most of us can do something halfway clever with a Taylor series to implement a function, but finding a really fast way to compute such a function is going to take specialized knowledge, and may vary depending on platform.  You're probably better off just taking somebody else's source and running."
+1.0,2014-08-27 14:49:34.837000+00:00,"+1, but I have a few suggested improvements: if the JSON fragment in the question happens to be part of a larger JSON containing more than just the list of key-value pairs, this converter will try to convert everything and fail, due to the fact that `CanConvert` always returns true.  It would be better if `CanConvert` only returned true when `objectType == List>`.  Also, you should implement `CanWrite` to return false if `WriteJson` isn't implemented.  `CanRead` returns true by default in the base JsonConverter, so you don't need to override that one."
+0.0,2014-07-31 19:40:55.833000+00:00,"Merge operation: http://msdn.microsoft.com/en-us/library/bb510625.aspx. The bottom line is that if I need to, say, update the timestamp of 10000 rows, and insert 50 more, it takes a very long time."
+0.0,2012-05-10 13:01:42.787000+00:00,"hey, thanks for your response. what if I move my existing amazon instance to larger/smaller instance, can that be a problem? i mean since amazon has in their record my old key for that instance so is there any chance that my new key wont work then for sshing?"
+0.0,2012-07-11 19:18:56.240000+00:00,"I tried your solution with document.write and without, but it doesn't work."
+0.0,2013-11-15 01:17:12.193000+00:00,"Thanks! I tried importing a JRuby on Rails project into IntelliJ and it didn't show many of the directories and files. Like you said, creating a new project works. IntelliJ needs to show the root folder in the Project view, not some of the subfolders."
+0.0,2010-09-30 16:06:17.767000+00:00,"@Piotr Those things are called custom model metadata providers. But I do think that it's quite an overhead to write them by Yourself. Quite tricky. But yeah, MvcExtensions would show You how to do that if You want to go that way: http://bit.ly/aIlaLh. And You might find useful this presentation: http://bit.ly/aFOMJH."
+1.0,2017-10-05 09:42:28.053000+00:00,"@colmde Looks like the DateTimePicker will always use the OS culture, not the one of your app. See https://support.microsoft.com/en-us/help/889834/the-datetimepicker-and-monthcalendar-control-do-not-reflect-the-curren"
+0.0,2010-12-09 06:18:49.210000+00:00,"No, not yet I am afraid. It is not yet online, and we need to fix this before it goes live. I will try to make a page that shows the issue, but I need to do so on a site where I have access to log files.. Thanks for your participation"
+0.0,2010-09-02 19:01:56.720000+00:00,"Thanks, yeah this was a bit flaky in my mind. Now I can see it clearly."
+0.0,2013-03-28 15:56:17.080000+00:00,"Hmm, I'll check it out, but previous attempts to view this data failed due to its long-wispy-gray-beardedness; see http://stackoverflow.com/questions/15301469/how-can-i-determine-what-version-sql-server-compact-a-table-is"
+0.0,2012-09-30 16:28:34.970000+00:00,"ok, well, this is the method for making a multi-dimensional array and I thought that is what you asked for, but maybe I misunderstood."
+0.0,2011-10-12 16:24:16.797000+00:00,"oh, I focused on the `//this fails`"
+0.0,2014-01-16 00:44:51.873000+00:00,This is what I currently have for my absolute path to css but its not working still. Any suggestions?
+0.0,2010-12-14 03:34:25.873000+00:00,"Thanks, wow ""traverse"" is not the name I would have thought of for that function."
+1.0,2014-10-01 12:17:11.443000+00:00,"https://github.com/kaleidos/grails-postgresql-extensions postgresql ranges are still in development. I'm going to implement a simple reservation domain based on the view with a standard start and end date. The domain constraint repeats the database constraint, violating DRY (don't repeat yourself)"
+0.0,2011-08-06 17:35:58.653000+00:00,"Thank you for your answer, I'm sure writing a parser might be a better idea after all."
+1.0,2011-04-11 18:58:16.170000+00:00,"Just a well-known tip: parseInt(a,10) can be replaced by ~~a for performance boost."
+0.0,2010-11-22 06:58:53.737000+00:00,"Yes, every time I manually terminate the MSBuild command prompt the nunit-agent stays around."
+0.0,2013-08-18 08:20:37.637000+00:00,Thank you so much. I followed exactly the instructions on this website without any success.
+0.0,2012-11-29 14:20:54.310000+00:00,"OK, the issue seems to be that the style only applies to an implicitly generated TextBlock"
+0.0,2011-11-03 15:25:26.940000+00:00,"However there are drawbacks too. (1) I'm pretty sure there will be some extra code generated, you're creating a temporary obj with non-trivial d'tor (perhaps this is insignificant). (2) I don't like the idea of auto-move-semantics. By such you may loose the object without even noticing it! Suppose you have a function that receives `WrapperRef&`, and eventually decides not to take the ownership of the object. But this is too late: the object is already stolen by the temporary, and after the function call it will be deleted!"
+1.0,2014-06-29 13:51:45.877000+00:00,"Thank you Andrew, I'm afraid you're quite right: PayPal REST API are long way behind the Classic API.
+I've found a tricky way to force immediate payment that it seems to be working: append ""&useraction=commit"" to the approval_url
+The no shipping instead is still an open issue as mentioned here: https://github.com/paypal/rest-api-sdk-python/wiki/Existing-Issues-and-Unavailable%5CUpcoming-features
+The sad thing is that PayPal made me waste time because afaik they don't state clearly that paypal rest isn't complete as paypal classic (except for the link mentioned before that is not easy to find)"
+0.0,2012-06-07 17:58:49.897000+00:00,"If it crashes, it will likely stay in the running state until you stop and start it from the console/API, as a crash is probably from the OS level. As for hardware failure, the Amazon page on EBS can give you a little more information regarding your options. http://aws.amazon.com/ebs/"
+0.0,2013-03-21 10:57:52.497000+00:00,Just give a rough idea with a dummy variable name.
+0.0,2012-01-13 15:31:13.333000+00:00,"Well, then it does sound like something has managed to get out of sync or corrupted somehow, if a clone of the repo, with the working tree identical to the original one, works normally. It's a little hard to believe, since this is a fairly well-tested core part of Git, but if you're confident it's a spurious error, you could report it to the Git mailing list."
+0.0,2013-02-08 03:20:09.047000+00:00,Don't think this will work -- grouping by partnumber won't return your  max prices -- see fiddle: http://sqlfiddle.com/#!3/f0b43/2 -- group by categoryId only.  Kind regards.
+0.0,2014-08-31 08:37:44.583000+00:00,This does not work sometime I get 180 sometimes 10 sometimes 30
+0.0,2014-08-29 13:30:56.667000+00:00,The second query pulled the data correctly. Thanks!
+0.0,2013-06-05 18:12:43.110000+00:00,"Or perhaps, many *smaller* exceptions in different ways from different (new) callers."
+0.0,2014-11-07 20:20:34.570000+00:00,"@heinob: SB correct me if I'm wrong: if you had a large prime P, N numbers n(i), and N secret keys s(i) random in [0, P), then n(i)+s(i) mod P is encrypted.  Then sum(n(i)+s(i)) mod P is sum(n(i)) mod P, encrypted with sum(s(i)) mod P.  Does that sound right?"
+0.0,2011-06-30 11:51:46.070000+00:00,"Well, I don't want a single image to fill up all the available space (except in case the container is narrower than 320px - above 320px, I'd want two images to fit in the available width, above 480px - three, and so on)."

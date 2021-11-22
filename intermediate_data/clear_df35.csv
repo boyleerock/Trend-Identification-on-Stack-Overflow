@@ -1,0 +1,964 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+26339493,Kendo Notification How to Show errorTemplate Notification(MVC),"I want to show a notification when user clicks save or delete button. Here is what i use for it.(Kendo notification)
+I think i have a problem with CSS part, i changed many things but still i'm same place.
+I have no problem with save notification but when i want to show errorTemplate notification i get this notificaton:
+But i want to show this type of notification. How can i show a template like this?
+What am i doing wrong?
+Script part 1:
+Script part 2(for controls):
+Div parts:
+CSS",,1,1,,2014-10-13 11:59:55.463000+00:00,1.0,2017-06-22 10:07:23.093000+00:00,,,,,3801538.0,,1,1,css|asp.net-mvc|kendo-ui,3140
+26339490,How is git push through network working? (proxy),"I'm wondering how  works. I'm behind a proxy and even configuring it in my PhpStorm soft doesn't work.
+So, I'm wondering how it is sent trough network, I guess using the port 80 for HTTP and 443 for HTTPS.
+I read a bunch of threads on SO but couldn't figure out what's wrong there.
+I guess &quot;my&quot; proxy doesn't have WebDAV enabled as explained here: Can&#39;t push to github through proxy
+But I would like to know if anything else could be the source of the issue here, knowing that all ports are closed, excepted 80, 22 and 443.
+Solution:
+Not secured proxy (http)
+If the proxy is not secure then you can configure it using:
+And disable it using:
+Secured proxy (https)
+And disable it using:
+Note that if you are under Windows and using TortoiseGit, you can set the proxy settings from the software itself. (Network tab)
+If you're using Cygwin then be aware that if you set the global config it will be set only for the current environment. (Using cmd.exe will set it for Windows, but using the cygwin console will set it for cygwin only)
+So, if you're using Git through an IDE (PhpStorm, WebStorm) be sure to have set the config in the environment used by the IDE, or it will not work.
+Be also aware that if you have set the proxy in git setting and you're not behind the proxy, it will not work neither. (i.e: You've set it at work and it works fine, but when you're using it at home it doesn't work anymore while it used to work before)",26352390.0,3,4,,2014-10-13 11:59:41.017000+00:00,7.0,2019-11-10 05:47:13.483000+00:00,2020-06-20 09:12:55.060000+00:00,,-1.0,,2391795.0,,1,14,git|proxy,9616
+26339488,Check if file from remote server exists,"i have an application which requires access permission to a file on remote server.
+My app is in Server A, and the file i want to access is in Server B. These 2 servers are in the same domain.
+I created a virtual directory in Server A for the directory in Server B. The name of virtual directory is FolderFromServerB and its path is \ServerB\Folder. I use a user for auth, and when i test the connection in IIS it says all is OK.
+Also, when i put an anchor tag in a test file like below, i can access the file and the content is shown in the page:
+But my problem is when i use code in order to if that file exists or not, it always returns with False. My code is like below:
+FileInfo fi = new FileInfo(@&quot;\FolderFromServerB/test.txt&quot;); --&gt; This doesn't work
+Response.Write(fi.Exists); --&gt; This always 'False'
+I granted 'Full Control' permission to my user&amp; NETWORK SERVICE &amp; Everyone &amp; Administratos in Server B but i didnt work neither.
+How can i make it work?
+It was working last week. I guess the server updated itself and some updates made that occur, but i couldn't find any workaround. Im so desperate now and i have to change all of my code and spend much time to make it work.",,2,2,,2014-10-13 11:59:36.233000+00:00,,2014-10-13 14:16:12.133000+00:00,2020-06-20 09:12:55.060000+00:00,,-1.0,,1165260.0,,1,0,c#|iis|file-exists|applicationpoolidentity,1943
+26339487,How to add styles to wordpress default menu,"I just installed my theme to newly installed wordpress site. I didn't create any menu from appearence>menus, so by default wordpress showing ""home"" * ""sample page"" to the header as a default menu (I don't know the correct name, maybe callback menu?)
+the problem is they are not getting any style from my stylesheet, I know if I create my custom menu, they ll get the styles from css. but I want this default wordpress menu to get the css as well. so the theme doesn't look odd when first install. how to do it?",26340716.0,4,2,,2014-10-13 11:59:27.627000+00:00,,2014-10-13 18:18:24.687000+00:00,,,,,2423598.0,,1,0,css|wordpress|wordpress-theming,959
+26339484,Manually trigger onLoad event of iFrame,"I have two different pages: the main page and the second page (that will be displayed in the main page as an iFrame).
+The fact is that I cannot edit the main page, except from the iFrame href link.
+What I want to do is to manually trigger the iFrame ""onLoad"" event in the main page, by using jQuery in the second page.
+This is getting really hard cause of the impossibility to edit the main page, and the only thing I managed to do is to manually trigger the ""ready"" event on the second page, but this is not related to the ""onLoad"" event, unfortunately.
+Any help would be greatly appreciated.
+Thanks in advance.",,1,1,,2014-10-13 11:59:20.177000+00:00,,2014-10-13 12:06:25.213000+00:00,,,,,3074303.0,,1,0,javascript|jquery|html|iframe|triggers,3306
+26339482,Multidimensional flexible array initializer in C,"Is there any way to replace the [5] in the array declaration by [] ? Everything is declared statically, so why does it need to know the size ?",,0,7,,2014-10-13 11:59:12.373000+00:00,,2014-10-13 11:59:12.373000+00:00,,,,,1071669.0,,1,0,c|arrays,83
+26339481,$.ajax not working in angularjs,"I am trying to log my client-sided error on on the server side in my angular app. To do this, I am using stacktrace.js and I am using the following factory:
+);
+My problem here, is that I am not using jQuery in my app and I'd like to avoid it as much as possible. as a result when running this code, I get the expected error:
+How can I make an ajax request without using the $http service here (to avoir circular references in the case)?",26339758.0,1,3,,2014-10-13 11:59:12.017000+00:00,,2014-10-13 12:21:18.357000+00:00,,,,,2641547.0,,1,-1,javascript|ajax|angularjs,681
+26339478,Bug in R with subset,"I have some trouble while trying to get a subset of an initial dataframe as in the end it corrupts my dataframe! Here is an example of what is happening:
+Let consider a dataframe :
+Then I want to take the subset where var1 value is strictly below, let's say -2:
+Not only did the subset operation didn't work but it actually corrupt my initial database by replacing all the v1 values by 2 !",26339603.0,2,1,,2014-10-13 11:59:03.170000+00:00,,2014-10-13 12:04:43.953000+00:00,,,,,3941826.0,,1,0,r,116
+26339475,Magento Translation,"I have Magento 1.8.1.0. Recently I've installed Russian pack, the result wasn't appropriate enough, cause some phrases on frontend remained in English
+I know there's handy way to translate Magento using cvs-files.
+The question is where I can find proper cvs-file? Does installed theme concerns translation some how? I know I'm asking newbie questions, I've read several posts, but I haven't made up my mind how to translate Magento.
+Many thanks in advance.",,3,0,,2014-10-13 11:58:54.810000+00:00,1.0,2017-04-09 09:15:43.200000+00:00,,,,,1537693.0,,1,1,magento|translation|magento-1.8,2882
+26339473,how to add different layer when i click a button,"i have 4 imageButton ,
+when i click in one of this button a layer should appear over a imageView that i created.
+myAvatar is my ImageView.
+can someone help me?
+EDIT this is my xml code ( i have 20 imageButton in 4 categories)",26340049.0,3,5,,2014-10-13 11:58:51.363000+00:00,,2014-10-13 12:52:25.400000+00:00,2014-10-13 12:38:54.890000+00:00,,4067311.0,,4067311.0,,1,1,android|layer,1037
+26339471,NoSuchMethodError for calling an Enum subclass type's valueOf() with reflection?,"Luckily, to solve this problem of mine, I could use Java: instantiating an enum using reflection (the following line:  ), however I am still curious why it didn't work initially.
+I tried calling my own Enum subclass's  method using reflection, but it threw a .
+A minimal example is the following:
+and
+Which throws:
+I thought  was a static method, why does it not exist? What am I doing wrong?",26339522.0,1,0,,2014-10-13 11:58:41.897000+00:00,,2014-10-13 12:01:05.837000+00:00,2017-05-23 10:25:59.140000+00:00,,-1.0,,2413303.0,,1,0,java|reflection|enums|static-methods|value-of,1442
+26339469,R Shiny: Remove specific rows borders in table,"I have created a table in R/Shiny with 7 rows where the 2nd and the 5th are blank (as the arrows indicate).
+I am trying to completely remove all vertical borders in rows 2 and 5 via css and finally present the table as having three seperate sections  The table's id is Statistics I and this is my attempt in css: 
+The last section is my attempt to make this happen but unfortunatelly it doesn't",26339666.0,1,0,,2014-10-13 11:58:35.930000+00:00,,2014-10-13 12:08:24.503000+00:00,,,,,3523916.0,,1,1,css|shiny,616
+26339468,Unable to connect to beacon service,"I'm trying to use ""android-beacon-library for detecting beacons"" in Android. But I keep getting ""Cannot contact service to set scan periods"" in the log and beacons are not getting scanned. Any suggestions? ",26347749.0,1,2,,2014-10-13 11:58:33.663000+00:00,1.0,2014-10-13 19:46:00+00:00,,,,,2334759.0,,1,1,android|ibeacon|android-ibeacon,1477
+26339466,Transform-Style preserve-3d in internet explorer CSS not working,"I got a website Working in Opera Chrome and Firefox but it gets messed up with the preserve-3d feature in Internet Explorer.
+Is there a way to fix this just for the internet explorer css code and leave the other browsers code as it is right now?
+I hope thats possible.
+Css:
+HTML:
+IF you click on the .flip-container class the .flip class gets removed and the textbox will show up with a nice effect. This doesnt work in Internet Explorer.
+Thanks for helping!",26339839.0,1,0,,2014-10-13 11:58:32.897000+00:00,,2014-10-13 12:17:58.937000+00:00,,,,,4073992.0,,1,0,jquery|html|css,3691
+26339462,How to prevent an applications DLL to be decompiled?,"As I know there are some applications that decompile DLLs to get source codes from application files.
+Not only I don't want others to have the sources but also I don't want others to use them, I mean the DLL files. so how should i lock the DLLs and how safe they are ?",26339832.0,3,5,,2014-10-13 11:58:18.240000+00:00,,2015-09-20 07:16:39.657000+00:00,2015-07-19 12:38:05.053000+00:00,,4022530.0,,4022530.0,,1,1,wpf,422
+26339460,How map <leader>char in Vim?,"I just installed vim-indent-guides plugin.
+The default mapping to toggle the plugin is  and I want to remap this to Ctrl-i.
+These are my attempts:
+I have a similar approach to switch to relative numbers with Ctrl-n and it's working:
+What's wrong with the  key?",26339613.0,1,0,,2014-10-13 11:58:12.557000+00:00,,2014-10-13 12:05:13.570000+00:00,,,,,462015.0,,1,0,vim|plugins|remap,388
+26339459,The import com.android.packageinstaller cannot be resolved,"How can I use packageinstaller to install apps programmatically in Android? If I try to use 
+I get ""The import com.android.packageinstaller cannot be resolved"" error.
+When I try directly use PackageManager I cannot use installPackage function:
+How could I install 1.app obtained my web server by the other? Is it possible at all?",,1,3,,2014-10-13 11:58:12.537000+00:00,,2014-10-13 13:06:32.477000+00:00,,,,,3545570.0,,1,-1,android,550
+26339458,"Ruby: Trying to ""Update_all"" but getting ""NameError: uninitialized constant""","this is the first time I try to write a ruby migration script (I want to update the value of a col for a specific row).
+I have a table called ""events"" with cols ""e_id"" and ""e_text_en"". I want to update the ""e_text_en"" value of the row with ID 6.
+In SQL it would be
+My ruby approach: (20141013130000_update_broken_event_texts.rb)
+But this gives me the error ´NameError: uninitialized constant´
+While I searched for a solution I found some advises that tables are called in singular, but even when I try  instead of  I get the same error.       
+Can anyone help me to correct my ruby?
+Versions used:
+edit: Addional infos
+Our Schema is created via sql-File. We started to use migrations a short time ago and this is the first update-one. The first two migrations where table-changes. We don't have any ´app/model´ files yet, becuase the other migrations worked without any, e.g.:",26340192.0,3,7,,2014-10-13 11:58:11.730000+00:00,,2014-10-13 12:37:52.583000+00:00,2014-10-13 12:12:23.353000+00:00,,2154300.0,,2154300.0,,1,0,ruby-on-rails|ruby,514
+26339456,Are height:0 and width:0 needed if applying a display:none already?,"I'm applying a  to a class. Is adding  and  necessary?
+I've seen them being used at some places, so does it solve some bug with older browsers?",26339584.0,2,0,,2014-10-13 11:58:07.740000+00:00,,2017-01-17 11:51:20.003000+00:00,2017-01-17 11:51:20.003000+00:00,,3448527.0,,3622907.0,,1,2,css,105
+26339454,need a new pair of eyes to find out why my quads aren't being colored,"i am making a opengl engine for learning purposes and in a later stadium develop some games/apps with it. Now with the newest iteration of my engine i cant seem to find out why my quads aren't being colored.
+Each vertex is composed of 4 coords (x, y, z, w)and 4 colorcoords r, g, b, a. As far as i can tell the values i pass into the vertices are correct
+The offset calculations are hidden away in a seperate static class. i have added it at the bottom of the post.
+My render call is in another class that i call after i passed through the vaoId, vboIID, the amount of indices and the pId
+Seperate static class with offset calculations
+As far as i can tell my offset calculations are correct. I had positions reserved for texture mapping but i removed them to see if those aren't causing any problems.
+A full version of the code is at github https://github.com/darR3Ke/EngineWorks-2.0",26340053.0,1,0,,2014-10-13 11:57:59.180000+00:00,1.0,2014-10-13 12:29:33.087000+00:00,,,,,3792792.0,,1,0,java|lwjgl,68
+26339452,How should be htaccess rewrite rule?,"example adress: mysite.com/search/?q=notebook
+my rewrite rule; 
+this rule ignore = characters.
+How should be htaccess rewrite rule for accept this special character?",26339687.0,1,1,,2014-10-13 11:57:50.797000+00:00,,2014-10-13 17:33:35.050000+00:00,2014-10-13 12:05:05.840000+00:00,,548225.0,,2565902.0,,1,-1,.htaccess|getparameter,39
+26339450,how can i get a string of an element of a list of classes in scala,"I have a List of a class where the class is defined like:
+case class Role (role_id, elem2, elem3) 
+well sort of...
+so if I have a List of those as roles: List[Role]
+how can I get a string of the role_id's so that if my list had 4 Roles in it my string might look like
+""3 6 8 9"" ?
+or better still how can i add some string to it so i can get ""3, 6, 8, 9"" ?
+im having to craft some sql and want set based operations instead of looping. I feel i should flatten or something but i cant think
+Thank you
+Martin",26339647.0,1,0,,2014-10-13 11:57:47.010000+00:00,,2014-10-13 12:15:24.443000+00:00,,,,,1863963.0,,1,0,list|scala,39
+26339448,Laravel quick start guide route return 404,"So I am a new Laravel user，I just went straight to the documentation to get started.but I get a question:
+In app/routes.php,I  write like this:
+When I hit 
+it works fine;When hit:
+it returns 404;My environment  nginx.",,1,1,,2014-10-13 11:57:39.967000+00:00,,2014-10-13 12:49:11.527000+00:00,2014-10-13 12:15:53.063000+00:00,,4137274.0,,4137274.0,,1,0,laravel-4|routes|http-status-code-404,105
+26339446,How to read Logback configuration file from path outside the war file?,"I have a requirement where I want to place all logback configuration outside the war file.
+Presently I have placed my configuration file (logback.xml) on the classpath.
+I am using the JBOSS EAP web application server, kindly suggest how to achieve the same. ",26399138.0,2,1,,2014-10-13 11:57:39.060000+00:00,,2020-01-04 05:56:01.033000+00:00,2014-10-13 12:26:08.313000+00:00,,1113542.0,,1113542.0,,1,1,java|jakarta-ee|configuration|logback,2690
+26339442,BIgQuery Response are very slow,"In the last 7 hours, all my bigquery queries responses are taking more 
+than hour,what usually should take few minutes.
+Is anyone can know what can cause to this?",,1,2,,2014-10-13 11:57:10.337000+00:00,,2014-10-14 09:42:27.743000+00:00,,,,,4032830.0,,1,4,google-bigquery,667
+26339437,Deserializing Xml string into object with List<>,"I'm trying to deserialize a xml string to a custom class, but I can get my ""Riesgo"" field filled with asegurado class:
+I have tried several things but the List inside Riesgo always come null.",26339631.0,1,4,,2014-10-13 11:56:23.743000+00:00,,2014-10-14 06:01:07.087000+00:00,2014-10-14 06:01:07.087000+00:00,,1061636.0,,1061636.0,,1,3,c#|.net|xml|deserialization,490
+26339430,Android facebook post on wall like twitter,"I would like to create intent for facebook like this example for twitter 
+I have read a lots of articles where I found out this way (intentIntent.putExtra(Intent.EXTRA_TEXT, """" )) is not possible for facebook.
+So my question how can I do achieve my goal ? I simple want to post text to user's wall.",26340757.0,3,0,,2014-10-13 11:56:10.753000+00:00,,2014-10-13 13:08:22.680000+00:00,,,,,2629828.0,,1,0,android|facebook|post,284
+26339420,Wordpress is_page_template query,"i use a Plug-in on my wordpress site which uses a query to show search results, thats the code of the query:
+The search should only display results from pages who uses a specific page template (mytemplate.php)
+I found the Docs http://codex.wordpress.org/Function_Reference/is_page_template who explain this, but i dont get it to work inside the above query.
+any help would be nice :) thx   ",,1,0,,2014-10-13 11:55:29.070000+00:00,,2014-10-13 12:03:02.490000+00:00,,,,,3091183.0,,1,0,wordpress,310
+26339419,tokbox-opentok passed to one side only,"I am using tokbox trial for video chatting on my website. But the problem i am facing is that ::: User 1 can see and hear User 2 clearly. User 2 can see User 1 clearly, but user 2 couldnt here user 1. And code i am using
+Thanks in advance",,1,0,,2014-10-13 11:55:26.467000+00:00,,2014-10-15 16:37:02.823000+00:00,,,,,2169003.0,,1,0,javascript|opentok|tokbox,406
+26339415,Apache shows a directory listing instead of starting an application,"when i browse in localhost/PhpMyAdmin i see the content of the directory with the title:
+Index of /PhpMyAdmin
+instead of starting the application.
+System info:
+Windows 7 professional 64bit
+Apache 2.2
+PHP 5.3.5.0
+MySql Server 5.6
+PhpMyAdmin install from phpMyAdmin-4.2.10-all-languages.zip file
+Same result using both config.default.php and config.inc.php in the PhpMyAdmin directory.
+Thank you in advance for your answer",,1,0,,2014-10-13 11:55:18.583000+00:00,,2014-10-14 02:54:26.643000+00:00,2014-10-14 02:54:26.643000+00:00,,2385479.0,,4137233.0,,1,1,apache,1869
+26339414,why jenkins has many folders for one job,"Today, one of my jenkins slave ran into disk problem. There are a lot of folders for one job.
+e.g.
+These folders use a lot of disk space. Could I delete them manually? What causes this situation?",26364419.0,1,0,,2014-10-13 11:55:17.893000+00:00,,2014-10-14 15:19:57.147000+00:00,,,,,531116.0,,1,2,jenkins,34
+26339413,Mobile network operator searching selection on demand in android?,"I am doing one project where it requires to search mobile network operators available for current location by help of the application and registering the operator by  application pro grammatically?
+Please help me to resolve the issue.
+Thanx in advance",,0,2,,2014-10-13 11:55:16.453000+00:00,,2014-10-13 13:20:19.867000+00:00,,,,,4129773.0,,1,0,android|networking|selection,780
+26339412,How to email to multiple users via x-smtpapi?,"I am utilising both sendgrid-python and smtpapi-python libraries.
+I am trying to set the  header in order to send the same email to multiple users.
+However I get the exception.
+Any idea what I am overlooking?",,2,0,,2014-10-13 11:55:13.673000+00:00,,2017-04-04 14:56:46.817000+00:00,,,,,92153.0,,1,0,python|sendgrid,499
+26339411,Identify language of characters in String in VB.net,"One of the functions in my web service receives data in different languages
+Russian
+Romanian
+English
+Arabic
+I want to write a function that identifies the language that the characters in the received string belong to.
+I have already found one for the Arabic language:
+But I can't find anything on how to identify Russian or Romanian.
+Any help would be appreciated.",,1,3,,2014-10-13 11:55:11.163000+00:00,,2014-10-13 12:49:02.010000+00:00,,,,,2378622.0,,1,0,vb.net,1400
+26339410,Find a particular string in an string array,"I am trying like this:
+It is passing for the same string. But I want it to get passed even if there are no spaces between the string.
+I want it to get passed with both the string:
+  ""Order 1 QTY""
+  ""Order1QTY""
+I want to check for just string excluding spaces.",26339576.0,3,3,,2014-10-13 11:55:05.910000+00:00,,2014-10-13 12:12:00.543000+00:00,2014-10-13 12:06:19.677000+00:00,,4078718.0,,3913587.0,,1,0,c#,99
+26339405,jQuery POST default post fields,"I know that we can add some default options (settings) to POST request in jQuery, but my question is the following : Can I add a default field with value to the POST so it will be sent with each post request?
+For example : if I have :  and I send them with  method, I want PHP to receive it as : 
+P.S: I know that I can add fields to the form using  or methods like this or directly to the array of data before , but it will be much better if I will be able to add it as default option. (Field I need will be request token, so PHP won't process datas if this key is not set)",26339470.0,2,1,,2014-10-13 11:54:51.677000+00:00,,2014-10-13 12:35:02.623000+00:00,,,,,572737.0,,1,0,php|jquery|post,74
+26339404,Find Replace in .txt files in a directory,"I have a lot of script files (all files have SQL or Trans SQL) say around 2000 files that we used to add with the passage of the time. Now the problem is that in most of the scripts the owner of the database object is not defined and due to my current requirement I must have to set the owner of the database object. How can I update all the script files easily.
+One approach is to open each file look for create word and replace/append the owner name before the create key word. I want to do it for all the script files in the directory.
+Any ideas?
+I want something like find replace.
+Many thanks in advance.",,0,4,,2014-10-13 11:54:44.343000+00:00,,2014-10-13 11:59:11.107000+00:00,2014-10-13 11:59:11.107000+00:00,,330315.0,,4102248.0,,1,0,windows,29
+26339401,Visual Studio 14 vnext EntityFramework,"I am trying to build the latest EntityFramework 7 from github.  To accomplish this I have a clean VM from azure for CTP 4.  I cloned the repository, brought up a cmd prompt typed build initialize.  It restores the packages.  I then type build and it crashes with the same stack trace all the time provided here:
+Another sign that something is wrong is, when I open the EntityFramework project in VisualStudio 14 CTP 4 and look at the references in the EntityFramework project under src it has a yellow triangle and no dependencies are listed.",,0,7,,2014-10-13 11:54:36.290000+00:00,,2015-02-05 20:55:21.547000+00:00,2015-02-05 20:55:21.547000+00:00,,19635.0,,4137289.0,,1,0,entity-framework|asp.net-core|entity-framework-core,193
+26339396,Moving Rows Up and Down in DataTables using buttons in toolbar,"Here is the JSFiddle example of table I'm using. I'm getting ID of selected row using .
+So I need to code a function so that when the user wants to move row 51 to row 3. (user click on row 51 and then clicking on button UP it moves row by one row up until row 51 is on position 3). I also need to all rows to dynamically renumber when clicking on button UP or DOWN button.",,0,6,,2014-10-13 11:54:27.997000+00:00,,2016-12-14 21:08:19.987000+00:00,2016-12-14 21:08:19.987000+00:00,,771496.0,,2631534.0,,1,0,javascript|jquery|html|datatable,1171
+26339393,Proper TransactionScope for nested transactions,"I want to set 1st transaction scope to anything (something general) and always set the isolation level in the 2nd transaction scope. Is this possible? 
+The error is thrown by the second using statement :  The transaction specified for TransactionScope has a different IsolationLevel than the value requested for the scope.
+Current error is that 1st transactionScope is default to Serializable and i cannot add new data, but in repeatableRead i can add data. ",26341811.0,1,0,,2014-10-13 11:54:25.183000+00:00,,2019-01-07 19:02:44.613000+00:00,2019-01-07 19:02:44.613000+00:00,,2204877.0,,2204877.0,,1,1,asp.net|transactionscope,235
+26339391,Celery - one task in one second,"I use Celery to make requests to the server (in tasks). I have hard limit - only 1 request in one second (from one ip).
+I read this, so its what I want - 1/s.
+In celeryconfig.py I have:
+But I have the messages, that I have too many requests per second.
+In call.py I use groups.
+I think, rate_limits does not work, because I have a mistake in celeryconfig.py. 
+How to fix that? Thanks!",,1,2,,2014-10-13 11:54:22.820000+00:00,1.0,2014-10-13 14:14:09.997000+00:00,,,,,1751039.0,,1,0,python|celery,669
+26339390,Can i use Polymer in native iOS WebView?,"I need to use Polymer in my web based iOS app. The Cordova/Phonegap is the last solution. I readed this question: Can I use polymer/web components in a native android app w/o Cordova? Can i do this in iOS?
+Thank You!",26785567.0,3,0,,2014-10-13 11:54:20.413000+00:00,1.0,2014-11-24 22:08:41.923000+00:00,2017-05-23 10:30:31.840000+00:00,,-1.0,,1037096.0,,1,4,ios|xcode|webview|native|polymer,3720
+26339389,jQuery Mobile wait until page list-view loads,"I'm currently developing a small JQM + PhoneGap app (new at this) and got the following issue, I'm loading data from a JSON (which is local, no AJAX yet) to a list-view, the problem comes when I load the  page the css of the list-view takes a little time to load and you can see the bulleted list for a half of a second. Here is a portion of the code which I think is involved 
+This function is triggered when clicked a button
+Thanks in advance!",26339510.0,1,1,,2014-10-13 11:54:19.270000+00:00,,2014-10-13 12:00:42.347000+00:00,2014-10-13 11:57:34.707000+00:00,,1771795.0,,2295410.0,,1,0,javascript|jquery|ajax|jquery-mobile|cordova,78
+26339387,Change the text of UINavigationController not working in Swift,"I have an app which has 5  and the  is attached to a  and the others are connected by . Now, I want to add a title to the . I have tried different things in  and :
+The  that I am calling this is like this:
+Where,  is declared like this:
+The runtime error is:
+What can be the error? I am stuck since the last 5 hours here.
+I am trying to set the title different in different .",,1,0,,2014-10-13 11:54:13.030000+00:00,,2015-07-22 22:21:58.927000+00:00,2015-07-22 22:21:58.927000+00:00,,4850561.0,,919280.0,,1,0,ios|objective-c|swift,120
+26339385,C - send multiple messages over a single socket - Data not transferred until I close the socket,"I am attempting to have a TCP communication from my laptop to a SoC board where I send one message to initiate a process and It sends me a series of status messages until it has completed the process. This means that I would call send() multiple times over the socket from the SoC. The problem is that my laptop does not receive any status message unless the socket connection is closed by the SoC. As soon as the socket closes, I get a burst of all the data that the SoC sent. Is there a way to make this communication realtime so that I get the status messages immediately as it sends?
+Code on the SoC that sends the data: This function is called multiple times:
+Code on my Laptop:",,2,6,,2014-10-13 11:54:11.347000+00:00,,2014-10-13 22:22:17.970000+00:00,2014-10-13 22:22:17.970000+00:00,,2963467.0,,2963467.0,,1,0,c|sockets|tcp|send,927
+26339384,Skeleton list isn't available with DocPad run command,"When I use the command , I have only one choice with Skeleton because I get an error when DocPad tried to updating exchange.
+The output of this command:
+Information about my configuration  :
+May be a proxy problem, but  and  work fine with my configuration proxy.
+Any idea how to fix this?",,0,2,,2014-10-13 11:54:04.797000+00:00,,2015-02-19 16:49:03.773000+00:00,2015-02-19 16:49:03.773000+00:00,,1245190.0,,4137262.0,,1,1,docpad,132
+26339383,How to start the camera activity by shaking the phone,"I have building an app, my objective is to start the camera activity from service by shaking the phone.
+I can launch the toast but not an activity.
+Instead of displaying a toast i want to launch the camera activity. Here is my code, how to launch an camera activity by shaking.
+Background_service.java
+ShakeEventListner.java",26339485.0,1,0,,2014-10-13 11:54:02.773000+00:00,5.0,2014-10-14 03:49:00.207000+00:00,2014-10-14 03:49:00.207000+00:00,,3946794.0,,3946794.0,,1,0,android|android-service|accelerometer|android-sensors|android-camera-intent,1134
+26339380,jQuery code does not work in Safari for Windows,"I have written the code below in my javascript file:
+It is working fine in all browsers including Safari for Mac. But the same code is not working in Safari for Windows.
+I have also tried,",26501417.0,2,4,,2014-10-13 11:53:53.197000+00:00,,2014-11-29 16:19:25.727000+00:00,2014-11-29 16:19:25.727000+00:00,,209139.0,,4100337.0,,1,-1,javascript|jquery|safari,468
+26339379,iOS cocoa retain variable block,"I need to retain a variable inside a block because i have to pass it to a method out of the block. I dont know how to achieve this.
+I tried also doing this but no success:
+How can i retain ""myFile"" for use outside of the block?
+Need help please. Thanks in advance.     ",,1,6,,2014-10-13 11:53:51.283000+00:00,,2014-10-13 18:56:16.760000+00:00,,,,,3065901.0,,1,0,ios|cocoa|variables|block|retain,66
+26339378,How show loading window in async query?(or may be sync),"i have:
+And myMask hidden before window[data] loading on site(client).
+I try set async: false and myMask not show(i try and beforeSend too).
+P.S. i have:
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",26339472.0,1,0,,2014-10-13 11:53:50.760000+00:00,,2014-10-13 12:10:35.990000+00:00,2014-10-13 12:10:35.990000+00:00,,2111023.0,,2111023.0,,1,1,javascript|jquery|extjs,93
+26339376,"EBS not redirecting to magento website after payment, shows 503 error","I have this strange problem. I have integrated EBS payment gateway with magento website. When the user checks out using the credit/debit card option , he is redirected to payment gateway. after the success/failure of the payment, it keeps loading and returns an error saying service not available with 503 Error. I am still trying to figure it out. any help would be greatly appreciated. ",,0,5,,2014-10-13 11:53:45.217000+00:00,,2014-10-13 11:53:45.217000+00:00,,,,,2023942.0,,1,0,magento|redirect|payment-gateway,202
+26339374,SPA Authentication AngularJS -> PassportJS -> MongoDB,"I am trying for days to setup Passport on SPA page. On Client Side I am using AngularJS $http and generally it's working.
+My problem is on server side code, i am new to passport and still cant figure it out how to make it work without redirect thing. My passport setup is below:
+If there are clear example on SPA Authentication with passport please show me.
+Overwise can you show me where I am mistaking in my server side code?",,0,2,,2014-10-13 11:53:35.053000+00:00,,2018-12-06 11:58:34.567000+00:00,2018-12-06 11:58:34.567000+00:00,,1033581.0,,2073186.0,,1,0,node.js|angularjs|mongodb,91
+26339373,display volume view/ MPVolumeView iphone-sdk,"I have developed a video player application and I am also changing the volume of music player from my application. So I want to display default volume change view/indicator when volume is change from my application. So please suggest.
+I am using below code for change the volume:",,0,7,,2014-10-13 11:53:34.410000+00:00,,2014-10-13 11:53:34.410000+00:00,,,,,397636.0,,1,0,ios|iphone|mpmusicplayercontroller|mpvolumeview,289
+26339371,Line and intersection based pathfinding,"I am trying to develop a pathfinding algorithm that finds the closest path to a point by tracing a line from the initial position to the final position.  Then I test for intersections with obstacles ( all of them in my game are rectangular ) and then draw two new lines, one to each of the visible corners of the obstacle.  Then, I draw lines from those two corners to the endpoint and repeat the intersection test for each branch of the path.
+My question is this: how do I propagate my branching paths in Lua without recursion?  It seems like it would be pretty easy with recursion, but I don't want to risk a stack overflow and a crash if my path gets too long.
+If there is a technical term for the technique I am using, please tell me.  I like to do my own research when I can.",26395621.0,1,0,,2014-10-13 11:53:21.007000+00:00,0.0,2014-10-16 03:11:39.567000+00:00,2014-10-13 15:05:25.003000+00:00,,646619.0,,3014065.0,,1,0,recursion|lua|line|path-finding,130
+26339369,Unable to navigate to index action in my model,"Ok, new to Rails. Trying to create an ecommerce app from scratch. Defined an  model to track my orders and  model to track each of my order in my cart. i want to add a button to my Order page that lets me add more items to my cart. In the  for Order, I am writing the following 
+This link takes me to the create action of the Products model, instead of the index action. I tried to change the path to  which lists all the products in my Product model, but again the link takes me to the POST request instead of GET, showing me error. Please help!",,1,0,,2014-10-13 11:53:11.857000+00:00,,2014-10-14 04:52:12.623000+00:00,2014-10-13 12:56:07.237000+00:00,,3419341.0,,4124687.0,,1,0,ruby-on-rails,55
+26339367,UIScrollView doesn't scroll on Xcode 6 (works on simulator),"I have a basic  with a  inside it. I've set the  of the  to (320, 800). The same being the frame of . When I run the application on the simulator, everything works fine. When I run the same on an iPhone and iPad (both iOS7), the view doesn't scroll. Is this a Xcode 6 bug? Anyone else facing the same problem?
+Short question :/",,0,4,,2014-10-13 11:53:01.527000+00:00,,2014-10-13 11:53:01.527000+00:00,,,,,933186.0,,1,1,ios|iphone|xcode|uiview|uiscrollview,129
+26339360,Sort an ArrayList of Strings that are numbers,"What is the fastest way to sort an  (in descending/ascending manner) that contains numbers, eg:  ? Does  have a built-in method for this? Currently I am copying the 's contents to  and then using  method and then putting it back to the initial array. Is there a faster way?",26339519.0,6,7,,2014-10-13 11:52:41.307000+00:00,,2014-10-13 12:14:13.403000+00:00,,,,,997633.0,,1,7,java|arrays|sorting|arraylist,6630
+26339350,Need two different textbox's to only allow numbers 0-9 and 1 decimal place,"OK all my of code is working to this point. But I am unable to enter a decimal place in textbox1 and textbox3. I also only want the numbers 0-9 to be able to be entered in those textbox's. So far everything to this point is working for me but when I enter a ""."" I get a error. I think once I get the decimal to be able to be entered I am sure I can add the negitive sign as well. I think I need to use e.KeyChar correct?",26340195.0,1,5,,2014-10-13 11:51:54.920000+00:00,,2014-10-13 12:37:43.843000+00:00,2014-10-13 12:22:07.577000+00:00,,4050351.0,,4134745.0,,1,-1,c#|visual-studio,88
+26339347,State machine: validation before initial save in database?,"This is a question regarding state machines in general, I don't need help with the actual implementation. Imagine a state machine that formalizes a simple bug report, from inception to its final demise. The bug might transition across states such as ""NEW"", ""CONFIRMED"", ""RESOLVED"", ""REOPENED"", and ""CLOSED"". Along with every state transition there is also some accompanying validation code, which could for instance make sure that when moving from NEW to CONFIRMED we have recorded who confirmed it.
+My question is related to the initial state – when the bug is just ""NEW"". It's tempting to say that initial validation is not part of the state machine (e.g. making sure that the bug actually has some description, for instance, before saving it with state ""NEW"" in the database). But isn't that also a state transition, from ""just created"" to ""NEW""? Shouldn't that transition be validated like any other transition? Isn't it artificial and sub-optimal to separate the initial validation from all other validations?
+On the other hand, if we do create a ""fake"" initial state (say, ""CREATED""), along with its respective transition (""CREATED"" --> ""NEW""), then what happens when that transition isn't validated? If it is validated, it's all good – we switch states and we save the object with the new state (actually called ""NEW"" here) in the database. But if it doesn't validate then we obviously don't want to save it in the database, and that breaks the state machine pattern by not having an initial state and a final state (we would have an initial state, albeit a fake one – ""CREATED"" –, but two final states – ""CLOSED"" and ""DELETED""). Not only that, but the ""DELETED"" state would also be fake, in that there will never be any persistent objects with that state (just as there will never be any persistent objects with state ""CREATED"").
+How do you handle this issue?",,1,0,,2014-10-13 11:51:48.447000+00:00,1.0,2014-10-14 08:12:19.077000+00:00,,,,,602151.0,,1,-1,validation|design-patterns|state-machine,337
+26339346,When trying to delete an item from listbox through database,"  Error in system.invalidoperationexception:
+            At system.Windows.Media.VisualTreeHelper.GetRelative(dependencyobject
+  reference,RelativeKind relativekind)    At
+  System.Windows.Media.VisualTreeHelper.GetChildrenCount(DependencyObject
+  reference) At.......................................
+This is the xaml code of listbox
+This is my source to delete item from listbox
+and with the help of visualtreehelper 
+It worked previously but suddenly the error is seen.
+Error thrown at
+  Reference is not a valid visual DependencyObject
+Hope some one will fix helps",,0,0,,2014-10-13 11:51:46.307000+00:00,,2014-10-13 12:13:15.090000+00:00,2014-10-13 12:13:15.090000+00:00,,246342.0,,3934867.0,,1,1,c#,63
+26339342,Wrapping thread based async to task based async,"How do I wrap code like below in a Task based async method?
+Currently, this method is called like:
+But what I want is something like:
+Or:",,3,1,,2014-10-13 11:51:32.530000+00:00,,2014-10-13 13:29:41.180000+00:00,,,,,679857.0,,1,1,c#|task-parallel-library|async-await,591
+26339341,"jQuery animate scrolldown to div by <a href""""> From 1 html to another html site?","I'am on my way to make a site for my friend who is a massage therapist.
+And I have a boostrap dropboxmenu with treatment-links to the treatment.html on the index.html.
+How do I create multiple links that with jQuery make it scroll down to the specific treatment on the new treatment.html when having multiple treatments?
+Sorry for bad english. Trying my best.
+I'am very very novice to javascript and jquery - first time actually..
+I found this code, but it don't work?",26339526.0,2,1,,2014-10-13 11:51:30.077000+00:00,,2014-10-13 12:14:42.773000+00:00,2014-10-13 11:53:51.967000+00:00,,1712905.0,,4137265.0,,1,0,javascript|jquery|html|css,92
+26339339,Spring Batch for processing large CSV file,"I have a 5gb CSV file that I am trying to process with Spring Batch (read, process, write to db).  What is the best way to go about this keeping in mind that I have requirements to not use any XML config, to NOT split the file into smaller files, and all records must be processed in order?  Does Spring Batch have the ability to process and write data while it is being streamed from the source?  Is there any way to tell Spring Batch to read X lines from the file, process, and write (commit) and then grab the next X lines from the file while keeping track of which lines it has already processed?    ",,0,5,,2014-10-13 11:51:25.723000+00:00,,2014-10-13 11:51:25.723000+00:00,,,,,4137221.0,,1,0,java|spring|csv|inputstream|spring-batch,1716
+26339338,Funnel chart in css,"I am trying to customize a funnel chart on the basis of data that I have rendered through database on page. 
+All works well except css rendering for chart.
+Here is what it looks like right now-
+http://jsfiddle.net/m74ets8v/1/
+I want to style it according to actual looking funnel chart, for an example-
+How would i be styling this chart to make sense for me.",26339958.0,3,5,,2014-10-13 11:51:25.587000+00:00,1.0,2018-09-07 06:12:56.470000+00:00,,,,,1982631.0,,1,1,html|css|charts,2410
+26339335,Ubuntu script to rename all images in folder,"I am using the following code to rename all the images in the current folder:
+But I have met a problem: some of the images were overwritten, because I use it after I have added more images in the folder. Is there a way to fix this? I thought to add an , but I am new to scripts. Any help, please?",26340223.0,2,4,,2014-10-13 11:51:14.357000+00:00,,2018-03-20 08:08:23.913000+00:00,2014-10-13 13:07:15.393000+00:00,,632407.0,,3062311.0,,1,4,ubuntu|sh|dash-shell,598
+26339333,how to pass value from controller to view in code igniter?,"Code in controller  
+enter code here
+Am passing a $record to a view,in controller i can fetch all the values but in i can't fetch the values of $record,How to resolve this problem?How can i disable a link once it is clicked",26380344.0,2,1,,2014-10-13 11:51:08.783000+00:00,,2015-04-06 10:50:22.407000+00:00,2015-04-06 10:50:22.407000+00:00,,3444240.0,,4021690.0,,1,4,php|codeigniter|codeigniter-2|php-5.3,1435
+26339331,Is it a way to fill up collectionView lines from the beginning of the line and leave space in the end?,"Instead of this alignment:
+x-x-x
+x-x-x
+I need this one:
+xxx--
+xxx--
+Is it possible with ?",26369806.0,1,0,,2014-10-13 11:51:02.533000+00:00,,2014-10-14 20:34:27.390000+00:00,,,,,239219.0,,1,0,ios|uicollectionview|uicollectionviewlayout,30
+26339323,redirect the domainname.com website to m.domainname.com in django for mobile devices,"I want to redirect the user to m.domainname.com on his mobile browser. I want to use the existing website but redirect to the m.domainname.com. 
+For that how can i detect the user is on mobile or desktop.
+And how can i redirect the mobile version of same site.
+using media screen i can create the seprate displays for mobile divices
+using bootstrap i can create the responsive website. but when its on mobile browser i want to redirect the mobile version like m.domainname.com
+How can i do this?
+And my website is in django.",26339871.0,1,1,,2014-10-13 11:50:42.763000+00:00,,2014-10-13 12:19:55.910000+00:00,,,,,3142029.0,,1,3,html|django|mobile,144
+26339317,"Do SOAP Web services support only ""POST"" http method","I faced this question on one of interviews, so could you please tell whether SOAP Web services support only ""POST"" http method or there is some way to accept other methods on the server side?",26339467.0,3,0,,2014-10-13 11:50:20.550000+00:00,14.0,2020-05-22 06:18:25.173000+00:00,2017-04-04 09:09:18.750000+00:00,,485107.0,,485107.0,,1,76,java|web-services|http|post|soap,72894
+26339316,Does OSMF support embedded audio tracks in a video or only external audio tracks?,Does OSMF support embedded audio tracks in a video or only external audio tracks? As far as I've read it can only play external audio tracks that is mentioned in the manifest file. What if a video has embedded audio tracks? Can OSMF switch between the embedded audio tracks?,,0,2,,2014-10-13 11:50:20.387000+00:00,,2014-10-13 13:41:09.197000+00:00,2014-10-13 13:41:09.197000+00:00,,1198066.0,,4137283.0,,1,0,audio|osmf,46
+26352684,Logging in FreeBSD kernel code,"I am adding some custom cryptography in the FreeBSD kernel and it causes a panic. I would like to log some variable values in functions that don't appear in the crash files. 
+I used both printf and log functions but nothing shows in /var/log/messages or kern.log",,1,0,,2014-10-13 11:50:07.323000+00:00,,2014-10-14 07:07:55.990000+00:00,,,,Ahmed Nawar,2807040.0,,1,0,kernel|freebsd|logging,1233
+26339312,addBetweenCondition in YII,"SO I want to find that if value x is exits between the values of 2 columns or not, For that i have run the query in phpmyadmin : 
+Normal Approch :- 
+and it is giving me fine result.But when the same approach i want to find achieve in YII that it is not running and giving the sql error :
+YII apprroch :-
+When i debug the query in log than it shows in case of yii :
+Why it is giving NULL value in query while i'm passing the name of the column in it. 
+So please guide me where i'm going wrong in yii.",42780248.0,1,2,,2014-10-13 11:49:58.310000+00:00,,2017-03-14 07:38:43.017000+00:00,,,,,1584275.0,,1,0,php|sql|yii|between,709
+26339311,Neo4J custom load CSV,"I asked a question a few days ago to know how to import an existing database into Neo4J. Thanks to the person who explained me how to do that. I decided to create a CSV file from my database (around 1 million entries) and to load it from the Neo4j webadmin to test it. The problem is that each row of this database contains redundant data, for example my database contains actions from different users but each user can do mutliple actions. The structure of my graph would be to create a node for each user that is linked to each action he does. That's why I have to create only one node for each user even if his name appears in several rows of my CSV file (because he made several actions). What is the method to do that ? I guess it's possible to do that in Cypher right ?
+Thanks a lot
+Regards
+Sam",26339735.0,1,0,,2014-10-13 11:49:53.287000+00:00,0.0,2014-10-13 12:12:08.110000+00:00,,,,,4128405.0,,1,0,csv|import|neo4j|load,278
+26339308,The following error occurred while opening the file '\\?\E:\TempDB\MDTempStore_1584_1_j1pv2.tmp': Access is denied,"I'm trying to start a fresh install of TFS 2013 but running into the issue TF255356: The following error occurred when configuring the Team Foundation databases: TF400711: Error occurred while executing servicing step Create Warehouse for component InstallWarehouse during Install: Create Analysis Database schema failed: Error generating Analysis Database: File system error: The following error occurred while opening the file '\?\E:\TempDB\MDTempStore_1584_1_j1pv2.tmp': Access is denied.
+I have tried to remove the read-only flag from the tempdb folder but it keeps getting set to true after applying the change. I have also added the registry entry UseSystemForSystemFolders which allows read-only to be removed from the folder but it does not persist. 
+Any help with this would be great
+Thanks
+Chris ",,0,3,,2014-10-13 11:49:44.237000+00:00,,2014-10-13 11:49:44.237000+00:00,,,,,1119511.0,,1,2,sql-server|tempdb,854
+26339307,matplotlib scatter plot change distance in x-axis,"I want to plot some Data with Matplotlib scatter plot.
+I used the following code to plot the Data as a scatter with using the same axes for the different subplots.
+Now i want to have a x-axis with smaller space between each point. I tried to change the range but it was not working. Can someone help me? ",,1,2,,2014-10-13 11:49:34.933000+00:00,,2014-10-14 09:31:41.633000+00:00,2014-10-13 19:46:44.790000+00:00,,832621.0,,3616531.0,,1,2,python|matplotlib|plot|scatter-plot,2433
+26339303,How to check for existence of subtree in XML document,"I need to check if an XML document contains a given XML DOM subtree. I only need to ensure that all the elements and attributes from this subtree are present in the document. However, there can be more elements or attributes in the subtree of the document that matches the given subtree for comparison. And I want them to be skipped from the comparison.
+So far I have implemented my own solution which finds a subtree represented by Node class in the given XML document. This Node class contains only the attributes necessary for comparison - element name, text content, list of child nodes and map of attributes. I have implemented my own class and not used org.w3c.dom.Node because it is just too big containing many unnecessary attributes for my test scenario. The subtree represented by the root Node element is iterated one element after another and each its subtree is searched in the given XML document using XPath until the whole tree is checked or any subtree is not found.
+This solution works well only when I need to check if the subtree is present there or not. However, I use this to check large configuration files that are often changed and it is quite difficult to find the exact place where the change occurred. That is why I think about using some existing solution which has better output and allows to easily see the differences. Unfortunately, I have not been able to find anything matching my criteria.
+Is there any tool that allows this? I have heard about XMLUnit and have a quick look at it but I am not sure if it is capable of finding a subtree in a document ignoring any other elements or attributes. Can you show me an example how to do this in XMLUnit if it is possible?",,1,0,,2014-10-13 11:49:17.730000+00:00,,2015-02-03 16:51:31.593000+00:00,,,,,3047439.0,,1,1,java|xml|comparison|xmlunit,212
+26339293,How to associate an event with the option id of a select box,I have to add a  element to a page after a particular option in the select box is selected. How can I do it using jQuery? I am trying to use the  event but it doesn't works.,,3,3,,2014-10-13 11:48:21.813000+00:00,,2014-10-13 13:21:55.780000+00:00,2014-10-13 13:21:55.780000+00:00,,3755692.0,,4120300.0,,1,0,javascript|jquery|html|twitter-bootstrap-3,199
+26339291,how to get all friends in facebook using graph api v2.0 (ios)?,"I'm trying to get user's list of friends by authanticate user and successfully when I use this code:
+But I cannot get list of friends when I trying to get list of friends by another account",26339646.0,1,1,,2014-10-13 11:48:08.093000+00:00,,2014-10-13 12:07:15.140000+00:00,,,,,4124417.0,,1,-2,ios|facebook|facebook-graph-api,238
+26339289,SQL 2005 query with dynamic table generation,"I have a problem and I'm not sure of the best way to solve it or the most efficient way to handle it. I need to query a database that contains supervisors and employees but I need to be able to go down as many levels as the user asks for. By that I mean, the query will take in two primary params, the originating employee and how many levels to search through. The query will start with looking for all employees that report to the originating employee and return a list of these employees. This would be a level 1 search. If the user passes through the value 2, then I would need to get all the employees who report to all the employees that were selected in the first list. If the user passes the value 3, then I would get not only the first level employees, then second, but then I would get all the employees that report to the employees listed in second query. In my mind I would have to create a new table for each one of these queries then in the end combine the results to be returned as one table. Is that the correct approach? If so, what's the best way to create then clean up these tables? 
+The table being searched is a pretty simple structure:
+The first query itself is pretty simple:",,0,2,,2014-10-13 11:48:07.077000+00:00,,2014-10-13 13:29:49.637000+00:00,2014-10-13 13:29:49.637000+00:00,,243373.0,,2258828.0,,1,0,sql|sql-server-2005,33
+26339285,Pushing saved user outside Modal in angular ui bootstrap,"I have a list of users and an 'Add User' button that opens a modal lightbox popup using Angular  bootstrap. I can save the user and update the list if it's all on the same page (without opening the pop up). I can save the user and NOT update the list if I use the pop up (I have to refresh the page to see changes to the list).
+Here's my save function
+And here's my OK button
+The OK will close the dialog, but I need to $scope.users.push(response); to the list OUTSIDE this controller. There's an example of changing variables, but I'm unfamiliar with invoking a push command within the close command.
+I'm trying something like",,0,0,,2014-10-13 11:47:53.313000+00:00,,2014-10-13 11:53:57.447000+00:00,2014-10-13 11:53:57.447000+00:00,,4040182.0,,4040182.0,,1,1,javascript|angular-bootstrap,118
+26339280,Hiding symbol visibility while building a shared lib,"I have multiple objects files (lets say , ) with which i am building a shared library (). All associated objects so not had visibility flag as hidden when they were built, but in final so (, see below), if i use visibility flag as , will it hide all internal functions from outside libraries to use?
+EDIT:
+As wRAR mentioned, i tried using versions cript to hide all symbol on final shared library. version script was written like-
+file:libapp.version
+and i built my shared library as:
+Even after putting all symbol as local, i still can see in nm that all symbols are present. What i am doing wrong here?",,1,0,,2014-10-13 11:47:38.760000+00:00,,2014-10-13 12:26:22.190000+00:00,2014-10-13 12:26:22.190000+00:00,,403639.0,,403639.0,,1,0,c|gcc|visibility|ld|symbols,151
+26339277,Why is the nxxx parameter of set() in Jedis exclusive?,"In Jedis, I want to set some key and value with expiring time by a single invocation.
+I can do this by combination of set() and expire() but it needs two invocations.
+I found the following method:
+set(final String key, final String value, final String nxxx, final String expx, final long time)
+But I have to choose nx (Only set the key if it does not already exist.) or xx (Only set the key if it already exist.).
+I want to cover both cases.
+Any suggestion? Or any reason to be written like this?",,1,0,,2014-10-13 11:47:29.777000+00:00,,2014-10-13 11:50:48.023000+00:00,,,,,1264058.0,,1,7,redis|jedis,6466
+26339276,What is behavior: url(); property in css?,"I was surfing and saw this css property which I have never seen or used before. I think it is related to Internet Explorer, and the structure is something like this:
+What does the  property do? How would I use this property?
+I did find this w3 Documentation, but it's not particularly clear what it does.",26339480.0,2,3,,2014-10-13 11:47:29.577000+00:00,3.0,2019-10-01 14:08:40.233000+00:00,2015-09-23 08:24:29.687000+00:00,,1183764.0,,3540289.0,,1,23,css|internet-explorer,17620
+26339275,Export mysql database in ubuntu,"I have been working on the grails project in ubuntu. And i am using mysql as database.
+Can any one me in exporting the database.
+Commands like these are not working for me in ubuntu.
+Thanks in advance.",,0,2,,2014-10-13 11:47:26.453000+00:00,,2014-10-13 11:52:58.023000+00:00,2014-10-13 11:49:07.567000+00:00,,3000179.0,,2745384.0,,1,0,mysql,76
+26339273,Parser Element with child element,"i have for example this document:
+and this is my class:
+how to see category is a recursive class.
+the children may have, in turn, other children, and have an unlimited number how can I handle this?
+how can I structure this in the parser?
+EDIT: at this time, the parser can not find the father and their children, but I can not save them well in the list.
+Thanks",,1,0,,2014-10-13 11:47:23.457000+00:00,,2014-10-13 12:23:29.803000+00:00,,,,user4124675,,,1,0,parsing|swift,126
+26339272,Remove cell duplicates in Excel using VBA,I am working with huge amount of data. For example I have 2 columns with data (10k each) and I need to find and remove the duplicates in one of the columns. Highlighting the duplicates is easy but I would like to find a way (formula or VBA) that performs that for me in Excel.,,1,0,,2014-10-13 11:47:16.757000+00:00,0.0,2014-10-13 11:57:51.487000+00:00,2018-07-09 19:34:03.733000+00:00,,-1.0,,2720877.0,,1,0,excel|vba,76
+26339271,The controller for path '/Admin/Widget/ConfigureWidget' was not found or does not implement IController,"I have a Nopcommerce 3.30 (with source code) project and I have configured my own Widget plugin. When I have install it and I'm trying to configure it in '../Admin/Widget/List', the following error Appears:
+  The controller for path '/Admin/Widget/ConfigureWidget' was not found
+  or does not implement IController.
+  
+  Description: An unhandled exception occurred during the execution of
+  the current web request. Please review the stack trace for more
+  information about the error and where it originated in the code. 
+  
+  Exception Details: System.Web.HttpException: The controller for path
+  '/Admin/Widget/ConfigureWidget' was not found or does not implement
+  IController.
+Source Error: 
+Plugin controller:
+This is my plugin class
+I don't understand what's the source of the error.
+Thanks",26550658.0,1,12,,2014-10-13 11:47:15.433000+00:00,1.0,2015-11-18 17:02:51.687000+00:00,2014-10-13 13:09:41.877000+00:00,,2989387.0,,2989387.0,,1,1,c#|asp.net-mvc|asp.net-mvc-4|nopcommerce,1285
+26339264,Make More Server calls OR load all Data from server at once?,"This is a performance related question .
+I have a requirement to show all the orders made by the Customer during that Day (Max Orders can be of 10)
+And the screen looks this way ??
+Right now on click of the Order Row i am making a Ajax call , getting the data from the server and showing it on Front End .
+And the end result looks this way
+I am thinking of other approach , which is during page start (document ready ) up load all data related to that customer for that day , store it in a variable in a javascript (global level array).
+and during click of the order row show the data by looping the array ??
+Could anybody please tell me what is the best approach ??",,2,4,,2014-10-13 11:46:58.073000+00:00,,2014-10-13 11:53:29.363000+00:00,,,,user663724,,,1,0,javascript,68
+26339259,php gettext translation not working on Debian,"(I've seen the other questions, but their answers didn't help me)
+I have an application that uses php gettext for translations, and has been working for years on OSX and FreeBSD. When I tried to port it to Debian 7.6 32bit (), everything works, except translations. I've got the problem down to a CLI one-liner:
+ contains the Dutch translation of , ie. 
+On OSX Maverick:
+On FreeBSD 10 64bit:
+However, on Debian 7:
+php-gettext is installed:
+ gives:
+So I tried nl_NL.utf8 instead of nl_NL.UTF-8: same result.
+I tried putting the  file under , same result.
+I tried to use the absolute path for  instead of the path relative path to the current working directory, same result.
+I'm at a loss here. Any suggestions on how to proceed?",26371056.0,1,0,,2014-10-13 11:46:41.317000+00:00,,2015-02-13 03:45:22.733000+00:00,2017-05-23 12:08:28.330000+00:00,,-1.0,,4010665.0,,1,2,php|debian|gettext|php-gettext,1030
+26339256,printing indexof object as id of html element in knockout js,"In the below code I need to give index of the loop as Id of the html input element      
+I tried data-bind=""text: $index"" , but i cant set it as Id attribute. Anybody know how to do it? ",,2,0,,2014-10-13 11:46:40.057000+00:00,,2014-10-13 11:52:02.957000+00:00,,,,,4136912.0,,1,0,html|knockout.js,46
+26339252,use of ternary operator in javascript,"I know basic use of '?' ternary operator. window.URL should be expression, which should return true or false. But in this case, it is returning a string.
+how this expression is evaluated.",26339282.0,1,3,,2014-10-13 11:46:34.203000+00:00,,2014-10-13 11:54:46.150000+00:00,,,,,1156732.0,,1,-1,javascript|operators,279
+26339251,Editing domain for a eclipse model,"Node is my eclipse model tree.If i want to get an editing domain for the Node will the following work:
+if not how can i get the Editing domain for the model if I donot have a IWorkbenchPart.?",,0,0,,2014-10-13 11:46:28.977000+00:00,,2014-10-13 11:46:28.977000+00:00,,,,,3667825.0,,1,1,eclipse|emf,198
+26339247,Checking Text exist or not?,"Say I am on StackOverFlow ""All Questions"" page.
+I want to search for a user say ""user2402616"" (which is present on 3rd page) on first page.
+If not present then click on next button until it is found.
+I tried below code using Xpath but getting  error.",,1,2,,2014-10-13 11:46:20.213000+00:00,,2014-10-13 16:49:52.303000+00:00,2014-10-13 12:17:05.810000+00:00,,350825.0,,4128133.0,,1,0,xpath|selenium-webdriver,40
+26339246,Hosting asp.net website with database,"I have created one asp.net website (project) with the help of Microsoft Visual Studio 2010. The database of the respective project is designed with the help of Microsoft SQL Server Management Studio 2008. Now I want to publish the website on the internet. Can somebody please guide me in this?
+Thanks in advance.",,2,5,,2014-10-13 11:46:16.843000+00:00,,2017-11-06 11:14:25.787000+00:00,2014-10-14 13:40:41.890000+00:00,,485418.0,,4061551.0,,1,3,asp.net|hosting,2797
+26339245,Comparing files using Ansible,"I need to find a way where I can compare elasticsearch template folders in given elasticsearch Data host group. Meaning if the directory is , I need to make sure all the files inside that directory in that ansible host group is same.
+No extra template files or difference version template files. I haven't been able to figure out how to do this. ",,2,1,,2014-10-13 11:46:16.127000+00:00,1.0,2016-04-11 19:50:10.970000+00:00,2016-04-11 19:50:10.970000+00:00,,472495.0,,1318643.0,,1,3,ansible|ansible-playbook,4844
+26339242,Error during WebSocket handshake: Unexpected response code: 404,"I trying a simple websocket application but its giving a error,
+I found to many discussions on the same topic but it didn't help me that's why I posting a new question.
+My files are,
+ChatroomServerEndpoint.java
+default.html
+I am using Spring Tool Suit, apache-tomcat-7.0.37.
+I went through all suggestion given in the related stack overflow post, but still its not working.
+I know its very simple but still giving error. I am totally stuck here. Can please any one help me for this??",,1,2,,2014-10-13 11:45:58.450000+00:00,,2015-01-26 16:57:42.707000+00:00,,,,,3243329.0,,1,1,java|apache|websocket,4972
+26339241,Nested fragment tabs overlap on Android,"I'm trying to make  in my android application.
+I want to get a second row with the sub tabs like this:
+But the nested tabs are overlapping like this:
+This is my code:
+MainActivity.java
+FragmentParentTab2.java
+FragmentChildTab1.java
+main_fragment.xml
+fragmentparenttab2.xml
+fragmentchildtab1.xml
+I got this code from a tutorial which used  and it worked fine, but I tried to migrate it to  and got the overlap issue. (can't paste source link, only 2 links allowed)",26355809.0,2,0,,2014-10-13 11:45:56.127000+00:00,3.0,2018-09-29 07:25:09.437000+00:00,2018-09-29 07:25:09.437000+00:00,,5180572.0,,4136981.0,,1,0,android|tabs|nested|fragment|overlap,1870
+26339237,"Why is the diamond case with its common ancestor used to explain Java multiple inheritance issue, instead of two unrelated parent classes?","This question might sound weird to Java people but if you try to explain this, it would be great.
+In these days I am clearing some of Java's very basic concept. 
+So I come to Inheritance and Interface topic of Java. 
+While reading this I found that Java does not support Multiple Inheritance and also understood that, what I am not able to understand that why everywhere Diamond figure issue(At least 4 class to create diamond) is discussed to explain this behavior, Can't we understand this issue using 3 classes only.
+Say, I have class A and class B, these two classes are different (they are not child class of common class) but they have one common method and they look like :-
+Ok,Now say if Java supports Multiple inheritance and if there is one class which is the subclass of A and B like this :-
+then compiler will not be able to find which method to call whether from A or B and that is why Java does not support Multiple Inheritance. So is there any thing wrong with this concept ? 
+When I read about this topic I was able to understand Diamond issue, but I am not able to understand why people are not giving example with three class (If this is valid one, because we used only 3 classes to demonstrate issue so its easy to understand by comparing it to Diamond issue.)
+Let me know whether this example does not fit to explain issue or this can also be  referred to understand issue. 
+Edit:
+I got one close vote here stating that question is not clear. 
+Here is main question :-
+Can I understand Why ""Java does not support Multiple Inheritance"" with 3 classes only as described above or I must need to have 4 classes (Diamond structure) to understand the issue.",26339439.0,6,8,,2014-10-13 11:45:49.283000+00:00,2.0,2014-10-18 04:46:28.767000+00:00,2014-10-18 04:46:28.767000+00:00,,647014.0,,647014.0,,1,27,java|multiple-inheritance|diamond-problem,3537
+26339233,Bootstrap drupal multi-site in Aegir architecture,"I wrote PHP script which has to bootstrap 
+The sites are hosted using Aegir platform.
+The structure looks like this:
+I've been trying:
+But no luck. ",,2,2,,2014-10-13 11:45:32.863000+00:00,,2017-03-09 02:45:03.497000+00:00,2017-03-09 02:45:03.497000+00:00,,1692965.0,,1847939.0,,1,2,drupal|drupal-7|aegir,159
+26339232,Sort scientific and float,"I have been trying desperately to use the command , to sort a mixture out of scientific and floating values which are both positive and negative, e.g.:
+Without the floating point or without the scientific exponent, it works just fine with
+. Using both at once as stated before, it results in:
+This is obviously wrong since it should be:
+Any idea how I can solve this issue? And once I solve this, is there any possibility to sort the absolute value (e.g. get rid of the negative ones)? I know I could try to square each value, sort, take the square root. Doing this I would be less precise though and it would be neat to have a nice, fast and straightforward way.
+My linux system: 8.12, Copyright © 2011
+Thank you very much!
+UPDATE: if I run it in the debug mode  I get the following result (I translated it into english, output was german)",,1,25,,2014-10-13 11:45:30.930000+00:00,1.0,2014-10-13 17:55:45.613000+00:00,2014-10-13 12:28:26.180000+00:00,,4137141.0,,4137141.0,,1,6,shell|sorting|floating-point,886
+26339230,Facebook graph api: Best database structure to hold the users data,"I'm developing the database for a web app which contains 2 ways for login, Standard way and social media  way.
+I'm trying to find out the best design for the database to hold the users data.
+Should I separate the users in separate tables depending on the type of the login or put them all on one table
+I was thinking of this structure:",,0,0,,2014-10-13 11:45:29.180000+00:00,,2014-10-14 13:42:06.047000+00:00,2014-10-14 13:42:06.047000+00:00,,1759542.0,,1759542.0,,1,1,php|mysql|facebook-graph-api,123
+26339228,Can I combine isolated scope and inherited scope?,"is it possible to combine isolated scope and inherited scope?
+I have the following structure:
+So yeah. Is there a way to do this?
+I use isolated scope to get ""foo"" from the ng-repeat of the parent scope's ""foos""-array.
+Previously i have emitted an event from the child element and listened on the ""parent"", but i would rather do it using scope. Is there a way or do I need to use event?",26339914.0,1,0,,2014-10-13 11:45:27.907000+00:00,,2014-10-13 12:22:23.363000+00:00,,,,,2760557.0,,1,1,javascript|angularjs|angularjs-directive|angularjs-scope,534
+26339226,How to get if a code exist in parse.com?,"I have a problem, I have this structure in parse.com in ""VerificationCode"" db:
+When someone inserts a code in my app, it automatically adds in the ""attachedUser"" column the id of the user who is stored locally and I call it ""ParseInstallObject.codigo2"" and I get the id of the user for example to see it in a textview, etc.
+The problem is that I want to check if the user id exists in parse or not; and if it exists do something or if not exist do another thing.
+I used a code that I see in the documentation of parse.com but it always shows that the code exists. This is my code:
+How can I see if the user has a valid code or not?",26343849.0,1,6,,2014-10-13 11:45:23.057000+00:00,,2015-12-16 17:33:12.997000+00:00,2015-12-16 17:33:12.997000+00:00,,4370109.0,,3747431.0,,1,0,java|android|parse-platform,271
+26339217,ServerEndpoint and web.xml,"I have some Soap, REST servlets and now one WebSocket:
+I have next trouble: WebSocket dont visible, if web.xml is exists. In web.xml describes jdbc resources,servlets ant other...
+When i'm delete web.xml - websocket successfully visible. How can I fix this problem?
+Update web.xml:",,4,3,,2014-10-13 11:44:33.777000+00:00,1.0,2019-10-21 01:03:40.533000+00:00,2014-10-14 06:59:08.597000+00:00,,1755546.0,,1755546.0,,1,6,java|servlets|websocket|web.xml,3184
+26339215,Javascript on hover dropdown,"I am new to javascript and I need help with this simple script.
+It is a shopping cart drop down which currently functions when the field is clicked. I want drop down to fade in on mouse over. I tried adding .hover instead of .live and also tried adding mouse in after 'click' but nothing worked. Any help would be highly appreciated. Thanks!
+javascript/jQuery
+css ",,1,3,,2014-10-13 11:44:28.587000+00:00,,2014-10-13 12:40:13.563000+00:00,2014-10-13 12:40:13.563000+00:00,,1304448.0,,2080812.0,,1,2,javascript|jquery|css,230
+26339211,Mail function is not working on Google Spredsheet when HTML form with GAS,"I've created a HTML form file using Google apps script and combine it with a spreadsheet. But in GAS the funciton SendConfirmationMail is not working for me. Here I've included both script file for expert understanding and feedback me as well. 
+code.gs
+index.html
+Note:
+The function AddToSheet is working properly.
+Thanks
+Dizaraj Dey",,1,6,,2014-10-13 11:44:17.677000+00:00,,2014-10-16 01:08:25.243000+00:00,2014-10-13 11:54:10.330000+00:00,,3316292.0,,3316292.0,,1,0,javascript|html|google-apps-script|google-sheets,198
+26339210,Using ACTION_CALL on list view,"can anyone tel me whats wrong with this code? please
+i can see ""Log"" correctly but ACTION_CAL dose not work... 
+thanks for any help",,2,1,,2014-10-13 11:44:12.677000+00:00,,2014-10-13 12:25:41.323000+00:00,,,,,4087889.0,,1,0,android,682
+26339207,VBScript To Remove Number from filename,"I'm looking for a VBscript which scan a folder for files and remove number from filenames. for example if we have a file named ""target1990.txt"" then It should be ""target.txt""
+Can anyone help please?",26339513.0,1,0,,2014-10-13 11:44:06.577000+00:00,,2014-10-13 12:00:47.970000+00:00,,,,,709507.0,,1,0,vbscript,305
+26339201,"Why Ilist is implementing from both Icollection& Ienumerable,eventhough Icollection:Ienumerable","Icollection is implemented from Ienumberable(ICollection : IEnumerable),
+then why again Icollection &amp;  IEnumerable both are implementing for IList(interface IList : ICollection, IEnumerable).",,3,1,,2014-10-13 11:43:44.423000+00:00,,2014-10-16 13:14:50.900000+00:00,,,,,1996865.0,,1,1,c#|interface,95
+26339199,How to know the size of .cab file content without expanding it using PowerShell?,"For example, I have file demo.cab.
+I want to know size of all files(extracted!) inside demo.cab. I don't want to extract files from it.
+How can I do this using Windows PowerShell?
+Thanks for help!",26339934.0,1,0,,2014-10-13 11:43:41.220000+00:00,,2014-10-13 19:48:22.190000+00:00,2014-10-13 12:52:42.830000+00:00,,2887157.0,,2887157.0,,1,1,windows|powershell|cab,290
+26339186,different font sizes and justifications on a single line,"I need to put two small pieces of text on a single line. The two pieces should be left-  and right-justified, respectively. Here - http://jsfiddle.net/smithfarm/xa6jc0wm/ - is a nice way to accomplish that:
+This is fine, but I also need one of those pieces to have a different font size and I need both pieces to be vertically aligned to the bottom of the ""text box"". However, when I change the font size, the pieces become vertically aligned to the top: http://jsfiddle.net/smithfarm/ucgs6s7c/1/
+Any ideas?",26339509.0,1,2,,2014-10-13 11:42:18.887000+00:00,,2014-10-13 12:00:42.363000+00:00,,,,,581483.0,,1,0,css,62
+26339185,Hide minute value on X Axis,"I am using the HighCharts library.
+However I am finding it difficult to hide the minute values from the Xaxis -
+As I am setting a point on the chart by the hour I do not want the minutes values to be visible -
+As the plots are down to the hour and not to the minute, is it possible to remove these from the chart (the ones highlighted below) and just show the hour values on the chart i.e. 16:00 and 17:00?",26340279.0,3,1,,2014-10-13 11:42:18.037000+00:00,,2014-10-13 12:42:14.823000+00:00,2020-06-20 09:12:55.060000+00:00,,-1.0,,466844.0,,1,-1,jquery|highcharts|axis-labels,60
+26339184,Best way in Javascript to check if string is inside an huge txt/csv?,"My real world problem is: users of my mobile app type their city and I have to make sure it really exists, and that it is correctly written (caseinsensitive, so these are correct: New York, NEW york, new york. This is not correct: newyork)
+There are online apis that work quite well (Google Geocode API for example) but:
+After a very little amount of requests, you have to pay (2.500/day right now)
+Users must be connected to the internet 
+That's why I tought that an offline-local solution would be better. There are many websites (like Maxmind) where you can download a list containing every city in the world. I could embed this huge txt/csv right inside my application and do a string search locally (it's a big file, ok, but not that big. It's just a onetime download of something like 30-40MB of uncompressed .txt)
+I'm trying to avoid jQuery at all costs and I don't want to use any PHP/MySQL solutions (even if fulltext indexes could be handy), that's why I'm trying to do all this just using javascript.
+Given a string as input, let's say ""city3"", what's the best/fastest way to check if it's inside an (external) huge list like:
+city1,
+city2, 
+city3,
+city4,
+[...]
+After solving this (big) problem: if there are no exact matches, is there a way to search for the correct city without freezing the device for 10 minutes? 
+In the example before, lets say the user types ""cit y3"" or ""cyty3"" or ""cìty3"": can any js function tell him that he might be looking for ""city3""? Is this kind of search too slow in this scenario?
+Thanks",,3,3,,2014-10-13 11:42:14.170000+00:00,,2014-10-13 12:07:31.507000+00:00,,,,,4117031.0,,1,0,javascript|arrays|performance|csv|lookup,121
+26339182,"Can't set ""max connections"" - parameter of memcached higher than 4096 (exited status 71)","My start parameter for memcached are: 
+If ""-c"" (max connections) is more than 4096, memcached won't start.
+  memcached.service - memcached daemon
+  Loaded: loaded (/usr/lib/systemd/system/memcached.service; enabled)
+  Active: failed (Result: exit-code) since Mon 2014-10-13 13:25:15 CEST; 17s ago
+  Process: 17667 ExecStart=/usr/sbin/memcached $MEMCACHED_PARAMS (code=exited, status=71)
+  Main PID: 17667 (code=exited, status=71)
+  
+  Oct 13 13:25:15 openSUSE-131-64-minimal systemd[1]: Starting memcached daemon...
+  Oct 13 13:25:15 openSUSE-131-64-minimal systemd[1]: Started memcached daemon.
+  Oct 13 13:25:15 openSUSE-131-64-minimal systemd[1]: memcached.service: main process exited, code=exited, status=71/n/a
+  Oct 13 13:25:15 openSUSE-131-64-minimal systemd[1]: Unit memcached.service entered failed state.
+Does someone know what could cause these problem?",,0,2,,2014-10-13 11:42:07.467000+00:00,,2014-10-13 11:44:50.630000+00:00,2014-10-13 11:44:50.630000+00:00,,4323.0,,2689455.0,,1,0,linux|memcached,498
+26339176,How to unit test image upload in Django REST Framework,"I've just started with Django REST Framework and I'm  trying to test a simple file upload enpoint.
+I've written a barebones code as follows: 
+models.py
+views.py
+urls.py
+Going through the docs, I've written a sample test case as follows:
+tests.py
+However, I'm stuck here and I don't know how to proceed. 
+I've also tried using curl as follows: 
+ but this gives me 
+. How do I test my endpoint?",,1,6,,2014-10-13 11:41:40.057000+00:00,1.0,2015-04-10 18:39:32.873000+00:00,2015-01-15 22:17:38.597000+00:00,,2230003.0,,1411975.0,,1,3,python|django|unit-testing|django-rest-framework,1182
+26339172,Extract certain Text and URI parts from downloaded html pages,"I have downloaded many html pages and I want to extract from each such tags (the single files are stored in directories and subdirectories)
+I need to extract the following 
+From  : TITLE
+From  (the one w/o any class): TEXT, TEXT
+From  within  class : THECATEGORY
+Could use any programming language for this, but preferrably Python. I am using Linux.",,0,2,,2014-10-13 11:41:34.270000+00:00,,2014-10-13 12:01:19.217000+00:00,2014-10-13 12:01:19.217000+00:00,,356759.0,,356759.0,,1,0,python|html|beautifulsoup,48
+26339170,Jenkins Android abort test if it will take to long,"I have a problem with not working tests on Jenkins - they are taking too much time. 
+Jenkins run Project with more than 200 tests, some of them fails or hang out. How can I set timeout for single test and abort it and go to next test?
+I assume that:
+means 31m need to pass to set test to failure",26339219.0,1,0,,2014-10-13 11:41:27.910000+00:00,,2014-10-13 11:44:36.603000+00:00,,,,,974801.0,,1,0,android|junit|jenkins,60
+26339163,I want to target multiple divs inside a parent div,"I have created a hexagon from 3 divs combined. I want to hover over the hexagon and all 3 divs to change colour.
+As you can see, at the moment I am only able to target each element of the hexagon but not the hexagon as a whole.",26339305.0,4,1,,2014-10-13 11:41:01.590000+00:00,,2014-10-13 12:09:26.083000+00:00,,,,,4137231.0,,1,0,html|css|target,324
+26339162,How to write a new CSV file and send as Email attachment,"Ok  I now have the following code after adding PHPMailer:
+Nothing happens!  Please could anyone advise?  I am now getting no error logs
+I have also tried to write $searchstring as fputcsv() with no success. I need to workaround this as I do have one field for checkboxes where the options are separated by comma.
+Please help, I really do appreciate your feedback.  :)",26339294.0,1,6,,2014-10-13 11:41:00.927000+00:00,,2014-10-13 15:40:50.880000+00:00,2014-10-13 15:40:50.880000+00:00,,3003819.0,,3003819.0,,1,-1,php|forms|csv,2495
+26339155,Creating a connection with Java ODBC results in a java.sql.SQLException: Invalid Cursor Type exception,"I am trying to create a Java program that accesses a ODBC datasource. Using the following code...
+...I get the following Exception:
+Originally, when I was attempting to resolve this on my own, I was using the empty argument createStatement() call but this lead to the above exception (hence is why I used the TYPE_FORWARD_ONLY result set type but still the same result):
+Is there anything else I can try with this or does this need a different approach?",,3,10,,2014-10-13 11:40:39.237000+00:00,1.0,2014-11-24 21:43:35.753000+00:00,2014-10-13 15:00:26.617000+00:00,,1132499.0,,1132499.0,,1,7,java|sql|jdbc|odbc,1584
+26339154,php Overriding a value in a stdClass array,"I have stdClass array like this 
+Suppose I am getting the above array in a variable .
+What I want to do is, I want to override the third keys value which is 
+I want to pass it through  but when I do so I get the error message 
+I have tried 
+How can I solve this ?? Any help please..",26339208.0,3,2,,2014-10-13 11:40:37.310000+00:00,,2014-10-13 11:57:09.260000+00:00,,,,,1777091.0,,1,-2,php,328
+26339153,HTML Keyboard Navigation Link,"I'm testing a website with keyboard navigation. When I do TAB I can see the highlight jump between links in document order. Now I would like to enhance the navigation by setting a link, eg the 4th link, once there's a keyword ENTER hit or mouse click, the highlight would jump to the 20th link for example. Is it possible?",26340259.0,2,5,,2014-10-13 11:40:34.693000+00:00,,2014-10-13 16:40:10.820000+00:00,,,,,3330523.0,,1,-1,html,247
+26339151,Copy and add the html element in angularjs,Ques: I want to add the copy of label tag in result div each time when i press the submit button using Angularjs. Any help would be appreciated.,,1,0,,2014-10-13 11:40:23.243000+00:00,,2014-10-13 12:02:15.830000+00:00,,,,,3567765.0,,1,0,html|angularjs,2144
+26339148,chart does not read correctly seconds from datetime variable c#,"below a piece of code it keeps me in trouble:
+it takes data from datatable which contains for columns:
+BAT_QUEUE string, BATCH_NAME string and two datetimes BEGIN and END. Generally three queues starts several batches every day and each of such batches takes a few seconds/minutes/hours.
+The result I expect is something similar to ""gantt chart"" so it could gives me a tool to make some analyses. 
+As far as I searched the best choice for this task is RangeBar - unfortunately the type of chart used not so often. 
+The code above works perfect until I draw only one of three series ( doesn't metter which one). It draws several horizontal bars, one by one on different levels with different names. But when more series is choosen many bars is connected with wrong names.
+It looks like the chart does not read seconds from BEGIN/END fields so if two batches from different queues starts at the same hour and minute but different second they are wrongly interpreted.  
+... it is pretty difficult to explain but I hope some of you understand what I mean and give me some hints what is wrong and how repair/solve my problem
+thanks for any help in advance
+ok, following Sinatr suggestions below the code which allows to show my problem. Right now, after a time spent on analyzes I see the problem is not with datetime format . It looks like a deeper one.
+        Every series starts from the same object created by the first series - and this in wrong. Anyway look at code . Of course it expects chart object created on windows form
+Batches A and A1 from first series are displayed correct, but B from second series are displayed as A :(",,1,3,,2014-10-13 11:40:16.563000+00:00,,2019-02-22 08:58:58.580000+00:00,2014-10-14 08:49:32.037000+00:00,,3863616.0,,3863616.0,,1,1,c#|charts,695
+26339142,awk check if the value of a specific field exist in an array or a file,"Please i have this code:
+And i want to add another condition which verifies that the field $8 exist in an array of value [1, 2, 3, 4, 5 ..] ? 
+I use already a file to check if the value of $5 exist in the file but i don't know how can I add another array to check existence of the value of filed $8 in the array or file 
+here is the list.txt file:
+thank you",26340495.0,1,6,,2014-10-13 11:39:54.630000+00:00,,2014-10-13 14:08:53.283000+00:00,2014-10-13 14:04:17.070000+00:00,,3782603.0,,3782603.0,,1,0,shell|awk|sed,1737
+26339141,Is it possible to list loads due to potential aliasing violations?,"I have been working on a sizeable performance critical code base, where compiling with the latest  versions of gcc give numerous warnings about type punning, leading me to compile with . I don't believe there is any performance loss here that can be avoided anyway. I do however believe that there may be rather more significant issues with aliasing pointers of the same type.
+Is there any way to get gcc, or any other tool to list all places in a code base where additional loads / stores are taking place due to potential aliasing violations that gcc can't detect, whether pointers are of the same type or not? That way, I could go compare with a code profiler and see if the situation can be improved in places where it actually matters by the use of , local variables, refactoring etc. Trying to guess what the compiler is thinking through looking at generated assembler is both time consuming and error prone, particularly for this. I'm interested in answers for both C and C++ if they are different.",26344968.0,1,2,,2014-10-13 11:39:53.283000+00:00,0.0,2014-10-13 16:48:21.430000+00:00,2014-10-13 11:54:28.123000+00:00,,3747990.0,,989878.0,,1,8,c++|c|gcc|optimization,160
+26339138,How to merge PDF files without external dependencies,"In one of my applications I need to merge many single PDF documents into one document, where each of the original PDFs is a page. Although many PDF libraries exist for most languages, I would like to write this myself if it's not too hard.
+Is it necessary to implement a full-fledged PDF parser in order to merge PDF documents? Where and what would I start to read to find out what is needed for the task? ",,1,2,,2014-10-13 11:39:45.620000+00:00,,2014-10-28 15:17:09.143000+00:00,,,,,169748.0,,1,0,pdf,192
+26339129,AngularJS multiple routes using JSON data ids,"We are new to AngularJS and finding one-or-two problems with setting up multiple routes when using ID's from Json Data. 
+We are trying to replicate AngularJS Tutorial, so we can click each 'View' button to display a more detailed page of the selected 'Warranty Item' same as the tutorial.  
+We have uploaded our AngularJS problem to Plunker, If anyone can see something we're missing or know a better route to go down please let us know.
+App.js State with ResultSet.JobID",26339270.0,1,0,,2014-10-13 11:39:12.937000+00:00,,2014-10-13 11:52:10.837000+00:00,2014-10-13 11:52:10.837000+00:00,,1679310.0,user3999667,,,1,1,angularjs|angular-ui-router,398
+26339127,How to create two Joomla community builder(CB) registration forms,"I have  Joomla 3.x  website . I am using CB(community builder) for user registration and log in.
+     I want to have another registration form on another page with some different field.
+   I have a already registration page here http://urbanaccessregulations.eu/register/registers.  I need an other registration form on another page(http://urbanaccessregulations.eu/stakeholer-login).
+    I  need basically two different registration form for two different pages.
+        Is this possible by community builder .
+    Please suggest me how can I do this",,1,0,,2014-10-13 11:39:10.113000+00:00,,2015-03-25 13:40:35.270000+00:00,2015-03-25 13:40:35.270000+00:00,,4563643.0,,2955301.0,,1,0,joomla|joomla-community-builder,698
+26339126,Cross Join In Sql Server not always return all rows from all tables,"Sometimes Cross join not return any rows if one of tables doesn't has any row
+for example
+I expect this query will return one row V1 = null and V2 = 2
+but it returns no rows
+Is there any explanation?",26339192.0,1,0,,2014-10-13 11:39:10.013000+00:00,,2014-10-13 11:52:46.110000+00:00,,,,,897645.0,,1,2,sql|sql-server|cross-join,1649
+26339125,Calculated measure on role playing dimension?,"I have a ssrs report based on a ssas cube. In the report I want to group the companys results by organizational structure. The structure can change from year to year and the history is kept in a SCD 2 dimension. The organizational structure is grouped in 4 levels (Division, Work Area, Base unit, Responsible Unit). All results are registered on the lowest level. A usuall action is that a Resonsible unit is moved between Divisions. 
+In the report I want to have 2 columns, the results for choosen year in the first column and the result for previous year in the second column. The user can choose wich year he/she wants to run the report for. In the cube I have created two Calculated measures, Result_current_year and Result_previous_year. My fact rows are connected to the dimension with a warehouseID (AE_WID_HISTORY).
+Now to my problem. The measures are bound to the organizational structure that was present in that year. This is not what my customer wants. They want to compare the result from both years according to the organizational structure of the current year. 
+My idea of solution is to create a new column in the fact table that holds the foreign key to the row of the dimension representing next years organizational structure. The problem is that this value doesnt exist when the row is created. To accomplish this I have to loop over the fact table the year after and update all rows with the correct value. In the cube I would then create a roleplaying dimension that represents next years organizational structure. In my calculated measure ""Result_previous_year"" I would then use this roleplaying dimension.
+Is this possible and if YES, how would the MDX for the calculated measure ""Result_previous_year"" look?",,1,0,,2014-10-13 11:39:02.173000+00:00,,2014-10-13 20:02:17.767000+00:00,2014-10-13 13:42:02.583000+00:00,,3932781.0,,3932781.0,,1,0,reporting-services|ssas|mdx,150
+26339121,what is the significance of having a UITextView in a UIScrollview?,"I have come across many sample codes where the  is embedded within . However,  itself has scrolling properties. So what additional advantage does this set-up i.e  within  provide?",26339301.0,2,0,,2014-10-13 11:38:53.017000+00:00,,2014-10-20 12:44:49.013000+00:00,2014-10-13 11:50:34.697000+00:00,,1370693.0,,3890202.0,,1,0,ios|objective-c,63
+26339115,add dates to jQuery datepicker,"I have a date taken as a url parameter and I need to use that date to set another date in a another field. What I need to do exactly is take the url parameter, add 1 month and 2 weeks to it, display the new date in a text field. I am doing this in a jsp page. 
+my url parameter:- 13-10-2014
+new field :- 
+I followed this thread, but I cannot figure out how to do it with a String value(The url parameter).
+How to do this. 
+Thank you!",26339429.0,2,1,,2014-10-13 11:38:31.627000+00:00,,2014-10-14 03:06:43.950000+00:00,2017-05-23 11:57:08.810000+00:00,,-1.0,,3892439.0,,1,1,jquery|jquery-ui|datepicker|jquery-ui-datepicker,215
+26339112,Error in Urban Airship Rich Push Notification Android,"I have downloaded Android Rich Push Notification sample code. I have made necessary changes which were described in sample tutorial.
+I am beginner to work on Urban Airship.
+My Android Manifest file is as below:
+I have not made any change in the MainActivity.java file.
+Here is th MainActivity file:
+I am facing this problem when I run the sample code:
+Please help me to get the solution.
+Thanks in advance.",,1,0,,2014-10-13 11:38:19.277000+00:00,,2014-10-14 18:16:00.947000+00:00,,,,,2999383.0,,1,0,android|urbanairship.com|richpush,1925
+26339110,ng-repeat without creating tags,"I want to dynamically generate a rather boring  list of times for a ,
+I know how to generate the minutes, i.e.
+Obviously we need another loop for hours, but this would create a set of extra tags around every four s, which would break the .
+How can one  without creating any tags?",26340216.0,3,4,,2014-10-13 11:38:14.173000+00:00,1.0,2015-07-02 17:29:20.247000+00:00,2014-10-13 11:46:16.247000+00:00,,1269037.0,,1269037.0,,1,2,javascript|angularjs|angularjs-ng-repeat|ng-repeat,157
+26339105,How to create an alert message in Google app script while deploying a web app?,"I am trying to create a web app using Google app script, that if you press a button, you may get an alert message.
+In the home.gs file I tried this :
+unfortunately I keep getting this when I press the button when I should get the alert message :
+  Exception: Cannot call Browser.inputBox() from this context.
+Important to mention : my script is using Google spreadsheet but the msgBox should appear in the webapp! In addition, I use HTML
+Any idea what am I doing wrong? And how can I fix it?",26339421.0,1,0,,2014-10-13 11:37:55.117000+00:00,0.0,2014-10-13 12:04:40.760000+00:00,2014-10-13 12:04:40.760000+00:00,,4087751.0,,4087751.0,,1,6,javascript|google-apps-script|msgbox,21050
+26339104,CSS 2 div repeat and one div in middle,"I'm working with my project.
+I want 3 divs to be in one line and fixed position..
+First div is repeated x
+2nd div is in middle
+Last div is repeated x.
+I want my output to be like this:
+http://jsfiddle.net/9o22xe2x/
+CSS",,3,6,,2014-10-13 11:37:53.433000+00:00,,2014-10-13 12:50:48.930000+00:00,2014-10-13 11:48:03.037000+00:00,,4137235.0,,4137235.0,,1,0,html|css,464
+26339103,Are local robots.txt files read by Facebook and Google?,"I have a folder which is half public: The URL is not linked, the people that know the URL are only a few friends (which will not link it) and it is cryptic enough to make sure that nobody lands there by accident.
+However, the link is send via Googlemail and Facebook messages. Is there a way to tell Facebook and Google in a local robots.txt file not to index the page?
+When I add it to the ""global"" robots.txt file then everybody who takes a look there will see that in my  might be something interesting. So I will not do that. But will Facebook / Google look at ?
+The content would be
+or",,1,2,,2014-10-13 11:37:51.827000+00:00,,2014-10-13 20:46:37.407000+00:00,,,,,562769.0,,1,0,facebook|seo|robots.txt,150
+26339102,JQGrid Select Row,"I have a custom checkbox column on my JQGrid, each time the user clicks on the checkbox I would like to display all the row information in a message box.
+My jsfiddle:
+I have tried the following, but does nothing:
+Thanks",26343385.0,1,0,,2014-10-13 11:37:51.557000+00:00,,2014-10-13 15:19:29.313000+00:00,2014-10-13 12:06:11+00:00,,2533907.0,,3836885.0,,1,1,jquery|jqgrid,322
+26339100,Buck - building android app with multiple Gradle flavors/build types and manifests,"I'm working on a project where we have several modules, each one of these with a number of dependencies to other modules, and so on and so forth. We migrated our project to Gradle (and also changed the structure to accommodate it to Gradle's defaults) some time ago because we needed versatility when building different versions of the app: free vs paid, debug (no proguard) vs release (proguard), etc. We were really thrilled when we completed the migration, but this happiness quickly became diluted in a puddle of mud when the build time started to become a pain. Making a rather simple change in the code and deploy the app on the phone takes anywhere 90-120 seconds, and that is simply unacceptable.
+So we decided to give Buck a try, as we have heard nothing but good words from other developers. After very little time (way less than with Gradle) we managed to build our app successfully (which, unfortunately, doesn't mean ""generating an APK correctly"", but at least it built). The thing is that, as a general rule, we have one manifest file per flavor, and unless I have overlooked something fundamental, Buck only lets you specify manifest files when using the rule . The result of this is that the generated APK's manifest file contains only the boilerplate code of the first level module from which Gradle's build chain starts:
+That is, the manifest file only contains main's manifest. This rule is located in the top level BUCK file, which is the file that contains the alias specified in .buckconfig.
+I'm pretty sure I'm doing something wrong. It wouldn't make sense Buck doesn't allow you to not have multiple manifests.
+Any ideas?",26391771.0,2,0,,2014-10-13 11:37:49.123000+00:00,1.0,2018-06-17 17:53:05.367000+00:00,,,,,1576586.0,,1,4,android|build|gradle|android-manifest,1424
+26339099,Is there a one line way I can find the length of the longest of two C# strings?,"I have two strings as input parameters to a method:
+On the first line of my method I have the code to check for a condition where both are null and then do a return:
+Is there a safe (one of the two might be null), one line way that I can find the length of the longest string?
+Note the return type is used later on in the method after I know the length of the longest string.",26339133.0,2,4,,2014-10-13 11:37:48.410000+00:00,,2014-10-13 11:48:20.483000+00:00,2014-10-13 11:44:41.347000+00:00,,975566.0,,975566.0,,1,-3,c#,84
+26339095,fgets adds \0 or \n at the end of the input?,"I've some doubts about fgets. From what I know, it adds ""\n"" at the end of the string, and not ""\0"". So if I write this code:
+So fgets reads two characters, I give as input ""y"", so buff should be ""y\n"". I'd expect printf to print y and add a line, while it prints ""y"" without adding a line. Can you explain why?",26339161.0,3,4,,2014-10-13 11:37:35.787000+00:00,3.0,2014-10-13 11:51:29.123000+00:00,,,,,2012512.0,,1,2,c|fgets,9364
+26339092,Unexpected EOF encountered in BCP,"Trying to import data into Azure.
+Created a text file in Management Studio 2005.
+I have tried both a comma and tab delimited text file.
+BCP  IN   -c -t, -r\n -U  -S  -P 
+I get the error {SQL Server Native Client 11.0]Unexpected EOF encountered in BCP data file
+Here is the script I used to create the file:
+Here is the table it is inserted into
+There are actually several hundred thousand actual records and I have done this from a different server, the only difference being the version of management studio.",31717161.0,8,1,,2014-10-13 11:37:22.010000+00:00,5.0,2020-06-12 07:04:03.093000+00:00,,,,,1331924.0,,1,8,sql|azure|bcp,55809
+26339090,Razor's engine does not automatically encode HTML tags,"To be honest, this is my first time using  and .
+I received an asp.net web api solution which uses itextSharp to generate a pdf.
+The pdf is generated, but it is showing html tags that were sent with the content via jquery and JSON.
+This is how it looks in PDF:
+this is the piece of code that displays data which is sent via jquery's ajax function: 
+And this is where the Razor engine parses the html template: 
+Anyone has got any idea how to show the content properly inside the pdf without showing up the html tags on the document?
+the html table shows fine, only the data displayed by  does not show correctly.
+this is the code: ",,0,6,,2014-10-13 11:37:16.583000+00:00,,2014-10-14 14:18:49.387000+00:00,2014-10-14 14:18:49.387000+00:00,,662629.0,,662629.0,,1,0,razor|asp.net-web-api|pdf-generation|itextsharp|razorengine,181
+26339085,Prism binding wrong viewmodel,"I'm just arrived on a project in my firm (the kind of project which near fifty different people touch the code during the past year ...)
+I'm trying to patch a few bug but I'm stuck with something.
+We are using prism with a MVVM model.
+I got a ContactDetailPage view that should be binded to ContactDetailPageVM with the following line in the xaml, am i wrong ? 
+Instead, and I've no idea why, it is binded to a VM called ProfilsPagesVM.
+Anyone got a solution to force the binding on ContactDetailPageVM ?
+Got through the net and didn't find anything relevant about my problem. Any link welcome.
+To help you here's ContactDetailPageVM code :
+If you need any additional details, just asked, I'll be happy to share it with you",,1,0,,2014-10-13 11:36:57.080000+00:00,,2014-10-13 12:12:34.020000+00:00,,,,,2451635.0,,1,1,c#|mvvm|windows-store-apps|prism,1081
+26339082,Merging two dynamic SQL statements into one,"So I made a procedure that makes a dynamic view using dynamic SQL, but I used two sql executions: One for the if clause and one for the else, it should be possible to put it all under one SQL string or am i wrong? Because I tried it and get an error over and over again. Im not the best in writing dynamic sql, so it is probably my mistake or cant it be done and im losing my time on trying to do this?",26339709.0,2,1,,2014-10-13 11:36:42.103000+00:00,,2014-10-14 06:04:55.277000+00:00,2014-10-14 06:04:55.277000+00:00,,2915834.0,,4079468.0,,1,0,sql|tsql|sap-iq,721
+26339079,Issues with Loops and Conditional Statements in Python 3,"I am a very beginning programmer, and I am trying to create a grade book program for a professor at a university, so that he may input his midterm and final exam scores and get an average and letter grade for each student per course.  The program is supposed to get input for the Course Number, Course Level, Number of Exams, and Student info (ID and exam scores).
+At first I was thinking to create a dictionary with the ID as the key and the average as the value, but then that just didn't seem to work, so I started to try and create while loops with conditional.
+Basically the code is a mess, and I am not exactly sure what I am doing wrong.  I have watched tutorials and read a ton of things online, but I'm hitting a brick wall with this.  For one thing I keep getting an Invalid Syntax error on line 22 with the elif statement.  Any help anyone can give with this would be really appreciated!  Apologies in advance for anything I am leaving out here - I am new to all this.
+Thank you!",26339136.0,1,1,,2014-10-13 11:36:30.823000+00:00,,2014-10-13 13:51:39.553000+00:00,,,,,4137157.0,,1,0,python|loops|python-3.x|while-loop|conditional-statements,142
+26339073,Specify log4net config for use in class library in using/parent project,"I have implemented log4net in a class library project like so:
+That's all I've done. No config file or anything.
+Then in my project that references this class library, I included a log4net config section in the app.config:
+Now, the log4net logger in the class library project is not able to read the config from its ""parent"" project, so to speak.
+I'm sure I need some more configuration, but I don't know where to start. There are similar questions on stackoverflow etc., but I believe they don't really give an answer on how to do this.
+Your help is really appreciated.
+Thanks.",26339885.0,1,0,,2014-10-13 11:36:11.203000+00:00,3.0,2014-10-13 12:20:56.193000+00:00,,,,,3074822.0,,1,4,c#|dll|log4net,5807
+26339072,get domain name (base url without protocol),"How to get app domain name? (I mean base url without protocol  or )
+So if app is installed on 'http://sub.example.com/app', I want to get 'sub.example.com'.",26339107.0,2,1,,2014-10-13 11:36:11.107000+00:00,,2014-10-13 11:58:09.333000+00:00,,,,,501134.0,,1,4,cakephp,8252
+26339071,R: How to check if a matrix is different of a matrix with zero's,I've got different matrices and of different sizes (the program creates my matrices so I don't know how they look like). Now I want to check if a matrix is different of the zero matrix. How can I do this?,26339160.0,1,0,,2014-10-13 11:36:11.093000+00:00,1.0,2014-10-13 11:40:55.783000+00:00,,,,,3720524.0,,1,2,r|matrix|zero,1325
+26339068,Create a double join query using Rails Admin,"I am trying to create a form using Rails Admin, version 4.0.0. For this form I have tables called items, locations, cities and item_in_city. Tables are related in the following ways:
+items table has a column called location which is array or location ids where item is present
+location table has a column called city_id which connects it to city table
+there is item_in_city table which has item_id and its corresponding list of city_id
+Now, I want to create a form using Rails Admin, where I can give option to add a new item. While adding this new item I want to give an option to select (multiple) cities and corresponding to cities I want to give list of locations which can be selected.",26674231.0,1,0,,2014-10-13 11:35:54.253000+00:00,,2014-10-31 11:59:41.970000+00:00,2014-10-14 01:21:21.473000+00:00,,1290634.0,,1452969.0,,1,0,mysql|ruby-on-rails-4|rails-activerecord|rails-admin|rails-models,273
+26339066,dynamically change the length of String inside the EditText field in Android,"I am using an EditText field in my application.
+EditText  is for entering the ddns input:
+I want to restrict the length of the ddns id to 30 characters after ""/"" character.
+i.e after ""/"" character, what follows must be of maximum 30 characters
+I want to do it dynamically and restrict user to not type more than 30 characters. 
+How can i  do it.",,2,1,,2014-10-13 11:35:52.353000+00:00,,2014-10-14 12:40:41.360000+00:00,,,,,1235389.0,,1,0,java|android|regex|android-edittext,593
+26339060,Socket Exception : Connection Reset,"See Image
+How do i Solve it. It gives same error on eclipse and on jdk..",26339939.0,1,0,,2014-10-13 11:35:35.387000+00:00,,2014-10-13 13:05:18.460000+00:00,2014-10-13 13:05:18.460000+00:00,,1755470.0,,3076827.0,,1,0,java|sockets,285
+26339057,SQL timeouts at 3 minutes past full hour,"I have a problem that has puzzled me for a while now. Once in a while, say 4-5 times a week we get timeouts from the database at HH:03 (or HH:02 sometimes I think).
+I've been digging into the scheduled tasks on the server to investigate if there is something that puts the server to it's knees in performance without any findings. 
+I've also gone so fas so that I've made a watchdog for the application so that when the query only has 1 seconds left of it's max query time it checks the processlist for the database and emails this to me. The process list always contains just one entry and that's the entry that is about to get an timeout exception.
+To further add to the complexity we have many customers to this application but it's only one of the customers that get this timeout. All customers run the same code but have different databases, different application pools with different application pool identities. 
+The application is an ASP.net application. The database is a Microsoft SQL 2008 R2 Express edition.
+Has anyone heard of something like this? Can anyone give me any pointers about what to investigate in order to resolve this issue?
+Kind regards",,0,3,,2014-10-13 11:35:31.220000+00:00,,2014-10-13 11:35:31.220000+00:00,,,,,2135792.0,,1,0,sql|asp.net|.net|sql-server|sql-server-2008,72
+26339054,jQuery ajax find data not working in IE8,"i am using jquery submit to post the form data.  jquery returns the Data.
+in alert gets the data through ajax.
+now issue is i want to display DIV Gallery  HTMl. for that
+for IE8 Value of var j is returning undefined while it works fine in other browsers.
+need help to display it for ie8.
+any help would be greatly appreciated.",26339124.0,1,4,,2014-10-13 11:35:16.027000+00:00,2.0,2014-10-13 12:11:47.660000+00:00,,,,,2552400.0,,1,1,jquery|html|ajax|internet-explorer-8|find,583
+26339053,"Document mode defaults to 8, though using IE11. Why?","I have a problem that my webpage does not display as i wish it to do. 
+When opening the F12 developers tool in IE11 it says ""Document mode: 8 (Default)"".
+If i change it to mode 9 or higher the page displays as i want it to do.
+My code is included in the host web page through an Iframe. I do unfortunatly not have access to edit the host code. The host code includes the code:
+I thought this code would ensure that the code was not shown in document 8? The code is included at the end of the head tag, with 88 lines of code in front of it. Could this be what is causing it to use document mode 8? How can i work around this when i am not able to edit the head code?",,0,2,,2014-10-13 11:35:12.187000+00:00,,2014-10-13 12:40:56.757000+00:00,2014-10-13 12:40:56.757000+00:00,,4101884.0,,4101884.0,,1,0,html|internet-explorer|http-headers|compatibility,362
+26339052,How to create a Connection Pool in Web App rather than in tomcat,"I want to create a connection pool for my Oracle database but I want this connection pool to be created when my Web App is deployed in my Tomcat Server. 
+What I 've seen until now is loads of examples on how to create connection pooling in tomcat using JNDI and by defining the resource in the . That means (If I got this right) that even id you undeploy your app the pool remains in the server with open connections.
+Is there any way to define the connection pool in the Web App rather than in tomcat server? 
+Thanks",26339836.0,2,1,,2014-10-13 11:34:59.450000+00:00,1.0,2014-10-13 12:17:51.057000+00:00,,,,,2105307.0,,1,0,java|tomcat|web-applications|jndi|connection-pooling,573
+26339051,Translate sql database schema to IndexedDB,"I have three tables in my SQL Schema: Clients, with address and so on, orders with order details and files, which stores uploaded files. both the files table and the orders table contain foreign keys referencing the Client tables.
+How would I do that in IndexedDB? IÄm new to this whole key-index-thinking and would just like to understand, how the same Thing would be done with indexedDB.
+Now I know there is a shim.js file, but I'm trying to understand the concept itself.
+Help and tips highly appreciated!
+EDIT:
+So I would really have to think about which queries I want to allow and then optimize my IndexedDB implementation for those queries, is that the main point here? Basically, I want to to store a customer once and then many orders for that customer and then be able to upload small files (preferably pdfs) for that customer, not even necessarily for each order (although if that's easy to implement, I may do it)... I see every customer as a separate entity, I wont have things like ""give me all customers who ordered xy"" - I only need to have each customer once and then store all the orders for the customer and all the files. I wanto be able to go: Search for customer with the name of XY - which then gives me a list of all orders and their dates and a list of the files uploaded for that customer (maybe associated to the order).",26373860.0,2,0,,2014-10-13 11:34:50.277000+00:00,,2018-12-02 05:22:59.887000+00:00,2014-10-16 11:07:05.933000+00:00,,3629892.0,,3629892.0,,1,2,mysql|indexeddb,578
+26339049,Routing to a fixed URL in ASP.NET MVC,"Suppose I am working in a project called . When a particular URL suppose  is entered how will it redirect to another URL i.e.  ?
+This is the code I'm trying:",,2,0,,2014-10-13 11:34:39.230000+00:00,,2014-10-15 08:54:51.113000+00:00,2014-10-15 08:54:51.113000+00:00,,1558022.0,,3676327.0,,1,-6,asp.net|asp.net-mvc-4,771
+26339041,Coldfusion Decrypt with special characters,"How to decrypt Coldfusion with standard algorithm and special characters ?
+For example:
+result: #-_G4
+And if I try to decrypt this
+I will get an error.
+I know that in this example i should switch # to ##. But what should i do with other special characters in my database ? How to auto escape all special characters for the decrypt function ?",26349667.0,3,6,,2014-10-13 11:34:23.317000+00:00,,2014-10-14 00:56:13.063000+00:00,,,,,3022172.0,,1,-1,encryption|coldfusion,565
+26339036,Pausing in OpenGL successively,"Above is the code snippet written in C++ using GLUT library in Windows 7. 
+This function takes a character key and mouse co-ordinates x,y and performs translation along x-direction in 3 successive steps on pressing f character. Between each step the program should sleep for 100 ms. 
+We want to move a robot, and pause successively when he moves forward steps.
+We are facing a problem in making the program sleep between the 3 steps. What is the problem in the above code snippet?",26339134.0,2,2,,2014-10-13 11:34:09.477000+00:00,,2014-10-14 05:24:16.300000+00:00,2014-10-13 11:44:46.770000+00:00,,1907026.0,,2450212.0,,1,1,c++|opengl|visual-c++|sleep,2546
+26339035,Inline pictures with description,"I need to make inline a picture with a description and just a picture. It was ok to make 2 pictures inline using div block:inline, but when I added a desctiption to the first picture I couldn't do it inline - as you see on the screenshot my first div tends to have a lot in width (but margin:0 and width is fixed)
+How to make it inline?
+https://dl.dropboxusercontent.com/u/16415767/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202014-10-13%2015.30.13.png
+https://dl.dropboxusercontent.com/u/16415767/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202014-10-13%2015.30.56.png",26339423.0,1,1,,2014-10-13 11:34:07.310000+00:00,,2014-10-13 11:55:49.740000+00:00,,,,,3748765.0,,1,0,html|css|image|inline,48
+26339028,Using elemMatch for a nested condition query in Mongoose,"I have two schemas  Student, User - where user can be class teacher or other designated persons.
+Student schema
+Now I want to group the students for a particular owner.(classTeacher)
+I have written a server api route -method for this.
+userId is the 
+This results in all the students. Not only those which belong to the given owner id.
+Please let me know where I am wrong.
+Thanks.",26417152.0,1,1,,2014-10-13 11:33:46.620000+00:00,,2014-10-17 03:00:21.417000+00:00,,,,,3157302.0,,1,-1,node.js|mongodb|mongoose,413
+26339024,How I can capture the click of a button dynamically created? JQuery,"I have two buttons on a form. Both the buttons and the form are created dynamically:
+And here the two functions should collect keystrokes:",,1,3,,2014-10-13 11:33:32.490000+00:00,,2014-10-13 11:35:52.917000+00:00,,,,,3764379.0,,1,0,javascript|jquery|button|click,71
+26339016,"change datagridview cell type containing text vaue ""true"" text to checkbox","I have a datagridview that has cells with text values that have &quot;True&quot; for one column and the next column should have a Combobox with two values to choose from (in and out)... I want to change the cell type to be a check box and cell type to Combobox... if the cell text is &quot;true&quot; the checkbox must be checked and if it is false or there is nothing in it, it must be unchecked if text from the direction column is in the Combobox value must be set to IN and have an extra option of out in it ... this DATA comes from a loaded XML file, this is how I load the XML file to the datagridview
+the datagridview must display as follows",26380257.0,1,1,,2014-10-13 11:32:56.383000+00:00,0.0,2020-10-21 13:48:59.020000+00:00,2020-10-21 13:48:59.020000+00:00,,11737639.0,,2941069.0,,1,0,c#|xml|winforms|datagridview,1468
+26339013,android hive slider menu customization on clicking home button new activity should launch,"I am using http://www.androidhive.info/2013/11/android-sliding-menu-using-navigation-drawer/ 
+I want that when I click on home button a new activity should start not this fragment which is there in that code....
+I mean when I click HOME button new activity should launch I am not able to do so please guide 
+}",26360208.0,1,0,,2014-10-13 11:32:52.103000+00:00,,2014-10-15 06:51:23.913000+00:00,2014-10-15 06:51:23.913000+00:00,,4085470.0,,4085470.0,,1,0,android,300
+26339012,make specific path on Excel POI,"I want to make a path that saved in database. 
+here's my code. 
+ I want to make  FileOutputStream fileOut = new FileOutputStream(src + ""/Export.xls"");  with the path I save in db. so If I want to change the path I just change in db. 
+I've tried code above but doesnt seems work. 
+please help me. Thanks :)",,1,3,,2014-10-13 11:32:49.353000+00:00,,2014-10-13 16:25:50.710000+00:00,,,,,3516681.0,,1,0,java|excel|apache-poi,3294
+26339007,Android App Incompatible on google play only for certain devices,"This is the link to my google app
+       QuizByte
+The app was developed for android api level 13 and above. after publishing some of the phones (Samsung Duos(GT-S7262) )which should be compatible cant see the app in google play. sending a direct link to the phone to email and checking shows that 'this device is no compatible'. 
+I searched and tries everything I can 
+Tried adding  and removed unused permissions but still no luck.
+And when I upload it into google play it shows lots of samsung and sony(which should be compatible) in the incompatible-device list.
+Thank you.
+.   
+.
+       
+Compatible devices were increased (~+500) when I added  in manifest
+But it still shows not compatible with sony and samsung models",26376051.0,1,4,,2014-10-13 11:32:27.967000+00:00,,2014-10-15 06:41:56.430000+00:00,2014-10-13 13:25:36.790000+00:00,,3309470.0,,3309470.0,,1,0,android|google-play,234
+26339006,Problems with CDI - ( Weld + TomCat7 + JSF ),"I'm starting a project with CDI using weld, and am getting the following error when I try to injection:
+Console:
+EntityManagerFactory.java
+Repository.java
+UserRepositoryImpl.java
+UserController.java
+META-INF/beans.xml
+META-INF/context.xml
+WEB-INF/web.xml
+My Libs:
+Can anyone help me? thank you!",,2,0,,2014-10-13 11:32:26.077000+00:00,,2014-10-14 12:25:17.090000+00:00,2014-10-13 11:39:46.003000+00:00,,4137189.0,,4137189.0,,1,0,tomcat7|cdi|weld,3139
+26339005,"sonar-maven-plugin fails because of invalid checkstyle.xml (The processing instruction target matching ""[xX][mM][lL]"" is not allowed)","I use Maven 3.2.1 and SonarQube 4.5 in conjunction with Checkstyle 5.6. Executing
+works fine for some projects, but others fail with ""Can not execute Checkstyle: unable to read ... checkstyle.xml - unable to parse configuration stream - The processing instruction target matching ""[xX][mM][lL]"" is not allowed"". Here's the output:
+In fact, the generated checkstyle.xml is faulty because it contains ""&lt;\?xml"" and ""&lt;\module"" twice:
+For analysis I uploaded this file:
+ - checkstyle.xml: https://dl.dropboxusercontent.com/u/54665247/checkstyle.xml
+Doing Google research I found nothing.
+Can anybody help me on this?",,1,4,,2014-10-13 11:32:25.413000+00:00,1.0,2014-10-15 08:27:48.803000+00:00,,,,,4136958.0,,1,4,java|xml|maven|sonarqube|checkstyle,1653
+26339004,Javascript value not printing,"I am trying to make a countdown timer in JS and style each digit (days, hours etc.) separately, I tried styling 'days' first, but it doesn't work while the default values do print (in the form).
+Script (JS):
+HTML Body:
+Thank you in advance. :)",26339178.0,3,3,,2014-10-13 11:32:24.710000+00:00,,2014-10-13 11:42:38.897000+00:00,,,,,4099209.0,,1,-1,javascript,341
+26339002,Nothing is generated and no error although model and module are loaded,"I tried to use Acceleo to translate a model to a text in an Eclipse plugin. The model is fine and the loaded Acceleo module looks fine as well. Still, acceleo does not generate anything.
+Here is my code:
+The IAcceleoTextGenerationListener prints that listensToGenerationEnd() is called and nothing else.
+The loaded module looks fine in debug. It has the generateElement-template. The generate.mtl looks like this:
+My problem is that nothing is generated, i.e. result is an empty map. Also ""Generation: false"" is printed to console. Especially no error is printed.
+Anyone have any idea on what is going wrong? I had it working once but I can't get it to work any more.",26341217.0,1,0,,2014-10-13 11:32:19.527000+00:00,,2014-10-13 13:31:02.630000+00:00,2014-10-13 11:35:05.233000+00:00,,12860.0,,1104631.0,,1,0,java|eclipse|acceleo,158
+26339001,"Grails, how can I pass list of object from gsp to controller","I have a list of csv files that will be imported in database.
+So, in the first step, I display the name of files in the jsp page and then I wait the choice of user what's the file need to import it or to ignore it.
+when the user confirms his response, I need to pass the list of files that user has chosen to import it to controller.
+I thought about that : I set the list that contains a list of file in hidden field and i will recuperate it into controller action from form submit. But in the controller, it is read like a string variable and I can not extract data from it.
+Any idea please?
+Thanks.",,1,0,,2014-10-13 11:32:18.353000+00:00,,2014-10-15 08:52:04.690000+00:00,,,,,4018649.0,,1,0,grails,1857
+26338999,Show data in rows and columns in IOS,"I want to show my data in rows and columns. Number of columns are constant i.e 4, but number of rows are dynamic. How can I create such a table with 4 columns and multiple rows according to the data. Is there any API that could create table or what is the simple option for this?",26339637.0,2,4,,2014-10-13 11:32:16.580000+00:00,,2014-10-13 12:06:21.400000+00:00,,,,,4065145.0,,1,1,ios|objective-c|iphone,567
+26338996,Using http-builder in groovy code getting java.lang.RuntimeException: Error grabbing Grapes,"In my groovy code i have used Grapes
+but getting below error at runtime",,0,5,,2014-10-13 11:32:02.197000+00:00,1.0,2014-10-13 11:38:27.110000+00:00,2014-10-13 11:38:27.110000+00:00,,542270.0,,2528433.0,,1,1,java|groovy,373
+26338993,How to output an IMG tag from XML using XSLT,"Here is my XML:
+How do I display the IMG tag from my XML above to an HTML document using XSLT",26339407.0,2,0,,2014-10-13 11:31:57.407000+00:00,,2014-10-13 13:57:10.283000+00:00,2014-10-13 13:40:02.760000+00:00,,923492.0,,3326071.0,,1,0,asp.net|xml|xslt|ektron,1085
+26338989,Error in JAXB unmarshalling,"I have created a very basic XML for understanding JAXB Concept. This is the XML File
+The Java Class created is,
+Java file for Unmarshalling is
+When I try to compile this I am getting this error
+Please help me in finding out what is the problem?? Trying this for the first time.",26339108.0,1,2,,2014-10-13 11:31:42.863000+00:00,,2014-10-13 11:53:42.993000+00:00,2014-10-13 11:43:16.590000+00:00,,4137159.0,,4137159.0,,1,0,java|xml|jaxb,1940
+26338987,Avoid code duplication,"I'm trying to rewrite the code above single line. I tried :
+Not working for me. ",26339315.0,1,5,,2014-10-13 11:31:23.697000+00:00,,2014-10-13 11:50:10.533000+00:00,,,,,1219136.0,,1,-3,perl,54
+26338985,How to use HttpContext in a Windows application?,"I want to bind a data form html to excel. In asp.net we use this.
+How to I do this in a Windows application?",,1,3,,2014-10-13 11:31:12.203000+00:00,,2014-10-13 13:11:05.107000+00:00,2014-10-13 13:08:26.593000+00:00,,993547.0,,4046066.0,,1,0,c#|asp.net|.net|windows|httpcontext,3837
+26338982,logger.info is throwing null pointer exception when whole maven project is run under junit test,"Here is the example code
+This is a sceneario. This test case may pass. But in actual code when I run the individual test cases or run the whole test class, Test case passes but when I run the maven project under junit test It fails with NullPointerException. I can not post actual code because it is a proprietary code. Please guide me if someone has faced this type of issue.
+Stack trace which I am getting when I run my actual code:",26464565.0,2,19,,2014-10-13 11:30:57.110000+00:00,1.0,2020-07-22 15:52:27.753000+00:00,2014-10-20 11:28:18.477000+00:00,,3628106.0,,3628106.0,,1,2,java|maven|logging|junit|slf4j,7499
+26338979,How to know progress in Android HttpClient?,"I am using following function to download some html from webserver. and then want to show that in webview.
+I am using the function in an . Here's the function which contains AsyncTask's code.
+How can I get the update progress of the download process here?",,1,1,,2014-10-13 11:30:55.840000+00:00,1.0,2014-10-13 14:31:17.523000+00:00,,,,,874564.0,,1,0,android|httpwebrequest|androidhttpclient,466
+26338977,how to display multiple rows from mysql using php oop?,"I'm a newbie in oop style. I start practicing it since last week and I make simple CRUD website. but i got a problem when i tried fetching rows from mysql db its always display 1 row.
+my created a class named class.user.php
+and it shows here:
+and i call it using this:",26339043.0,2,1,,2014-10-13 11:30:39.943000+00:00,,2014-10-13 12:53:02.700000+00:00,,,,,4105451.0,,1,0,php|mysql|oop,1586
+26338969,OpenID implementation in custom PHP application,"I have been given a task for implementing ""User authentication through Google Apps account"", in our custom php web application. User should be able to login both directly, or using google account.
+I am trying to use openID for this. I have read about openID and found following:
+In our existing users table, we will add an other field 'openid_identity'. While login, we will send Google login and password to Google and get response. From response, we will get user's identity and then by matching it with the identity in database, we can get user details.
+One thing that is not clear:
+In our application, admins can create users. Users can then login with their email (like john@myapp.com) and password.
+Initially, before using Google sign in, our user's table 'openid_identity' field will be empty. How can we handle OpenID login for first time? What do we show to user? A 'signup with Google' page? If user signs up with their Google mail (like 'john@gmail.com'), how can we know which user he is, from users table?",,1,1,,2014-10-13 11:30:11.410000+00:00,,2017-09-02 15:17:03.370000+00:00,2017-09-02 15:17:03.370000+00:00,,472495.0,,1206713.0,,1,4,php|authentication|openid,215
+26338967,While loop issues in Python,"I'm trying to write a small Python program for use in secondary schools to teach about ciphers.
+It's all part of an ongoing project they have to do.
+However on my while loops I have an  condition inside them and if the condition isn't met the first time it just infinitely loops until I break.
+The cipher here is 12 and if that is input it carries on as normal, however any other input just gives the error message and loops out forever. 
+I'm from a C#/C++ background usually and I know Python needs to be in line with its tab characters and white space and I've checked that a few times but I'm at a loss now.
+ADDITIONAL CODE:
+This works fine and It's done the same way 
+ADDITIONAL PLACES WHERE SAME PROBLEM HAPPENS:",26339038.0,1,1,,2014-10-13 11:30:05.953000+00:00,,2014-10-13 11:39:12.730000+00:00,2014-10-13 11:39:12.730000+00:00,,3622940.0,,2911649.0,,1,1,python|loops|while-loop,145
+26338966,"What's interpretation of ""terms objects from R data objects""?","There's a term method in R for which documentation says
+  The function terms is a generic function which can be used to extract terms objects from various kinds of R data objects.
+What exactly is the  object ?",,1,0,,2014-10-13 11:29:59.763000+00:00,,2014-10-14 20:10:02.647000+00:00,2014-10-14 20:10:02.647000+00:00,,602276.0,,894570.0,,1,1,r,69
+26338964,what is the difference between classOf[T] and Class[T],"I have this code 
+However, I can use classOf in this way
+I am little confused here, what is the difference between classOf[T] and Class[T]
+Many thanks in advance",26339358.0,3,0,,2014-10-13 11:29:58.027000+00:00,3.0,2017-07-03 01:14:40.733000+00:00,,,,,2801947.0,,1,10,scala,4740
+26338958,Moving up an UIView when UIWebView's keyboard is shown,"I am trying to move an UIView when user touch a textfield in a webview , because keyboard will cover the webview and users will not able to enter text , my codes works very fine ! on iOS 7 !!! but iOS 8 the view moves up but when user select another textfield (in webview) the UIView moves down to the initial position !!! . here is my code :
+I also tried  and  , but no success !   
+WebView loads an HTML file from bundle , this is textfield's codes :",,3,3,,2014-10-13 11:29:31.803000+00:00,,2015-10-09 14:36:43.157000+00:00,2014-10-13 11:40:15.220000+00:00,,319097.0,,319097.0,,1,1,ios|objective-c|iphone|uiview|uiwebview,1288
+26338951,Sending email with Python having correct sending time,"I'm sending email through an account with the following Python code:
+This works quite well and I can receive the emails.
+However, the timestamp which is displayed in my email client shows the time I downloaded the mail from the server and not time the email was actually send.
+Is there a way how to correctly add the sending time to the email? I would assume that the sending time is not correctly set and that's the reason why the download time is displayed?
+Or do I make other mistakes?
+Thanks!",,0,2,,2014-10-13 11:28:52.833000+00:00,1.0,2014-10-13 11:28:52.833000+00:00,,,,,2212190.0,,1,1,python|email|email-client,70
+26338949,Async void or Task.Run?,"Consider this method:
+The MethodAsync method:
+and the Process method:
+So the use case is that at the end of some processing workflow an email has to be sent.
+This email sending part was taking some time and the user had to wait, so the original developer put this code.
+I am trying to make SendMessage call MethodAsync and should not wait for it to return.
+I have read that in an async workflow the complete stack needs to be async for it to work properly. The SendMessage is not marked async.
+Is this the correct way to call MethodAsync since Task.Run returns an awaitable?",,1,4,,2014-10-13 11:28:39.400000+00:00,1.0,2014-10-13 12:05:51.507000+00:00,2014-10-13 12:05:24.097000+00:00,,1153739.0,,1153739.0,,1,1,c#|async-await,2402
+26338947,Ternary operator in System.out,"I found below  in our project and it is always printing 'Not Null'. Even I have initialize the  variable or not, it is printing 'Not Null'.
+Also why it is not printing the ""mylog"" in front? Can someone explain?    ",,4,1,,2014-10-13 11:28:35.063000+00:00,,2014-10-13 11:37:45.830000+00:00,2014-10-13 11:37:45.830000+00:00,,1735406.0,,2771655.0,,1,2,java,616
+26338945,How to test for texts not fitting an Instaparse-grammar (Clojure)?,"I wrote a project for parsing strings using context-free grammar in Instaparse (Clojure). Now I'd like to test several input-Strings for their parsing results. Some input strings might not fit into the grammar. So far I only tested for ""parsed strings not fitting the expectation"". But I think it would be more accurate to test for exceptions using . Are there exceptions thrown? It seems to me that some output (Containing ) is generated, but no exception is thrown.
+My project.clj is:
+My core source is:
+My test source is:
+How should I test for the errors (Here: when the sentence does not end with a  but with a )?",26343984.0,1,0,,2014-10-13 11:28:31.963000+00:00,,2018-03-26 12:38:49.767000+00:00,2018-03-26 12:38:49.767000+00:00,,26416.0,,3999893.0,,1,6,parsing|exception|clojure|context-free-grammar|instaparse,559
+26338935,Magento. Get products from multiple categories with a combined AND/OR filter,"I'm trying to filter products by categories with OR and AND simultaneously.
+Let's say I have categories SALE, TESTWINNER, FRUITS and VEGETABLES. I want to get the products which are on SALE or TESTWINNERS from the categories FRUITS and VEGETABLES.
+So the category pseudofilter would be as follows:
+(SALE or TESTWINNER) and (FRUITS or VEGETABLES)
+I've tried to accomplish this with:
+.
+The mysql query which Magento created seems to be what it should be:
+.  
+For some reason the result is empty. No products are returned.
+If I try leaving the fruitVeg category filter out, it returns the SALE and WINNERS properly.
+If I try leaving the saleWinner category filter out, it returns the FRUITS and VEGETABLES properly.
+So the OR parts work ok, but the AND part doesn't.
+I've been wrestling with this problem for a couple of days. I don't have a clue what to try next and what could be the problem. Any help is greatly appreciated.
+This is my first question on stackoverflow, so please forgive me for any mistakes in etiquette.",26341464.0,2,1,,2014-10-13 11:28:08.790000+00:00,,2014-10-13 17:06:54.883000+00:00,,,,,4136954.0,,1,1,database|magento,703
+26338933,Check if SQL object is referenced by any other SQL objects,"I was just reading this SO thread and had a question for @Mack regarding whether there is a way to check if a SQL object is referenced by any other SQL objects.
+He (@Mack) used T-SQL and DMVs to accomplish something similar in his answer.
+Is this possible, if so how?
+I would have posted this as a comment, but I don't have sufficient reputation yet...",26339000.0,1,0,,2014-10-13 11:28:05.117000+00:00,,2014-10-13 11:32:17.950000+00:00,2017-05-23 11:52:34.880000+00:00,,-1.0,,3565798.0,,1,0,sql|sql-server-2008-r2|dmv,93
+26338932,Autofill formula for cell names in Excel,"In an Excel worksheet with rows of parameters and columns of systems like so:
+I am looking for a way to use this data with meaningful names such as ""height1"", ""height2"".
+I can name the cells ""height1"" ""height2"" (Formulas->Define Name) and use it in a cell =height1.
+However, when autofilling by dragging the equation to the right, the name does not change to height2 and I am left with the same value of 58.
+Basically, I am looking for the same behavior as autofill dragging =B2 to =B3, but with meaningful names.
+Thank you.",,1,0,,2014-10-13 11:28:03.943000+00:00,,2014-10-13 11:43:48.787000+00:00,,,,,3363876.0,,1,0,excel|formula|drag|autofill|names,554
+26338925,Is there a way to automate Jenkins for Hg Flow/Git Flow,"We just switched to using Hg Flow, but one of things that we still haven't quite yet figured out is how to best use Jenkins with it. Ideally we would have a job which builds and tests develop, one that builds and tests default and other jobs which are automatically created when a feature or release branch is created, and ideally also delete the job when the feature or release is finished.
+Does anyone know if this can be done, and if so, how exactly to do it?
+It would be extra nice if Jenkins was able to read from Hg who it was the created the branch and mark them as the contact person if/when the job builds, but this is really just a nice to have.
+Thanks in advance",,2,0,,2014-10-13 11:27:28.737000+00:00,1.0,2015-06-03 13:41:40.093000+00:00,2014-10-14 10:34:12.480000+00:00,,2191125.0,,2191125.0,,1,4,jenkins|mercurial|git-flow,1414
+26338918,command is not working in shell script it is working as a command,"When I am executing command i can able to get the result.
+But I am not able to execute the command in shell script which is giving error as No such file or directory when running it from shell script.
+Command :
+Shell Script:
+when I am executing shell script it is throwing error as ",,2,1,,2014-10-13 11:27:15.797000+00:00,,2014-10-13 12:14:30.167000+00:00,2014-10-13 11:29:33.463000+00:00,,253056.0,,1808642.0,,1,0,linux|bash|shell,221
+26338917,Let the screen turn but prevent screen lock,"I would like to know if it is possible to let the screen turn off (as setted in device parameters) but to prevent the phone to lock while my application is running in front. 
+So, when something happen in the app, I can turn on the screen and the user dont have to unlock his phone. (It is a driving application, so it would be dangerous to make the user unlock the phone while driving)
+Thanks!
+EDIT:
+I dont want the screen to stay on : I want to be able to turn it on and when I do, that I dont have to unlock the screen.",,2,1,,2014-10-13 11:27:15.320000+00:00,,2014-10-13 12:02:17.560000+00:00,2014-10-13 12:02:17.560000+00:00,,3735163.0,,3735163.0,,1,0,android|screen-lock,52
+26338911,Making a horizontal dropdown vertical,"Hi i want to make the top dropdown menu into a vertical like the one on the left.
+Is there anybody who could help me? Im running out of ideas!
+Thanks in advance!
+Here the link to my fiddle: http://jsfiddle.net/65pLy4sm/",26339059.0,2,4,,2014-10-13 11:27:08.657000+00:00,,2014-10-13 11:45:28.017000+00:00,,,,,3651949.0,,1,1,html|css,48
+26338910,"Using javascript, how convert to JSON, Java-POJO-like classes?","I want use Java-POJO-like classes in my JS project: only private fields, getters and setters.
+I would convert my Java-POJO-like class in a JSON string to send it to the server.
+I can't use JSON.stringify(myClass) because the fields are private.
+So I think to use a recursive method like this...
+...but before I spend many time to write it I want ask you if exist a better way to convert the Java-POJO-like object in JSON.
+Thank you.
+Update #1
+I am ashamed of myself! This is my working (but absolutely temporary) solution:",,1,4,,2014-10-13 11:27:08.623000+00:00,,2014-10-13 14:52:21.440000+00:00,2014-10-13 14:52:21.440000+00:00,,987185.0,,1361026.0,,1,0,javascript|json|pojo|stringify,3146
+26338907,W2UI grid: Checked Checkboxes not saving;,"I introduced two buttons on the toolbar one  'CheckAll' and the other 'UncheckAll', they are to have effect on a particular column say 'Status'  (with checkboxes) in the grid. I wrote two Javascript functions to do this.
+}
+ The effected field:
+The problem is when I clicked on Save button the checked buttons are nor sent/saved to the database. 
+What I want is when CheckAll is clicked it checks all checkboxes in the column Status of the fetched rows, then 'Save' persist all the changes to the database. ",26447841.0,1,0,,2014-10-13 11:27:02.647000+00:00,,2014-10-19 06:06:08.563000+00:00,,,,,2801953.0,,1,1,javascript|php|jquery|w2ui,3391

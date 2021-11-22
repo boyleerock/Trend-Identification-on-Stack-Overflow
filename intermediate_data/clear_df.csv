@@ -1,0 +1,284 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+65444196,How to have window's batch file detect when the screensaver is on?,"How to program a batch program to determine if a the screensaver is running or if the user went to sleep, or locked the computer?
+In bash in Ubuntu Linux I am using the code:  to determine if screensaver is running.
+Note: I am not seeking recommendations for books, tools, software libraries...
+Unless there is a better approach, I am working off of this script to look for processes running.  But I have to find the name of the screensaver process.",65444620.0,2,1,,2020-12-24 23:59:21.060000+00:00,,2020-12-29 04:53:38.267000+00:00,2020-12-25 01:13:31.443000+00:00,,767829.0,,767829,,1,1,windows|batch-file|windows-10|windows-screensaver,117
+65444193,"Get ""Killed"" when I run ""ssl._create_unverified_context()"" in python3.7","Ok let's start. I cross compile the Python with version 3.7.7. With a cross compile version OpenSSL3.1.1.
+i can import ssl without any error. But When I run ssl._create_unverified_context().It just get &quot;Killed&quot;.
+CPU: armv71 ；
+Mem: 256MB ；
+How can I get more infomation in Python? Or how can i check somewhere to findout the problem is .",,0,0,,2020-12-24 23:58:25.107000+00:00,,2020-12-25 00:28:01.357000+00:00,2020-12-25 00:28:01.357000+00:00,,14465132.0,,14465132,,1,0,python|ssl,29
+65444192,How to read subclass JSON with GSON,"this is my code, and i can get strings like status, but for example &quot;proxy&quot; i cannot because is inside of &quot;8.8.8.8&quot;, my question is, how can I get the value of &quot;proxy&quot; with GSON.",,2,3,,2020-12-24 23:57:38.407000+00:00,,2020-12-25 01:44:07.047000+00:00,,,,,10249767,,1,0,java|gson,46
+65444188,How to use dynamodb:LeadingKeys when Partition key has more than one kind of values,"My Dynamo Tables have tenant_id as the partition key in my multi-tenant application but my partition key also has other types of entities in it in addition to tenant_id.
+For example: (This is a small example, we are using this pattern throughout)
+I would like to use    to ensure data of one tenant can never be accessed by another tenant. How can I go about that in this case when  is overloaded and has other entities in it as well.",65476354.0,1,4,,2020-12-24 23:55:47.500000+00:00,,2020-12-28 10:41:29.367000+00:00,2020-12-25 00:01:33.583000+00:00,,2699001.0,,2699001,,1,1,amazon-web-services|security|amazon-dynamodb|multi-tenant|saas,39
+65444187,trigger_topic not working on terraform resource google_cloudfunctions_function,"I have the following resource defined for terraform to create a cloud function. I want to be able to get it triggered thru a pubsub message.
+which one of the block do I use ? event_trigger or trigger_topic
+When i use trigger_topic, it errors with
+and when i use event_trigger, it errors with",65444288.0,1,0,,2020-12-24 23:55:37.770000+00:00,,2020-12-25 00:25:19.323000+00:00,,,,,1615052,,1,1,google-cloud-functions|terraform,100
+65444185,R is giving the wrong max date,"I am having an annoying issue in R that is not recognizing the correct date in my dataframe as the max date. I am creating a weighted average based on subtracting the date in the dataframe from the max date, so this is an annoying issue to deal with. I have tried reformatting all of the dates, this did not work.
+Anything that I can try? The dates range from 1/1/2020 to 12/23/2020. But when I use max(PlayerData$Date) I am getting 3/9/2020.
+Thanks",65444227.0,1,1,,2020-12-24 23:55:03.517000+00:00,,2020-12-25 00:06:55.233000+00:00,,,,,14031540,,1,1,r,46
+65444184,react useRef : current value is undefined,"I'm following a beginner's tutorial for the useState and useRef hooks, trying to implement a simple timer in react.
+I'm using the  variable to store the value from 
+On click of start button, I am able to console.log the value of the interval correctly.
+However on click of stop button,  is console logged as . The  hence does not function as expected.
+Why does interval.current print undefined when it is clearly set in startTimer (and logged there)? What am I missing here?
+output in console
+6 &quot; :in start&quot;
+in stop:  undefined
+Thanks",65444240.0,2,0,,2020-12-24 23:54:42.543000+00:00,,2020-12-25 00:11:03.207000+00:00,2020-12-25 00:01:40.407000+00:00,,7316608.0,,7316608,,1,1,reactjs,224
+65444181,ServiceStack based REST service gives timeout for log running process,"I need to run a 1-time long-running operation (around 10 minutes) via a ServiceStack service. I run this all on my local machine with ServiceStack running on IIS and .NET 5. Now it gives a timeout and I have no clue what is the cause (I also checked my IIS settings by the way). Part of my code (I removed some not relevant code):
+This is the exception:
+System.Net.WebException: 'The operation has timed out.'
+This exception was originally thrown at this call stack:
+ServiceStack.AsyncServiceClient.SendWebRequestAsync(string, string, object, System.Threading.CancellationToken, bool) in AsyncServiceClient.cs
+System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+Gloneco.Importer.Program.CorrectCreationDates(ServiceStack.JsonServiceClient) in Program.cs
+System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+...
+[Call Stack Truncated]",,1,2,,2020-12-24 23:54:24.817000+00:00,,2020-12-25 03:26:37.087000+00:00,2020-12-24 23:58:44.633000+00:00,,12340058.0,,12340058,,1,0,c#|rest|servicestack,24
+65444177,What is the signature of a method with params?,"I was about to bind  programmatically (because of unknown/variable type parameters), and found out that if the target method uses , the reflected calling is a bit different than calling directly.
+First, in the official documentation, the &quot;signature&quot; (although this is more like a XML-doc):
+Notice that it the 2nd param is marked as optional, and we can write . If in Visual Studio, you go to the disassembled declaration list, you can see this:
+2nd parameter is no longer marked as option. Now when I tried to invoke this method using reflection as:
+, I got . But if  is added as another parameter, it works perfectly.
+This is a bit strange for me. Why does the MS Docs use  (optional marker)? Is the  argument really optional similarly to regualr option arguments, like ? Or it is just a syntactic sugar? So that's why I may call directly  in the editor, but the compiled code can be different (which is compatible with the reflection system too). If so, does that mean the method always receives the  value, even if I don't specify values? But if a method uses  argument, and nothing is passed, the argument from the method body is a valid array with , not . Is it safe to pass  using reflection, or I should create an empty object array?",65444333.0,1,1,,2020-12-24 23:53:31.203000+00:00,,2020-12-25 00:36:24.950000+00:00,,,,,2625561,,1,0,c#|reflection|signature,39
+65444173,handling status code error try catch axios on dead connection,"I am trying to use a proper way to handling my errors in my React app with axios.
+When the connection is dead, I won't get a status code, so I can't check the status code of the response. What is the elegant way to handle errors with no status code?
+I get this error:",,1,0,,2020-12-24 23:53:09.797000+00:00,,2020-12-25 00:13:47.327000+00:00,,,,,10566935,,1,0,javascript|reactjs|react-native|http|axios,39
+65444172,Python code with requests.get().json() runs infinitely,"I have the following code to scrape data from a table on https://www.nba.com/stats/
+This code used to properly create a DataFrame from the data on the site, but it no longer does and it doesn't output an error either. I use JupyterLab to run the code and it just runs infinitely.
+My guess is that the headers are outdated in some way, but I'm not sure how to go about updating them.",,1,4,,2020-12-24 23:52:58.757000+00:00,,2020-12-25 00:21:34.937000+00:00,,,,,14885684,,1,0,python|json|python-requests,47
+65444171,"C library works by itself in executable form, but when used as Rust library using CC, it no longer works","I am trying to inject a dll into a specific application in rust. I gave up trying to do so in pure rust, as it was not working no matter what. So, I used a C injector and compiled it and it worked perfectly. However, when I use the CC crate to compile it and use the function, it no longer works at all. In this case, I was simply trying to inject a dll I made.
+The code for the C is:
+If I compile this file exactly the way it is but add a main method:
+It works perfectly as intended. However, if I remove the main method and use CC with this build script:
+and then call it in main with
+which results in .
+How can I get it to successfully inject as if I just ran the .exe normally? Currently I just put the .exe with it, but that is not desirable and would rather it be built and used as a library. Note, I am trying to inject Among Us, and so I am running this as 32 bit with .",,0,1,,2020-12-24 23:52:22.043000+00:00,,2020-12-25 00:20:12.507000+00:00,2020-12-25 00:20:12.507000+00:00,,3756718.0,,3756718,,1,1,c|windows|winapi|rust|dll-injection,53
+65444168,How to format strings with jinja/ansible?,"Friends,
+I am learning Ansible here and trying to apply what I am learning to one of my simple projects. I got stuck trying to format some strings. I getting the following error:
+This is how my jinja2 file looks like:
+I want to generate strings like this  when I run and write them to a file. I can't figure out another way to get this done. Any Idea?",,2,1,,2020-12-24 23:51:27.560000+00:00,,2020-12-26 20:08:22.593000+00:00,2020-12-26 20:08:22.593000+00:00,,14329835.0,,14329835,,1,-1,ansible|jinja2,61
+65444166,To to unsubscribe from events before scene will be changed,"I have 2 scenes and I need to unsubscribe from events before first scene will be changed.
+And my GameManager:
+I load MainScene. Action was invoked 1 time
+Load Background scene
+Load MainScene. Action was invoked 2 times
+Load Background scene
+Load MainScene. Action was invoked 3 times
+Where is my mistake? Thanks",,1,0,,2020-12-24 23:51:13.990000+00:00,,2020-12-25 17:03:51.280000+00:00,,,,,6265559,,1,-1,c#|unity3d|action,21
+65444163,Kivy: ScreenManager stretches over the whole window,"I have a problem with ScreenManager and Screen in kivy file. I want to have a ScreenManager in BoxLayout, and it work when I don't use .kv file. But when I use kivy file, ScreenManager with &quot;ContentScreenManager&quot; id stretches to full window and does't see the previous code, and I only see the &quot;ok2&quot; button.
+I hope I have explained my problem well :)
+Python File
+.kv file
+Thanks for the help!",65444546.0,1,0,,2020-12-24 23:50:50.313000+00:00,,2020-12-25 01:37:46.830000+00:00,,,,,14885396,,1,1,kivy,21
+65444158,How to compare Strings ignoring cases in Java,"Newbie here I am trying to compare the brand and display to an array of Strings. Seems to be working now but I don't know how to make the comparison case-insensitive. All the options I found so far is to compare a string to another string. There is any way I can make that comparison? Right now only accept the values as stated in the array of strings.
+P.S. This was an existing homework that our instructor wanted us to build on it, hence why I am using the &quot;isValid&quot; methods for validation.
+Thanks!",65444170.0,1,0,,2020-12-24 23:50:11.920000+00:00,,2020-12-25 21:22:45.387000+00:00,2020-12-25 21:22:45.387000+00:00,,12181863.0,,12815178,,1,1,java|ignore-case,55
+65444157,How to stat multiple objects in a single request on minio,"I'm working with Minio and graphql in NodeJS and I'd like to set up a dataloader for my minio resources.
+I'm aware of the statObject function that lets me get the metadata of a resource by providing the bucket and name of the resource.
+I'd like to be able to pass in multiple names and essentially get an array containing the metadata of the objects with the names I passed.
+For example, something like:
+I haven't found anything like this in the documentation or when I was searching on the web. Does something like this exist?",65460916.0,1,0,,2020-12-24 23:50:03.790000+00:00,,2020-12-26 21:35:38.863000+00:00,,,,,10237430,,1,0,javascript|node.js|minio,52
+65444156,Mockito - Mock a method inside async method that is under test,Hi I am trying to do some unit tests with async methods. below is my code. the first line of methodUnderTest() where I mocked the doWork is returning null during execution and test fails. I tried different things related to async but nothing worked. What am I missing here.,65444376.0,2,0,,2020-12-24 23:50:00.220000+00:00,,2020-12-25 21:33:39.423000+00:00,2020-12-25 21:33:39.423000+00:00,,557091.0,,7706230,,1,2,spring|mockito,52
+65444148,Issue with Ipython Clusters,"I open jupyter notebook from F drive on my pc however when i try to click on start Ipython Clusters from jupyter notebook then jupyter notebook stop responding. I am unable to open any file.
+When i am launching jupyter notebook from C drive and clicks on Ipython Clusters then it works.
+Any idea how to fix it without uninstalling anything.",,0,0,,2020-12-24 23:49:03.017000+00:00,,2020-12-24 23:49:03.017000+00:00,,,,,13884263,,1,0,python-3.x|jupyter-notebook|ipython-parallel,12
+65444146,"Django - KeyError at /auctions/create 'category.' (New to Django, any help is appreciated!)","I am new to Django and creating a dropdown menu so that users can choose a category from the dropdown. This category will be saved on an entry on the website, when a user creates a new entry. I migrated the model, but I'm getting: KeyError at /auctions/create
+'category.' Any help is really appreciated.
+Views.py (Code for creating the dropdown menu for categories)
+models.py
+forms.py
+Here is the create part in views.py for creating a new entry. 'form' for CreateForm() is the model form for creating the entry. 'form1' for CategoryForm() is the model form for the category drop down list. The create function was working completely fine, until I added in the parts for the categories and category form.
+urls.py for applicable functions (I have tried many variations for the category one but I'm still having trouble figuring out what it should be, I have tried str and int.)
+Sorry I'm a beginner but any help would be great!",,1,0,,2020-12-24 23:48:31.640000+00:00,,2020-12-25 07:02:59.110000+00:00,,,,,14567126,,1,0,python|django|django-models|django-views|django-forms,28
+65444144,Cannot migrate model in django,"I'm trying to create a following/follower system on my django project, and I created a model to do so, but I cannot migrate it.  Here is the code:
+I can create the migration, but when I migrate, it gives me this error:
+I have no idea what this means.  Can anyone help me resolve this error?",,0,0,,2020-12-24 23:48:23.820000+00:00,,2020-12-24 23:48:23.820000+00:00,,,,,14690595,,1,0,python|django|django-models,20
+65444139,How to delete a Label in tkinter?,"Didn't really get a specific answer in any similar questions.
+This is how I defined to add programs from my PC to show in GUI.
+How can I make this button to do the same, just not to add programs, but to delete them from GUI?",,0,3,,2020-12-24 23:47:01.953000+00:00,,2020-12-24 23:53:11.470000+00:00,2020-12-24 23:53:11.470000+00:00,,355230.0,,14881031,,1,0,python|tkinter,45
+65444138,Does code navigation (specifically - go to function definition - F12) require an extension in VSCode for python when using Remote-SSH?,"I run VScode on Windows10 and navigate python code. However, F12 doesnt take me to the function definition. I've tried the following so far:
+When the python script (singe file), is physically located on my Windows machine, the following works as expected:
+Autocompletion (for any method already defined in the file)
+Code navigation on pressing F12 (for any method already defined in the file).
+If the same python file is opened over a Remote-SSH connection to a Centos7 machine, then the following works as expected:
+Autocompletion (for any method already defined in the file)
+However, the following does nothing:
+Code navigation on pressing F12 (for any method already defined in the file).
+Note:
+I believe I've disabled all plugins except for &quot;Remote - SSH&quot;.
+I have updated my VScode this morning to the latest",,0,0,,2020-12-24 23:46:54.800000+00:00,,2020-12-24 23:52:16.617000+00:00,2020-12-24 23:52:16.617000+00:00,,6454363.0,,6454363,,1,0,visual-studio-code,24
+65444137,Unable to navigate page with inertia-link if route is dynamic,"I cant find a way to navigate to a new page when inertia-link is clicked when using a dynamic route in laravel.
+route:
+Html:
+Why is this happening I dont understand the reason behind it? also how can I get the inertia-link to work with the Dynamic route?",65444210.0,2,0,,2020-12-24 23:46:52.780000+00:00,,2020-12-30 12:51:13.833000+00:00,2020-12-24 23:52:46.827000+00:00,,11824731.0,,11824731,,1,-1,laravel|vue.js|inertiajs,132
+65444136,Hiding divs with overflow,"I want the blue square to be visible and red square to be hidden below the blue square. Blue and red should not overlap, they need to be ordered one after the other. But my CSS is not doing this. What am I missing?",65444876.0,2,1,,2020-12-24 23:46:41.620000+00:00,,2020-12-25 02:57:50.797000+00:00,2020-12-25 00:01:58.060000+00:00,,1001532.0,,1001532,,1,1,css|css-position|overflow,48
+65444131,testing if a value == NaT,"converted a pandas column to datetime and I am left with some NaT values.  If the value is NaT I want to turn it into a specific date.
+tried it both ways where it am left with this error:
+AttributeError: 'NaTType' object has no attribute 'isnull'
+I just want to be able to loop through my column and have it perform like this:
+thank you",,0,2,,2020-12-24 23:46:00.690000+00:00,,2020-12-24 23:51:29.957000+00:00,2020-12-24 23:49:46.657000+00:00,,4909087.0,,6545550,,1,0,python|python-3.x|pandas,42
+65444126,How to write a loop when the database column status updates,"I am new to Kotlin programming.
+I created a Maven automation project with Rest Assured and .
+I am using test annotations as @ to repeat the same test for 4 times. I was using the  code to stop my test for about 30 seconds. But it's not working for me as expected. So I was planning to write a loop that runs my test when the order status gets updated in the database.
+When I run the Get API call it returns a  response body as below
+In the above JSON response, the orderstatus gets updated every 30 seconds, when the stored procedure triggers. The orderstatus gets updated as follows
+Authorized to Fulfilling in first 30 seconds
+Fulfilling to Settled in the second 30 seconds and
+Settled to Delivered in the last 30 seconds.
+So my question is, I want to write a loop that checks the database status continually, and when the orderstatus changes from Authorized to Fulfilling the Get API should run again for the second time. And when the orderstatus changes again after 30 seconds the Get API should run again from Fulfilling to Settled.
+Please find the code below and please let me know where can I add the For or While loop.
+code:
+enter image description here
+Can someone please help me? Please............................ Just give me an idea of how can I do it.
+I was googling and I found Awaitility methods. Can anyone guide me is it the correct approach or not.",,0,0,,2020-12-24 23:45:31.460000+00:00,,2020-12-27 06:59:50.430000+00:00,2020-12-27 06:59:50.430000+00:00,,14573349.0,,14573349,,1,0,java|for-loop|kotlin|while-loop|do-while,39
+65444125,scoped_allocator_adaptor seems to require allocator to be default constructed,"In my experiments with scoped_allocator_adaptor, I'm trying to pass the allocator obtained from main(..) into S1's constructor (more generally there would be multiple different types within S1 that would all use the allocator that was made available in the constructor). However, I get the compile error below indicating that the allocator should be default constructible. Can someone help explain why this might be the case? Is there some conversion taking place leading to the default constructed version of the allocator being needed?
+Compile error:",65444388.0,1,0,,2020-12-24 23:45:31.390000+00:00,,2020-12-25 00:53:16.083000+00:00,,,,,3882729,,1,0,c++|c++11|templates|stl|allocator,39
+65444124,How to get docker and npm workspaces to work fine without copying root master node_modules everywhere,"I have a project structure like so:
+and I have a  as follows:
+I was wondering how I can avoid having to copy , which I believe is a giant consolidated folder of all the dependencies that eliminates the need for the submodules to have their own separate  folder, over to each of the containers that will use it. For example, I plan to have a  added eventually, which will also have its own  that will be more or less identical to the one for  as shown above.",,1,0,,2020-12-24 23:45:29.210000+00:00,,2020-12-25 00:39:47.793000+00:00,,,,,11086815,,1,0,node.js|docker|npm,21
+65444116,How to show only coefficient section including the signif codes from summary(model) in rmarkdown?,"This one may be very simple but I just couldn't find anywhere that shows me how to do it, maybe it's the keywords I put in.
+Basically, in rmarkdown, when I input below, I will get the full output from the summary.
+However, I'm only interested in showing the coefficients section. I've tried to use below to output the coefficients only, but the *** sign disappears (signif codes). Is there a way to output the coefficients section including the *** sign?",65444694.0,2,0,,2020-12-24 23:44:18.040000+00:00,,2020-12-25 02:15:53.810000+00:00,,,,,14494483,,1,0,r|r-markdown,48
+65444115,How to place two check boxes at the same row in Vaadin CRUD?,"I have an  that has these two fields.
+And when I show this with Vaadin CRUD API.
+I get this view when I try to add a new row in the CRUD database.
+Question:
+I want to have both check boxes on the same row? How can I do that with this current entity?
+I know there is a way to have multiple check boxes at the same row, but that method is not the correct because it depends each checkbox need to become an entity and that entity is not connected to my database CRUD entity.
+In this example below, he have used
+To create multiple check boxes at one row. The problem is that the entity  is distinct from entity  if they begins with empty.
+Here he loads the  into a check box provider and this creates multiple check boxes on the same row.
+https://github.com/alejandro-du/crudui/blob/master/demo/src/main/java/org/vaadin/crudui/demo/ui/view/SimpleCrudView.java",,2,0,,2020-12-24 23:44:10.463000+00:00,,2020-12-28 22:53:16.543000+00:00,2020-12-24 23:53:52.453000+00:00,,1008405.0,,1008405,,1,0,java|vaadin|crud|vaadin14,47
+65444114,"modal pop-up via ajax call and php function, passing function issues","I have a button with on onclick event that passes the I am trying to have a pop up load through an ajax call via a php function with jquery. I am getting a response of Uncaught type error  $ is not a function, coming from the Ajax function. Clearly I am not passing this correctly but am unsure of the solution?
+ONCLICK CALL
+AJAX CALL
+PHP FUNCTION",65444340.0,1,6,,2020-12-24 23:43:59.200000+00:00,,2020-12-25 00:38:33.310000+00:00,2020-12-24 23:53:34.080000+00:00,,14316738.0,,14316738,,1,1,php|html|jquery,26
+65444112,Facebook login verification using nodejs in the backend and react native in the frontend,"I am trying to verify a user in the backend using nodejs who is login in a frontend made it in react native (I am not the one who made it) using the facebook sdk. I did it with google and I got the user email, first name y last name, that is what I am trying do to with facebook too. I tried this:
+I am receiving something like this from the frontend:
+I am using the id in this response as the user token but I got an error because that is not a token. So at this point I do not know what to do to get the user email, first name and last name when this one is loged in facebook.",,0,0,,2020-12-24 23:43:45.747000+00:00,,2020-12-24 23:43:45.747000+00:00,,,,,10387269,,1,0,node.js|react-native|facebook|sdk,18
+65444111,SQLite how to store decimal 0.00 and 1.10 instead of 0 and 1.1?,"This is my SQLite query:
+I want to avoid saving 0 instead of 0.00 or 1.1 instead of 1.10. Is it possible in SQLite?",,2,1,,2020-12-24 23:43:26.293000+00:00,,2020-12-25 09:07:43.910000+00:00,2020-12-25 00:14:08.687000+00:00,,9661424.0,,14884068,,1,-1,sqlite,53
+65444104,In psql how to run a Loop for a Select query with CTEs and get the output shown if I run it in a read-only db?,"My initial question is posted here (In psql how to run a Loop for a Select query with CTEs and get the output shown in read-only db?), which isn't defined well, so I am creating new question here.
+I want to know how can I use a loop variable (or something similar) inside a Select query with CTEs .
+I hope the following is a minimal reproducible example:
+Now I run the following for different values of  (1,2,3)
+and getting these outputs respectively for 1,2 and 3:
+My goal is to have a single query with loop or any other means to get the union of all 3 above select runs. I only have read-only access to db, so can't output in a new table. The GUI software I use have options to output in an internal window or export to a plain text file. The desired result would be:
+In reality the the loop variable is used in a more complicated way.",65444559.0,1,0,,2020-12-24 23:42:03.787000+00:00,,2020-12-25 06:01:42.730000+00:00,2020-12-24 23:44:57.220000+00:00,,330315.0,,2766803,,1,1,postgresql|loops,32
+65444103,Troubleshooting Elasticsearch returning unstable results. Can I query only a particular node in the cluster?,"I am querying Elasticsearch every 30 minutes for some count of events collected in the last 30 minutes. And I am expecting results ranging from  to . But from time to time Elasticsearch returns  which is a false query result. (I am seeing the events in Kibana and there is no deviation from the range  messages per 30 minutes).
+The query ran for months correctly with no false results and 1 week ago it started to return the incorrect results.
+I am using Elasticsearch version .
+What I have researched so far
+Were there any Elasticsearch upgrades/patches around the time it started? The service provider told me there were not.
+Was there in increase in Elasticsearch usage (ingestion/queries)? I see no deviation from the last month averages.
+Is the status of the cluster green? Yes, the cluster is in green health status.
+Are all the indexes having a green status? Yes, all the indexes have the green health status.
+Here is my query:
+The Elasticsearch cluster has 3 nodes (all with all 3 roles:, , ) and replication factor 2 for index shards.
+I came to analyse the Elasticsearch cluster node advanced analytics and I see these suspicious JVM Heap charts for 2 of the nodes:
+(the 3rd node has a very smooth chart)
+And these are the times when the query returned false results (blue dots) compared to all executions (green bars):
+I am suspecting that when the query hits a certain node, the query result is sometimes incorrect while for other nodes the query is always correct.
+Question: How can I query only a particular node of Elasticsearch? (the cluster is provided as a service and I am only exposed a load balancer FQDN for the cluster: ). Can I provide hints in the query or request metadata that I want my results delivered by a certain node?",,1,0,,2020-12-24 23:41:51.707000+00:00,,2020-12-25 01:40:30.080000+00:00,2020-12-24 23:53:06.950000+00:00,,454103.0,,454103,,1,0,elasticsearch,21
+65444102,"Explanation on globals(), and getattr() with (Python 3 within Jupiter Notebook)","I was looking for a way to get all the import version numbers within Jupiter's notebook, and I ran into this post. The code is working well, however, I would like to understand the globals(), and getters() part of the code.
+What I understand so far is that m.name and m.version are being joined together as a string. Then for every m in globals() which referred to all the library is being printed, however, what throws me off is what's in the if statement. The getattr() returns the value of the named attribute, so in this case, it'll return the name of the library. I'm not sure if I'm understanding this correctly.(&quot;)
+Output",,1,0,,2020-12-24 23:41:33.347000+00:00,,2020-12-25 00:07:09.670000+00:00,2020-12-25 00:07:09.670000+00:00,,2823755.0,,14519031,,1,0,python|python-3.x|jupyter-notebook,32
+65444099,Wordpress ask user's their desired role as a dropdown menu while registration,"I want to add a custom field to the Wordpress registration form without using any plugins. I want to add a dropdown menu with user-roles ( some roles I have created). Once the registration is complete the user should not have the ability to change their roles ( only admin can do that, selecting role as admin should not be allowed).
+Any help will be appreciated.",,1,2,,2020-12-24 23:41:28.367000+00:00,,2020-12-25 13:58:30.063000+00:00,2020-12-25 13:54:40.973000+00:00,,436560.0,,14698357,,1,0,php|wordpress,23
+65444096,Fragment animation,"I have read the documentation for the Animate transitions betwwen fregments and implemented it into my code
+and have seen videos on how to make animations when switching from fragment to another
+but nothing happens
+this is the code in my Main Activity for replacing the fragment by another
+I tried to use addToBackstack() method to see if it have something with the animation but nothing happens
+the fragment in the code above is made when i press on a BottomNavigationView item
+here's the xml for the animation in and out",65458044.0,1,0,,2020-12-24 23:40:45.410000+00:00,,2020-12-27 15:04:53.003000+00:00,,,,,11725672,,1,0,android-fragments|animation,13
+65444095,How can I implement the iMessage gradient in Swift iOS?,"What I'm trying to Achieve
+I am trying to implement the gradient bubble effect in Swift iOS, where the chat bubbles towards the top are a lighter color and the chat bubbles towards the bottom are a darker color, and when you scroll a bubble you see the gradient change.
+The link below is an example of the iMessage gradient effect.
+An example image of the iMessage gradients
+What I've Tried
+I created a view and added a gradient layer:
+I created a view and used it as a mask
+The result is like this Gif below:
+Example of my progress using a Mask View
+I was originally hoping to add a gradient to a  and have the  mask the gradient to achieve the above iMessage gradient effect, but then I realized I can only apply one mask to a  (not multiple), so I'm stuck on using this approach.
+Other Ideas
+My other ideas were to apply a gradient to each  and determine the gradient offset of each  manually based on the location of the cell, however, my main concern is this is not going to have good performance.
+Please Help
+I was hoping to see if anyone could outline a general method or link to how to achieve the iMessage gradient background effect?
+I understand this is a more general question and often times general questions are &quot;bad&quot; questions for stack overflow, but I'm really stuck on this problem and would incredibly appreciate any help or advice for achieving this effect!
+Thank you for your time!
+Solution Figured Out
+Wow, this is sketchy/hacky to implement. Below is a GitHub Gist of how its done.
+https://gist.github.com/josharnoldjosh/e04d41f10de6ab378da931ab11370d11
+The way it works is you set a background to the gradient, then, you mask each individual cell, &quot;cutting out&quot; a hole in the cell to be transparent. The rest of the cell must be white to simulate the background being white.",65445088.0,1,2,,2020-12-24 23:40:30.413000+00:00,,2020-12-26 12:54:17.130000+00:00,2020-12-26 02:10:08.337000+00:00,,14602519.0,,14602519,,1,1,ios|swift|uikit|chat|imessage,82
+65444094,Define common functions in kotlin,"For define Util(common functions) we can use 3 approach :
+First :
+We can define a  and add  to it like this :
+Then we can use this in every where like this :
+Second :
+We can define a  and add these  to  like this :
+we can  it and use this like :
+Third:
+We can define an  like this :
+Then we can use this like :
+suppose that we have reusable  that it use in different  ,  or  now is better to use first , second or third ?",,2,3,,2020-12-24 23:40:29.890000+00:00,,2020-12-25 22:54:22.813000+00:00,2020-12-25 08:59:47.583000+00:00,,10003284.0,,10003284,,1,0,android|kotlin|dependency-injection,84
+65444092,Delphi fillpath,"So first some background. Im developing a really simple 2D game, in Delphi 10.3, FMX, which at the bottom of the screen draws a random terrain for each level of the game.
+Anyway, the terrain is just some random numbers which are used in Tpathdata and then i use fillpath to draw this 2d &quot;terrain&quot;.
+I want to check when a &quot;falling&quot; object, a trect for example, intersects with this terrain.
+My idea was to get all the points of the tpathdata, every Y position of every X position of the screen width. This way i could easily check when an object intersects with the terrain.
+I just cannout figure the way how to do it, or if anyone has any other solution. Id really appreciate any help. Thanks",65445908.0,1,0,,2020-12-24 23:40:05.200000+00:00,,2020-12-25 06:51:47.400000+00:00,,,,,5645250,,1,0,delphi|path|polygon|intersect,60
+65444089,Stripe PaymentIntents + Subscription,"Anyone know how to make a Stripe subscription charge a card automatically on future period payments using the new PaymentsIntent SCA approach?
+Stripe's docs are in need of major pruning. I've never seen such convoluted and confusing docs as these ones.
+One of the confusing parts is where they say in the docs for PaymentsIntents:
+If I put automatic, the handleCardAction doesn't work anymore on the front end. If it has to be manual, does that mean that all future recurring payments (say Month 2, 3, etc) will need some kind of SCA confirmation by the user?
+I haven't found any elements examples for paymentintents and subscriptions with SCA and varying plans and prices not pre-set on the backend as they depend on each individual's parameters.
+If I use manual and handleCardAction, the subscription stays incomplete, despite the payment going through. If I use confirmCardPayment, the SCA popup never shows.
+Looking further into the subscription and intent objects, I noticed that a new subscription created on the server comes with its own paymentIntent object. So does it mean one has to stop creating a separate paymentIntent with own id? If you do, it doesn't work for completing the subscription, which stays as incomplete.
+However, the subscription's paymentIntent has a confirmation_method set as automatic by default -- this results in an error after SCA on the frontend: &quot;You cannot confirm this PaymentIntent because it has already succeeded after being previously confirmed&quot;. Interesting, why did it ask for the SCA then in the status: &quot;requires_action&quot;?? Are we supposed to change manually the confirmation_method on a subscription to &quot;manual&quot;??
+All this is quite confusing how to make subscription / paymentIntent work with SCA.
+My logic is simple: user customises a subscription and enters card details, all of which gets sent to the server =&gt; Server creates a new plan, product, customer and subscription =&gt; Sends intent (from Subscription?) back to FE =&gt; If required, SCA is performed and the subscription is confirmed. Is this not how it's supposed to be done? I don't have pre-set plans as they can vary. I just need the ability to charge a user automatically the same amount they paid for the next period.
+The examples and docs I've seen so far don't address the above use case. If anyone knows how to do it or can point to an example of how stripe elements and paymentIntents work with SCA and subscriptions that actually works and activates the subscription?",,1,2,,2020-12-24 23:39:31.503000+00:00,1.0,2020-12-26 21:06:33.247000+00:00,2020-12-25 21:22:08.873000+00:00,,5369792.0,,5369792,,1,2,stripe-payments,127
+65444088,How to flatten many nested layers of pattern matches?,"I have code that requires enums to be a certain type before continuing (and if they are not then it is an unrecoverable error). Expressing this with the  pattern is leading to a lot of indentation and syntax noise. Here's an example:
+In my code this nesting gets much larger than 2 layers. Is there a more concise way to express this which avoids creating extra blocks, or even the repetition of the  statements? Simply doing:
+leads to an error because let bindings have to be exhaustive (I was hoping it would just panic on failed match).",65444203.0,2,0,,2020-12-24 23:39:22.513000+00:00,,2021-02-20 13:31:02.310000+00:00,2021-02-20 13:31:02.310000+00:00,,2766908.0,,3788493,,1,1,rust|enums|pattern-matching|flatten,75
+65444084,Pyenv issues with Big Sur 11.1,"I can't run
+ I get crazy errors and have tried everything. How can I fix this?",,0,1,,2020-12-24 23:39:08.617000+00:00,5.0,2020-12-24 23:39:08.617000+00:00,,,,,13364476,,1,9,python|macos|pyenv|macos-big-sur,767
+65444082,Unrar the files with the name of the rar files,"I have folder with 4 rar (zipped) files.
+screenshot #1: rar files and names
+This is the python code to unrar them:
+After unrar process, the code deletes the rar files and extract the files inside rar files. I want the rename of the files as file1 from rarfile1, file2 from rarfile1, file3 from rarfile1, file1 from rarfile2, so on...
+This is the result I want:
+[screenshot #2: unrar files and their new names]",,1,0,,2020-12-24 23:39:07.837000+00:00,,2020-12-25 02:01:54.730000+00:00,2020-12-24 23:45:17.093000+00:00,,11405347.0,,11405347,,1,0,python|unrar,39
+65444074,How to Integrate Bitbucket Pipeline to Consul,"I'm trying to configure Bitbucket Pipeline and here is my problem; We are using Consul KV Store for application variables and before docker build phase, it should be completed so our variables can be replaced with the actual values.
+But I couldn't find any solution except custom base image or downloading confd command before build phase to be able to use consul. And to me,these solutions I found have some downsides. First, we are using AWS ECR and because of this, my images contains sensitive information such as account name. Bitbucket pipeline forces me to write it down openly.
+I couldn't define image like above.
+Second, If I decide to download it before docker build commands, it will be downloading everytime pipeline works, over and over again and it will make deployments last a lot longer.
+If you have any other integrations or workarounds, it will be much appreciated.
+Thank you.",,0,0,,2020-12-24 23:37:48.217000+00:00,,2020-12-24 23:37:48.217000+00:00,,,,,10423024,,1,0,bitbucket|consul|bitbucket-pipelines,9
+65444065,Google Apps Script. JSON to Spreadsheet - Result too long (API to Sheet) Work only with 100 reg,"Good morning, I have made a Script that connects with an APi, it returns a JSON, I serialize it and complete an array with it .. then I paste it in a Google Spreadsheet, but it only works with 100 records. However if in the same Script, under the JSON my Google Drive makes it complete.
+When I check the Logger it tells me the result is too long ...
+My code.",65475834.0,2,6,,2020-12-24 23:37:04.650000+00:00,,2021-01-03 03:20:16.417000+00:00,2020-12-24 23:42:40.417000+00:00,,11225291.0,,14885662,,1,0,json|google-apps-script,87
+65444064,Algorithmic problem solution without using for loop,"I am trying to solve the next case without using a for loop... Meaning trying to use only filter, reduce, map or combination of them.
+I got an array of Objects:
+The case is next:
+I need to overwrite each item's inner Object count key with the value of corresponding products with the Objects in which the Locations objects contain the matching Location Type to the items object label...
+For example, the output here should be
+I am totally stuck on trying to come to a solution without using a for loop or any kind of for loop, help would be much appreciated! Thank you",65444231.0,4,6,,2020-12-24 23:37:03.857000+00:00,1.0,2020-12-25 01:47:58.187000+00:00,2020-12-25 00:35:05.597000+00:00,,10669010.0,,14885666,,1,0,javascript|arrays|reactjs|algorithm|dictionary,109
+65444063,How to apply a map in a lambda?,"I have a column named &quot;Increasing_sequence&quot; in a dataset:
+Each column consists of a list of &quot;non-decreasing&quot; lists. I want to keep lists which meet two following requirements (in a new column named &quot;spikes&quot;):
+1- [the biggest number] - [the smallest number] &gt;= .1
+2- [the biggest number] &gt; 1.2
+so a desired output could be as following:
+I have developed the following code:
+Running this code,  function doesn't execute, I also tried to use a for loop which is not a efficient way so I'd rather to use the apply or map function",65444098.0,1,1,,2020-12-24 23:37:02.663000+00:00,,2020-12-24 23:55:02.520000+00:00,2020-12-24 23:55:02.520000+00:00,,4001592.0,,4968908,,1,1,python|pandas|list|lambda|apply,45

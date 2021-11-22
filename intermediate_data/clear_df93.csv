@@ -1,0 +1,19 @@
+score,creation_date,body
+293,2020-12-10 09:23:08.160000+00:00,"Like @Tuấn Nguyễn described, you need to:
+Go to Command Palette by pressing Ctrl + Shift + P,
+In the input that pops up at the top of the VS Code, start typing
+and hit Enter key.
+From the menu that replaces the input, pick  and again press Enter key."
+188,2020-12-12 14:49:02.863000+00:00,"As noted in the release email, linked to from the release tweet and noted in large orange warning that appears on the front page of the documentation, and less orange, but still present, in the readme on the repository and the release on pypi:
+xlrd has explicitly removed support for anything other than xls files.
+In your case, the solution is to:
+make sure you are on a recent version of Pandas, at least 1.0.1,
+and preferably the latest release. 1.2 will make his
+even clearer.
+install : https://openpyxl.readthedocs.io/en/stable/
+change your Pandas code to be:"
+4,2020-12-16 15:36:02.383000+00:00,"Is there any way to make this change ""sticky""? Enabling workspace library execution works, but it seems when I close VS Code and re-open the same project, I have to enable it again."
+19,2020-12-10 09:47:05.970000+00:00,"Hi. Can you tell me why I'm suddenly seeing this? And wether I should uninstall TSLint and use ESLint instead, like the documentation says? It says it's been deprecated."
+3,2020-12-18 21:09:00.510000+00:00,"@CollinM.Barrett From the same menu choose ""Always enable workspace library execution"""
+1,2020-12-14 14:13:22.780000+00:00,"@user1186050 Yes, you should uninstall TSLint and use ESLint as a recommended approach. While, this is visible as Microsoft may have done needful things to get rid of TSLint and mark it deprecated. Check my answer above: https://stackoverflow.com/a/65288426/7629107."
+0,2020-12-14 07:17:52.687000+00:00,@kyox - there was a notice on the repo for over a year and various announcements on the mailing list and elsewhere going back over four years.

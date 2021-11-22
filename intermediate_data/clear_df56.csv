@@ -1,0 +1,397 @@
+score,creation_date,body
+4.0,2011-03-23 11:38:38.993000+00:00,Was that really so hard?
+37.0,2013-08-20 19:37:43.850000+00:00,"Aside from the SERVER-6310 mentioned by Matt Johnson, one other workaround is to use the  operator to add or subtract from the UTC time zone to ""shift the time"" into the correct local zone. Turns out you can add or subtract time in milliseconds.
+For example, assuming I have a Date field called . I'd like to query for EDT. That is -4 hours from UTC. That's 4 * 60 * 60 * 1000 milliseconds. 
+So I would then write the following projection to get  in local time for all my records:"
+0.0,2014-09-08 11:19:48.267000+00:00,"It's probably because you don't have jdk installed in your machine. I had exact same problem in first run. Open a terminal (CTRL+ALT+T) and type:  
+When done setup Java environment variable. Steps as follows: 
+Either in the beginning or end of the file write:  (location may vary depending on the installation of your Java)
+save and exit editor.
+Load the path variable again using the terminal: 
+Couple of helpful links for further clarifications: 
+How to install JDK on Ubuntu (Linux)?
+How to set JAVA_HOME for OpenJDK?
+Hope this helps."
+0.0,2014-03-21 17:29:56.337000+00:00,"Check Adapter pattern. This allows you to make incompatible interfaces compatible.
+With the Adapter pattern you do not exterd the classes. Instead, you write a new class implementing your interface and forwarding (delegating) the call to the real object."
+209.0,2012-02-05 01:05:17.437000+00:00,"Well, it was easier than I thought (well, not really, let's say as easy as it should be):
+Which returns:"
+1.0,2014-01-29 15:53:43.567000+00:00,"You could use an Oracle linked server on SQL-Server. In this way you would use the Oracle data directly from SQL-server.
+Take a look at this tutorial: http://blogs.msdn.com/b/dbrowne/archive/2013/10/02/creating-a-linked-server-for-oracle-in-64bit-sql-server.aspx"
+68.0,2009-08-07 14:44:46.927000+00:00," is used when referring to a member of an object.
+ is the Scope Resolution Operator and is used to refer to a static member of a Class.
+Consider the following class:
+You would call the function  using :
+But would use  to call the functon , as it is a static member (a member which doesn't require an instance of the class to be called):
+Also, while we are talking about the difference between static members versus instantiated members, you cannot use  to refer to the current instance within static members. You use  instead (no leading ) which refers to the current class, or  if you want to refer to the parent class, or if you have the pleasure of working with PHP 5.3.0,  (which allows for late static binding).
+The documentation uses  to refer to a function inside a class as the class name in the header is not an instance of the class. Still using the same example, a documentation entry referring  to the function  would use the following header:
+But unless the documentation specifies it's a static member, you will need to use  on an instance to call it:"
+0.0,2013-08-16 10:54:55.677000+00:00,"Use this code 
+Then follow below points:
+Set your image to Imageview as 'src' and not as 'background'.
+Crop your image width and height related to your Frame height and width."
+0.0,2012-04-28 18:05:44.533000+00:00,"Ran into the same problem, what I ended up doing was disabling global CSRF verification and doing it in the controller.
+So in my application/config/config.php, I set
+In my custom controller (application/core/MY_Controller.php) I have an attribute to control csrf_protection like so:
+My other controllers extend MY_Controller, so I can just set $csrf->protection false as I need. For instance, my Auth controller disables CSRFchecks:
+Hope that helps, it gets the job done without hacking the core."
+4.0,2011-06-27 17:42:06.967000+00:00,Is it possible that maybe you're re-binding the listbox on each postback? That's a common error. Just make sure that you populate the control only if  is false. Your code seems OK otherwise.
+22.0,2010-05-16 21:26:58.193000+00:00, is closing the standard output stream after it has read all the data it needs. You should handle the exception and stop writing to standard output. The following code will abort the loop once standard output has been closed:
+1.0,2013-03-14 10:29:52.523000+00:00,"You can use  method for .
+example :"
+1.0,2008-10-10 14:08:30.423000+00:00,You could use local names in your XPath queries like this:  
+4.0,2012-02-22 04:33:39.910000+00:00,"You can use html5 email to validate but it only checks for XXXX@XXXX so that's a valid email lol
+for me at least I would say just use jquery validate and always to server side validation 
+it won't hurt to use the email type as browsers that don't support it will convert to text type
+you may want to look at modernizr for backward compatiblility"
+1.0,2011-12-20 19:50:01.890000+00:00,"Renaming the file isn't the source of your problem. The main race condition with your script is multiple requests detecting an expired mtime and all writing to .
+A better approach is to perform an exclusive, non-blocking flock (assuming non-windows) immediately after detecting an expired mtime, buffer the output, overwrite the file and release the lock. If  returns false, then another process is writing to it and the current process should skip the write entirely.
+If a request is made during the lock, the web server will wait until the file write is complete (and the lock released), then serve the file."
+1.0,2010-02-10 10:16:35.087000+00:00,"If it's in the Underlying SQL Server call...
+You can do  like you can 
+Edit:
+If it's in the table or for a cell in the report, then there is no equivalent in the SSRS SUM function."
+0.0,2013-04-23 10:00:07.720000+00:00,"You need to add some responsive css. 
+By adding specific css to the above media queries, you can modify the layout per the device. Don't forget to put the above media queries below your css ( to be on the safe side). 
+Hope this solves your issue. "
+2.0,2013-10-15 22:39:41.053000+00:00,"I am dealing with this problem right now.
+You can use what qurn said, and change clustermarker style, so the icons won't overlap. 
+Then set ""offsetX"" and ""offsetY"" properties. 
+Ex: If you have 4 categories / groups you can use offset: -20,-20 | -20,20 | 20, -20 | 20,20 
+The goal is to get the icons around your point.
+In case this won't help you, take a look at Google Maps Spiderfier.
+Hope it helped."
+0.0,2013-01-23 09:26:50.407000+00:00,"Yes, stop using async HttpWebRequest* for now because there is a bug being discussed in the Mono list. A patch has been provided, but apparently is not good enough and has been reverted from master.
+If you're good with low level code, it would be nice that you contribute a patch.
+* The fastest way to stop using the async infrastructure is calling mono witht eh environment variable MONO_DISABLE_AIO=1. By the way, if you're using more than one thread anyway, maybe a Parallel.For would be enough but keeping the code non-asynchronous? The best use-case of async is actually to avoid threading and still manage to achieve parallelization (or rather, avoid blocking waits)."
+1.0,2014-09-27 02:03:47.677000+00:00,"The third parameter in the  method is the interval in milliseconds. You're setting that as the number of milliseconds that have elapsed since January 1, 1970 00:00:00.0 UTC plus 60000, making the next scheduled event about 44 years in the future. Change your code as follows:"
+0.0,2013-10-14 16:51:10.287000+00:00,"The reason you are stuck in infinite loop is because  in your infinite loop &amp; the file/socket descriptors that are in your structure array  because those clients have terminated. You have chosen a very poor mechanism of using select.
+You should do the like this:"
+7.0,2012-12-19 20:11:26.283000+00:00,"Your  in the first query is filtering out items that are being included in the  in the second query.  Remove that  and you'll see that the sum from the first will equal the sum from the second.
+If you want the  to match the original, try this:
+The  needs to be inside the , not outside it.  Otherwise, you're getting the  , not the  of  items.
+If you want the  to be of all the items (not just the  ones), then just remove the  altogether (no different than your second query in your specific situation, but different in meaning over all situations):"
+9.0,2010-01-07 22:44:55.730000+00:00,"  on IE, I cannot disambiguate an element with a z-index of 0 from an element who will inherit the z-index of its parent
+You're looking for elements that have an effective z-index. z-index is effective only on elements with a  style other than . So you should look up the parents until you find a positioned element with  non-.
+(This will give you the innermost z-index. Stacking contexts can be nested, so you might instead want to look at the outermost z-index by looking at the furthest ancestor to be positioned.)
+On IE6-7, an element without a  incorrectly receives an automatic  of . So this will indeed give you a  reading when you look at the positioned element without a  in IE6-7... this may be wrong, but it's reflecting IE's already-wrong rendering which you'll have to avoid or work around anyway.
+(In IE8 this is finally fixed and you will indeed get  for the first alert, assuming a suitable doctype/EmulateIE setting to send it into IE8 native mode.)"
+0.0,2012-03-15 04:23:44.753000+00:00,"By interactively, do you mean as typed? Then use onKeyPress event on your textbox. You might have to do something strange, like create a setTimeout, if you don't want to write a lot of code to monitor cursor position."
+3.0,2014-06-13 10:44:36.290000+00:00,
+10.0,2010-09-22 12:55:10.947000+00:00,"What exactly do you have in mind? If you're looking for some sort of automatic tool, that generates GWT Java code from Javascript, then I'm afraid there's no such thing.
+You can (and should) use JavaScript Native Interface (JSNI), probably in combination with JavaScript Overlay Types (JSO) to wrap your existing Javascript code, so that it's possible to interface with it from GWT's Java code. See the Getting to really know GWT, Part 1: JSNI (and Part 2) post on GWT's offcial blog for some pointers and use cases."
+0.0,2014-09-09 14:37:17.583000+00:00,"in regards to the comment I would suggest you change your query to something like this.
+See my POST here for more details"
+1.0,2013-08-14 14:29:12.487000+00:00,"I don't think this part looks correct: 
+Basically, this loops through every global Javascript variable (which has nothing to do with cookies) and adds them to the cookie value. Is that really what you want? Look at the output when I run the following in Chrome: 
+That's going to be a gigantic cookie.
+All of that aside, the error that your seeing looks like a problem with the Same Origin policy. You can't reference Javascript from a domain outside of your page's domain unless the external domain has a special setup. Google has a few servers with that special setup, so if you don't want to host the jquery file on your server, you could use this URL: 
+https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+Honestly, though, it seems like you have a lot of issues that you're dealing with (cross domain issues, jQuery being undefined, cross-browser compatibility). You should probably try and simplify your code to see if it works in simple cases. Rather than storing all Javascript variables in a cookie, see if you can just store a simple string value in a cookie and see if your code is cross-browser compatible. If that works, try adding the expiration, then domain/path, etc. This way you can focus on one problem at a time."
+1.0,2011-12-10 08:39:42.573000+00:00,"You have two  variables. 
+One is a private variable inside  - you are initialising that one.
+The other one is a module-level one and you are not initialising that one. 
+Delete the  variable declarations inside "
+1.0,2013-05-10 05:53:55.710000+00:00,"You should not dynamically allocate an array of . 
+If you decide to use C++, you should be using STL and collections. Like this:
+If you decide to use C, a dynamically allocated string list could look like this:
+If you really need a dynamic array of strings, you can do:
+But since there is no realloc possible in this case, you will have to copy the entire array into new one if you need to enlarge it."
+3.0,2009-10-06 16:07:28.630000+00:00,"It seems the original code correctly reads the entire content. 
+The problem seems to be in making use of that binary data - printing it out will truncate at the first null, making it appear that only 10 bytes are present.
+You can't use any methods intended for strings or character arrays to output binary data, as they will truncate at the first null byte, making it appear the array is shorter than it really is.
+Check out some other questions related to viewing hex data:
+how do I print an unsigned char as hex in c++ using ostream?
+Converting binary data to printable hex
+If you want to append this to a string - in what format? hex? base64? Raw bytes won't work.
+Here's the original code I posted. A few minor improvements, plus some better diagnostic code:
+Now, is ret really 10? Or do you just get 10 bytes when you try to print the output?"
+6.0,2010-07-12 05:32:51.670000+00:00,If you're using ATL why not just use 's methods?
+3.0,2012-03-02 09:47:15.507000+00:00,"Since a user can subscribe to many tags and a tag can be subscribed by many users, you will need to associate User and Tag by  association ( either through  or  similar to Tag and Post models' association).
+Then in PostsController, select all posts with tags that the user has subscribed to.
+If you are using Will Paginate for pagination, you might get an  error, since using  will result in an array. So, you might need to add  to the corresponding controller."
+1.0,2013-09-25 09:57:03.470000+00:00,"Number 4 is the right approach. There is no guarantee that any of your app code will run when an APN is received, except on iOS7. So when your app starts, it has to check with your servers for any new information that it should display.
+It's simplest to code this to alway ask your servers for the latest information to display, rather than rely on the information in the APN. Use the information in the APN only to determine which new information to navigate to, so that the app displays whatever the user tapped on.
+This has changed with iOS7, where you can use the  background mode to be launched whenever a push message arrives. See https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:didReceiveRemoteNotification:fetchCompletionHandler:"
+0.0,2012-10-21 15:26:40.777000+00:00,"You are missing  in the line  : 
+near  FieldByName( . Are you sure you pasted this code correctly."
+17.0,2012-05-02 15:31:19.800000+00:00,"Probably your jQuery version is too old. You need at least jQuery 1.5 for jqXHR objects to implement the Promise interface you are using.
+If you cannot upgrade for some reason, simply use the  option:"
+1.0,2011-07-08 15:05:16.083000+00:00,I can't see anything wrong in that implementation other than the fact that it doesn't have any visible end result which leads me to believe it may not exactly match your failing code.
+2.0,2014-02-24 10:34:44.500000+00:00,"Your code is working pretty fine.
+As you can see the image.. Google have blocked the request from your IP address as it detected unusual traffic activity.
+You can always check the HTTP Status Code what your requesting URL gives by..
+If everything is normal , you would get a  response, else you will get some other status code.
+Here are the most common HTTP Status Codes.."
+0.0,2014-01-06 16:04:22.820000+00:00,Try this:
+0.0,2014-06-29 19:20:29.747000+00:00,"You don't need a mocking framework at all if you're only overriding one method and want to do it by actually defining the method.
+If it's a class, just extend your class, override the method and inject your extension.
+If it's an object or a final class of course you can't extend, but then you wouldn't be able to mock with many frameworks either, or inject an alternate easily."
+0.0,2013-07-02 04:47:40.653000+00:00,"I was getting this problem when I tried to use  from the .  Try using the  instead.
+Run -> Run As -> Grails Command (run-app)
+See this ticket."
+4.0,2012-11-05 18:35:46.460000+00:00,"The compiler's right: you're trying to use a  where you need an .  Since , one solution is just to insert an upcast:
+Alternatively, you can indicate that you don't want the input to be (exactly) an , but instead some particular subtype:
+This is probably what you really want (the type is more specific).  This is equivalent to the more verbose definition:"
+1.0,2011-07-26 12:46:17.380000+00:00,"No difference, this is so called Yoda coding convention.
+is equivalent to 
+and to "
+1.0,2009-05-10 19:07:18.023000+00:00,"How about
+Note this only works if  is a . Detached rows (not in a  are ignored).
+Don't forget to call AcceptChanges."
+0.0,2013-10-16 16:01:40.530000+00:00,I think your if $.==1 is getting you. That's lines processed: you're telling it to just process the first line of the input.
+8.0,2011-03-16 18:17:05.037000+00:00,"I've played a bit with the functions suggested by amalloy. I don't like the explicit specification of the number of argument to curry on. So I've created my custom macro. This is the old way to specific an high order function:
+This is my new macro:
+And this is the new implicit way:
+As you can see there is no trace of (curry) and other stuff, just define your currified function as before.
+Guys, what do you think? Ideas? Suggestions?
+Bye!
+Alfedo
+Edit: I've modified the macro according the amalloy issue about docstring. This is the updated version:
+I don't like the if statement inside the second binding. Any ideas about making it more succint?"
+-2.0,2011-09-30 19:52:18.377000+00:00,"Your approach is wrong. You will never get sleep to be accurate, and the more busy your machine is, the more wrong your sleep loop will become.
+What you should be doing is looking at how much time has passed and adapting accordingly. Although spinning around Sleep is a bad idea, ""better"" ways of doing it will be significantly more complex. I'll keep my suggested solution simple.
+Call DateTime.Now.Ticks and save it in a variable (startTick).
+In your loop, call Sleep as you are already doing.
+Call DateTime.Now.Ticks again and subtract startTick from it - this value will be how many 100 nanosecond units of time have passed since you started the fade (timeSinceStart).
+Using timeSinceStart calculate how much you should be faded with that much time elapsed.
+Repeat until you have completely faded it."
+0.0,2013-03-05 11:29:12.723000+00:00,"Although it doesn't answer the immediate question, I used some of the ideas Lukas Knuth gave me to solve it.
+The process is now that a keycode of 0 is caught and handed to a function that runs the contents of the input box through some Regex validation. If the validation fails, then the last character is removed from the input box.
+I apologise if anyone comes to this question seeking a solution for the HTC One X passing through 0 as the keycode, after a couple of days of research and experimentation, I couldn't find a solution, so I worked around the problem instead."
+0.0,2013-06-12 15:22:47.423000+00:00,"I've played around with this a bit more, and realized that I must have been storing an element from a previous instance of context. I've made sure that I don't use any elements that are from a context that has been disposed and everything seems to be working.
+Thanks for the help."
+1.0,2014-05-04 04:03:08.550000+00:00,"This is a classic notifier approach. There are several options (the most basic one using an occurance):
+In the init block you add your Initializing call. In the Start Recording you add the 'Start Recording' DLL call, use the error out to feed into the 'Wait on Notification' function, this makes sure the time-out start at the correct moment. If you detect that the measurement call is done you can use 'sent notification'.
+If the 'Wait on Notification function times out you can use the output boolean timed out to instruct the case structure to send the 'Cancel' function."
+0.0,2014-07-15 20:26:48.823000+00:00,"Raspberry Pi's only support OpenGL ES 2.0 and they're isn't any way around that.
+OpenGL ES has no immediate mode rendering (glBegin, glVertex, glColor). You'll have to load your geometry into VBO's and render that way.
+You'll also need to write basic shaders and pass your projection and modelview matrices in via glUniformMatrix.
+Immediate mode rendering is pretty much only available on the desktop, iPhone's, Android's and Blackberry's use only OpenGL ES and pretty much any game console will use an API very similiar to OpenGL ES.
+Bottom line: You'll need to ditch the immediate mode rendering and learn to use the ES spec.
+These links should help...
+http://www.khronos.org/registry/gles/specs/2.0/es_full_spec_2.0.25.pdf
+http://www.khronos.org/files/opengles_shading_language.pdf"
+1.0,2014-07-21 19:37:10.030000+00:00,"You can't do that. The callbacks are going to be called on the same thread that is calling the  method.
+The callbacks cannot be called until your calling method returns. You probably need to call  in yet another thread."
+3.0,2009-09-23 19:36:39.753000+00:00,"I ended up checking it myself.
+I have the region from the target element
+Then the mouse coordinates
+And then a simple if statement to check if the mouse coordinates were in the region"
+3.0,2010-02-22 16:02:44.913000+00:00,"Assuming that the example you've given works to output the first author, the most direct solution to get all the authors in a comma-sperated list would be the following:
+Then you'd output  in place of 
+A more ""Drupal"" way of doing it would be to copy modules/cck/theme/content-field.tpl.php to your theme directory, then make a copy of it named content-field-field_author.tpl.php as well.  You can then make changes to the new file which would override how the values are displayed for the ""author"" field specifically.  Then you could output themed field_author value wherever you want in a custom node-[node_type].tpl.php file.  (You may need to clear cached data via the button on Administer > Site configuration > Performance for the custom templates to be loaded the first time.)
+If your view's ""Row style"" is set to ""Node"" then it will use the node and field templates as well.  If you have it set to ""Fields"" then you'll need to theme the field in the view separately. See your view's ""Theme: Information"" for views templates you can override in your theme.
+Edit:
+Missed the fact that you wanted a natural language list.  That takes a bit more, but here's a Drupalized function that will do just that:
+Then, of course, use the following in place of the last line my first code block above:"
+0.0,2011-11-12 11:36:21.757000+00:00,"I believe you cannot do that (and I think it is wrong to do that). An executable is operating system and machine specific (on some systems like MacOSX, there are fat binary executables, which are a mix of various machine specific variants for the same operating system.).
+The only way to have a system &amp; machine ""independent"" program is essentially to target it to some single common ""virtual machine"" (in the broadest sense). In your case this VM is the Lua VM (it could be the Java VM for others, etc.). But you have to suppose that your user have it, or to provide one which is machine &amp; system specific.
+And I would personally dislike the idea of an application which is not installable (because it is then not easily uninstallable). "
+9.0,2013-09-29 14:41:11.150000+00:00,"Entity Framework creating IQuerable of the most recent
+This is what finally worked for me:
+Also edited my original post with correct query i was going for.
+Thanks."
+3.0,2011-10-13 13:32:20.117000+00:00,"It looks like you are calling  the "".withSandboxDestination()"" so you will want to use the Development Push SSL Certificate. This can be configured in the ""App Ids"" section.
+Note to configure your App in the ""App Ids"" section you need to be Team Agent"
+7.0,2010-10-18 18:50:12.383000+00:00,"Updated with versions tested in FF3.6, Opera10, Chrome6, MSIE8:
+194/270: with async, with getElementsByTagName cached
+192/297: with async, no cache
+189/259: no async, with getElementsByTagName cached
+188/286: no async, no cache
+184/242, no async, appendChild (no cache needed), unknown if it's supported everywhere
+Credits:
+casablanca:  /^https/.test(location)
+matyr: relative path, commas between statements, assignment to async
+some: no anonymous function and usage of _gaq, non-cacheing of getElementsByTagName, move assignment of async, /^....s/
+David Murdoch drop 
+Also, changing  to  may improve compression in your HTML source if you use "" to quote tag attributes.
+See comments on this post for more information
+Since this post now is community wiki and the accepted answer, I removed my first attempts (you can find them in the revision history if you are interested) and only have the latest revisions visible. See the comments on this post for more information. /some"
+1.0,2013-04-21 11:47:41.970000+00:00,"This is my full solution. I'm sorry, I missed some div names, but with correct names the last solution not yet worked. This work fine. First I get the current scrolltop, reload the div, and set the scrolltop.
+It runs in every 6000 millisecond. It's simple now and work. I have my divs. uzidoboz div have got overflow. My content is in that. But I load it all to the uziRefresh div..."
+0.0,2012-04-20 10:18:22.400000+00:00,"First of all cache jQuery collections. No need to call  multiple times. Also setting styles with plain javascript like  will improve performance as well.
+See demo http://jsfiddle.net/Xvqfr/1/"
+1.0,2010-06-28 17:10:34.430000+00:00,Johnathan Snook has a article on the IE6 bug and its fix. I hope this solves the problem.
+132.0,2012-08-27 13:02:42.347000+00:00,"You can do it this way:
+Declare interface:
+Let your Activity imlement it:
+Then pass your activity to ListAdater:
+And somewhere in adapter, when you need to call that Activity method:"
+0.0,2014-01-11 20:53:39.280000+00:00,You can do something like this
+3.0,2011-02-19 06:02:33.360000+00:00,"Nonblocking servers are the best choice provided all your libraries provides nonblocking apis. As mentioned in  your second question if a library blocks (eg database lib making a blocking call), the entire process/thread blocks and the system hangs. Not all of the libraries available are asynchronous which makes it difficult to use tornado/eventlet for all usecases. Also in a multi-core box multiple instances of nonblocking servers needs to be started to use the box capacity completly.
+Tornado/Event servers are similar to java nio based servers. There is one conceptual difference between a Tornado and Eventlet. Tornado follows a reactor pattern where the single process waits for IO(socket) events and dispatches them to appropriate handlers. If handlers are nonblocking, best performance can be expected. Typically code written for these frameworks consists of a series of callbacks making it a bit less readable than a synchronous server .Java NIO servers comes under this category.
+Eventlet performs the same task but with a cleaner interface. Code can be written as in the case of synchronous server without using callbacks. When an IO is encountered, eventlet schedules another userspace process(not right terminology). 
+Apache webapps are more popular that these because of few reasons
+It is relatively easy to write synchronous code
+Not all required libraries are asynchronous.
+But for writing a chat application which handles lots of connections a multi-threaded server will not scale. You have to use async frameworks like twisted/event/Java NIO."
+2.0,2013-05-07 12:35:12.973000+00:00,You need to build the page first (thus populating your _deploy directory) via  and then push those contents to the gh-pages branch via .
+4.0,2010-01-25 11:07:42.403000+00:00,"I'd recommend defining your own  implementation by subclassing .  That way you can ""back"" your model with any suitable collection (e.g. ).  When an ActionEvent is fired you would typically amend your underlying collection and then fire a  to cause the  to be repainted."
+0.0,2009-02-05 06:27:22.043000+00:00,"I've fixed it now, it turns out that the spec command was running the old stock version that comes with OS X so it couldn't find the gem."
+0.0,2009-09-30 16:27:46.737000+00:00,"You need to change the individual cells.  
+This is VB code lifted from an app where I am able to successfully do this, but it shouldn't be to hard to convert this to c#."
+9.0,2013-09-18 19:49:01.640000+00:00,"If you want to forgo MVC entirely, thereby avoiding all the HttpContext mess...
+This uses the awesome open source Razor Engine here:
+https://github.com/Antaris/RazorEngine"
+2.0,2010-12-05 20:11:01.890000+00:00,"The  symbol is not a program argument, its a shell operator - it only works in a shell that understands it as part of parsing a command line.
+Apparently, Eclipse doesn't use a shell to start up a Java programs and it doesn't itself process shell operators like  for starting up.  I'll bet if you printed the command arguments in your program, you'd see  and .  A shell would have processed them and not passed them to the program.
+Unfortunately, I don't see anything in my version of Eclipse that suggests how to redirect the standard input to come from a file."
+3.0,2012-08-17 19:02:04.040000+00:00,"The  command can take an  flag, which allows you to add data to existing files without overwriting old data. However for .mat files  only allows you to add new variables. If you specify a variable name that already exists in the .mat file it will be overwritten.
+However, if you are saving to an ASCII file then data is simply appended to the end of the file.
+This presents you with two options.
+Save using a .mat file, but for each variable you want to save you would need to load any variables with the same name from the .mat file, combine old variable with the new variable and then resave it to the file.
+Save the matrices using an ASCII format, and then convert the from ASCII when you load the file.
+Update: After re-reading your original question, I have to ask why not save in a single operation rather than saving line by line? "
+2.0,2013-09-19 00:46:43.250000+00:00,"This is your problem:
+Line 25 of your source appears to be:
+It appears that  is likely . I see that your  method attempts to set  to something, but you will want to make sure that's not returning ."
+11.0,2011-03-04 09:14:01.317000+00:00,"I think that you shouldn't use removed iterator at all - in case of lists this causes serious problems, shouldn't be different for maps.
+EDIT by Matthieu M: this code is well-formed in C++0x and allowed as an extension by MSVC."
+3.0,2013-01-05 23:43:22.070000+00:00,"why did you open a  tag again, you are already in echo line?
+and what is ? Is that a variable, did you forget to put ?
+echo prints out the string that you gave as parameter,
+As @hakre mentioned about it,  is used to concatenate strings.
+So you can use it in echo line,
+And It's not important weather variable defined as a string. It would be a constant variable."
+0.0,2014-06-19 17:30:28.440000+00:00,"Or...(du-uh, don't know why I didn't think of it sooner) just use the cell/column/row tags:
+Now you can add your properties to your ""My"" classes:"
+0.0,2011-06-28 19:48:21.737000+00:00,"On my servers I don't define a primary site in my main httpd.conf file. I do all the virtual hosting in separate application specific conf files.
+The only thing I have in my main httpd.conf is the line 
+Here's a gist of a way you could try it. I pulled all the wedding site configuration out of your main site configuration. I set it so davidstites.com, afewguyscoding.com, and www.davidstites.com all redirect to www.afewguyscoding.com. The other domains (milehigh et al) are unaffected. I'm not sure where you wanted those to go.
+All the wedding related domains redirect to www.davidheartsrachel.com.
+I did notice what I think might have been a mess up in your main site configuration. Toward the end where you set your directory permissions you were using the /var/www/afewguyscoding/current/public directory instead of the /var/www/wpress that is the DocumentRoot. The correction I made there is on line 74 of the first document in that gist."
+0.0,2012-09-23 12:10:20.103000+00:00,"XMLHttpRequest is the best way, as far as I know, but there are other techniques too. There is the old school way some sites still use. Using hidden iframes and sending request through it.You create an iframe with javascript, append it with 0 width and height and the request the php file. The output must be script that somehow communicates with the parent window script."
+0.0,2010-07-18 01:04:53.043000+00:00,"Read Generic BinaryReader and BinaryWriter Extensions, a great way to handle generic casting the unmanaged way.
+For VB.NET (safe code only, can also be achieved in C#) use the following:
+Imports System.IO
+Imports System.Runtime.CompilerServices
+Imports System.Runtime.InteropServices
+You can now implement the same functionality for , for  etc."
+143.0,2013-10-08 13:59:04.647000+00:00,"I found an answer on another thread, but I'll answer the question in case someone else wonders. 
+Just replace the  in  with this:"
+0.0,2010-12-08 14:41:35.687000+00:00,"EclipseLink JAXB (MOXy) (I'm the tech lead) has an XML mapping file.  For your example the mapping file would be:
+binding.xml
+Domain Model
+This would map the following classes:
+XML
+To/from the following XML:
+Demo Code
+As demonstrated by:
+jaxb.properties
+To use MOXy as your JAXB implementation you need to include a jaxb.properties file with your model classes with the following entry:
+Note
+This example uses the simplified bootstrapping available in the upcoming EclipseLink 2.2 release.  For an example using EclipseLink 2.1 see:
+http://wiki.eclipse.org/EclipseLink/Examples/MOXy/EclipseLink-OXM.XML"
+0.0,2012-01-20 03:42:22.350000+00:00,"Instead of calling the VLC binary directly in your console command, try calling  against that command (i.e., ).
+Note that this call will return more or less immediately (so if your application is depending upon the call returning in order to determine when VLC has been terminated, it will have to yield some other way)."
+0.0,2010-12-10 09:27:57.183000+00:00,"I've heard of OCI API that does it, but not sure if its available for C# (ASP as u mentioned). The only option is to kill that process. "
+0.0,2010-06-24 23:14:55.763000+00:00,"Rather than fudging around and trying to find a way to pass contextual information while using the insertion operator, I suggest you make something like a print method like choobablue suggests. It's a nice and simple solution and anything fancier is probably more trouble than it's worth.
+I also find it odd that you choose iostreams for an embedded system. They're one of the most bloated parts of the C++ standard library (not just by implementation, but by design) and if you are working on an embedded system, you could just as well roll your own alternative of this (still based on the basic design of iostreams) and can probably do it just as quickly as trying to use iostream effectively and across multiple threads."
+0.0,2013-09-07 04:21:48.790000+00:00,"you can achieve this with the use of xib read carefully and if you don't understand anything you can ask me again it's bit tricky
+in you xib create a UIView and design for your photo and firstname, lastname cells with the use of textfields image views and all and then take a UITableView.
+now drag your UIView and drop it on your UITableView so that it will be considered as your table header and your first section now will be as you designed like photo with firstname and lastname fields.
+i've done this in manier projects of mine so hope this way you can also do this thing and ask me if you need any help."
+4.0,2013-06-02 17:03:53.810000+00:00,"Because in the first producer, you synchronize on , which is the , not the producer itself.
+So you would need to use  instead, except that it won't compile because  is not available yet on that line.
+Alternatively you could name your Runnable:
+and in your consumer:
+But your second approach with a separate mutex is preferable, except that locking on  is an extremely bad idea as this is a global constant (the empty string is in the string pool). You should prefer something like this instead:"
+44.0,2011-10-11 13:14:47.073000+00:00,
+1.0,2012-12-21 15:10:56.953000+00:00,Try this:
+4.0,2011-06-25 16:03:01.403000+00:00,"Reduce variable sizes (in embedded systems)
+If your variable size is larger than the word size on a specific architecture, it can have a significant effect on both code size and speed. For example, if you have a 16 bit system, and use a  variable very often, and later realize that it can never get outside the range (−32.768 ... 32.767) consider reducing it to 
+From my personal experience, if a program is ready or almost ready, but we realize it takes up about 110% or 120% of the target hardware's program memory, a quick normalization of variables usually solves the problem more often than not. 
+By this time, optimizing the algorithms or parts of the code itself can become frustratingly futile: 
+reorganize the whole structure and the program no longer works as intended, or at least you introduce a lot of bugs.
+do some clever tricks: usually you spend a lot of time optimizing something, and discover no or very small decrease in code size, as the compiler would have optimized it anyway.
+Many people make the mistake of having variables which exactly store the numerical value of a unit they use the variable for: for example, their variable  stores the exact number of milliseconds, even if only time steps of say 50 ms are relevant. Maybe if your variable represented 50 ms for each increment of one, you would be able to fit into a variable smaller or equal to the word size. On an 8 bit system, for example, even a simple addition of two 32-bit variables generates a fair amount of code, especially if you are low on registers, while 8 bit additions are both small and fast."
+2.0,2012-03-01 17:31:17.083000+00:00,"You are reinventing the wheel.  valuelist(getparts.binnum) will give you your list without all that looping and checking.  Or at the very least you could use ""listAppend()"" to avoid all that comma checking :)"
+2.0,2009-10-14 05:41:47.280000+00:00,"Just make a selector that matches any of the id:s when doing the initialization:
+Now you have the dialog set up for all the elements, and you can call dialog('open') on any of them."
+4.0,2010-12-23 05:50:39.603000+00:00,"The current state-of-the-art floodfill algorithm (since 2006 or so) is based on finding the contour (the outermost boundary) of the connected component, converting the contour into horizontal pixel runs (and detecting and removing of internal holes from the connected component), then fill the pixel runs. The benefits are vastly reduced memory requirements (and/or stack level) as well as being faster (interior pixels are guaranteed to be read exactly once and written once). However the algorithm is not trivial. You'll need to read some research papers in order to implement it."
+0.0,2014-03-07 08:16:33.023000+00:00,"I think you're missing the Access-Control-Allow-Origin header, as the message said :)
+Here is the same question on SO.
+Edit: To address your header alternative question
+As far as I understood you're searching for an alternative approach for header redirects. Well typically PHP Frameworks I know use some Bootstrapping mechanisms to build the user output. Take a look at my rude graphic below:
+Essentially the request from the client will always be handled via a main entry point (index.php) where you depending on the url style either use hashes, or parts of the querystring to determine where to navigate to. Thats the job of the bootstrapper to find out: ""Ok the user want's to visit Page XYZ"".
+The next layer could be the Authorization amongst others. Here you would check whether the user has the permission or not if so continue to your BL and render the result which then is returned to the client.
+So this whole sequence takes place during the initial request from the client thus no redirecting would be needed. For detailed examples take a look how well-known Frameworks do the Job."
+1.0,2011-03-23 11:53:09.327000+00:00,maybe he meant how to traverse such tables? running DFS on mySql can be tricky
+1.0,2013-11-21 22:21:07.020000+00:00,Thank you Astral. You're answer is perfect. I really didn't want to have to use map reduce just to do a simple timezone adjustment.
+1.0,2014-06-12 07:37:04.510000+00:00,@m_gol happened to be reading down the comments as my `zsh` did this +1 for your help!
+0.0,2014-01-29 17:21:29.927000+00:00,"Thanks, I will take a look at that and get back to you about if it does what I need."
+0.0,2017-01-03 09:18:27.360000+00:00,"This answer is amazing. how to do FooBar::fizz()->select(""something"")->where(""something"");"
+0.0,2013-08-16 11:03:26.670000+00:00,im using horizontal listview so cant declair width height wrap content
+0.0,2013-11-17 20:36:43.823000+00:00,"Sorry to bump this post but I came across this, implemented it and unfortunately what happens is that when csrf is enabled, it shows the csrf error every time a form is submitted! Any ideas what might be happening?"
+0.0,2011-06-27 18:40:54.560000+00:00,"D'oh! I put the populate listbox routine in the PostBack 'IF' statement, and totally forgot about the 'ListBox.Items.Clear' statement just two lines above!!! Thanks for your help kprobst!"
+0.0,2010-05-16 21:31:41.333000+00:00,"If head closes the stream, then why does `$stdout.closed?` still return false and why does the error not happen immediately, but only after many lines have been written into the void? I think head actually keeps the stream open, but doesn't read from it anymore, which causes the buffer to be full at some point which causes the broken point."
+0.0,2013-03-14 10:58:36.853000+00:00,"MayoMan ,
+ImageAndLabel is in flextable ,
+ wherever you add your ImageAndLabel it is added inside flextable so you have to apply css to the widget where you are going to add your ImageAndLabel
+ex: horizontalPanel.add(new ImageandLabel) than apply css to horizomtalPanel"
+0.0,2008-10-10 15:18:54.557000+00:00,"Okay, that works but I'd like to know a bit more about why before I give the ""answered"" stamp. I'm resonably new to data binding, so I'm not familiar with some of the more advanced synatx. What exactly is local-name() doing here?"
+0.0,2012-02-22 04:41:26.990000+00:00,yes for jquery very widely used and well documented made by one of the guys that works at jquery
+0.0,2011-12-20 20:43:16.423000+00:00,Thanks.. thats exactly what I was looking for.. earlier didn't thought of LOCK_NB. Thanks again.
+0.0,2010-02-10 10:26:55.897000+00:00,I have spent half an hour to edit my question just like u did - how did u do it/
+0.0,2013-01-23 15:34:54.930000+00:00,"I am able to reproduce the concurrent performance issue using the async methods on `HttpWebRequest` in a tiny test project, and here `MONO_DISABLE=1` does not seem to help either. This seems to suggest, that I actually do hit an async method call in AWSSDK, but I have still not been able to locate such call."
+0.0,2014-10-01 11:23:53.143000+00:00,"@MikeM. But again, it only trigger the alarm after the minute I've set it regardless on how long I set it to repeat and stopped the recurring. Do you have any idea?"
+0.0,2013-10-14 18:04:44.713000+00:00,"@user2879618 It is the socket descriptor you passed to bind, listen or simply the socket descriptor returned by socket()"
+0.0,2012-12-19 20:14:05.660000+00:00,You are absolutely right.  Thanks so much for the quick response!
+0.0,2010-01-08 17:48:03.827000+00:00,"Hmm that is news to me.  Contradicts things I've seen in the past, I will have to experiment to be sure I follow what you're saying.  Thanks for the clarification though."
+0.0,2012-03-15 14:31:40.287000+00:00,"Telmo Marques answer contains an example of what I was talking about. He is using onKeyUp instead of onKeyPress, which has some advantages, but also some disadvantages as well (as in if you press the letter and don't let go of the button, it's not going to register until you let go)."
+0.0,2014-06-13 11:02:36.013000+00:00,While we're at it - could you please suggest any good materials about apply functions? I have always seen them having a great potential but never quite got hang of them.
+0.0,2014-09-10 01:25:27.843000+00:00,"Sorry i think im not be clear enough. i want to something like a fallback. based on your example something like this: $query->bind_param(""id"", $id, 'id');"
+0.0,2013-09-02 15:32:42.633000+00:00,I have no idea. The code you posted doesn't have anything to do with hub.js.
+0.0,2013-05-10 05:58:31.560000+00:00,Ya i know but thats what the project requirement is :/
+0.0,2009-10-06 16:16:12.310000+00:00,"Wow... read() actually returns the whole size, but in gdb i only get this:
+$2 = (uint8_t *) 0xb65f2008 ""FLV\001\005"""
+0.0,2010-07-12 13:41:39.677000+00:00,"Good stuff, if it works, then I like it. Let me test it. By the way: dumb question: is it or is it not Unicode?"
+0.0,2012-03-02 10:31:45.177000+00:00,"So, calling `.flatten` on the array will make it [postA1, postA2, postB1, postB2]. Then you can loop over each post and call its methods on it. Cheers!"
+0.0,2017-07-08 11:57:51.140000+00:00,doesn't your answer eventually suggest to never have `content-available:1`. Basically you just said to never use silent notifications...
+0.0,2012-10-21 20:11:22.920000+00:00,You mean the select operation does not return any results in delphi application? Did you try the query directly on db? Any other operations in this delphi xe2 app produce results? Is this the only part of application that doesn't succeed?
+1.0,2012-05-02 15:32:49.133000+00:00,"Thank you!! I was using an old version (1.4.2). I replaced it by (1.7.2). I got no errors anymore but i have still a coding fault. The application must check if a username is available(at runtime) but the output is always not available, but i will look for my fault. THanks!"
+0.0,2011-07-08 15:16:21.753000+00:00,Yes yes... It's just a dummy one!
+0.0,2017-07-20 13:22:04.763000+00:00,"I see how this would result in the CAPTCHA content, but why is the cURL handle resource no longer valid after requesting this page? Is this documented behaviour?"
+0.0,2014-01-06 16:29:22.583000+00:00,Moreover doing this fails all calls to update_attributes method with the exception can't modify frozen hash.
+0.0,2014-06-29 19:57:53.930000+00:00,"You could override the constructor as well so it doesn't do the database stuff.  But if things get too messy, you should indeed use a mock and probably live with the when-then stuff."
+0.0,2012-11-06 15:58:10.203000+00:00,@Jack - could you give a more complete example?  I can't see why that wouldn't work.
+0.0,2009-05-10 19:14:01.353000+00:00,Re `DataRowCollection` - it doesn't make any difference. My test sample is using an attached row from a DataTable.Rows (a DataRowCollection) - and it simply doesn't work. Sorry.
+3.0,2011-03-16 18:45:54.080000+00:00,"I like it. Though I would suggest a different name for your macro. Perhaps ""defcurry"" or maybe ""defcurried""."
+0.0,2011-10-01 00:16:11.860000+00:00,"@chibacity: I don't need events, a simple wait is fine. I don't need to yield because 1) it's never more than half a second (total) and 2) the application doesn't need to be responsive when this happens anyway."
+0.0,2015-06-15 19:28:09.837000+00:00,You can accept your own answer by clicking on the green tick. This removed the question from the StackOverflow queue of unresolved problems.
+0.0,2014-05-06 18:53:54.127000+00:00,Yes offcourse. Replace the 'wait on notifier' with an event case in a while loop. In the time-out case of the while loop you check whether the DLL has finished. In another case you wait for the boolean event change.
+0.0,2014-07-18 00:19:17.987000+00:00,"Those PDF's are the specs for OpenGL ES 2.0 and OpenGL Shading Language, it might be easier to find tutorials and only use the spec pdf's as reference when you get hung up on something."
+0.0,2014-07-22 20:10:22.833000+00:00,@Maven: see section `SYNCHRONOUS VS. ASYNCHRONOUS` in http://square.github.io/retrofit/
+0.0,2010-02-23 16:13:31.940000+00:00,"Thank you very much ashtonium. I had another solution going after attempting it myself, but this is a little more elegant."
+1.0,2011-11-12 12:04:39.023000+00:00,"An application which is not installed shouldn't need to be uninstalled. It should be removable by simple deleting the executable; or, at most, if it creates some files in its own, empty directory, by removing this directory. *Or*, the application itself could provide its own ""uninstallation""."
+1.0,2011-10-24 01:01:25.297000+00:00,You would open up KeyChain find your cert right click on it select export and make sure you changed the file type to `Personal Information Exchange (.p12)`
+0.0,2010-10-19 02:38:05.487000+00:00,"@some: `""""+location` is a nice idea. You should still be able to use `[4]` instead of `charAt`."
+0.0,2019-11-29 13:01:35.170000+00:00,"Thanks, a variant of this worked for me. Just one thing though, the line `$(""div.uzidoboz"").scrollTop(div);` didn't work for me until I changed 'div.' to '#': so `$(""#uzidoboz"").scrollTop(div);` worked for me."
+6.0,2015-09-15 23:05:10.120000+00:00,How do you pass the interface to the adapter though (from the Activity)
+0.0,2014-01-11 21:06:43.413000+00:00,It was a mistake. Thanks
+0.0,2011-02-20 05:28:34.080000+00:00,"You can use multiprocessing and run multiple instance. But if for some reason you need to share state, then shared memory, queue/named pipes etc will have to be introduced."
+0.0,2010-01-25 16:05:58.517000+00:00,Can you please give me a brief example?
+0.0,2010-08-24 15:26:12.977000+00:00,"-1 for posting a question, telling us you fixed it, and not telling us how you fixed it"
+0.0,2009-09-30 18:04:29.303000+00:00,@David Stratton: I've just tested it and it does work (see my answer). For what reason it didn't work in your case? Why would setting the ForeColor for the individual cells work better??
+0.0,2017-09-12 17:31:51.223000+00:00,"@Layinka Not sure if this helps, but most of the error info is in the `CompilerErrors` property of the exception."
+0.0,2012-08-18 09:30:38.250000+00:00,"Because i am creating a recognization aplication and i need to store data from learning to a table. Then using KNN i need to look into that table to find the closest one. Ill try with -append flag.The data stored is: Name of the object, RGB colors and roundness of and object. Thanks for the help."
+0.0,2013-09-19 01:01:47.563000+00:00,I have putted an if statement that check if it's null or not. and it is null
+2.0,2011-03-04 09:16:04.040000+00:00,"Standard c++ map::erase does *not* return a new iterator, that's a MSVC extension."
+0.0,2013-01-05 23:48:34.397000+00:00,"Could you explain to me for future reference what the dots do in PHP if you don't mind? The SITE_URL is a string of the website address gained from a config.php file in a CMS. It is setup during the CMS installation.
+i.e. define('SITE_URL', 'http://localhost:8080/phpvms');"
+0.0,2011-06-28 20:31:49.323000+00:00,"I am *trying* not to.  However ""the issue I am seeing is that Apache appears to matching the www subdomain of afewguyscoding.com immediately and not examining the additional URL behind it. Changing ServerAlias does nothing. For example, using my setup, if I enter davidheartsrachel.com, I properly reach my wedding website. However, if I use www.davidheartsrachel.com, I reach my other website, my software development business.""  Mixing them is the only way I can properly get it to work.  I am trying to get them to work without mixing them."
+0.0,2012-09-23 12:34:21.093000+00:00,Those are both methods of performing Ajax.
+0.0,2014-07-30 02:22:51.773000+00:00,"Thanks so much, this is working for me using latest PG."
+0.0,2012-01-20 04:00:29.850000+00:00,"I tried that, does not work. `start` is a feature of the cmd console and not a file you can execute. I also tried `cmd /c start vlc`. Works, but then I see the cmd console instead of the vlc console. not a solution either :("
+0.0,2010-06-24 23:34:14.220000+00:00,Why the IOStreams FUD? I have yet to see a case where any speed limitation was an issue because any I/O device you're referencing with it is usually the bottleneck. Use the various streambuf classes if you need to be closer to the metal.
+0.0,2013-06-02 17:28:32.407000+00:00,"Yes, the mutex should be an Object() instead. buy I did not get how would I synchronize the producer thread. How would moving out the producerRunnable cause the sync. on producer thread to happen?"
+11.0,2012-06-12 12:05:47.510000+00:00,"I would like to mention that `managedQuery` is now deprecated. If somebody developes the app for Android API 4 and higher, add support library v4 and use this code: `CursorLoader loader = new CursorLoader(context, uri, projection, null, null, null);
+    Cursor cursor = loader.loadInBackground();` instead of `Cursor cursor = managedQuery(uri, projection, null, null, null);`"
+2.0,2012-12-21 15:36:13.677000+00:00,"Possible problem with this approach is that since the data is coming in over a COM port, it is likely coming from another computer which may or may not be using the same environment (or even the same OS for that matter)."
+4.0,2011-10-06 17:04:18.110000+00:00,"Not at all. Not everyone developes web applications or overdesigned GUIs with memory-managed develomepent systems which run on high-end systems with gigabytes of RAM, and you can allow a small integer to use kilobytes of memory. Even today, there is need for systems where the entire hardware cost for the embedded electronics must be under 1$. For such firmware, every byte counts even today."
+0.0,2012-03-01 17:52:32.903000+00:00,"Thanks, Mark.  I have tried this, yet it seems to be pulling every bin and not limiting the bins to the specific partnums.  I'm trying:
+`
+     `"
+0.0,2014-11-16 11:51:33.033000+00:00,"Or could it be ""a new and fast contour filling algorithm, Ren & Yang "" ?"
+0.0,2014-03-07 14:00:06.660000+00:00,It did help but i am not only looking for that but also a good technique here to redirect to secure section of website. Now I have heard headers are not that good option though I can make sure that permissions for the secure section being redirected through headers are changed so that the world can not execute it still if a better approach is there please help.

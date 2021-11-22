@@ -1,0 +1,183 @@
+score,creation_date,body
+0.0,2013-02-01 10:01:54.243000+00:00,"I have the  in my c# code with some strings filled:
+and i can call it during running time by
+which results in   
+Now i want to have Text1 a different output (another language for example or something)
+so that  results in .
+How can i achieve this?
+EDIT1: i discovered this but i was looking for a different approach with the resource files."
+0.0,2011-12-09 21:39:57.263000+00:00,"I have an array of products that I'm pulling from the db. I've verified that these are correct, using the following code:
+...and the results are as I expect. The thing is, I need the results to basically be grouped by a parent category and category. How they're sorted within each grouping, I don't care. Given that I don't have access to change the model that is retrieving the data via SQL, I need to sort this array via PHP. I'm using the following code:
+...but dumping the  array reveals that it is only holding the value 1. Any idea what I am doing wrong? I've verified that the properties I am attempting to access do exist in each object.
+Thanks."
+36.0,2011-05-14 00:13:07.133000+00:00,"  Possible Duplicate:
+  How to split a git repository while preserving subdirectories?  
+At one point I added my code to an existing git repo, and have committed to it quite a lot since, while the other developer has committed to the other existing files in the repo.  Now I want to split my code off into its own repo, but preserve all the change history for my particular files.
+Reading through what others have done for splitting code out I was looking at  and doing  or  with  commands for the files I don't care about.  I don't want to use  as it is not appropriate for the subdir holding my code to be the topdir (also we shared one subdir).  To complicate matters, some of the files from the original repository have moved around a bit over time, and there are some files that were created then deleted.  This makes designing an rm list a bit... challenging.
+I'm looking for a way to filter everything /except/ a list of files/directories.  Does anybody know of a way to do this?"
+3.0,2014-07-04 10:17:31.610000+00:00,"How to get the total time of an audio file? I am trying this:
+but all the time the function returns 0. I use the latest version Qt on Windows 8."
+0.0,2011-08-29 09:11:43.260000+00:00,"I'd need to to extract the company name (JTA Connection) before the first  and the deadline and location, preferably without the ""Deadline:"" and ""Location:"" parts, from the RSS feed below using REGEX.
+I'm a bit lost when it comes to extracting certain parts with regex, so any help would be most welcome."
+0.0,2013-11-20 10:58:39.963000+00:00,"I´ve programmed a intervall-function with 70ms. The problem is that IE says he hasn´t enough memory. In another case it asked me with a dialog to exit the script because the script on the page is causing Internet Explorer to run slow.
+So how can I find out the milliseconds so that the error no longer appears?
+Cheers"
+1.0,2012-03-20 12:43:50.827000+00:00,"I see that multiple HTML tag file is correctly rendered by the browser. I mean like two html files merged and concatenated. But if I put a STYLE region into each of the HTML parts and the classes or id's are the same I get the last css rules applied also to the first part. I ask how to make css rules acting just on the part they are inserted, even the classes and ids are the  same. I need this special thing, so I am looking for a solution or a trick."
+1.0,2013-05-15 01:20:56.387000+00:00,"I've created two threads in my application and the first one is the main UI thread, which will do the normal job like quering below
+the other thread is checking if there is any warning situation to handle, the code is as below:
+in this situation, the query in the main UI thread will be very slow or sometimes doesn't even work.
+can  anyone help me with that?"
+0.0,2013-02-25 19:53:39.237000+00:00,"I have:
+I over ride the defs like this:
+It doesn't work with init....How do I do it w/ ?"
+1.0,2012-09-10 00:25:29.253000+00:00,"I was trying to overwrite the background color of a TR, the code worked as expected on Chrome but not on Opera which is our target browser.
+The question is, how do I write code in the ""mine"" class for css to get rid of the background-image. It works in Chrome and shows pink cells in all, but in Opera it shows the background image.
+I can't change the other css, I want to clear the url but opera doesn't want to when tbody contains the same class. I took the class out of tfoot to show that it works in that case but not when class is defined in the surronding tags of ."
+0.0,2014-04-16 15:57:19.443000+00:00,"I'm looking for help on how to append scores to a new data set of the same data based on already discovered patterns from a training data set. Example of what I am looking to do (take from another one of my posts):
+Here is a sample data set which outputs the means of some fake online shopper data. 
+Now, let's say we have a new data set that looks like this:
+How can I loop through newdat and check if any combination of columns from newdat matches any rows from dat and then if it does do something like append the value from the ""mean"" column in dat?"
+0.0,2012-11-28 01:02:36.007000+00:00,"I am having trouble with struct pointers....Here are two examples in my code that are essentially doing the same thing except dsp is not a pointer and InMemory[Idx] is a pointer, how to I use memcpy in the pointer case?"
+1.0,2014-05-17 13:15:51.303000+00:00,"I use dotnetrdf and I would like to display results from query in WPF. This is my function in ViewModel. I have DataTable which I use next in my view. 
+In WPF I use code:
+Binding work very well and finally I get dynamic created columns and DataGrid, but only header. I don't get value of rows. In this example there are rows, but without values.
+Where is my problem ? Thanks a lot for help :) "
+11.0,2012-06-06 17:40:24.567000+00:00,"I'm trying to get the web application name I'm currently in. (Where my application code is deployed in IIS).
+I can get the IIS server name:
+The current web site:
+I can't find a way to get the web application name! Because I need to build a path, depending in what web application am I, to get all virtual directories."
+1.0,2014-03-18 20:49:58.920000+00:00,"I know (iter)->methodA(); is equivalent to ((*iter)).methodA();
+but I don't understand why we need a second *. Shouldn't *iter point to the value (pointer value or address of an instance of Object) of iter, which is an address (iter pointing to the address of itself). Pointers are very confusing."
+2.0,2012-07-04 14:04:41.110000+00:00,"I'm going steadily more mad if this continues:
+Firefox versions 6 - 13 seem to have serious image-rendering performance issues on Mac and Windows XP.
+Whether I move multiple Images around in a DIV via  or using CSS3  or even in a canvas element the images stutter heavily while being moved around.
+You can check my latest Canvas test here: http://jsfiddle.net/5YCmH/6/
+My question is; why is this happening?
+As I see and read it on the web CSS3 and Canvas should be hardware accelerated by now.
+So I checked the various settings in about:config and even reset them to default. Nothing works. While Safari and Chrome are rendering everything smoothly, Firefox looks like IE7.
+I tested on 3 different machines, same problem everywhere. Whats happening people?
+Any pointers or insight would be helpful!
+PS:
+I haven't used FF much since I switched to Chrome like one year ago. Before that I made an image sliding widget and tested it in FF 3.6.xx and it worked smoothly (using the  approach). Now I'm testing code I primarily developed in WebKit browsers also in FF and it doesn't work at all.
+Is this real life? I feel funny.
+EDIT:
+Here's another fiddle showing the same stuttering with old-school animation: http://jsfiddle.net/XZAE6/3/
+And with CSS3 : http://jsfiddle.net/h3UNk/3/"
+1.0,2011-10-24 05:07:18.937000+00:00,"Normally, I can get a still snapshot from an IP camera with a vendor provided url. However, the jpegs served this way are not of good enough quality and the vendor says there is no facility provided for serving snapshots in other image formats or smaller/lossless compression.
+I noticed when I open an rtsp h264 stream from the camera with VLC then manually take a screenshot, the resulting image has none of the jpeg artifacts observed previously.
+The question is, how would I obtain these superior snapshots from an h264 stream with a c++ program? I need to perform multiple operations on the image (annotations, cropping, face recognition) but those have to come after getting as high quality as possible initial image. 
+(note that this is related to my previous question. I obtained jpeg images with CURL but would now like to replace the snapshot getter with this new one if possible. I am again running on linux, Fedora 11)"
+1.0,2014-06-09 20:40:54.423000+00:00,"What's up guys, I need a little help with this one. I'm trying to achieve a simple(but not really) folding animation on a listview that is being scrolled. Basically, I'm attempting to fold the listview's first visible child backward as if a sheet of paper is being folded downward along the X axis. This goes on on continuously as the user scrolls up and down the list. This is my first time playing around with Matrix animations and Android's camera from the graphics api, so I'm definitely off the mark here. 
+This is the effect I'm trying to achieve
+And this is the effect I'm getting. 
+I want the animation to begin at the origin(0,0) but both the left and right side, animating from the top of the list item instead of the upper left corner. I'm not very familiar with matrix translations or animations so If anyone much more experience with these techniques than myself can shed some knowledge, it'll be greatly appreciated.
+Basically I'm overriding the onDrawChild method of ListView, grabbing the child's bitmap from a drawing cache, and using a matrix to perform the animation. The lighting and camera implementation is code that I took from another sample app in order to get the animation to look as 3D as possible. 
+I tried playing around with the ListView animations library, but without much luck. I also tried to hack together a solution using code from the developer guides here that uses object animators to achieve a nice little card flip animation, but it started feeling a bit hacky and I couldn't quite get it the way I wanted.
+Here's my current implementation. If anyone can shed some light or direction on this one, or maybe if anyone wrote an awesome library that I didn't come across on my searches, please feel free to share. Thanks"
+1.0,2012-09-11 11:44:55.960000+00:00,"I want to find out the recent file used by all applications in windows env using java. 
+I have tried with 
+using Registry: I am trying to get the recent file information from HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU. But I am getting some ""HEX"" value but i am not able to retrive the string equivalent. I have also tried  http://code.google.com/p/java-registry/ 
+I have also tried with ""recent"" file folder. But i am not able get the actual type/path of the file. "
+0.0,2013-01-22 17:34:58.307000+00:00,"I'm looking into adding unit tests into my existing app, mainly to teach myself how it all works. I've got to the stage where everything is wired up with dependencies, I can run some little checks like:
+And the result seems to be coming through correctly. Unfortunately, if I import any of my scripts, I get compiler errors on any  line that uses a keyword such as  or :
+  Expected a property attribute before 'unsafe_unretained'
+I wondered, is this anything to do with ARC? Is OCUnit not ARC-compliant? Do I need to change my compiler settings?"
+4.0,2012-12-19 15:35:17.427000+00:00,"In my Django app I would like to be able to post and get in a same jQuery request.
+My HTML:
+JS:
+Views:
+I would like to get 'error' in the same jQuery request I used to post. Is it possible to do that?
+Thank you for your help.
+EDIT: Here is the solution I found.
+JS:
+html:
+views:
+This way I first post the value username. If the username already exists result changes, and then I get it.
+The trick was to put a post request inside a get request."
+-1.0,2013-08-13 05:56:05.050000+00:00,"abstract class Parent {
+    int i = 9;
+}
+class Child extends Parent {
+    int i = 8;
+}
+public class A {
+}"
+11.0,2010-04-13 08:15:54.353000+00:00,"I'm trying to get from Line #1 to Line #2 in the below code:
+However, it seems that neiter Invalidate() nor Refresh() causes OnPaint(PaintEventArgs e) to be invoked. Two questions:
+Why doesn't it work?
+If it can't be fixed: I only want to invoke OnPaint(PaintEventArgs e) in order to access the e.Graphics object - is there any other way to do this?"
+0.0,2014-01-30 19:57:18.563000+00:00,"I'm a inexperienced webmaster for my Boy Scout troop. I have recently set up MAMP on my map and then tried to use MySQL PHP server for dynamic data. When testing locally, everything worked. When I uploaded everything to my web server (for which I only have FTP access) I get this message when I try to access the php page. 
+Can anyone tell me what I'm doing wrong? 
+More info:
+Mac Pro 1,1 running 10.7
+Dreamweaver CS6
+MySQL Server 5.3.3"
+0.0,2014-03-13 15:43:55+00:00,"I am learning Django framework, I setup Django on my local host and successfully run my first app, and i downloaded some web app from git and then i tried to understand it but when i opened template html the format used their was completly different from original html format, so i just want to know what scripting, or language they are using to build html files, Here is a sample code
+I am unable to get what {% %} doing here, Is it a scripting tag just like jsp or something else, If it is a scripting that what kind of script is it  ? because normally html files starts with 
+tag."
+0.0,2012-02-01 14:23:06.413000+00:00,"I have table in database with Lithuanian_100_CI_AS collation. Some rows has text fields with text, which contains random symbols instead of Lithuanian ones. Is it possible to change the encoding, that i would see the letters i need? Changing collation does totally nothing."
+2.0,2014-09-16 12:58:12.843000+00:00,trying to write a sql which will keep first N number of rows of a table and delete the rest. I'm have comeup with this sql but the its saying I can't use the count here. Please help me to re write the sql. 
+0.0,2011-04-16 16:50:42.287000+00:00,"I downloaded some new Java component, and now I want to add them to netbeans, but I don't know how.
+How can I do that?"
+0.0,2014-06-16 01:29:46.200000+00:00,"I am trying to use RequireJS, Backbone, Firebase, and Backfire together in a project and am having a real hard time getting started. Here is a simple example:
+main.js
+test.js
+Any help you could offer would be greatly appreciated."
+0.0,2012-06-13 00:53:12.920000+00:00,"I've tried muliple ways to disable the softkeyboard from my test but isn't working.
+added to my androidmanifest.xml
+The activity is the name of the folders for the app (not my test script)
+added to my androidmanifest.xml
+/>
+placed this in my test and in my setup
+tried
+but getSystemService is giving me an error. (undefined in my class)
+I'm not sure how to use these two commands
+and I'm using 2.3 with a samsung exhibit II.
+right now I'm using:
+Thanks."
+1.0,2013-04-23 18:28:46.450000+00:00,"One of my program methods to add a contact is giving the following error when executing:
+I have researched the error and found that it is caused by accessing memory already in use.I have narrowed it down to the pointer logic in my readFile method that is causing the 'curr' variable to be NULL.
+The code it is breaking at is here:
+This is the complete method for reference:
+This is the main method where I'm reading the test file:
+This is the struct contact definition as requested:
+This is the method used to readFile and is causing the problem:"
+2.0,2014-05-08 16:32:10.050000+00:00,"Problem
+I am somewhat unsure as to how an enum value is associated to a string input. My intent is to read in data from a file and once I get to a certain getline delimiter, the string should be associated with the taxCategory of the object in the array. I did look around at other SO threads but none of them showed how to associate other values with different enum values. 
+I saw that there could be a way of doing this with templates but I haven't learned anything about those just yet. 
+Links for all of the code with line numbers
+GrItem.cpp http://pastebin.com/C4jmKcUt The lines with issues are 81 and 136.
+StoreInfo.h http://pastebin.com/uh4armvs
+Quick code info
+This one is just intended to read the tax category as a string and save it to the correct taxCategory variable. I'm not sure if I should remove the delimiter from the string as I can do that later. However, if the determination of the string and the calculation of the tax amounts per taxCategory need to have them removed then I'll figure out a way. 
+This one is just intended to print the tax category to the screen of the user. The intent is to have the string moved to the right side in a list format.
+Full code"
+0.0,2014-04-30 06:30:56.187000+00:00,"I want to get my own phone number to use it in my application. But there is no native iPhone application development API to get it.
+Is there any other way to get it. Please Help."
+2.0,2016-09-19 18:37:32.443000+00:00,Not the same as http://stackoverflow.com/questions/2797191/how-to-split-a-git-repository-while-preserving-subdirectories (IMHO) since it is asking for a particular set of sparse files to be preserved.
+0.0,2014-07-04 10:33:27.160000+00:00,"ok, but how can I get QAudioBuffer of QMediaPlayer?"
+0.0,2013-11-20 14:43:55.670000+00:00,... done! Give it a look above
+0.0,2012-03-20 12:49:08.507000+00:00,You may have *one* HTML & BODY tag per document. If you don't what you have is not a valid HTML document & therefore subject to undefined vendor/version specific behaviour in the browser. Tell us why you need to do this & I bet there is a legal way to achieve it.
+0.0,2013-05-15 10:04:57.593000+00:00,"well, you are right, the code has been updated to be like what u said"
+2.0,2013-02-25 19:59:14.903000+00:00,gangsta wangsta is probably the problem ...
+0.0,2012-09-10 00:33:57.030000+00:00,"CSS specificity matters, y'know. See: http://cssdeck.com/labs/mry24dkq/0"
+0.0,2014-04-16 19:00:32.183000+00:00,"@infominer merge may be what I want, but can you merge based on 3 columns?"
+0.0,2012-11-28 01:19:08.040000+00:00,yes I use malloc to give it memory
+0.0,2014-05-17 16:05:28.787000+00:00,Do you know whether the DataTable is being created with all the right values?
+0.0,2012-06-06 19:17:42.133000+00:00,"still don't get it, sorry. But what exactly is Application Name ? Application pool name ? IIS site name ? or what"
+0.0,2014-03-18 20:51:26.680000+00:00,"One would compile, the other one won't, since `(*iter)` doesn't evaluate to a reference to `Object`."
+0.0,2012-07-04 15:07:15.830000+00:00,Yeah I think watching the RAM consumption doesn't help much because FF takes more on most sites I compared against FF and Chrome. I added 2 new fiddles.
+0.0,2012-09-11 11:48:34.350000+00:00,"If you say ""recent"", what is the time interval of the files/folders created/edited is considered as recent files?"
+2.0,2013-01-22 20:13:01.980000+00:00,Check your compiler settings for OCUnit target. Looks like you have LLVM-GCC there or something instead of the Apple LLVM Compiler.
+0.0,2012-12-19 16:10:08.733000+00:00,"@Marcolac Well, you just parse the JSON that's in the response (`data`)."
+0.0,2013-08-13 06:46:02.190000+00:00,I can even have methods in abstract class
+0.0,2014-01-30 20:04:17.710000+00:00,"Make sure that the username and password you are using are the same on your remote server.  Additionally, make sure the MySQL user has permission to access the database."
+0.0,2014-03-14 06:05:27.127000+00:00,can i use simple html instead of django template language ?
+0.0,2012-02-01 15:00:18.187000+00:00,text or ntext? (which shouldn't be used anyway)
+0.0,2014-09-16 13:02:11.380000+00:00,Which database are you using?  Please tag your question appropriately.
+0.0,2014-06-16 16:18:56.733000+00:00,"I'm fairly certain that since Firebase internally does some requests of its own, that you need to wait for the Firebase object to be instantiated. Requirejs has a test method (I don't remember the syntax) to wait for an object to initialize before it is considered loaded. You'll need to utilize that."
+0.0,2013-04-23 22:04:42.413000+00:00,@WhozCraig so I think I got it now and correct me if im wrong but to set a contact when the head in't null would be like this: `head->next = newContact;` `newContact->prev = head;` `newContact->next = ptrList;` and point the head to the last node inserted which would be `head = newContact;`
+2.0,2014-05-08 16:41:08.663000+00:00,"I hate it when ""requirements"" specify _how_ you should do something - instead of what the desired output is. It says ""I know how you should do your job"" - which makes me think ""then why don't you do my job for me""..."
+0.0,2014-09-18 23:06:09.617000+00:00,"On iOS 7 you cannot do it without JB but on iOS 6 you can.
+[http://stackoverflow.com/questions/19504478/ios-7-how-to-get-own-number-via-private-api][1]
+  [1]: http://stackoverflow.com/questions/19504478/ios-7-how-to-get-own-number-via-private-api"

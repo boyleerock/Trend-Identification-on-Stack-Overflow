@@ -1,0 +1,9 @@
+score,creation_date,body
+310,2020-12-15 13:30:40.437000+00:00,"Xcode 12.3
+In my case I solved this problem by simply setting Validate Workspace to Yes in the Build Settings tab"
+0,2021-01-13 04:40:15.443000+00:00,Great! **It worked!!** It saves my time. I tried various process but couldn’t solve by myself.
+0,2020-12-23 14:20:54.920000+00:00,Life saver. Apple is just trouble maker.
+0,2021-01-06 18:17:23.770000+00:00,@RunesReader Genius
+58,2020-12-16 05:42:19.963000+00:00,"No doubt it is +1 from me, it saved me. But honestly, how do you people figure out how to fix this kind of issues?! What was your thought process?"
+0,2020-12-29 08:16:54.797000+00:00,"@RunesReader after doing the mentioned change, I am getting an error : 
+`Swift compiler error: Switch must be exhaustive` can anyone help me with this?"

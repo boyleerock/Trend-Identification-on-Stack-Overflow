@@ -1,0 +1,422 @@
+score,creation_date,body
+0.0,2014-10-06 12:00:15.030000+00:00,"I had a similar problem with the command min, I got it to read the list by including the list primitive."
+1.0,2014-10-06 12:00:24.500000+00:00,"In general it depends on your app's features. But you should consider next things:
+Senselessness: it's just senseless to show 1200x1920 picture on a device with 320x640 screen because user will not see the difference. Of course in case you don't need to have zoom functionality.
+Network traffic: contemporary camera modules could capture tremendously large pictures (5248 х 3936 pixels). To download such a large file user will be waiting for a quite long time.
+RAM consumption: to display picture device must upload it to the memory. Some low end devices have 256MB of memory and to show 5248х3936 picture you will need to upload into memory ~82MB(5248px * 3936px * 32bit) - so most likely you will catch  exception.
+There several methods how to solve it. One of them is to passing device screen size to the server. The server should decide which image to return to the particular device."
+0.0,2014-10-06 12:00:29.367000+00:00,"No.  You cannot save it as UTF-8.  I got the same error as well, and I found that the file mentioned is already in UTF-8.  (There is some German text in the comments)  Also, ninja suggested to save the file in Unicode instead.
+This is the error message I have got:
+hash_tables.h : warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
+Same error appear now at several headers under src/testing/gtest/include/gtest/internal/gtest-internal.h and third_party/libusb/src/libusb/stderror.c
+In additional, are you working on your compilation on a Windows machine?  I am doing the development on a Windows machine as well.  Guess most other users are using Linux instead.
+===== 
+And I came across this when searching for other possible solutions:
+http://www.chromium.org/developers/how-tos/build-instructions-windows#TOC-Build-failures-on-Vista
+But I do not think the suggestion is wise."
+0.0,2014-10-06 12:00:31.580000+00:00,I think it's using triangle you can change border colors in css. or generate a triangle using triangle. I suggest you to read this first.
+0.0,2014-10-06 12:00:37.550000+00:00," is sensitive to null values, it does not compare null values hence ignores it. In contrast,  is insensitive to null values. Check the example given below
+Row  was ignored by  but was considered by . In fact NOT NULL ignored row   and , but since they are also present in test1, it seems to be logical although ignored. This can be tested by issuing "
+11.0,2014-10-06 12:00:42.890000+00:00,"Use subprocess, it is a smaller module so it runs the  quicker."
+1.0,2014-10-06 12:01:05.217000+00:00,"So, the solution I have found is really ugly and hackish. The way forEvery (and other Inspectors too, I suspect) work is that they try to get your collection's iterator if they can, both to run the tests and to print out your collection. My solution passes the correct iterator only on the first run, and if the inspector tries to grab the iterator again (which it does only to print the collection out) it gets Seq.empty.iterator. The best thing which can be said about this code is that it works:
+The inspector doesn't use either length or apply, so whatever I put there is irrelevant, as long as it has the correct type. Extending Seq is just about the easiest way I have found to pretend to be a GenTraversable (which is needed to have my own class' iterator used). I would be happy to find any solution that is better than this."
+4.0,2014-10-06 12:01:17.943000+00:00,"XFixesCursorImage stores ONLY the cursor image, NOT the entire screen. So -as Andrey says- you can only access 24x24 unsigned longs. 
+You can place the Cursor Image on your XImage by using the fields x,y on the XFixesCursorImage, but remember that the pixel format of the XImage might differ from that of the XFixesCursorImage, which is always 32 bits per pixel ARGB. 
+Said that, please note that unsigned long can actually be 64 bits if compiling for x86_64, so your conversions should use unsigned long to be portable and not assume it will be 32 bits.
+Placing example (with funcs missing but good enough for the explanation):
+Notes: img in the code is the XFixesCursorImage, and do not trust the field 'cursor_serial' in order to determine if cursors are different of each other, because sometimes this field is just 0. Not sure why."
+7.0,2014-10-06 12:01:30.727000+00:00,"Your file is not UTF-8 encoded. I'm not sure what encoding uses F6 for  either; that codepoint is the encoding for  in Latin 1 and CP-1252:
+You'll need to save that file as UTF-8 instead, with whatever tool you used to create that file.
+If  works, then you were able to decode the file using the default system encoding. See the  function documentation:
+  encoding is the name of the encoding used to decode or encode the file. This should only be used in text mode. The default encoding is platform dependent (whatever  returns), but any encoding supported by Python can be used. 
+That is not to say that you were reading the file using the correct encoding; that just means that the default encoding didn't break (encountered bytes for which it doesn't have a character mapping). It could still be mapping those bytes to the wrong characters.
+I urge you to read up on Unicode and Python:
+The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) by Joel Spolsky
+The Python Unicode HOWTO
+Pragmatic Unicode by Ned Batchelder"
+1.0,2014-10-06 12:01:33.950000+00:00,"You are using a temporary byte array that might be the cause of the problem.
+You can directly write the content of the stream to your file."
+0.0,2014-10-06 12:01:39.017000+00:00,"As stated in the documentation for Receive:
+  Because this method is called on a transactional queue, the message
+  that is received would be returned to the queue if the transaction is
+  aborted. The message is not permanently removed from the queue until
+  the transaction is committed."
+1.0,2014-10-06 12:01:40.273000+00:00,"The cellid implementation varies from mobile device to mobile device since these features are considered to be optional. for example: 
+Samsung (all devices): getNeigbouringCells () is not supported at all and always returns an empty list.
+according to this:
+http://wiki.opencellid.org/wiki/Android_library"
+0.0,2014-10-06 12:01:52.067000+00:00,"The following code solved my problem.
+Basically I had to adding event handlers after dynamically html was rendered.
+http://jsbin.com/tazejuhefixa/1/"
+1.0,2014-10-06 12:01:58.870000+00:00,"You're reading the entire response into the  (memory). Instead, you could stream the output as you read it from  with something like,"
+1.0,2014-10-06 12:02:16.630000+00:00,"Your business rule is that a user can only comment on a piece of software that is contained in a package that they own.  What you need to do is apply this rule in the primary key(1) of your  table.
+Consider this ERD:
+Note how the primary key of a  is the combination of its foreign keys to the owned package and the package content.  Since both of these primary keys include the (2) you have a declarative referential constraint that ensures that the user can only comment on a piece of software that is contained in a package that they own.
+Notes:
+(1) If you are averse to composite primary keys, you can have a candidate key (unique index) which achieves the same result.
+(2) If you are using an ORM or something that doesn't allow you to share one  column between two foreign key relationships you can have two  columns in the  table and add a constraint that forces the one to be equal to the other."
+2.0,2014-10-06 12:02:17.840000+00:00,You may need to use  in your URL since you are having 
+1.0,2014-10-06 12:02:19.910000+00:00,"Use this instead for your  tag:
+Or alternatively:"
+0.0,2014-10-06 12:02:21.643000+00:00,"You can acheive this with CSS but you are not techinically changing the arrow itself.
+In this example I am actually hiding the default arrow and displaying my own arrow instead.
+HTML:"
+3.0,2014-10-06 12:02:23.420000+00:00,"Assuming the workbook has been saved in the appropriate name format, use this formula in G2."
+2.0,2014-10-06 12:02:47.257000+00:00,": 
+ Open CURSOR-1
+ Open CURSOR-2 and Use that cursor as a pointer for the new Cursor you care going to create
+ Close CURSOR-2
+ Close Cursor-1
+Try this Sample::
+Note:- Make sure you close all the cursors"
+3.0,2014-10-06 12:02:53.843000+00:00,"You can think about the construct  as a derived column, which isn't returned to the client via select list, but is used for sorting.
+You can look at it this way:"
+1.0,2014-10-06 12:03:15.593000+00:00,The  library has the  function to do this:
+1.0,2014-10-06 12:03:17.350000+00:00,"Yes, it is aware that it's an invalid local time - which is why when you specifically ask it to convert that local time into UTC, it throws an exception. It's roughly equivalent to calling .
+The  call you're making specifically throws an exception on either ambiguous or skipped times. If you use  you won't get an exception, but it may not give you the result you want. Or, you could use  which will allow you to map invalid local date/time values however you want.
+As side-notes:
+Your  variable is a , so the name is a bit misleading
+You don't need to call  -  will always return a  with a kind of , hence the name."
+0.0,2014-10-06 12:03:28.727000+00:00,
+50.0,2014-10-06 12:03:43.217000+00:00,"this is very easy way to do this without any Library:
+if the OS version is not supported - under kitkat - so nothing happend.
+i do this steps:
+in my xml i added to the top this View:
+then i made this method:
+also you need those both methods to get action Bar &amp; status bar height:
+then the only thing you need is this line to set status bar color:"
+2.0,2014-10-06 12:03:57.077000+00:00,"See the Laravel docs for Mass Assignment. All you need to do add a  property to your model:
+That will allow you to 'mass assign' your properties in a  method.
+Alternatively, you could insatiate a new User object and individually set it's values:"
+1.0,2014-10-06 12:04:00.647000+00:00,Remove your second  or move it into the -block. 
+0.0,2014-10-06 12:04:10.523000+00:00,"You've got a mistake. This line:
+is being executed even when  since you have it out of if sentence."
+5.0,2014-10-06 12:04:14.247000+00:00,"It is possible out-of-the-box. There is a commercial CB Replicator solution that solves exactly this problem. It performs complex mapping of CRM security model into SharePoint groups and and folder level permissions.
+Shortly described it deploys tiny plugin into CRM that collects all the events that could require change of permissions. There is a standalone service that gets these events and write proper permissions into SharePoint as item level permissions on referenced folders by sharepointdocumentlocation entity.
+It support various action in CRM that lead into permissions change, e.g.s security roles, business unit hierarchy, privilege depths, team membership, access team, access team templates, sharing."
+19.0,2014-10-06 12:04:17.087000+00:00,"Most basically open a terminal with Ctrl-Alt-t and type . That will work but there is a better way, which I'll explain.
+When you're developing a web app you will eventually want to deploy it. You'll want the environment on which you're developing to be as similar to the one on which you deploy as possible. One way to do this is virtual environments. On Ubuntu you also have the option of Docker.
+Virtual environments are probably slightly easier if you're just starting out but I would recommend building up to Docker, which is more complete IMO. If you're using Python 3 then you should use pyvenv to create your virtual environments. On Python 2 you want virtualenv. These will create an isolated Python environment specific to the project they contain, which means you can have many custom setups for many projects, and you can recreate these relatively easily when deploying to production. When the environment is active you can install python packages with ."
+2.0,2014-10-06 12:04:19.003000+00:00,I prefer to work with them as with a collection of Option[T]
+0.0,2014-10-06 12:04:23.857000+00:00,Here's a copy of the tock.aiff file.
+0.0,2014-10-06 12:04:34.463000+00:00,"Well, we finally figured it out. We had to use the Google Admin SDK in order to implement SSO. We had some troubles with the scopes, but after we polished that, everything seems to be working OK."
+1.0,2014-10-06 12:05:01.637000+00:00,"You can disable categories on xAxis, then simply use dataLabels instead: 
+Example: http://jsfiddle.net/zf7te5ef/3/"
+0.0,2014-10-06 12:05:04.570000+00:00,"There is no else on the inner if, so it checks that it is not 0, doesnt execute the code within the if, then goes to the  line that is after the if statement.
+What is the point of your if statement if all it does is allow that line to be executed twice"
+1.0,2014-10-06 12:05:15.073000+00:00,"You are using  even if number is  secondly your else part should be inside the if block if user enters  it should be going to the else part according to your message.
+So it should be like this, "
+0.0,2014-10-06 12:05:15.910000+00:00," is a  while you require a  here.  is a combination of  and  for cases where they are symmetrical. This isn't the case here because validation is only for reading JSON, not for writing it. So you cannot write a single . 
+To get around this, write your  and  separately:"
+0.0,2014-10-06 12:05:25.750000+00:00,"You must Add name attribute for your inputs like :
+Or use html helpers for it "
+1.0,2014-10-06 12:05:31.097000+00:00,"It doesn't look like the click handler is actually assigned to the button's click event.  So the button is causing a post-back, but not invoking the handler.  (I bet if you debug the current code you'll find that the  method is never even invoked.)
+Try assigning it explicitly:"
+1.0,2014-10-06 12:05:39.417000+00:00,You can do this with 
+0.0,2014-10-06 12:05:41.520000+00:00,It is of course not necessary anymore to re-compile QT yourself since they now also ship a prebuilt installer for opengl-desktop
+0.0,2014-10-06 12:06:02.693000+00:00,You need to set this in the manifest
+14.0,2014-10-06 12:06:06.320000+00:00,"This is problem in Eclipse SR1. You should switch back to R (SR0) release, next you can install PDT 3.3.1 from marketplace.
+See also bug report on bugzilla
+Edit:
+Problem is fixed in nightly builds: http://download.eclipse.org/tools/pdt/updates/3.4-nightly/
+Edit 2:
+We released new stable (3.3.2) version with fix for this problem. You can find it on marketplace or in this update site: http://download.eclipse.org/tools/pdt/updates/3.3.2/"
+2.0,2014-10-06 12:06:13.690000+00:00,"You must have something like 
+Just do "
+1.0,2014-10-06 12:06:18.073000+00:00,"Divide by 0 error.
+That line is done twice if number is not 0, and once if it is 0."
+0.0,2014-10-06 12:06:21.093000+00:00,"The root cause of your problem is overlapping elements.
+Since you're moving the circle element on top of the square element in your  handler, the subsequent  event will be triggered on the circle. Since that event was not triggered on the square element, no  event will be generated.
+If you have to keep the circle element on top of the square, you can use the pointer-events CSS rule to force mouse events to ""go through"" the circle element."
+1.0,2014-10-06 12:06:34.867000+00:00,"you would need to add 
+So that code should look like "
+0.0,2014-10-06 12:06:34.870000+00:00,"Ok, solved my own problem - basically I added an exception for the cpi.exe program on HOST1 but not on HOST2. The solution was to ensure the exception was added to BOTH machines!"
+1.0,2014-10-06 12:06:35.640000+00:00,Try this in manifest
+1.0,2014-10-06 12:06:40.413000+00:00,"Refer: 
+MassAssignmentException in Laravel
+Laravel provide by default a protection against mass assignment security issues. That's why you have to manually define which fields could be ""mass assigned"" "
+4.0,2014-10-06 12:06:51.343000+00:00,"The following code was working for me...
+var contact_list = $('#compose_contact_list');
+    contact_list.jstree({
+        ""checkbox"" : {
+            ""keep_selected_style"" : false,
+            ""tie_selection"" : false
+        },
+        ""plugins"" : [ ""checkbox"" ]
+    });
+    contact_list.on(""check_node.jstree"", function(event, data){
+        alert(data.node.text);
+    });"
+0.0,2014-10-06 12:07:02.150000+00:00,"Take a look at your code
+line I put * will execute always whether or not  condition satisfy.
+You can change your code to following."
+1.0,2014-10-06 12:07:12.003000+00:00,"You didn't assign the function to the button on the HTML code, you need to add  to the button Tag"
+0.0,2014-10-06 12:07:15.230000+00:00,I've never used Spring boot but it clearly says it needs a transaction manager.  Depending on how you're accessing your DB you need something like:
+1.0,2014-10-06 12:07:25.317000+00:00,"//At first, Fill in the variable ""sourceList"" with the json data
+//Create a global variable for accessing the selected values
+//Define the multiselect autocomplete textbox as below : 
+Hope this helps :)"
+0.0,2014-10-06 12:07:37.723000+00:00,"I don't seem to be able to comment so I'll post an answer instead.
+What would fit with your symptoms is that your shaderFOO.getProgramHandle() and shaderBAR.getProgramHandle() might return the same, for example if the stored program handle is overwritten with subsequent calls.
+Hard to say without the ShaderLoader class, however."
+0.0,2014-10-06 12:07:39.140000+00:00,"Try this code 
+Css Style :"
+1.0,2014-10-06 12:07:42.867000+00:00,"Linq-To-Entities doesn't have a mapping for  to SQL.  So, instead you have to break it down into the Year, Month, Day, and Hour to get the results you are looking for.
+Then when you consume  you can put the date parts back together."
+0.0,2014-10-06 12:07:58.807000+00:00,"User is a keyword, so to access a column ""user"", you have to put it into square brackets:"
+1.0,2014-10-06 12:07:59.930000+00:00,"Cloudinary supports uploading from DATA URLs (Base 64). For more information:
+http://support.cloudinary.com/entries/25785301-How-to-upload-Base64-data-to-Cloudinary-using-Post-Request"
+0.0,2014-10-06 12:08:03.747000+00:00,Here the + refers to ORing and . refers to ANDing operations. (A'C')+(A'C') means that A's complement is ANDed with C's complement which is ORed with the ANDing of A's complement with C's complement.
+3.0,2014-10-06 12:08:09.410000+00:00,Try this
+4.0,2014-10-06 12:08:11.920000+00:00,"Because that's how you iterate over an object, not an array.
+The standard for loop will return only the results you expected: 
+To remove all the classes from them, use this inside the loop: 
+To remove just a specific class: 
+If you want to remove the whole element attribute (not just reset classes), use: 
+See all three examples in action here: http://jsfiddle.net/vr9mm2vk/1/"
+0.0,2014-10-06 12:08:18.030000+00:00,"It's means that your application was ran under administrator, so you can kill it only under administrator too.
+Try too launch application under another user.
+Hope this help."
+-1.0,2014-10-06 12:08:20.263000+00:00,If you have more then one browser (using java 8)
+1.0,2014-10-06 12:08:24.270000+00:00,"Use a standard  loop (instead of a  loop) so you only hit the numeric properties. 
+Currently you are hitting all the properties including, for example, ."
+138.0,2014-10-06 12:08:32.020000+00:00,"In Java 8 you can do this
+which will print all files in a folder while excluding all directories. If you need a list, the following will do:
+If you want to return  instead of  just map it:
+You also need to make sure to close the stream! Otherwise you might run into an exception telling you that too many files are open. Read here for more information."
+0.0,2014-10-06 12:08:38.610000+00:00,"But one should iterate over the arrays, and also check for nil results in some cases, especially when retrieving the outer array element.
+And for testing insert NSLog statements after each step."
+1.0,2014-10-06 12:08:38.950000+00:00,You can use something like:
+0.0,2014-10-06 12:08:39.123000+00:00,"try using the @media css3 types to refine based on the device resolution
+for example
+@media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}"
+1.0,2014-10-06 12:08:58.597000+00:00,"  OS is windows 8 64-bit [...]
+  ValueError: No backend available 
+Allow me to translate: You forgot to install the correct USB driver. 
+USB devices need a driver to work in Windows. Look at PyUSB website for details, and use Zadig to generate and install the driver (e.g. LibUSB-Win32) for you. This program takes care of the certificate that Windows 8 wants to see for your drivers inf file.
+Btw: The VID you should use for USB development is ."
+2.0,2014-10-06 12:09:04.770000+00:00,"Your program have infinity cycle and therefore calls . If U want to loop cycle from end U need to decrement your  variable. Write  instead of  and change your cycle condition on . To loop from start to end of your string change  on  and your cycle condition on . You can choose a lot of different ways to solve this problem, but the main thing that you have understood the point."
+1.0,2014-10-06 12:09:06.760000+00:00,You can't traverse actor hierarchy directly. However you could subscribe your every actor to Event Bus and then have one actor to send a Path Report message to the Event Bus and gather all the responses.
+0.0,2014-10-06 12:09:09.530000+00:00,"seems unordered_set is suitable for your requirement.
+PS: Pls remember all elements in this set are immutable"
+1.0,2014-10-06 12:09:17.470000+00:00,"You are not missing anything. I guess your workspace is corrupted, just try with brand new one, it should solve the deployment issue!"
+2.0,2014-10-06 12:09:22.470000+00:00,Use  and . 
+1.0,2014-10-06 12:09:25.183000+00:00,Now this is a kind of challenging question. in order to do this you will need to separate the body into shapes. For example head is like a globe and neck as a cylinder. so as you consider head like a globe then you can get the usual 'd' and calculate volume same as the cylinder.  For the lower body you can treat it as a box having height and width.There you can get the depth by getting the side view of the person. Anyway it is impossible you to calculate exact amount of volume with a different way.   
+2.0,2014-10-06 12:09:29.340000+00:00,"To get the the last line of a text file you can use this
+This is the simplest method, but is inefficient. You can write your own parser as show here"
+0.0,2014-10-06 12:09:32.953000+00:00,"For those looking for manual non-programmatic solution:
+http://www.translationtribulations.com/2010/06/cleaning-up-superfluous-tags-in-docx.html 
+I've tested that free-trial of memoQ 2014 can indeed be used as a bulky workaround for cleaning Word spell tags.
+Still looking for an easier ready-out-of-the-box tool."
+1.0,2014-10-06 12:09:46.137000+00:00,Checkbox padding behaves differently before/after API 17. See this answer for a quick example of how to work around this. The same question contains more discussion of the underlying cause if you are interested.
+0.0,2014-10-06 12:09:49.467000+00:00,"With Castle 3.0, the way to do this is as follows:
+And then, assuming you have the necessary details in your  or are fine with the defaults:"
+0.0,2014-10-06 12:09:49.613000+00:00,"Make sure both your Application-app.xml from the src and from your bin-debug folder contain the NAME_OF_THE_EXTENSION_ID tag matching exactly what is being called in your ExtensionContext.createExtensionContext(NAME_OF_THE_EXTENSION_ID,null) inside the source code of the ANE. If they don't match you'll not be able to set the external context in the initialization. That should also match the alias from your RemoteClass descriptor before the class declaration. I hope it's helpful info."
+3.0,2014-10-06 12:09:52.993000+00:00,"Simply use  instead of 
+The reason is  will select all of the next s instead of just selecting the next one.
+To toggle the other accordions back you need to get them and fade them out 
+How it works. "
+5.0,2014-10-06 12:09:59.157000+00:00,Here is a general solution based on update-in:
+1.0,2014-10-06 12:10:16.433000+00:00,"The intention of SOLID is to get you to create a system that is implementation independent.
+SOLID means building many pieces that inject their dependencies so that every individual facet of your system is independently testable. You have an IDbConnectionService that provides an implementation contract to your project. When writing test cases for a service that uses IDbConnectionService as a dependency, you can mock out the functionality of IDbConnectionService to return what you need it to in a faked run time environment. 
+By using a base class, you are now providing an low-level implementation. Our intention with SOLID is to specifically not provide implementations until absolutely necessary.
+For instance, take this example of an IConnectionFactory:
+IConnectionFactory.cs
+SqlConnectionFactory.cs
+OracleConnectionFactory.cs
+SqlConnection and OracleConnection have one reason to change, but the interface segregation principal only requires one contract for them to fulfill in order to stand in for the concept of a ConnectionFactory."
+2.0,2014-10-06 12:10:21.687000+00:00,"What you need to understand is what a SAN is. 
+A SAN is one or more storage arrays, interconnected via a fiber channel network. Your host has special network cards - called Host Bus Adapters (HBAs) - for talking to that network. The network protocols are geared up for storage traffic, and so are well suited to high performance, low latency traffic.
+The array you're talking to... well, it varies a great deal as to it's capability. Even an EMC SAN as you refer to it - might be a variety of EMC products as the storage array. Their primary purpose is consolidating storage performance. 
+You get a better peak performance out of 100 spindles share with 10 servers, than you would if each server had 10 spindles each. So what your storage array is basically doing is carving up that chunk of 100 spindles into logical units - and then giving them back to your host, such that each host has about the same average performance, but it's peak is 10x the size. (Or more perhaps more realistically - they might go with 50 spindles, because then you get 5x the peak, but half the cost, in return for a lower average). 
+Now - Filegroups. As I understand it (being a storage engineer, rather than knowing a great deal of SQL). Filegroups allow you to manage placement of data, specifically to the underlying storage. 
+This is something of a ticklish point - because it depends. Typically your storage array will be doing some quite clever things of it's own in order to streamline data placement and throughput. Things like some quite aggressive caching - far more than you'd be getting on a normal host - meaning that a lot of your random access workload goes at 'RAM speed' rather than 'disk speed'. It may well be striping across a lot more spindles than you'd normally expect as well. 
+Which as far as I can tell - is essentially what a filegroup is aiming to achieve - you manually place a file on a disk, and let SQL handle parallel IO to those disks. Your storage array is doing this for you already, and at best you'll make yourself unnecessary admin headache, and at worst you'll actually make array side optimization worse.
+You probably do still want to segregate your various content types, but I would suggest you do so via different LUNs being allocated from your SAN. That's more so you can't drain space from one database by having another fill - but it also allows for a bit more flexibility when it comes to taking snapshots or clones. 
+What I would suggest:
+go talk to your storage guys about the expected IO profile of your database. (IO is what's expensive on a SAN, and typically databases use more of it than 'normal' applications)
+put each instance on a different set of LUNs - separate out DB and logs and tempdb. 
+Within vmware, you may end up with 'logical' disks on the same datastore. If performance is critical, it may be worth passing through the SAN LUNs direct to the host.
+And then don't worry about it overly - if you notice a particular problem, it should be possible to retune/move individual LUNs around to improve the situation. "
+1.0,2014-10-06 12:10:22.010000+00:00, 0.9.5 has been released to CRAN. Windows binary distributions should be available shortly.
+0.0,2014-10-06 12:10:30.847000+00:00,"I suspect you're misunderstanding something here:
+The web browser can't access the server's file system.  That ActiveX object may allow file system access on the current host, but it's not going to allow it on other hosts.  If there are no errors and the browser is allowing the ActiveX object to interact with the local file system then I'll bet it's successfully creating the file on the local file system.  (In whatever happens to be the current working directory for the browser process, since no directory was specified.)
+To interact with files on the server's file system you'll need to use server-side code."
+15.0,2014-10-06 12:10:31.283000+00:00,"Your test isn't using Spring Boot (it needs to use  instead of , or declare the appropriate listeners)."
+0.0,2014-10-06 12:10:31.827000+00:00,"We can get reference from following path
+C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualStudio.TeamFoundation\v4.0_11.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.TeamFoundation.dll"
+1.0,2014-10-06 12:10:43.873000+00:00,Boxcarring allows multiple data service calls to be sent to server side and be executed at once. It can be used to make sure related data service calls gets executed completely or not at all(in this way it is similar to database transactions). IMO it is not DSS's job to lock any database values as it should be working on the service level.              
+6.0,2014-10-06 12:10:47.550000+00:00," is a reserved word in SQL Server, so you need to enclose it in square braces.  The list of reserved words is here.
+I would recommend writing your query as:
+Note:  this also fixes the problem that you seem to want to join to  and not a self-join to .
+And some advice:
+Use table aliases for all your tables.  They make queries easier to read and write.
+The table aliases should be abbreviations for the tables.
+Avoid using reserved words for table and column names.
+Avoid square braces (unless you really need them); they make queries harder to write and to read.
+In addition, I usually give my tables names in the plural () with a primary key in the singular (), and then always try to have foreign keys have the same name ( in both cases)."
+0.0,2014-10-06 12:10:51.507000+00:00,"ok this is what i will do.
+First activity that my app will have is LoginActivity.java.
+This activity will contain the logo and facebook login buttons.
+When user clicks and signs in using facebook, i call the MainActivity.java[well this is the main homescreen of my app].
+When user clicks back button here i dont go back to LoginActivity.java and i'd rather show an app quit alert box."
+0.0,2014-10-06 14:48:38.717000+00:00,"Got it.  I have one more question. Facebook stores 4 images for each uploaded images and then renders appropriate one based on device's screen.
+Any idea what are these 4 sizes?"
+0.0,2014-10-07 19:06:42.697000+00:00,"Thank you very much for the answer.
+As you mentioned, most of people are using Linux, and I figured that I had to as well.
+So, I am away from Windows for the development.
+Thank you again Tom for the answer."
+0.0,2014-10-06 12:45:32.180000+00:00,NOT IN clause Do i need to check for Null.
+1.0,2018-06-03 15:31:55.297000+00:00,You mean it ***starts*** the `.exe` quicker?
+0.0,2020-02-12 08:20:06.730000+00:00,"Note: if(r == 0 && g  == 0 && b  == 0 && a == 0)
+                continue;"
+0.0,2020-02-13 16:20:54.357000+00:00,"Although I left color manipulation out of the example, you make a good point @StefanSteiger. Unfortunately your code will only avoid drawing black points which are 0 alpha,  (a red point with 0 allpha will still be drawn). The correct way would be: if(a==0) continue;"
+0.0,2014-10-06 14:46:12.457000+00:00,"The transaction will timeout. Doesn't seem to be any documentation, [@JohnBreakwell's answer](http://stackoverflow.com/a/5905569/43846) to [this question](http://stackoverflow.com/questions/5903538/messagequeuetransaction-timeout) alludes to it though."
+0.0,2014-10-06 14:39:33.740000+00:00,"What if a commit/abort never actually happens?  Does an abort implicitly based on some criteria?  If so, what are those criteria (or where can I find the documentation)?"
+0.0,2014-10-14 14:24:12.213000+00:00,Good questions but I have no answers. I may have something in my archives that explains how MSMQ knows but no promises.
+0.0,2014-10-07 12:33:50.017000+00:00,MSMQ should detect the application has gone away and clean up by restoring the message to it's original state in the queue. Non-transactional messages would be destroyed.
+0.0,2014-10-09 21:31:20.530000+00:00,"@JohnBreakwell, does that happen based upon a timeout, heartbeat or some other mechanism?  Is it configurable at all?  Thanks for chiming in."
+0.0,2014-10-06 15:38:35.337000+00:00,Thank you! This explains it perfectly
+0.0,2014-10-06 18:57:13.877000+00:00,It is definately a .php file. All php code runs in the file except this code. I think Ole may have supplied the answer.Thanks
+0.0,2014-10-06 14:58:18.760000+00:00,"Then it is a problem with your setup, not your code. Is the code contained in a file with `.php` extension?"
+0.0,2014-10-06 12:04:32.737000+00:00,"Thanks adam, but still outputting the same result."
+0.0,2014-10-06 12:03:09.937000+00:00,This is same as the answer in the given question  http://stackoverflow.com/questions/611482/change-color-and-appearance-of-drop-down-arrow
+0.0,2014-10-06 13:40:33.500000+00:00,Thanks for the explanation.
+0.0,2014-10-06 13:11:37.767000+00:00,"Thanks I think your updated answer explains it a bit more, I'll read up on InZoneLeniently."
+0.0,2014-10-06 12:45:05.117000+00:00,"Thanks for your answer John. I've added the functions I'm calling to the question. I now understand I get the error when converting the local time to UTC, should I be doing something different to get the local time in the first place?"
+0.0,2014-10-06 12:46:07.030000+00:00,"@FBryant87: It's not really clear what you're trying to achieve, to be honest - where did you get `timeToConvert` from? In some cases it may be reasonable data, e.g. if you have a recurrent event at 2:30am every day... you then need to work out what that means on a day where 2:30am happens 0 or 2 times."
+1.0,2014-10-06 13:18:32.383000+00:00,"@FBryant87: Right - I've added a couple more links, too."
+1.0,2014-10-06 14:54:11.357000+00:00,@FBryant87: It gives you the closest local time after the one you asked for. We've had a feature request to add a resolver which will add an hour instead - but you can already build it with the 1.3 API. Look at the `Resolvers` class.
+0.0,2014-10-06 14:20:52.913000+00:00,"One last quick question about InZoneLeniently Jon:
+In this case I can see it returns a UTC date of 5:00am (which is a good ""guess""), I'm just wondering if there's a reason it loses the minutes when it 'jumps' forwards?
+For example 02:31 doesn't jump to 03:21, it jumps to 03:00"
+1.0,2015-01-21 07:05:18.270000+00:00,where should I put the view element? should it be on top of the main layout?
+0.0,2015-08-02 05:36:30.940000+00:00,"setStatusBarColor(findViewById(android.R.id.statusBarBackground),getResources().getColor(android.R.color.white));"
+0.0,2015-01-21 07:36:32.380000+00:00,Yes. In your xml. At the top of it.
+0.0,2015-06-30 12:03:23.277000+00:00,Caution : Working only for android >= 19 API. In my case I need support starting from 16
+0.0,2014-10-06 12:11:46.453000+00:00,"Actually, the property you are thinking about is `guarded`. `guarded` is also covered in the [mass assignment docs](http://laravel.com/docs/4.2/eloquent#mass-assignment)"
+0.0,2014-10-06 12:09:53.950000+00:00,Thnx!! that worked..! Btw I have used `protected $protected = array();` which is counterpart of `$fillable` still why it didn't worked?
+0.0,2014-10-06 12:08:41.843000+00:00,"I removed the 2nd SOP and it's still terminating. Not sure what's going on. At first I wasn't sure if I had the brackets placed correctly, but I've tried just about everything that I can think of."
+0.0,2014-10-06 12:07:03.040000+00:00,I removed the second SOP from the code and it's still terminating.
+0.0,2014-10-06 12:17:34.480000+00:00,"You're welcome, and please do look into virtual environments and Docker, they'll make your life way easier in the long term :-)"
+1.0,2014-10-07 08:39:18.587000+00:00,"You have set `plotOptions` twice in one object. Anyway, example for you: http://jsfiddle.net/umpvrq5n/4/"
+0.0,2014-10-07 05:05:26.993000+00:00,Can you see why my labels are not displaying? I tried your example using my code:http://jsfiddle.net/umpvrq5n/
+0.0,2014-10-06 12:13:59.827000+00:00,"Thanks Martin, actually I noticed that
+when I change formatNullable[String](email) to format[String](email), it works. It only stops working when I use formatNullable."
+0.0,2014-10-06 12:19:54.237000+00:00,"Ah ok, that kind of contradicts the docs then. :D I believe that they might have added that possibility to `format` for convenience but forgot to add it to `formatNullable`. But that is just a wild guess."
+0.0,2014-10-08 09:16:25.627000+00:00,"I also think the same, I'll accept the answer. Thanks"
+0.0,2014-10-06 12:13:17.180000+00:00,"@BlackCamel: Not at all, it's a perfectly reasonable question which could potentially serve to help others in the future."
+0.0,2014-10-06 12:12:50.787000+00:00,I'm so amateur... I should have noticed that. Should I delete my question?
+0.0,2014-10-06 12:22:01.460000+00:00,"Thanks for your swift reply @Gordon Linoff. Unfortunately this has brought back results that don't have an CNN_NDP_NO.
+I have tried 
+             'and ndnp.CNN_NDP_NO in (null, 84) but has not fixed it. Any thoughts?'"
+0.0,2014-10-06 15:13:39.103000+00:00,"@jack.r.barnes . . . I see no reason why that would affect this query.  Any `CLN_NO` with a record of ""84"" should be excluded entirely from the result set.  If you are getting duplicate results, then use `group by` or `select distinct`."
+0.0,2014-10-06 12:43:14.293000+00:00,"After searching more NINO's that appear I have also come across people that have 4 CNN_NDP_NO's (one of them being 84) so this solution has not worked, any thoughts?"
+0.0,2014-10-06 12:37:46.070000+00:00,"@AmitSingh As mentioned I still seem to get null values. I have also tried.............
+'code' SELECT c.CLN_SURNAME, c.CLN_NINO, c.CLN_BIRTH_DATE
+FROM MASTER.CLIENT c
+WHERE NOT EXISTS (SELECT 1
+                  FROM MASTER.CLIENT_NDNP ndnp
+                  WHERE c.CLN_NO = ndnp.CNN_CLN_NO and ndnp.CNN_NDP_NO = 84 and ndnp.CNN_NDP_NO = NULL);"
+0.0,2014-10-06 12:35:32.920000+00:00,@Yildirim I am not sure what you mean
+0.0,2014-10-07 05:15:41.253000+00:00,"but, my adapter is not syncable=""true"",
+ also i diden't set setIsSyncable() to my account, because when ever i do that, my onChange method in ContentObserver class stops working."
+0.0,2014-10-07 06:28:51.863000+00:00,"Okay i think your right, im setting 
+setIsSyncable(myAccount, ContactsContract.AUTHORITY, 1), but when i getIsSyncable this account, it returns -1"
+0.0,2014-10-07 05:02:22.220000+00:00,For account use  
+0.0,2014-10-07 05:42:38.080000+00:00,Then problem is in your account. Cross check---> ContactsContract.AUTHORITY
+0.0,2014-10-06 12:53:20.380000+00:00,could my problem be my added ACCOUNT?
+1.0,2014-10-06 12:59:22.580000+00:00,"Hi abhijith, I think it is `$guarded` instead of `$protected`"
+0.0,2014-10-06 12:14:04.667000+00:00,"I tried that, I removed one of the brackets following SOP(""The Reciprocal is"" + 1/number); this works to check if it's a zero or not but now the code does not work if I enter in a string instead of a double."
+0.0,2014-10-06 12:14:46.450000+00:00,"if(stdin.hasNextDouble())
+  {
+   
+   double number = stdin.nextDouble();
+   if(number !=0)
+   {
+   
+   System.out.println(""The Reciprocal is ""+ 1/number);
+  
+  }
+  
+  
+  else
+  {
+   System.out.println("" The input you entered is invalid, please try again."");
+   
+  }}}}"
+0.0,2014-10-07 17:18:16.267000+00:00,"The ShaderLoader handles the entire setup of the shader, it is immutable, and its sole purpose after creation is to store the integer-based handles that I need to refer to during rendering. (I.e. *getProgramHandle()* returns the handle stored from the *glCreateProgram()* call.) I've already debugged to ensure the shader handles are both preserved and different throughout the rendering life cycle. Also, as I pointed out, calls to *glUseProgram()* are ignored entirely in my *onDrawFrame()*, regardless of what shader I'm calling it on."
+0.0,2014-10-07 19:05:29.617000+00:00,"When you say ignored, do you mean that both triangles get rendered with texture OR with color? Or that the other one doesn't get rendered at all? I'd put _all_ the attributes and uniforms to the class for the sake of clarity. There is some confusion with at least textureCoordHandle and shaderFOO.getAttributeHandle() in renderFOO."
+0.0,2014-10-06 12:16:47.540000+00:00,"@onedevteam.com `TimeOfDay` wouldn't group this by hour.  You would have needed `DateTime.Hour` for that, and you need to break it down into Year, Month, and Day.  I've updated my answer."
+0.0,2014-10-06 12:13:11.230000+00:00,ds is consumed in dataGridView in windows forms application and i need to show number of hits for each hour of each day. That's why i need to separate date and timeofday.
+0.0,2014-10-07 12:56:54.813000+00:00,"I actually did it this way before you updated answer, but i hoped that there is way to show date in one field instead 4... thanks anyway :)"
+0.0,2014-10-06 12:23:33.703000+00:00,@Yildirim check David Pilkington answer ! You can add /user:Administrator to the Arguments but you will be always asked for the passowrd
+0.0,2014-10-06 12:19:00.043000+00:00,This app its supposed to be on more machines.
+1.0,2014-10-06 12:12:13.777000+00:00,@Shomz — It isn't exactly like an array. Try using `.splice` on it.
+1.0,2014-10-06 12:10:04.213000+00:00,"@Quentin Yes, it does. Ok, a node list, which behaves exactly like an array."
+0.0,2014-10-06 12:11:51.693000+00:00,"@Shomz Thanks, this works, but how would you advise me to remove all class attributes, is the only way by setting class to empty?"
+0.0,2014-10-06 12:08:40.720000+00:00,"`getElementsByTagName` doesn't return an array, it returns a NodeList."
+0.0,2014-10-06 12:31:58.807000+00:00,"Yeah, since you already have the collection in a variable, no need to do another query."
+0.0,2014-10-06 12:31:02.277000+00:00,"@Shomz Thanks, I was actually using *document.getElementById* inside loop which seems wasteful compared to yours. Also thnx for removeAttribute..."
+0.0,2014-10-06 12:13:30.137000+00:00,@gummage You're welcome. I wrote you an example how to delete all classes and how to remove specific one.
+0.0,2014-10-06 12:12:20.357000+00:00,"Thanks, this works, but how would you advise me to remove all class attributes, is the only way by setting class to empty?"
+0.0,2014-10-06 12:12:32.813000+00:00,@gummage — That's the simplest approach.
+2.0,2015-12-02 10:17:16.280000+00:00,If anyone is still looking for the try catch lambda topic the url of my blog has been changed -> https://razem.io/blog/y2015/0819_try_catch_lambda.html
+0.0,2015-04-05 01:08:28.197000+00:00,"and to apply a filename filter (like by extension, using String.endsWith()) after that is extremely easy too, thanks!"
+0.0,2015-08-19 11:04:51.443000+00:00,"@JulianLiebl Whow, this is cool. Thanks for your effort, it really helps!"
+0.0,2015-11-12 07:04:46.457000+00:00,"You could write the forEach as `.forEach(System.out::println)`.
+Also the `.collect(Collectors.toList())` is not needed in your first example."
+2.0,2014-10-13 21:18:14.243000+00:00,"It says ""Invalid method reference, cannot find symbol""
+""Method toFile""
+is toFile supposed to be something else?"
+0.0,2015-06-11 07:15:02.627000+00:00,Looks like your Java compiler is set to 1.7. Bump it up to 1.8 and/or install new version of your IDE.
+0.0,2015-03-22 17:54:58.093000+00:00,"I had the same problem, but automatic imports imported something else, not the java.nio.file.Path."
+3.0,2014-10-13 04:33:27.693000+00:00,"Getting an error with 
+.map(Path::toFile)
+Also .forEach(path -> System.out.println(path.toString());
+should be .forEach(path -> System.out.println(path.toString()));"
+0.0,2019-01-08 16:22:11.830000+00:00,"How do you close the stream when your code is like the second example code:  
+List filesInFolder = Files.walk(Paths.get(""/path/to/folder""))
+                                .filter(Files::isRegularFile)
+                                .map(Path::toFile)
+                                .collect(Collectors.toList());"
+0.0,2015-08-17 22:52:27.570000+00:00,"@JulianLiebl how do we skip hidden files?  `filter(Files::isHidden)` doesn't work. The error says: ""Unhandled exception type IOException"", but the method already throws IOException."
+0.0,2014-10-13 14:38:56.493000+00:00,Thanks for the correction. What error do you get? I execute the exact code in a project of mine and do not get an error.
+2.0,2015-08-19 10:29:09.727000+00:00,"@NadjibMami Please have a look here: http://razem.io/blog/posts/year2015/0819_try_catch_lambda
+Was to compilcated to answer in a comment. So I wrote a quick blog post."
+0.0,2015-11-16 11:22:16.263000+00:00,@YingYang I updated the answer to address your concerns.
+2.0,2014-10-14 09:44:51.533000+00:00,Can u please paste your code in a PasteBin? Are you using `java.nio.file.Path`? I just checked the method toFile() should exist even prior to java 8 -> http://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html#toFile()
+0.0,2014-10-06 12:13:21.197000+00:00,Can't believe I did not think of doing that thank you very much fixed my problem :D
+0.0,2014-10-06 12:18:52.903000+00:00,Yeah I realized late that he used an object as an array. But he should have got an error message which tells the problem haven't he?
+0.0,2014-10-06 12:15:21.180000+00:00,I dowvoted before you edited.. And can't revote now.. So unless you edit I can't revote..
+0.0,2014-10-14 06:46:26.857000+00:00,"Yeah thats correct, i've accepted it as answer.
+the problem with calculating a weight per pixel (treat every pixel as a box with volume), is that even when you're standing still, the amount of pixels differs alot. if i can somehow reduce that, i can get a pretty good estimate weight, but it will never be 100% or even 90% accurate."
+0.0,2014-10-06 13:50:37.253000+00:00,"Thanks for the reply. Separating the body into shapes seems difficult in the first place. For now i'm trying to calculate distance from the corresponding Joint to the actual z-depth of the pixel. Then i should try to add up all the values of each pixel and determine a 'weight' per pixel-depth, and add it all together."
+0.0,2014-10-10 04:34:51.953000+00:00,now how you are going to calculate the weight per pixel I dont think it is possible at all with Kinect. This is a far more practical solution which you can even accept as the answer.
+0.0,2014-10-06 12:14:28.650000+00:00,@AdrianoRepetti amended the answer
+0.0,2014-10-06 12:12:49.397000+00:00,Fair enough but I'd elaborate little bit more...
+0.0,2014-10-06 12:12:31.860000+00:00,"@AdrianoRepetti unless he wants to code this http://stackoverflow.com/questions/452902/how-to-read-a-text-file-reversely-with-iterator-in-c-sharp , he has to"
+0.0,2014-10-06 12:11:54.270000+00:00,"@AdrianoRepetti ""unless I have to"" being the operative phrase"
+0.0,2014-10-06 12:11:17.223000+00:00,Downvoter care to comment?
+0.0,2014-10-06 12:29:51.663000+00:00,"Excellent works a treat, however on selecting the headers is there a way to close the previous selection, as currently they are all open requiring manual close."
+0.0,2014-10-06 12:48:23.313000+00:00,yep makes perfect sense +1
+0.0,2014-10-06 12:44:42.027000+00:00,"@Ebikeneser I updated my answer, hope it's clear enough to understand what it does"
+1.0,2014-12-26 20:43:59.263000+00:00,"Could use `(drop-last p)` instead of `(take...)`. (Or `butlast`, but that may be discouraged.)"
+0.0,2014-10-06 12:24:23.320000+00:00,"Well Single Responsibility is having only one reason to change. Interface-segregation is breaking up your application into digestible parts. They are similar, but not the same. You might think of SRP as the guide for breaking down your application, while ISP tells you how to do so."
+0.0,2014-10-06 12:47:44.190000+00:00,"So both the classes and the interfaces appear to require the same rules for good code.  Both have a single responsibility and both are correctly segregated.  Maybe I shouldn't be considering an interface to be the an `interface` (i.e. made with the interface keyword, but more the public face of an a class)."
+0.0,2014-10-06 12:27:01.557000+00:00,"At present, I still can't get any reasonable difference between them."
+0.0,2014-10-06 12:15:28.263000+00:00,So are you saying that ISP == SRP?
+0.0,2014-10-06 13:06:36.367000+00:00,@BanksySan I tried writing a condensed version of this explanation in my original answer
+0.0,2014-10-06 13:01:07.797000+00:00,"That's kinda the idea of an interface, it's like an implementation contract that says ""if you're going to be doing IX, then implement IX.Y() and IX.Z(), because the things that use IX are going to expect it to do Y() and Z()"". In this example, an IConnectionFactory would look like a IConnectionFactory { DbConnection GetProviderConnection(); } (Because DBConnection is a CLR type that both OracleConnection and SqlConnection derive from) [ed - I hate comments this looks so confusing]"
+0.0,2014-10-06 12:34:57.790000+00:00,"A class SqlDatabaseConnection : IConnectionFactory {}.
+SqlDatabaseConnection class does not change when you need to connect to oracle. 
+Instead you do OracleDatabaseConnection : IConnectionFactory {}"
+0.0,2014-10-08 13:42:16.397000+00:00,"Yes that makes sense, basically the whole website and xml is stored on the server, and I am simply trying to allow access to read and write through the browser; via any client pc. Browsers dont seem to like cross domain checking or whatever its called. AJAX wont work on a client PC trying to access the servers XML file, it will only work if using the http://localhost/ url. Also if I do access the local host url the ActiveX object in the browser doesn't work (to write to the XML file on the server) via the client PC. IF that makes sense. How do i get around that?"
+0.0,2014-10-06 12:26:23.180000+00:00,"""the multi-part identifier 'ua.user' could not be bound"" I've fixed that by clearing cache"
+0.0,2014-10-06 12:16:10.667000+00:00,"Thanks for the hints and quick response! :) It works but maangement studio underlines ""Users.UserAddress"" and ""ua.[user]"" in ""(u.id = ua.[user])"". 
+First message is invalid object name and second: ""the multi-part identifier 'ua.user' could not be bound"". Why is that happening?"
+0.0,2014-10-06 12:58:51.880000+00:00,"I tried after the auth to send to MainActivirt (the new class I created) but it didnt work, do you know the code and where I should write it ? Thanks."
+0.0,2014-10-08 13:09:29.383000+00:00,Look at the EDIT on the main question. Put some new questions.
+0.0,2014-10-06 12:49:55.107000+00:00,"So you recommend something like this?
+LoginActivity(the logo/loginbutton) -> LoginFragment(for the auth) -> If success -> the new class MainActivity?
+I dont know if this will slow down the login-process for the app, but I will try this, thank you."

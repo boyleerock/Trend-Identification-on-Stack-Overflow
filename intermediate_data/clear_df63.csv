@@ -1,0 +1,826 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+26215788,,"I had a similar problem with the command min, I got it to read the list by including the list primitive.",,,0,,2014-10-06 12:00:15.030000+00:00,,2014-10-06 12:00:15.030000+00:00,,,,,3887089.0,26153511,2,0,,
+26215791,,"In general it depends on your app's features. But you should consider next things:
+Senselessness: it's just senseless to show 1200x1920 picture on a device with 320x640 screen because user will not see the difference. Of course in case you don't need to have zoom functionality.
+Network traffic: contemporary camera modules could capture tremendously large pictures (5248 х 3936 pixels). To download such a large file user will be waiting for a quite long time.
+RAM consumption: to display picture device must upload it to the memory. Some low end devices have 256MB of memory and to show 5248х3936 picture you will need to upload into memory ~82MB(5248px * 3936px * 32bit) - so most likely you will catch  exception.
+There several methods how to solve it. One of them is to passing device screen size to the server. The server should decide which image to return to the particular device.",,,1,,2014-10-06 12:00:24.500000+00:00,,2014-10-06 12:00:24.500000+00:00,,,,,798165.0,26214829,2,1,,
+26215793,,"No.  You cannot save it as UTF-8.  I got the same error as well, and I found that the file mentioned is already in UTF-8.  (There is some German text in the comments)  Also, ninja suggested to save the file in Unicode instead.
+This is the error message I have got:
+hash_tables.h : warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
+Same error appear now at several headers under src/testing/gtest/include/gtest/internal/gtest-internal.h and third_party/libusb/src/libusb/stderror.c
+In additional, are you working on your compilation on a Windows machine?  I am doing the development on a Windows machine as well.  Guess most other users are using Linux instead.
+===== 
+And I came across this when searching for other possible solutions:
+http://www.chromium.org/developers/how-tos/build-instructions-windows#TOC-Build-failures-on-Vista
+But I do not think the suggestion is wise.",,,1,,2014-10-06 12:00:29.367000+00:00,,2014-10-06 13:25:11.220000+00:00,2014-10-06 13:25:11.220000+00:00,,1355834.0,,1355834.0,25105744,2,0,,
+26215796,,I think it's using triangle you can change border colors in css. or generate a triangle using triangle. I suggest you to read this first.,,,0,,2014-10-06 12:00:31.580000+00:00,,2014-10-06 12:00:31.580000+00:00,,,,,4107888.0,26215742,2,0,,
+26215797,," is sensitive to null values, it does not compare null values hence ignores it. In contrast,  is insensitive to null values. Check the example given below
+Row  was ignored by  but was considered by . In fact NOT NULL ignored row   and , but since they are also present in test1, it seems to be logical although ignored. This can be tested by issuing ",,,1,,2014-10-06 12:00:37.550000+00:00,,2014-10-06 12:00:37.550000+00:00,,,,,3148391.0,26214963,2,0,,
+26215800,,"Use subprocess, it is a smaller module so it runs the  quicker.",,,1,,2014-10-06 12:00:42.890000+00:00,,2014-10-06 12:33:25.040000+00:00,2014-10-06 12:33:25.040000+00:00,,988174.0,,4113142.0,1811691,2,11,,
+26215805,,"So, the solution I have found is really ugly and hackish. The way forEvery (and other Inspectors too, I suspect) work is that they try to get your collection's iterator if they can, both to run the tests and to print out your collection. My solution passes the correct iterator only on the first run, and if the inspector tries to grab the iterator again (which it does only to print the collection out) it gets Seq.empty.iterator. The best thing which can be said about this code is that it works:
+The inspector doesn't use either length or apply, so whatever I put there is irrelevant, as long as it has the correct type. Extending Seq is just about the easiest way I have found to pretend to be a GenTraversable (which is needed to have my own class' iterator used). I would be happy to find any solution that is better than this.",,,0,,2014-10-06 12:01:05.217000+00:00,,2014-10-06 12:01:05.217000+00:00,,,,,4110052.0,26200768,2,1,,
+26215808,,"XFixesCursorImage stores ONLY the cursor image, NOT the entire screen. So -as Andrey says- you can only access 24x24 unsigned longs. 
+You can place the Cursor Image on your XImage by using the fields x,y on the XFixesCursorImage, but remember that the pixel format of the XImage might differ from that of the XFixesCursorImage, which is always 32 bits per pixel ARGB. 
+Said that, please note that unsigned long can actually be 64 bits if compiling for x86_64, so your conversions should use unsigned long to be portable and not assume it will be 32 bits.
+Placing example (with funcs missing but good enough for the explanation):
+Notes: img in the code is the XFixesCursorImage, and do not trust the field 'cursor_serial' in order to determine if cursors are different of each other, because sometimes this field is just 0. Not sure why.",,,2,,2014-10-06 12:01:17.943000+00:00,,2014-10-06 12:09:32.393000+00:00,2014-10-06 12:09:32.393000+00:00,,2832768.0,,2832768.0,22891351,2,4,,
+26215812,,"Your file is not UTF-8 encoded. I'm not sure what encoding uses F6 for  either; that codepoint is the encoding for  in Latin 1 and CP-1252:
+You'll need to save that file as UTF-8 instead, with whatever tool you used to create that file.
+If  works, then you were able to decode the file using the default system encoding. See the  function documentation:
+  encoding is the name of the encoding used to decode or encode the file. This should only be used in text mode. The default encoding is platform dependent (whatever  returns), but any encoding supported by Python can be used. 
+That is not to say that you were reading the file using the correct encoding; that just means that the default encoding didn't break (encountered bytes for which it doesn't have a character mapping). It could still be mapping those bytes to the wrong characters.
+I urge you to read up on Unicode and Python:
+The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) by Joel Spolsky
+The Python Unicode HOWTO
+Pragmatic Unicode by Ned Batchelder",,,0,,2014-10-06 12:01:30.727000+00:00,,2014-10-06 12:37:53.110000+00:00,2014-10-06 12:37:53.110000+00:00,,100297.0,,100297.0,26215782,2,7,,
+26215814,,"You are using a temporary byte array that might be the cause of the problem.
+You can directly write the content of the stream to your file.",,,0,,2014-10-06 12:01:33.950000+00:00,,2014-10-06 12:01:33.950000+00:00,,,,,800413.0,26215690,2,1,,
+26215815,,"As stated in the documentation for Receive:
+  Because this method is called on a transactional queue, the message
+  that is received would be returned to the queue if the transaction is
+  aborted. The message is not permanently removed from the queue until
+  the transaction is committed.",,,5,,2014-10-06 12:01:39.017000+00:00,,2014-10-06 12:01:39.017000+00:00,,,,,43846.0,26193657,2,0,,
+26215816,,"The cellid implementation varies from mobile device to mobile device since these features are considered to be optional. for example: 
+Samsung (all devices): getNeigbouringCells () is not supported at all and always returns an empty list.
+according to this:
+http://wiki.opencellid.org/wiki/Android_library",,,0,,2014-10-06 12:01:40.273000+00:00,,2014-10-06 12:01:40.273000+00:00,,,,,2101822.0,3868223,2,1,,
+26215818,,"The following code solved my problem.
+Basically I had to adding event handlers after dynamically html was rendered.
+http://jsbin.com/tazejuhefixa/1/",,,0,,2014-10-06 12:01:52.067000+00:00,,2014-10-06 12:01:52.067000+00:00,,,,,379008.0,26215434,2,0,,
+26215820,,"You're reading the entire response into the  (memory). Instead, you could stream the output as you read it from  with something like,",,,0,,2014-10-06 12:01:58.870000+00:00,,2014-10-06 12:01:58.870000+00:00,,,,,2970947.0,26215690,2,1,,
+26215823,,"Your business rule is that a user can only comment on a piece of software that is contained in a package that they own.  What you need to do is apply this rule in the primary key(1) of your  table.
+Consider this ERD:
+Note how the primary key of a  is the combination of its foreign keys to the owned package and the package content.  Since both of these primary keys include the (2) you have a declarative referential constraint that ensures that the user can only comment on a piece of software that is contained in a package that they own.
+Notes:
+(1) If you are averse to composite primary keys, you can have a candidate key (unique index) which achieves the same result.
+(2) If you are using an ORM or something that doesn't allow you to share one  column between two foreign key relationships you can have two  columns in the  table and add a constraint that forces the one to be equal to the other.",,,1,,2014-10-06 12:02:16.630000+00:00,,2014-10-06 12:02:16.630000+00:00,2020-06-20 09:12:55.060000+00:00,,-1.0,,659653.0,26215043,2,1,,
+26215825,,You may need to use  in your URL since you are having ,,,0,,2014-10-06 12:02:17.840000+00:00,,2014-10-06 12:02:17.840000+00:00,,,,,3741739.0,25285805,2,2,,
+26215826,,"Use this instead for your  tag:
+Or alternatively:",,,3,,2014-10-06 12:02:19.910000+00:00,,2014-10-06 12:02:19.910000+00:00,,,,,1245596.0,26215468,2,1,,
+26215828,,"You can acheive this with CSS but you are not techinically changing the arrow itself.
+In this example I am actually hiding the default arrow and displaying my own arrow instead.
+HTML:",,,1,,2014-10-06 12:02:21.643000+00:00,,2014-10-06 12:02:21.643000+00:00,,,,,3935753.0,26215742,2,0,,
+26215829,,"Assuming the workbook has been saved in the appropriate name format, use this formula in G2.",,,0,,2014-10-06 12:02:23.420000+00:00,,2014-10-06 12:02:23.420000+00:00,,,,user4039065,,26215585,2,3,,
+26215833,,": 
+ Open CURSOR-1
+ Open CURSOR-2 and Use that cursor as a pointer for the new Cursor you care going to create
+ Close CURSOR-2
+ Close Cursor-1
+Try this Sample::
+Note:- Make sure you close all the cursors",,,0,,2014-10-06 12:02:47.257000+00:00,,2014-10-06 12:02:47.257000+00:00,,,,,1083093.0,26213786,2,2,,
+26215834,,"You can think about the construct  as a derived column, which isn't returned to the client via select list, but is used for sorting.
+You can look at it this way:",,,1,,2014-10-06 12:02:53.843000+00:00,,2014-10-06 12:02:53.843000+00:00,,,,,3925232.0,26213801,2,3,,
+26215838,,The  library has the  function to do this:,,,0,,2014-10-06 12:03:15.593000+00:00,,2014-10-06 12:03:15.593000+00:00,,,,,1000343.0,26209038,2,1,,
+26215839,,"Yes, it is aware that it's an invalid local time - which is why when you specifically ask it to convert that local time into UTC, it throws an exception. It's roughly equivalent to calling .
+The  call you're making specifically throws an exception on either ambiguous or skipped times. If you use  you won't get an exception, but it may not give you the result you want. Or, you could use  which will allow you to map invalid local date/time values however you want.
+As side-notes:
+Your  variable is a , so the name is a bit misleading
+You don't need to call  -  will always return a  with a kind of , hence the name.",,,6,,2014-10-06 12:03:17.350000+00:00,,2014-10-06 13:14:29.487000+00:00,2014-10-06 13:14:29.487000+00:00,,22656.0,,22656.0,26215747,2,1,,
+26215842,,,,,0,,2014-10-06 12:03:28.727000+00:00,,2014-10-06 12:03:28.727000+00:00,,,,,3257857.0,26215695,2,0,,
+26215844,,"this is very easy way to do this without any Library:
+if the OS version is not supported - under kitkat - so nothing happend.
+i do this steps:
+in my xml i added to the top this View:
+then i made this method:
+also you need those both methods to get action Bar &amp; status bar height:
+then the only thing you need is this line to set status bar color:",,,4,,2014-10-06 12:03:43.217000+00:00,,2014-10-06 12:37:26.893000+00:00,2014-10-06 12:37:26.893000+00:00,,3166417.0,,3166417.0,22192291,2,50,,
+26215846,,"See the Laravel docs for Mass Assignment. All you need to do add a  property to your model:
+That will allow you to 'mass assign' your properties in a  method.
+Alternatively, you could insatiate a new User object and individually set it's values:",,,2,,2014-10-06 12:03:57.077000+00:00,,2014-10-06 12:09:30.977000+00:00,2014-10-06 12:09:30.977000+00:00,,567131.0,,567131.0,26214971,2,2,,
+26215848,,Remove your second  or move it into the -block. ,,,1,,2014-10-06 12:04:00.647000+00:00,,2014-10-06 12:04:00.647000+00:00,,,,,29812.0,26215789,2,1,,
+26215852,,"You've got a mistake. This line:
+is being executed even when  since you have it out of if sentence.",,,1,,2014-10-06 12:04:10.523000+00:00,,2014-10-06 12:04:10.523000+00:00,,,,,2796295.0,26215789,2,0,,
+26215856,,"It is possible out-of-the-box. There is a commercial CB Replicator solution that solves exactly this problem. It performs complex mapping of CRM security model into SharePoint groups and and folder level permissions.
+Shortly described it deploys tiny plugin into CRM that collects all the events that could require change of permissions. There is a standalone service that gets these events and write proper permissions into SharePoint as item level permissions on referenced folders by sharepointdocumentlocation entity.
+It support various action in CRM that lead into permissions change, e.g.s security roles, business unit hierarchy, privilege depths, team membership, access team, access team templates, sharing.",,,0,,2014-10-06 12:04:14.247000+00:00,,2018-02-14 21:55:03.060000+00:00,2018-02-14 21:55:03.060000+00:00,,7920473.0,,1613624.0,11581941,2,5,,
+26215857,,"Most basically open a terminal with Ctrl-Alt-t and type . That will work but there is a better way, which I'll explain.
+When you're developing a web app you will eventually want to deploy it. You'll want the environment on which you're developing to be as similar to the one on which you deploy as possible. One way to do this is virtual environments. On Ubuntu you also have the option of Docker.
+Virtual environments are probably slightly easier if you're just starting out but I would recommend building up to Docker, which is more complete IMO. If you're using Python 3 then you should use pyvenv to create your virtual environments. On Python 2 you want virtualenv. These will create an isolated Python environment specific to the project they contain, which means you can have many custom setups for many projects, and you can recreate these relatively easily when deploying to production. When the environment is active you can install python packages with .",,,1,,2014-10-06 12:04:17.087000+00:00,,2014-10-06 12:16:36.127000+00:00,2014-10-06 12:16:36.127000+00:00,,1280784.0,,1280784.0,26215738,2,19,,
+26215858,,I prefer to work with them as with a collection of Option[T],,,0,,2014-10-06 12:04:19.003000+00:00,,2014-10-06 12:04:19.003000+00:00,,,,,3711735.0,26215349,2,2,,
+26215860,,Here's a copy of the tock.aiff file.,,,0,,2014-10-06 12:04:23.857000+00:00,,2014-10-06 12:04:23.857000+00:00,,,,,1370263.0,18918881,2,0,,
+26215862,,"Well, we finally figured it out. We had to use the Google Admin SDK in order to implement SSO. We had some troubles with the scopes, but after we polished that, everything seems to be working OK.",,,0,,2014-10-06 12:04:34.463000+00:00,,2014-10-06 12:04:34.463000+00:00,,,,,1380055.0,26041672,2,0,,
+26215867,,"You can disable categories on xAxis, then simply use dataLabels instead: 
+Example: http://jsfiddle.net/zf7te5ef/3/",,,2,,2014-10-06 12:05:01.637000+00:00,,2014-10-06 12:05:01.637000+00:00,,,,,1451635.0,26208016,2,1,,
+26215869,,"There is no else on the inner if, so it checks that it is not 0, doesnt execute the code within the if, then goes to the  line that is after the if statement.
+What is the point of your if statement if all it does is allow that line to be executed twice",,,0,,2014-10-06 12:05:04.570000+00:00,,2014-10-06 12:05:04.570000+00:00,,,,,2497001.0,26215789,2,0,,
+26215873,,"You are using  even if number is  secondly your else part should be inside the if block if user enters  it should be going to the else part according to your message.
+So it should be like this, ",,,0,,2014-10-06 12:05:15.073000+00:00,,2014-10-06 12:19:17.600000+00:00,2014-10-06 12:19:17.600000+00:00,,1997093.0,,1997093.0,26215789,2,1,,
+26215874,," is a  while you require a  here.  is a combination of  and  for cases where they are symmetrical. This isn't the case here because validation is only for reading JSON, not for writing it. So you cannot write a single . 
+To get around this, write your  and  separately:",,,3,,2014-10-06 12:05:15.910000+00:00,,2014-10-06 12:18:33.570000+00:00,2014-10-06 12:18:33.570000+00:00,,638427.0,,638427.0,26214841,2,0,,
+26215875,,"You must Add name attribute for your inputs like :
+Or use html helpers for it ",,,0,,2014-10-06 12:05:25.750000+00:00,,2014-10-06 12:11:17.727000+00:00,2014-10-06 12:11:17.727000+00:00,,395022.0,,395022.0,26215267,2,0,,
+26215876,,"It doesn't look like the click handler is actually assigned to the button's click event.  So the button is causing a post-back, but not invoking the handler.  (I bet if you debug the current code you'll find that the  method is never even invoked.)
+Try assigning it explicitly:",,,2,,2014-10-06 12:05:31.097000+00:00,,2014-10-06 12:05:31.097000+00:00,,,,,328193.0,26215810,2,1,,
+26215878,,You can do this with ,,,4,,2014-10-06 12:05:39.417000+00:00,,2014-10-06 15:12:17.817000+00:00,2014-10-06 15:12:17.817000+00:00,,1144035.0,,1144035.0,26215822,2,1,,
+26215880,,It is of course not necessary anymore to re-compile QT yourself since they now also ship a prebuilt installer for opengl-desktop,,,0,,2014-10-06 12:05:41.520000+00:00,,2014-10-06 12:05:41.520000+00:00,,,,,4023507.0,15973247,2,0,,
+26215884,,You need to set this in the manifest,,,1,,2014-10-06 12:06:02.693000+00:00,,2014-10-06 12:06:02.693000+00:00,,,,,2732806.0,26215853,2,0,,
+26215885,,"This is problem in Eclipse SR1. You should switch back to R (SR0) release, next you can install PDT 3.3.1 from marketplace.
+See also bug report on bugzilla
+Edit:
+Problem is fixed in nightly builds: http://download.eclipse.org/tools/pdt/updates/3.4-nightly/
+Edit 2:
+We released new stable (3.3.2) version with fix for this problem. You can find it on marketplace or in this update site: http://download.eclipse.org/tools/pdt/updates/3.3.2/",,,0,,2014-10-06 12:06:06.320000+00:00,,2014-12-26 16:18:53.963000+00:00,2014-12-26 16:18:53.963000+00:00,,691742.0,,691742.0,26067892,2,14,,
+26215886,,"You must have something like 
+Just do ",,,0,,2014-10-06 12:06:13.690000+00:00,,2014-10-06 12:06:13.690000+00:00,,,,,426350.0,26176483,2,2,,
+26215889,,"Divide by 0 error.
+That line is done twice if number is not 0, and once if it is 0.",,,0,,2014-10-06 12:06:18.073000+00:00,,2014-10-06 12:06:18.073000+00:00,,,,,3932317.0,26215789,2,1,,
+26215891,,"The root cause of your problem is overlapping elements.
+Since you're moving the circle element on top of the square element in your  handler, the subsequent  event will be triggered on the circle. Since that event was not triggered on the square element, no  event will be generated.
+If you have to keep the circle element on top of the square, you can use the pointer-events CSS rule to force mouse events to ""go through"" the circle element.",,,0,,2014-10-06 12:06:21.093000+00:00,,2014-10-06 12:06:21.093000+00:00,,,,,464709.0,26213333,2,0,,
+26215896,,"you would need to add 
+So that code should look like ",,,0,,2014-10-06 12:06:34.867000+00:00,,2014-10-06 12:06:34.867000+00:00,,,,,1838188.0,26194264,2,1,,
+26215895,,"Ok, solved my own problem - basically I added an exception for the cpi.exe program on HOST1 but not on HOST2. The solution was to ensure the exception was added to BOTH machines!",,,0,,2014-10-06 12:06:34.870000+00:00,,2014-10-06 12:06:34.870000+00:00,,,,,2722510.0,26214498,2,0,,
+26215897,,Try this in manifest,,,5,,2014-10-06 12:06:35.640000+00:00,,2014-10-06 12:06:35.640000+00:00,,,,,3320129.0,26215364,2,1,,
+26215899,,"Refer: 
+MassAssignmentException in Laravel
+Laravel provide by default a protection against mass assignment security issues. That's why you have to manually define which fields could be ""mass assigned"" ",,,1,,2014-10-06 12:06:40.413000+00:00,,2014-10-06 13:08:22.157000+00:00,2017-05-23 12:27:18.597000+00:00,,-1.0,,2755677.0,26214971,2,1,,
+26215904,,"The following code was working for me...
+var contact_list = $('#compose_contact_list');
+    contact_list.jstree({
+        ""checkbox"" : {
+            ""keep_selected_style"" : false,
+            ""tie_selection"" : false
+        },
+        ""plugins"" : [ ""checkbox"" ]
+    });
+    contact_list.on(""check_node.jstree"", function(event, data){
+        alert(data.node.text);
+    });",,,0,,2014-10-06 12:06:51.343000+00:00,,2014-10-06 12:06:51.343000+00:00,,,,,3560680.0,15363367,2,4,,
+26215905,,"Take a look at your code
+line I put * will execute always whether or not  condition satisfy.
+You can change your code to following.",,,2,,2014-10-06 12:07:02.150000+00:00,,2014-10-06 12:07:02.150000+00:00,,,,,1869846.0,26215789,2,0,,
+26215906,,"You didn't assign the function to the button on the HTML code, you need to add  to the button Tag",,,0,,2014-10-06 12:07:12.003000+00:00,,2014-10-06 12:07:12.003000+00:00,,,,,3073244.0,26215810,2,1,,
+26215908,,I've never used Spring boot but it clearly says it needs a transaction manager.  Depending on how you're accessing your DB you need something like:,,,0,,2014-10-06 12:07:15.230000+00:00,,2014-10-06 12:07:15.230000+00:00,,,,,2438182.0,26215809,2,0,,
+26215912,,"//At first, Fill in the variable ""sourceList"" with the json data
+//Create a global variable for accessing the selected values
+//Define the multiselect autocomplete textbox as below : 
+Hope this helps :)",,,0,,2014-10-06 12:07:25.317000+00:00,,2014-10-06 12:07:25.317000+00:00,,,,,3933011.0,26215391,2,1,,
+26215915,,"I don't seem to be able to comment so I'll post an answer instead.
+What would fit with your symptoms is that your shaderFOO.getProgramHandle() and shaderBAR.getProgramHandle() might return the same, for example if the stored program handle is overwritten with subsequent calls.
+Hard to say without the ShaderLoader class, however.",,,2,,2014-10-06 12:07:37.723000+00:00,,2014-10-06 12:07:37.723000+00:00,,,,,4112914.0,26185246,2,0,,
+26215916,,"Try this code 
+Css Style :",,,0,,2014-10-06 12:07:39.140000+00:00,,2014-10-06 12:07:39.140000+00:00,,,,,1724419.0,26182429,2,0,,
+26215917,,"Linq-To-Entities doesn't have a mapping for  to SQL.  So, instead you have to break it down into the Year, Month, Day, and Hour to get the results you are looking for.
+Then when you consume  you can put the date parts back together.",,,3,,2014-10-06 12:07:42.867000+00:00,,2014-10-06 12:23:07.887000+00:00,2014-10-06 12:23:07.887000+00:00,,302918.0,,302918.0,26215722,2,1,,
+26215920,,"User is a keyword, so to access a column ""user"", you have to put it into square brackets:",,,0,,2014-10-06 12:07:58.807000+00:00,,2014-10-06 12:07:58.807000+00:00,,,,,1827295.0,26215892,2,0,,
+26215921,,"Cloudinary supports uploading from DATA URLs (Base 64). For more information:
+http://support.cloudinary.com/entries/25785301-How-to-upload-Base64-data-to-Cloudinary-using-Post-Request",,,0,,2014-10-06 12:07:59.930000+00:00,,2014-10-06 12:07:59.930000+00:00,,,,,2433909.0,26196478,2,1,,
+26215922,,Here the + refers to ORing and . refers to ANDing operations. (A'C')+(A'C') means that A's complement is ANDed with C's complement which is ORed with the ANDing of A's complement with C's complement.,,,0,,2014-10-06 12:08:03.747000+00:00,,2014-10-06 12:08:03.747000+00:00,,,,,4102404.0,21663764,2,0,,
+26215924,,Try this,,,2,,2014-10-06 12:08:09.410000+00:00,,2014-10-06 12:08:09.410000+00:00,,,,,2147652.0,26215853,2,3,,
+26215926,,"Because that's how you iterate over an object, not an array.
+The standard for loop will return only the results you expected: 
+To remove all the classes from them, use this inside the loop: 
+To remove just a specific class: 
+If you want to remove the whole element attribute (not just reset classes), use: 
+See all three examples in action here: http://jsfiddle.net/vr9mm2vk/1/",,,7,,2014-10-06 12:08:11.920000+00:00,,2014-10-06 12:29:26.210000+00:00,2014-10-06 12:29:26.210000+00:00,,965907.0,,965907.0,26215866,2,4,,
+26215927,,"It's means that your application was ran under administrator, so you can kill it only under administrator too.
+Try too launch application under another user.
+Hope this help.",,,0,,2014-10-06 12:08:18.030000+00:00,,2014-10-06 12:08:18.030000+00:00,,,,,3218677.0,26215853,2,0,,
+26215928,,If you have more then one browser (using java 8),,,0,,2014-10-06 12:08:20.263000+00:00,,2014-10-06 12:08:20.263000+00:00,,,,,2447599.0,9588827,2,-1,,
+26215930,,"Use a standard  loop (instead of a  loop) so you only hit the numeric properties. 
+Currently you are hitting all the properties including, for example, .",,,2,,2014-10-06 12:08:24.270000+00:00,,2014-10-06 12:08:24.270000+00:00,,,,,19068.0,26215866,2,1,,
+26215931,,"In Java 8 you can do this
+which will print all files in a folder while excluding all directories. If you need a list, the following will do:
+If you want to return  instead of  just map it:
+You also need to make sure to close the stream! Otherwise you might run into an exception telling you that too many files are open. Read here for more information.",,,14,,2014-10-06 12:08:32.020000+00:00,,2017-06-01 09:36:02.147000+00:00,2017-06-01 09:36:02.147000+00:00,,1029251.0,,1029251.0,1844688,2,138,,
+26215932,,"But one should iterate over the arrays, and also check for nil results in some cases, especially when retrieving the outer array element.
+And for testing insert NSLog statements after each step.",,,0,,2014-10-06 12:08:38.610000+00:00,,2014-10-06 18:49:15.007000+00:00,2014-10-06 18:49:15.007000+00:00,,581994.0,,581994.0,26213985,2,0,,
+26215933,,You can use something like:,,,0,,2014-10-06 12:08:38.950000+00:00,,2014-10-06 12:08:38.950000+00:00,,,,,874366.0,26212396,2,1,,
+26215934,,"try using the @media css3 types to refine based on the device resolution
+for example
+@media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}",,,1,,2014-10-06 12:08:39.123000+00:00,,2014-10-06 12:08:39.123000+00:00,,,,,3545438.0,26215855,2,0,,
+26215938,,"  OS is windows 8 64-bit [...]
+  ValueError: No backend available 
+Allow me to translate: You forgot to install the correct USB driver. 
+USB devices need a driver to work in Windows. Look at PyUSB website for details, and use Zadig to generate and install the driver (e.g. LibUSB-Win32) for you. This program takes care of the certificate that Windows 8 wants to see for your drivers inf file.
+Btw: The VID you should use for USB development is .",,,0,,2014-10-06 12:08:58.597000+00:00,,2014-10-06 12:08:58.597000+00:00,,,,,410847.0,26203544,2,1,,
+26215940,,"Your program have infinity cycle and therefore calls . If U want to loop cycle from end U need to decrement your  variable. Write  instead of  and change your cycle condition on . To loop from start to end of your string change  on  and your cycle condition on . You can choose a lot of different ways to solve this problem, but the main thing that you have understood the point.",,,0,,2014-10-06 12:09:04.770000+00:00,,2014-10-06 12:31:51.173000+00:00,2014-10-06 12:31:51.173000+00:00,,3857625.0,,3857625.0,26215824,2,2,,
+26215941,,You can't traverse actor hierarchy directly. However you could subscribe your every actor to Event Bus and then have one actor to send a Path Report message to the Event Bus and gather all the responses.,,,0,,2014-10-06 12:09:06.760000+00:00,,2014-10-06 12:09:06.760000+00:00,,,,,77102.0,26207278,2,1,,
+26215942,,"seems unordered_set is suitable for your requirement.
+PS: Pls remember all elements in this set are immutable",,,0,,2014-10-06 12:09:09.530000+00:00,,2014-10-06 12:09:09.530000+00:00,,,,,2451120.0,26215420,2,0,,
+26215944,,"You are not missing anything. I guess your workspace is corrupted, just try with brand new one, it should solve the deployment issue!",,,0,,2014-10-06 12:09:17.470000+00:00,,2014-10-06 12:09:17.470000+00:00,,,,,3741739.0,25890198,2,1,,
+26215949,,Use  and . ,,,2,,2014-10-06 12:09:22.470000+00:00,,2014-10-06 12:19:45.330000+00:00,2014-10-06 12:19:45.330000+00:00,,2308559.0,,2308559.0,26215786,2,2,,
+26215951,,Now this is a kind of challenging question. in order to do this you will need to separate the body into shapes. For example head is like a globe and neck as a cylinder. so as you consider head like a globe then you can get the usual 'd' and calculate volume same as the cylinder.  For the lower body you can treat it as a box having height and width.There you can get the depth by getting the side view of the person. Anyway it is impossible you to calculate exact amount of volume with a different way.   ,,,3,,2014-10-06 12:09:25.183000+00:00,,2014-10-06 12:09:25.183000+00:00,,,,,1258838.0,26180172,2,1,,
+26215952,,"To get the the last line of a text file you can use this
+This is the simplest method, but is inefficient. You can write your own parser as show here",,,5,,2014-10-06 12:09:29.340000+00:00,,2014-10-06 12:09:29.340000+00:00,2017-05-23 12:11:40.620000+00:00,,-1.0,,2732806.0,26215911,2,2,,
+26215953,,"For those looking for manual non-programmatic solution:
+http://www.translationtribulations.com/2010/06/cleaning-up-superfluous-tags-in-docx.html 
+I've tested that free-trial of memoQ 2014 can indeed be used as a bulky workaround for cleaning Word spell tags.
+Still looking for an easier ready-out-of-the-box tool.",,,0,,2014-10-06 12:09:32.953000+00:00,,2014-10-06 12:09:32.953000+00:00,,,,,603516.0,7752932,2,0,,
+26215954,,Checkbox padding behaves differently before/after API 17. See this answer for a quick example of how to work around this. The same question contains more discussion of the underlying cause if you are interested.,,,0,,2014-10-06 12:09:46.137000+00:00,,2014-10-06 12:09:46.137000+00:00,2017-05-23 12:28:15.687000+00:00,,-1.0,,2911458.0,26215707,2,1,,
+26215955,,"With Castle 3.0, the way to do this is as follows:
+And then, assuming you have the necessary details in your  or are fine with the defaults:",,,0,,2014-10-06 12:09:49.467000+00:00,,2014-10-06 12:09:49.467000+00:00,,,,,3205.0,2511185,2,0,,
+26215956,,"Make sure both your Application-app.xml from the src and from your bin-debug folder contain the NAME_OF_THE_EXTENSION_ID tag matching exactly what is being called in your ExtensionContext.createExtensionContext(NAME_OF_THE_EXTENSION_ID,null) inside the source code of the ANE. If they don't match you'll not be able to set the external context in the initialization. That should also match the alias from your RemoteClass descriptor before the class declaration. I hope it's helpful info.",,,0,,2014-10-06 12:09:49.613000+00:00,,2014-10-06 12:09:49.613000+00:00,,,,,1629642.0,24159298,2,0,,
+26215959,,"Simply use  instead of 
+The reason is  will select all of the next s instead of just selecting the next one.
+To toggle the other accordions back you need to get them and fade them out 
+How it works. ",,,3,,2014-10-06 12:09:52.993000+00:00,,2014-10-06 12:44:23.453000+00:00,2014-10-06 12:44:23.453000+00:00,,2220391.0,,2220391.0,26215863,2,3,,
+26215960,,Here is a general solution based on update-in:,,,1,,2014-10-06 12:09:59.157000+00:00,,2014-10-06 12:09:59.157000+00:00,,,,,737729.0,14488150,2,5,,
+26215965,,"The intention of SOLID is to get you to create a system that is implementation independent.
+SOLID means building many pieces that inject their dependencies so that every individual facet of your system is independently testable. You have an IDbConnectionService that provides an implementation contract to your project. When writing test cases for a service that uses IDbConnectionService as a dependency, you can mock out the functionality of IDbConnectionService to return what you need it to in a faked run time environment. 
+By using a base class, you are now providing an low-level implementation. Our intention with SOLID is to specifically not provide implementations until absolutely necessary.
+For instance, take this example of an IConnectionFactory:
+IConnectionFactory.cs
+SqlConnectionFactory.cs
+OracleConnectionFactory.cs
+SqlConnection and OracleConnection have one reason to change, but the interface segregation principal only requires one contract for them to fulfill in order to stand in for the concept of a ConnectionFactory.",,,7,,2014-10-06 12:10:16.433000+00:00,,2014-10-06 13:05:36.427000+00:00,2014-10-06 13:05:36.427000+00:00,,82333.0,,82333.0,26215641,2,1,,
+26215967,,"What you need to understand is what a SAN is. 
+A SAN is one or more storage arrays, interconnected via a fiber channel network. Your host has special network cards - called Host Bus Adapters (HBAs) - for talking to that network. The network protocols are geared up for storage traffic, and so are well suited to high performance, low latency traffic.
+The array you're talking to... well, it varies a great deal as to it's capability. Even an EMC SAN as you refer to it - might be a variety of EMC products as the storage array. Their primary purpose is consolidating storage performance. 
+You get a better peak performance out of 100 spindles share with 10 servers, than you would if each server had 10 spindles each. So what your storage array is basically doing is carving up that chunk of 100 spindles into logical units - and then giving them back to your host, such that each host has about the same average performance, but it's peak is 10x the size. (Or more perhaps more realistically - they might go with 50 spindles, because then you get 5x the peak, but half the cost, in return for a lower average). 
+Now - Filegroups. As I understand it (being a storage engineer, rather than knowing a great deal of SQL). Filegroups allow you to manage placement of data, specifically to the underlying storage. 
+This is something of a ticklish point - because it depends. Typically your storage array will be doing some quite clever things of it's own in order to streamline data placement and throughput. Things like some quite aggressive caching - far more than you'd be getting on a normal host - meaning that a lot of your random access workload goes at 'RAM speed' rather than 'disk speed'. It may well be striping across a lot more spindles than you'd normally expect as well. 
+Which as far as I can tell - is essentially what a filegroup is aiming to achieve - you manually place a file on a disk, and let SQL handle parallel IO to those disks. Your storage array is doing this for you already, and at best you'll make yourself unnecessary admin headache, and at worst you'll actually make array side optimization worse.
+You probably do still want to segregate your various content types, but I would suggest you do so via different LUNs being allocated from your SAN. That's more so you can't drain space from one database by having another fill - but it also allows for a bit more flexibility when it comes to taking snapshots or clones. 
+What I would suggest:
+go talk to your storage guys about the expected IO profile of your database. (IO is what's expensive on a SAN, and typically databases use more of it than 'normal' applications)
+put each instance on a different set of LUNs - separate out DB and logs and tempdb. 
+Within vmware, you may end up with 'logical' disks on the same datastore. If performance is critical, it may be worth passing through the SAN LUNs direct to the host.
+And then don't worry about it overly - if you notice a particular problem, it should be possible to retune/move individual LUNs around to improve the situation. ",,,0,,2014-10-06 12:10:21.687000+00:00,,2014-10-06 12:10:21.687000+00:00,,,,,2566198.0,25981656,2,2,,
+26215968,, 0.9.5 has been released to CRAN. Windows binary distributions should be available shortly.,,,0,,2014-10-06 12:10:22.010000+00:00,,2014-10-06 12:10:22.010000+00:00,,,,,2652376.0,26208810,2,1,,
+26215969,,"I suspect you're misunderstanding something here:
+The web browser can't access the server's file system.  That ActiveX object may allow file system access on the current host, but it's not going to allow it on other hosts.  If there are no errors and the browser is allowing the ActiveX object to interact with the local file system then I'll bet it's successfully creating the file on the local file system.  (In whatever happens to be the current working directory for the browser process, since no directory was specified.)
+To interact with files on the server's file system you'll need to use server-side code.",,,1,,2014-10-06 12:10:30.847000+00:00,,2014-10-06 12:10:30.847000+00:00,,,,,328193.0,26215881,2,0,,
+26215970,,"Your test isn't using Spring Boot (it needs to use  instead of , or declare the appropriate listeners).",,,0,,2014-10-06 12:10:31.283000+00:00,,2014-10-06 12:10:31.283000+00:00,,,,,1259109.0,26210786,2,15,,
+26215972,,"We can get reference from following path
+C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualStudio.TeamFoundation\v4.0_11.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.TeamFoundation.dll",,,0,,2014-10-06 12:10:31.827000+00:00,,2014-10-06 12:10:31.827000+00:00,,,,,3747572.0,26214993,2,0,,
+26215974,,Boxcarring allows multiple data service calls to be sent to server side and be executed at once. It can be used to make sure related data service calls gets executed completely or not at all(in this way it is similar to database transactions). IMO it is not DSS's job to lock any database values as it should be working on the service level.              ,,,0,,2014-10-06 12:10:43.873000+00:00,,2014-10-06 12:10:43.873000+00:00,,,,,2934931.0,25846207,2,1,,
+26215975,," is a reserved word in SQL Server, so you need to enclose it in square braces.  The list of reserved words is here.
+I would recommend writing your query as:
+Note:  this also fixes the problem that you seem to want to join to  and not a self-join to .
+And some advice:
+Use table aliases for all your tables.  They make queries easier to read and write.
+The table aliases should be abbreviations for the tables.
+Avoid using reserved words for table and column names.
+Avoid square braces (unless you really need them); they make queries harder to write and to read.
+In addition, I usually give my tables names in the plural () with a primary key in the singular (), and then always try to have foreign keys have the same name ( in both cases).",,,2,,2014-10-06 12:10:47.550000+00:00,,2014-10-06 12:10:47.550000+00:00,,,,,1144035.0,26215892,2,6,,
+26215976,,"ok this is what i will do.
+First activity that my app will have is LoginActivity.java.
+This activity will contain the logo and facebook login buttons.
+When user clicks and signs in using facebook, i call the MainActivity.java[well this is the main homescreen of my app].
+When user clicks back button here i dont go back to LoginActivity.java and i'd rather show an app quit alert box.",,,3,,2014-10-06 12:10:51.507000+00:00,,2014-10-06 12:10:51.507000+00:00,,,,,1162197.0,26215498,2,0,,
+26215977,,"I talked to people familiar with API of STAAD software, I was told that the API is a component of 32 bit Microsoft COM not 64 bit. Fortunately, there are some tricks to use 32 bit COM in 64 bit platform like the following links, I may give it a try: 
+http://www.gfi.com/blog/32bit-object-64bit-environment/
+Getting the GUID of an installed COM object",,,0,,2014-10-06 12:10:58.463000+00:00,,2014-10-06 12:33:27.677000+00:00,2017-05-23 12:07:52.647000+00:00,,-1.0,,3405291.0,26186238,2,0,,
+26215979,,"Problem solved!
+The problem was not Mono Game. This is the fixed code but my error occured because I tried to get ANID from a windows 8 device instead of ANID2.
+And the answer to why the game was running only whit a debugger attached to it is that I had to give my emulator it's own ID. So the game never went through the lines of code above when the debugger was attached.",,,0,,2014-10-06 12:10:59.133000+00:00,,2014-10-06 12:10:59.133000+00:00,,,,,4108729.0,26194719,2,0,,
+26215978,,"No, it isn't required to put them into curly braces. It is your choice and I guess Erik has chosen curly braces because that is the way the function will be called typically. As soon as you multiple statements you will have to use curly braces, because parentheses are just for single expressions.
+In the recursive call there is only one expression (namely ) so you can leave the curly braces if you want to. Doen't make any difference.
+To throw in some trustworthy reference: In Martin Odersky's Scala by Example on page 6 you will find an example of call by name parameters in a very similar use case but without curly braces:",,,0,,2014-10-06 12:10:59.587000+00:00,,2014-10-06 12:10:59.587000+00:00,,,,,638427.0,26213584,2,1,,
+26215980,,"A good example for using variadic templates with printf can be found here:
+http://msdn.microsoft.com/en-us/library/dn439779.aspx",,,1,,2014-10-06 12:11:00.053000+00:00,,2014-10-06 13:29:53.303000+00:00,2014-10-06 13:29:53.303000+00:00,,4108963.0,,4108963.0,26214929,2,1,,
+26215983,,"Finally resolve my issue. Issue occurred because Eclipse was not able to find google-play-services_lib(even it was showing green mark while adding as a library). I tried same process on another machine and everything worked fine.
+So I changed my entire Android SDK location and it woked fine.  ",,,0,,2014-10-06 12:11:08.230000+00:00,,2014-10-06 12:11:08.230000+00:00,,,,,3626113.0,26139080,2,0,,
+26215986,,You have to make your mistake correct as follows,,,0,,2014-10-06 12:11:20.913000+00:00,,2014-10-06 12:11:20.913000+00:00,,,,,1869846.0,26215824,2,0,,
+26215987,,"Is your url similar to  (mind the 's' at the end of http)
+Is your website SSL enabled?
+If you are unsure the best option would be to contact your host provider to get things sorted.",,,1,,2014-10-06 12:11:21.873000+00:00,,2014-10-06 12:11:21.873000+00:00,,,,,4009167.0,26214683,2,0,,
+26215988,,Try this:,,,1,,2014-10-06 12:11:23.940000+00:00,,2014-10-06 20:26:22.770000+00:00,2014-10-06 20:26:22.770000+00:00,,645886.0,,3419341.0,26215901,2,5,,
+26215992,,"I found this question when looking for an answer to the same thing:  I can easily use  or environment variables to control things when calling MSBuild on the command line, but how do you do similar in the IDE?
+My solution was to add a “user” properties file.  That is
+I can now edit some properties in the file  conveniently located in the same directory, and not worry about accidentally checking in funny settings.  Even when building in the IDE, it reads the text file anew when building.  So, just keep the props.user file open in a text editor and it's handy enough to change on the fly, without an IDE extension.",,,1,,2014-10-06 12:11:53.827000+00:00,,2014-10-06 12:11:53.827000+00:00,,,,,658087.0,7567828,2,1,,
+26215993,,"Simply set  for axis, like this: http://jsfiddle.net/e10u6sx1/1/",,,0,,2014-10-06 12:12:01.490000+00:00,,2014-10-06 12:12:01.490000+00:00,,,,,1451635.0,26199277,2,4,,
+26215995,,"The Personal Site is a Private Site if I remember well, so i think your user is not a site member, necessary condition to view the private pages.",,,1,,2014-10-06 12:12:13.597000+00:00,,2014-10-06 12:12:13.597000+00:00,,,,,2097577.0,26215902,2,0,,
+26215998,,"Ok, the problem was that I mixed jQuery and $ in the code, I changed everything to jQuery and it works...",,,0,,2014-10-06 12:12:20.340000+00:00,,2014-10-06 12:12:20.340000+00:00,,,,,2892550.0,26215073,2,2,,
+26215999,,"Use ""->"" operator instead ""[""
+Ex.:",,,0,,2014-10-06 12:12:29.230000+00:00,,2014-10-06 12:12:29.230000+00:00,,,,,3525280.0,26215786,2,2,,
+26216001,,"  The Answer is (1)
+OPEN itself would actually prepare the ResultSet. In Other words, the query execution happens here.
+FETCH would retrieve the rows from ResultSet (BULK or One By One, based on the FETCH type)
+Your  would actually materialize the Oracle's ResultSet into JDBC ResultSet, which happens like general  which do the same job. 
+Optimization happens here at the .. number of rows materialised for every fetch.. lower the  higher is the round trips between the java and sql.
+More about fetchsize from Oracle",,,0,,2014-10-06 12:12:34.197000+00:00,,2014-10-06 12:18:19.633000+00:00,2014-10-06 12:18:19.633000+00:00,,3093319.0,,3093319.0,26215472,2,-1,,
+26216002,,"After a good nights sleep, coming back and reading the answers. It got me thinking, I put my two sections of code, Adding New and Adding to the Item count in two for loops with the ideal amount of slots (5x5 grid, 25 slots) which didn't work. I had already tried else if statements prior which had given me some strange behavior.
+I remedied the whole situation with one simple syntax change, instead of checking if the itemName was null I checked if the icon was null and thus the fix is as such:
+This works even up to the limit of the slots with each item type being accounted for in another piece of code i.e Weapons being limited to 1, food limited to 128, Resources 128 and quest items 1
+Thanks for all your help (even if I didn't use them, it's great to know people actually help out) ",,,0,,2014-10-06 12:12:42.453000+00:00,,2014-10-06 12:12:42.453000+00:00,,,,,3943094.0,26209215,2,0,,
+26216005,,"In the above code the  are all events associated with WebSocket object. 
+Whereas  is a method associated with WebSocket object. There is a huge difference between them.
+The following event ensures that the  Web Socket is connected to the server i.e you've opened your connection
+So the main purpose of  method is to transmit data from the client to the server which is done by simply calling the WebSocket object's send() [in your case ]. 
+And also send data only takes place once a connection is established with the server by defining an  event handler.",,,0,,2014-10-06 12:12:51.887000+00:00,,2014-10-06 12:12:51.887000+00:00,,,,,3721385.0,26215476,2,1,,
+26216009,,To include a gap you need to offst the column with  like this:,,,0,,2014-10-06 12:13:07.700000+00:00,,2014-10-06 12:13:07.700000+00:00,,,,,1663001.0,26215841,2,3,,
+26216010,,"If the server started, without an error, then the filter was there.
+Perhaps you could add logging to the filter  or  to verify that it actually got run.
+Also, if you are using , then those HTTP/1.1 WebSocket Upgrade requests will not be filterable.",,,1,,2014-10-06 12:13:20.137000+00:00,,2014-10-06 12:13:20.137000+00:00,,,,,775715.0,26213680,2,1,,
+26216011,,"You can use a block predicate instead:
+Block predicates are similar to normal predicates, except instead of evaluating a predicate string against each object, it simply calls a custom block that you provide, passing it the object being tested currently, and you return  if the object matches your rules, and  otherwise. This gives you far more flexibility, as you can run any code in your block, and aren't restricted to SQL-style conditions.
+The above code creates a predicate for filtering an array of dictionaries, each having a  key (if the key doesn't exist the method will return nil, so the check will be false, which is exactly what you want anyway).",,,0,,2014-10-06 12:13:21.333000+00:00,,2014-10-06 12:13:21.333000+00:00,,,,,834998.0,26214563,2,0,,
+26216014,,"If you wnat to force the browser to request data for the server again, you can just append any random or incremental querystring to it:
+This will force the browser to request the image to the server again.",,,3,,2014-10-06 12:13:26.360000+00:00,,2014-10-06 12:13:26.360000+00:00,,,,,912325.0,26213142,2,-1,,
+26216016,,The node.js REPL uses the current working directory (the directory in which you invoked the REPL) as a base when you use relative paths.,,,3,,2014-10-06 12:13:30.643000+00:00,,2014-10-06 13:44:36.387000+00:00,2014-10-06 13:44:36.387000+00:00,,2050455.0,,2050455.0,26215045,2,1,,
+26216019,,"It needs data and/or a datamodel for you to see something interesting.
+If you add the table inside a JScrollPane like so :
+you can at least see the outline of the component.",,,0,,2014-10-06 12:13:42.763000+00:00,,2014-10-06 12:13:42.763000+00:00,,,,,1022330.0,26215882,2,1,,
+26216021,,"If you want to know the process :
+SQL statement is . It check the syntax, semantic and whether the query already exists in shared pool.
+If, the query already exists in shared pool, it goes for soft parse, else hard parse.
+Then comes the  stage. Her ethe execution plan is generated.
+Then comes  generation. this is where the query plan is generated.
+Finally, the query is .
+And, to answer your question precisely, all SQLs are parsed, stored, and executed as cursors. So, the query you use in  statement, goes through the above stages and the execution happens at last.
+You asked :
+  My Question is when is the select query for person_detls actually
+  executed (i.e. the data is actually fetched from tables ) if it is
+  being called from JAVA
+PL/SQL is a procedural language, so, when the procedure is called, the marker to execute each line goes from one line to another. Thus, when the query mentioned in the OPEN-FOR statement goes through the above mentioned steps, it is then when it is finally executed.",,,2,,2014-10-06 12:13:45.737000+00:00,,2014-10-06 12:13:45.737000+00:00,,,,,3989608.0,26215472,2,0,,
+26216022,,"You need the  of all values in addition to . Your condition will then be:
+(The quotient  is between 0 and 1 and requires floating-point arithmetic.)",,,1,,2014-10-06 12:13:49.293000+00:00,,2014-10-06 12:13:49.293000+00:00,,,,,2979617.0,26215442,2,1,,
+26216023,,in my case server added slashes to double quotes - tcpdf ignored attributes like style without warning. so I removed slashes by stripslashes function,,,0,,2014-10-06 12:13:59.503000+00:00,,2014-10-06 12:13:59.503000+00:00,,,,,1440818.0,11395171,2,1,,
+26216024,,"You shouldn't write code logic in your View!
+In your controller you should get all data you need for you view and put it in some ViewModel class.
+Then from your model display it to your client.
+Let say you create some ViewModel called MovieViewModel;
+Then you populate you viewmodel in your controller and send it to your view:
+Controller
+When you have populated model passed to your view you can render it to your client:
+View
+*Note the model reference on the start of the view!
+You should learn about Razor, and also about MVC helpers...
+This can be start point but you need to find some good tutorials about MVC.
+maybe this: http://www.microsoftvirtualacademy.com/training-courses/developing-asp-net-mvc-4-web-applications-jump-start",,,2,,2014-10-06 12:14:11.780000+00:00,,2014-10-06 12:19:17.953000+00:00,2014-10-06 12:19:17.953000+00:00,,1081079.0,,1081079.0,26215188,2,2,,
+26216025,,"It could be solved by inheritance all tabs(tab-1, tab-2, tab-3) from one template: tab. Then you can set presentation for __Standard Values of tab template. Then you will have ability to change only required controls on tab items.",,,1,,2014-10-06 12:14:19.043000+00:00,,2014-10-06 12:14:19.043000+00:00,,,,,291896.0,26212419,2,0,,
+26216027,,"Only meta tag is enough to redirect to another page 
+ad meta tag dynamically
+ 
+This code will ad a meta tag to current page and your page will redirect to another page in specified  time like above.",,,0,,2014-10-06 12:14:23.837000+00:00,,2014-10-06 12:14:23.837000+00:00,,,,,2021533.0,10141504,2,0,,
+26216028,,"You need to understand that  is not the file type or extension. it is just the  pattern to intercept the requests to .
+You could the  patterns to intercept the dispatcher servlet for your application. Check your 
+ to know the view folders under your view resolver
+Update :
+ servlet will be intercepted by the url .",,,4,,2014-10-06 12:14:27.040000+00:00,,2014-10-07 10:43:29.960000+00:00,2014-10-07 10:43:29.960000+00:00,,2790364.0,,2790364.0,26215221,2,0,,
+26216029,,"The Output is:
+Enter text: santhosh
+The number of vowels are: 2",,,0,,2014-10-06 12:14:27.783000+00:00,,2014-10-06 12:23:58.307000+00:00,2014-10-06 12:23:58.307000+00:00,,4046372.0,,4046372.0,26215824,2,-1,,
+26216033,,"You can best see how that can work by looking at the implementation in angular-bootstrap:
+https://github.com/angular-ui/bootstrap/blob/master/src/tabs/tabs.js
+Basically you can make the directives collaborate by having the parent directive injected into your child directive ( ""require: 'MyTabBox'"" in you MyTab controller).
+You also need to understand transclusion.
+That very same scenario is also explained in angular's developer guide:
+See section ""Creating Directives that Communicate"" at 
+https://docs.angularjs.org/guide/directive",,,0,,2014-10-06 12:14:51.837000+00:00,,2014-10-06 13:45:49.097000+00:00,2014-10-06 13:45:49.097000+00:00,,923041.0,,923041.0,26215183,2,0,,
+26216034,,"Are not the widgets should implement DragListener, but the places where you can put them.
+Try it",,,0,,2014-10-06 12:14:52.250000+00:00,,2014-10-06 12:14:52.250000+00:00,,,,,3430340.0,24614111,2,0,,
+26216036,,"Per the grunt-contrib-uglify docs, you can enable sourcemap generation as part of the uglify process.  
+Your uglify config would look something like:",,,1,,2014-10-06 12:15:09.763000+00:00,,2014-10-06 12:15:09.763000+00:00,,,,,2247344.0,25792954,2,-1,,
+26216038,," respects the ruby standard “the result of last executed statement is returned from method.” Imagine the code:
+What is the result of execution this code? It follows:
+That said, IRB executes the method definition and returns/prints out it’s result. Which is, apparently, a  instance.",,,0,,2014-10-06 12:15:15.903000+00:00,,2014-10-06 12:15:15.903000+00:00,,,,,2035262.0,26215870,2,0,,
+26216042,,"You need to use the WSO2 CEP Event tracing capability [1]. You can enable tracing for a particular artifact (e.g. JMSInputAdaptor) and then you can view the logged messages using the Monitor -> Event Tracer in the management console. Additionally, you can view the logged trace messages in /repository/logs/wso2-cep-trace.log
+[1] https://docs.wso2.com/display/CEP310/CEP+Event+Tracer",,,0,,2014-10-06 12:15:28.647000+00:00,,2014-10-06 12:15:28.647000+00:00,,,,,811641.0,24906586,2,0,,
+26216044,,"Use a data structure that fits your need the best.
+If you never want to split you values then use . If you need to split your data into two halves then use .
+If you need to have more control over your data you should go with . Because internal representation is not an issue for you (because you use Java) there is no need to use  internally.
+When it comes to communiction with other computers (e.g. via network socket or file) it is possible that the byte order is important. Then it would be better to use a  as then you have better control over the byte order.
+A  is for other use cases and not feasible to be used in encryption.",,,2,,2014-10-06 12:15:37.640000+00:00,,2014-10-06 12:15:37.640000+00:00,,,,,1813616.0,26214041,2,2,,
+26216045,,"I think you can define a click handler for anchor tag and pass an Ajax request with the data. It would be easier.
+So for example:
+Controller:
+Sample View",,,6,,2014-10-06 12:15:48.350000+00:00,,2014-10-10 04:59:47.873000+00:00,2014-10-10 04:59:47.873000+00:00,,1529150.0,,1529150.0,26215267,2,1,,
+26216047,,In Windows security settings you have to allow apps to obtain this information. So NameAccessAllowed will return true.,,,0,,2014-10-06 12:15:56.790000+00:00,,2014-10-06 12:15:56.790000+00:00,,,,,3455293.0,12924206,2,1,,
+26216048,,"If problem persist with naming mismatch resolved (same name in library pom and project pom), after updating maven project (project explorer, right click any project->maven->update maven project)
+try just deleting that message (!!). 
+I problem tab, right-click error message and select 'Delete'. Worked for me and for Kevin Peck- Eclipse dependency not found in workspace fix",,,1,,2014-10-06 12:15:58.460000+00:00,,2014-10-06 12:15:58.460000+00:00,,,,,1849837.0,17465078,2,1,,
+26216049,,I'm a little surprised that publishing from  doesn't trigger the Java plugin's  task. Spring Boot's  task is setup as a dependency of the  task so you'll need to cause  to run . Try adding the following to your :,,,4,,2014-10-06 12:15:58.680000+00:00,,2014-10-06 12:15:58.680000+00:00,,,,,1384297.0,26212237,2,22,,
+26216052,,Thx. It does the magic! :),,,0,,2014-10-06 12:16:04.157000+00:00,,2014-10-06 12:16:04.157000+00:00,,,,,3849134.0,25758884,2,2,,
+26216053,,I figured out what the problem was. I didn't notice this at first. The action method was placed before in a controller that has [Authorize] atribute and I was calling the method from a place where I was not authorized. No error was thrown so this was pretty difficult to find.,,,0,,2014-10-06 12:16:06+00:00,,2014-10-06 12:16:06+00:00,,,,,2725487.0,26214294,2,0,,
+26216054,,"You must give different ids to your input elements, something like that :",,,0,,2014-10-06 12:16:07.927000+00:00,,2014-10-06 12:16:07.927000+00:00,,,,,249691.0,26215753,2,3,,
+26216057,,One of the most familiar ones is the PGP word list.,,,0,,2014-10-06 12:16:27.147000+00:00,,2014-10-06 12:16:27.147000+00:00,,,,,419404.0,26216030,2,0,,
+26216062,,"Create dbo.LogUser
+create table dbo.LogUser (
+    action varchar(3),
+    changedAt datetime,
+    userID nchar(5),      -- why not int ???
+    Name nvarchar(40),
+    Address nvarchar(60),
+    City nvarchar(15) )  
+Use trigger on dbo.User
+create trigger dbo.User_UPD on dbo.User
+for update, delete
+as begin
+insert dbo.LogUser
+select case when i.UserID is null then 'Del' else 'Upd' end,
+       GETDATE(),
+        d.UserID,
+        d.Name,
+        d.Address,
+        d.City
+from deleted d
+left join inserted i on i.UserID = d.UserID
+end  
+Update dbo.Users as You want.
+Update dbo.Users
+Set Name = 'Joe'",,,1,2014-10-06 12:16:37.840000+00:00,2014-10-06 12:16:37.840000+00:00,,2014-10-06 12:23:44.513000+00:00,2014-10-06 12:23:44.513000+00:00,,3182373.0,,3182373.0,26204689,2,0,,
+26216063,,You can run:,,,0,,2014-10-06 12:16:40.210000+00:00,,2014-10-06 13:13:54.693000+00:00,2014-10-06 13:13:54.693000+00:00,,2814626.0,,3106546.0,5134891,2,30,,
+26216064,,"That can be a lot of data for the browser to download all at once, depending on how big the file is and how fast and far away the server is. Try giving each video tag a  attribute and set it to ""metadata"". Like this:
+That should limit the number of files the browser needs to load all at one time, only loading the header of each video file. The rest of the file will load once you start playing. If that doesn't work, try setting preload to ""none"".
+Also, you'll want to make sure the remote server is using HTTP Byte Serving. i.e., the HTTP status header on the video files should be ""206 Partial Content"", not ""200 OK"".",,,0,,2014-10-06 12:16:41.700000+00:00,,2014-10-06 12:16:41.700000+00:00,,,,,771724.0,26211178,2,2,,
+26216065,,"You have to read this entry in the Tutorial: http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec100
+You will learn how to launch a BLAST locally and get a XML output. Once you have your XML file (and not the text you pasted in your question), you can parse it with:",,,0,,2014-10-06 12:16:47.530000+00:00,,2014-10-06 12:16:47.530000+00:00,,,,,1688590.0,26207771,2,0,,
+26216069,,"For completeness, quoting GGrothendieck's comment.  ""rollapply does not support functions producing zero length outputs. ""   That is consistent with the behavior below.
+Further confusion, at least for me (this should be a comment but I wanted some decent formatting): 
+I then tried:
+Which sure looks like  is doing a -sort of filling in operation.",,,0,,2014-10-06 12:16:57.130000+00:00,,2014-10-06 13:47:10.207000+00:00,2014-10-06 13:47:10.207000+00:00,,884372.0,,884372.0,26209755,2,0,,
+26216070,,"As described for example in the RStudio Shiny Tutorial, the first parameter to widget functions is the widget name, which identifies the widget. Multiple widgets with the same name will not each be usable, which is why simply creating two copies of the example does not create two working copies.
+To make it work, you must make the widget names unique in each  call, and then use this names in the  calls.",,,0,,2014-10-06 12:17:12.273000+00:00,,2014-10-06 12:17:12.273000+00:00,,,,user2443147,,26215753,2,3,,
+26216072,,"Your question is a bit unclear. I'm going to assume that the structure that you want to sort is .
+If you simply want to prioritize s based on a , say , your comparison object is pretty easy:
+Now I'm going to assume the following to expand on this, given  has the following  members listed in order of most significant to least significant: , , Vip1Vip3notVip2`, I'm also assuming that the comparison on ""not"" members should be inverted:
+Note that either of these  classes works fine if the members are s or any other type for which ,  and  is defined. To use  in a  you'll just need to pass it as the comparison object in 's ctor, for example: ",,,0,,2014-10-06 12:17:15.063000+00:00,,2014-10-06 12:17:15.063000+00:00,,,,,2642059.0,26201955,2,0,,
+26216076,,"You should use  (you're using  version) and everything will work as you expect:
+The explanation is that with  you are changing the frames too early. After your changes the system will relayout everything to accomodate the keyboard and your changes won't have any effect.
+Also, I recommend you to switch to autolayout and forget about frames.",,,1,,2014-10-06 12:17:47.970000+00:00,,2014-10-06 12:17:47.970000+00:00,,,,,143097.0,26112319,2,0,,
+26216078,,"Check this line
+as this will never provide you with your expected output.
+You are getting  value from  for . In this case your  is , so the query gives you back  value for a row that has  and in this case it's:
+You should indeed first write a recursive query that select's the parent of a particular category and then return it's value.
+Edit For help with recursive queries go here.
+The simplest way to achieve what you need:
+Simple way:
+Hopefully this gives you some insight into CTE / recursive CTE. Please bear in mind that this is not the most efficient way (at least I think so).",,,8,,2014-10-06 12:17:53.097000+00:00,,2014-10-06 14:28:51.923000+00:00,2014-10-06 14:28:51.923000+00:00,,2095534.0,,2095534.0,26215748,2,0,,
+26216080,,Its class names for array. Try,,,0,,2014-10-06 12:17:59.013000+00:00,,2014-10-06 12:17:59.013000+00:00,,,,,3656904.0,26216004,2,1,,
+26216085,,"Clear all previous selection.
+Loop through rows needed to be selected in your grid.
+Get their row handles from grid (Note here grid is already updated with new rows)
+Checking if the row handle is valid or not.
+When valid row handle then select it.
+Where itemList is list of rows to be selected in the grid view.",,,0,,2014-10-06 12:18:17.597000+00:00,,2014-10-06 12:18:17.597000+00:00,,,,,2745909.0,6265228,2,0,,
+26216091,,"1)go to Tools->Enviorment->Keyboard
+2)choose any command
+3)you will have a textbox under ""Press Shortcut Keys"" label press the shortcut there
+4)you will see comobobox shortcut used by with all programs that use it
+5)now just find and disable",,,0,,2014-10-06 12:18:34.413000+00:00,,2014-10-06 12:18:34.413000+00:00,,,,,846351.0,26215948,2,1,,
+26216092,,i reinstalled rubymine and now the builtin rspec debugger works fine.,,,0,,2014-10-06 12:18:37.413000+00:00,,2014-10-06 12:18:37.413000+00:00,,,,,3900387.0,25355157,2,0,,
+26216093,,"I had the same problem (score increasing multiple times for a single enemy destroyed and multiple life points being lost for a single instance of damage.) A user on the Apple forums thinks that it's a bug in [SKPhysicsBody bodyWithTexture:size:] but I don't believe that's the case, because it was happening with other constructors too.
+First off, the  and  are very important, obviously. Take a look at Apple's SpriteKit Physics Collisions sample code:
+  // Contacts are often a double dispatch problem; the effect you want is based on the type of both bodies in the contact. This sample this in a brute force way, by checking the types of each. A more complicated example might use methods on objects to perform the type checking.
+  
+  // The contacts can appear in either order, and so normally you'd need to check
+  each against the other. In this example, the category types are well ordered, so
+  the code swaps the two bodies if they are out of order. This allows the code
+  to only test collisions once.
+What I did to solve it was setting a flag after handling each condition. In my case, I was testing whether  was nil in , because I called  on the missile/enemy nodes to destroy them.
+I think you should expect the event to fire multiple times and your code in there has to make sure it's processed only once.",,,1,,2014-10-06 12:18:53.207000+00:00,,2014-10-06 12:18:53.207000+00:00,,,,,1948215.0,24228274,2,17,,
+26216095,,"Build from the output directory
+Instead of building from the top-level directory, build from the output directory. You can access the source directories by setting the vpath. This option has the advantage that the built-in rules can be used.
+Makefile
+The disadvantage is that error messages do not match the CWD. This can be solved by skipping  and directly building from the  directory.
+Another advantage of this approach is that it's somewhat popular.  works in a similar fashion.
+Create Rule based on output option
+The following solution isn't nice in my opinion, as I really love the built-in rules. However, GNU make doesn't support something like  for output directories. And the built-in rules cannot match, as the  in  would match  of , leaving  with a search in  for stuff like , but not .
+But this is as close to the built-in rules as you can get, and therefore to my best knowledge the nicest solution that's available.
+Explanation:  actually is how  is implemented, see http://git.savannah.gnu.org/cgit/make.git/tree/default.c (and it's even mentioned in the manual)
+Besides, if  would only ever contain auto-gererated files, you could create it on-the-fly with an order-only prerequisite, making the clean rule slightly simpler:
+This requires that the feature order-only is available, which you can check using . I've checked on Kubuntu 14.04 GNU make 3.81 and OpenSUSE 13.1 GNU make 3.82. Both were built with order-only enabled, and am now left puzzled why Kubuntu 14.04 comes with an older version of GNU make than OpenSUSE 13.1. Anyways, gonna download make 4.1 now :)",,,0,,2014-10-06 12:19:05.183000+00:00,,2020-06-25 12:52:59.527000+00:00,2020-06-25 12:52:59.527000+00:00,,3554264.0,,3554264.0,5178125,2,4,,
+26216097,,"Leave them in 
+Server > Open > Server Locations
+Change from:
+Use workspace metadata
+To:
+Use Tomcat instalation
+Now a.xml and b.xml from  will be used.",,,4,,2014-10-06 12:19:10.007000+00:00,,2014-10-06 12:19:10.007000+00:00,,,,,756968.0,26116827,2,3,,
+26216098,,"Give a try to : it allows you to specify variables on the fly.
+Returns:
+You can find more info in  - I couldn't find a reference to the shell manual.",,,3,,2014-10-06 12:19:10.700000+00:00,,2014-10-06 15:45:32.600000+00:00,2014-10-06 15:45:32.600000+00:00,,1983854.0,,1983854.0,26215973,2,1,,
+26216100,,"Sounds like mod_speling is enabled on your server.
+  Requests to documents sometimes cannot be served by the core apache server because the request was misspelled or miscapitalized. This module addresses this problem by trying to find a matching document, even after all other modules gave up.
+Documentation
+You can try to disable this apache module in a .htaccess file:",,,3,,2014-10-06 12:19:17.290000+00:00,,2014-10-06 12:19:17.290000+00:00,,,,,212107.0,26215890,2,1,,
+26216101,,"The person who proposed this had in mind a usage like this:
+Methods such as , ,  take symbols as arguments. The point was to make use of this syntax.",,,5,,2014-10-06 12:19:20.693000+00:00,,2014-10-06 12:26:07.203000+00:00,2014-10-06 12:26:07.203000+00:00,,314166.0,,314166.0,26215870,2,4,,
+26216103,,"I just found out, that eclipse needs the resource dir as source folder on build path:
+go to project properties -> Java Build Path -> Add Folder -> go to 'src/main/resources' and activate resources -> OK
+Now it works.
+For the ant script use this before building the jar (change ant vars if needed):
+'flatten' attribute: 
+  Ignore the directory structure of the source files, and copy all files
+  into the directory specified by the todir attribute
+  (quote:http://ant.apache.org/manual/Tasks/copy.html)",,,0,,2014-10-06 12:19:28.760000+00:00,,2014-10-06 12:58:53.437000+00:00,2014-10-06 12:58:53.437000+00:00,,3280180.0,,3280180.0,26215864,2,3,,
+26216104,,"First set jsName:
+Then add  code to  call, including name from previous step:
+Fistst parameter is array of additional init scripts:
+DISCLAIMER: Not tested, but should point you in right direction:)",,,0,,2014-10-06 12:19:29.630000+00:00,,2014-10-06 12:19:29.630000+00:00,,,,user133408,,26129040,2,2,,
+26216105,,"Are you also loading the ads in your header? as far as I know the dfp api, every ad you include in the content must be mentioned in the site header as well. In this case, they will have unique identifiers.
+Are you delivering AdSense tags through DFP or use AdSense Fallback for DFP? In the first case the max-3-ads rule still applies. In the second case I also wouldn’t rely on always having more than 3 ads.",,,0,,2014-10-06 12:19:31.643000+00:00,,2014-10-06 12:19:31.643000+00:00,,,,,904614.0,25689409,2,0,,
+26216108,,"There is a difference between responsibilities and interfaces. A responsibility can consist of several functions that are closely related, while an interface may be interrested in only a few of the functions.
+For example a class  can be responsible for handling a client-server connection, but one of its interfaces could be  that is only concerned with sending data through the connection once it is established.
+A class generally represents an entity of some kind, while an interface generally represents an ability. An entity can have several abilities, and different kinds of entities can have the same abilities.",,,4,,2014-10-06 12:19:43.057000+00:00,,2014-10-06 12:19:43.057000+00:00,,,,,69083.0,26215641,2,2,,
+26216109,,I think either json_encode( your_php_array ) or serialize() function is help you.,,,0,,2014-10-06 12:19:45.547000+00:00,,2014-10-06 12:19:45.547000+00:00,,,,,1724419.0,26216061,2,0,,
+26216110,,"All method defs return symbols in Ruby >=2.1 (not just the ones in IRB).
+For example:
+Why is this interesting?
+You may have noticed that there are many methods, particularly class-level methods, that take the symbolized name of another method as an argument. You may be familiar with  in Rails controllers. Since method defs return symbols, you could potentially do this:",,,1,,2014-10-06 12:19:47.987000+00:00,,2014-10-06 12:19:47.987000+00:00,,,,,648392.0,26215870,2,2,,
+26216115,,It is not a standard module - it looks like a user module that you should also download from wherever you got the original script.,,,0,,2014-10-06 12:19:54.447000+00:00,,2014-10-06 12:19:54.447000+00:00,,,,,3086822.0,26215811,2,0,,
+26216116,,"Ok, I went with that solution: http://blahti.wordpress.com/2012/06/26/images-with-clickable-areas/
+Ultimately, it works perfectly on each device and implements rather quickly. Thanks for all responses!",,,0,,2014-10-06 12:19:55.827000+00:00,,2014-10-06 12:19:55.827000+00:00,,,,,2570350.0,26192042,2,0,,
+26216117,,"As a first hint, observe the missing module  starts with a capital , which fails to follow convention of using lowercase-only for module names. Therefore  is most certainly a user library. Alternatively,  might be a class that would correctly need to be imported via .",,,0,,2014-10-06 12:20:04.793000+00:00,,2014-10-06 12:20:04.793000+00:00,,,,,321973.0,26215811,2,1,,
+26216118,,"You should use the most efficient primitive type for your cipher. So if you primarily use 64 bit instructions, please go for . If you use primarity 32 bit instructions then  is probably the best type. I'll let you guess the types for 16 and 8 bit operations.
+Note that you should not present this interface directly to the outside world. Instead you should use an interface based on byte arrays (just like, e.g. ). You don't want to confront your users with a ton of grief with regards to big endian, signed/unsigned etc. Besides that, ciphers are usually defined for messages of a specific size in bits or bytes.
+Certainly do not use . It's a horrible (unbounded) interface with many peculiarities. It is absolutely not fit for this kind of operations.",,,5,,2014-10-06 12:20:18.767000+00:00,,2014-10-06 12:20:18.767000+00:00,,,,,589259.0,26214041,2,1,,
+26216119,,Very Simple,,,0,,2014-10-06 12:20:22.243000+00:00,,2014-10-06 12:20:22.243000+00:00,,,,,3782114.0,26215786,2,0,,
+26216120,,"This should work.
+If this didn't help you, you may try some issues listed here : How do I give JavaScript variables data from ASP.NET variables?",,,0,,2014-10-06 12:20:24.240000+00:00,,2014-10-06 12:20:24.240000+00:00,2017-05-23 11:46:20.177000+00:00,,-1.0,,2204877.0,26215739,2,1,,
+26216121,,"Although I've accepted T.C's answer which provides a comprehensive breakdown, as stated in a comment, I want to mimic the transparent comparator functor for class templates like . This answer is provided for critique by others incase there's anything wrong with the syntax.",,,3,,2014-10-06 12:20:27.717000+00:00,,2014-10-06 13:38:05.160000+00:00,2017-05-23 11:50:30.833000+00:00,,-1.0,,4112979.0,26215437,2,3,,
+26216128,,"Right well I presume there is a stored procedure method here but lack of input means that I've basically made an upsert function.
+I've made it take the table, keys, values and update parameters.
+This I've added into my fluentPDO object that I've been using and runs the check in the normal php ways. Might not be the best way but this works for me and using the PDO object in the middle to connect to my database gives me some control over functions like this.
+Hope this is of use to someone.",,,0,,2014-10-06 12:20:52.533000+00:00,,2014-10-06 12:20:52.533000+00:00,,,,,4054808.0,26055892,2,0,,
+26216130,,"You can create a Swift file with everything you need as global functions if you really want. For example, create a new Swift file named . In this file, you do not need any class or struct declarations. Define functions at a global scope, and they are available the same as any other method, like the global  method.",,,1,,2014-10-06 12:20:54.947000+00:00,,2014-10-06 12:20:54.947000+00:00,,,,,2035473.0,26215648,2,6,,
+26216131,,You want to use function implode(). No need to re-invent the wheel.,,,1,,2014-10-06 12:20:57.717000+00:00,,2014-10-06 12:20:57.717000+00:00,,,,,440611.0,26216061,2,0,,
+26216132,,"  $b = $this->_replace_amp($value);    change in this line to   $b .= $this->_replace_amp($value);
+   this answer  as per your coding
+batter way to do this using used ",,,1,,2014-10-06 12:20:58.263000+00:00,,2014-10-06 12:29:34.440000+00:00,2014-10-06 12:29:34.440000+00:00,,2034539.0,,2034539.0,26216061,2,0,,
+26216133,,"Like the others, I'm not very sure what it means. But working with Java Primitive Data Types allows you to store your 
+  represent instruction
+in to the Stack memory. Maybe that is why this advice talks about String
+  should not attempt to represent memory using a large array of words.
+since it's implementation is array of chars and  by default have overridden  which actually compares Strings and not their references.   
+and
+  rather than using dynamically allocated class-typed objects
+For the reference types there are some complications that need to be considered first:
+when assigned, for references the object is not copied, it is shared (reference variables are aliases)
+when compared for references the contents of the objects are not compared
+assing Parameters for references the object is not copied, it is shared (i.e., actual parameter and formal parameter are aliases)
+returning values, locally created object can survive if it is returned or if it is stored in a data member
+Here is visualization of the memory:
+maybe this is a little simple explanation, but is all I can think from this quoted text, you've provide us.",,,0,,2014-10-06 12:21:01.983000+00:00,,2014-10-06 12:26:16.617000+00:00,2014-10-06 12:26:16.617000+00:00,,3931985.0,,3931985.0,26214973,2,1,,
+26216137,,"Take a look at the  event:
+  Occurs before the WebBrowser control navigates to a new document.
+It is possible to connect to an existing instance of IE, but you'll need to work with underlying the COM API (see here).
+For other browsers there is no general mechanism: you'll need to work out if some API even exists browser by browser.",,,2,,2014-10-06 12:21:25.483000+00:00,,2014-10-06 12:39:19.867000+00:00,2014-10-06 12:39:19.867000+00:00,,67392.0,,67392.0,26216090,2,0,,
+26216138,,"OK, now I understand that  
+you want to create a new field into the same collection which is sharded;  
+the content of this new field is generated by existing fields;
+you don't want to fetch these existing fields from database to application for handling perhaps because of large volume;  
+you can't invoke  database command because it's a sharded collection;
+you can't un-shard the current collection.
+Then, is it possible to fulfill the intent through ?  
+Query the exact document you want to update;  
+mapping, reducing and then overwriting the original document of this collection by specifying some parameters such as .",,,0,,2014-10-06 12:21:25.697000+00:00,,2014-10-06 12:21:25.697000+00:00,,,,,3943271.0,26211077,2,1,,
+26216139,,"Check this link for what u want, i think exact result for this one. Hope You Don't Forget to give upvote. 
+https://github.com/blessenm/AndroidAutoScrollListView",,,0,,2014-10-06 12:21:44.880000+00:00,,2014-10-06 12:21:44.880000+00:00,,,,,1844102.0,22532410,2,0,,
+26216141,,"This is a very common problem for developers who are using Maven as a build tool. when , we include the servlet-api as a project dependency i.e pom.xml like this :  
+add scope as provided in the above dependency as following .",,,0,,2014-10-06 12:21:52.483000+00:00,,2014-10-06 12:21:52.483000+00:00,,,,,3139451.0,21096837,2,1,,
+26216144,,"You can put ""internal"" documents in the  folder, it's the equivalent to  in standard sbt projects.
+To access it, you'd use . Note that this gives you an  because your file will be part of the JAR created by .",,,2,,2014-10-06 12:22:02.400000+00:00,,2014-10-06 12:22:02.400000+00:00,,,,,772743.0,26206759,2,1,,
+26216145,,"The Umbraco resource refers to canvas, which is a feature that allows a content editor to modify content on a page in a WYSIWYG editor style.  Canvas is unreliable &amp; has been disowned as buggy &amp; not to be used even on the Umbraco training courses.
+You could build a back-office function in a custom datatype (http://umbraco.com/help-and-support/video-tutorials/developing-with-umbraco/data-editors/creating-a-custom-datatype-using-the-usercontrol-wrapper) that mimicked a WYSIWYG editor, but I don't think one currently exists.
+The usually pattern when you want blocks of functionality in Umbraco is to use macros.  Macro are maintained under the developer section, rather than the content section.  
+You could also use base extensions (http://our.umbraco.org/wiki/reference/umbraco-base) for dyanmically generated blocks that use Umbraco data.
+Whether using a macro or /base you could use some hide/show fields in the affected doc types to show or hide specific blocks on specific pages.",,,1,,2014-10-06 12:22:03.887000+00:00,,2014-10-06 12:22:03.887000+00:00,,,,,261798.0,26212695,2,0,,
+26216147,,You can also use ,,,0,,2014-10-06 12:22:10.557000+00:00,,2014-10-06 12:22:10.557000+00:00,,,,,1711126.0,26215674,2,0,,
+26216150,,"I can envision two approaches:
+a) You say that you cannot use classes ""as any combination of fields might be used"". But maybe composition (as opposed to inheritance) would do the job: a particle could have a DisplayBehavior, a MovementBehavior, etc. And those behaviors would hold the actual properties. Would this fit your problem? 
+b) Otherwise, if the enumeration of all properties of a particle can be slow (a few microseconds) while the retrieval of the values of one or two specific properties must be fast, the proper solution is to have property stores: for each property you have one structure that holds the values of all particles. Basically you store the (particle-id, property-value) information, either in a flat array or a dictionary. This is the solution used by WPF for example and this is cache-efficient and memory-savvy.
+Meanwhile you would store nothing in the Particle structure, to the point that you may consider removing this type and only store particle identifiers (possibly a ParticleID enum to make your code more explicit). Or you could keep this type and add properties that would manipulate the global property stores.
+PS: one note about structs: do you understand them correctly? In most cases using a large struct is a bad idea because this involves many memory copies. The only case when this tax is not paid is when the struct can be accessed by its address, for example when you manipulate it through its index in an array (particles[index].Position = ...).",,,1,,2014-10-06 12:22:15.360000+00:00,,2014-10-06 12:27:18.367000+00:00,2014-10-06 12:27:18.367000+00:00,,3998057.0,,3998057.0,26214938,2,1,,
+26216152,,"This is a little outside my experience, but I note you don't  show your buttons raising events within your template.  You don't appear to be handling the events raised by the button commands.  
+There's nothing that I see to make the buttons cause the template object they live in to raise its  event.  
+Like I said, this is a bit outside my experience, so maybe that's supposed to auto-wire itself.  But I'd try handling the buttons'  event and having them raise the  of the template.  
+ETA:  Having done some reading, I think Luizgrs is right and you shouldn't need to do special event handling.  
+I'm wondering now if the problem is that you are not adding any of your controls to  until the very end.  By doing it that way, you're relying on the  method of  to go through the control hierarchy of the  and hook up all the Command events with .
+Just as an experiment, try moving this line:
+... right to the top, like this:
+The difference would be that all your control additions would now be to controls already inside .  
+ETA:  ALSO!  You need to assign an ID to the buttons! ",,,6,,2014-10-06 12:22:21.620000+00:00,,2014-10-06 13:46:49.810000+00:00,2014-10-06 13:46:49.810000+00:00,,490374.0,,490374.0,26214840,2,0,,
+26216153,,"It's documented in open
+  The filename passed to the one- and two-argument forms of
+                 open() will have leading and trailing whitespace deleted 
+Read the following paragrpahs for more details.",,,3,,2014-10-06 12:22:25.093000+00:00,,2014-10-06 12:22:25.093000+00:00,,,,,1030675.0,26216056,2,2,,
+26216154,,"You can't do that directly at the server element tag.
+You should do that somewhere in the code behind:",,,0,,2014-10-06 12:22:28.197000+00:00,,2014-10-06 12:22:28.197000+00:00,,,,,912325.0,26215739,2,1,,
+26216156,,"If it's for development's purpose, you can specify a folder into the ""docBase"" attribute of context file like this :
+By adding these context files directly into /conf/Catalina/localhost, everything is configured and should work like you want but you'll have to stop the tomcat server every time you'll want to clean and build your project.",,,0,,2014-10-06 12:22:30.367000+00:00,,2014-10-06 12:35:28.317000+00:00,2014-10-06 12:35:28.317000+00:00,,3004076.0,,3004076.0,26116827,2,1,,
+26216157,,"try like this
+Remove this from markup
+and add in ",,,0,,2014-10-06 12:22:36.847000+00:00,,2014-10-06 12:22:36.847000+00:00,,,,,2978469.0,26215739,2,1,,
+26216159,,"I'm not sure if that's the spring-boot way of doing it, but you can exclude the tomcat jars using the  configuration. That is, add the following to your pom.xml:
+Using this approach, the war generated is not executable (cannot be run on command line using java -jar ) but can only be deployed to any servlet container",,,0,,2014-10-06 12:22:44.813000+00:00,,2016-11-01 00:30:03.057000+00:00,2016-11-01 00:30:03.057000+00:00,,4604542.0,,508837.0,25991789,2,11,,
+26216160,,"Try with array: 
+since that's what vararg essentially is",,,2,,2014-10-06 12:22:46.323000+00:00,,2014-10-06 12:22:46.323000+00:00,,,,,523908.0,26216122,2,0,,
+26216161,,"You can't get a  of strings but you can  them so:
+should work.",,,0,,2014-10-06 12:23:04.730000+00:00,,2014-10-06 12:23:04.730000+00:00,,,,,2801253.0,26213074,2,0,,
+26216162,,Here is What I did in my AppDelegate ,,,5,,2014-10-06 12:23:05.657000+00:00,,2014-10-06 12:23:05.657000+00:00,,,,,2469421.0,25973364,2,43,,
+26216164,,"IRb always displays the result of calling  on the value of the last expression that was evaluated. It doesn't matter whether that expression is a literal expression, a conditional expression, a message send, a class definition expression or a method definition expression.
+Everything returns a value in Ruby, i.e. everything is an expression, there is no such thing as a statement in Ruby.
+In the past, the return value of a method definition expression was undefined. Most Ruby implementations simply returned  from a method definition expression, but Rubinius for example returned the  object for the method that was defined.
+With Ruby 2.1, the return value of a method definition expression was standardized to be the  corresponding to the method's name. This allows you to use the method definition expression as an argument in methods that expect the name of a method as an argument.
+Some examples:
+On a personal note, I would have preferred a method definition expression to evaluate to an  object corresponding to that method, and methods like , , , ,  etc. should be amended to accept s in addition to s and s.",,,5,,2014-10-06 12:23:25.477000+00:00,,2014-10-06 12:31:22.370000+00:00,2014-10-06 12:31:22.370000+00:00,,2988.0,,2988.0,26215870,2,10,,
+26216165,,I think you mean something like this:,,,3,,2014-10-06 12:23:32.083000+00:00,,2014-10-06 13:27:19.417000+00:00,2014-10-06 13:27:19.417000+00:00,,2836621.0,,2836621.0,26216096,2,0,,
+26216168,,"Scala has introduced s for this purpose. They can be obtained by an implicit parameter, and will be automatically provided, which means you don't have to worry about the parameter when calling the method:
+For further explanations see the docs.",,,0,,2014-10-06 12:23:47.257000+00:00,,2014-10-07 10:29:48.697000+00:00,2014-10-07 10:29:48.697000+00:00,,638427.0,,638427.0,26216013,2,4,,
+26216172,,"You will find list of existing users with their password ( Not the password -always reads as ******** ) by below query
+The pg_shadow table has actual password stored.if you are superuser then you can access this table.
+it has column passed.
+If the password is encrypted, this column will begin with the string md5 followed by a 32-character hexadecimal MD5 hash. The MD5 hash will be of the user's password concatenated to their user name. For example, if user joe has password xyzzy, PostgreSQL will store the md5 hash of xyzzyjoe. A password that does not follow that format is assumed to be unencrypted.",,,3,,2014-10-06 12:24:01.280000+00:00,,2014-10-06 12:40:20.707000+00:00,2014-10-06 12:40:20.707000+00:00,,3738487.0,,3738487.0,26215784,2,2,,
+26216174,,"After realizing the problem occurs only with meta tags, I've found this thread:
+Why is Html.Raw escaping ampersand in anchor tag in ASP.NET MVC 4?
+I managed solve the problem with the suggested workaround to make the entire meta tag part of the raw value.
+like this:
+Controller:
+View:
+Page view-source:
+Now it works great.",,,0,,2014-10-06 12:24:14.930000+00:00,,2014-10-06 12:24:14.930000+00:00,2017-05-23 11:49:37.063000+00:00,,-1.0,,3763492.0,26211463,2,0,,
+26216176,,"Your problem is caused by a trailing newline in the string returned by the website. The error becomes apparent when you cast the string to  instead of using the  operator:
+Note that the closing double quote after the IP address is on the next line in the error message.
+ the string before returning it and the problem will disappear:",,,1,,2014-10-06 12:24:21.623000+00:00,,2014-10-06 12:24:21.623000+00:00,,,,,1630171.0,26215029,2,0,,
+26216179,,"Exception setting ""SessionHeaderValue"": ""Cannot convert the ""sforce.SessionHeader"" value of type ""sforce.SessionHeader"" to type ""sforce.SessionHeader""."" 
+After New-Object you have to specify the correct class name. Try this:",,,0,,2014-10-06 12:24:24.507000+00:00,,2014-10-06 12:24:24.507000+00:00,,,,,4113177.0,25043774,2,-1,,
+26216183,,"I figured out you need to base your constraints on the view and not the layout guide of your view controller. This will ensure your view controller respects the constraints you set prior to the transition in a PageViewController.
+you can do this like so:
+Remember to uncheck ""Constrain to margins""",,,6,,2014-10-06 12:24:38.863000+00:00,,2015-05-11 18:46:25.017000+00:00,2015-05-11 18:46:25.017000+00:00,,1536149.0,,1498987.0,25791183,2,112,,
+26216184,,"You need to clear the cell for each enemy before calculating a path and set back after. Like this:
+But note that the two enemies must not have collision (located in the same cell), otherwise that the enemy will not be marked as an obstacle.
+Other way:
+If this will work too slowly, then you need to make a queue and every step you need to calculate the path for only a few zombies.",,,0,,2014-10-06 12:24:41.110000+00:00,,2014-10-06 12:24:41.110000+00:00,,,,,1821428.0,26204468,2,1,,
+26216187,,"You call  on the result yourself. This call converts diacritics to respective HTML entities.
+Use  instead.",,,4,,2014-10-06 12:24:46.217000+00:00,,2014-10-06 12:24:46.217000+00:00,,,,,2035262.0,26216043,2,0,,
+26216190,,"In your code, you need to write
+Without the period, you are initiating  every time your script finds a new array, but you want to append the results to .
+Other than that, there is a nice implode function for multidimensional arrays available:
+Source: https://gist.github.com/jimmygle/2564610",,,0,,2014-10-06 12:24:59.743000+00:00,,2014-10-06 12:24:59.743000+00:00,,,,,243154.0,26216061,2,1,,
+26216192,,I was getting make test errors. This helped me;,,,0,,2014-10-06 12:25:06.690000+00:00,,2014-10-06 12:25:06.690000+00:00,,,,,1842743.0,4729722,2,0,,
+26216196,,"You can use SimpleDateFormat to parse or format the date as .
+Sample code:",,,6,,2014-10-06 12:25:19.627000+00:00,,2014-10-06 12:25:19.627000+00:00,,,,,3218114.0,26216112,2,2,,
+26216197,,"The library implementation (the source files, not the headers) contain proxy functions that handle the error.
+As you can see in the  variant, it also does some other housekeeping: http://www.boost.org/doc/libs/1_56_0/libs/thread/src/pthread/thread.cpp",,,0,,2014-10-06 12:25:19.897000+00:00,,2014-10-06 12:25:19.897000+00:00,,,,,85371.0,26216136,2,4,,
+26216198,,"When you create and add panels to your  which has , the child panels are created with . Those child panels have 5 pixel horizontal and vertical gaps.
+Create those like this:
+The  class has a constructor where you can specify the horizontal and veritcal gaps, pass 0 pixel to those. If you don't specify them, the default is 5 pixel.",,,0,,2014-10-06 12:25:20.267000+00:00,,2014-10-06 12:25:20.267000+00:00,,,,,1705598.0,26216039,2,4,,
+26216199,,"It turns out this error was because I was calling ""ADD"" (0x2) on the client. The transport doesn't currently support ADD. There is a issue on GitHub for it: https://github.com/elasticsearch/elasticsearch-transport-memcached/issues/7
+Note that switching to SET fixes this particular problem but there are other issues on GET that spy.memcache has issues with.",,,0,,2014-10-06 12:25:29.290000+00:00,,2014-10-06 12:25:29.290000+00:00,,,,,154477.0,26151115,2,0,,
+26216202,,"What you're looking for is in the subject of 
+ (NLP) : processing text data and 
+ (where the classification models are built)
+First I would suggesting going through NLP tutorials and then text classification tutorials, the most appropriate being https://class.coursera.org/nlp/lecture 
+If you're looking for libraries available in  or , take a look at Java or Python for Natural Language Processing
+If you're new to text processing, please take a look at the  library that provides a nice introduction to doing NLP, see http://www.nltk.org/book/ch01.html
+Now to the hard core details:
+First, ask yourself whether you have twitter/facebook comments (let's call them documents from now on) that are manually labelled with the categories you want. 
+1a. If YES, look at supervised machine learning, see http://scikit-learn.org/stable/tutorial/basic/tutorial.html
+1b. If NO, look at UNsupervised machine learning, i suggest clustering and topic modelling, http://radimrehurek.com/gensim/
+After knowing which kind of machine learning you need, split the documents up into at least training (70-90%) and testing (10-30%) set, see 
+Note. I suggest at least because there are other ways to split up your documents, e.g. for development or cross-validation. (if you don't understand this, it's all right, just follow step 2)
+Finally, Train and Test your model
+3a. If supervised, use the training set to train your supervised model. Apply your model onto the test set and then see how well you performed.
+3b. If unsupervised, use the training set to generate documents clusters (that means to group similar documents) but they still have no labels. So you need to think of some smart way to label the groups of documents correctly. (To this date, there is no real good solution to this, even super effective neural networks cannot know what the neurons are firing, they just know each neuron is firing something specific)",,,2,,2014-10-06 12:25:43.017000+00:00,,2014-10-06 17:25:55.387000+00:00,2017-05-23 11:55:07.183000+00:00,,-1.0,,610569.0,26213496,2,2,,
+26216205,,"I don't like ""sometimes"", you should look for ""in some cases"". For example maybe some folders do not have the right permission settings, of maybe ""rename"" somehow changes them. Maybe some names are not right. For example Windows does not allow for specific characters, a path name greater than 260 characters, etc.
+Here is a page referencing) the limitations of the Windows naming convention for path names. Maybe make sure the path you indicate is of type Unicode, which can help in case you have special characters in between (as Windows uses CP-1252 and not UTF-8 for characters encoding).
+If this is not sufficient, please provide more examples.",,,0,,2014-10-06 12:26:02.640000+00:00,,2014-10-06 12:26:02.640000+00:00,,,,,1074116.0,26213676,2,0,,
+26216208,,"I cannot tell from the question whether the following solution suites your needs, it might - or might not - work for you.
+If your situation is that you simply want the same  features available,  could be a solution. You can create a  in directory  in which you do everything you need specific to , and besides that, you do:
+Caveat! This doesn't work straight-forward. There cannot be two recipes with the same name. For example, if you want  to do  for , and you want  to do  and  for , the following does not work:
+foo/Makefile:
+bar/Makefile:
+Instead, the recipes have to be separated into unique names. However, dependency rules can be there multiple times, so it's not really a challenge to workaround this caveat. So, the following would work:
+foo/Makefile:
+bar/Makefile:
+Now, if you run  in , it would run  and .
+If the sequence matters to you and  must run before , make  dependent on , like this:
+bar/Makefile:
+If you want your target-specific variables available when you call another  (for which I recommend to use  not ), you can export your variables - with the corresponding consequences (environment space overflow risk on some Windows versions, .
+For example, if you have a target-specific variable  for target  in , and you want that when calling  that variable is known, it works like this:
+Makefile:
+Submake.mak:",,,0,,2014-10-06 12:26:15.800000+00:00,,2014-10-06 12:26:15.800000+00:00,,,,,3554264.0,26049318,2,1,,
+26216213,,"You can't parameterize a view like that. A view has to be fully defined when you create it.
+To defer decisions or filtering to runtime, using parameters, you should create a function instead.
+CREATE FUNCTION.",,,0,,2014-10-06 12:26:23.647000+00:00,,2014-10-06 12:26:23.647000+00:00,,,,,267.0,26180940,2,1,,
+26216215,,You have to set  both to  you want to drag and to  where you want drop to.,,,0,,2014-10-06 12:26:37.727000+00:00,,2014-10-06 12:26:37.727000+00:00,,,,,1103478.0,24614111,2,0,,
+26216217,,"There's an implicit coversion from any non-pointer to member/member function to . After this is passed to the stream, it passes it off to  which prints it out as a generic pointer as if by using the  format flag.",,,0,,2014-10-06 12:26:59.130000+00:00,,2014-10-06 12:26:59.130000+00:00,,,,,701092.0,26210379,2,1,,
+26216218,,"What about something like this
+That way, you could access, for example, A's methods like ?",,,2,,2014-10-06 12:27:01.797000+00:00,,2014-10-06 12:27:01.797000+00:00,,,,,4074715.0,26216067,2,0,,
+26216219,,"Try this :  this is clearing out your text after mouse out event. You can store the original text in some variable and set it when mouse out.
+DEMO
+EDIT - as OP can reduce the script by using comma seperated jquery selectors because both (#one and #two) having same code for  event. use below code
+DEMO with combined selectore",,,0,,2014-10-06 12:27:03+00:00,,2014-10-06 12:33:39.227000+00:00,2014-10-06 12:33:39.227000+00:00,,649504.0,,649504.0,26216151,2,0,,
+26216220,,"If I understood you problem correctly, you need to change this line
+to this:
+My guess is, that it is java you are using. That tag would be helpful, too.
+Edit:
+You only need to sort your array once, and these do nothing: 
+So the print routine could look like this:",,,2,,2014-10-06 12:27:04.137000+00:00,,2014-10-06 12:36:54.940000+00:00,2014-10-06 12:36:54.940000+00:00,,4050351.0,,4050351.0,26215947,2,0,,
+26216223,,"For the  error, you have some security setup that is not allowing you to access the handlers/servlets.
+Eliminate that security (for now), verify that the rest is working, then add security a bit later to lock down specifics.
+If you want to see some the suggestions below at work, consider looking at the code example in the answer from another stackoverflow: How to correctly support html5 &lt;video&gt; sources with jetty.
+Welcome files are appended to the incoming request path if there is nothing present at that location.  For example requesting a directory and then a welcome-file of 'index.html' is appended to the request path.
+While this would work ...
+It's likely not what you are aiming for, as you said the root path only.
+The above would also make changes to requests like  to 
+Instead, it might make more sense to use a Rewrite rule + handler instead of the welcome-files approach.
+This  simply changes any request path  to  and then forwards that request to the wrapped  (if you want to see the  on the browser, change it to a  instead.  ",,,4,,2014-10-06 12:27:10.247000+00:00,,2014-10-20 15:40:06.867000+00:00,2017-05-23 12:17:26.197000+00:00,,-1.0,,775715.0,26204288,2,3,,
+26216227,,"Problem Solved through below instruction:  
+installing g++-multilib, libstdc++.i386, libgcc.i386,
+glibc-devel.i386, gcc-c++-32bit
+edite make file and adjust below config:
+make softlink of 
+to lib .... .so.o then to lib .... .so make clean and compile",,,0,,2014-10-06 12:27:39.467000+00:00,,2018-07-08 22:37:29.227000+00:00,2018-07-08 22:37:29.227000+00:00,,3857942.0,,3365136.0,22099328,2,2,,
+26216233,,Yes I can use jvisualvm or jconsole. Thanks for SimY4,,,0,,2014-10-06 12:27:57.543000+00:00,,2014-10-06 12:27:57.543000+00:00,,,,,1175040.0,26114452,2,2,,
+26216234,,"You can use this :
+Which gives :",,,0,,2014-10-06 12:28:01.317000+00:00,,2014-10-06 12:28:01.317000+00:00,,,,,249691.0,26216195,2,1,,
+26216236,,"Here is a quick fix to your problem. Just override the  method in your Activity / Fragment :
+Use  for the left drawer,  for the right one",,,1,,2014-10-06 12:28:14.817000+00:00,,2015-10-14 18:36:24.273000+00:00,2015-10-14 18:36:24.273000+00:00,,3108590.0,,3108590.0,26216088,2,19,,
+26216237,,"Variables aren't objects in Ruby, you can't tell them to do anything. There are exactly two things you can do with a variable: assign it and dereference it.",,,1,,2014-10-06 12:28:17.783000+00:00,,2014-10-06 12:28:17.783000+00:00,,,,,2988.0,26210181,2,0,,
+26216238,,"It seems you have developed a web application using eclipse. By default hibernate looks for the  file in root of classpath.
+So finally the file should be placed in  directory which is the root of classpath of a web-application.",,,2,,2014-10-06 12:28:22.193000+00:00,,2014-10-06 12:34:29.497000+00:00,2014-10-06 12:34:29.497000+00:00,,2065083.0,,2065083.0,26216181,2,0,,
+26216239,,Use   to make it  :,,,1,,2014-10-06 12:28:24.203000+00:00,,2014-10-06 12:28:24.203000+00:00,,,,,1106035.0,26215918,2,1,,
+26216240,,"You're running two different versions of . You get the builtin from  in your interactive shell and the builtin from  when running via awk. They behave differently.
+Use  to get consistent behaviour in both cases.",,,3,,2014-10-06 12:28:36.993000+00:00,,2014-10-06 12:28:36.993000+00:00,,,,,733345.0,26213640,2,1,,
+26216243,,,,,1,,2014-10-06 12:28:45.223000+00:00,,2014-10-06 12:36:39.427000+00:00,2014-10-06 12:36:39.427000+00:00,,4052433.0,,4052433.0,26216026,2,0,,
+26216247,,"Looks like you want to pass some data from PHP to a view through the . I would recommend you use  and build you're data as a normal PHP array rather than worrying about escaping quotes or other nasty stuff.
+Then you can just access access the data attribute very easily (I did make a big assumption here that you are using jQuery).",,,0,,2014-10-06 12:28:53.867000+00:00,,2014-10-06 12:28:53.867000+00:00,,,,,548198.0,26215674,2,0,,
+26216249,,"Chrome limits the number of videos/audio files to 4 or 6 (I can't remember which) so, as brianchirls mentions, you need to set the  attribute, although you need to set it to .
+My recommendation is to provide a poster image (via the  attribute) for all your videos and to set  to all of them. That way the browser only actually tries to load them if the user actively clicks the play button. 
+Alternatively you could set the first 4/6 videos with  and the rest to .",,,0,,2014-10-06 12:29:10.867000+00:00,,2014-10-06 12:29:10.867000+00:00,2017-05-23 12:14:19.387000+00:00,,-1.0,,17896.0,26211178,2,3,,
+26216252,,"When setting up your WebView add this code:
+This code will remove the scrollbars of any web-page that is loaded in the WebView.
+Unfortunately while the page is loading there might be a scrollbar for a short moment (if the webpage specified one in its markup).",,,0,,2014-10-06 12:29:15.630000+00:00,,2014-10-06 12:58:16.597000+00:00,2014-10-06 12:58:16.597000+00:00,,1520422.0,,1520422.0,11206942,2,0,,
+26216254,,"In the highcharts stackLabel sum values from negative and positive values separately. Take look at your exampel and you will notice that you have stacklabel -30 and 60, separaterly calculated.",,,2,,2014-10-06 12:29:21.350000+00:00,,2014-10-06 12:29:21.350000+00:00,,,,,2021935.0,26188432,2,0,,
+26216255,,"You need to use sendcmd.
+Here is a sample program that changes permissions via ftplib:
+Happy programming!",,,0,,2014-10-06 12:29:30.160000+00:00,,2014-10-06 12:29:30.160000+00:00,,,,,687647.0,25793015,2,8,,
+26216256,,"1) No. rdfs:label is a relationship to create human readable descriptions of a given resource name (http://www.w3.org/TR/rdf-schema/#ch_label). For example, if I have a class with the URI ""http://example.org/aabbc"" which is used to represent ""Trees"" I would add the following triple: 
+  &lt;http://example.org/aabbc> rdfs:label ""Tree""@eng
+Although I havent't found a description of the yago:means relationship, it seems that it is meant to link together resources that mean the same thing. In YAGO, they exploit this relationship to link resources (from http://pubman.mpdl.mpg.de/pubman/item/escidoc:1819115:2/component/escidoc:1840732/MPI-I-2006-5-006.pdf): 
+  ""if the user typed ”Einstein, Albert” instead of ”Albert Einstein”,
+  then there is a virtual redirect page for ”Einstein, Albert” that
+  links to ”Albert Einstein”. We exploit the redirect pages to give us
+  alternative names for the entities. For each redirect, we introduce a
+  corresponding means fact (e.g. (”Einstein, Albert”, means, Albert
+  Einstein)).""
+What this means is that they create two different entities, with their respective URIs (one for ""Albert Einstein"" and another for ""Einstein, Albert""), and they link it through the ""means"" property. They are not linking the literals directly, as you can't use a literal as a domain for a property. 
+Therefore, if you want to create links between your resources and Yago you could do so by:
+Show the yago's link directly (If you show html in your pages) 
+Use your document URI as the domain and state something like ""refersTo"" or ""linksTo"" the Yago entity (if you want to just link your document as a whole to Yago) :
+  yourDocURI yourdomain:refersTo yagoEntityFound
+Create a URI for the word and specify the equivalent individual with and owl:sameAs link (http://www.w3.org/TR/owl-ref/#sameAs-def) (If you want to state that some words of your document link to yago's resources):
+  http://example.org/wordPage owl:sameAs yagoEntityLarryPage
+2) Yago is a huge ontology and navigating it might be tricky. However I found this: https://gate.d5.mpi-inf.mpg.de/webyagospotlx/Browser which might do the trick. I hope it helps. Also, YAGO uses the wordnet definitions, so it might help you to take a look there.
+By the way, I don't see why you need to perform any sparql queries here.",,,7,,2014-10-06 12:29:30.707000+00:00,,2014-10-06 12:29:30.707000+00:00,,,,,3772440.0,26192347,2,0,,
+26216266,,"Open myproject as your project and then go to PyCharm -> Preferences... -> Django, Enable Django Support and then choose your Django project root, settings file and manage script.",,,2,,2014-10-06 12:30:00.393000+00:00,,2014-10-06 12:30:00.393000+00:00,,,,,322818.0,26215186,2,17,,
+26216267,,"It is unlikely that this function can be sped up any further: It really does just four operations on python level:
+(2x) Perform a slice on the input. These kinds of slices are very fast, as they only require a handful of integer operations to calculate new strides and sizes.
+Allocate a new array for the output. For such a simple function, this is a significant burden.
+Evaluate the  ufunc on the two slices, an operation that is highly optimised in numpy.
+Indeed, my benchmarks show no improvement by either using numba or cython. On my machine, I consistently get ~30 ms per call if the output-array is pre-allocated, or ~50 ms if the memory allocation is taken into account.
+The pure numpy versions:
+The cython versions:
+The numba version (current numba 0.14.0 cannot allocate new arrays in optimised functions):
+Here are the timings:",,,0,,2014-10-06 12:30:05.217000+00:00,,2014-10-06 12:30:05.217000+00:00,,,,,4112821.0,26214024,2,6,,
+26216268,,"My recommendation is the create a 3rd normal form schema and then profile your app.    It's difficult to guess on performance.  Other factors like indexes and query optimization will have a great impact.  Make sure you're using indexes for all WHERE clauses.
+I'd also think about partioning by date.  You don't say how you'll deal with historical data.  It's not too early to think about how long you'll hang onto ads before moving them out to an archive for reporting.  You don't want your performance to slow down over time because the table size has grown.
+Now that you've posted your schema, I'd recommend that you remove breed_id from the Ad table.  There's no relationship there.  An Animal can have one Breed.  ",,,0,,2014-10-06 12:30:07.330000+00:00,,2014-10-06 12:30:07.330000+00:00,,,,,37213.0,26216171,2,0,,
+26216269,,"So I did a  and added @Amadan's logger statement into my code and it just started working. Not sure what changed, but it works now :).",,,0,,2014-10-06 12:30:10.317000+00:00,,2014-10-06 12:30:10.317000+00:00,,,,,2650407.0,26209634,2,0,,
+26216270,,"first, if you want to start an Activity, you should use Context or its child classes. 
+Normally, we can pass the Context by constructor. For instance, your class:
+In Other Activity/Service...",,,2,,2014-10-06 12:30:14.057000+00:00,,2014-10-06 12:30:14.057000+00:00,,,,,1145976.0,26215285,2,0,,
+26216271,,"When you say,
+Compiler creates different memories for 'name' and 'value' in stack.
+As 'name' is a pointer, the memory it is pointing to is copied as per your wish but not the variable 'name'. Hence both 'name' and 'value' are different for n1, n2 and n3.
+Even assignment(n2=n1) does not give same memory location for 'name' in both n1 and n2 but the memory 'name' is pointing to will be same.
+And coming to your problem, this can achieved by using references and pointers as said by vz0",,,0,,2014-10-06 12:30:14.560000+00:00,,2014-10-06 12:30:14.560000+00:00,2017-05-23 10:25:58.710000+00:00,,-1.0,,2451120.0,26214138,2,0,,
+26216272,,get full exception :,,,0,,2014-10-06 12:30:31.537000+00:00,,2014-10-06 12:30:31.537000+00:00,,,,user4001049,,7665793,2,0,,
+26216274,,"Fix it adding authorize path for consumer. Poor guide below
+1) Create consumer
+2) Get the request token
+3) Get authorize url
+4) Click it, enter credentials, click authorize
+5) Grab oauth_verifier from the URL
+6) Get access token
+Because access token is not going to change, I serialized it with YAML.dump and save it.",,,0,,2014-10-06 12:30:34.750000+00:00,,2014-10-06 20:20:53.193000+00:00,2014-10-06 20:20:53.193000+00:00,,2603130.0,,2603130.0,26157599,2,3,,
+26216275,,"Like others have said: no, you can't have ""local functions"" like that.
+You also aren't doing your boolean comparison correctly, as a single = is assignment, not comparison. It should be either:
+Or since you're already working with booleans, you can refer to it directly:
+Anyway, back to your question: you can't do what you're talking about, but you can get around it by using an anonymous class. To use an anonymous class, you need to have an existing class that you want to extend by overriding one or more of its functions, which you can do inside a method.
+For example, we have the Runnable interface that we can implement by defining an anonymous class that defines the run() method, and then call that anonymous class directly. It looks like this:
+More info on anonymous inner classes here: http://staticvoidgames.com/tutorials/objects/advancedInheritance
+However, all of this has a pretty bad code smell, and isn't the way any sane person would do this. Why do you think you need a local method? Chances are you should either use separate classes, or a regular old top-level method.",,,0,,2014-10-06 12:30:35.967000+00:00,,2014-10-06 12:30:35.967000+00:00,,,,,873165.0,26152938,2,0,,
+26216276,,Use  and :,,,1,,2014-10-06 12:30:40.393000+00:00,,2017-09-15 14:54:16.627000+00:00,2017-09-15 14:54:16.627000+00:00,,3923281.0,,3923281.0,26216087,2,1,,
+26216277,,"the problem is that transforming a div will not change its height.
+By modifying the coordinate space, CSS transforms change the position and shape of the affected content without disrupting the normal document flow. This guide provides an introduction to using transforms. mdn link
+One solution is to set the bottom margin on ZoomIn and Zoom Out as 
+try http://jsfiddle.net/z16jc6wa/2/",,,1,,2014-10-06 12:30:41.307000+00:00,,2014-10-06 12:30:41.307000+00:00,,,,,4113161.0,26215957,2,0,,
+26216279,,"I assume you are expecting values like 1, 8, 7, 6 since you are increasing the startindex parameter. If you expect the functions to return 1, 8, 18, 20 see @Thomas Haratyk 's comment.
+The return value of  is counted from the beginning of the string, not from the startindex position:",,,1,,2014-10-06 12:30:47.467000+00:00,,2014-10-06 12:46:49.780000+00:00,2014-10-06 12:46:49.780000+00:00,,664563.0,,664563.0,26215819,2,0,,
+26216282,,"Without seeing your XSLT it's difficult to be certain, but it sounds like your XSLT is copying over the whitespace in the source into the output.
+The quickest way to prevent that is to put
+or alternatively
+This removes all whitespace, but you can of course be more specific about the whitespace you're removing, such as
+to remove just the whitespace after that opening element tag- this matches the first text node within  if it's whitespace only, and outputs nothing in it's place.",,,0,,2014-10-06 12:31:15.813000+00:00,,2014-10-06 12:31:15.813000+00:00,,,,,283505.0,26211138,2,1,,
+26216284,,"You can also use  to do so
+EDIT
+A better solution would be to use command substituion ",,,2,,2014-10-06 12:31:17.863000+00:00,,2014-10-08 04:17:56.677000+00:00,2014-10-08 04:17:56.677000+00:00,,3150943.0,,3150943.0,26216096,2,1,,
+26216285,,"  And is there any ready made GUI component for taking dates from users?
+Yes, there are several options in standard API and third-party libraries, as exposed in this answer:  +  or  or . These components will also solve this other problem:
+  But how i will know that the date which is going to be inserted is
+  valid because the number of dates in different-different months and
+  years is different.
+Off-topic
+About this:
+While using Null layout is perfectly possible, Swing is designed to be used along with layout managers and thus null layout is discouraged. See this topic Why is it frowned upon to use a null layout in SWING?.",,,0,,2014-10-06 12:31:18.130000+00:00,,2014-10-06 12:43:18.687000+00:00,2017-05-23 12:11:40.620000+00:00,,-1.0,,1795530.0,26216112,2,1,,
+26216286,,The standard solution costs money: Parallel Computing Toolbox.,,,1,,2014-10-06 12:31:25.090000+00:00,,2014-10-06 12:31:25.090000+00:00,,,,user2271770,,26213608,2,1,,
+26216288,,"The LinearSegmentedColormap doesn't give me the same interpolation if I don't it manually during my test, so I prefer to use my own :
+As an advantage, matplotlib is not more required since I integrate my code within an existing software.",,,0,,2014-10-06 12:31:45.173000+00:00,,2014-10-06 12:31:45.173000+00:00,,,,user3635644,,3720840,2,0,,
+26216289,,"Thanks to Kivy IRC user  I got the following answer, which does the trick: gist.github.com/anonymous/cdac178934b73eae51e0",,,0,,2014-10-06 12:31:45.510000+00:00,,2014-10-06 12:31:45.510000+00:00,,,,,2377489.0,26194897,2,1,,

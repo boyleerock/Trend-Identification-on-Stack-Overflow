@@ -1,0 +1,428 @@
+id,creation_date,text,score
+54158279,2015-10-16 16:38:40.960000+00:00,"I am the reference, having been part of all of that. This post could be cited in Wikipedia as an original source.",1451
+47852929,2015-04-25 10:16:18.347000+00:00,"`plt.figure(figsize=(20,10))`",916
+56939360,2016-01-04 17:59:39.473000+00:00,"Maybe the good people at TC39 should name this concept something other than ""class"" if they don't want it to behave like the rest of the programming world expects from something named ""class"".",663
+81662890,2017-11-17 16:31:52.460000+00:00,Most depresssing answer ever.,638
+57394576,2016-01-16 11:26:12.903000+00:00,This is ridiculously difficult.,634
+41757411,2014-10-26 02:20:29.223000+00:00,@Gatada I'm glad my employer does not make me verify web code for the Nintendo 3DS browser.,566
+56116411,2015-12-09 17:23:27.283000+00:00,"FYI:  Mark Adler is an American software engineer, and has been heavily involved in space exploration. He is best known for his work in the field of data compression as the author of the Adler-32 checksum function, and a co-author of the zlib compression library and gzip. He has contributed to Info-ZIP, and has participated in developing the Portable Network Graphics (PNG) image format. Adler was also the Spirit Cruise Mission Manager for the Mars Exploration Rover mission. (wikipedia)",562
+53304038,2015-09-23 04:52:21.127000+00:00,"How is this the accepted answer and has this many up votes? It does not answer the question at all! You need to set the `selectionStyle` property on the cell: `cell.selectionStyle = UITableViewCellSelectionStyle.None` in Swift, or `cell.selectionStyle = UITableViewCellSelectionStyleNone` in Objective-C.",532
+80972549,2017-10-30 10:35:02.253000+00:00,"I fixed this by going to the bathroom. When I got back it was working. I'm pretty sure I tried everything in this thread, dunno exactly what did the job. I also prayed at some point.",528
+44332548,2015-01-15 17:58:45.223000+00:00,"So, the `__init__` method is used when the *class* is called to initialize the instance, while the `__call__` method is called when the *instance* is called",499
+52924231,2015-09-11 22:30:30.453000+00:00,"@ericmjl yes `df.rename(columns = {'$b':'B'}, inplace = True)`",491
+54517257,2015-10-27 06:03:34.873000+00:00,So what is the solution?,478
+61452760,2016-04-29 20:40:28.577000+00:00,"The solution in ES6 is to put the variable in square brackets in order to evaluate it.
+`var key = ""happyCount"";
+myArray.push({ [key]: someValueArray });`",451
+75308701,2017-05-23 21:41:53.703000+00:00,"`yield` is not as magical this answer suggests. When you call a function that contains a `yield` statement anywhere, you get a generator object, but no code runs. Then each time you extract an object from the generator, Python executes code in the function until it comes to a `yield` statement, then pauses and delivers the object. When you extract another object, Python resumes just after the `yield` and continues until it reaches another `yield` (often the same one, but one iteration later). This continues until the function runs off the end, at which point the generator is deemed exhausted.",449
+43781497,2014-12-29 04:47:55.450000+00:00,@G Rassovsky: All books which promise to teach X in Y hours. For example Learn C++ in 24 hours. I believe all such books are better avoided.,446
+65656261,2016-08-25 23:48:34.873000+00:00,"I disagree. In OOD, private methods and properties are an intrinsic way to not repeat yourself (https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). The idea behind black box programming and encapsulation is to hide technical details from the subscriber. So it is indeed necessary to have non-trivial private methods and properties in your code. And if it's non-trivial, it needs to be tested.",444
+59172685,2016-03-02 14:19:30.923000+00:00,There's a bug in your code: Tomato is a fruit.,427
+62077971,2016-05-17 12:33:24.890000+00:00,"401 'Unauthorized' should be 401 'Unauthenticated', problem solved !",426
+58020665,2016-02-02 10:38:56.373000+00:00,This is terrible. Why don't they fix it? Ideally I should be able to search with a regex. Where do I go to protest this? :),409
+45166739,2015-02-09 18:33:52.013000+00:00,"Posting here to hopefully catch people that don't quite think this through, but both ^ and ~ assumes you can trust minor and point releases from your dependencies.  If you are publishing a library and want other people to trust you, DO NOT BLINDLY ACCEPT DOWNSTREAM DEPENDENCIES. A bad dot release from your dependency can cause a chain reaction upstream, and will have people knocking at YOUR door when things go pear shaped.   This is another huge reason to use npm shrinkwrap on your production code.",401
+49055443,2015-05-27 16:51:36.017000+00:00,"Don't forget to do a `git fetch --all --prune` on other machines after deleting the remote branch on the server. ||| After deleting the local branch with `git branch -d` and deleting the remote branch with `git push origin --delete` other machines may still have ""obsolete tracking branches"" (to see them do `git branch -a`). To get rid of these do `git fetch --all --prune`.",396
+79144517,2017-09-07 08:25:43.623000+00:00,"the image is the recipe, the container is the cake ;-) you can make as many cakes as you like with a given recipe",387
+83534856,2018-01-16 07:09:11.537000+00:00,"Judging by the odd spacing in the original question, I think this is EXACTLY the answer the interview question was looking for - exploiting non-space characters that look like spaces. Good spot!",373
+59610306,2016-03-14 01:15:49.760000+00:00,"OR `fig, ax = plt.subplots(figsize=(20, 10))`",372
+50509661,2015-07-06 22:00:31.757000+00:00,"Except that is not CSS, that is JavaScript.",368
+51681515,2015-08-07 15:58:04.180000+00:00,cc is faster to type,365
+48986751,2015-05-26 08:09:21.910000+00:00,"I just did some benchmarking. `li.insert(0, a)` is around 5x faster than `li = [a] + li`. Keep this in mind if you are doing this many times.",364
+66279042,2016-09-13 22:35:26.790000+00:00,"Nice that this Apple service is free, ... oh wait, actually we pay 99$ per year ...",346
+72802419,2017-03-17 00:21:08.407000+00:00,Or `justify-content: flex-end`,346
+63997804,2016-07-10 08:21:06.467000+00:00,Does anyone else just come to this post every time they want to see what the npm registry url is? haha,345
+57648172,2016-01-23 00:41:47.090000+00:00,"The same thing more concise, and perhaps faster as it doesn't use a list:
+`df = pd.concat((pd.read_csv(f) for f in all_files))`
+Also, one should perhaps use `os.path.join(path, ""*.csv"")` instead of `path + ""/*.csv""`, which makes it OS independent.",345
+60083962,2016-03-25 19:14:11.223000+00:00,"Well, that's annoying. :(",342
+46838958,2015-03-29 00:04:52.330000+00:00,@RoryO'Kane so everyone can play microsoft's audio format except microsoft? lol,338
+91332745,2018-09-05 18:36:40.537000+00:00,If you installed Postgres from `homebrew` then you need to run `/usr/local/opt/postgres/bin/createuser -s postgres` in your terminal,337
+58653699,2016-02-18 11:21:22.610000+00:00,This just doesn't work. The resulting images are just useless gray shapes.,333
+65277293,2016-08-15 19:06:04.947000+00:00,I'm really confused by the diagram at the end. I thought I got it until I saw that image.,329
+77269150,2017-07-17 17:14:55.977000+00:00,"Actually there's a ***big difference*** - `x + [4, 5]` gives you a new list assigned to x - `x.extend()` mutates the original list. I elaborate in my answer here below.",329
+65067761,2016-08-09 13:16:52.123000+00:00,Why is is so hard for React to generate unique keys itself?,324
+64490525,2016-07-24 07:20:39.387000+00:00,I have the same problem and that did not fix it.,322
+55605142,2015-11-25 16:49:25.277000+00:00,"The example you've given provides the dimensions of the *window*, not of a given view; how is this relevant?",316
+57854159,2016-01-28 15:31:44.810000+00:00,"Oddly enough ""Synchronously"" means ""using the same clock"" so when two instructions are synchronous they use the same clock and must happen one after the other.
+""Asynchronous"" means ""not using the same clock"" so the instructions are not concerned with being in step with each other.
+That's why it looks backwards, the term is not referring to the instructions relationship to each other. It's referring to each instructions relationship to the clock.
+Hope that helps.",314
+49917812,2015-06-19 15:04:19.527000+00:00,This is not a correct answer. The example in the answer is not loading a json file. It is actually just loading another javascript file which stores some hardcoded json as a variable named `data`.  If you removed the string quotes from around the json in `data.json`  you wouldn't even need to use `JSON.parse`.  The question is how to load a JSON file not how to hardcode JSON into another javascript file and then load it.,314
+72700900,2017-03-14 17:53:45.557000+00:00,"Note, that things changed [for the better in ES6](http://stackoverflow.com/a/2274327/444255), i.e. `{[key]:someValueArray}`",313
+71462831,2017-02-09 22:37:15.613000+00:00,"`git config --global alias.adog ""log --all --decorate --oneline --graph""`",307
+45200326,2015-02-10 15:14:21.540000+00:00,Advice: stop using and supporting IE 8.,307
+68740461,2016-11-23 06:49:13.303000+00:00,"When choosing the syntax, keep in mind that only scss allows copying and pasting css from stackoverflow and the browsers' development tools, whereas in sass you always have to adjust the syntax",303
+68445524,2016-11-15 08:44:42.010000+00:00,One way they could have avoided overcomplication would have been to stick with a popular and well-established format ... like Markdown. ;-),302
+57719599,2016-01-25 15:07:08.177000+00:00,"The order may seems strange for coders however `f(x) = |x| = x if x > 0 else -x` sounds very natural to mathematicians. You may also understand it as do A in most case, except when C then you should do B instead...",300
+49689007,2015-06-13 17:17:57.990000+00:00,rand() + rand() can owerflow,295
+86543267,2018-04-10 22:37:45.003000+00:00,That's too bad you had to bring in a library of classnames just to add two classes to an element :(,293
+43351469,2014-12-13 08:57:29.717000+00:00,It was just too hard to add a str.length method. (raises his fist in anger),293
+79431943,2017-09-15 07:45:19.603000+00:00,"What a mess! The worlds largest package manager yet it doesn't have documentation on how it should work. Everyone is guessing about what it should do and it turns into a war of opinions. Discussion is good but should happen prior to a release into the wild. At some point someone needs to make the final call and then in can get implemented, documented and released. PHP was designed by committee and ad-hoc'd together and look how it turned out. I'd hate to see the same thing happen to a tool this critical and widely used.",292
+49295491,2015-06-03 08:15:58.413000+00:00,"Don't do weird things, you'll have no friends :(",289
+52948402,2015-09-13 02:47:31.387000+00:00,"BE CAREFUL with this method as it first converts to the date to UTC. If you are in a + timezone and your time portion is early in the day, then it could roll-back a day. Alternatively, if you're in a - timezone and your time portion is late in the day, then it could roll forward a day.",286
+98929143,2019-05-15 12:56:23.387000+00:00,"Nice explanation for other Lifecycle events, but this doesn't the question specifically about an alternative to componentWillMount().",284
+73769688,2017-04-11 18:08:59.533000+00:00,wouldn't mind a non-jquery answer for those who don't use it,284
+49693419,2015-06-13 21:45:22.507000+00:00,"This attribute is also required: `autocomplete=""I told you I wanted this off, Google. But you would not listen.""`",284
+50816404,2015-07-15 05:40:31.890000+00:00,"@Texom512: I would also recommend never writing `not(True)`; prefer `not True`. The first makes it look like a function call, which is where your confusion came from; if `not` was a function, then `not(True) in ...` couldn't possibly be `not ((True) in ...)`. You have to know it's an operator (or you end up in situations like this), so you should write it like an operator, not disguise it as a function.",280
+90730863,2018-08-17 07:02:56.750000+00:00,"Under the hood, Python will use `__contains__(self, item)`, `__iter__(self)`, and `__getitem__(self, key)` in that order to determine whether an item lies in a given contains. Implement at least one of those methods to make `in` available to your custom type.",280
+53304796,2015-09-23 05:31:23+00:00,(And now it takes 10 seconds to find this question in Google),278
+58884050,2016-02-24 10:35:24.383000+00:00,Vim says `E850: Invalid register name`:(,278
+43923151,2015-01-03 15:10:45.027000+00:00,"If you, like me, make the mistake of doing (new Guid().toString()) you will get 0000-00000-00000-00000. You need to do Guid.NewGuid().toString()",277
+52207517,2015-08-22 19:20:12.953000+00:00,"How can ""please check logs"" be the accepted answer to ""why are my logs empty""?",276
+69879985,2016-12-27 03:25:56.760000+00:00,"I always see this error if when I create a new Github repository with a README.md, then pull it to a local repository at the first time. So annoying.",275
+84377246,2018-02-08 15:55:59.077000+00:00,"The fact that the 4th highest-voted question about Linux is ""closed as off-topic"" is hilarious. Who but a programmer would care about chmod? How is this off-topic? Why are ""permissions"", ""folder"", and ""cmod"" even tags if they're off-topic?",274
+72990983,2017-03-22 09:41:06.550000+00:00,Does not even answer the question yet the most upvoted answer?,273
+56913201,2016-01-04 02:25:32.520000+00:00,"Some users may not want to change the backend for all of their scripts. This page -- http://matplotlib.org/faq/usage_faq.html#what-is-a-backend -- tells another way:  include the statement `import matplotlib as mpl` then `mpl.use('TkAgg')` right after that, then do the import for pyplot.",272
+67963642,2016-11-01 06:16:48.503000+00:00,"I think your options are **1.** Your measuring technique is flawed, **2.** The compiler writes better assembly that you, or **3.** The compiler uses magic.",271
+84126790,2018-02-01 14:46:56.047000+00:00,small hint: parseInt(null) returns NaN but +null returns 0,271
+56931731,2016-01-04 14:26:10.187000+00:00,`The ENTRYPOINT specifies a command that will always be executed when the container starts. The CMD specifies arguments that will be fed to the ENTRYPOINT.` is a good to-the-point summary.,270
+69252004,2016-12-07 16:24:19.353000+00:00,"Note: ""Because iterrows returns a Series for each row, it **does not** preserve dtypes across the rows."" Also, ""You **should never modify** something you are iterating over."" According to [pandas 0.19.1 docs](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.iterrows.html)",269
+50795977,2015-07-14 15:49:38.923000+00:00,"This will block a negative number from being entered using the arrow buttons / spinner. However, the user can still manually enter in a negative number and have that field's value read as a negative number, thus bypassing the min attribute.",268
+62672922,2016-06-02 14:02:11.397000+00:00,None! The `OUTER` keyword is optional.,268
+45057142,2015-02-06 01:02:01.727000+00:00,"A common approach for invalidating tokens when a user changes their password is to sign the token with a hash of their password. Thus if the password changes, any previous tokens automatically fail to verify. You can extend this to logout by including a last-logout-time in the user's record and using a combination of the last-logout-time and password hash to sign the token. This requires a DB lookup each time you need to verify the token signature, but presumably you're looking up the user anyway.",267
+71183289,2017-02-02 13:35:42.067000+00:00,This is a fine if very un-pythonic solution. Consider using list comprehension.,261
+42151178,2014-11-06 19:04:59.993000+00:00,"@megido well `-D` force deletes, `-d` gives you a warning if it's not already merged in.",260
+48922737,2015-05-23 23:16:06.983000+00:00,Python 3 renamed `dict.iteritems -> dict.items`.,260
+66386056,2016-09-16 16:13:12.523000+00:00,"-1 as I too strongly oppose 404 as a response to a *successful* call that has no records to return. As a developer dealing with an API for a non-web app, I have wasted hours of contacting the developers of the API to track down why the API endpoint I was calling didn't exist, when in fact it did, it just had no data to report. With regards to a 204 not being particularly useful to a browser, that is a bit like the tail wagging the dog as most uses of API endpoints in our universe of smart devices are not browser based and those that are likely use AJAX. Sorry to take points away though.",259
+41568271,2014-10-20 11:59:54.117000+00:00,"This could be used as a workaround, but not an actual solution to the problem. What if we need to fetch lazily?",256
+89946362,2018-07-24 00:13:02.883000+00:00,"**Don't stop here.** Most voted answers are below without the requirement of any plugins.
+https://stackoverflow.com/a/15588798/2117868 and
+https://stackoverflow.com/a/1676690/2117868",256
+45149115,2015-02-09 10:25:06.327000+00:00,"It seems very worth noting in this answer that setting this option to `false` on a case-insensitive file system is a *bad idea*. This isn't necessarily obvious. For example, I just tried this on my Mac, thinking it would fix my problems, then renamed a file from `productPageCtrl.js` to `ProductPageCtrl.js`. `git status` saw a *new* file called `ProductPageCtrl.js` but *didn't* think that `productPageCtrl.js` had been deleted. When I added the new files, committed, and pushed to GitHub, the GitHub repo now contained *both* files even though my (supposedly up to date) local repo had only one.",255
+51186892,2015-07-24 19:55:31.240000+00:00,"This doesn't accomplish the same thing as the question asks, you will have a 10px indent on the far left and right, which I'm assuming they don't intend to have. Hence, the negative margins in the original question.",253
+45536338,2015-02-19 20:51:08.260000+00:00,… or `Comparator.comparingLong(File::lastModified).reversed()`,253
+42299195,2014-11-11 16:59:53.757000+00:00,"The =""selected"" part is not necessary.  Just  will do as mentioned in other answers.",249
+74727409,2017-05-08 10:57:10.123000+00:00,"BTW, this is a silly abbreviation means ""**g**et the **c**urrent **a**xes"".",248
+79183855,2017-09-08 07:16:50.620000+00:00,"yes, it makes sense now, if your app depends on library x which itself depends on y,z. if you use `implementation` only x api will be exposed, but if you use `api` y,z also will be exposed.",248
+55373970,2015-11-19 12:45:29.307000+00:00,As usual: beware THE MONTH is ZERO-INDEXED ! So January is zero not one...,246
+72793818,2017-03-16 18:46:52.283000+00:00,"I gotta say, to have a month number zero indexed is the dumbest thing I've seen in a while. '",245
+52129627,2015-08-20 12:46:00.023000+00:00,`header('Content-type:application/json;charset=utf-8');`,244
+47071301,2015-04-05 00:29:38.087000+00:00,"For some reason, other languages use printf-like syntax: Java, Python (the new syntax is still closer to printf than to streams). Only C++ inflicts this verbose abomination on innocent human beings.",243
+42185404,2014-11-07 16:57:31.690000+00:00,"`window.addEventListener('resize', function(){}, true);`",243
+70181573,2017-01-05 14:59:30.967000+00:00,"After 9 failed attempts, Randall Munroe's StackSort sent me here, great example :P
+https://gkoberger.github.io/stacksort/",242
+60463407,2016-04-05 11:07:01.923000+00:00,"@rook You can listen to an advice without a deep explanation, sure. But when you request an explanation and don't get it, it's usually a red flag. ""Trust, but verify"" and all that.",242
+58108915,2016-02-04 08:47:22.030000+00:00,"use ""app:backgroundTint"" not ""android:backgroundTint""",241
+93478546,2018-11-14 11:15:24.490000+00:00,"Personal opinion: While this may be the reason code why it is written as it is, I think it's a bad justification. Code is read more often than it's written, and this unnecessary code just increases parsing overhead for the reader.",240
+94548675,2018-12-19 11:52:43.947000+00:00,"If somebody cared (as I did), pwd stands for **p**rint **w**orking **d**irectory [Source](https://www.quora.com/What-does-PWD-terminal-command-stand-for)",237
+67963603,2016-11-01 06:14:51.840000+00:00,Have you examined the assembly code that GCC generates for your C++ program?,237
+46685749,2015-03-24 18:04:56.110000+00:00,This didn't work for me on Mavericks: `rm: /usr/local/var/postgres/postmaster.pid: No such file or directory`,236
+52501175,2015-08-31 13:59:39.070000+00:00,"""Neither way is right or wrong, go with what you like best."".  Ah the famous line I hear so often and get sick and tired of hearing from people.  Conventions matter and SHOULD be debated constructively amongst the community, that's where better solutions come about and good practices.  When you are using both plural and singular for resource names in URIs, it complicates your code and the API because the user and the code behind the API has to account for that in routes and logic to differentiate single vs. plural whereas if you just stick with plural all the time you have no problems.",234
+49408186,2015-06-05 18:13:17.823000+00:00,"For anyone else using this in automation, here's all of the common parameters for the subject: `-subj ""/C=US/ST=Oregon/L=Portland/O=Company Name/OU=Org/CN=www.example.com""`",234
+77586407,2017-07-25 19:31:49.150000+00:00,"Not being able to see response data almost entirely kills the point of ""preserve log""!",233
+49930777,2015-06-19 22:34:05.483000+00:00,It's so annoying that Google produces such shoddy code. We'll have to account for these framework bugs for years.,233
+94419881,2018-12-14 17:17:34.177000+00:00,I wish the Xcode update was part of the OS update. Something like this happens every time I upgrade. Annoying.,233
+50580016,2015-07-08 13:50:13.700000+00:00,Further to @Sean's comment: ES6 syntax makes this super concise: `var merged = [].concat(...arrays)`,232
+45827494,2015-02-27 21:29:51.620000+00:00,"It's sad we have to do this instead of using our native exceptions.... oh Java, it gives and then takes away",232
+91770576,2018-09-19 20:02:19.467000+00:00,"There is a place reserved in hell, for the moron who came up with this idea. I hate having to reopen it every time, it just slows your workflow down. They could have integrated the search feature into the sidebar too, so theres no need for a separate window.",231
+41810055,2014-10-27 22:24:15.273000+00:00,or `componentDidUpdate` if the values can change after the first render.,230
+61910611,2016-05-12 13:52:41.663000+00:00,How am I supposed to query the DB if I'm not able to even connect to it??,230
+51704900,2015-08-08 14:33:55.003000+00:00,"""The error is pretty clear."" Today I learned there's a new meaning for the word ""clear"".",230
+42817864,2014-11-27 02:48:52.770000+00:00,[[0 for x in range(cols_count)] for x in range(rows_count)],230
+76131587,2017-06-15 15:26:36.207000+00:00,"Before you post a new answer, consider there are already 65+ answers for this question. Make sure that your answer contributes what is not among existing answers.",229
+61214914,2016-04-24 09:58:53.567000+00:00,can't you just use: array[::-1] ?,227
+78283840,2017-08-13 17:39:16.443000+00:00,"Just a note for Unity C# users, you must specify ""System.Random()"" as Unity has a ""UnityEngine.Random()"" which clashes (note that ""UnityEngine.Random()"" doesn't have the ability to generate random numbers). As unity doesn't always import System by default this can cause some confusion.",227
+51968201,2015-08-16 09:22:42.223000+00:00,Please add to the disclaimer that it will not hold true for nested objects or nested dicts or dicts in lists etc.,225
+44278184,2015-01-14 10:52:03.790000+00:00,"Don't use `file.readlines()` in a `for`-loop, a file object itself is enough: `lines = [line.rstrip('\n') for line in file]`",224
+83346859,2018-01-10 08:57:57.047000+00:00,This answer is actively harmful and does not deserve the votes it get. It fails if the Uri is a `content://` or any other non-file Uri.,222
+66764595,2016-09-27 20:06:40.587000+00:00,The great irony is that this is now the first hit on google. So ...,221
+96371951,2019-02-20 23:51:43.910000+00:00,I sure hope you know what you are doing.,220
+56414790,2015-12-17 14:16:20.003000+00:00,"This is so stupid and irritating. Why would they force an access token just to display images that are *already public*? I'm hardly trying to rinse them for every user in the world, I just want to display a client's latest insta without having to spend hours messing with it. Gah!",220
+47136159,2015-04-07 09:43:11.967000+00:00,"THIS IS HORRIBLY BAD PRACTICE, and I'm sad it got all those votes. Warnings are not there so that you ignore them. Warnings are there telling you ""dude, you're doing something that could be wrong, be careful"", and you should only suppress them when you wanna respond like ""shut up, I know what I'm doing"", which is most likely not the case with infant programmers.",220
+63036297,2016-06-13 08:19:39.313000+00:00,"In the constructor, you should always assign to `this.state` directly. Note that this is the only place where this is allowed. You should use `this.setState()` everywhere else.",218
+96359906,2019-02-20 16:18:55.743000+00:00,It's a tricky nitpicking question and has no bearing on anyone's ability to program well.,217
+98514251,2019-05-01 01:11:19.467000+00:00,"**Moderator Note:** Please think very carefully before casting a vote to close this as a ""typo"" question. Yes, the problem is a typo, but it's not a typo that the asker made. Rather, it is one found in a published book. That means this question and its answers may well be useful to others in the future, which is a strong counter-indicator for closing it as a typo. (UPDATE: This topic is now [being discussed on Meta](https://meta.stackoverflow.com/questions/384463); please feel free to weigh in there.)",217
+91655916,2018-09-16 15:35:11.303000+00:00,"I came across this question googling an error message. The [answer below](https://stackoverflow.com/a/46795510/2745116), stating that `MatInputModule` needs to be imported solved my problem. Since this is the accepted answer, I'm adding the link here, hoping it will save other's time.",216
+82489514,2017-12-12 01:31:01.850000+00:00,This doesn't actually answer the question. You can't simply convert your package.json into package.js for example. There are times when you want to truly import JSON not JS.,215
+43818360,2014-12-30 09:49:22.010000+00:00,"(""0000"" + num).slice(-4) will work everywhere, AFAIK",214
+68618078,2016-11-19 15:07:06.143000+00:00,`let unique_values = [...new Set(random_array)];` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set,214
+45597487,2015-02-21 19:06:51.160000+00:00,"Definitely disagree with your opinion that debugging isn't the way to go. For development use a debugger (and/or logging), for production use logging. With a debugger you have a view of everything that went wrong when the problem occurred. You can see the full picture. Unless you are logging EVERYTHING you can't get that. Plus if you are logging everything you're going have to wade through tons of data to get at what you want.",213
+91509486,2018-09-11 16:53:57.580000+00:00,"The mere fact that ""billions"" of people -- ok 83,136 as of this comment -- are having enough difficulty with imports to search out this question;  we can only conclude that python imports are counter-intuitive for many, if not most programmers.  Guido, perhaps you should accept this and ask for a committee to redesign the import mechanism.  At a minimum, this syntax ought to work if x.py and z.py are in the same directory.  Namely if x.py has the statement, ""from .z import MyZebraClass"" x should import z EVEN if it's being run as __main__!  Why is that so hard?",212
+95501536,2019-01-24 09:08:02.793000+00:00,"What's the point of this Android security feature if every developer going to add `android:usesCleartextTraffic=""true""` ?",211
+95074180,2019-01-10 02:04:09.867000+00:00,"It's a great question. It's a solid illustration of how undefined behavior isn't just a theoretical concern. When people say anything can happen as a result of UB, that ""anything"" can really be quite surprising. One might assume that undefined behavior still manifests in predictable ways, but these days with modern optimizers that's not at all true. OP took the time to create a MCVE, investigated the problem thoroughly, inspected the disassembly, and asked a clear, straightforward question about it. Couldn't ask for more.",211
+64035499,2016-07-11 14:23:06.290000+00:00,"For everyone else that has this issue but updating React is not the fix - scroll further down to the other answers, it might be a simple typo. In my case it was a class-definition using ```React.component``` instead of ```React.Component```",209
+46649703,2015-03-23 21:06:56.103000+00:00,The command `git rm --cached name_of_file` will remove the file from your git repo. Even if you add it to your .gitignore file. That is not ignoring that is deleting.,208
+46431371,2015-03-17 13:39:42.370000+00:00,"If anyone else can't remove the default app name title, do this:
+1. Call setSupportActionBar(yourToolbar)
+2. Call getSupportActionBar().setDisplayShowTitleEnabled(false);",208
+43861287,2014-12-31 17:57:00.560000+00:00,"For me, I wanted  `date +""%Y-%m-%d_%H-%M-%S""`",208
+62096554,2016-05-17 20:37:17.983000+00:00,one reason for not doing so is losing the discussion on the existing PR.,207
+81029923,2017-10-31 17:45:25.183000+00:00,This answer is frustratingly vague. Even a small example would go a long way to helping make this clearer.,207
+79830072,2017-09-26 22:03:16.413000+00:00,"Really, why isn't this in the doc at https://material.angular.io/components/autocomplete/overview so much time wasted for this. Magical unknown dependencies everywhere with angular.",206
+47899032,2015-04-27 05:11:45.557000+00:00,"I feel bad for anyone who cheekily used this function, expecting it to return `false` forever.",206
+49538168,2015-06-09 19:32:10.217000+00:00,"This accepted answer is not ok, it doesn't work with symlinks and is overly complex. ````dirname $(readlink -f $0)```` is the right command. See https://gist.github.com/tvlooy/cbfbdb111a4ebad8b93e for a testcase",205
+67468008,2016-10-18 00:34:22+00:00,"What on earth is the point of ES6 classes if their methods don't have proper lexical `this` binding, and then don't even expose a syntax for binding their context directly on their definition!?",202
+71724589,2017-02-16 20:29:00.430000+00:00,GC (Allocation Failure) is a poor choice of words for an event that will occur normally many times a day. Those JVM engineers should go out more often and try to socialize in the real world so they can learn more friendly terms that people understand.,200
+47525951,2015-04-17 09:05:31.013000+00:00,Feels like a design flaw to me.,200
+48056560,2015-04-30 13:04:06.587000+00:00,I found the Windows Credential control panel at `Control Panel\User Accounts\Credential Manager` under Windows 7,200
+64412716,2016-07-21 14:42:01.217000+00:00,"So is there a good reason to use Promise instead of Observable in the  single callback case or should Observables also be used there since they can work that way too?  Basically, is it good practice to ""Observable all the things"" or does Promise still have its place?",200
+52011711,2015-08-17 17:36:33.010000+00:00,"It is *pathetic* that the Android framework is lacking, and worse, *inconsistent* in this regard. This ought to be super-simple.",199
+68102155,2016-11-04 15:52:21.760000+00:00,Can you please make a jsbin or at least write some code here?,198
+47916949,2015-04-27 13:29:30.030000+00:00,"I'd like to add a few words that visibility in C++ is based on class instead of  on object, which means that objects of the same class can access each other's private fields without restriction.",198
+49511660,2015-06-09 09:09:04.873000+00:00,"One interesting thing is at least that **OP's IDE obviously gets it wrong** and displays incorrect highlighting,",196
+47052781,2015-04-04 03:33:33.950000+00:00,"So if I'm understanding this correctly, virtual allows the subclass method to be called, even if the object is being treated as its superclass?",194
+54875629,2015-11-05 15:07:35.753000+00:00,"In the nearly 40 years that I've been using Unix-like systems it has never occurred to me that you could put the redirect anywhere but at the end. Putting it up front like this makes it much more obvious (or ""facilitates reading"" as @MarcoAurelio says). +1 for teaching me something new.",194
+47692871,2015-04-21 19:29:50.210000+00:00,"No, I need the damn **return value**. To hell with echo.",193
+61226493,2016-04-24 19:19:32.813000+00:00,"Are the values in memory changing or are values in the processor changing?  If the hardware is *designed* for the environment, the software should run as if running on a non-radioactive environment.",193
+57815375,2016-01-27 18:45:56.800000+00:00,"There's a letter analogy that I liked a lot about SOAP vs REST, [with SOAP you are using an envelope, with REST, it's a postcard](http://rest.elkstein.org/), so Obviously SOAP has some extra overhead: more bandwidth(more paper), extra work for both parties(wrapping and unwrapping). But that doesn't mean REST is not as secure as SOAP since you can use HTTPS (think of it as replacing the mailman with someone who only speaks foreign languages)",193
+58215798,2016-02-07 08:56:36.120000+00:00,Another way is this.setState(this.state);,193
+41444071,2014-10-16 04:33:49.510000+00:00,Wow. This is like leaving all your console.log() statements in a production product.,193
+50837709,2015-07-15 14:48:20.073000+00:00,http://streetfighter.wikia.com/wiki/List_of_moves_in_Street_Fighter_II - Just saying.,193
+51981187,2015-08-16 21:57:09.900000+00:00,Can you just post the relevant parts in the answer itself? Why is such referencing even allowed on SO. I have no clue what to look for in this link as it has been heavily changed since.,192
+49360560,2015-06-04 15:50:14.837000+00:00,"""and not fast"" #understatement",191
+53808069,2015-10-07 12:08:41.400000+00:00,"With git 2.7 (Q4 2015), `git remote get-url origin` will be possible. See [my answer below](http://stackoverflow.com/a/32991784/6309)",191
+48942960,2015-05-24 22:38:35.650000+00:00,this will only work for leading and trailing whitespaces. this will not remove the whitespaces contained in string.,191
+72628924,2017-03-13 04:13:15.453000+00:00,"JavaScript just isn't JavaScript anymore. Babel/webpack gives us this Frankenstein language and somehow new developers are meant to know where ECMAScript spec ends and userland plugins/transforms begin. It's really sad, imo.",190
+44834869,2015-01-30 13:21:22.697000+00:00,Try `g++` instead of `gcc`. `gcc` is for C and will not give you access to the C++ standard library.,190
+70444963,2017-01-12 19:53:44.847000+00:00,its 2017 and they still did not introduce it. Great.,189
+69664263,2016-12-19 22:58:32.477000+00:00,Also aliased with the better-named `req.header(headerName)`.,189
+101461415,2019-08-14 13:36:51.290000+00:00,"I am kind of sick of the constant ""depreciation"" cycle by Google.",188
+50602054,2015-07-09 00:53:51.800000+00:00,"`there's no obvious gain in changing it to 99 or 119 or whatever your preferred line length is`
+This is just so wrong in so many ways. Wrap a line at 40 characters and tell me how readable it is. Obviously less wrapping = more readability so long as you have the screen space, which in 2015, you do. Wrapping impacts readability. Readability impacts maintainability. Maintainability impacts quality. And quality is impacted if you're wrapping at 80 chars. Full stop.",188
+57100357,2016-01-08 12:59:46.193000+00:00,"Automatically generated docs seem like a very bad idea to me. They don't add any useful information but only blow up the code unnecessarily. If a tool can understand what a method does from its name, than a person can also understand and no doc is needed.",187
+63192751,2016-06-16 19:38:04.200000+00:00,Also: ``,187
+55901920,2015-12-03 19:19:45.470000+00:00,I think exceptions need to be properly documented.,187
+68210448,2016-11-08 09:30:57.737000+00:00,@RishikeshRaje: So? `%` is not `&` either.,187
+46160331,2015-03-09 23:04:59.387000+00:00,Number(x).toLocaleString(),186
+48284596,2015-05-06 19:22:29.573000+00:00,"Tip: you can also add the element `false` into the `configuration` to avoid the annoying ""-jar-with-dependencies"" suffix in the name",186
+55472506,2015-11-22 11:14:50.943000+00:00,"Took me years to realise it was ""A to B"". I'd been pronouncing them ""a-tob"" and ""b-toa"" all that time.",186
+77700753,2017-07-28 09:43:42.047000+00:00,Adding an overlooked reason not to access value like this: d[key] inside the for loop causes the key to be hashed again (to get the value). When the dictionary is large this extra hash will add to the overall time. This is discussed in Raymond Hettinger's tech talk https://www.youtube.com/watch?v=anrOzOapJ2E,185
+61135650,2016-04-21 20:20:21.267000+00:00,"If you get the tattoo on your face, don't forget to reverse it so it reads correctly in the mirror. Otherwise you'll see 746,384,741,2 which is wrong and would be embarrassing.",184
+48615249,2015-05-15 10:58:32.193000+00:00,"Heads up: ""set NODE_ENV=production && "" adds a trailing space to the variable. I needed ""set NODE_ENV=production&& "" to avoid the additional space which breaks node apps like Ghost.",184
+65966044,2016-09-04 12:40:40.043000+00:00,As a side note: don't use `bgcolor`. Use CSS `background`.,183
+48725303,2015-05-19 00:35:51.013000+00:00,"To clarify, the ""app icons"" in the quoted section are referring to launcher icons, not necessarily other icons.",183
+60989777,2016-04-18 17:57:04.180000+00:00,2020 - the year of the cookiepocalypse,182
+44066968,2015-01-07 23:27:27.357000+00:00,"The standard Python function naming convention is really annoying - almost every time I re-look this up, I mistake it as being `splittext`. If they would just do anything to signify the break between parts of this name, it'd be much easier to recognize that it's `splitExt` or `split_ext`. Surely I can't be the only person who has made this mistake?",182
+91804329,2018-09-20 17:33:39.963000+00:00,"You are not fixing the issue, you are just hiding them.",182
+60491474,2016-04-05 22:42:10.697000+00:00,"Stupid Chrome, `{a:1}),({b:2}` should throw an error, not produce an object.",182
+52094704,2015-08-19 15:46:42.113000+00:00,It's impossible not to love this language :),182
+62392637,2016-05-25 18:42:36.753000+00:00,RecyclerView size changes every time you add something no matter what. What setHasFixedSize does is that it makes sure (by user input) that this change of size of RecyclerView is constant. The height (or width) of the item won't change. Every item added or removed will be the same. If you dont set this it will check if the size of the item has changed and thats expensive. Just clarifying because this answer is confusing.,182
+49415082,2015-06-05 22:22:02.300000+00:00,There's also `set smartcase` which will automatically switch to a case-sensitive search if you use any capital letters.,181
+54525382,2015-10-27 10:23:25.723000+00:00,"Note that this won't persist the identity on restarts. You can use the `-K` option to store the passphrase in your keychain when adding it, e.g. `ssh-add -K ~/.ssh/id_rsa`",181
+62184743,2016-05-19 20:24:12.860000+00:00,"Much, much better to use `response.json()`, as it'll do a *better job* of figuring out the encoding used. (Disclaimer, I wrote some of that code).",180
+85643238,2018-03-16 12:47:50.363000+00:00,What if module doesn't have @types package?,180
+69126954,2016-12-04 12:58:36.400000+00:00,WTF?! lost an hour for a stupid thing like this. Why do they put in documentation `userAdminAnyDatabase` instead of `root`?,179
+112500806,2020-08-27 16:23:40.610000+00:00,@javadba: Because sensible people wouldn't think of doing such a thing?,179
+54598418,2015-10-28 23:38:56.930000+00:00,"@tvlooy IMO your answer isn't exactly OK as-is either, because it fails when there is a space in the path. In contrast to a newline character, this isn't unlikely or even uncommon. `dirname ""$(readlink -f ""$0"")""` doesn't add complexity and is fair measure more robust for the minimal amount of trouble.",178
+64893202,2016-08-04 07:07:57.517000+00:00,"pm2 start npm --name ""Your APP Name"" -- start",178
+45703094,2015-02-24 21:40:24.380000+00:00,@matsko isn't that just an argument against using ==?,178
+44959941,2015-02-03 16:54:34.223000+00:00,Very important addendum: A class can inherit from multiple traits but only one abstract class. I think this should be the first question a developer asks when considering which to use in almost all cases.,177
+66180090,2016-09-10 16:44:31.330000+00:00,this is a very reasonable question. pseudo web-devs like me stumble over all the packages that are implemented in a weekly fashion..,177
+59952384,2016-03-22 14:46:56.703000+00:00,"I'd recommend using the full name options in a Dockerfile, like in a script, instead of the short ones (more to be used when used interactively IMO).
+`useradd --create-home --shell /bin/bash` is more understandable/readable for coworkers.",177
+86510430,2018-04-10 07:41:11.127000+00:00,"In general, this answer is not enough to sticky to work, parent also should not have overflow property.",176
+46054665,2015-03-06 11:15:18.310000+00:00,"This thread has become so popular that I've just heard someone referring to a heap dump as a ""cheap.bin""",176
+50788759,2015-07-14 13:11:01+00:00,"I don't think there's a good reason to initialize a string array here to create this object. Anyone who's looking, please use one of the other answers.",176
+51900202,2015-08-13 20:58:40.747000+00:00,"@TerminalDilettante `json.dump` writes to a file or file-like object, whereas `json.dumps` returns a string.",176
+45877218,2015-03-02 02:17:05.180000+00:00,"This answer is completely undeserving of so many upvotes. A dictionary has no implicit order, so using `.ElementAt` in this context might lead to subtle bugs. Far more serious is Arturo's point above. You'll be iterating the dictionary `dictionary.Count + 1` times leading to O(n^2) complexity for an operation that should only be O(n). If you really need an index (if you do, you're probably using the wrong collection type in the first place), you should iterate `dictionary.Select( (kvp, idx) => new {Index = idx, kvp.Key, kvp.Value})` instead and not use `.ElementAt` inside the loop.",176
+61094632,2016-04-21 00:19:38.597000+00:00,Typing `<` is two times faster than typing `<=`.,175
+54085270,2015-10-14 22:42:57.400000+00:00,`pip install image` from Zhiming's answer worked for me.,175
+65516132,2016-08-22 16:07:22.533000+00:00,"How do you deal with this sort of problem? I'm not an npm expert so when I read ""x requires a peer of y but none was found"", I ask myself, ""which peer?"" and ""how can i just make everything work again?"" Is there a process? Do you dig into the code of x and y until you find out what's missing? Once you find out what's missing, what do you do next? Thanks!",175
+92834422,2018-10-24 08:06:09.377000+00:00,"I'm going to go out on a limb and disagree with this choice.  The language designers have basically said, ""We need function overloading to design the language we want, so make, range and so on are essentially overloaded, but if you want function overloading to design the API you want, well, that's tough.""  The fact that some programmers misuse a language feature is not an argument for getting rid of the feature.",175
+46642776,2015-03-23 17:41:56.380000+00:00,"Please don't break developer tools because of some users' stupidity. ""Solutions"" like this make me burn with rage of a million suns.",174
+50944538,2015-07-18 10:44:45.740000+00:00,"-1 for the unprofessional and rambling (and mildly rude) tone, and for the fact that the actual non-redundant *content* of this answer, stripped of the rambling and condescension, basically boils down to ""They often use Chebyshev polynomials; see this book for more details, it's really good!"" Which, you know, might well be absolutely correct, but it's not really the kind of self-contained *answer* we want here on SO. Condensed down like that, it would've made a decent comment on the question, though.",174
+43813746,2014-12-30 06:12:55.347000+00:00,You shouldn't *turn off* CORS because you don't know what its for. This is a terrible answer.,174
+73475796,2017-04-04 08:29:34.720000+00:00,The optimization will kill all that out... it doesn't matter...,174
+42096314,2014-11-05 12:29:56.897000+00:00,"**""provided the implementation doesn't change""** - and there's the problem. This is a disastrous way to implement a warning-free ""if (false)"" because the implementation can and does change. See my answer to this question: as of API21 `isUserAGoat()` returns true if a user has a specific app installed. Good luck diagnosing that when your code suddenly starts behaving oddly on ""random"" devices!",174
+50954054,2015-07-18 20:28:02.367000+00:00,Need to fire that guy who oversees android studio @google. My PC literally crwals right now. My mouse pointer jumps. Its extremely frustrating to use android studio. It used to be better before,174
+48375588,2015-05-08 21:04:31.583000+00:00,"You will need to use -M to rename if you are only changing capitalization, as git will tell you that branch already exists.",173
+43458658,2014-12-16 21:24:53.330000+00:00,"I like this quote from [MSDN](http://msdn.microsoft.com/en-us/library/9kewt1b3.aspx): ""...the procedure defines a parameter, and the calling code passes an argument to that parameter. You can think of the ***p**arameter* as a ***p**arking space* and the ***a**rgument* as an ***a**utomobile*.""",173
+42374014,2014-11-13 15:20:31.447000+00:00,Mini Venn diagram: `( URIs ( URLs ) )`,173
+42215138,2014-11-08 22:54:53.757000+00:00,"`git push heroku yourlocalbranch:master` if you want to push your local, non master branch to heroku master",173
+86410219,2018-04-06 17:56:54.033000+00:00,"That is an odd, odd decision to make default. I expect my unix-y cli tools to behave like dumb simple programs that you can chain if you want to, but I guess that discussion is for another site.",171
+50013755,2015-06-23 00:48:02.237000+00:00,"""Have plans"" would be giving it too much credit.  Perhaps ""have ambition"" is closer....",171
+68225246,2016-11-08 15:30:48.900000+00:00,"How are they different? When would I use one vs the other? 
+Can I still use it the package in production if it is under --save-dev?",171
+69256321,2016-12-07 18:20:19.600000+00:00,and returns a List instead of Iterable in findAll() :-),171
+81825651,2017-11-22 13:19:51.537000+00:00,Such annoying lacking of basic functionality makes me regret that I've picked Google Firebase as BaaS,171
+41928712,2014-10-30 21:17:58.450000+00:00,+1 for still updating your answer a few months later,171
+45012544,2015-02-04 22:32:28.243000+00:00,"Warning, there is no security in this method. Your password is stored as plaintext.",171
+60828919,2016-04-14 07:20:08.627000+00:00,"On windows, the first option just flips my screen. :-/",170
+64484143,2016-07-23 20:35:06.587000+00:00,"Downgraded because this doesn't answer the question. He asked about the container, not the viewport. Completely different use case.",170
+45946660,2015-03-03 17:59:49.820000+00:00,"As a side note, even after Java 8, the JDK still can't compete in a brevity contest. The Guava alternative looks so much readable: `Maps.uniqueIndex(choices, Choice::getName)`.",170
+41877927,2014-10-29 16:05:22.597000+00:00,"@vecvan number of questions before reading man bash: 1 ...
+number of questions after reading man bash: 12,031",170
+51524449,2015-08-03 23:46:11+00:00,"I don't understand, how is this a fix? What if I want a smaller/larger font size?",170
+81286544,2017-11-07 22:14:55.977000+00:00,Doesn't answer the question though.,170
+48814283,2015-05-20 22:17:43.463000+00:00,"If it helps anyone, the way you remember this is that ""i"" is for ""insert"", ""esc"" is the exit the insertion, and "":wq"" is just ""write"" and ""quit"".",169
+54484873,2015-10-26 11:31:09.560000+00:00,"This won't work in Chrome (possiblity other browsers) you will get ""Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https, chrome-extension-resource.""",168
+46767854,2015-03-26 17:32:51.757000+00:00,With C++11 `std::unique_ptr ptr_;`,168
+49839660,2015-06-17 19:12:43.533000+00:00,How is it offtopic? I consider both gist and github *software tools commonly used by programmers*. This question fits in perfectly.,168
+57178695,2016-01-11 07:50:55.297000+00:00,"this is NOT best solution, Best is pop function. Not this.",167
+64290480,2016-07-18 17:15:44.133000+00:00,`new Date(Date.now()).toLocaleString();`,167
+46031512,2015-03-05 18:35:37.660000+00:00,Just in case: Please don't start using `in` everywhere instead of `==`. It's a premature optimization that harms readability.,167
+41761694,2014-10-26 09:52:49.627000+00:00,Why the android studio is so critical and confusing,167
+58586022,2016-02-16 22:08:01.987000+00:00,"well, technically speaking, everything is ""one line"" if formatted like that, but that does not make it actual ""one line""",167
+85751313,2018-03-20 01:45:28.990000+00:00,"You know what git needs? `git undo`, that's it. Then the reputation git has for handling mistakes made by us mere mortals disappears. Implement by pushing the current state on a git stack before executing any `git` command. It would affect performance, so it would be best to add a config flag as to whether to enable it.",166
+67566594,2016-10-20 08:01:25.047000+00:00,"these are 1, 2 and 3 in hindi",166
+74420978,2017-04-28 19:19:59.557000+00:00,`shutil` is part of the standard python library. This should be the top answer,166
+58212718,2016-02-07 04:08:54.977000+00:00,"Instead of explaining late binding through the example of an intermediary function ""func"", here is a more straightforward demonstration --
+    __Animal *animal = new Animal;__  
+    __//Cat *cat = new Cat;__  
+    __Animal *cat = new Cat;__    
+    __animal->eat();__  // outputs: ""I'm eating generic food.""  
+    __cat->eat();__  // outputs: ""I'm eating generic food.""  
+Even though you're assigning the subclassed object (Cat), the method being invoked is based on the pointer type (Animal) not the type of object it is point to. This is why you need ""virtual"".",166
+87604872,2018-05-11 14:12:37.400000+00:00,@VictorDombrovsky A stopped container is a cake in the freezer.,166
+74033374,2017-04-19 07:31:10.743000+00:00,So what we found is a dev who sacrificed a lot of clarity for a little brevity and here we are.,165
+57475669,2016-01-19 03:59:13.330000+00:00,Awesome answer - reducing the hash size to see how it actually behaves is a great idea.,165
+49312823,2015-06-03 14:46:35.033000+00:00,"Or directly `['mousemove', 'touchmove'].forEach(...)`",165
+52782658,2015-09-08 14:23:51.823000+00:00,An updated image with `git clone` and `git merge` would be very helpful!,165
+64726919,2016-07-30 11:28:13.283000+00:00,repr(e) gives you the exception(and the message string); str(e) only gives the message string.,164
+84785677,2018-02-20 16:48:19.633000+00:00,"While it doesn't satisfy the question, it rounds it out, and that is the purpose of this website. Appreciate the comment and you are right, but when people search for this, it's helpful to see this.",164
+46304443,2015-03-13 12:07:11.410000+00:00,`Task.WhenAll()` allows to run the task in **parallel** mode. I can't understand why @Servy has suggested to remove it. Without the `WhenAll` they will be run one by one,164
+48531847,2015-05-13 11:49:25.667000+00:00,"Legend has it, its still rebuilding the Index.",164
+58180334,2016-02-05 20:22:55.013000+00:00,2147483647 without commas.,164
+73726593,2017-04-10 19:14:08.793000+00:00,This is very helpful! So why are there 8 tangled things instead of 1? (“There should be one – and preferably only one – obvious way to do it.” -- The Zen of Python),164
+41900025,2014-10-30 07:51:58.257000+00:00,So basically everything I conventionally learned about big-O is out of the window?  Better to incur a sorting cost than a branching cost?,163
+52455284,2015-08-29 17:37:29.263000+00:00,"Let it be known: **THIS IS A WORKAROUND!** Anytime you're using HTTP over HTTPS you are opening up your user's device(s) to vulnerabilities. Sure it's unlikely in many cases but ethical programming is best practice. Just sayin' ... - also, +1 for the working (for testing purposes)",163
+52588230,2015-09-02 15:48:48.453000+00:00,"@user20358: Because `stash drop` ("" _Remove a single stashed state from the stash list. When no  is given, it removes the latest one. (...)_ "") does not answer the question ("" _How can I delete **all** of my Git stashes at once?_ "")?",163
+86370018,2018-04-05 18:34:17.363000+00:00,This is quite possibly the lamest thing ever. Why would Express core devs make it incredibly difficult for newcomers to get on board by making them install additional middleware for the most common use cases in web development?,162
+55878572,2015-12-03 09:51:19.900000+00:00,"Note that this is a terrible idea without brackets around those expressions. I mean it's a terrible idea *with* them, but without you're just asking for a long night of debugging.",162
+60267520,2016-03-31 00:34:53.257000+00:00,googl-services.json is an abomination... how is managing some crazy json file easier than just plugging in an API key and sender ID? Please google stop the nonsense,162
+92193443,2018-10-03 15:00:33.183000+00:00,"To experimentally prove this I compared the hashes of the class files of OP's source using the `-g:none` flag when compiling (which removes all debugging information, see [here](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html)) and got the same hash in both scenarios.",161
+42052990,2014-11-04 10:39:14.073000+00:00,`Set-ExecutionPolicy Restricted` seems to be the way to undo it if you want to put the permissions back to as they were: http://technet.microsoft.com/en-us/library/ee176961.aspx.  The temporary bypass method by `@Jack Edmonds` looks safer to me: `powershell -ExecutionPolicy ByPass -File script.ps1`,161
+68985358,2016-11-30 10:17:45.637000+00:00,"If you always read documentation thoroughly before you started coding, you'd never get anything done. When you bought your new car, did you read the 200 page manual before you drove it home? No. And when there was a problem with your car, did you google it first, or did you go get the manual? This is totally reasonable, I can only imagine all of the people who found it useful but haven't clicked the upvote button! What's kind of unreasonable is that this totally-unrelated answer is the first google result for this error message, or that the docker cli is unintuitive and unforgiving. Cheers.",161
+67183574,2016-10-10 05:36:27.047000+00:00,For me `cp /usr/local/opt/readline/lib/libreadline.dylib /usr/local/opt/readline/lib/libreadline.6.dylib` did the trick. Looks like rails 4.2.6 was looking for `libreadline.6` instead of `libreadline`. I probably should have symlinked it to be honest though. So `ln -s /usr/local/opt/readline/lib/libreadline.dylib /usr/local/opt/readline/lib/libreadline.6.dylib` is more appropriate. hope this helps others who are still stuck!,161
+65449647,2016-08-20 03:07:01.347000+00:00,"I think it's worth noting that a `git merge master` will merge from your *local* copy of master, so even if you've done a `git pull` in your feature branch after someone else merged a different branch into master, you'll need to `git checkout master`, then `git pull`, then `git checkout feature1` again and THEN `git merge master`.",160
+44272388,2015-01-14 07:39:53.167000+00:00,"Everything aside, don't write code like that.",159
+67734779,2016-10-25 09:31:50.160000+00:00,Gratzner is splitting hairs.  We're quite happy to return a single value as a primitive or built-in class without encapsulating it in a class. If we were to return a tuple of a dozen elements no one would disagree it should have its own class.  Somewhere in the middle is a (fuzzy) dividing line. I think our lizard brains can cope with Pairs easily enough.,159
+46818302,2015-03-28 00:56:08.090000+00:00,"In one particular company long ago, I knew an engineer so fed up with the absurd and growing plethora of suffix rules plaguing the company that he defiantly ended every class with `Thingy`.",158
+44224839,2015-01-12 23:46:36.277000+00:00,did you finally find her?,157
+76122395,2017-06-15 11:59:55.733000+00:00,"writing something like that IS unusual in most other languages. Hence the question I guess, at least that's how I ended up here. It is not that I can not write min function, it is that I can not believe it is not already there...",157
+87658745,2018-05-13 23:15:55.997000+00:00,After install `qemu-kvm` and add my user to the group `kvm` it did not work. But it did after **restart** computer (Ubuntu 18.04).,157
+48795490,2015-05-20 13:45:57.360000+00:00,If you are executing using gradle wrapper you can also do it like  `./gradlew -Dorg.gradle.java.home=/path_to_jdk_directory`. Good if you don't want to touch `gradle.properties`.,157
+80493779,2017-10-16 15:40:18.357000+00:00,You have to select `Always Allow` when you finished input password,157
+47544432,2015-04-17 16:16:33.570000+00:00,git checkout -- . is much faster,156
+66628150,2016-09-23 14:24:02.630000+00:00,"THIS IS THE ONLY DOCUMENT ON THE ENTIRE INTERNET that says ""publicPath"" will change the url used by the file loader.",156
+66320281,2016-09-15 00:15:43.077000+00:00,"if `--set-upstream` is deprecated, then perhaps the git devs should remove it from the help message that gets displayed when you run `git push` with no options and no upstream is set?",156
+67098157,2016-10-06 22:09:38.930000+00:00,"-1 this is misleading. As it stands, sklearn decision trees do not handle categorical data - [see issue #5442](https://github.com/scikit-learn/scikit-learn/issues/5442). This approach of using Label Encoding converts to integers which the `DecisionTreeClassifier()` **will treat as numeric**. If your categorical data is not ordinal, this is not good - you'll end up with splits that do not make sense. Using a `OneHotEncoder` is the only current valid way, but is computationally expensive.",156
+69734633,2016-12-21 15:58:06.400000+00:00,"After adding necessary scopes to the VM, `gsutil` may still be using cached credentials which don't have the new scopes.  Delete ~/.gsutil before trying the `gsutil` commands again.",156
+73262831,2017-03-29 10:22:17.557000+00:00,`git remote update origin --prune` is what I was looking for thx,156
+86166612,2018-03-30 18:24:30.110000+00:00,But this is very useful comment anyway - most people will be fine with sh - and it does not require additional 50mb of image size,156
+81163009,2017-11-04 00:38:29.923000+00:00,"It would be MUCH better if the Firestore dev team implemented subcollection queries ASAP. After all, 'more powerful queries' is one of the major selling points according to the Firestore manual. Right now, Firestore is like a Porsche without wheels.",156
+65469569,2016-08-21 01:20:35.067000+00:00,"""Use Boost"" is always the wrong answer when someone asks how to do a simple string operation in C++.",156
+92536772,2018-10-15 03:32:01.280000+00:00,"Thumbs up for the answer, and thumbs down for the Microsoft. What is the point of hiding code from developers, and giving them a basic UI to use for Auth? That's so funny. Come on Microsoft, we wanna look into code, learn it, break it, fix it, and deploy it.  This is odd.",155
+55528597,2015-11-23 22:37:42.187000+00:00,**TL;DR** - `arr.constructor === Array` is fastest.,155
+41904388,2014-10-30 10:14:12.367000+00:00,"@AgrimPathak That depends. For not too large input, an algorithm with higher complexity is faster than an algorithm with lower complexity when the constants are smaller for the algorithm with higher complexity. Where the break-even point is can be hard to predict. Also, [compare this](http://stackoverflow.com/questions/14023988/why-is-processing-a-sorted-array-slower-than-an-unsorted-array?lq=1), locality is important. Big-O is important, but it is not the sole criterion for performance.",155
+78284962,2017-08-13 18:37:16.567000+00:00,"Personally I've now had to resort to adding `package-lock.json` to my `.gitignore`... it was causing me far more problems than solving them.  It always conflicts when we merge or rebase, and when a merge results in a `package-lock.json` being corrupted on the CI server, it's just a pain to have to stay fixing it.",155
+78881676,2017-08-30 13:24:17.717000+00:00,"First, check that the Build Configuration is Debug, not Release.",154
+87967472,2018-05-22 21:52:08.157000+00:00,"Just an FYI:  Disabling this extension basically nullifies all of the nice things about JS development with VSCode.  Instead, you should just add the following into your settings json file:  `""javascript.validate.enable"": false`",154
+47381070,2015-04-14 02:27:22.773000+00:00,"This doesnt at all answer the question, did you even read it? He's asking for how to do it without specifically having to add another class for the last element, that's the entire beauty of the :last-child selector. This shouldnt be an accepted answer.",153
+56934327,2016-01-04 15:35:00.883000+00:00,Is there a reason why xor on two bools is preferable to `!=` on two bools?,153
+65928321,2016-09-02 16:47:36.903000+00:00,How the heck can this be an accepted answer if it doesn't even have the word 'scrapy' in it??,153
+55205536,2015-11-15 07:54:23.133000+00:00,"Just to add on, When invoking getResourceAsStream(name), the name must start with ""/"". I am not sure whether this is necessary, but I have problem without it.",153
+43840877,2014-12-31 00:01:41.563000+00:00,`var strUser = e.options[e.selectedIndex].value;` why not just `var strUser = e.value ?`,153
+43518108,2014-12-18 11:44:53.307000+00:00,"I think this is an atrocious answer which totally breaks encapsulation, and tightly couples components. The correct solution is to use parcelable as stated in one of the answers lower down. This is horrible practice!!",152
+64391637,2016-07-21 05:39:04.043000+00:00,Cite from [wikipedia](https://en.wikipedia.org/wiki/Lint_(software)) -  _“The term was derived from the name of the **undesirable bits of fiber and fluff** found in sheep's wool.”_,152
+104614214,2019-12-05 15:13:53.517000+00:00,"if you still have the same error after `npm uninstall -g create-react-app`, enter `which create-react-app` in your console. If it returns something like `/usr/local/bin/create-react-app`, then do a `rm -rf /usr/local/bin/create-react-app` to delete manually.",152
+85534164,2018-03-13 20:33:38.313000+00:00,`finally` will not execute if the power cord is ripped from the wall.,152
+55578930,2015-11-25 04:00:25.227000+00:00,Simpler: `string[0].toUpperCase() + string.substring(1)`,152
+44394065,2015-01-17 18:10:32.620000+00:00,"Don't use `0` as an enumeration number. Unless it's used for something that has not been set. JS treats `false || undefined || null || 0 || """" || '' || NaN` all as the same value when compared using `==`.",152
+58111400,2016-02-04 09:48:31.950000+00:00,"I disagree with this. Null is used to define something programmatically empty. Undefined is meant to say that the reference is not existing. A null value has a defined reference to ""nothing"". If you are calling a not existing property of an object, then you will get undefined. If I would make that property intentionally empty, then it must be null so you know that it's on purpose. Many javascript libraries work like this way.",152
+57616181,2016-01-22 08:38:05.300000+00:00,@JarrodRoberson: Static factory methods are no more harmful than `new`. They are [used](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html#get-java.lang.String-java.lang.String...-) all the [time](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html#of-int-int-int-int-int-) in new code. Builders for simple value objects are often the result of over-engineering.,151
+67433107,2016-10-17 06:53:59.283000+00:00,https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f,151
+43433567,2014-12-16 09:44:01.890000+00:00,"For anyone who finds this now, Moq 4.2 has an extension called `ReturnsAysnc`, which does exactly this.",151
+53374302,2015-09-24 17:34:23.673000+00:00,"$('#mystring_id').text(string).css('text-transform','capitalize');",151
+66232989,2016-09-12 17:46:21.553000+00:00,"Comments like ""it's hard to imagine why you want this"" are unhelpful and rude. For sure, starting with a green field, this request doesn't fit the intended model of containerization. But there are easily imaginable cases where you might want to send a network request from a service inside one container to a service on the host machine. Perhaps you're working on slowly, methodically migrating from a monolith running locally to microservices running in containers. This is my current challenge and googling for a solution brought me here.",150
+46856463,2015-03-29 19:32:50.490000+00:00,"""Here's how the C standard can be verbose and not answer your question""",150
+48796072,2015-05-20 13:57:26.513000+00:00,"I tried your command but I had: `unable to load certificate
+140584440387400:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE`",150
+43320953,2014-12-12 09:37:07.253000+00:00,This setting is found by selecting the project (not the target) and then the Info tab.,149
+48171055,2015-05-04 09:55:10.963000+00:00,"I'm bored to see comments about ""do not use globals"". In some cases, globals are the unique way to work. I use it commonly to store constant values, like ""global.email = 'contact@domain.com'"", and use it across my whole project. If tomorrow I want to change it in the whole project, I only need to change it in the app.js (Node example, in this case). I don't know another way to do this in Node than using global. So please, do not categorically say ""do not use global variables"", just say ""be wise using globals"".",149
+83524633,2018-01-15 20:55:40.777000+00:00,"This has got to be the worst thing about Docker. From my point of view, there is no such thing as a ""Docker project"". Docker is for shipping projects. Its just a tool. I don't want to have to rebuild my whole project to accomadte docker, adding .dockerignore etc. At the end of the day, who knows how long Docker will last? It would be great to have a seperation between code (i.e. angular project), and whatever means to deploy it (i.e. docker). After all, there really is no benefit to having a docker file next to everything else. Its just wiring things up in order to create an image :(",149
+65461099,2016-08-20 15:55:40.927000+00:00,"@kdlannoy According to the page linked to in the answer, ""Compared to extended slicing, such as range(1,4)[::-1], reversed() is easier to read, runs faster, and uses substantially less memory. """,149
+50059546,2015-06-24 02:37:38.057000+00:00,"Since you are overrunning the array then undefined behaviour occurs. Undefined behaviour means anything can happen including it appearing to work. Thus ""code should never terminate"" is not a valid expectation.",149
+60096180,2016-03-26 07:16:20.543000+00:00,"A whole page of code to just add divider to recyclerView is the best answer. Shame on you, google.",149
+86896299,2018-04-20 11:13:54.723000+00:00,Don't understand this answer at all,148
+57147052,2016-01-10 00:09:38.160000+00:00,"Note the return value of .push is not the array (or a new one, like .concat), but an integer representing the array's new length.",148
+66839180,2016-09-29 14:00:50.780000+00:00,Putting history above accessibility and ease of learning is bad design IMO. :(,148
+50960302,2015-07-19 05:48:11.250000+00:00,"I had to manually call `.val(x).change();` to trigger the select's onChange event, it seems setting val() doesn't fire it.",148
+85735170,2018-03-19 15:56:58.357000+00:00,"@AidanFeldman ""optionalDependencies"" is my oxymoron of the day",148
+66314986,2016-09-14 20:02:10.823000+00:00,Is there any proposed command for a future git release that will do this?  This command looks like my cat has been on my laptop,148
+51955697,2015-08-15 16:59:35.943000+00:00,**Just don't change it.** you made my day,148
+62900973,2016-06-08 22:01:48.940000+00:00,"@MenoHochschild, I think you are actually the one missing the critical point. The OP got their answer over a year ago. The 36 thousand people who are viewing this question do not care about the OP's specific question. They were lead here by google and my answer provided them with what they were looking for -- a clean and simple solution for getting the difference between two dates.",147
+63570427,2016-06-28 02:04:47.760000+00:00,"**I abhor non-answers like this.** ""Stop trying to do what you justifiably want to do!"" is _not_ an acceptable answer. Why was this accepted? As higher-rated answers to this question attest, reverse dictionary lookup is trivially implementable in less than 80 characters of pure-Python. It doesn't get any more ""straight forward"" than that. [Paul McGuire](https://stackoverflow.com/users/165216/paul-mcguire)'s [solution](https://stackoverflow.com/a/2569076/2809027) is probably the most efficient, but they _all_ work. ``",147
+74968131,2017-05-14 21:46:07.617000+00:00,For Tensorflow: It's a name that it is thought to imply that this Tensor is the quantity that is being mapped to probabilities by the Softmax.,147
+48741437,2015-05-19 10:47:31.887000+00:00,"This might be something userful, but it does not seem to answer the question that was asked.",147
+91526535,2018-09-12 07:08:19.230000+00:00,"It happens when you set an incorrect URL to the file or when your server isn't configured properly. In the result, the browser DOESN'T get the stylesheet, but it gets some HTML with 404 status and with the ""Content-Type"" header. Since the browser gets something from the server, it doesn't tell you there is no reply, but it tells you the MIME type of the file is incorrect. The fastest way to check it is just to try to open the file directly `http://localhost:3000/assets/styles/custom-style.css` in a new tab.",147
+45706975,2015-02-25 00:14:15.500000+00:00,Why is everyone ignoring this: `Object.keys(obj).length`,147
+49519519,2015-06-09 12:15:03.180000+00:00,"For anybody else who found the official Android documentation a bit too vague on this: if you use tags like  in your string resource, make sure you retrieve it using `getText(R.string.whatever)` rather than `getString(R.string.whatever)`",147
+71048494,2017-01-30 10:54:36.373000+00:00,`ng set defaults.styleExt scss`,146
+56902289,2016-01-03 16:28:00.767000+00:00,"Important to say that if the group doesn't have an id, the separator will not appear!",146
+98002924,2019-04-12 17:52:46.120000+00:00,rebooting or `git rebase --abort` still gave me the errors. `git rebase --quit` worked for me.,146
+51333152,2015-07-29 09:38:18.470000+00:00,"""*If you expect that your foobar is never null due to the program logic, it's much better to use `Optional.of(foobar)`*"". This seems a bit strange - when we know that the value won't be `null` in any case, then why not use the value itself, instead of wrapping it within an `Optional` ?",146
+60511768,2016-04-06 11:19:39.300000+00:00,"The macros defined expand begin to say ""main"". It is just a trick. Nothing interesting.",146
+70937139,2017-01-26 15:56:51.877000+00:00,Would you like to duplicate this line? `Y`es `P`lease.   :),145
+56295592,2015-12-14 21:16:16.410000+00:00,"How can Java have the gall to call this data structure a `Set` when it doesn't define `union`, `intersection` or `difference`!!!",145
+47978036,2015-04-28 19:23:12.807000+00:00,"""Humans benefit from the redundancy."" It's true. Every morning I wake  up and think ""how can I make my code more redundant?"". Because of the benefits.",145
+47661114,2015-04-21 06:48:40.707000+00:00,Wow. I'm *amazed* that there *IS* such a built-in solution in heapq. But then it is totally *unreasonable* that it is *NOT* even slightly mentioned at all in the official document! WTF!,145
+74125612,2017-04-21 07:41:19.623000+00:00,The OP asks about `os.environ.get()` which returns `None` (unless specified differently) and never raises an exception if the env. var. doesn't exists. Your confusing things with using `os.environ['TERM']` which is not what the question is about.,145
+45902271,2015-03-02 16:55:54.327000+00:00,"If you type ""sudo grep something /"" you can also find anything, on your whole computer :)",145
+47141765,2015-04-07 12:16:20.270000+00:00,"This part is gold: `if you don't return anything, you are effectively returning a resolved promise for the value undefined.` Thanks @pluma",145
+44698509,2015-01-27 05:33:13.353000+00:00,"I find it odd that the above logic was supposedly applied to Iterable (I can't have stream() because someone might want it to return IntStream) whereas an equal amount of thought wasn't given to adding the exact same method to Collection (I might want my Collection's stream() to return IntStream also.) Whether it were present on both or absent on both, people would probably have just gotten on with their lives, but because it's present on one and absent on the other, it becomes quite a glaring omission...",144
+72888151,2017-03-19 23:21:04.473000+00:00,"What does ""multiple merged declarations"" mean in the second difference?",144
+45509473,2015-02-19 08:56:37.753000+00:00,"@jowie it's ironic that the ""constant"" value can be changed while the multiplier cannot.",144
+89598283,2018-07-12 16:48:17.037000+00:00,This should be the default behavior if a lockfile exists.,144
+81415622,2017-11-10 23:00:27.407000+00:00,Exception handling should NEVER be used as control flow. PERIOD.,144
+56555771,2015-12-22 01:10:02.317000+00:00,"Except that it doesn't really address the question, since it leaves a bunch of naming conventions up to the user, especially for feature branches (they can be ""anything except master, develop, release-*, or hotfix-*""",144
+72002665,2017-02-24 00:14:34.317000+00:00,`-- --args` holy crap that's weird but okay,143
+66838868,2016-09-29 13:54:24.473000+00:00,What should I do if I don't have the `Conda` tab?,143
+82368549,2017-12-07 21:37:46.967000+00:00,I really don't understand why Google makes things harder.,143
+80514599,2017-10-17 06:56:24.527000+00:00,"In case you're wondering, the effect of the `cd` only lasts for the current `RUN` command. The next `RUN` will start from the current `WORKDIR`.",143
+69017802,2016-12-01 03:36:11.123000+00:00,"@masterFly: I don't know why my comment under the accepted answer was deleted for being ""not constructive"", because it answers your question quite well: people experiment with these things all the time. I was only 10 when I discovered this and all I was doing at the time was messing around and seeing what happened. You don't always have to have a practical reason for doing something, especially something as frivolous as this.",143
+56564083,2015-12-22 08:34:05.970000+00:00,"This answer doesn't seem to connect to the question, which is about changing the default environment.",143
+50571370,2015-07-08 10:30:45.760000+00:00,"Btw, it does return a Pandas Dataframe now (just tested on Sklearn 0.16.1)",143
+71473737,2017-02-10 07:41:51.897000+00:00,Can I disable this notification?,142
+57030698,2016-01-06 20:42:50.943000+00:00,"For anyone wondering how to create a folder and file that starts with a period, end the name with another period.  So that would be .tfignore. and  .nuget.",142
+56082790,2015-12-08 23:00:58.683000+00:00,"Maybe you could add a little thing at the end about __the overhead of type casting__. It's nice to have advice, but it doesn't answer the question.",142
+79182602,2017-09-08 06:35:50.500000+00:00,"Who are the ""consumers""?",142
+76137132,2017-06-15 18:10:13.667000+00:00,booooo why can't one rename a conda env?,142
+46661491,2015-03-24 07:36:13.030000+00:00,"This updates the value, but for it to show up correctly, you'll have to trigger a change event.
+`$('#your_select_input').val('').trigger('change')`",142
+67298380,2016-10-12 23:57:44.400000+00:00,Just looking at this diagram tells me there's something fundamentally wrong with all this time stuff.,142
+41449816,2014-10-16 08:34:55.483000+00:00,"@Tom : -1 on your comment (if I could) for not giving any link about your statement, as ICloneable is not marked as Obsolete in [official doc](http://msdn.microsoft.com/library/system.icloneable(v=vs.110).aspx)). You're more speaking about best pratices than official deprecated status.",142
+55816702,2015-12-01 21:37:32.290000+00:00,"@CatShoes: Not really - I've explained it as well as I can already. I guess I could give an analogy - it's like the difference between ordering a takeaway and then standing by the door waiting for it to arrive, vs ordering a takeaway, doing other stuff and then opening the door when the courier arrives...",142
+65151667,2016-08-11 12:28:03.500000+00:00,"A little complement: at very first, the button `Save Current Settings to Folder` is inactive. You have to check `Load preferences from a custom folder or URL:` first and choose a directory(which doesn't need to have an existing preferences file there yet) in order to save the preferences in the future. After that, the button `Save Current Settings to Folder` will become active.",142
+53096061,2015-09-17 05:16:32.883000+00:00,"Key bit of info: to access a man page given as ""foo(5)"": `man 5 foo`",142
+58195875,2016-02-06 12:27:07.643000+00:00,Try this `git config --global core.safecrlf false` to disable warning and keep it functioning. I got this command from [here](http://stackoverflow.com/questions/6500880/git-turn-off-lf-will-be-replaced-by-crlf-warning).,141
+80786822,2017-10-24 20:44:02.500000+00:00,@Bogdan knowledge is the reason.,141
+46321321,2015-03-13 19:31:34.207000+00:00,"This doesn't work with `--noImplicitAny` (in VS unchecked ""Allow implicit 'any' types""). It produces `error TS7017: Index signature of object type implicitly has an 'any' type.` For me this worked: `var color: Color = (Color)[green];` (tested with version 1.4)",141
+43081869,2014-12-05 06:55:15.943000+00:00,OMG what dark art it is?,141
+52469577,2015-08-30 12:12:34.850000+00:00,"@icza, that is one of the best answers I saw for a long time on SO!",141
+67792110,2016-10-26 15:07:29.540000+00:00,"Upvoted. Does anybody else find this ridiculous? I get pestered to install this update to my iPhone, and when I finally relent I'm prevented from running my iOS app on it. Then I upgrade macOS thinking that must be the problem. Nope. Thirty minutes later and now I'm downloading a 4.1GB Xcode *beta* version to allow me to keep building to the iPhone I was nagged to upgrade. Not pleased.",141
+48213123,2015-05-05 09:29:29.723000+00:00,The upcoming **.NET 4.6** (to be release later in this year) introduces support for this. See [`DateTimeOffset.FromUnixTimeSeconds`](https://msdn.microsoft.com/en-us/library/system.datetimeoffset.fromunixtimeseconds.aspx) and [`DateTimeOffset.ToUnixTimeSeconds`](https://msdn.microsoft.com/en-us/library/system.datetimeoffset.tounixtimeseconds.aspx) methods. There are methods for millisecond unix-time as well.,140
+56322305,2015-12-15 13:28:14.980000+00:00,"Only `""SELECT name FROM sqlite_master WHERE type='table'""` works for me",140
+57317113,2016-01-14 10:05:30.307000+00:00,"@Sergey it depends on your use case. If you only want to have it for specific properties (as mentioned in the question), then this is the correct answer. If you want a global answer, you should set the property in the JsonSerializer.",140
+57112945,2016-01-08 18:10:45.220000+00:00,"for example:  
+`$ pip install 'xkcdpass==1.2.5' --force-reinstall`",140
+43977368,2015-01-05 16:31:48.660000+00:00,"I'm surprised Java allows this, being a stricter language than its predecessors.  Errors in casting can lead to critical failure, as was the case with Ariane5 Flight 501 where a 64-bit float cast to a 16-bit integer resulted in the crash.",140
+47638233,2015-04-20 16:15:03.147000+00:00,"This is a poor answer - it details the merits of AutoLayout itself, rather than how AutoLayout can be applied in this situation to solve the asker's problem.",139
+56589829,2015-12-22 20:42:08.247000+00:00,"The answer to this question (while simple) is quite difficult to find. Googling things like ""python object base class"" or similar comes up with pages and pages of tutorials on object oriented programming. Upvoting because this is the first link that led me to the search terms ""old vs. new-style python objects""",139
+42074536,2014-11-04 20:35:33.550000+00:00,"Great solution. However, I'd recommend using relative values instead of arbitrary dimension, e.g. `p{0.2\linewidth}p{0.6\linewidth}}`",139
+92424565,2018-10-10 23:34:44.003000+00:00,**Dear Googlers:          `tmux -V`**,139
+51320291,2015-07-29 00:26:36.590000+00:00,`pip install  --user` works!,139
+43594711,2014-12-20 22:57:59.673000+00:00,"I don't agree, browsers should be smart enough to figure this out. I really am tired using the date pickers out there and having to keep updating them.",139
+67886877,2016-10-29 00:31:44.623000+00:00,"**Before you read the answers:** The answer is ***No***. The ordering of object properties is non-standard in ECMAScript. You should never make assumptions about the order of elements in a JavaScript object. An Object is an unordered collection of properties. The answers below show you how to ""use"" sorted properties, using the help of arrays, but never actually alter the order of properties of objects themselves. **So, no, it's not possible.** Even if you build an object with presorted properties, it is not guaranteed that they will display in the same order in the future. Read on :).",138
+44539137,2015-01-22 02:13:31.590000+00:00,"It's worth mentioning that in chrome (and perhaps other browsers) when combined with a string like this: `console.log(""object: "" + obj)` it does not display the object, but instead will output ""object: [Object obj]"".",138
+80339289,2017-10-11 19:07:18.897000+00:00,That this is the only solution makes me sad.,138
+54596524,2015-10-28 22:17:09.587000+00:00,Typing `\o` again turns it off.,138
+52816869,2015-09-09 11:17:44.270000+00:00,This pollutes the stash stack. `git checkout -- .` does the job with one command only.,138
+84441261,2018-02-10 13:19:39.370000+00:00,"Pro tip: use array destructuring in order to initialise an arbitrary number of results from Promise.all(), like: `[result1, result2] = Promise.all([async1(), async2()]);`",138
+49880851,2015-06-18 17:31:25.373000+00:00,what?! how this can solve the problem of xclip not functioning?,137
+59623444,2016-03-14 10:46:22.140000+00:00,@Martin: `2>'&1'`,137
+67558405,2016-10-20 02:12:09.943000+00:00,And yet the id in that url is using underscores :),136
+67553003,2016-10-19 21:06:46.877000+00:00,trivial == 7 lines of code including 1 loop 1 branch if statement and 1 comparison? I think I'm missing something here ...,136
+43107589,2014-12-05 20:37:06.860000+00:00,this breaks SSL certification and is a security hole,136
+51596434,2015-08-05 15:59:59.003000+00:00,Layout numbers? What? Why? Argh!,136
+59317179,2016-03-06 09:23:11.640000+00:00,"Be careful with order of operations when using this. For example, the line `z = 3 + x if x  y else y)` is the correct usage.",136
+43045194,2014-12-04 08:37:50.823000+00:00,Wondering why this isn't mentioned in the CocoaPods' getting started guide,136
+63652631,2016-06-29 20:34:55.197000+00:00,"The `redux-thunk` code is quite readable and self-explained. But `redux-sagas` one is really unreadable, mainly because of those verb-like functions: `call`, `fork`, `take`, `put`...",135
+71536780,2017-02-12 12:05:29.343000+00:00,"Not only readability, but makes sure you find out if there's something wrong with your code. It's completely plausible the generator could have a bug.",135
+49516236,2015-06-09 10:57:08.650000+00:00,Be aware of `set -e` gotchas: http://mywiki.wooledge.org/BashFAQ/105,135
+64679816,2016-07-29 00:18:27.080000+00:00,"`git commit --amend --date=now` works also. No need to invoke a subshell with the **date(1)** command.
+You can see it in the source code of **git(1)** in [date.c](https://github.com/git/git/blob/master/date.c#L938)
+'now' is a special value which is converted using date_now() function. Same for 'noon', 'yesterday', 'midnight', 'tea' and others listed in the structure array special[].",135
+64257771,2016-07-17 20:27:35.787000+00:00,"Why did the language designers think that cryptic functions names like ""Itoa"" were preferable to something that might be a little more descriptive?",135
+58528777,2016-02-15 16:12:12.803000+00:00,**This answer is dangerous.** The other one is safer.,135
+82352972,2017-12-07 13:56:30.723000+00:00,"I was looking for `""%Y-%m-%d %H:%M:%S""`",135

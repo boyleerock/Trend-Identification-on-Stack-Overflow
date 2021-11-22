@@ -1,0 +1,207 @@
+id,creation_date,text,score
+115828559,2020-12-30 23:59:59.320000+00:00,Define the same week? 1) within 7 days of each other? 2) Within the same week number? 3) something else completely?,2
+115828557,2020-12-30 23:59:57.207000+00:00,Sounds like it doesn’t support async/await?,0
+115828556,2020-12-30 23:59:49.993000+00:00,"There is no C# syntax for this. Doing it programmatically, your main issue is you have to create an anonymous type at runtime, which is quite a bit of code (see [Dynamic LINQ](https://github.com/StefH/System.Linq.Dynamic.Core), though I have a simplified version that uses fields instead of properties). Your best bet may be to flatten the JSON output.",0
+115828555,2020-12-30 23:59:38.537000+00:00,@MrCalc sure. I'm there,0
+115828554,2020-12-30 23:59:24.707000+00:00,It worked like a charm! Thank you,0
+115828551,2020-12-30 23:59:22.650000+00:00,"But note that setting the locale to `en_US.UTF-8` won't magically make things UTF-8.  `isalpha()` continues to operate on single-byte characters.  To handle multibyte characters, there's a whole separate set of ""wide character"" functions and types, and a corresponding `iswalpha()` function.  `iswalpha()` may have a somewhat more sophisticated implementation because a lookup table would be pretty big, but at some level there is still a hardcoded list somewhere.",1
+115828550,2020-12-30 23:59:20.523000+00:00,You're trying to hitch the cart before the horse. Leave the looping to last. First program one cycle correctly. Your problem is in the absence of objects. Declare `WbSummary As Workbook` and set the object. Not clear where your code is. Is it in WbSummary? Not clear why WbSummary should be opened many times or how it can be opened if it's already opened (to read from columns B & C). Not clear what's open at the beginning. Consider using FileOpen dialog box to specify a file to open.,0
+115828549,2020-12-30 23:59:19.053000+00:00,"Added another version using map, please check",0
+115828548,2020-12-30 23:59:17.443000+00:00,Its good practice to write small example scripts that demonstrate the problem. We don't need the whole program for this issue.,2
+115828547,2020-12-30 23:59:09.663000+00:00,`SELECT A_details FROM A JOIN AB ON A_id = A_id_fk WHERE B_id_fk = :B_ID`,0
+115828545,2020-12-30 23:58:56.640000+00:00,You may want to use `Remote.Linq.Newtonsoft.Json` nuget package that makes things even easier.,0
+115828544,2020-12-30 23:58:38.753000+00:00,"Come on Apple. A simple message when a click is detected on the ""Add Editor"" button that it's disabled for focus mode would have helped.",0
+115828542,2020-12-30 23:58:34.363000+00:00,The above comment is from the W3C specs which was approved almost 4 years back. However you are free to conclude your own way.,0
+115828541,2020-12-30 23:58:31.847000+00:00,See also [How to configure the docker file to run cgi-script like perl](https://stackoverflow.com/q/42363767/2173773),0
+115828540,2020-12-30 23:58:29.857000+00:00,"The code as shown should work. It's not clear how this is occurring, unless perhaps there is some JavaScript / AJAX involved which you haven't shown.",0
+115828539,2020-12-30 23:58:22.733000+00:00,Answered my own question by reviewing the example here:  https://google.github.io/charts/flutter/example/axes/ordinal_initial_viewport.,0
+115828537,2020-12-30 23:58:08.903000+00:00,I have had this error message when I have to many instances of a python program running that uses the gpu. I suspect it is due to contention for memory. Try closing all instances of python except the one you want to run.,1
+115828531,2020-12-30 23:57:22.147000+00:00,So this solution didn't work for you?,0
+115828530,2020-12-30 23:57:21.380000+00:00,Cool! So simple. Thanks! Transposing it should be a piece of cake now.,1
+115828528,2020-12-30 23:57:15.593000+00:00,"I am having this same error after upgrading from a 2013 version, but it seems to be tied specifically to the Ajax controls, because if i set `EnabledAjax = false`, then it works fine.",0
+115828526,2020-12-30 23:57:08.983000+00:00,Definitely the best answer,1
+115828525,2020-12-30 23:57:05.670000+00:00,"In this specific page that I mentioned, I have imported my project that is written in HTML, js, css. Now I cannot find the source code for my project files.",0
+115828524,2020-12-30 23:57:04.637000+00:00,Is a SSI directive: [example link](http://nginx.org/en/docs/http/ngx_http_ssi_module.html).,0
+115828523,2020-12-30 23:57:04.577000+00:00,"Did the response below resolve your problem? If so, please accept it by clicking the check mark on the left of the answer. If not, please refine the question so that we can try answering it.",0
+115828522,2020-12-30 23:57:02.123000+00:00,Yeah we had multiple devs deal with this issue this week so we just removed bcrypt from our project which was the only package using node-gyp.,0
+115828520,2020-12-30 23:56:44.523000+00:00,"Please don't vandalize your posts. By posting on the Stack Exchange network, you've granted a non-revocable right, under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/), for Stack Exchange to distribute that content (i.e. regardless of your future choices). By Stack Exchange policy, the non-vandalized version of the post is the one which is distributed, and thus, any vandalism will be reverted. If you want to know more about deleting a post please see: [How does deleting work?](https://stackoverflow.com/help/what-to-do-instead-of-deleting-question)",5
+115828519,2020-12-30 23:56:27.423000+00:00,try the yourWindow.center() method.,0
+115828518,2020-12-30 23:56:24.097000+00:00,"Oh, I see now. If I click on the action button it sets the state from 0 to 1. So then I have to click the submit button after to get the execution on the server side. Is there a way how server-side script continually checks for user-action and thus get rid of the submit button entirely?",0
+115828517,2020-12-30 23:56:23.603000+00:00,Why did you create an `obj` variable?,2
+115828516,2020-12-30 23:56:20.507000+00:00,"Effectively, yes, it's a hardcoded list - or rather a hardcoded lookup table.  The character is used as an index into a lookup table specific to this locale, and one of the bits of the corresponding entry is used to indicate whether the character is `alpha`.  The internal `__ctype_b_loc()` function is used by the library to fetch a pointer to the correct table for the current locale.",1
+115828514,2020-12-30 23:56:16.630000+00:00,I've tried both of those and both come up with that error,0
+115828513,2020-12-30 23:56:15.333000+00:00,[This may help](https://datatables.net/examples/api/add_row.html).,0
+115828511,2020-12-30 23:56:08.790000+00:00,Specifically what did you change and why? Don't just provide a big lump of code... explain it so the OP and everyone else can actually learn from it.,1
+115828510,2020-12-30 23:55:46.853000+00:00,Did you try using the MongoDB Compass utility to transform the queries to any programming language? You can load your aggregation function there and export it to Java.,0
+115828507,2020-12-30 23:55:41.520000+00:00,"Note, though, that it suggests `std::copy`, which should require that header too, but [""works""](https://godbolt.org/z/ahdbz7) regardless (you should also include ``, BTW). I suspect the answer is similar to https://stackoverflow.com/questions/20939914/why-is-algorithm-not-needed-for-stdcopy-or-stdswap#comment31446998_20939940",0
+115828505,2020-12-30 23:55:26.573000+00:00,IMO this this should be explained in bold chars in the official doc!!!,0
+115828504,2020-12-30 23:55:22.337000+00:00,"@DebanjanB it uses hashset which is usually ordered ,  when you convert it to array it is order",0
+115828503,2020-12-30 23:55:21.693000+00:00,Thanks! Your reply is help a lot!,0
+115828502,2020-12-30 23:55:17.017000+00:00,Are you sure you typed `get` and not `got`?,0
+115828501,2020-12-30 23:55:15.153000+00:00,"@Mathias R. Jessen I am running this from my workstation but not over VPN, the system didn't have any slowness getting a list of all logons from each DC but rather doing the comparison.  Steven solved the issue and thinks the objects could still have a connection to the DC which is why the comparison is taking a while.",0
+115828498,2020-12-30 23:55:02.100000+00:00,"This worked OK for me too.  However you have extra stuff in your code that you don't need.  For example, if you are using `from mplfinance.original_flavor import candlestick_ohlc` then there is ***no*** need for import mpl_finance as mpf (you can just use `candlestick_ohlc` directly).  Also, you are not using bokeh in this particular script either so may as well leave that out.",0
+115828497,2020-12-30 23:54:58.933000+00:00,Isn't @Barbaros Özhan answer working ?,0
+115828496,2020-12-30 23:54:58.640000+00:00,"Thanks all. The above makes sense. I know run into the issue that .xlsx files are not supported now. Is there a library I can use that will support xlsx files? 
+raise XLRDError(FILE_FORMAT_DESCRIPTIONS[file_format]+'; not supported')
+xlrd.biffh.XLRDError: Excel xlsx file; not supported",0
+115828495,2020-12-30 23:54:53.750000+00:00,Does it matter how I name the URL?,0
+115828492,2020-12-30 23:54:32.190000+00:00,I have this same issue. What is `templates` in this code?,0
+115828491,2020-12-30 23:54:32.053000+00:00,"I should have added the following information:  The various source drives are ext4 the destination drive is FAT32.  As a result there are a number of filenames on the ext4 drives that have valid characters for ext4 but are not accepted / valid on a WIN32 formatted drive, es an example file names that include a question mark..",0
+115828490,2020-12-30 23:54:14+00:00,`isalpha` has to be called on `unsigned char` value. It's just undefined behavior.,1
+115828489,2020-12-30 23:54:13.550000+00:00,"@mrSotirow that's nonsense. There's a `name=""email""` field there already in the form. There's no need to change the submit button.",0
+115828487,2020-12-30 23:53:59.803000+00:00,How can I center this form on a page?,0
+115828482,2020-12-30 23:53:01.353000+00:00,Your answer does not improve upon the existing answer from @sberry which was posted 9 years before your answer.,1
+115828481,2020-12-30 23:53:00.860000+00:00,Is my answer acceptable?,0
+115828480,2020-12-30 23:52:56.650000+00:00,What type is `cell23`?,0
+115828479,2020-12-30 23:52:53.837000+00:00,"Not so. Recursion is a loop but not every loop recurses. Anyway the question is to explain the algorithm, not improve it.",0
+115828478,2020-12-30 23:52:44.443000+00:00,"Worked for me in python3 too, thanks alot.",0
+115828474,2020-12-30 23:52:24.473000+00:00,"I don't know what it does, but on the frontend that comment will just be a comment.",0
+115828473,2020-12-30 23:52:21.243000+00:00,only mention Return value =0 one row affected successfully,0
+115828469,2020-12-30 23:52:11.310000+00:00,Thank you!  Yeah your rewrite is much faster and your hypothesis on it still having a live connection or some sort of requery makes sense.  I was at first thinking maybe it also has something to do with the object creation as well but I wouldn't think it would dramatically affect it so the live connection to the DC does make a lot of sense.  Thanks again!,0
+115828466,2020-12-30 23:51:52.140000+00:00,it is possible does the vice versa? so from an ImageIcon get the Path2D?,0
+115828465,2020-12-30 23:51:43.403000+00:00,"@stats555 Yes, the TRUE values are the ones that can be used as row index for subsetting the rows, so, we use `f[i2, i1]` i.e. row/column indexing",0
+115828464,2020-12-30 23:51:41.257000+00:00,"I didn't downvote, but in case anyone cares, it looks like character references are still parsed inside ` … `, e.g. `&gt;` turns into `>`. This does mean it's not the ""raw"" contents anymore.",0
+115828458,2020-12-30 23:51:09.910000+00:00,"`1024 MiB` is perfectly human readable IMO. Most people probably wouldn't expect that output, but I wouldn't consider it a bug. Your optimization unnecessarily makes the code longer and less comprehensible. You'll only format the sizes for humans to read, which means either displaying it somewhere (e.g. on the terminal, a GUI,...) or writing it to a file. Those actions are orders of magnitude slower than the formatting anyway and if speed matters you wouldn't bother formatting that string in the first place. BTW: `if unit != last_label` compares the strings; you probably meant `is not` ;-)",0
+115828457,2020-12-30 23:51:04.487000+00:00,"If you vote down, please say why. Hard to improve answers otherwise.",0
+115828454,2020-12-30 23:50:51.827000+00:00,`python_work` is a file. `cd` moves you to the *directory* specified. Use `cd Desktop`.,0
+115828453,2020-12-30 23:50:41.363000+00:00,"You're looking to track transformations which is done mathematically with an affine transformation matrix. 1. Assign four x,y vertices to the untransformed rect. 2. Use matrix math to calc the transformed (eg rotated) vertices. 3. Draw the transformed rect. 4. To ""hit-test"" the rectangle, you invert the matrix to get the untransformed x,y marquee vertices. 5. Hit-test the untransformed marquee vs the original untransformed rect. Info about transformation matrices is readily available on SO & elsewhere",1
+115828452,2020-12-30 23:50:24.457000+00:00,"thank you for your reply. I tried the code: i1 <- sapply(f, is.numeric)
+i2  2 .... but it gives me a vector of TRUE FALSE  TRUE FALSE  TRUE  TRUE .... is there a way to directly keep only those rows that meet the condition?",0
+115828451,2020-12-30 23:50:18.637000+00:00,This answer begs the question. The only reason `std::mem::drop` exists at all is so that the caller is forced to give up ownership before `drop` is called. If `drop` accepted `self` directly there would be no need for `std::mem::drop`.,0
+115828450,2020-12-30 23:50:13.893000+00:00,`` + *Java* does not become automatically Javascript,0
+115828449,2020-12-30 23:50:00.133000+00:00,"Our pleasure (:, oh got it, yeah you would need to change that filter to retrieve where length is actually === 0 or something, but the error was really related to asynchronous handle",0
+115828447,2020-12-30 23:49:50.673000+00:00,You're welcome a bunch. :),0
+115828445,2020-12-30 23:49:30.923000+00:00,"The relationship between the sigma in the spatial domain and the frequency domain is well established. See for example here: https://ethz.ch/content/dam/ethz/special-interest/baug/ibk/structural-mechanics-dam/education/identmeth/fourier.pdf — how to chose a sigma, however, depends on the application and the data, we can’t help you there.",0
+115828444,2020-12-30 23:49:23.480000+00:00,"This is perfect, thanks a bunch :)",0
+115828441,2020-12-30 23:49:15.320000+00:00,Does it always keep track of term position in the doc or is that an additional param that must be set when creating the field for the doc?,0
+115828440,2020-12-30 23:49:12.807000+00:00,"@stillKonfuzed that's a very long and unnecessary way to debug. You could just look in the Network log of the browser's Developer Tools to get that information, without needing to change any code. Or use a tool like Fiddler. The web has existed for 30 years...did it not occur to you there might be a better way by now to see what a simple Post request is doing? Learn to use the tools available to you, it will save time",0
+115828439,2020-12-30 23:49:10.903000+00:00,Something else worth trying: convert the html file to pdf using _wkhtmltopdf_ and print the pdf instead. The free _wkhtmltopdf_ tool does help in similar circumstances (converted html to pdf using pandoc displays those borders while this doesn't happen using _wkhtmltopdf_).,0
+115828435,2020-12-30 23:49:05.480000+00:00,"Thank you so much! I will test tomorrow if it works. So, `` is not necessary/possible?",0
+115828434,2020-12-30 23:48:55.193000+00:00,thank you @GMB that query is working perfectly.,1
+115828433,2020-12-30 23:48:53.520000+00:00,`if`/`else` means only one branch can execute; if there are two separate `if` statements then both of their blocks can both execute (if both conditions are true).,4
+115828432,2020-12-30 23:48:49.783000+00:00,Why use global at all when there are alternatives?,2
+115828431,2020-12-30 23:48:45.737000+00:00,What I am trying to do here is persist all the collection from mongo into Redis in a way in which it can be easily retrieved by the API.,0
+115828430,2020-12-30 23:48:41.793000+00:00,"Wordpress uses templates. Page are created from that template and directly inserted in the data base. There is no ""file"" per say. The only thing you can access is the page.php file itself, from your theme folder at the root of the folder.",0
+115828429,2020-12-30 23:48:37.903000+00:00,"@AbdulHannan `fr""\b{regex[i]}\b(?!\.h\b)""`",0
+115828426,2020-12-30 23:48:27.407000+00:00,"YES! this is the direction i just needed pointing in. thanks,  and again, i did say embarrassingly basic newbie issue",0
+115828425,2020-12-30 23:48:26.383000+00:00,"@DavidC.Rankin yes it can be an helpful behaviour, but makes the code hard to read.",0
+115828424,2020-12-30 23:48:26.260000+00:00,@DaviMacêdo REST API,0
+115828423,2020-12-30 23:48:22.980000+00:00,still getting same exception,0
+115828422,2020-12-30 23:48:11.253000+00:00,@rmaddy what the meaning of `Z` actually? do you have any reference that I can read into?,0
+115828421,2020-12-30 23:48:10.400000+00:00,What is the error?,0
+115828419,2020-12-30 23:47:59.747000+00:00,Sorry I see it in your url. What  happens if you paste the link directly into a browser?,0
+115828418,2020-12-30 23:47:58.117000+00:00,"If you change your import to `{ routerPathsXXX }`, you also need to change your export accordingly.",1
+115828417,2020-12-30 23:47:54.210000+00:00,I would do something like this https://pastebin.pl/view/2b47d737 so you don't need to convert and you can have an hierarchy of different modalities.,0
+115828415,2020-12-30 23:47:45.743000+00:00,Did you find a solution for this? I'm currently running into the same problem.,0
+115828414,2020-12-30 23:47:44.120000+00:00,"@ashes999: I'm not a huge fan of signals for several reasons: (a) for ORM calls, especially the ones in bulk, the signals do not run, or at least not very often; (b) it makes updating/saving an object less predictable, since the signals are ""hidden"" somewhere. If later one of the signals raises an error for some reason, then the update can be ""blocked"", etc. But in some cases signals can be useful.",1
+115828411,2020-12-30 23:47:39.843000+00:00,"Will do later, and that's not causing any errors so try to give me a solution to my problem.",0
+115828410,2020-12-30 23:47:31.240000+00:00,"You're likely reading/writing past the end of an array or you have an invalid pointer. I would run the code in a debugger, put a breakpoint at the `fprintf`, and look at your variables.",0
+115828409,2020-12-30 23:47:06.480000+00:00,@İsmailDurmaz   http://txt.do/185ck,0
+115828408,2020-12-30 23:47:04.220000+00:00,"@mathguy why isn't LV=8 for all rows when 'partition by' is NOT specified? Shouldn't all rows be taken into account, ordered by name and value taken from the last row, which is in this case the row with name='matej', so the LV would be 8 for all?",0
+115828407,2020-12-30 23:46:56.663000+00:00,Why do you need to know the cursor type?,0
+115828406,2020-12-30 23:46:54.893000+00:00,Scala.js with what libraries? Your problem seems to be related to the libraries you're using more than the language. Please provide the list of your `libraryDependencies` and your `import`s.,0
+115828403,2020-12-30 23:46:39.107000+00:00,@MarcGravell updated to reflect my earlier comment.,0
+115828402,2020-12-30 23:46:17.787000+00:00,What's the issue? You don't state what the problem is.,1
+115828401,2020-12-30 23:46:16.917000+00:00,Make sure you are using `by` and not `=`.,0
+115828400,2020-12-30 23:46:11.727000+00:00,"@awinston: It is not completely a coincidence; the numbers representable in any floating-point  format using a base of 2 are all integer multiples of powers of 2 (including 2 to negative integer powers). So any power of two within range is representable in such a floating-point format. Since the maximum value representable in some binary integer is one less than some power of two, it is at most one away from a value representable in a `double`. (It can be closer if the numbers representable in a double are close together at that point.)",1
+115828397,2020-12-30 23:46:03.767000+00:00,"Gobal variables in python don't work as you think, look at the link in previous comment",1
+115828396,2020-12-30 23:46:02.090000+00:00,"If that's the case, then for starters a general css formula for the columns would be `width: calc(100vw / )`, though that doesn't account for any padding or margins on the page",1
+115828394,2020-12-30 23:45:51.273000+00:00,"You’re counting the number of elements in the array: ID, Timestamp, and Total. Perhaps you’re looking for `is_array($ajax_result['data'])`?",0
+115828392,2020-12-30 23:45:46.423000+00:00,"Referencing UIScreen.main.bounds is working for me. Sorry, I'm a bit confused what the issue is?",0
+115828391,2020-12-30 23:45:44.887000+00:00,"Unless Sites A and B are on the same domain and Site A already has code to look at cookies or localStorage or something, I don't see how this could be possible. You might be thinking of the build-in browser functionality to remember what you filled in in a form in the past. You can't utilize that function from code because of privacy concerns. It's something the browser does beyond the control of whoever coded the website.",0
+115828389,2020-12-30 23:45:17.430000+00:00,So basically for my use cache is simply better to do the cache update inline and not use signals?,0
+115828388,2020-12-30 23:45:14.800000+00:00,"@Taplar Looking at the js code, it appears that he wants to calculate how many columns he can fit into the screen. I am quite confused, because he never specified how wide a column had to be.",0
+115828382,2020-12-30 23:44:50.493000+00:00,What version of pyproj do you have installed?,0
+115828380,2020-12-30 23:44:33.993000+00:00,Great :) please tag it as an answer and upvote if possible :D cheers,0
+115828379,2020-12-30 23:44:33.330000+00:00,"I'm sorry. My words made you confused. 
+What I look for is rotating game display in arbitrary angle(Like Cv2.GetRotationMatrix2D() in OpenCV CSharp). 
+Thanks for your answer, but it was not I want.",0
+115828378,2020-12-30 23:44:19.810000+00:00,"When I [search for your title](https://www.google.com/search?q=Firebase+storage+%2B+React+Native+Project), the first search result is: https://rnfirebase.io/storage/usage. I recommend starting there or at some of other top search results.",0
+115828376,2020-12-30 23:44:16.710000+00:00,Well that's embarrassing.. ;D,0
+115828375,2020-12-30 23:44:13.047000+00:00,"Related to the question, its still a little unclear to me what you want.  Are you wanting the total number of rows to take up 100% of the visible viewport?",0
+115828373,2020-12-30 23:43:58.807000+00:00,"@Udo OK, thank you for the feedback. I have included your comments in the answer for more visibility. Free free to edit if you need to.",1
+115828372,2020-12-30 23:43:53.497000+00:00,I wish there would be a solution for this,0
+115828371,2020-12-30 23:43:52.500000+00:00,"@MaYaN woah now, that's a lot of cheese to move at once! Safe from what? How was the channel created? Did it expect multiple writers? (That's a configuration option in the construction)",0
+115828370,2020-12-30 23:43:41.940000+00:00,"there is an indentation error for case #2, the way you write it its only executed if the line already contains case #1
+also you only effectively append the line with case #1 to stuff and ignore all other lines",0
+115828368,2020-12-30 23:43:27.910000+00:00,I get System.Net.Mail.SmtpException: 'Failure sending mail.',0
+115828367,2020-12-30 23:43:26.263000+00:00,"In other words, it's not actually an rvalue reference, but a so-called ""forwarding reference"" (or ""universal reference"" in older parlance). Though its magic is powered by pretty normal rules (as Patrick has pointed out), we tend to think of a `T&&` with template `T` as being its own special thing, because it's convenient to do so.",3
+115828366,2020-12-30 23:43:26.130000+00:00,"@Blastfurnace so where should i look at? I read in a dynamic value in the main via  char *name = argv[4]; and pass that to RemoveCity as an argument. Do you think this might could cause that? As for the others: fclose is outside the iteration, but i can't edit my post for some reasons (it says it contains mostly code now). s1 was just for debugging purposes.",0
+115828365,2020-12-30 23:43:20.820000+00:00,"took a good bit of tinkering but it works perfectly, thanks man!",1
+115828362,2020-12-30 23:43:09.017000+00:00,"This one worked for me, on my new MacBook Air with M1 CPU.",0
+115828361,2020-12-30 23:43:04.667000+00:00,"I don't have the upload issue, but I tried the `EnablePageHeadUpdate = False` fix, and that did not help my `Invalid characters` error either.",0
+115828360,2020-12-30 23:43:02.373000+00:00,"1) code is text. Don't include pictures of code, especially where the text isn't even visible properly at the edges. Just copy and paste it! 2) it's unclear what your datepicker has to do with this? Why did you include that, specifically? 3) can we see some of your JSON event data containing these dates please. 4) please make sure you have read the timezone article in the fullCalendar documentation for your fullCalendar version.",1
+115828358,2020-12-30 23:42:52.563000+00:00,"Mmmm.  For one possible approach, you might want to search on terms such as 'string metric', 'string similarity index', and 'edit distance'.  But that might not fit your needs very well, judging from the example in the question.",0
+115828357,2020-12-30 23:42:50.630000+00:00,"Please, see [this](https://stackoverflow.com/questions/45585104/save-keras-modelcheckpoints-in-google-cloud-bucket) SO question, I think it could be of help. Basically, save the model locally and then write it to GCS. It is the same approach proposed in this Keras [issue](https://github.com/keras-team/keras/issues/7935).",1
+115828355,2020-12-30 23:42:38.200000+00:00,If adding a public IP address did not fix it would you have any other suggestions?,0
+115828353,2020-12-30 23:42:32.587000+00:00,"Yea.  I couldn't work out what you meant by *""for 1500 records its taking 80 percentage of CPU""*.   (What is ""it""?)  But high CPU utilization is not a clear indication of a memory leak.  Also read [How to find a memory leak](https://stackoverflow.com/questions/40119) ... or Google for articles, tutorials, etc on that topic.",1
+115828352,2020-12-30 23:42:27.080000+00:00,@camilo the intent of the edit (the addition of the 3rd paragraph) is to specifically limit the applicability to the scenario being discussed,1
+115828351,2020-12-30 23:42:25.840000+00:00,"""Is vh good for responsive web design?"" We prefer to avoid opinionated responses. Maybe change it to ""What are the benefits/downsides of using vh for responsive web design?""",0
+115828350,2020-12-30 23:42:23.590000+00:00,"It'd also be good to see the JSON at `/users/$uid` (as text, no screenshots please). You can get this by clicking the ""Export JSON"" link in the overflow menu (⠇) on your [Firebase Database console](https://console.firebase.google.com/project/_/database/data).",0
+115828349,2020-12-30 23:42:19.323000+00:00,Welcome to StackOverflow. Did you mean `nohup` instead of `hohup`?  Please [edit] your answer to fix.,0
+115828347,2020-12-30 23:42:19.020000+00:00,`vh` is great for web design.  *This is my opinion.,0
+115828345,2020-12-30 23:42:12.280000+00:00,@MarcGravell so if instead of `_someService` I had `ChannelReader.ReadAllAsync()` with multiple writers pushing on `ChannelWriter` from multipe threads I would still be `safe` inside the `KeepStreaming` method?,0
+115828343,2020-12-30 23:42:11.213000+00:00,@Keiros No problem. Little edited the question to fix indentation.,0
+115828342,2020-12-30 23:42:02.867000+00:00,This solution - `sudo apt remove python3-pygame` - worked perfectly. Thank you!,0
+115828341,2020-12-30 23:42:01.100000+00:00,"The text is correct, but the picture doesn't match it.",0
+115828340,2020-12-30 23:42:01.053000+00:00,"@JorgeCampos it did not work, what do you mean by i.ab? is . an open bracket?",0
+115828339,2020-12-30 23:41:58.280000+00:00,"Statements like ""but no success"" and ""it didnt work for me"" are incredibly difficult to help with. Keep in mind that Stack Overflow is a notoriously inefficient interactive debugger, and we need to know exactly what line didn't do what you expected it to do, and what it did instead. So if you set a breakpoint on `return snapshot.data.value`, what value does `snapshot.data.value` show? Can you `print` that value, and show us the updated code and its output in your question?",0
+115828338,2020-12-30 23:41:56.867000+00:00,"@charles,  he mention in his question that his SP returns 1 row, with 3 columns",1
+115828332,2020-12-30 23:41:29.757000+00:00,"Thank you very much, I understand now, but in the second situation ""Maybe the later fetch will provide new, additional images beyond what's already there? If that's the case, you could do some kind of array .filter operation on the newly fetched batch to filter out duplicates, then add on the non-duplicates to the front or end of your Redux stories key in a similar fashion to what you have now."" how to filter my table after each addition of elements in my reducer ?",0
+115828330,2020-12-30 23:41:24.443000+00:00,"https://stackoverflow.com/a/60552341/14011923 This answer is the solution, I hope it works for you",0
+115828329,2020-12-30 23:41:18.800000+00:00,Google Identity Platform isn't free :) I want to keep the majority of my users that don't need OIDC on Firebase where I don't have to pay for MAU.,1
+115828328,2020-12-30 23:41:17.010000+00:00,The xpath is correct.,0
+115828327,2020-12-30 23:41:16.047000+00:00,You are welcome!,0
+115828325,2020-12-30 23:41:13.273000+00:00,Ohhhhhh thank you!,1
+115828324,2020-12-30 23:41:06.713000+00:00,"Including an `axis` argument in your `concat` should do the trick, or use a `join` instead",1
+115828323,2020-12-30 23:41:03.880000+00:00,"I added an edit to show that even without type coercion, I still get the error.",0
+115828322,2020-12-30 23:41:03.813000+00:00,"@tripleee, I'm not sure this is a duplicate of the particular linked original. The pre-modification working code example uses a pipe in a context where it's an awk construct (albeit an awk construct that starts a shell, and one which it's usually a really bad idea to use) rather than a shell construct.",0
+115828321,2020-12-30 23:41:02.923000+00:00,Very creative. A minor inaccuracy: It is inserting a row after the last cell.,0
+115828320,2020-12-30 23:40:59.987000+00:00,"Are you doing some sort of url re-writing on the backend or something?  Because if `index.php` is a file, then having a url with the pattern `/index.php/de/` is very strange.  That format is going to try to treat that as a directory name",0
+115828317,2020-12-30 23:40:37.307000+00:00,@RichardGomes That link is dead. I'm very interested in seeing your results.,0
+115828315,2020-12-30 23:40:34.163000+00:00,Another small question:  Am using the Power BI Matrix. So the new Variance measure shows as a column for each Category (group column). Is there any technique to show the Variance measure column under any one Category only ? Is there any hiding technique possible in Power BI using DAX?,0
+115828314,2020-12-30 23:40:29.573000+00:00,"Please include all relevant code in the answer it self, not off site.",0
+115828313,2020-12-30 23:40:25.470000+00:00,"Hmm, I'm a bit confused, because `x=abc` (without quotes) is not allowed but `x=true` is. Does Bash internally convert ""boolean"" values to their string representation always before storing them?",0
+115828312,2020-12-30 23:40:12.473000+00:00,uploaded original files litter-before.jpg and litter-after.jpg that I used,0
+115828311,2020-12-30 23:40:08.333000+00:00,"I think you want `export default { ... routerPaths, ... }`",0
+115828310,2020-12-30 23:40:07.703000+00:00,"Hi, you'll need to post some HTML and ideally a working Code Snippet for anyone to be able to assist",0
+115828309,2020-12-30 23:39:59.980000+00:00,"Try removing the commas inside your translate. SVG has a slightly different syntax from CSS when it comes to the transform attribute. They both work, so I would say that it’s stupid but tis what itis.",1
+115828307,2020-12-30 23:39:54.483000+00:00,Did not work :(,0
+115828305,2020-12-30 23:39:36.183000+00:00,"A JFrame functions independently of other JFrames, that is why each frame appears on the task bar. Also if you make on frame ""always on top"" then it will always be on top (even if you click on the other frame). At least this is how it works using JDK11 on Windows 10. Post your [mre] demonstrating your problem. It takes about 10 lines of code to demonstrate using 2 frames.",1
+115828304,2020-12-30 23:39:25.857000+00:00,"@Davide Ok, i've runned your code and it would be very helpful. Thanks",0
+115828302,2020-12-30 23:39:05.583000+00:00,"Even though I think that the best approach is using storage like AWS S3 or local storage, if MongoDB is mandatory, the OP could use the BinData format as suggested in the following [post](https://www.freecodecamp.org/news/gridfs-making-file-uploading-to-mongodb/)",0
+115828300,2020-12-30 23:38:58.997000+00:00,"@MeirCohen sure, want to post another answer then and I can accept yours?",0
+115828299,2020-12-30 23:38:55.083000+00:00,"Your code creates a table and creates a stored procedure, but doesn't _call_ the stored procedure.  Using it on my end, I get `Operand type clash: varchar is incompatible with nvarchar(11) encrypted with (encryption_type = 'RANDOMIZED', encryption_algorithm_name = 'AEAD_AES_256_CBC_HMAC_SHA_256', column_encryption_key_name = 'CEK_Auto1', column_encryption_key_database_name = 'tkcMuckAround')`",0
+115828297,2020-12-30 23:38:45.607000+00:00,"Python has a really great CSV library. I don't know where your data is originally coming from, but in general building CSVs is something it does well.",0
+115828296,2020-12-30 23:38:45.263000+00:00,"thsi is good, but I am looking for suggestions using lambda not regular functions.",0
+115828294,2020-12-30 23:38:39.780000+00:00,"This code tells me that type 'DateTimeAxisSpec' is not a subtype of type 'AxisSpec'. The BarChart constructor doesn't accept DateTime as a value, it only accepts String. How do you get around this?",0
+115828293,2020-12-30 23:38:34.480000+00:00,"From [networkX documentation on betweenness centrality](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality)(see *Notes*), you can’t use negative edge weights...",0
+115828292,2020-12-30 23:38:27.970000+00:00,It's using InnoDB,0
+115828291,2020-12-30 23:38:26.293000+00:00,@GSerg `someCounter` is scoped inside the iterator block. No other code can access it.,1
+115828290,2020-12-30 23:38:20.040000+00:00,"What happens if you try port [465](https://developers.google.com/gmail/imap/imap-smtp#:~:text=The%20outgoing%20SMTP%20server%2C%20smtp,before%20issuing%20the%20STARTTLS%20command.)?",0
+115828289,2020-12-30 23:38:02.553000+00:00,No problem! I'm glad it worked!,0
+115828287,2020-12-30 23:37:52.533000+00:00,"In `WriteAfterMathData` the indentation does not match the braces `{`...`}`. Is this your real code or did you accidentally remove a brace? Without knowing the structure definitions, how you allocate the memory and what exactly you pass to the functions it is difficult to find out what's wrong.",0
+115828283,2020-12-30 23:37:41.337000+00:00,"However, if there is another piece of async code that is concerned with `someCounter`, and if the code executes without a synchronization context, there [may be](https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html#beware-implicit-parallelism) threading issues.",0
+115828282,2020-12-30 23:37:36.617000+00:00,I wish this would be a thing!,0
+115828281,2020-12-30 23:37:33.590000+00:00,`select i from A i join i.ab ii where ii.b = :B_ID` ?,0
+115828280,2020-12-30 23:37:28.277000+00:00,"Did you try `aws ec2 stop-instances --instance-ids i-1a1234 i-a1235 ...` ? If you used a shell parameter char it seems problematic to type such cranky ids. (i mean the `i-` part). If you want to have shortcuts or aliases for individual servers and/or groups/clusters, you should include examples of what you need. Creating and managing such aliases could turn into a problem. Good luck.",0
+115828279,2020-12-30 23:37:27.723000+00:00,"Yes, it is still HTML code.",0
+115828277,2020-12-30 23:37:21.080000+00:00,`s1` is never used either,0
+115828276,2020-12-30 23:37:20.363000+00:00,@onlineThomas an extra thump up for the fork you are working on! sounds great!,1
+115828275,2020-12-30 23:37:14.930000+00:00,"I'm not sure where it fits in the OSI layers, but I like to think of a Security Group as being a firewall attached to individual EC2 instances (or, to be more accurate, to every Elastic Network Interface). Traditionally, firewalls operate _between subnets_, but a Security Group adds additional protection at the resource-level.",0
+115828274,2020-12-30 23:37:08.783000+00:00,"So if the lengths were dynamic, for example user were to choose lengths, this would have been a problem?",0
+115828273,2020-12-30 23:36:56.493000+00:00,"This doesn't answer how to use the service account credentials, rather than the regular account credentials which are based on user.",0
+115828271,2020-12-30 23:36:48.997000+00:00,It was running fine before but today I tried to deploy this on heroku and after that it stopped working.,0
+115828270,2020-12-30 23:36:46.893000+00:00,"I know we can use filter, but I want to use Map. Using the function Map, count the number of words that start with ‘S’ in input_list.",0
+115828269,2020-12-30 23:36:44.260000+00:00,[Here's a recording](https://gfycat.com/improbableesteemedfirecrest),0
+115828268,2020-12-30 23:36:43.500000+00:00,"I wasn't able to get this to run on my windows machine, but it ran in my ubuntu VM after I removed the windows screen size detection lines.",0
+115828266,2020-12-30 23:36:22.100000+00:00,Same issue unfortunately. I uninstalled bit python and python 3 playsound to be sure. The ran first python3 -m pip install playsound and got a successful but still no module named error show up. I have moved on to pygame module now as it is not giving any such errors but thank you,0
+115828265,2020-12-30 23:36:20.520000+00:00,"@BoR Of course, but in Navad's examples all possible inputs have a colon, and only the name before the colon may be missing in an ""invalid input"", however I agree that all scanfs should be checked regardless, but I think as far as the answer to this thread goes this is enough, and I'll leave it to Nadav to expand it to treat any kind of ""invalid input"" possible, or not.",0
+115828261,2020-12-30 23:35:53.460000+00:00,"I think you're right, the area of the square is 4 and the area of the circle is pi. By the way, since this isn't a specific programming question, it's more suitable for math.stackexchange.com.",0
+115828256,2020-12-30 23:35:06.083000+00:00,Thank you very much!,0
+115828254,2020-12-30 23:35:00.593000+00:00,"It was one of my attempts to get it to work, but still nothing.",0
+115828252,2020-12-30 23:34:53.620000+00:00,Thanks very much Alexis; it works now; I used the idea you provided and made slight adjustments to suit my need; I also learned a good deal on ALLSELECTED DAX function. appreciate your help very much.,0
+115828251,2020-12-30 23:34:46.583000+00:00,@DavidHoelzer Also I've made an argument. I thought that if the King's position is 0; 0 the diagonal values will be 1; 1-2; 2-3; 3 and so on but i don't get how to convert this reasoning into code,0
+115828250,2020-12-30 23:34:42.827000+00:00,Have you checked the logs on the server side? You might have an error there.,0
+115828249,2020-12-30 23:34:42.583000+00:00,I wrote the answer with this information. Could you mark it as correct?,0
+115828247,2020-12-30 23:34:35.760000+00:00,Does this answer your question? [Rust serde deserializing a mixed array](https://stackoverflow.com/questions/57903579/rust-serde-deserializing-a-mixed-array). Serde will deserialize from mixed arrays by default. You can see it working on [the playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=e61482893c1c52788235c34a8d7f99f7),1

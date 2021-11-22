@@ -1,0 +1,805 @@
+score,creation_date,body
+1.0,2014-10-15 23:59:26.243000+00:00,"I have an app setup using ember-cli 0.1.1 and I'm using ember-simple-auth (along with devise cli plugin) for login. In my application template, I have a menu with a conditional wrapped around it:
+The problem is that after a successful login, I transition to another route and if I immediately open the menu, the non-authenticated menu is what appears.  If I refresh, then I get the correct menu contents.  I'm looking for a way to updat session.isAuthenticated after a successful login, prior to transitioning to the new route.  Thanks in advance for any help."
+2.0,2014-10-15 23:59:04.687000+00:00,"This is my code for handling when things are pressed in either area1 or area2. 
+I am trying to make it so that when one area's text is updated, it updates the second area's text with the same text and vice versa. How would I go about doing so? One field is for encrypting something and the other for the decrypted values and vice versa."
+0.0,2014-10-15 23:59:02.880000+00:00,"I’m new to D3.js &amp; am trying to add a transition to an svg color change, but I’m getting Uncaught ReferenceError: isFinitDatae is not defined. 
+The svg circles that need to change color are set up like this:
+I have multiple buttons, and the color changes depend on which button is clicked. I tested clicking all of the buttons multiple times, and the color changes always work properly with this code:
+…but when I add transition, duration &amp; ease the transition only works the first time a button is clicked, and the “Uncaught ReferenceError: isFinitDatae is not defined” is thrown:
+Any ideas about how to fix the error, since this is working without the transition? 
+Any help is appreciated, thank you.
+UPDATE: &amp; here's where the updateMarkers is called:"
+1.0,2014-10-15 23:58:31.537000+00:00,"I'm currently retrieving data from a MySQL database using PDO. I'm using a foreach to display the data onto a page, and wish for the user to be able to enter a search term into a input field, hit the submit button, and then only results who's title contains the search term are returned.
+Here is my current code:
+file_functions.php - Where the SQL query function is located
+files.php - Where the results are displayed
+Below is the form used to refine the results. Currently the filter dropdown menu works for the filter, but the search term does not. This is what I wish to implement
+To summarise, I wish to use the text field in the bottom snippet of code to refine the results displayed in files.php by comparing their title to the search term.
+I wish to compare the search term to the $file['name'].
+Many thanks."
+0.0,2014-10-15 23:58:19.317000+00:00,"I am attempting to show ""what if"" information from one column into a new one. The scenario is taking a number, and adding 10% to it to show in the new column. I am at a complete loss of how to even begin this one! "
+0.0,2014-10-15 23:58:02.850000+00:00,"Hi I'm trying to output a certain column from my pivot table. To show you what I have tried, I will first show you my models (my pivot tables are ordertasks and tagtasks):
+Task table:
+    
+Tagtask table:
+Ordertask table:
+Here is my TaskController.php with the following piece of code:
+Okay now comes the part where I want to show $Task->ordertask['id_user'] on my browser with the following piece of code:
+Unfortunately that doesn't work because I get the following error:
+Instead of:
+I have also tried this just to see what output it gave me:
+Which gave me the following output:
+So gladly I want to output id_user from the ordertask table. Gladly I'm waiting on your answer. Anyway thanks for your response."
+-1.0,2014-10-15 23:57:39.290000+00:00,"I've been using Python to run a video processing program on a large collection of .mp4 files.  The video processing program (which I did not write and can't alter) does not exit once it reaches the final frame of the video, so using  in a loop going through all the .mp4 files didn't work for me unless I sat there killing the processing program after each video ended.
+I tried to solve this using a subprocess that got terminated after the video ended (a predetermined amount of time):
+However, the  program still doesn't exit, so I end up with tons of videos open at the same time.  I can only get rid of them by force quitting each separate frame or by using  for the id of that particular instance of the program.  I've read that using  isn't recommended, but I'm not sure if that would cause this behavior.
+How can I kill the  program after a certain amount of time?  I'm extremely new to Python and am not sure how to do this.  I was considering doing something like  after the , but I don't know how to get the id of the program either."
+0.0,2014-10-15 23:57:18.977000+00:00,"I'm writing an MVC app which ends up accessing a SQL database. On my edit page, I previously had every item available to be edited that is in the model. Recently I was asked to no longer allow the user to edit the primary keys. I did a quick change to change the primary key fields (in this example, there are 2 of them) from an EditorFor to a DisplayFor. The new view is this:
+It used to work with the full editing. Now the data is displayed properly, as expected. However, when submit is pressed, Null values are passed back to the controller for the values that are displayed.
+These are the edit functions in my controller. ItemService.Edit() just saves the data to the server. It works correctly.
+Lastly, my data model:
+Why is the data no longer being passed back to the second function, and how do I get it to pass correctly so that I can save it to the database?"
+0.0,2014-10-15 23:57:03.770000+00:00,"So this question might be a little odd but here goes.
+I was having a problem with a function that searches an ordered linked list for a specific value and deletes the first node it encounters that contains the target value. The problem I was having is that it was throwing a Seg-fault whenever I passed it a value that wasn't on the linked list or tried to delete all copies of a target value by running it until it returned false (for ""not found"").
+I solved the problem, but I don't quite understand why the change I made solved the problem I was having, as to me the methods seem equivalent. I've posted the ""before and after"" below, and I was wondering if more experienced eyes could give it a once over and explain why the change I made fixed the problem I described.
+Before Fix:
+After (Changes have been marked):
+Thanks in advanced for your help."
+0.0,2014-10-15 23:56:52.090000+00:00,"I can't create a backup of a database (MS SQL 2005), using WebsitePanel. When I select the database and try to click on the ""Backup"" button from ""Maintenance Tools"", the ""Backup"" button is disabled."
+81.0,2014-10-15 23:56:47.230000+00:00,"I'm scripting a deployment process that takes the name of the user running the ansible script (e.g. tlau) and creates a deployment directory on the remote system based on that username and the current date/time (e.g. tlau-deploy-2014-10-15-16:52).
+You would think this is available in ansible facts (e.g. LOGNAME or SUDO_USER), but those are all set to either ""root"" or the deployment id being used to ssh into the remote system. None of those contain the local user, the one who is currently running the ansible process.
+How can I script getting the name of the user running the ansible process and use it in my playbook?"
+1.0,2014-10-15 23:56:40.503000+00:00,"I've been researching this question for a while and haven't found any good answers yet.
+I understand how to use ; I understand that use of the AttributeSet methods (e.g., getAttributeValue()) don't resolve references or drill down into s; etc.
+I think that Winitzki's answer to Difference between declare-styleable and style is exactly on the mark. Using a combination of obtainStyledAttributes and AttributeSet methods will get you most of what you might need.
+What I can't figure out is why several different mechanisms are necessary to handle obtaining attributes.
+My two (very related) questions are:
+Couldn't a single method be provided which returns all top-level attributes, drills down into  elements as necessary and resolves references?
+Why can't s defined directly within  be included in  elements (and a method provided to access them)? (This another way of asking what  provides.)
+Thank you for any help!
+Barry"
+0.0,2014-10-15 23:56:31.733000+00:00,"I have a subtle question about if statement in bash script: what type of parenthesis should follow ""if""?
+I have two statements both working right now, but not working if I exchange () and [].
+1.compare variable name
+If change [] to (), error:
+2.using grep
+If change () to [], error:
+I read the linux man, which suggest using []. So is it because of using grep? Can we say generally if using another program inside if, we should use ()?
+A side question about double quotation marks,
+is it necessary to quote text in shell? for example, echo ""$NAME"" or NAME=""fadfaj""?
+I got confused because when I try to use $NAME plus some special characters such as ""_"" or space, where I need to use ""\"", I got different behaviour with and without """".
+output
+I understand these are naive questions but I do appreciate all your help!"
+2.0,2014-10-15 23:56:30.003000+00:00,"I am having trouble with an error that seems obvious but I've tried everything. I must be missing something. I'm running a rails app with Angularjs and angular-leaflet-directives. I am trying to add markers to a specific group. No matter what I do, I keep getting this error: 
+[AngularJS - Leaflet] A marker can only be added to a layer of type ""group"" 
+I know that this error comes up when the overlays type isn't group. The issue is that in my case, it is!
+EDIT: here is a plunkr where I recreated the bug: http://plnkr.co/edit/DLCN5RYVr0BheYzTuqkQ?p=preview
+Here is my code: "
+0.0,2014-10-15 23:55:56.847000+00:00,"Hi I have an activity and 2 fragments A and B. when app starts fragment A is shown when I go to fragment B and press the button the camera shows up and after taking the photo and saving instead of showing fragment B again it goes back to fragment A. I have no idea why!
+Here is my fragment B.
+This is how i start fragment B:
+My camera button:
+Here is my activityResult:
+I dont know if it matters but here is my AsyncTask class:"
+0.0,2014-10-15 23:55:33.607000+00:00,"I'm using appendHtml() in a loop to dynamically add li elements (with unique IDs in the string) to a ul. When I need to access these dynamically created li elements by their IDs to, for example, create nested lists, querySelector() returns null. If I should be able to do this, then there could very well be bugs in my code. But I want to make sure this is the case."
+2.0,2014-10-15 23:54:27.287000+00:00,"I have the following query:
+that I'm using in MS Access. I have the Object Designer settings set to SQL Server syntax compatible. I'm getting
+  ""syntax error (missing operator) in query expression 
+What operator belongs in that expression?"
+1.0,2014-10-15 23:54:10.160000+00:00,"Ok, So I am seeing something weird and I think I misunderstood how to pass functions around in python..
+So, what I am not getting is why is self printing to be an empty dictionary??
+Something gets messed up above
+And then 
+self._funchelp()
+Returns "
+0.0,2014-10-15 23:53:30.960000+00:00,"I've tried to call this State I made in my main class and then call it in a subclass, and it works for one subclass but not for the other. My main class is called MonGame, the subclasses using the States are Keying and MouseInput. I put the keying functions in the Keying class and the mouse listener functions inside of MouseInput, respectively. So in MonGame (my main class) here's what I declared:
+And in MouseInput (which works fine) I put this:
+}
+Here's the issue. In the Keying class, I call this:
+But it returns an error for
+in the if statement.
+I've tried placing the enum and STATE values into the Keying class, and then get an error in the MouseInput class. Switching them up doesn't work, so how can I get the enum and State values into both subclasses? I've even tried importing all of my main class."
+23.0,2014-10-15 23:53:15.577000+00:00,"I'm using bootstrap 3 for a website project. I'm trying to create a page with a responsive table, so that I'd have the scrollbar when the table is too big. I made a test case like so:
+Now, the problem is that it doesn't add the scrollbar, it merely expands the website to the width of the table.
+See a screenshot here: 
+I've seen it working on several other websites, so something I'm doing...is wrong."
+1.0,2014-10-15 23:53:06.470000+00:00,"I'm trying to learn angular unit test with $resource.
+Here I have a simple controller :
+In my view, I have 2 ng-submit (jSearchDictionary and eSearchDictionary) and i bind the corresponding word that is searched ( jword or eword ).
+The service is also quite simple :
+Finally, here is my test.
+The problem is at the line :
+scope.word being undefined. Unit Testing is way over my head right now, I'm not sure of what I'm doing at all. If you have a solution to this particular problem, have any advices at all concerning all the code or are willing to message me and guide me a little, that would be awesome."
+5.0,2014-10-15 23:52:51.483000+00:00,"I was under the impression that when I use a belongsTo relationship in my model, it will return the object but I seem to only get the id. Is this supposed to happen and what is the benefit of this?
+This is my code: 
+From my Photo model
+And my PhotosController
+Don't mind the return, it's just for testing. I get an error:
+And a  shows that all I get is a string with the album's id"
+0.0,2014-10-15 23:52:42.510000+00:00,"I'm messing around with inline attributes and using them to trigger events with jQuery, but I've come across an issue.
+I am trying to trigger a console log (in chrome) when an element has the attribute . But with my lack of knowledge I can't seem to get it to work.
+My HTML (anchor tag to test):
+My jQuery:
+Why doesn't this work, jsFiddle?"
+-2.0,2014-10-15 23:52:34.077000+00:00,"There's a system that inputs lines of text as an array e.g., array[123,556,""test"",0,0].  When using val().split('\n') i'm able to get each new line to be added to the new array so that each line index is incremented by 1 e.g., 
+But I need the last two indexes to display in reverse.  The arrays need to look like this:
+Somehow they're able to get the array index to increment in the 4th index.  I'm only able to get it to increment in the 5th index..  I tried .push(0) to add a 0 the end but get errors.
+Any ideas?
+Thanks"
+1.0,2014-10-15 23:51:47.353000+00:00,"I have been working on a local machine and pushing my changes up to Stash (Pretty much BitBucket). 
+Everything has been going fine but not I am trying to clone the code down to a co-workers machine and am having some serious issues with Android Studio.
+I am importing the project through vcs, choosing git option, and providing the URL.
+Whenever we try to get the project running we run into build problems and Gradle not working properly. The project is not initially shown as an Android project and we have to configure the framework. Then we have gradle saying it cannot find 'com.android.application' file. I have ensured that I have the correct Gradle version to work.
+I think that I may not be pushing up the correct files to Stash, so when we clone the project it does not have enough information to build properly. 
+The files that I have not pushed up are the following:"
+1.0,2014-10-15 23:51:42.877000+00:00,"That query returns the following result set:
+As you can see, for some unknown to me reason, the numbers 2 and 3 appear at the very bottom of the result set while they're not supposed to.
+If I comment out the line members.member_joined, like so:
+The result set now is as expected:
+I just can't wrap my head around this. What might be wrong?"
+4.0,2014-10-15 23:51:02.377000+00:00,"I need to do many replacements. I'm using gsub. I was wondering if it's possible to do something like when I want to replace all á by a and all é by e:
+Using this, I get an error.
+If this is not possible, is there another function to do so?"
+0.0,2014-10-15 23:50:49.117000+00:00,"I have a Threaded timer that fires every second and updates a clock, the problem is that sometimes the clock will appear to be unstable and it can jump 2 seconds instead of a steady 1 second increment.
+The problem of course is that the initial (or subsequent) timer is not triggered at exactly 0:000 seconds and therefore it is possible that updates to the clock appear to jitter.
+Is there any way of preventing this ?"
+1.0,2014-10-15 23:50:43.277000+00:00,"I am trying to get Google+ login button to work in my React code. The react code is as following (the actual code has proper value for CLIENT_ID).
+The button shows up properly on the page, clicking on it brings up the OAuth dialog and hitting Accept makes it disappear and no errors/warnings are generated either in the dialog or on the javascript console. So to the best of my knowledge everything is working as expected.
+However, the callback method this.signinCallback that I am specifying doesn't get invoked. Any, ideas on what I am doing wrong here?
+Thanks"
+0.0,2014-10-15 23:50:29.973000+00:00,"I'm editing code in ASP and need help fixing this code so that the user can only submit the form once (prevent duplicate submissions):
+Code I have is:
+How to I change  to allow only one submission?"
+0.0,2014-10-15 23:50:03.123000+00:00,"I am trying to split several hundred lines read from a CSV file on .  E.g.:
+etc.
+I could split the first row on , but this would not work for the second row.  However, if I split on  then I would trap these cases.  I could then remove the "" using simple regex (e.g. )
+I have tried , and I've tried  and various variations, but every time, I get the full  in , with  as empty.  
+Any help would be much appreciated!  Thanks."
+2.0,2014-10-15 23:49:36.133000+00:00,"I'm trying to make search results url look like Google. 
+  site.com/search?q=blabla
+Tried this
+I used  just before  but it still doesn't work, the question mark makes the problem. What is the correct way to do that?"
+1.0,2014-10-15 23:49:27.343000+00:00,"I want to generate random words in MIPS. I know how to generate random numbers, I just want a random word from a word bank. I have tried this but I have no idea how to print them.
+How may I choose a random word from a given list?"
+0.0,2014-10-15 23:49:26.807000+00:00,"  A divide and conquer algorithm takes an array of size n as input and
+  makes two recursive calls on arrays of size n/2. Then, after an
+  additional O(n) work, it produces an output. The running time should
+  be:
+  
+  a) Θ(n)
+  b) Θ(n log n)
+  c) Θ(n^(log₂(3)))
+  d) Θ(n²)
+I'm trying to review for an exam and this is a question off the review. Intuitively I want to say b, because I know divide and conquer algorithms run at O(n log n), but the fact the answers are in Big Theta completely throws me off. Why would the question refer to ""an additional O(n) work"" then supply answers in Big Theta?
+Any help appreciated. I'm just trying to understand this better."
+2.0,2014-10-15 23:49:21.967000+00:00,I have a UIImageView and I want to add UIImage to it. All of this I am doing in interface builder (i.e. xib file). Is there a way to add bottom padding to the UIImageView so that some of the background shows below the UIImage?
+0.0,2014-10-15 23:48:02.117000+00:00,"I have a video chat in Android and iOS implemented with PhoneRTC, but after a few seconds of ""inactivity"", the display dims itself even though the video chat is still active.
+How can I keep the display awake as long as the video chat is active?"
+1.0,2014-10-15 23:48:01.140000+00:00,"I have this code in HomeController that should return the last 6 rows.
+I want to run this code to populate a 2nd pulldown based on what was selected in the 1st pulldown(I'll bet you've never heard of this one before). 
+Here is the 1st pulldown on the Add View:
+This all shows up fine and dandy.
+Here is the second pulldown:
+The goal is to populate the 2nd one using JSON and or jQuery but I cannot wrap my head around the code syntax for calling the controller and filling the 2nd pulldown. All examples have not helped me."
+28.0,2014-10-15 23:48:00.593000+00:00,"This is driving me crazy. I'm working with Laravel 5 and it appears that the docs for 4.2 and generating 404 pages does not work.
+First, there is no global.php so I tried putting the following in routes.php:
+This results in an error ""method missing() not found""
+Debug is set to false.
+I've searched and searched but so far have found no information on setting 404 pages in Laravel 5. Would appreciate any help."
+1.0,2014-10-15 23:48:00.047000+00:00,"I have a question about the iframe issue in iPad.
+I am using Bootstrap modal to embed an iframe inside the modal. Everything looks great on all desktop browser. However, the content in iframe is over extended in iPad portrait mode. I am not sure if it's the Bootstrap issue. Please see the JSFiddle."
+0.0,2014-10-15 23:47:35.553000+00:00,"My Mahout recommender is returning no results although from the looks of the evaluator output it seems like it should:
+I'm assuming that  means that it was able to recommend in all cases.
+I then iterate of the User id set and only see
+for each Id.
+I'm I reading the debug log correctly?
+Thanks."
+3.0,2014-10-15 23:47:16.757000+00:00,"I love Swift, except for this
+If I create any UIViewController extended class I have to have this ugly, unclear, required init, as the init I don't want.
+Is there a way I can set up my code so I can have code setup so I can have my own required init, and then it just calls this at the end? I don't want my client code to have to deal with this, and I'd like to have one clear init() call, instead of a 'initWithSomeCumbersomeName()' call.
+If anyone has a clean workaround to this I am all ears!"
+2.0,2014-10-15 23:47:15.547000+00:00,"If the  is small, which mine are, it'll show the last so many characters.  In this case, that would be something like ""00000"" if only five characters can be shown given the area of the text field.  I want to set the position automatically to the start of the  once I press a separate .  So, in this case, I would want ""10000"" to show.
+I have a list of multiple  and a  that does calculations on them and finds things like the total, then prints that total in another , and you only see the last part of the total which can get confusing if you don't realize it's showing the end of the text instead of showing it from the beginning.
+I looked through all the """" methods and didn't see any option to do this."
+0.0,2014-10-15 23:47:08.947000+00:00,"I want every person that registers in my website to be added to a default role ""Users"", question is how do I do it? :D
+This is my register.aspx code:
+Thanks to anyone who helps!! :)"
+-1.0,2014-10-15 23:45:46.180000+00:00,"I just need a hint on how to sort and store strings in a Linked List. The data should not be pre sorted, but assigned to the proper alphabetic order using insertAfter and insertBefore operations. Any help?"
+0.0,2014-10-15 23:45:24.550000+00:00,"I am in a situation exactly like this post, but for whatever reason, only one of my  works.
+I have a View Controller (embedded in a UINavigationController) with two buttons, Cancel and Done.  When clicked I want Cancel to unwind to one screen, and Done to unwind to another screen; however, this only works with one of the two segues I have set up.
+""unwindToHome"" works fine while ""unwindToViewEntries"" does nothing. No error, no printing, nothing. If I switch the segues and buttons, ""unwindToHome"" will still work while ""unwindToViewEntries"" does nothing.
+I have unwind methods in both ViewControllers I want to unwind to and there are no other actions attached to the buttons.
+I find it really odd that only one works. I've looked them over several times and there is nothing different that I can see.
+Thanks in advance for the help. If there are some more things I should check please let me know!
+I've already looked at solutions for the following posts:
+How to unwind programmatically to 2 different VC
+performSegueWithIdentifier not working
+I've also tried removing the segues and re-adding them, as well as deleting and re-adding the entire view controller. Every time, the same behavior.
+EDIT: I should also mention that I've tried adding other segues in different views and none of the new ones I add work. Only ""unwindToHome"" seems to work, and I can't figure out why."
+-2.0,2014-10-15 23:45:18.763000+00:00,"I know I am doing something wrong but I really would like to know what it is. I can echo the 
+username of the session loggedin user using but I don't know why it doesn't work when I try to query database using the same technique. my codes below
+I include this in the page 
+and here is the code that was suppose to display firstname and user_id of the sessions logged in user"
+0.0,2014-10-15 23:45:11.697000+00:00,"I experienced this issue today with ami-ada2b6c4 creating a new instance in a VPC without a public IP - logged in via SSH and the terminal hangs on Installation started.
+I used Ctrl-C to interrupt and this printed on the terminal:
+I followed a link to github posted by joaquin for a similar problem and added an entry to /etc/hosts. Logged off the instance and then reconnected. this time, got a different error.
+The security group does allow access to the internet - I was able to sudo apt-get update, for example."
+-2.0,2014-10-15 23:44:56.303000+00:00,"I'm very confused about this problem and not sure how to even title this question.
+I've created an IList of one of my classes and then used .Add() to populate the IList. Once the IList is populated I need to iterate through the IList for a trivial check of some values and then set one of the data members of each element to 0.00.
+The issue is that setting the data member of one element is also setting the same data member of the next elements. Here is an example of the code:
+I am using MyClass like this:
+Ok, the above code is an extremely simple representation of my actual code. What is happening is that when I set  in the  loop all of the Price data members with matching ModelName are also getting changed to 0.00. So, in the foreach loop when I set the element with Id = 1 to Price = 0.00 I am immediately seeing this in the IList:
+I feel like this is a totally stupid question to be asking and I will probably end up finding an equally stupid reason for it happening. I've used F11 to step into every line of code involved and don't see anyplace where Price is getting set in other elements. For that matter, MyClass is completely braindead to the existence of it being contained in an IList.
+It seems like this is being caused in the loop itself. I've also tried this approach with the same behavior:
+I've added a watch:
+Stepping through the loop shows that when  is set to 0.00 all of the other elements' Price member get set to 0.00.
+Is there any possible explanation for this behavior other than there being something causing this in my class? Possibly something to do with an IList?"
+0.0,2014-10-15 23:44:46.493000+00:00,"Question: Should authorization be atomic with operation?
+Let me explain.
+User A is making an API call to view an entity. This call requires two steps.
+Verify user A is authorized to view/edit the entity.
+Return the entity to user A.
+At the same time, User B is making a call to modify the entity. The new entity User B is posting not only adds new info to the entity, but also removes User A from the authorized users list. This call requires two steps.
+Verify user B is authorized to view/edit the entity.
+Update the entity with the new entity User B has provided.
+If authorization is not atomic the back end may process the requests like this.
+Verify user A is authorized to view/edit the entity. (From User A's API call)
+Verify user B is authorized to view/edit the entity. (From User B's API call)
+Update the entity with the new entity User B has provided. (From User B's API call)
+Return the entity to user A. (From User A's API call)
+This is problematic because User A would have received info he was not authorized to see.
+Is this a significant issue, or am I grasping at straws."
+0.0,2014-10-15 23:44:42.847000+00:00,"The outcome:
+5
+true
+42
+1.Can someone explain why first println outcome is 5 and consistent with 's' number last digit?? like if I change 's' to 1012 the answer will be 2. Why?
+2.true or false. answer is true. Why? it's like asking yes or no? -yes...
+3.that math make no sense to me. Someone explain to me how in the world it is equal 42?"
+0.0,2014-10-15 23:44:37.567000+00:00,"I´m using sliders to control the background-color of a square.
+For dynamically manipulating the stylesheet I am using the JQuery function
+Then I duplicate this square a couple of times with
+Until now I have three squares which were all affected by the .css() function (see above).
+But when I move a slider to change the color of the squares, only the first square is affected.
+However, every square should change the color.
+How can I do that?
+See http://jsfiddle.net/0971yehk/"
+2.0,2014-10-15 23:44:34.647000+00:00,"In the following trivial 3D gnuplot scatter graph, there are two points (labeled A and B). Unfortunately, since this there is no logical connection between the points, it's impossible to tell visually where these points lie in the 3D space.
+The way I would prefer to remedy this is to add vertical lines on the Z axis down to the Z = 0 floor plane, something like the following blue lines (color irrelevant) which I slapped on with MS Paint to illustrate what I want:
+This way it's easy to see, for example, that A is higher than B. After some searching, I haven't been able to dig up anything on how to implement this with gnuplot. I would greatly appreciate any assistance whether it's an RTFM pointer, or existing example of how to implement this type of plot."
+0.0,2014-10-15 23:44:25.380000+00:00,"After trying to upload a dataset (as a CSV) to H2O, and finding that the FirstName column gets converted to null/missing, I learned that the current version of H2O doesn't support columns of class string, and factors only go up to 65k unique values. So now I'm looking for another way to solve this problem.
+I want to end with a model that, given any FirstName, will return:
+the probability that the person is male/female (+1.0 to -1.0)
+the likely age of the person (mean, stdev) if possible
+Which R functions (or packages::functions) would work for this? Preferably well-documented packages/functions so I can learn more as I go.
+Here's a sample of the dataset in R. The column types are: Numerical, factor, factor, numerical.
+Here's R code to pull/process the data-source."
+0.0,2014-10-15 23:44:24.713000+00:00,"The Code
+rainfalls.txt
+rainfallInInches.txt
+This is the unwanted output
+  ('Manchester', '1.46')('Portsmouth', '0.35')('London',
+  '0.20')('Southampton', '0.47')('Leeds', '0.79')('Cardiff',
+  '1.65')('Birmingham', '1.34')('Edinburgh', '1.02')('Newcastle',
+  '0.43')
+My program takes the data from 'rainfalls.txt' which has rainfall information in mm and converts the mm to inches then writes this new information into a new file 'rainfallInInches.txt'.
+I've gotten this far except I can't figure out how to format 'rainfallInInches.txt' to make it look like 'rainfalls.txt'.
+Bear in mind that I am a student, which you probably gathered by my hacky code."
+1.0,2014-10-15 23:44:19.890000+00:00,"This link shows how to create a Time Picker using DialogFragment
+http://developer.android.com/guide/topics/ui/controls/pickers.html#TimePicker
+Is it possible that there is a typo in the example shown? When I copy and paste the example in a new class in Eclipse, it says that static is an illegal modifier. What am I doing wrong?
+This is what I have in Eclipse:
+By the way, if I delete the static modifier, the code works."
+-3.0,2014-10-15 23:44:06.417000+00:00,"Let's say we have a form with the following inputs: (and yes, what if we really want to have those names)
+Now, if we try to access form properties, all we get is input objects:
+same problem with:
+and all other default properties of a form object.
+I do understand that we could find some other way to access those properties...
+but what should we do with those that we can't?
+My thoughts that the standard should be different, something like this:
+not as properties of form itself.
+Your suggestions."
+1.0,2014-10-15 23:43:41.303000+00:00,"I'm currently developing lock screen support for my Windows Phone 8 app. 
+The background image that I'd like it to use is Bing's image of the day. 
+Here is the code that successfully retrieves the image's URL:
+The URL is stored in the .
+What I don't know is how to then retrieve that image, store it in the Isolated Storage and then later load it as the background of my custom user control.
+I've had a search on Stack Overflow and found a few similar questions but not any recent answers that worked in my testing."
+4.0,2014-10-15 23:43:41.037000+00:00,"I have several local clones of a repository, each weighing in at about 11GB. I use multiple workspaces in order to work on different branches simultaneously. I recently discovered the 'git clone --reference' feature, which allows multiple clones to share objects with a reference, saving space.
+How can I convert my existing workspaces to use --reference? The reason is that I want to keep my stashes and local topic branches as-is."
+0.0,2014-10-15 23:43:34.567000+00:00,"I am unable to get NSUndoManager to function in Swift Xcode release 6.1 GM Seed 2. I've read several times the article How do I register NSUndoManager in Swift? but I can't make it work in 6.1.
+Here is a code snippet showing my attempt:
+Using the 'simple' method, everything compiles and runs correctly even saving the Undo. However when I select Undo from the Edit menu, I get the error that it can't find the selector 'resetFractalDef'.
+I've also tried the prepare with invocation method of Undo, and it fails at the point where it tries to prepare the undo with invocation target reporting 'EXC_BREAKPOINT'.
+Please, any help would be appreciated. I am a Java programmer learning to program in the Apple environment mostly enjoying the using Swift."
+-1.0,2014-10-15 23:43:08.730000+00:00,"I know this question is probably far-fetched, but if this feature is possible, that would be awesome. I want to change the colour of the text as the player is writing it, so if certain keywords are typed, they change to a certain colour. 
+I know you can change the cursor location, but I don't know if that is helpful in changing the colour. I also know you can do Console.Clear, but if possible I would like to not do that, since then I have to save the string and re-write it all, and its not to applicable/plausible to my program."
+3.0,2014-10-15 23:43:07.823000+00:00,"I am attempting to add users to a Facebook Custom Audience using version 2.1 of their API.
+I'm using this Python script to create a new audience, and add users to it.
+A sample of the contents of ""the.payload""  is:
+Except, in my file, instead of having just 2 valid email addresses that have been formatted as SHA256, and written per hex, as per their docs, I have 1100 of them.
+When I run this script, I receive:
+However, more than an hour later, ""Not Ready, File not uploaded"" shows in the UI for 100% of uploads done using this method. 
+Can anyone tell me how to correct my code to add users to custom audiences successfully? I've reviewed Facebook's docs extensively, but I believe I'm following their format. "
+0.0,2014-10-15 23:43:05.757000+00:00,"I am trying to find out why my cookie is not being set. I am attempting to set it in the same file the form information is processed. Here is my setup:
+Page contains form
+When submitted, all information is sent to: form action=""../../_includes/achieve-more-form-handler.php""
+Inside this form-handler is the set cookie script
+User is then submitted back to the same page (because, if cookie is set, the page will have changed.)
+Now, the way I find that it's not set in particular is, the form should not appear on step 1 if you come back to it whilst you have the cookie stored. But simply, there is no cookie being stored.
+I get an email each time the form is filled in and I have received the email every time I've tested it so far, so all information regarding the form info is being processed etc as it should.
+USER PAGE
+FORM-HANDLER"
+0.0,2014-10-15 23:42:45.603000+00:00,"I am trying to understand how to implement a class-object. I want to know what is main difference between the following two class assignment operators.
+And this one
+I can see, the latter one returns a reference to an object but I don't see any practical difference. For example, both of them works fine, when I try to do something like this:"
+1.0,2014-10-15 23:42:37.723000+00:00,"More specifically, if/how well does the Baidu search crawler index -
+Content delivered via AJAX
+History API (pushState())
+I've looked through their documentation and webmaster tools but can't find a 'View as Baidu bot' tool (like Google &amp; Bing have) that shows a preview of how your site is indexed?"
+2.0,2014-10-15 23:42:11.387000+00:00,"What I want to do:
+Answer an incoming call and Dial another number. When call is finished I need to have the correct conversation time of the call (which is supposed to be stored in ${CDR(billsec)}).
+What I am getting:
+Since the channel is answered, the C option in Dial application is only resetting the answer variable of CDR to current time therefore the resulting billsec is equal to duration variable of CDR and is equal to channel seize time not call conversation time.
+My dial plan:
+Note: If I simply remove Answer CMD from dialplan then billsec variable is showing the correct call time and this makes sense because channel was not answered and CDR(answer) will be assigned as soon as called party answers the channel. But the problem is that in my complete dialplan I have to answer the channel before making the call because I need to interact with user beforehand and it needs the channel to be answered.
+BTW, I am using Asterisk 13.0.0-beta1. Could any of you guys let me know how can I achieve what I want to do please?"
+3.0,2014-10-15 23:41:47.167000+00:00,"I am looking for a .Net library which would act like an abstraction layer between the application and the database. The application mostly deals with structure alterations, like creating a new table or adding a column to existing table. 
+I would like to have the library which deals directly with database entities like tables, schemas or columns - so not really ORM (unless some ORMs have good ""utility"" layer). Support for PostgreSQL and SQL Server is required (Oracle and SQLite would be ""a nice to have"" feature).
+Any free or commercial (but royalty-free i.e. no per-server license) solutions would be much appreciated."
+1.0,2014-10-15 23:41:31.913000+00:00,"With windows 10 just around the corner I am bit confused on WPF and universal application. My goal is to build a line of business application, but i am not sure which technology to choose for WPF or a universal app? Does a universal application now include WPF, is WPF being supported or just been tossed away?"
+0.0,2014-10-15 23:41:29.993000+00:00,"I want to fill out an excel table from data in a web page. How can I do this?
+My plan so far, use the WinHttpRequest in Excel-VBA. I'm just getting timeout errors :( 
+Perhaps this wasn't the best language to use, but I can't give up over some little time out errors. If anyone can spot my mistake let me know, I'll be glowering over it until it goes away"
+0.0,2014-10-15 23:41:13.347000+00:00,"A bit stumped with this one...
+I'm receiving the following error when setting up Code First on Entity Framework and Oracle...
+  No Entity Framework provider found for the ADO.NET provider with
+  invariant name 'Oracle.ManagedDataAccess.Client'. Make sure the
+  provider is registered in the 'entityFramework' section of the
+  application config file.
+With the following setup...
+Entity Framework 6.1.1
+ODAC 12c Release 3
+Any ideas on how to fix this problem?
+I've included the app.config file below..."
+9.0,2014-10-15 23:40:58.470000+00:00,"I am actually trying to do card formatting, for that I am trying to implement what google says from link
+  You are not told where the change took place because other afterTextChanged() methods may already have made other changes and invalidated the offsets. But if you need to know here, you can use setSpan(Object, int, int, int) in onTextChanged(CharSequence, int, int, int) to mark your place and then look up from here where the span ended up.
+From above what I understand is I need to save [CharSequence s, int start, int before, int count] using setSpan in onTextChanged() and somehow retrieve them back in afterTextChanged().
+Question is, on which object do I call setSpan() in onTextChanged() and how do I retrieve those saved values in afterTextChanged()."
+0.0,2014-10-15 23:40:58.453000+00:00,"To cut down on a very long story, we had our own server environment at one point for a client project but it was ultimately decided to go with a third party hosting solution (Nexcess). Prior to this, we had a virtual server utilizing webmin as an interface and it ran on Ubuntu. 
+The idea was to have some templates within ExpressionEngine which would contain functions that would be triggered every so often per hour. Naturally, this was where Cron came into play. These worked flawlessly for many weeks.
+During the migration, Nexcess promised to port everything over (it was part of their appeal to both my company and the client. No additional work for either of us, in theory). 
+These functions are now no longer firing.
+The originals were lost and are now replaced with these (which I did not make, it was most likely Nexcess). They're not reaching the templates, and I know this because I can look at the hit counter. Further, manually firing each template delivers the desired result- so the code itself is fine.
+The Cron commands are:
+*Note that these templates are protected, and so a user name and password must be given for direct access. 
+Any clue as to what the hold up is? 
+On webmin I could actually run tests with Cron and see the output- no such luck with Nexcess and 'Siteworx' (insofar as I am presently able to divine). 
+So the issue appears to be the host provider is using an outdated version of Wget. This older version has particular problems with SSL which are applicable in our case. They are suggesting we rebuild the statements using Curl.
+What might the equivalents be for what we have above (I'm researching this actively as I ask this).
+Put together the following so far, no luck:"
+2.0,2014-10-15 23:40:48.457000+00:00,"This is probably a windows problem and not a python one, but I'm stumped:
+For most applications in my company we are constrained to Python 2.4.2. This isn't a problem for the most part, and my python 2.4.2 installation worked as expected.
+The other day one of my colleagues was demonstrating a new utility he had created, which required python 2.5, so we installed python 2.5 and went through his demo.
+When he was done I un-installed 2.5 and re-installed 2.4.2. That was when Python stopped parsing command line arguments.
+If I run the command line below the supplied argument is not parsed:
+The script scrolls through the contents of argv, and is clearly running as it is returning the script name rather than indicating program not found.
+If I run the same script, but this time use the command line below:
+It all works.
+I have no idea what is going on. I uninstalled everything and cleared out the folders, registry and environment variables, then re-installed from scratch. No change in behaviour.
+Nobody in the company has seen this before. Anybody out there have any ideas?
+Python 2.4.2, running on Win 7."
+0.0,2014-10-15 23:40:28.207000+00:00,"When using this code:
+I am getting the following error:
+   does not have a member named   
+Containing function for context:
+Does anyone know what the issue here is? "
+0.0,2014-10-15 23:39:50.013000+00:00,When I create a new file in a webstorm project I get a superfluous message telling the next person 'who made the file and when'. Since the invention of source control I really don't see why jetBrains have decided to make this default anyway how do I turn it off?
+0.0,2014-10-15 23:39:43.567000+00:00,"I am new to mysql and need help for transposing rows to columns in mysql database
+I have gone through some examples of transpose but slightly confused in using right syntax
+and some existing answers add additional requirements which make it slighly different 
+my exiting table is and rows are more than below shared fews rows for explanation
+and expected table after transpose is
+can someone help with this question"
+-5.0,2014-10-15 23:39:11.083000+00:00,"How can I fix that error?
+I was going import by MySQL!"
+0.0,2014-10-15 23:38:40.423000+00:00,"I'm currently teaching myself the ins and outs of building a MEAN app. I started with the basic todo app and modified it pretty heavily to support multiple key value pairs and have updated the UI using bootstrap. 
+It's currently hosted here: http://surveymanager-30817.onmodulus.net/
+I've implemented ui-sortable, and it works perfectly by itself.
+The challenge I'm having, that I cannot seem to find any relevant documentation or tutorials for - is how to communicate the updated sort order to mongo so when I refresh the page, ng-repeat will repeat question in questions with the order that I had previously created.
+Here is the HTML
+Here is the client side:
+And here is the server side with my random test and console logs starting at line 44
+Any help here, or if someone can point me to some good documentation or tutorials - either way would be very helpful!'
+Thanks!"
+0.0,2014-10-15 23:38:30.503000+00:00,"I am building a drupal site in which I would like the admin to have the ability to input goals into a table on the drupal database that can then be output to other users to be completed.
+The form for the input and the table get created, however the values are not added into the table when submit is pressed and I'm not sure why.
+I have the following code from the module that I am hooking into my site. I think the problem occurs at the top where I am creating the fields, or at the bottom when I submit the values. I'm really not sure.
+Can anyone tell me where I went wrong and how to fix it?"
+0.0,2014-10-15 23:38:21.050000+00:00,"I have the following code:
+I can not connect to gmail, an error burst with connection appears, however all connection information are correct, do not know what is blocking the connection from my code for sending the email, I can not send a simple email and I do not slightest idea what it is.
+appreciate the help"
+2.0,2014-10-15 23:59:41.167000+00:00,"Just have them share the same Document, that's it."
+0.0,2014-10-21 01:15:06.270000+00:00,"""isFinitDatae"" is a typo in the version of D3 I was testing with. In the latest version it's ""isFinite"", and transitions are working."
+0.0,2014-10-16 02:15:27.880000+00:00,"Ok, let me step you through it using a simple  comparison...
+First, the method signature. Globals are a bad idea so we'll include the  instance
+Now, build the query and collect parameters as you go."
+3.0,2014-10-16 00:07:44.330000+00:00,"Simple:
+0.1 there is 10 percent(1/10).
+or just:
+so there you calculate 110% from old value."
+0.0,2017-07-11 03:42:36.600000+00:00,You can update employee by setting 
+1.0,2014-10-16 05:59:43.617000+00:00,"One Task can have many order tasks, so to display users instead of
+You should use:"
+2.0,2014-10-16 00:43:25.937000+00:00,"Drop , use  to kill the process:
+If it doesn't help then try to create a new process group and kill it instead. See How to terminate a python subprocess launched with shell=True."
+1.0,2014-10-16 00:03:30.930000+00:00,"You need to have an input element generated for the items that you want returned.  Currently, you are only displaying two of your model elements and have no associated input with them.  As a result, they will not be POSTed back to the server.  
+To get them to post to the server and not ""editable"" from a textbox, add a  helper for each of the items that you need returned.
+However, keep in mind that anyone can edit the HTML using Firebug or Chrome console tools and submit any value that they want for any field, even if you did not want to change it.  Be sure that when you are persisting the changes to the database, you are NOT including these fields as part of the update."
+0.0,2014-10-16 00:04:53.413000+00:00,"Try this, just before this line of code:
+put in this for debugging:
+Tell us what you see...
+If you see the label then check your controller, in particular the parameter it takes on the post.  It should take and Item of type ITEM per your model.  
+Before the controller receives the data MVC has to try to populate the data... It converts name/value pairs to model types with values secretly.  If you don't see any data after you are in the controller it's usually because the names were not found!  "
+1.0,2014-10-16 00:06:10.780000+00:00,"Here:
+ could be null, and you don't check; in the second version you check if it's null but not if the value matches the one you want to delete.  Maybe you want this?"
+0.0,2015-01-02 23:28:36.340000+00:00,"This typically means that your hosting plan does not include the ""backup"" feature in the database section. "
+118.0,2014-11-06 20:02:51.900000+00:00,"If you , which is enabled by default for playbooks, there is a built-in variable that is set called  that provides the user name that the tasks are being run as.  You can then use this variable in other tasks or templates with .  This would save you the step of running a task to register that variable.
+See: https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variables-discovered-from-systems-facts"
+73.0,2014-10-16 07:57:24.303000+00:00,"If you mean the username on the host system, there are two options:
+You can run a local action (which runs on the host machine rather than the target machine):
+In this example, the output of the  command is registered in a variable called &quot;username_on_the_host&quot;, and the username will be contained in .
+(the debug task is not required here, it just demonstrates the content of the variable)
+The second options is to use a &quot;lookup plugin&quot;:
+Read about lookup plugins here: docs.ansible.com/ansible/playbooks_lookups.html"
+0.0,2020-12-23 16:13:28.203000+00:00,"if you want to get the user who run the template in ansible tower you could use this var {{tower_user_name}} in your playbook but it´s only defined on manually executions
+tower_user_name :The user name of the Tower user that started this job. This is not available for callback or scheduled jobs.
+check this docs https://docs.ansible.com/ansible-tower/latest/html/userguide/job_templates.html"
+51.0,2017-01-11 16:29:06.647000+00:00,"I put something like the following in all templates:
+When templated over it shows up as:
+If I use  and I've become root then that variable indicates ""root"", not what I want most of the time."
+3.0,2019-11-18 14:10:15.417000+00:00,"This reads the user name from the remote system, because it is not guaranteed, that the user names on the local and the remote system are the same. It is possible to change the name in the SSH configuration."
+1.0,2014-10-16 00:18:09.830000+00:00,"The thing following the  keyword is a command. The command is executed, and the condition is true if the command succeeds (exits with a status of ), false if it fails.
+Though it looks like shell syntax, the  symbol is actually the name of a command (which happens to be built into the shell). For example, you could type just
+at a shell prompt, with no , and it would evaluate the same condition and set . You can also do this:
+The  is a required last argument to the  command. Apart from that requirement, the  command is equivalent to the  command:
+Note that I've used  rather than . The built-in / command in bash recognizes either form, but  is the original syntax, and some implementations don't recognize .
+ is the most common command to use with , but you can use any command, including `grep:
+The parentheses are unnecessary. (If you add them, you're using a compound command rather than a simple command; there's no need to do so.)
+See the bash manual () for more information. Search for
+(with the backtick and apostrophe) for information on the built-in  command.
+Bash also has a  command which has some advantages over the older ."
+4.0,2015-11-30 12:46:25.243000+00:00,It can happen if you forgot to add the file: leaflet.markercluster.js
+1.0,2014-10-16 06:29:40.977000+00:00,"Ok, from the reduced plunker it was easier to play around and find the bug.
+You need to put  inside (i.e. as a property of) :"
+2.0,2014-10-16 04:08:50.537000+00:00,"It doesn't matter how elements are added, if the are part of the DOM  can find them."
+1.0,2014-10-16 02:07:50.417000+00:00,You can't use RANK() OVER ... in Access. The setting SQL Server Compatible Syntax (ANSI 92) implies that you must use ANSI-92 syntax for all queries. The RANK() analytic window function wasn't introduced in the ANSI standard until ANSI SQL:1999 and thus can't be used in SQL-92 mode.
+1.0,2014-10-15 23:57:39.057000+00:00,"It's probably because you need to include  as the first argument to  in your dict comprehension.  Also, you need to put the  in front of kwargs.  You may also need to set the 'arg' key on  as follows to avoid some kind of argument error.  Not sure about that though:
+The weird error is probably because you're trying to access  as an attribute on an empty dict object.  Furthermore, your function is defined as  with two underscores, which could get mangled by python because of the way it handles double underscore attributes internally.  I think  must be a typo because I don't think it would be mangling the name if that was really what was in your code."
+1.0,2014-10-15 23:58:11.577000+00:00,You were missing the  prefix from State.
+7.0,2015-08-14 15:40:49.130000+00:00,"bootstrap's table-responsive works fine in sandbox environments, but it is buggy on live environments. The reason for the bug is that bootstrap gives table-responsive styles of width: 100% and overflow-y: hidden. These two styles do not play nice together. Overflow hiding works best when there is a fixed or max-width. I gave table-responsive a max-width: 270px; for mobile devices, and that fixed the bug."
+3.0,2014-10-16 00:04:19.113000+00:00,"You're code is fine.  I just set up a fiddle here.
+Works there!
+I literally copied and pasted your code.  Are you sure your links to Bootstrap's Javascript file and CSS file are working?"
+-1.0,2016-06-16 05:47:50.417000+00:00,"Try this
+remove 
+and move class table-responsive in 
+example 
+ 
+this 100% work but if dont work move class table-responsive to Earlier Div layer,
+In this case,  must be removed."
+3.0,2017-05-13 15:37:55.920000+00:00,"I'v done it.
+You will receive at xs-screen (example from my app):"
+2.0,2017-04-12 14:28:40.250000+00:00,"I had this problem and found that it worked to either give the table a set width in px, or to set the table to display: block."
+54.0,2014-10-17 11:32:13.453000+00:00,Replace your table-responsive with this
+0.0,2016-03-08 20:21:40.643000+00:00,You can use FooTable. It is a jQuery plugin that allows you to resize and redistribute the data within your tables to best suite your current breakpoint.
+-1.0,2019-04-24 16:43:05.960000+00:00,"In my code, I did add a CSS class:
+The layout did work for "
+18.0,2017-02-17 15:12:11.747000+00:00,Make sure to set your table display block
+0.0,2017-12-01 16:11:29.140000+00:00,For me it was the 'min-width' value in body element breaking the responsiveness of this class.
+1.0,2014-10-16 00:25:24.717000+00:00,"You have couple issues in your expectation and set up.
+1) You are testing a controller and its scope, so do actions on the controller methods and set values on controller scope.
+2) Instead of doing  you should set the value on the controller scope 
+3) Instead of calling service method directly  , you need to invoke the method on the scope, i.e  so that when the method is resolved it resolves with respective data and sets it on the scope.
+4) Note that when you test against  directly you may not get desired result since the result object will have additional properties like  on it. Since you are directly assigning the results.
+5) I am not sure if you need the last 2 expectations at all.
+Try:-
+Plnkr
+Some syntax of expectation utility method is different from what you are using, you can use the same that you use, i just did it for the demo"
+0.0,2014-10-15 23:56:53.913000+00:00,The variable you are looking for does not exist outside of those two functions. Try defining it at the top of your controller like so:
+1.0,2015-04-09 08:00:54.643000+00:00,"I had the same problem. I'm still not able to explain what happens. If you dump , I guess you would get both the album's id, and the album object in the relationships.
+Threrefore, I somehow got it like this:"
+1.0,2014-10-16 05:00:41.403000+00:00,"Try:
+where 'id' is the name of the associated column on the album table"
+1.0,2020-11-02 11:40:51.083000+00:00,"You get the id because your foreign key field has the same name as your relation.
+So when you call $photo-&gt;album you are not touching the relation method (as dynamic property), but returning album field value, which happens to be the id.
+The best is to rename the album field to album_id.
+Or since it follows the standard naming you can avoid specifying the album_id"
+1.0,2014-10-15 23:56:30.927000+00:00,"See http://jsfiddle.net/ykkya5Lj/1/
+You don't need [ and ] around the attribute name and also you weren't hooking up to the click of  elements. When you bind to  click, $(this) will be the link you clicked on."
+0.0,2014-10-15 23:57:07.243000+00:00,You need to just pass the attribute name to attr()
+0.0,2014-10-16 00:16:31.547000+00:00,"One possibility would be to splice (remove) the index out of the array, and push it back onto the end of the array.
+http://jsfiddle.net/5wxcd3ux/ "
+1.0,2014-10-15 23:58:11.473000+00:00,"You definitely want to push up build.gradle. That is the file that describes the Gradle build for the project.  
+You will also want the .iml files pushed up, and the gradlew files (which are gradle scripts for different platforms), and probably the gradle/wrapper files.  
+You do not have to push up the .idea files.  They specify the AS/IntelliJ workspace settings.  It can be convenient to share these between collaborators as you will all be in the same environment, but it can also be frustrating having other people overwrite your preferred settings, so this is up to the developers in question."
+0.0,2017-05-08 06:49:47.747000+00:00,"Had similar problem earlier. Changing  to  solved it.
+Details are here:
+https://pastebin.com/br3TNFBb"
+5.0,2014-10-16 00:41:28.610000+00:00,"most likely your order by is causing the count to be off.. ORDER BY is executed after the select is finsihed so it can reorder your count.. try putting it in a sub query.
+Think of it this way.. SELECT to WHERE are pulling from the table... so any specific requirements can be in the WHERE.. GROUP BY to the end are after the request has finished and you are altering the results that came back... so thats why the order by can cause the issues... when you include the member joined in the select it returns results that get counted and then reordered by date
+NOTE:
+MySQL DOCS is quite clear on this:
+As a general rule, you should never assign a value to a user variable
+and read the value within the same statement. You might get the
+results you expect, but this is not guaranteed. The order of
+evaluation for expressions involving user variables is undefined and
+may change based on the elements contained within a given statement;
+in addition, this order is not guaranteed to be the same between
+releases of the MySQL Server. In SELECT @a, @a:=@a+1, ..., you might
+think that MySQL will evaluate @a first and then do an assignment
+second. However, changing the statement (for example, by adding a
+GROUP BY, HAVING, or ORDER BY clause) may cause MySQL to select an
+execution plan with a different order of evaluation."
+6.0,2014-10-15 23:52:28.487000+00:00,"Yes, there is :
+Edit Since you now asked for a more general function that can handle whole words, here is what I would do:
+To show that it gives the same results as  but is a bit faster:
+ is probably great for many things but it might be overkill for your specific application."
+2.0,2014-10-16 03:07:16.343000+00:00,"You could do with  from 
+Also, replace "
+0.0,2014-10-16 00:38:31.817000+00:00,"There are various approaches how to schedule, some designs may even provide measures to be able to deliver some acceptable kind of remedy for a blocked / failed initiation on a planned scheduling time-line -- what may help is finer timing / hierarchical timing / external synchronisation / asynchronous operations.
+Without more details, there would be a poor practice to ""recommend"", but one may get ispired:
+if RealTime constraints allow to bear a bit more overhead, one may go to a ""supersampled"" elastic, failure-resilient scheduling scenario, so as to avoid a 2 second gap ( in case of a failed one  initiation ), where  model fires each 50 msec, and an embedded logic decides, if it is the right-time ( not farther than a half of one scheduling interval from an idealised one second edge ) and does the real-job, that was intended to be run, or just , in case the RTC is not ""near"" the planned idealised scheduling time.
+a good python design also cannot forget about problems with -lock issues, with avoiding blockingIO(s), with implementing a reasonable task-segmentation for CPU-bound parts of the code"
+0.0,2014-10-15 23:53:26.080000+00:00,Replace '20' with however many seconds you want to time. 
+5.0,2014-10-16 01:02:43.840000+00:00,"As stated in the Google+ Sign-in Button docs,  is expected to be ""A function in the global namespace"". That is because Google's code likely calls your callback by name since all HTML attributes are just strings. It will do something like (warning, not real code):
+You are passing a reference to your callback, which is not globally accessible. You can expose it when the component is mounted and delete it from the global namespace when it is unmounted:"
+0.0,2014-10-16 00:04:08.330000+00:00,"You could try to disable the button after it is pressed the first time.
+But then you will need to set  again, when appropriate for the user to submit again.  
+You may need to implement this is Java so that the form does not wait for the run around between the Browser and Server.  Using code similar to this wrapped in a Java function"
+9.0,2014-10-16 00:01:10.510000+00:00,"Why not use Text::CSV. This will take care of edge cases where you have commas in values and all sorts of other problems,
+from the cpan page
+EDIT worked example assuming two given lines are in a.txt
+gives "
+0.0,2014-10-15 23:55:45.143000+00:00,"Try this instead, this works for me to replace:
+With:
+Code is:"
+2.0,2014-10-16 05:09:42.253000+00:00,"You just need this simple rule in root .htaccess:
+Query string  will be automatically carried over to ."
+-1.0,2014-10-18 19:23:59.907000+00:00,"You could create an Array, then with a forEach Loop with inside an object that generates a random numbers, you display the word of the array that corresponds to random generated number. 
+THIS IS JAVA CODE, BUT I HOPE IT MIGHT HELP
+}"
+2.0,2014-10-16 22:59:10.073000+00:00,"If you have a randomly generated number  in the range of int, find the index of your number using the remainder of  divided by word bank size (in this case, 13). If you have an upper bound for the RNG set it to the word bank size. Then just load the string using the index from memory."
+-1.0,2014-10-16 00:08:56.857000+00:00,A work around would be to put one view inside another.  You can size the top view as you wish to only expose the back UIImageView where you like it.  Insert your photo in the top view.
+1.0,2014-10-15 23:48:02.117000+00:00,"You can use the org.chromium.power plugin. To install it, run:
+When the video chat starts, use the requestKeepAwake API:
+When the video chat ends, use the releaseKeepAwake API:"
+1.0,2014-10-16 00:08:19.837000+00:00,"So if we have this html:
+You could use this jquery to listen for the action of selecting the option
+You could have a method in your controller call GetData like this
+Note: You could return a partial from the back end which would have the html constructed already and then append that to the dropdown, but I find it simpler just to create the options in the JS rather than having to create in the back end. "
+14.0,2015-06-14 17:17:06.690000+00:00,"if you want to have some global solution, you can do changes in /app/Exceptions/Handler.php by adding code bellow"
+54.0,2015-02-06 16:44:44.113000+00:00,Go to resources/views/errors and create a 404.blade.php file with what you want on your 404 page and Laravel takes care of the rest. 
+2.0,2015-11-15 00:09:06.337000+00:00,"Laravel 5 already has a pre-defined render method(line 43) under app/Exceptions/Handler.php. Simply insert the redirection code before parent::render. Like so,
+Note: My view is under resources/views. You can somehow put it anywhere else you want."
+5.0,2015-09-14 21:39:03.103000+00:00,"In Laravel 5 you could simply put a custom 404.blade.php under resources/views/errors and that's it. For other errors like 500 you could try the following in your app/Exeptions/Handler.php:
+And do the same for 500 HTTP Exeptions"
+3.0,2015-08-17 01:36:27.347000+00:00,"I like the case statement approach but it has some issues going levels deep.
+However, this catches all errors:"
+0.0,2020-09-25 09:48:43.450000+00:00,"I was looking for an answer to something else but thought I'd help in case someone else is looking for this.
+run the command php artisan vendor:publish
+you will see all publishable files.  type in the number for laravel-errors
+the error files are then published to resources/views/errors folder"
+0.0,2020-03-09 22:14:31.747000+00:00,"Lavavel 5.8
+Create a file in  and add this code.
+Then in your controller you can use:"
+0.0,2014-10-16 01:42:50.513000+00:00,"Use the responsive embed component with Bootstrap. 
+http://getbootstrap.com/components/#responsive-embed
+Demo: http://jsbin.com/tesuye/1/edit
+This is the CSS used to make both aspect ratio choices (16by9 or 4by3). You can make other aspect ratios by using this format (don't change these):
+Your own:"
+0.0,2014-10-16 16:06:22.143000+00:00,"Not exactly sure what that log message means, it looks like that stat is printed every 1000 itereations so it must refer to the past 1000 requests, not for all time but that's just a guess.  
+In any case you will very seldom be able to recommend to all users. There will often be users that do not get recommendations due to not enough usage history them, or usage history that does not overlap other users. There will also be new users for which you have no preference history and they will get no collaborative filtering recs either. Remember that you are only using preferences that have been expressed, this does not mean you have all users represented.
+You should always have some fallback method to make recommendations for this case, even recently popular or promoted items would be better than nothing."
+4.0,2014-10-15 23:48:41.253000+00:00,"Take a look at 
+You could also highlight the text using...
+But  would be simpler...
+Depending on your needs, you can also ""suggest"" the preferred number of columns that the field should display, for example...
+or
+This will encourage some layout managers to ensure that the field is sized to a more appropriate size based on the fields needs"
+0.0,2014-10-20 12:48:18.620000+00:00,"Nevermind, I used , thanks anyway!"
+0.0,2014-10-15 23:52:38.680000+00:00,"Now, if you don't care about n^2 + D runtime, you can do an insertion sort on the linked list. something like"
+1.0,2014-10-16 18:36:47.063000+00:00,"In the storyboard make sure that both segues show that it is a show (push) segues. There was a question earlier,which is a little bit different, that if you create two segues from the same button Xcode was setting one push the other modal.
+Happy coding! 
+Yan"
+1.0,2014-10-15 23:47:13.773000+00:00,"PHP variables inside single-quotes are not expanded. So now your variable is the literal string , which undoubtedly won't match any user in your database.
+You probably need to set  in your second PHP script."
+1.0,2014-11-07 15:31:04.343000+00:00,"A couple of learnings from my experience. Joaquin from Datastax was very helpful with his suggestions.
+I passed in userdata using the advanced config in AWS Management GUI -
+--clustername EIP_ami --totalnodes 3 --version enterprise --username some.guy_some.com  --password changeme --searchnodes 3
+but didn't change the number of instances to 3 in the GUI so only one node was created. this may have contributed to the problem.
+After interrupting the initial hanging installation - 
+added this entry to /etc/hosts:
+127.0.1.1 ip-10-0-1-234
+added an elastic IP to the instance and rebooted
+I got to the 2nd error:
+When I got to a bash prompt, I tested the git pull manually per Joaquin's advice:
+ubuntu@ip-10-0-1-234:~/datastax_ami$ git pull
+Already up-to-date.
+per Joaquin:
+  Yes, that error message will stick around for the life of the machine.
+  Perhaps the  issue was a fluke.
+Nodetool status says the node is up and acting normally. So, the learning here is to ignore the errors - none of them seem to affect the creation or operation of the node."
+2.0,2014-10-16 00:14:13.050000+00:00,"The most obvious answer to your question is that you are actually copying the same reference to a single instance of MyClass for each unique ModelName value, so your list simply has that same instance in it multiple times. But without a proper concise-but-complete code example, it's impossible to say for sure."
+1.0,2014-10-16 21:31:16.727000+00:00,"You will in theory always have this race condition unless the request-response cycles are atomic.
+I think your concern is as follows:
+B wants to post something that A should not see.
+B revokes A's rights with one HTTP request.
+B waits for the HTTP response that confirms the operation
+B waits another 10 minutes ""just to be sure.""
+B posts the updated data on a new request.
+Even here you still have a race if A's request for the data was on another thread which was horrifically slow.
+You have two solutions:
+If you use an evented server you might be able to do a revocation and update in a single work unit.
+Another approach is for B's edit to have different access rights so A can not see the new stuff but continue to see the old stuff."
+0.0,2014-10-16 07:09:04.523000+00:00,"This is not a significant issue.
+Even if the events are not happening simultaneously then also A can view the info if B has not updated it already. A user can always see information until the view rights are revoked."
+6.0,2014-10-15 23:47:22.353000+00:00,"  
+  Can someone explain why first println outcome is 5 and consistent with 's' number last digit?? like if I change 's' to 1012 the answer will be 2. Why?
+  
+Because of operator precedence. Here it is with parens:
+So  is  because these are  values, any fractional result is dropped. Then  is , and then  is .
+  2.true or false. answer is true. Why? it's like asking yes or no? -yes...
+Because  is true if either of its operands is true, and false otherwise. It's not relevant here, but it's also short-circuited, meaning that if the left-hand expression is , the right-hand expression is never evaluated. Again, not relevant here, but it would be if the expressions had side-effects, like for instance  where the methods have side-effects:  is always called, but  is only called if 's result is .
+  3.that math make no sense to me. Someone explain to me how in the world it is equal 42?
+Again precedence:
+So  is  because these are  values (any fractional result is dropped). Then  is , and  is ."
+0.0,2014-10-16 00:50:51.380000+00:00,"A
+java operates for arithmetic operations from left to right and solve  first one which  have higher precedence  in your question / and * have similar precedence so java will used left to right association , it will solve s/ c first , then multiply by c  then this term is subtracted from s because  + , _ have lower precedence . 
+B  || is OR operator 
+ true or(||) false is always true
+  true and(&amp;) false is always false
+C  left to right with higher precedence 
+    9 / 5  = 1 ignore the remainder
+   1* c= 10   because c is given in ur program is 10
+  10+32 = 42"
+1.0,2014-10-15 23:50:50.787000+00:00,"Use a class for the duplicated element instead of an ""id"" value. The ""id"" value needs to be unique, and that clearly won't be the case if you're cloning the elements.
+for the HTML and
+for the JavaScript and 
+for the CSS. Forked fixed fiddle."
+1.0,2014-10-15 23:49:24.310000+00:00,"See http://jsfiddle.net/0971yehk/5/
+You need to set the class on the original div and then change the handler to change the colour of the class, not the specific div. Cloning doesn't clone the id."
+2.0,2014-10-16 01:21:53.447000+00:00,"Thanks to Murphy's Law, I finally stumbled upon the answer right after posting the question. The trick is to use  in the  graph definition, and then re-plot the same series  to get crosses on top of the impulse lines. Here's the (somewhat stylized) result:
+For example's sake, below is the full gnuplot script I used to generate the above, although as mentioned, the  line at the end  and  is the necessary bit to answer the question."
+1.0,2014-10-21 02:03:10.267000+00:00,"Here I've defined a function  that does as you request. You'll need to run the code in your question to create TrainingNames first before the function will work.
+You can edit whatever you like to make it fit your specific needs."
+1.0,2014-10-16 08:04:29.187000+00:00,"  My program takes the data from 'rainfalls.txt' which has rainfall information in mm and converts the mm to inches then writes this new information into a new file 'rainfallInInches.txt'.
+You could separate the parsing of the input file, the conversion from mm to inches, and the final formatting for writing:
+rainfallInInches.txt:
+If you feel confident that each step is correct in isolation then you could combine the steps:
+It produces the same output."
+0.0,2014-10-16 00:09:36.417000+00:00,"First is better change your parser to split a string by space. With this you dont need a complex logic to take numbers.
+After this, to print correctly, change your output to"
+1.0,2014-10-15 23:53:04.763000+00:00,"I think you created a simple, seperated class for the Fragment. See this SO question:
+  Fragments have to be either regular Java classes or static inner classes, and they need to have a public zero-argument constructor.
+I think, all the examples on the Google Developer site written to be static inner classes. 
+In Java only the nested classes can be  classes, see: Why are you not able to declare a class as static in Java?"
+0.0,2014-10-16 16:40:36.483000+00:00,Of course the easiest way is to thumb-down the question and forget about it. But I went further and found out how to solve this problem. So I'll just leave it here. IE9+
+1.0,2014-10-15 23:59:13.573000+00:00,"Put the path to the alternate object store in 
+Note that this is not the path to the repo but the path to the repo objects. 
+so to link to /users/andrewc/myrepo I would use
+Based on testing by the OP it appears that  can cause some of the objects to be copied over again.   can be used to reclaim object speace.  
+There is confusing commentary on the git devel list here "
+2.0,2014-10-15 23:53:11.913000+00:00,"Short answer: Generally no, because standard-output has historically been a write-only medium (think 1960s teleprinters).
+Complicated answer: yes, thanks to the magic of .
+Basically, you'd read what the user types on a per-keystroke basis and keep track of it yourself (perhaps in a ), then if the user types in the magic-word then erase the previously printed line using  (which moves the caret to the first column of the console without creating a new line) and then over-write what was previously printed there, but setting  before re-printing it.
+You don't need to manually print each keystroke yourself (until reprinting it with the highlight) as  does not interfere with the otherwise normal operation of the console window and its local-echo behaviour.,
+Here's something simple:
+This code is buggy and incomplete, but I think it demonstrates the underlying concept."
+4.0,2014-10-16 18:05:48.367000+00:00,"This turned out to be an issue with my hashing algorithm.
+After posting this, I received a copy of an email hashing algorithm that was proven to work. It was this:
+I compared the hash produced here to my own hash, and it wasn't coming out the same. After correcting it by stripping whitespace and not reusing a hasher in a loop, this problem resolved.
+So, Not Ready can result from a hashing issue behind the scenes, or an upload containing too few valid &amp; matching email addresses."
+1.0,2014-10-16 00:42:28.840000+00:00,"Your cookie is being set, but its path is set to the /_includes/ directory. That means that your form page doesn't have access to read the cookie.
+See http://en.wikipedia.org/wiki/HTTP_cookie#Domain_and_Path. A separate path can be configured using setcookie() (http://php.net/manual/en/function.setcookie.php)."
+1.0,2014-10-16 01:52:40.730000+00:00,"No, unfortunately.
+Here is a Badui SEO Guide
+Page 9
+  Use text instead of flash, images, Javascript, etc. to display important content..."
+0.0,2014-10-16 03:54:12.857000+00:00,"ResetCDR() is your friend. I use this now so that I can track the original call duration and the portion of the call after it's transferred by the called party. This actually creates a second CDR record and should then contain the billsecs to match the conversation time.
+Not 100% sure on all that but, give it a whirl, I think it's what you want.
+http://www.voip-info.org/wiki/view/Asterisk+cmd+ResetCDR"
+1.0,2014-10-24 02:10:46.053000+00:00,"If basic CDR functionality is not enough for billing, check out CEL (Channel Event Logging). Supports all the DB backends, and has all the event's about a call (timestamped) that you possibly ever need."
+1.0,2014-10-16 09:28:05.407000+00:00,"For the DAL, I recommend NHibernate (http://nhibernate.info/)
+It is a great all-rounder: 
+easy to use
+good abstraction
+powerful features.
+It gets even better with FluentNhibernate (http://www.fluentnhibernate.org/) 
+--
+If you are looking for something more speedy and light-weight, take a look at StackOverflow's very own Dapper (https://github.com/StackExchange/dapper-dot-net)"
+4.0,2014-10-16 13:36:57.067000+00:00,"I would suggest to go for a c#/xaml technology.
+Implement a good MVVM pattern, isolate your core domain, and adapt your UI code (XAML) for each specific device you want to target (Windows Phone, Desktop, WinRT...Whatever).
+You cannot be sure of the technology, but you can be sure that MVVM/C#/XAML will stay for long."
+2.0,2014-10-16 00:10:34.677000+00:00,"Alt + D, D, W will allow you to do this without code.
+The URL has to be 100% correct. Unlike a browser there is no code to fix urls.
+The purpose of my program is to get error details.
+How I get a correct URL is to type my url in a browser, navigate, and the correct URL is often in the address bar. The other way is to use Properties of a link etc to get the URL.
+Also Microsoft.XMLHTTP maps to Microsoft.XMLHTTP.1.0. HKEY_CLASSES_ROOT\Msxml2.XMLHTTP maps to Msxml2.XMLHTTP.3.0. Try a later one
+Try this way using xmlhttp. Edit the url's etc. If it seems to work comment out the if / end if to dump info even if seeming to work. It's vbscript but vbscript works in vb6. 
+Also see if these other objects work.
+Also be aware there is a limit on how many times you can call any particular XMLHTTP object before a lockout occurs. If that happens, and it does when debugging code, just change to a different xmlhttp object
+EDIT
+This is what help says.
+What's New in MSXML 6.0
+MSXML 6.0 shipped with SQL Server 2005. It also shipped as a Web release. The following is a high-level summary of features that were introduced with MSXML 6.0.
+Security
+A number of enhancements have been made to MSXML 6.0 to eliminate security threats. Additionally, some features that are insecure, such as DTDs and inline schemas, have been turned off by default. For more information, see MSXML Security Overview.
+XDR Schema Support Removed
+XML Data Reduced (XDR) schema support has been removed. For more information, see Removal of XDR Schema Support.
+Improvements in XSD Standards Compliance
+MSXML 6.0 has improved XSD schema standards compliance. For more information, see Improvements in XSD Standards Compliance.
+Improvements in Schema Cache Behavior
+MSXML 6.0 has changed the behavior of the XSD schema cache. The new version is less ambiguous when there are name collisions. For more information, see Improvements in Schema Cache Behavior.
+XML Digital Signature Removed 
+MSXML 6.0 removed support for XML digital signatures. For more information, see XML Digital Signatures. 
+Edit 2
+Ports are specified by putting : at the end of URLs. eg; 
+Edit 3
+Use Macro Recorder in Excel to record your data query which will write most of your code for you. But they are flexible and probably don't need to be programmed (excel is for non programmers to do programming stuff) - look at the option dialog while setting up the query."
+0.0,2014-12-26 11:50:45.443000+00:00,"Am trying to do the same . but not working with me either , Did you managed to make it work ? 
+Try to add the provider to your config file :
+Also check this link 
+https://community.oracle.com/message/12679686"
+0.0,2015-07-17 14:42:39.390000+00:00,"After messing today for a few hours with the same error I found that I missed to select the correct T4 templates (see step #3) 
+Install ""ODAC 12c Release 3 and Oracle Developer Tools for Visual Studio""
+Btw. I found this note on a Oracle website:
+  Note: If you have installed ODAC 12c Release 3 configured on a machine-wide level, you will see an error when trying to generate database scripts using Entity Framework Model-First. To resolve this issue, use an ODAC version later than this release or reinstall ODAC 12c Release 3 with the ""Configure ODP.NET at a machine-wide level"" box UNchecked.
+Add those nuget packages to you project:
+EntityFramework (6.1.3 here)
+Offical Oracle ODP.NET, Managed Entity Framework Driver (12.1.022 here)
+Those will also add some dependent packages and insert the necessary configuration into the App.config.
+Before generating the database, choose the correct T4 templates in the properties of the EDMX model before generating the database.
+The pre-selected templates are designed for MS SQL Server (I guess)."
+1.0,2014-10-28 06:18:01.877000+00:00,since you have used a providerName Oracle.ManagedDataAccess.Client in connectionString. you need to add a line in following section to define it:
+8.0,2015-04-21 07:21:41.680000+00:00,So I figured this one out. Below is a barebones example that can be used as a starting point.
+0.0,2014-10-18 00:37:20.093000+00:00,"Figured it out. 
+/usr/bin/curl –silent –output -u user:password https://example.com/site/shipping_process"
+2.0,2014-10-16 01:12:28.490000+00:00,"Seems to be a duplicate. You should search in your registry using  for  and .
+You have to modify the occurrences to .
+With that you will fix two things:
+wrong python paths
+ in the end passes the arguments again
+Be aware of the right filepaths to  in your specific case."
+0.0,2014-10-16 07:06:35.657000+00:00,"This happens because  returns an optional array, so you need to unwrap before using it. 
+Instead of checking that the hitResults has a count > 0, you could check that there the first object exists, and then proceed to using that object"
+0.0,2014-10-16 00:16:19.690000+00:00,"You can't use a subscript on an optional array.  Is an optional array of type AnyObject. If you are sure that hitResults is non-nil, you can unwrap it with ! then use a subscript."
+0.0,2014-10-16 00:59:25.503000+00:00,"Since  is an , you can't call subscript on it without unwrapping it first. The safest way to do this is using optional binding, like so:
+Or, even better, you can use optional binding with the  property of  which returns the first element in the array if the  is not empty, or :"
+1.0,2014-10-16 00:18:31.990000+00:00,"This is probably because you have  and  as part of your file template:
+Just get rid of the the stuff in the template and you should be good to go. In other words, get rid of 3 and 4, and you will no longer be prompted.
+Usually webstorm will not prompt you for this, but for some reason in the installation the username was not added to its list of macros."
+0.0,2014-10-15 23:45:35.850000+00:00,"It seems that your INSERT statement is too long.
+Try increasing max_allowed_packet at my.cnf. For instance, max_allowed_packet=512MB
+Try following commmand :"
+1.0,2014-10-16 05:59:33.347000+00:00,"You should add SQL Table creation code under HOOK_SCHEMA in "".install"" file.
+After you enable module confirm you table is created under mysql as
+per requirement.
+After that you code should work fine.[Remove SQL table creation code
+from HOOK_INIT]
+You can refer Drupal Example module 
+Cheers!!!"
+7.0,2015-01-07 08:30:34.147000+00:00,"I believe that snippet is taken from the Apache Commons Email API User Guide.
+GMail blocks  by default for security reasons so this might be causing your problem (as it did mine).
+Log in to your GMail account and go to this URL:
+Set to .
+  DISCLAIMER:
+  
+  By doing so, you have disabled one of GMail's security features.
+  Proceed at your own risk (or use a dummy email).
+Related reading: Sending E-Mail Using GMail SMTP via Apache Commons Emails"
+1.0,2019-07-21 13:15:39.047000+00:00,"This happened to me as well when I tried to send email from  server app using . The difference in my case was that I had my email at custom g-suit domain with 2-step verification turned on and I couldn't use ""less secure apps"" settings: 
+  This setting is not available for accounts with 2-Step Verification enabled. Such accounts require an application-specific password for less secure apps access
+I generated app spefific password and used it instead of my main gmail password and it worked.
+Create app password info"

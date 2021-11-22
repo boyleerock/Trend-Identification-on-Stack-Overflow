@@ -1,0 +1,825 @@
+score,creation_date,body
+0.0,2020-12-30 23:59:59.153000+00:00,"I send the JWT token as an HTTPonly Cookie from my React app to my express Server to authorize the user.
+The token is being sent in the request header but I can't access it in the server middleware.
+This is the middleware that is supposed to handle to authorization but I can't access the accessToken from the header and get the .
+I use cors and also set the credentials to true and the origin to my web-app.
+This is the important part of my routes:
+And this is my express.js server:
+Thanks in advance and I appreciate the effort."
+0.0,2020-12-30 23:59:50.633000+00:00,"I need to get the properties of email address(es). I have been reading and studying documentation at Microsoft and other places and I cannot get answers to my problem with getting some properties of email addresses.
+Using: Microsoft.Exchange.WebServices.Data
+I am getting mailbox from GAL by the means of
+All is ok - I got list emails which consists of Mailbox and Public Groups Types ....
+Questions and problems:
+How can I check that an email address - mailbox is enabled? I mean being used and not suspended by administrator etc ...
+How can I distinguish regular person email box from resource box? I found some answers to that on Stackoverflow which ended with suggestion to mark the resources, but I'd like to avoid it. Is there a property or anything that can distinguish person's mailbox from e.g. Car mailbox? I looked in debug mode and compared the Mailbox props and Contact props but so far with no luck.
+How can I check if an address is shared resource and if others got access to it?"
+1.0,2020-12-30 23:59:14.310000+00:00,"I want to test downloading a local file using the  tag in HTML. The attached code doesn't seem to download the file, instead, it opens it."
+0.0,2020-12-30 23:59:04.230000+00:00,"I have a SQL Server 2019 database that I restored from a SQL Server 2017 backup.  It has diagrams present in the System Tables dbo.sysdiagrams table, but they are not visible.  If I try to create a diagram I get an error:
+What is the problem and how do I fix it?
+Thank you,"
+0.0,2020-12-30 23:58:43.353000+00:00,"How do I know if two dates are in the same week in PHP?
+Example week 52 of 2020 that starts on the 21st and ends on the 26th, I have two dates as an example the 22nd and the 27th and I would like to check if these two dates are in the same week, return true or false"
+0.0,2020-12-30 23:58:22.127000+00:00,"This code looks at an open form and copies the contents of some controls into the current record of a recordset.
+Why am I getting Error 3020, when I'm not using  or ?"
+2.0,2020-12-30 23:58:12.567000+00:00,"Currently I am working on a project with tweepy to collect new tweets from users very quickly. So far, I have found that the fastest method to collect the newest tweet of a user is like so:
+I was wondering if there is anyway to get the most recent tweets of multiple users in one request? I tried using a streamer, but that ended up having about a 10 second delay between when a tweet was posted and when it popped up, which is way too slow for my application. Please let me know if you have any other ideas on how to fetch tweets quickly.
+Thanks"
+0.0,2020-12-30 23:57:40.263000+00:00,"I'm developing an application for Tizen TV, but I get an error for async / await. Actually, I am aware that this problem is caused by the tizen sdk.Tizen 5.5 sdk works fine, but I get the &quot;&quot; warning in Tizen 3.0 sdk.I haven't found any documentation about it and I'm desperately looking for a solution... Any ideas?"
+1.0,2020-12-30 23:57:26.903000+00:00,"I'm trying to create some kind of &quot;kafka message processing graph&quot; - which service is consuming which topics and what messages - with some additional metadata(processing duration, whether it was processed OK or it ended with exception,...).
+I could create some interceptor that would be invoked before each message processing, but in interceptor I don't know whether there is some handler for this type of event, nor do I know whether message was later processed OK or it ended in error handler.
+For checking whether there is some handler I suppose there is some registry i could peek into (?), but is there also some way of wrapping message processing (like filters in spring-mvc) so I can calculate processing duration and end result?"
+0.0,2020-12-30 23:56:34.697000+00:00,"I have got a Ps script which loops a list of servers, however the error handling is not behaving the way I would expect it to. The invoke-sqlcmd has been set to continue on error, this is deliberate because when looping through a list of servers, I dont want it to stop every time it encounters an error. On the other hand, I would like to know if there has been an error.
+What I opted to do was to set the erroractionpreference to continue within the script, but the invoke-sqlcmd command set to stop. This works well outside of powershell workflows, but within a PS workflow its having undesired effects i.e If I run the powershell script from a console, I cannot see any errors if the error action is set to continue, If its set to stop then I can see the errors.
+In the example below, I took out the try catch as it was masking errors."
+0.0,2020-12-30 23:56:02.550000+00:00,"Also with a dynamic variable name. I tried doing it so:
+both  and  yield what i need which is  and  but it doesnt actually shift that value. What am i doing wrong? js newbie btw."
+0.0,2020-12-30 23:55:56.710000+00:00,"ok so i have been working on a dev project just for fun and i have a problem, i want to start a php -S localhost server. It's starting but on the wrong port
+Here is my code :
+And here is the txt file :
+Helppp!"
+0.0,2020-12-30 23:55:36.497000+00:00,"I have a piece of tensorflow code running on Microsoft Azure Cloud Platform, the TensorFlow version is 1.13.
+It gives me an error message:
+I tested the code in my local machine (with tf 1.14 installed) and it works properly. However, the cloud only provides versions 1.10, 1.12, 1.13, 2.0, 2.1, 2.2, so I cannot choose version 1.14.  Is version 1.13 the error reason?
+What kind of changes should I make if I have to use tf 1.13?"
+0.0,2020-12-30 23:55:32.333000+00:00,"this happens
+In my web page, the content moves to the right, as if it had a scroll but it does not ... as you can see in the image there is a blank space that I cannot delete, I already checked all the  and They are correct, I even checked from Dreamweaver and there I did not get the blank space either."
+0.0,2020-12-30 23:55:06.887000+00:00,"I have this sympy expression.
+I am not sure why evalf function doesn't properly evaluate this expression and still I don't get an actual numerical value out of it?
+After the following piece of code is run:
+I get the following for ansx:
+where root[i][0] is:
+I had created a minimal expression that shows evalf should work for sympy:"
+0.0,2020-12-30 23:53:54.010000+00:00,"This is the MainActivity.java code in my web app that give a blank Wordpress page when I open the app.
+It happens only for Wordpress.
+Other websites work just fine.
+They open as they should.
+Thank you for your help.
+The code is below:"
+0.0,2020-12-30 23:53:42.430000+00:00,"I'm trying to knit to PDF using an .rmd file. It failed and suggested I look:
+https://yihui.org/tinytex/r/#debugging for debugging tips.
+The second step is to run , however this returns:
+tlmgr update --all --self
+Error in system2(&quot;tlmgr&quot;, args, ...) : '&quot;tlmgr&quot;' not found
+How should I proceed?"
+2.0,2020-12-30 23:53:27.933000+00:00,"I want to delete the first node of a linked list (You can see below the image)
+Τhe structures are as follows:
+My code for trying delete the first node is here.
+I am working with Visual Studio and when i do free i get back some weird  values as you can see at the sceenshot. I cant unsterstand what's happening"
+0.0,2020-12-30 23:53:24.957000+00:00,"I am trying to put a cursed image command in my discord.js bot but it keeps coming up with this error
+Here is the code"
+1.0,2020-12-30 23:53:08.373000+00:00,"I was wondering if there is some way to use  to tell Maxima how to format powers when they are rational expressions.
+e.g. I would like
+instead of the default .
+Can this be done?"
+0.0,2020-12-30 23:52:34.870000+00:00,"So I'm going to eventually have 3 sheets. Sheet 1 is where I have data (numbers for a category and a name associated with it. Sheet 2 is where I pull the top 5 users for each category. Sheet 3 is where I have a leaderboard for points gained.
+Right now I'm trying to work with Sheet 2 (grab the top 5 performers from each category. I'm fairly new to Excel, but after some research it seemed that XLOOKUP would be the way to go. (i'll attach screenshots below.
+I'm using this formula:
+however when using it I get all 0's.
+Here's a screenshot of values I'm trying to grab from &quot;Warranty Service Request&quot;
+and here is a screenshot when applying my formula
+The solution I would want is to grab the 5 largest numbers from sheet 1 with the person name as well."
+0.0,2020-12-30 23:52:14.120000+00:00,"I am creating a website using the Django python framework and am currently stuck on a problem.
+I am using function views to display a page called myaccount, and on 'myaccount' i would like all user details to be displayed using context objects, for this page it is 'user'. I also have another model called Profile, which holds the profile picture and date of birth of the user. However when i attempt to display the image which has been uploaded during the account creation into the media folder named '/media/%y/%m/%d/imagename.filextension' i receive an error saying &quot;The 'profilepicture' attribute has no file associated with it.&quot; I have been searching vastly for fixes to this issue and have so far found no result which has worked, i have tried to create a property function which gets the url from the image called 'get_absolute_url' by doing user.profile.profilepicture.get_absolute_url but it fails to work and displays the same error. I was wondering if anyone could point me in the direction of a fix for this or a solution.
+I also do have pillow installed.
+The code to display the image, views.py and urls.py is down below
+views.py
+urls.py
+myaccount.html
+Profile model
+The model for User is from 'django.contrib.auth.models'
+To confirm whether it was a problem with the context object I tried to display the users first name which worked as expected.
+The account register view
+If any other code or information is needed please ask."
+1.0,2020-12-30 23:52:05.413000+00:00,"I want to use this code to recover the temperature and return the result to the smart contract
+but I can't understand how to change the code.
+How does the smart contract pass a city whose temperature I want to know to the oracle service?
+What API does the oracle service use to fetch the temperature from the external source?
+How should i change this code?
+source: https://kndrck.co/posts/ethereum_oracles_a_simple_guide/"
+0.0,2020-12-30 23:51:45.553000+00:00,I am trying to use Phaser3 to create a web based game for my course and I am using tiled to create the maps. I have saved the tiled map as a .json file and I can't load the level I designed. The code I am using is from a tutorial as seen below. The problem is it is only showing a black screen when loading and the tilemapTiledJSON function is coming up as an unresolved function instead of working how it should. I am Webstorm for the coding and I am using phaser 3.50.0.
+0.0,2020-12-30 23:51:16.297000+00:00,"I'm building an extension and am having trouble with the workItemIcons api endpoint only on azure devops server, it works fine for azure devops services. The end point I'm hitting is . I'm getting the following error when running the extension locally, but get the same kind of error even on the published version.
+Extension scopes I think are fine"
+-1.0,2020-12-30 23:50:47.727000+00:00,"I am new here. I would love if you could help me with writing a method that can change the background image of the button that is clicked.
+This is what I am doing right now. As you can see I am doing it for every button each. I would love to know if there is a way to do one method that the buttons will just call.
+This is for a simple Tic Tac Toe multiplayer game.
+EDIT:
+Now that I have this method. How do I make when I press button with the tag cell11 to get to this code here?"
+0.0,2020-12-30 23:50:28.757000+00:00,"I am unable to push a nuget package to GitHub
+The following question is nearly identical
+Publishing and Consuming GitHub Package Repository with NuGet: Unable to load the service index error
+The answer was very helpful as it indicated that the GitHub documentation was out of date.  So I followed the revised instructions and still no joy.
+I try to push with...
+and the error I get is...
+which seems to indicate that the mycompany GitHub package repository does not exist.  But the GitHub organization mycompany certainly exists. It seems as though I need to initialize the package repository for mycompany, but I can't find any documentation on how to do that."
+1.0,2020-12-30 23:49:40.750000+00:00,"base-branch changes
+file1 - changed
+file2 - unchanged
+my-branch (forked from base-branch)
+file1 - changed
+file2 - removed
+file3 - added
+file4 - added
+while on my branch, I run: 
+Excepted result:
+file1: conflict
+file2: removed
+file3: added
+file4: added
+Actual result:
+file1: conflict (and it's not even showed clearly by any git diff tool as if the &quot;git conflict markers&quot; were misplaced, or ignored)
+file2: added
+file3: removed
+file4: removed
+Why? (with  it works perfectly)
+Is it possible it should be the other way around? e.g. first merge the latest  into , then rebase  into ?"
+0.0,2020-12-30 23:49:15.280000+00:00,"I am using Chartist and I need to send some data to the repeated second occurrence of an element. For example, there are two &quot;ct-bar&quot; elements inside every &quot;ct-series&quot; element. I need to select the second &quot;ct-bar&quot; element that is contained in each of the &quot;ct-series&quot; elements. I have tried doing this with a for loop and some other ways to no avail. How can I achieve this?
+JS"
+-2.0,2020-12-30 23:48:22.263000+00:00,"I am going through the Python Crash Course book 2nd Edition and trying to set up Sublime Text 3 programs to run from a terminal. I have made sure Sublime Text is running Python and have saved a simple Print(&quot;Hello) program to a file called python_work. Now I try and run the program from Command Prompt,
+I enter cd Desktop\python_work and I get the answer The system cannot find the path specified.
+The command prompt should show \Desktop\python_work&gt; and I would contiune from there.
+Why do I get this message and how can I fix it? (I am using Windows 10)"
+1.0,2020-12-30 23:47:54.180000+00:00,"I have been working on a bot for some time now. Since I updated it to v15.5.0, after a while it works fine, does exactly what I want but then crashes, giving the following error. This seems to be a TLS issue.
+The source code for the bot is here
+Will I have to downgrade? If so, to what version of node?
+I'm using this on a Windows 10 64bit computer with no proxy settings whatsoever."
+1.0,2020-12-30 23:47:33.867000+00:00,"I am trying to create a simple pokedex where you can keep track of how many pokemons you have collected. The trouble I am having is the checkbox in a recyclerview. I want to have the total which is currently at zero, go up for each checkbox checked. If unchecked the number will go down. The total number is simply just shown in a text view.
+Below is an image showing what I am trying to explain, in case I am not explaining it as clearly.
+Here is my code
+Adapter Class
+My Data Class"
+0.0,2020-12-30 23:47:14.647000+00:00,"I'm trying to add a row to my table only on two conditions but when inserting it retrieves error and I cannot figure it out
+Its not working for me."
+-2.0,2020-12-30 23:47:03.097000+00:00,"I was trying to write a code where all the 0s will be moved to the right of the array. I just used a left and a right pointer.
+I know here I should use the if/else if instead of if/if, that's why I have the index out of the bound error. But I don't understand why? If I have the if/if statement, what's the difference does that make rather than using if/else if in this question?"
+2.0,2020-12-30 23:45:46.970000+00:00,"I am working on a new website. You can join room calls and make a voicecall so use your webcam but you can also share your screen.
+The problem is when i add the track to the stream the peer doesn't work more... I don't know how to solve this. I also tried to change the code from adding the track to adding a new stream or anything else but cannot find a solution. Can anyone help me?
+Client:
+};"
+0.0,2020-12-30 23:43:28.857000+00:00,"I am using TF 2.2.0 and trying to create a Word2Vec CNN text classification model. But however I tried there has been always an issue with the model or embedding layers. I could not found clear solutions in the internet so decided to ask it.
+I have created my word2vec weights by the code above and then converted it to embedding_matrix as I followed on many tutorials. But since there are a lot of words seen by word2vec but not available in embeddings, if there is no embedding I assign 0 vector. And then fed data and this embedding to tf sequential model.
+But when I run this code, tensorflow gives me the following error in any random time of the training process. But I could not find any solution to it. I have tried adding + 1 to vocab_size but when I do that I get size mismatch error which does not let me even compile my model. Can anyone please help me?"
+1.0,2020-12-30 23:43:09.260000+00:00,"Please take a look at this code
+The scene is static so it should be enough to explicitly call  command once, after the assets are loaded, and see the head.
+But the head is not seen.
+If I replace  with  (set ) the head is seen.
+I think that the failure when calling  once, is because the texture is not yet loaded.
+Whereas,  calls  constantly, and so, when the texture is finally loaded, the head is seen.
+After setting the materials in  I expect the map to be defined, but it is undefined.
+the console log of the material map shows:
+How can I make the program wait until after the texture has been loaded?
+Thanks"
+0.0,2020-12-30 23:43:04.597000+00:00,"I am trying to make a simple React Native app. For the start there is one default language, there is a button, by clicking on it changing the language and reloads the app with the new language. The idea is to store that language in the AsyncStorage (@react-native-async-storage/async-storage).
+Here is my cache.js:
+and here is my App.js:
+It starts in German, when I press the button it stores the English, but it doesn't change the application language. What am I doing wrong?"
+1.0,2020-12-30 23:42:58.663000+00:00,"Below, I was wondering how I could extract the last part of the output of  titled ?"
+0.0,2020-12-30 23:42:55.673000+00:00,"What is happening in this python code?
+If I execute as shown, it prints &quot;MySQLCursor&quot;.
+If I comment-out &quot;import hashlib&quot;, it prints &quot;CMySQLCursor&quot;.
+I have some code that imports hashlib and some that does not, but I want to consistently detect the cursor type correctly.
+What does the &quot;C&quot; mean and what is its origin?
+These are the possible cursor types (with or with the C prefix depending on existence of hashlib):
+CMySQLCursor
+CMySQLCursorBuffered
+CMySQLCursorRaw
+CMySQLCursorBufferedRaw
+CMySQLCursorDict
+CMySQLCursorBufferedDict
+CMySQLCursorNamedTuple
+CMySQLCursorBufferedNamedTuple
+CMySQLCursorPrepared"
+0.0,2020-12-30 23:42:24.457000+00:00,"I'm Having trouble with my code that opens a workbook based on the value in column C and opens another workbook based on column B. The code then is supposed to paste workbook B into workbook C but the code seems to stop after opening the workbook in column C and doesn't progress to column B.
+Can someone help with my loops?"
+0.0,2020-12-30 23:41:40.097000+00:00,"I saw an earlier forum post regarding this topic and the author prefaced his post with &quot;I admit it, I don't know what I'm doing.&quot;  I fall in that same category.
+I found a great MVC SignalR progress bar example at https://www.codeproject.com/Articles/1124691/SignalR-Progress-Bar-Simple-Example-Sending-Live-D but it was written a few years ago using jQuery 1.10.x and SignalR v2.2.1.  My application (ASP.NET MVC) is MVC5, using jQuery 3.3.1 and SignalR v2.4.1.
+When the page loads, and the inline function gets to:
+I'm getting a
+&quot;Cannot read property 'progressHub' of undefined&quot;
+error.  If I break this line down and try to assign the value of $.connection to a variable, the result is that $.connection is not defined.  I've read through many posts, and several point to jQuery being loaded twice.  From what I can see in Chrome's debugger, that doesn't appear to be the case, as shown here:
+I'm at a loss as to what is happening here.  I think I have all the pieces in place, but clearly something is missing.  I'm hoping it is something simple that I've missed, but any suggestions are welcome.  I've included quite a bit of information below, to help troubleshoot this.  Thanks in advance for any help on this!
+The _Layout.cshtml file includes the following (I'm using DevExpress components, but I'm going to assume that is not the problem):
+and
+The layout also has a Bootstrap modal div that is displayed when the user clicks a button on the view that starts the process.
+The project has a /Hubs folder with a class for ProgressHub as follows:
+The &quot;Helper.js&quot; script contains a function which the progress bar...
+The view is very simple:
+The BundleConfig.cs file is the default that was generated:
+Thanks again for reading through this, and for any assistance!"
+0.0,2020-12-30 23:41:14.993000+00:00,"I am looking for a way to make my lambda to process events from a queue or event bus. But I need to ensure there is only one instance of lambda running. I need to set the concurrency limit to 1 to make sure there is no concurrency execution of the lambda.
+If I use SQS or Event bus as the source of streaming to lambda, how can I ensure they don't trigger the lambda when it is running? otherwise my lambda will be easily throttled. Is there a way to control SQS to send event to lambda only when it is idle?"
+0.0,2020-12-30 23:41:00.537000+00:00,"I'm having a problem pushing dynamically created objects to an array on my  in Vue.
+Basically I have a  function which is watch a records array which in turn is populated with the response from an axios request. This works fine and the  array receives the data.
+However I need to create new objects from various values in the response. Some of the values are inside embedded arrays. Hence I need nested forEach functions.
+The code below gives the following error in the console.
+I know it is probably something to do with running nested forEach loops and trying to push dynamically created objects to the component  , but I am not sure how else I can achieve what I need to do.
+I am still learning Vue and any help is much appreciated.
+UPDATE:
+I can see now that vue data cannot be accessed using  inside the forEach. In that case, how could I go about to creating objects dynamically and pushing them to my array on Vue data?"
+0.0,2020-12-30 23:40:52.393000+00:00,"I'm attempting to write my first unit tests for my components and am seeing the following issues:
+How do I declare the data.iconPath in my test to get rid of the error?
+This is my component:
+This is my test:
+Any help on fixing this would be greatly appreciated.
+Thanks"
+0.0,2020-12-30 23:40:40.960000+00:00,"I need help with the following:
+I want to make a command where if you type in  you would get an embed with those elements."
+0.0,2020-12-30 23:40:20.663000+00:00,"I am doing a project that asks the following: &quot;Let’s start by looking at how the average temperature changes over time in each state. Write a query that returns the state, year, tempf or tempc, and running_avg_temp (in either Celsius or Fahrenheit) for each state. (The running_avg_temp should use a window function.)&quot;
+The data looks like this: data schema
+I wrote 2 types of codes as followed and they seem to perform identically.
+My question is how does  and  differ?
+Solution 1:
+Solution 2:"
+2.0,2020-12-30 23:40:09.073000+00:00,"My questions:
+How do I get it so the width the element created depends on the width of the screen your using (the user chooses amount of inputs rows and columns), I want to make it responsive and in case there is a bunch of inputs I want to make it so it fits on the screen without having to use the scroll bar (because it's a big pain and I want to code something actually good...)
+(You don't have to answer this question) Is vh (view-height) good for responsive web design?
+UPDATE:
+I want an equation that let's me have ALL the columns and rows on the screen, if I had say 10 columns it should all be on the screen (NOTE: The reason an equation is needed is because I want the columns and rows to be choosen by the user(Is this a bad approach? I'm not sure how I would do it without that)"
+0.0,2020-12-30 23:40:00.907000+00:00,"Structure.Values is List&lt;list&gt;
+in code behind I set listviewdata template
+and the data to set the grid data as
+so how to use listview to produce the same effect
+Edit:
+My ViewModel
+and Model :"
+0.0,2020-12-30 23:39:53.337000+00:00,"I am building a maze solver using the breadth first search algorithm and I keep hitting an error that says UnboundLocalError: local variable 'starting_point' referenced before assignment. However, starting_point is a global variable, and it has already been assigned to something. When I try to use it in my program, it does not work. It worked in the function before it. That function was where I declared the variable to be global. Why does the global variable not work in the function next to it?"
+0.0,2020-12-30 23:39:33.897000+00:00,"So, most of the questions I have found with this involve people not wanting to use single table inheritance.
+I do, and now it is causing a little bit of a headache.
+I get the titled error:
+ when debugging my code.
+The issue is, in both the console and in my rspec tests, the code works fine (all specs pass and they reference this class multiple times.
+From the console I can create an instance of .
+So this leads me to believe that the class is not being loaded by the Rails &quot;Magic&quot;, but I can't for the life of me find out why.
+The class resides in `app/models/user/admin.rb'
+Any ideas?"
+1.0,2020-12-30 23:39:09.280000+00:00,"I am having an issue where my . data is showing up stuck inside one cell of its parent data despite the fact it is its own row with its own div. (Please see the picture below)
+The AJAX code that is grabbing the data for the  is as follows:
+Here is the PHP and HTML for the table itself.
+I have tried adding styles to the table such as width:100% and display (literally tried them all) but nothing takes this whole table out of the cell above it.
+EDIT 1
+using the suggestion of
+jQuery('[data-id=&quot;' + id + '&quot;]').closest('tr').find('td:last').append($newElement)
+It places the appended data next to instead of under. I have tried all display types on the tbody but none place the data under the row.
+EDIT 2
+when using this code, the result is
+Edit 3
+the code:
+provides:"
+0.0,2020-12-30 23:38:17.777000+00:00,"I have a long running YARN application running on EMR cluster.
+Based on Canceling EMR Steps, the running steps  can be canceled with command
+ as long as Amazon EMR versions 5.28.0 and later is being used (which is the case for me), however when I issue the above against my running step it never kills the actual yarn application.
+I can see the step changing it's status to Canceled in the UI, however if I ssh into the EMR and execute
+ I still can swe my application alive and well :)
+In the logs I see
+Which, based on my understanding, means that the container did receive the SIGKILL command.
+Can  someone advise why it is still not killing the application?
+P.S I am using the TERMINATE_PROCESS cancelation option when executing the cancel-steps command.
+Thank you!"
+1.0,2020-12-30 23:38:00.430000+00:00,"I have a page on my website that has been created using the WordPress 'page' format. I want to find the source code of this page which includes HTML and some js files.
+The problem is that the code/block editor of this page is empty and I have no clue on how to access the source code.
+Below is the code editor that I see without any content although if I open or preview the page I can see that the page works and have access to the scripts that I am not sure where they are.
+Any help is really appreciated. I am really stuck on this."
+0.0,2020-12-30 23:37:35.913000+00:00,"I have the following snippet from a dataframe:
+Where I need to sum up each column by each value, like:
+However, I need this in a dataframe, which I was able to do as per:
+But, the output has empty cells:
+How do I get the df in the form below (that is eliminate empty cells and transpose, all in one fell swoop)?"
+0.0,2020-12-30 23:37:35.640000+00:00,"Look at this I need to know how to switch between windows easily bceause the method I used did not work at all, i tried destroying the previous canvas and adding a new one between every switch. It worked fine with 2 canvases but when 3 came to play the code just didnt work.
+this is the whole code btw."
+0.0,2020-12-30 23:37:21.567000+00:00,"I need to recognize if someone is on the page:
+example.com/index.php/de/
+is located.
+In the menu there are links in the following format:
+#section1 / #section2 / #section3
+These sections are only in the index.php.
+If the user is not on example.com/index.php/de/ and clicks on a link in the menu, the URL &quot;example.com/index.php/de/&quot; must be placed before the section-id (ebs. #section1) or redirected to:
+example.com/index.php/de/#section1
+original link by clicking if not on index.php/de:
+#section1
+rederecting automaticly to:
+example.com/index.php/de/#section1
+Is something like this possible?"
+1.0,2020-12-30 23:37:04.940000+00:00,"Short version: How does the C function  work when the locale is set to something other than  (in other words, something like )?
+Long version: In reading a bunch of documentation about the  function, it's not 100% clear to me how its locale dependent behavior works.  Specifically I've found docs that say things like
+In some locales, there may be additional characters for which isalpha is true--letters which are neither upper case nor lower case. But in the standard &quot;C&quot; locale, there are no such additional characters.
+Additionally -- if I test this out with a small C program, I can confirm that  will return / for values outside of the traditional ASCII text ranges when a different locale is set -- for some unixes.  This program seemed to do reasonable things on my BSD/Darwin based mac -- but it segfaulted when I tried it on an ubuntu box.
+What's unclear to me is how  knows which integers should return true when the locale is set to  and what those integers represent.  Is this just a hard coded list of utf code points in a range somewhere? Or something less direct?
+I tried chasing this down myself but my pigeon-c was not up to the task.
+I got as far as  and .  If I dive into the source of glibc I see that the  function is actually a macro that expands to something like this
+ is also a macro, so we expand that out we have something like
+And the  enum expands out to a little endian bitmask, so now we're looking at something like this ...
+and this is about where I tap out.
+I have no particular goal in mind other than understanding how  works."
+1.0,2020-12-30 23:36:47.607000+00:00,"I am having a brain fart on this one because I can't figure out how to get this count to return as expected :
+The above returns 3 - I am expecting it to return 1 or would like it to (1 array in the array).   can possibly contain many arrays and that is the total I need to get.
+The format of this needs to stay the same because these results are used by a plugin that needs them in this format."
+0.0,2020-12-30 23:36:21.617000+00:00,"In pandas, how can I write a rolling window that has preceding as well as following rows?
+for example, a sql rolling window can be written as follows:
+i am not sure how to write this in pandas."
+0.0,2020-12-30 23:35:53.807000+00:00,"first of all: I am aware that there must be black borders when the video format and the format of my screen do not match. However, my question refers to the situation that I get a black border on all 4 sides, as if my video has been scaled down (or, for nerds: as if I had a black padding around my video).
+This problem occurs on my new monitor that has a resolution of 3440x1440 pixels (21:9).
+For example, when I want to watch a movie in the VLC player, but also on Netflix, it's especially strange:
+I started watching the third season of Star Trek Discovery today. The first episode fills my screen perfectly, the second episode has black borders all around, subtitles protrude slightly beyond the black border (so theyr relative position on the screen is are where they always are). I haven't changed anything between episodes, of course, and the phenomenon always occurs when I switch between episodes.
+Are these several problems independent of each other? Does anyone know how I can fix them? Thanks in advance!
+For visual clarification:
+blue - entire screen, green - the boarders of the movie"
+1.0,2020-12-30 23:35:33.323000+00:00,"I have two models,  and . Now I have a custom function using  signal on a  object. However, since I add the object to the many to many field after saving it, I cannot get the attributes of the Parent post object.
+So I have:
+Now I have a function:
+However, this will not work since the post object hasn't added the comment object yet, is there any way to fix this?"
+0.0,2020-12-30 23:35:12.913000+00:00,"I want to create a node app where people can buy a specific service that a seller will provide, and pay for it directly through my site. I want to manage all the transactions to be safe. Is it possible to actually send the sellers the money after I would take a cut for allowing them to sell?
+Here is a breakdown:
+is this possible? Maybe if not with PayPal, maybe stripe of another service that can integrate with NODEJS!?"
+0.0,2020-12-30 23:35:11.540000+00:00,"Trying to follow https://developers.google.com/drive/api/v3/quickstart/nodejs
+I got it to work against a google workspace (G-Suite), but then after some calls while playing around with different calls to the google drive API I started receiving an error message:
+The API returned an error:
+Error: Daily Limit for Unauthenticated Use Exceeded. Continued use requires signup.
+This message suggests that I am having some quota issue. However I made only ~50 calls to the API, hours of work against https://console.cloud.google.com/ and https://console.developers.google.com/ produced no new insights. The quota is 10K calls, so it cant me that I exceeded it with just 50 calls...
+None of the Stack Overflow responses I saw related to this seem to apply or be up to date.
+Unfortunately this error is missing from https://developers.google.com/drive/api/v3/handle-errors."
+2.0,2020-12-30 23:34:48.530000+00:00,"I'm trying to decide between &quot;Yes&quot; and &quot;No&quot; in R, if a specific (and variable) value is exceeded.
+For each value tested a new column with the different decisions should be created.
+Here is a manually created example:
+This simple example gives the following output:
+Is there a way to do this with a for-loop? I already tried different stuff like the following code, but it seems to be nonsense, since it doesn't create new columns and so on:
+Thanks everyone!"
+-4.0,2020-12-30 23:34:35.087000+00:00,"from tkinter import *
+from tkinter import Tk
+import tkinter as tk
+from tkinter import ttk
+from tkinter.ttk import Combobox
+root=tk.Tk()
+root.title(&quot;Dental Milling Machines&quot;)
+root.geometry(&quot;1000x900&quot;)
+def print_selection():
+config(text='1')
+def func1_print():
+if cb_var2.print_selection():
+combobox.grid(row=2, column=0, pady=2,sticky=&quot;NW&quot;)"
+0.0,2020-12-30 23:34:21.687000+00:00,"im working with passport.js for the first time and im trying to create a login using the google Strategy  so far my node code looks like this:
+passport.config
+auth.route
+so far here everything good, on the client side in my angular app i open the window the for node api to be redirect to the google auth, this way:
+angular auth.service
+at this poing a new window is open and i get to login to in the google account, after i login the window should be close and i should get the data on my angular app but the window never close and i get this error message in the console . how can i get the data after i login."
+0.0,2020-12-30 23:34:12.013000+00:00,"I just refactored a legacy React 16.6.3 app from having a class-based  component to a function component like so:
+I do not see anything wrong with my code, it should work as expected even if I have yet to refactor the  component from class to function component. I am importing the  like so:
+What gives here, I cannot detect where I made the error. Here is the exact error:"
+1.0,2020-12-30 23:33:51.457000+00:00,"I am new to using SVGs, but everything was fine until I tried my code on chrome and found that it doesn't work properly, all transform attributes are neglected. Firefox gets it done as expected.
+My problem is that the transform attribute is not working when I assign it to embedded SVG (SVG inside an SVG). This problem doesn't occur in Firefox.
+Here is a sample code:
+You will notice that the circle with the thick red border moves a little bit downward when this code runs in Firefox, but it stays in its place when the code runs in chrome.
+Why does this happen and how to solve it?
+Thank you so much! &lt;3"
+0.0,2020-12-30 23:33:44.877000+00:00,"I am attempting to create a traffic light (good / bad) function within my application. I am using Flask and Jinja templating.
+I have my function below and I set a previous functions output(result) as  to use within the below function-
+I can return text &quot;Good&quot; and &quot;Bad&quot; to  however I am having difficulty outputting .jpg or image files for the traffic light system. I have a feeling its related to the Jinja templating as I am not 100% if  can be used in this instance."
+0.0,2020-12-30 23:33:19.070000+00:00,"What is wrong with my JSON? I am running on Rails 6, and I am loading the file contents, after I load the file, I try to parse it. However, I am running into parsing errors.
+This is my code:
+Error:
+JSON::ParserError (784: unexpected token at '{)
+JSON:"
+0.0,2020-12-30 23:33:05.507000+00:00,"In IIS, I have the following listed as default documents
+ exists and is shown if I navigate to the root of the site.
+As soon as I try , I get 404.0 error"
+0.0,2020-12-30 23:33:04.957000+00:00,"I found this article and I'm trying to add functionality to .
+I have created this extension and I want to show an overlay to the map. Currently it's not being shown and I think it is because I have not specified a 
+How can I specify a renderer in this extension?
+View
+I know I can use  and I was using that but the issue is that it does not respond well to touching and moving around. It gets stuck and scrolling is hard. With  it works perfectly."
+0.0,2020-12-30 23:32:55.623000+00:00,"When using the Monte Carlo method to estimate $\pi$, we would fit a unit circle into a square, such as:
+I am very confused with the following description for the above circle, which is extracted from https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/:
+Shouldn't the area of the square be $2^2$ since 0 to -1 is 1 and 0 to 1 is another 1?
+The same goes to the radius of the circle - isn't it $1$ instead of $\frac{1}{2}$?"
+0.0,2020-12-30 23:32:24.720000+00:00,"Currently I'm working with football api to get data from this api and if user watch live i want to get stream each 20 seconds - my approach may be like this
+Controller function:
+}
+And route
+Is this approach enough or needs more logic to handle stream and i want to save the match in archive collection after watching the live match ??!
+Thanks"
+0.0,2020-12-30 23:31:48.087000+00:00,"I want to send an email from my application to verify the email that I used to register but getting this error.
+I tried going into my Gmail settings and allow less secure apps On but it still doesn't work.
+UserController.cs"
+2.0,2020-12-30 23:31:13.990000+00:00,"I am using the latest  feature in C# and have the following code:
+Do I have to worry about thread-safety when incrementing the counter?
+How about if  was replaced with  assuming the channel was created as following:"
+0.0,2020-12-30 23:30:24.903000+00:00,"In block eviction strategy, which partitions gets evicted depends upon?
+a)Those which are most frequently used
+b)Those which are least recently used
+c)Those which have sparse data
+d)None of the above
+Can any one please help me what is block eviction &amp; how is it helpful in real time
+if we use Memory_Only storage level in persist and enough memory is not there, what behaviour is expected?
+a)Whatever cannot be stored in Memory , will be spilled to disk
+b)Spark application will throw error
+c)Internally spark will use DISK_ONLY storage level
+d) Spark will skip the caching in memory with no error"
+0.0,2020-12-30 23:29:53.950000+00:00,"Each row in my dataframe belongs to a group. For each row after a certain date, I want to find the group average for all rows with dates within a specified number of months of a row's date. I can do this using iteration (see code snippet below), but it is slow. Is there a way to vectorize or otherwise speed up this operation?"
+0.0,2020-12-30 23:29:44.887000+00:00,"I'm trying to implement a flatlist which displays images from an array (which I have pulled from my firebase RTDB, but that doesn't matter). The code where I implement the FlatList is here:
+and the array of images () I have formatted like so:
+I am 100% positive that this is how it is formatted, as I've logged it to console just before attempting the FlatList definition. The type property is so that I can add video support later, but that isn't important now.
+I am getting an error indicating that  is undefined. There is temporarily only one image in the array for testing purposes.
+My understanding: The documentation is a bit unclear, but it seems that, while iterating through the list of images, it will perform the function defined under  using each item of the array (filling the  parameter in my case). There is mention of a key property, but it seems as though this is optional, and that if omitted, the library will default to the use of indices (essentially iterating through the array in order from index 0 to the end, and rendering each item). I've tried multiple methods of implementing key properties, and yet I cannot find a solution that results in a defined &quot;data&quot; property.
+Perhaps someone with a better understanding of FlatLists in react native/expo can help me here? I've taken a look at just about every relevant thread on StackOverflow, and the documentation is somewhat unclear about the use of a key property as it pertains to array iteration."
+0.0,2020-12-30 23:29:43.933000+00:00,"I am developing an extension for google chrome and I needed a function to track user activity (online / offline). This is necessary so that 1 user can use the extension during one session (if the user wants to use the extension on 2 computers at the same time, we must block it). Dear stackoverflow community, what's the best way to check user activity?
+So far there are ideas to do this via AJAX requests (requests at a specific interval) or via websockets (socket io).
+The extension itself validates the user and sends a request to the server, which returns the main logical code and embeds it into the page (via eval).
+Thanks for the answers and sorry for my English."
+1.0,2020-12-30 23:29:23.797000+00:00,"I'm new to python and am trying to get familiar with its library capabilities
+Let's say I have a file name cases_test.txt where the contents look like:
+I have the following so far:
+Eventually, I want to extract the matrix from my list &quot;stuff&quot; to then store as float values in a separate list. Any tips on how to approach this would help. Thank you!"
+0.0,2020-12-30 23:28:45.103000+00:00,"I´m trying to log in a user without password using Django, until now I have created this:
+Nopassword.py
+views.py
+The problem is that when I run the webapp, I´m getting this error:
+I have searched about information of this error, but I have found that when all people were experiencing this error, it was because they had created a class inside their views.py file.
+How can I solve that?
+Django version: 2.1"
+3.0,2020-12-30 23:28:28.657000+00:00,"I have already made the script and ran it on my VM from /usr/lib/cgi-bin. I need this script to be running the same way in a docker container. I am fairly new to using docker and currently have the below config in my Dockerfile. I'm not sure if i am putting the script in the right directory or not or if I'm even doing this the right way. After running the container on port 8080 I tried to go to  but this just says that the site can't be reached. I have already tried changing the COPY to  to see if maybe permission weren't given to Apache, but this didn't seem to work. Any help is greatly appreciated.
+Dockerfile
+Perl script: shipping.pl"
+0.0,2020-12-30 23:28:20.263000+00:00,"I'm attempting to deploy our app using heroku review apps but we can't seem to enable the worker dynos automatically. It seems like the  designations are being completely ignored. When I run  it returns the right number of processes, right process names, but with size  and quantity  instead of the sizes/quantities specified in .
+This is roughly what our  and  configurations look like:
+Procfile:
+app.json:"
+1.0,2020-12-30 23:28:14.483000+00:00,"I'm getting all this bracketed information that makes reading the VS 2019 debug output hard.  I just want the text:
+Starting Host...
+Information IdentityServer4 Startup
+Starting IdentityServer4 Startup.... ectc, ect.
+Below is an example of the kind of output I'm getting in the debug console.  How do I clean this up where I just have the meaningful text?
+__________________________________________ Output __________________________________
+←[38;5;0253m[←[0m←[38;5;0246m17:05:05←[0m←[38;5;0253m ←[0m←[37;1mInformation←[0m←[38;5;0253m] ←[0m
+←[38;5;0253mStarting host...←[0m
+←[38;5;0253m[←[0m←[38;5;0246m17:05:07←[0m←[38;5;0253m ←[0m←[37;1mInformation←[0m←[38;5;0253m] ←[0m←[38;5;0246mIdentityServer4.Startup←[0m
+←[38;5;0253mStarting IdentityServer4 version ←[0m←[38;5;0216m4.0.0+1acafade44176bf817412aa4309d5dff6587a741←[0m
+←[38;5;0253m[←[0m←[38;5;0246m17:05:07←[0m←[38;5;0253m ←[0m←[37;1mInformation←[0m←[38;5;0253m] ←[0m←[38;5;0246mIdentityServer4.Startup←[0m
+←[38;5;0253mYou are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and refer
+ns in memory only. If you are using any of those features in production, you want to switch to a different store implementation.←[0m
+←[38;5;0253m[←[0m←[38;5;0246m17:05:07←[0m←[38;5;0253m ←[0m←[37;1mInformation←[0m←[38;5;0253m] ←[0m←[38;5;0246mIdentityServer4.Startup←[0m
+←[38;5;0253mUsing the default authentication scheme ←[0m←[38;5;0216midsrv←[0m←[38;5;0253m for IdentityServer←[0m
+←[38;5;0253m[←[0m←[38;5;0246m17:05:07←[0m←[38;5;0253m ←[0m←[37mDebug←[0m←[38;5;0253m] ←[0m←[38;5;0246mIdentityServer4.Startup←[0m
+←[38;5;0253mUsing ←[0m←[38;5;0216midsrv←[0m←[38;5;0253m as default ASP.NET Core scheme for authentication←[0m"
+2.0,2020-12-30 23:28:02.723000+00:00,"So I have this code which shows up my Mysql data in chart.js.
+Basically everything works but i just want to change the date into days
+This is what I have
+Current Chart
+And this is what I want to achieve
+My goal
+Whatever i try i get never the result i want to get. Here is all of my code:
+chart.php
+chart.html
+chart.js
+Any idea to fix my problem?? I would appreciate any answer! Thanks!!"
+0.0,2020-12-30 23:27:24.950000+00:00,"I'm trying to run Docker container from Python using Docker SDK
+and its always fail with the following error:
+Form searching on the web I found that I need to change the discovery type to single-node, how can I add it?"
+0.0,2020-12-30 23:26:54.813000+00:00,"I have tried putting my custom emoji as a footer like this:
+It does not work and comes out exactly as in the string in the footer. Is it possible to set a custom emoji in a footer in discord.py?"
+1.0,2020-12-30 23:25:46.883000+00:00,"I'm trying to deploy my Jekyll blog on Hostinger.
+It's running fine locally, especially when I used
+ to run it locally. I then build it using  and use FileZilla to push the content of   to Hostinger, but it doesn't work at all.
+My blog is www.azhir.co.uk"
+0.0,2020-12-30 23:25:32.020000+00:00,"I am working on a project where I need recyling a list of litho components using a custom recyclerview adapter. The only issue is that I can't use RecyclerComponent which comes as part of the litho library.
+Is there a way to do this? Specifically, what needs to go inside onCreateViewHolder() and onBindViewHolder()?"
+1.0,2020-12-30 23:25:26.613000+00:00,I have a data frame that has paired samples from different time points (&quot;time 0&quot; and &quot;time 3&quot;) for the same subjects. How can I generate a scatter plot with the x-coordinate corresponding to &quot;time 0&quot; and the y-coordinate corresponding to &quot;time 3&quot; for each subject.
+0.0,2020-12-30 23:24:59.973000+00:00,"I'm getting an out of range error for this index. I understand what the error is saying, that I'm calling on a value that isn't in the index. but I don't understand why it's saying that. I've added the code as well as the section in question at the end.
+The current brain index is the one giving me the error
+This is the Stack Trace"
+1.0,2020-12-30 23:24:45.253000+00:00,"I'm trying to create a random movie generator. I've already created a generator that displays a new movie after a button is clicked. But I want to create a table that will display more information about each movie that is generated, that is, the director, genre, year etc. I want this information to be generated into a table each time and the correct data to be under the correct heading in the table.
+Example of how the data would look
+HTML so far:
+CSS so far:
+JavaScript so far:"
+-1.0,2020-12-30 23:22:14.143000+00:00,"Cannot read property 'basePath' of undefined
+Code looks like this:
+ is being imported from index.js that contains this:
+If I change the code to
+webpack gives me this error:
+&quot;export 'routerPathsXXX' was not found in '../../index'
+So, webpack sees routerPaths is in the file, but when I try to use  it fails to import it, it says it is undefined.
+I have plenty of other places routerPaths is imported and it works just fine.  What is wrong with this version?
+TO MAKE IT ABUNDANTLY CLEAR, I'M NOT TRYING TO USE , I SIMPLY ADDED THAT AS PROOF THAT WEBPACK KNOWS  IS IN THAT FILE BUT IS NOT IMPORTING IT!
+Why, if routerPaths is in the imported file is it coming in as "
+0.0,2020-12-30 23:22:13.947000+00:00,"JSON I want to parse in rust using Serde:
+I was trying to use
+This does not work because there is no mapping for id. I cant see anyway to deal with a custom array at the root level if it was just an array of identical objects I could simply do Vec but this is not a uniform root list.
+One of my ideas is to use a custom deserializer but is there a way to only write part of a deserizlizer so that I can use derived for nested objects?
+What is the best way to handle non uniform root arrays?"
+0.0,2020-12-30 23:21:50.840000+00:00,"I am successfully reproducing the code in here, but I do have a question: I want the vehicles to return to the depot after each delivery and not being able to visit other customers. To do so, I am setting all the distances between clients to 0 but it seems I'm getting the same output. This is the extra piece I've added.
+Any ideas on how to force the vehicles to return to depot after delivery instead of being able to visit other customers?"
+0.0,2020-12-30 23:21:50.190000+00:00,My goal at the moment is to create a Discord Bot that can play .mp3 files for my private Discord Server. This is my code. The file test.mp3 is in the same folder as the .py file. The error message is: &quot;NameError: name 'FFmpegPCMAudio' is not defined&quot;. I added the ffmpeg  executable in my path environment variable. Can anyone help?
+0.0,2020-12-31 00:05:43.153000+00:00,"Your  cookie is being sent back and forward as cookies not as their own headers! Since you already have the cookie-parser middleware, you should be able to grab the access token like this:"
+0.0,2020-12-31 03:28:51.437000+00:00,"Using: Microsoft.Exchange.WebServices.Data
+EWS is a Mailbox Access API not an administration API most of the questions your asking will only be solved fully by using the Exchange Management Shell cmdlets
+No use Get-Mailbox will tell you this
+No you need Get-Mailbox for that
+You can check the folder level permission and Delegate Access in EWS eg https://docs.microsoft.com/en-us/exchange/client-developer/exchange-web-services/delegate-access-and-ews-in-exchange however Mailbox level permissions will need Get-MailboxPermission"
+2.0,2020-12-31 01:07:32.500000+00:00,"Your code is correct, however, the  attribute only works when you are viewing the code from a server, due to the same-origin policy of most browsers.
+Are you previewing the file by double-clicking the file or directly opening it up in a browser? If the URL while previewing starts with something similar to  or , you are opening the file rather than serving the file. If so, you should run your code from within a localhost setup to test. That may involve running a server locally, or using an editor extension to spin up a project-based server. Once your URL starts with http:// or https:// the download will work as intended.
+Alternatively, you could upload the project somewhere on the web."
+1.0,2020-12-31 00:50:22.587000+00:00,"It depends on where the file is located and how files are being served.
+Either way, whether it is a plain static website with local files or being served by a server, you might need to check the href again to make sure it is correct.
+Could be something small like  instead of .
+Edit after question update:
+Yes answer by Riley is right: it will only download if you are using a server. You could use a server like Node.js to run and test what you would like to do.
+Otherwise you could look into Electron if you would like to work with the filesystem more directly, all depending on what it is you would like to do with your program."
+1.0,2020-12-31 03:20:53.437000+00:00,A shot in the dark...likely a good one.  Check the database owner to make sure it is set.  It might have been a login that is not valid on this instance.  Not having a owner can cause access issues in SSMS.
+0.0,2020-12-31 17:46:29.180000+00:00,"The suggestion from Randy led to a resolution. In looking at the DB files properties there was no owner.
+I tried to set the owner to my Windows logon, but that led to an error because there was an existing reference to it.  Then, I set the owner to sa and that worked.
+The diagrams are now accessible.
+The only remaining question concerns a possible conflict with the owner of some objects assigned to my Windows login and the files owned by sa."
+2.0,2020-12-31 00:19:43.330000+00:00,"Assuming your are referring to ISO-8601 week number of year, you may use the W parameter for date, which will give ISO-8601 week number of year"
+2.0,2020-12-31 00:17:50.247000+00:00,"I haven't used tweepy to search the posts by user, but I have used it to extract information on multiple hashtags before.
+When I tried with multiple hashtags the code looked like this:
+So I would try for you query:
+I'm not sure if that will work, but fingers crossed! The good thing about working with Twitter is that you can copy paste your search strings directly into the search box on a normal twitter webpage and see if your syntax is correct."
+0.0,2020-12-31 00:25:53.033000+00:00,"I solved the problem using XMLHttpRequest.
+Its Worked"
+0.0,2021-01-04 15:41:15.403000+00:00,"Micrometer timers have been supported since 2.3 (for successes and failures).
+https://docs.spring.io/spring-kafka/docs/current/reference/html/#micrometer
+You can also add an AOP around advice to your listener beans."
+4.0,2020-12-31 00:07:39.290000+00:00,"Use an object to group the arrays, then you can generate a string key that lets you access the array you want using bracket notation like so:"
+0.0,2020-12-31 13:54:27.027000+00:00,"Similar to the already provided answer, but without changing you single  file:
+I would additionally advise, (if  is not located in the directory listed in the first line of ), that you provide the full path to  to prevent reliance on the easily modified, and often broken,  variable."
+0.0,2020-12-31 08:16:14.593000+00:00,"like Compo said you should try cd /d if the file is in different directory  but even so here is a batch file(it needs two files,one for the port and other for the path and make sure to change the php path to your installation directory) i created that worked on my pc:"
+0.0,2020-12-31 00:55:49.870000+00:00,This code is the fix:
+0.0,2020-12-31 00:04:36.603000+00:00,"Your diagram does not describe a list, but an array of lists. And that's fine in itself. But - why are you mixing up the code for an actual list with the code of working with the page table as a whole? It's not clear where exactly you decide you need to delete a list node (i.e. a page entry). You're also implicitly assuming the list is not empty. You're memsetting needlessly. Finally, and most importantly - when you  - you don't set  to point to . So, it continues to point to the element you've just freed."
+1.0,2020-12-31 01:36:39.533000+00:00,"Since you don't have  as one of your packages, you won't be able to use the  function. In order to use this package, you'll have to follow three steps.
+Install . This can be done by running  in your project directory.
+Import  into your code. This can be done by having  at the top of your code file, similar to your discord.js import.
+Replace  with .
+After that, you should be able to use  in order to download web content and post reddit content on discord."
+1.0,2020-12-31 01:04:14.217000+00:00,"I don't think that XLOOKUP can get you anywhere near what you want but the formula below will get you one step closer.
+In fact, it's the explanation of that formula which will be of help. Here we go.
+ is a named range, perhaps equal to your 'Cases Test for Categories'!$C$18:$C$55. The reason for using a name is obvious. It's shorter. In my test List = A2:B6, in case you want to reconstruct it. Column 1 has names, column 2 numbers.
+The term  specifies the second column of List. You can replace the '2' with a formula to specify different columns of the named range.
+In fact,  does specify the first column and  specifies the 4th cell in that column, and that is exactly what you see in my formula. All of MATCH(LARGE(INDEX(List, ,2),1),INDEX(List,,2),0) just serves to find the row number in List, in this example the number 4.
+Of course,  returns the largest number in column2 of List. The '1' can be replaced by a formula, for example  which would return 1 if placed in row 2 and count up from there as it's copied down. Try  in any cell in row 2 and copy the formula down.
+MATCH([LARGEST],INDEX(List,,2),0) returns the row number where the largest was found, and that is the number we need to return the name from the first column of List.
+This will work perfectly for one column and can easily be modified to work for different columns. Your question doesn't specify how you would like to arrange the 5 results from each category but the formula can be modified a little to accommodate whatever you want. What it can not do is to deal with ties. MATCH(LARGE can only find the first of several identical results.
+To break ties in this sort of operation is complicated and must be done ether by helper columns in the data table or using VBA. It's definitely the topic of another question. For now I hope that it's a problem you will not have to anticipate."
+0.0,2020-12-31 03:17:22.023000+00:00,"Since you are using ImageField, have you also installed the Pillow library using PIP install Pillow?"
+1.0,2020-12-31 18:18:26.697000+00:00,"After some using some common sense I realised that I actually didn’t have a photo uploaded for the profile picture attribute which would explain there being no url for it... Thanks for the help anyway and sorry for wasting time, I’ve also used an if block now to stop the error from being ran if there is no picture associated with the profile."
+0.0,2021-02-09 16:05:37.600000+00:00,"A smart contract does not interact with the API but the Oracle itself. Normally, it should have been two different contracts like one of the contracts should be separated from the external world. Oracle contract is the API for blockchain, which is basically residing in the blockchain. You can reach out to the contract by means of contract wrapper libraries (web3j, ethereumj)
+The contract wrapper will fetch the data from API as JSON. And then the application will convert the data into primitive data that has been defined in the Solidity language. Once it is done, data will send via emit-event functions continuously to the blockchain as long as the application fetched data from the API. In the end, you will have a deterministic database source so that you can copy this source and transfer another place as it is.
+For instance, you may change the API endpoint called  with  and data structures (link: https://openweathermap.org/current)."
+0.0,2020-12-31 03:37:27.047000+00:00,"Looking at the Phaser3 documentation on loading a tile map json, it could be that you need lights in your system for it to be visible because everything else seems to follow the same conventions as their example documentation.
+The only other area you can investigate is double checking where your assets are, aka the .json and .png files, and possibly moving them closer to the directory with the .js file for phaser to remove that as the potential cause of the problem."
+1.0,2020-12-31 02:23:20.760000+00:00,"You can try the following ways:
+Add the  header to your response.
+For example:
+Bypass the CORS secure mechanism via setting  as .
+For example:
+To view more details, you can reference to the articles below:
+CORS: Cross-Origin Resource Sharing
+No 'Access-Control-Allow-Origin' header is present on the requested resource—when trying to get data from a REST API"
+1.0,2020-12-30 23:54:44.323000+00:00,"Use the  argument, which is (usually) set to the object that raised the event."
+0.0,2021-01-22 02:14:06.713000+00:00,"The issue is apparently you cannot push packages to repositories that are private.  As soon as I turned the visibility on my repository public, I could push a package.
+This seems like a bug.  Certainly nowhere in the documentation does this restriction appear.
+You should be able to push packages to private repositories.
+UPDATE
+It turns out the real problem was the scope of my personal access token.  The scope was set to read and write packages but repo scope also required to push a package to a private repo."
+0.0,2021-01-21 21:04:06.197000+00:00,"this may be an issue with github.com
+last week I was able to publish to ttps://nuget.pkg.github.com but today it gives the error described above
+I have experienced a similar issue last month with pushing to the GitHub docker registry, it was intermittent failing about 8/10 times
+Github actions log:
+As you can see:
+the registry exists and a list of versions can be retrieved
+but the push fails"
+1.0,2021-01-06 11:06:34.873000+00:00,"I did some more rebases following the proper flow ( main branch('A') -&gt; new branch('B') -&gt; rebase latest changes on new branch which are not in new branch) and it worked fine.
+So, looks like the issue with changes being overridden was the following:
+branch A (commit A-B) was forked to branch B (commit B-C-D)
+then branch B was merged into branch A.
+Later, I kept working on branch B (including making changes or deleting on files merged in 2) )
+when rebased A into B () the OLD version of the files changed both in branch A and B was used on top of the current branch
+It seems with a  , excluding common changes (2) ) the problem should not happen"
+2.0,2020-12-30 23:55:48.823000+00:00,Use the  selector to get the 2nd child of each series.
+1.0,2020-12-30 23:56:04.693000+00:00,You can use the  css selector to just grab the 2nd  child under each . See below for how this would work.
+0.0,2021-01-01 06:35:43.240000+00:00,"I was getting The system cannot find the path specified because the location of the python_work folder was not directly located on my desktop, the location was C:\User\Me\OneDrive\Desktop. I either had to move the file directly to my desktop or use the command cd OneDrive\Desktop\python_work. So if you get The system cannot find the path specified go to properties on your folder and check the exact location and try inputting that into command prompt."
+0.0,2020-12-31 09:09:23.773000+00:00,"This is not related to Node.js v15, but it seems like it is an issue on your end (with your connection, or your computer). this question may help you to resolve your issue."
+0.0,2020-12-31 07:58:49.923000+00:00,you need to maintain an integer that will hold the count of selected card(or checkbox). Then implement an interface and on click checkbox just pass as a param count of selected card and the list size.
+2.0,2020-12-30 23:56:46.110000+00:00,"You can have a lambda function invoked in onClick listener to update the count in the view.
+Adapter constructor can be changed something like this:
+and modify onClick listener to something like this:
+In your fragment/activity when you initialize adapter you can handle this lambda function to update the text view."
+0.0,2020-12-31 00:37:10.497000+00:00,"Here is your SP with all the issues I spotted corrected with comments, and with best practices added. As noted by the other answer you can probably simplify things. I have just aimed to correct existing issues."
+1.0,2020-12-31 00:33:23.853000+00:00,"Can you try it simple way like this?
+In this code I've done following:
+Improved readability by Caps, intend, spaces, etc.
+Eliminated variables - you do not need them in that code You do not
+need to calculate a &quot;TicketNo&quot; in the beginning if it won't be used.
+So, it will be calculated if needed within IF statement.
+You do not need to use BEGIN-END on every transaction, single
+request IS a transaction
+Not sure what your error was, but your procedure won't do anything just because when you do &quot;COUNT&quot; it returns a number. That means your &quot;@Tktt&quot; variable would never be NULL.
+I guess your intention is to run the Insert statement when it is no records found and compared &quot;COUNT&quot; query to &quot;0&quot; value."
+1.0,2020-12-31 00:12:49.840000+00:00,"means the same as
+So  is just shorthand for an  with an  inside.
+To understand why your code throws an , the easiest way is stepping through the code in a debugger (consult the documentation of your development environment for how to do this).
+Alternatively, you can pretend you are a computer, and execute the program with pen and paper to figure out where your program goes off the rails. However, using a debugger is easier once you know how to use one."
+1.0,2020-12-31 00:17:05.413000+00:00,"I don't think there's any reason to use if/else instead of if/if, they both have their place. In an if/if statement, if the second  statement relies on the previous being false, then it should be converted to an if/else statement. If the  statement in an if/else statement has nothing to do with the  statement before it, then it should be converted into two separate if statements.
+As an example of when to use an if/else statement (to do the same thing yours does):"
+0.0,2021-01-01 22:05:29.947000+00:00,"In  you're adding a second track to the existing peer connection with , which triggers renegotiation (causes your  handler to run again). This is correct so far, and triggers a second offer/answer exchange, which is needed for media track additions.
+You're just not set up to handle renegotiation correctly, because you've mixed initialization code in with your (re)negotiation code, causing a new  object to be created when you already have one.
+Renegotiation is going to happen whenever you add tracks or stop their underlying transceivers, so you don't want initialization code in your negotiation code. Instead do this:
+Move the creation of your  out of . Create it on page load instead.
+Move the addition of tracks out of  as well if you can, or at least skip re-adding them if they've already been added.
+Your  is going to fire again with the screen-sharing track, so you need to add code to handle that. You can differentiate it from the camera track by  and  being different, or simply from this being the third track."
+0.0,2021-01-03 12:18:31.490000+00:00,"I solved this solution. I was adding a new dimension to vocab_size by doing it vocab_size + 1 as suggested by others. However, since sizes of layer dimensions and embedding matrix don't match I got this issue in my hands. I added a zero vector at the end of my embedding matrix which solved the issue."
+0.0,2020-12-31 00:53:18.047000+00:00,"That material doesn't have a map set. If you open the material file https://threejs.org/examples/models/obj/walt/WaltHead.mtl in a text editor you'll see it has several attributes, but you won't find a path to a texture, so that's why performing  on the map property outputs .
+Additionally, that WaltHead object file has vertex position and normals but it does not have any UV data, so even if you assigned a map texture, it won't display without UVs.
+However, to answer your question, you could manually download any texture with . The first argument is the path to the texture file, and the second argument is the callback function that's triggered after the texture has finished loading."
+0.0,2020-12-31 03:03:32.787000+00:00,"I'm think UI is not getting updated, because react re-renders only if props or state gets changed. Since non of those changed, you are not going to see any updated on UI.
+try something like this"
+1.0,2020-12-30 23:55:08.750000+00:00,An option is
+2.0,2020-12-31 00:24:14.157000+00:00,The indicated output is computed in  so we can copy the print method and then add a trace to it which captures and outputs the required information into the one row data frame  :
+2.0,2020-12-31 00:12:32.373000+00:00,"Another option is to look at the function that produces the output. In this case it is  and the relevant lines are
+So you can grab the values with"
+0.0,2021-01-03 18:22:55.613000+00:00,"Assign your sheets and books to object variables, and the code will be a lot more readable:
+There are various other things I could tweak in your code, but I'd rather that you can clearly see what I've changed."
+0.0,2021-01-14 22:49:08.120000+00:00,"Thanks for the answers on this.  I did have have the mapping in place in Startup.cs, but that didn't affect the issue.  It turns out that it WAS an incompatibility between SignalR and the DevExpress components.  Those components typically require registering 3rd party controls in the Web.config file.  However, that method breaks SignalR and some other third party controls.  Removing the automatic registration from web.config resolved the issue and allowed the progressHub to work normally, along with the rest of the SignalR functionality."
+0.0,2021-01-05 21:35:35.120000+00:00,
+0.0,2020-12-30 23:51:28.257000+00:00,"You can use Reserved Concurrency to effectively set a concurrency limit for your function - see: https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html
+The relevant excerpt is:
+To ensure that a function can always reach a certain level of
+concurrency, configure the function with reserved concurrency. When a
+function has reserved concurrency, no other function can use that
+concurrency. Reserved concurrency also limits the maximum concurrency
+for the function, and applies to the function as a whole, including
+versions and aliases."
+0.0,2020-12-30 23:45:34.267000+00:00,"here you are providing an empty config
+instead, provide the object that will not fail your code"
+0.0,2020-12-31 02:36:11.587000+00:00,"What I did for this with my bot is the following:
+This means if the message is &quot;This is a title / this is a description&quot;, then the title will be &quot;This is a title&quot;. and the description will be &quot;this is a description&quot;. Keep in mind you should filter the input as if there are &gt; 256 characters in the title you will get an error."
+1.0,2020-12-30 23:41:54.117000+00:00,"The difference is significant.  With , the average is calculated for each  and accumulated by year.
+Without , the average is for all states up to a given state.  So Wyoming (if these are US states) would have the average for basically all states.
+You can easily visualize this:
+With the , the average starts over again for each state."
+2.0,2020-12-31 00:17:04.200000+00:00,You can do something with a grid and assign a repeat value of 1fr for the number of columns the user inputs for .  and just set a min-width and min-height in CSS for the input to something small like 1px and it will be responsive.  Take a look at this.  You can change the number of columns and rows you have in the js code and run it and see how it auto populates and it all fits. I also did some calc math for the height of your cells based on the number of rows as well.  This should fit a fairly large and reasonable amount of inputs onto any sized screen before a scrollbar appears.  here's the fiddle to play around with: https://jsfiddle.net/uypm84e7/
+0.0,2020-12-31 02:32:38.260000+00:00,"I'm not sure exactly what you want. Do you want to have a number of columns in each Item? Each item in the ListView is equivalent to a row in the Grid, and then there are several columns in a row, right?
+If yes,you could try below:
+viewmodel:
+model:
+the effect like:"
+0.0,2020-12-30 23:58:38.600000+00:00," tells a function to skip creating a local function slot for the variable and instead look in the global namespace. It doesn't actually create the variable. Since you don't call ,  is never assigned."
+1.0,2020-12-31 00:08:49.480000+00:00,"jQuery .insertAfter() is inserting an element after the target provided as argument.
+So here, , is inserting a  element after the closing tag of the closest  element.
+Even if you fix the  obvious typo...
+You would be inserting a  element inside a  and therefore is invalid HTML.
+I guess you should look for the .append() method instead...
+That would be something like this, to append a  to the last  of a :
+EDIT base on comment below.
+This works-ish. It is placing the new div(yes typo) next to instead of under the row.
+If you want to have an additional row under, Then create a  inside a !
+Try this:"
+1.0,2021-02-18 04:20:55.397000+00:00,"One aspect that you might want to look at is the cluster vs client mode of submitting the step.
+If you are using cluster mode, you can't kill that step through AWS SDK since it has no control of the actual yarn application, for this to work you need to run your steps in the client mode.
+Please also check other implications of running in cluster vs client mode, if you are doing this for development then it is fine to use client mode."
+0.0,2021-01-03 06:41:29.563000+00:00,"this page is using custom template in your theme, you can find the name of this template in page atrributes-&gt; Template.
+if you want to make some changes in this page(not recomanded if you are not good whith developing wordpress theme) you have to go to your theme directory and find this page template and make change in it."
+2.0,2020-12-30 23:58:22.387000+00:00,Maybe do it in one go. See code below
+2.0,2020-12-31 00:03:38.570000+00:00,"Change the 
+Or simply do"
+0.0,2020-12-30 23:40:28.057000+00:00,You misspelled &quot;height&quot; in this line:
+3.0,2020-12-31 00:24:32.917000+00:00,"How does the C function isalpha work when the locale is set to something other than C (in other words, something like en_US.UTF-8)?
+The first 128 characters of Unicode represent the same as ASCII, so nothing changes (when C locale uses ASCII).
+What really changes, is that instead of using a hardcoded list, glibc opens and loads the locale file. I believe that would be from  which should contain the compiled locale from  files. In my  file I see  , I can go to  which has , then to  which has , then finally to  file which has:
+I can confirm that isalpha will return true/1 for values outside of the traditional ASCII text ranges
+From C99 7.4p1:
+In all cases the argument is an int, the value of which shall be representable as an unsigned char or shall equal the value of the macro EOF. If the argument has any other value, the behavior is undefined.
+The loop :  is just undefined behavior for any  greater then . Some programmers even do . (I remember getting a warning in some cases when  functions arguments was not an unsigned char).
+Is this just a hard coded list of utf code points in a range somewhere?  Or something less direct?
+Yes, as mentioned above in  files.
+And the hardcoded list for C locale is stored in locale/C-ctype.c and is meant to match POSIX."
+1.0,2020-12-31 00:05:04.750000+00:00,"To get your desired result (and probably to have your code work correctly anyway), you need to make  a multi-dimensional array:
+ will now return 1.
+Then you can push new values into the array e.g.:
+Demo on 3v4l.org"
+0.0,2020-12-30 23:48:25.673000+00:00,"You can calculate the rolling sum for 4 preceding values then use the shift() method to apply those values to one row prior - for example:
+A more robust discussion of this approach can be found here: Calculating Rolling forward averages with pandas"
+0.0,2021-01-03 21:44:40.990000+00:00,"You can try to crop the video using with VLC (right-click anywhere -&gt; video -&gt; crop). You should crop to 2.35:1 or 2.39:1 (which I usually find better) for 21:9 screen (21/9=2.33). Be careful to have the full image (compare it with the default setting).
+You can also do the same with the aspect radio (right-click anywhere -&gt; video -&gt; aspect ratio) but you might want to keep the default aspect.
+In both cases if you want to restore the original, chose the default option for crop and/or aspect ratio."
+1.0,2020-12-30 23:41:02.407000+00:00,"You can work with the  signal [Django-doc]:
+That being said, signals are typically anti-patterns. A lot of ORM calls can circumvent signals, and it makes saving objects less predictable. Therefore it might be better to simply encapsulate the logic in a view, and call that function in views where you edit the comments."
+0.0,2020-12-30 23:51:40.350000+00:00,"Yes you can use Stripe connect with NodeJS: https://stripe.com/en-se/connect/marketplaces.
+Here is a tutorial on their web page with the use case you are describing: https://stripe.com/docs/connect/collect-then-transfer-guide
+PayPal also have a platform that you can use: https://developer.paypal.com/docs/platforms/
+Although I couldn’t find such a clear example as with Stripe."
+0.0,2020-12-30 23:41:44.270000+00:00,"To accept payments, use PayPal Checkout. Create two routes on your server that return JSON, one for 'Create an order' and one for 'Capture order', documented here.
+Pair your two routes with the following front-end for the buyer to give their approval: https://developer.paypal.com/demo/checkout/#/pattern/server
+To later send a payment to another PayPal account, the Payouts API might be usable. Details for requesting access are here: https://developer.paypal.com/docs/payouts/integrate/prerequisites/#get-access-to-paypal-payouts"
+0.0,2020-12-31 09:39:03.250000+00:00,"After a day's work I realised that this cryptic response is sent when locally in my code the auth key provided to google.drive() API is undefined.
+Seems like this cryptic response is used as a &quot;generic error message&quot; by the google API.
+Below is one example resulting in this error but there are infinity many others - any code that will fail to set the auth during the call to google.drive() API will produce the same outcome.
+This example code was provided by google and it does work properly.
+The reason it works is that it translates (expands) to:
+(This expansion is done implicitly by Nodejs)
+Using the following code will produce the error:
+Using the following code will not produce the error:
+Using the following code will also not produce the error (as it explicitly expands to be the same as the previous one):
+Using the following code will produce the error (which was my bad doing):
+Using the following code will fix that error:"
+2.0,2020-12-31 01:22:33.873000+00:00,"Perhaps you can try something like below
+which gives"
+2.0,2020-12-30 23:37:11.077000+00:00,"We can do the assignment  () of the output from  to a string created with  for the column names.  Also, instead of looping over , we do the loop over the sequence of 'n'"
+1.0,2020-12-31 02:53:03.387000+00:00,You can use  :
+1.0,2021-01-01 23:17:38.147000+00:00,"Here is my updated version that has the selection.
+https://github.com/BallisticZer0/Combox-Selection"
+0.0,2020-12-31 03:45:13.403000+00:00,"As per @Daniels's comment, this was due to React being version 16.6.3, which was before hooks were supported. Upgrading  and  to v16.11.0 fixed the problem"
+2.0,2020-12-31 00:59:32.927000+00:00," attributes on  elements are a feature added with the SVG 2 spec. Its implementation is still a bit uneven.
+Just set the attribute  to achieve the same effect, or, if for some reason you are not able to do so, wrap the  element in a  and apply the transform there."
+0.0,2020-12-30 23:58:32.190000+00:00," is Jinja syntax.  This should only be used in templates.
+Within the python app, just call the  function itself:"
+1.0,2020-12-30 23:54:50.853000+00:00,"Check it out here: http://json.parser.online.fr/
+You need to put name property as string wrapped in 
+The output is not very useful though, I agree.
+Here's a correct JSON"
+-2.0,2020-12-31 06:01:03.730000+00:00,"You can resolve this error by making sure that the two required components of IIS are installed on your system. Namely:
+ISAPI Extensions
+IIS Metabase and IIS 6 configuration compatibility.
+First, start the program called Windows Features. You will find Windows Features under Control Panel –&gt; Programs and Features.
+When the Windows Features starts, navigate through the features hierarchy under Internet Information Services and select the two features: ISAPI extensions and IIS Metabase and IIS 6 configuration compatibility.
+ColdFusion is now ready to run from IIS. However, IF you’ve ALREADY installed ColdFusion before following the above steps, continue to follow the steps mentioned under ‘Configuring IIS for ColdFusion’:
+Configuring IIS for ColdFusion
+If you followed the above steps after having installed ColdFusion 8 or 9, you will have to run Web Server Configuration Tool that comes with ColdFusion to configure IIS7 so that all .CFM files are mapped to be handled by ColdFusion.
+The following text is directly from ColdFusion installation guide:
+1.Start the Web Server Configuration Tool by selecting Start &gt; Programs &gt; Adobe &gt; ColdFusion 9 &gt; Web Server Configuration Tool.
+Click Add.
+In the Server pop-up menu, select the host name and the server or cluster name to configure. In the ColdFusion server configuration, the server name is always coldfusion. Clustering support is not available on the server configuration.
+In the Web Server Properties area, select IIS and specify the website. For IIS, you typically specify All.
+Select the Configure web server for ColdFusion applications option, and click OK.
+Copy the CFIDE and cfdocs directories from cf_root/wwwroot to your web server root directory. In addition, copy your application’s CFM pages from cf_root/wwwroot to your web server root directory. In the multiserver configuration, these files are under the jrun_root/servers/cfusion/cfusion-ear/cfusion-war directory.
+ColdFusion is now ready to serve pages on the Web;
+The above content comes from a blog."
+-2.0,2020-12-31 08:18:13.540000+00:00,"This answer mentions an issue where IIS 8 only responded to the last default document in the list of default documents. Are you using IIS 10 with ACF 2016?
+If you are getting this response now:
+https://localhost:1234/index.cfm 404.0
+https://localhost:1234/default.cfm 200
+What does this return? Only ?
+https://localhost:1234/
+Remove the entry for  and restart IIS. Does that respond to ? If you're not going to use that file as a default anyway, no need to define it as such.
+Can you post your  file for that site, just the relevant portion, to confirm the values? Could it be showing the global default in the UI, but not actually inheriting that for the specific site?"
+-2.0,2020-12-31 21:07:19.500000+00:00,"This is the solution that fixed the issue.
+If one goes to IIS, there is a virtual directory 
+The physical path associated with the virtual directory was 
+By adding the  drive, all works OK."
+1.0,2020-12-30 23:52:09.473000+00:00,"Objectively speaking you are right. The radius of the circle is of length 1 and each side of the square is of length 2. I think the image is not scaled properly. The moral of the story is having this relationship between the areas:
+Area_of_circle/Area_of_square = pi/4
+Also I'd recommend taking a look at the on policy monte carlo control, found in Rich Sutton's Reinforcement Learning book:
+this nicely generalized the algorithm for estimating the optimal policy using an epsilon soft policy to select the greedy action."
+2.0,2020-12-30 23:44:16.857000+00:00,"It seems to be a mistake of the author. I am guessing that they hastily interpreted the image as a plot with the bottom left corner as (0,0) instead of (-1, -1). Another possibility is that the image changed without changing the description.
+But as Robert pointed out, you are right, but keep in mind that their calculation for the area of the square is also wrong."
+-1.0,2020-12-30 23:50:21.660000+00:00,"I recommend using  (https://github.com/jstedfast/MailKit) - the code is better maintained, easier to use and the author actually responds to issues on the github. The built in .net  is not maintained anymore.
+Not saying this will fix your issue, but it's worth a try - there is an smtp client that you can connect with, then call authenticate and finally start sending messages with, making it easier to identify points of failure.
+Example with :"
+2.0,2020-12-30 23:35:42.447000+00:00,"Yes it is safe, and no you don't need to worry about it.
+That is entirely thread-safe as long as the code consuming the iterator doesn't break any usage expectations by accessing the iterator concurrently (which would need to be written explicitly - meaning &quot;not &quot; - and would be a fault of the consuming code, not yours).
+To be explicit (see comments) - it is relevant here that the variable in discussion is scoped within the iterator block. If it were a field on the instance, then it could have thread safety concerns."
+1.0,2020-12-30 23:50:58.063000+00:00,"The argument that gets passed to the  handler consists of an object, and the actual item (your image object, in this case) is found on the  property of that object. Just change the destructured parameter to the following, and it should work:
+Do note that it's generally recommended for performance purposes to move this prop into a function on the component rather than passing an inline function."
+0.0,2020-12-30 23:45:23.387000+00:00,"I'm not sure what the output should exactly look like but this one will store all the data at least and you can modify it to whatever it should look like
+I parses the file line by line, doing so you have to remember in which case block you are to store it in the correct dictionary value.
+Also for the parsing
+you might want to exclude any kind of empty spaces otherwise you have to create special cases for those later on"
+0.0,2020-12-30 23:38:52.857000+00:00,"This line is not correct:
+Try this instead:
+After that, you can change items to float.
+(If you provide some sample of your expected output, I could help with that)"
+1.0,2020-12-31 13:28:26.027000+00:00,"If you want to log in a user without password, you must use a class based views. It´s not going to work if you want to do it in a function (def home), the correct way to do it´s to create a class (class home).
+Remind that once you have created your  you must set a template_name."
+1.0,2020-12-31 08:37:59.350000+00:00,"Note: I just answered your other question on enabling login without password, and though I suggested something else - what you have here should also work.
+The error is pretty straightforward
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+Your class definition requires a  variable to be set or an implementation of the method to invoke the path of the template file. This is because the class inherently uses a  implementation and it requires a template file. You should have something like this in your class"
+1.0,2020-12-30 23:40:13.080000+00:00,You can convert the date into a day of the week inside your PHP code using  objects:
+0.0,2020-12-30 23:38:54.740000+00:00,"Seems like the issue is within chart.js under chartdata ().
+You could write a separate function to convert the date to its corresponding named day according to this post.
+Day Name from Date in JS
+Then just change it to "
+0.0,2021-01-06 16:11:13.733000+00:00,"I solved that by adding the environment flag to run function call as
+Environment = { &quot; discovery.type&quot;=&quot;single-node&quot;}"
+0.0,2020-12-31 00:54:57.403000+00:00,I don't think discord.py allows for putting emojis in the footer of an embed but if you would like to put one in a field see the below code.
+0.0,2021-01-04 15:00:40.360000+00:00,"You will want to use  with the Sections API if possible: https://fblitho.com/docs/recycler-collection-component.
+If you can't do that for some reason, you also have the option to use RecyclerBinder directly by adding components via /.  will give you the  that you can give to your ."
+3.0,2020-12-30 23:40:41.910000+00:00,To achieve your desired result you could reshape your data using e.g. :
+0.0,2020-12-31 03:11:20.843000+00:00,"The problem is that members of the second-generation population are not being formed correctly. This is happening because of a bug in the  function. Currently, the mutated &quot;brains&quot; only have one list element, because the for-loop is exiting early. This is caused by the placement of the  line. Changing the indention on the last line should fix it.
+Additionally, two things that might help prevent future errors like this:
+Break your function into smaller pieces when it starts to get too nested
+Use list comprehensions and use built-in library functions so it doesn't get too nested
+In this case, I might re-write the logic into a , and a  function like this:"
+0.0,2020-12-31 02:33:37.117000+00:00,"It looks like you are 90% of the way there already.
+All you need to do is replace your paragraph with a table that's organized how you want, then you need to update multiple table cells every time you click the button instead of just updating the one paragraph.
+How you update the table cells depends on how the data is stored.
+For example, if you had all the titles in one array and all the directors in another array and the years in a third array, you'd have to update one cell with  and another cell with  and another with  — and you'd have to make sure the movies were in order in each array and nothing was missing anywhere.
+However, if at all possible, the easier solution is to store each movie's data as an object. This is a perfect use case.
+Your array of strings would simply become an array of objects. You would get a new random number for the index of the array, then you'd reference the properties of the object at that index for the particulars of that movie.
+Simple example here that you can build on:"
+-1.0,2020-12-31 00:08:19.050000+00:00,"You are trying to import something (routerPathsXXX) that does not exists in export.
+we import routerPaths as the default export from './routerPaths'
+we export in index as {routerPaths: this value just imported}
+So if you want to import from any other file you can not import with another name because does not exists:
+There is NO routerPathXXX from the export in index.
+If you want to use as another name you can do this:"
+0.0,2020-12-31 15:51:59.377000+00:00,Try importing it from the discord library

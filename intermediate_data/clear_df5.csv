@@ -1,0 +1,749 @@
+score,creation_date,body
+0.0,2020-10-25 08:36:28.297000+00:00,"I want to create an np.array with 3 elements - each is an array with different dimenstions.
+The first column is , the second column is , and the 3rd column is .
+I tried the following code:
+But I got the error:
+How can I create this array?
+Thanks"
+0.0,2020-10-22 01:23:18.477000+00:00,"I'm new to C and assembly code, just a question on returning a struct, below is my code
+below is my questions:
+Q1-You can see that in  method's stack, it seems to allocate 20 bytes for . For mosts of functions, the gcc normally deallocate stack before  like
+But there is no deallocate stack instruction before  instruction in , why is that? Does the compiler do it on purpose becuase if it deallocates stack of  then we are not able to return a struc to a function? if it is for this purpose, then I can understand why there is no deallocation of stack in .
+Q2-It seems that the internal structure of   on the stack is  instead of , why compiler does the thing in wrong way around?
+Q3-why  in  method? shouldn't it be ? it might be one reason that I don't reference  in , but I don't reference  in  neither and the instruction is still "
+-1.0,2020-10-02 07:38:14.313000+00:00,"in need a fast SQL for selcting my Data.
+I have a Table  which look like the following:
+And another Table  which look like the following:
+In u can specify which data from  i need. Its the Flag  ( = Inclusiv,  = Excluisiv)
+The Key From both Tables are the first four Columns.
+The First Row from  means all Artikel from  which has .
+The Second Row from  means without Artickles from  where . And so on.
+In :  means ALL (From )
+In  can't appear  
+Table a:
+Table b:
+Result:
+Does anybody has an Idea?
+Many thanks in advance.
+EDIT: Maybe the Table a should be grouped like this:
+And then loop through the rows."
+-1.0,2020-10-02 21:54:45.367000+00:00,"I have 2 tables and would like to get revenue by location as an output using SQL.  I think I need a JOIN (left?) and then GROUP BY on location but for some reason my code isn't working?
+Please see below:"
+0.0,2020-10-13 03:02:09.360000+00:00,"What I'm trying to do is set up a timer that every 3 seconds adds a new component to the page. Everything is fine until the third second, where the app crashes with:
+Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+Is there anyway I could fix this or does someone have a better solution for doing this? Here's the code:"
+0.0,2020-10-14 11:10:50.980000+00:00,"Following up from a previous question, I am confused by how matplotlib.pyplot works. I have a DataFrameGroupBy object with multiple groups, and I want to make a single figure with multiple functions (one per group). My research indicates that the following code should essentially yield one figure with multiple lines:
+Instead, I am getting multiple graphs with one line each. Following some instructions, I tried shoving , , and  in all possible places that I could think of, but I don't quite understand how they work, so I might have not done it correctly."
+1.0,2020-10-26 20:06:58.120000+00:00,"I have a filter that is for my model that is a  of all the values in that columns. I would like to make it so that when the user select a value from the  it automatically filters the data without the need for a submit button. I believe I need an  attribute for the  field but I cant figure out how to set that up for filter forms.
+filters.py
+sets.html:"
+0.0,2020-10-12 10:50:00.733000+00:00,"I would like to read the Active spreadsheet and add menu items based on that. Below is the code in OnOpen(e) trigger:
+I am getting below exception:
+[Exception: You do not have permission to perform that action.]
+I have gone through the documentation and found that the AuthMode is None in OnOpen trigger which does not allow access to any services that require authorization.
+Please suggest if there is any other way to accomplish my task.
+Thanks."
+0.0,2020-10-23 10:14:35.210000+00:00,"I am logging my application logs to a Kafka topic using Log4j2 and an appender.
+On my local machine I am pointing to the Kafka server which is located in localhost:9092 and it is working fine.
+The problem starts when I deploy this architecture to Kubernetes. I deploy the Kafka broker the same way it is deployed in this example: https://dzone.com/articles/ultimate-guide-to-installing-kafka-docker-on-kuber.
+After the broker is deployed the logs are stating that the instance is fine and it is creating the topic I specified.
+However, when I deploy my spring application and I point the logs:
+.
+The log4j2 appender throws this exception:
+As far as I know, if the log4j2 appender's call would not reach the kafka service then it would throw a connection exception, but it seems like it's not the issue.
+It seems to me that the service is not forwarding the calls to the Kafka-Broker instance, although I cannot find a way to debug this.
+Someone knows how can issue can be solved?
+Thanks!"
+0.0,2020-10-14 04:02:36.813000+00:00,"http://bugs.chromium.org/p/v8/issues/list is the v8 javascript engine bugs tracker.
+I want to download all issues data including list, comment and so on.
+Is this possible?"
+0.0,2020-10-26 02:48:23.957000+00:00,"I am trying to bind a button to a different function after the user selects some number of points on the image with another function. Currently, I am doing like this-
+This does not solve my problem as only func2 is executing. I have also tried adding the unbind statement to func1 and func2 (which runs after some condition is satisfied) but same thing is happening. Is there a way to make this run sequentially so that I can bind with func1 -&gt; unbind func1 -&gt; bind with func2 -&gt; unbind func2.
+I want to do the point selection in one image only without putting the image again on canvas. Also, is there any better way to approach this?"
+0.0,2020-10-05 13:37:04.687000+00:00,"I am having registration table, in that student grades are  and after sometimes client has changed the grade values to 
+The MySql DB column has the Grades value of 
+Now I am creating the report, so I need to filter the grades based on  but I need to select the Grades  and also the record has .
+If I use the  means I am also getting the Grades 
+Any suggestions or help is appreciated."
+0.0,2020-10-10 09:02:55.800000+00:00,"I want to define a new type in GORM like this:
+Where the values of Status can only be either one of , , or . Obviously, I can use the type string for this, but then I would allow every string possible. How can I restrict the options to the ones I want?"
+1.0,2020-10-18 07:28:28.273000+00:00,"Given a function that returns a useful value and an error value when things go wrong, I'm trying to avoid checking whether the useful value is  when there is no error,
+After calling the above function, we can check whether there's an error. However, even if there's no error, we still have to check whether  is defined.
+Is there a better type or error handling pattern that would allow to handle errors in a similar way while avoiding having to check for  to be defined?"
+2.0,2020-10-15 11:13:13.520000+00:00,"Whenever I try to run my game in Unity Editor, it works normally; but i wanted to test if everything is working properly in the builds and it kept crashing the game whenever I tried too run it.
+I have attached the contents of the error.log file.
+i am making this game for a game jam and need to resolve this issue
+error.log FILE"
+0.0,2020-10-13 07:15:32.677000+00:00,"When I try to destroy a record with resource controller, laravel redirects to login page
+although I applied auth middleware in the controller.
+Laravel Version is 6.x.
+Web.php
+SliderController.php
+I couldn't understand why it redirects to login page.
+Help please
+Thanks"
+0.0,2020-10-03 11:04:27.223000+00:00,"I am trying to parse an array of dates, from a large dataset, in my pandas dataframe.
+to be clearer each row in my dataframe has an array of dates. most of them are nones or dates. e.g.
+the column above is my date column. And in the below i am iterating through it.
+But unfortunately I'm getting this error:
+i try and break this own further to see what issue is and try another way:
+but nothing prints when there are many nones as you can see above, so not sure why this is. can somebody assist?"
+0.0,2020-10-13 20:06:35.600000+00:00,"I don't know what I have done wrong and what i have changed. All of a sudden my discord bot code doesnt work. Please help me. I have tried lots of things and have checked if my cogs are loading properly and they are. I am not getting any errors either. Sorry if it is just a stupid mistake that I dont see as this is my first question on Stack Overflow.
+An example of a command that doesn't work:
+A cog that doesn't work:
+I am new here sorry if it is a stupid mistake. Thanks alot!
+PS: I am happy to attach more code.
+Edit: My main code (if needed)"
+0.0,2020-10-24 18:49:55.290000+00:00,Foreign keys are saved as integers instead of the string attributes in my Django model. Why are they not string?
+1.0,2020-10-26 12:41:02.557000+00:00,"I got firebaseConfig.js
+Now I got Component index.js
+I think something I did wrong with  as I'm getting "
+1.0,2020-10-15 00:47:21.300000+00:00,"I'm trying to retrieve the array that has value within another array using filter method. So for instance, from this
+to this
+From console.log below I get , but when I return , I get whole thing back--&gt; 
+What am I missing?"
+0.0,2020-10-23 21:17:32.253000+00:00,"I have an ASP.NET MVC web application that was working great under four worker processes (web garden) configuration and using ASP.NET State service to manage incoming sessions.
+Session state is configured in Web.config configuration file as below:
+No machineKey is configured in web.config configuration file and ASP.NET State service runs using the default Network service account.
+Additional web server (this is a VMWare virtual machine) details are:
+IIS 8.5.9600.16384
+Windows Server 2012 R2 Standard 64-Bit
+48GB RAM
+Regarding to application pool configuration, some to highlight are:
+32-Bit application enabled
+Integrated mode and onDemand startup
+Load user profile enabled
+Idle Time-out Action set to suspend
+Rapid fail protection enabled
+Recycling disabled and all limits disabled (set to 0)
+Furthermore, Application Pool has always been configured using a custom domain administrator account but currently it has been changed to use a custom non-administrator account due to security reasons.
+After changing application pool account, Web Garden has started to behave unstable: users get kicked off randomly. They are getting 403 Unauthorized and 404 Not Found http errors and even I remember to see 503 Service Unavailable.
+What can be the cause?
+UPDATE 2020-11-11:"
+0.0,2020-10-19 20:17:42.247000+00:00,"I have recently set up my raspberry pi as a web server on my local home network.  I have also installed mariaDB / MySQL server on the pi.  But when I try to connect to the mysql server using php from another device, I keep getting error messages.  (I know there are very similar issues posted here but nothing seems to work).
+(When I run the code on the pi itself I don't receive any errors at all.)
+Here is my test code:
+And the errors...
+Packets out of order. Expected 0 received 1. Packet size=90
+mysqli_connect(): Error while reading greeting packet. PID=12660
+mysqli_connect(): (HY000/2006): MySQL server has gone away
+Any advise on where to head next?"
+-1.0,2020-10-23 19:44:33.443000+00:00,"I want to know if there is any different between  and  if we are just doing load and store. I am not concerned about the memory ordering. For example consider the below code
+Now the output (if you uncomment the cout) will be
+Thread :1
+Thread :2
+Thread :3
+...
+I want to know if there is any benefit in changing the  to ?"
+-1.0,2020-10-15 09:28:22.543000+00:00,"im new to JSON - Code and i have a cell in the SQL Server at my work from a database that is in JSON-format.
+Here is the JSON String in the database:
+The result 0 tells that the first value &quot;keine Garantie&quot; has been selected in our database.
+Can i display directly in one cell in the SQL query wich value has been selected?
+Here is a example of the best result i could get with my SQL knowledge:
+RESULT:
+Values
+&quot;keine Garantie;Garantie;Kulanz&quot;
+Result
+&quot;0&quot;
+EDIT:
+Im after the result &quot;keine Garantie&quot;. On the Website wich the data is coming from i can choose from &quot;keine Garantie&quot;, &quot;Garantie&quot;, &quot;Kulanz&quot;. The result 0 is telling that the user choosed &quot;keine Garantie&quot;.
+Thank you in advance for your help and your answers!"
+0.0,2020-10-07 13:38:57.087000+00:00,"I can't seem to find any literature online to help me with my question. I see from the Pandas docs that  evaluates comparisons of dataframe objects with constants, series or other dataframe objects (https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.eq.html).
+But my question is will  capture instances of  as well as ?"
+-1.0,2020-10-04 08:25:04.720000+00:00,"The problem is whenever I type this
+The error comes Cannot read property 'role' of null
+Any fixes?
+I am new to coding . Please help."
+1.0,2020-10-25 18:13:37.337000+00:00,"Hii I'm kind of new so I might be making a rookie mistake but I have this HTML :
+and this CSS
+But it's not working... I tried with .content before but it also won't apply to my HTML. I applied a h1 css (with font) and it works just fine. It also works just fine with my previous projects(?) What did I do?"
+3.0,2020-10-27 11:51:42.990000+00:00,"I'm using Braintree Sandbox in my ReactJs project with typescript.
+According to Braintree Docs for focus, a field can be focused using the  method.
+Issue: In my typeScript file, hostedFieldsInstance is not showing the method as a valid method. Im getting the following error:
+VS Code is also suggesting only few existing braintree methods but not :"
+0.0,2020-10-18 21:28:54.583000+00:00,"Im trying to update the variable Total in another class by trying to get the subtotal from an Order. Then that value will go inside a method in OrderTest.cs that will add on to the value Total from the other class. What am I doing wrong. CS1061: 'Order does not contain a definition for subtotal.(are you missing a using directive or an assembly reference?)'
+My Class Order.cs____________________
+Then this is the OrderTest.cs ___________________________"
+1.0,2020-10-15 20:36:48.197000+00:00,"I'm trying to create UserProfileView with user's username in the url. Actually, it works somehow with the actual settings. The issue is, any username extension in the url redirects to the logged in user's profile. And, no info comes to the template when I try to go to profile without signing in. Here's my code, any help is appreciated.
+models.py
+views.py
+urls.py
+profile.html (how I call the related data in the template)
+*update for clearer explanation:
+here's the user profile when tried without login
+and same user's profile here when logged in. actually, it should display the profile of user with the username in url. but, it always shows the current user's profile on any url."
+-1.0,2020-10-16 08:05:42.630000+00:00,"I have come across a beautiful chart on this webpage: https://ourworldindata.org/coronavirus and interested to know if we can build the same chart in R with functionality of having highlighted series as well as selecting any line on hovering ?
+I have build static highlighted charts using  but those are not interactive.
+ can help in interaction but I think they don't work with .
+So how can we have the combination of both  in charts as in the link shared on top ?
+Is it possible to achieve same results in R ? It would be really helpful if someone could share an example or link that can help.
+(UPDATE: May be I can manually highlight lines by creating a factor column instead of using  and then pass it to  but then can  or some other library provide similar results on hover ?)
+(NOTE: Not looking for animation. Just need highlighted, hover over interactive chart)
+Below is the snapshot of same chart hovered over US (This chart is also similar to the one shared in World Economic Forum many times.)"
+2.0,2020-10-21 01:22:21.587000+00:00,"In C/C++ there are two ways to declare a function that returns nothing.
+First one is to declare a function without arguments:
+The second one is to declare a function that takes :
+However, this is not true for the function result: we can't omit  at the beginning of the function like this:
+So, is there absolutely no way to omit  at the beginning of the function like with the function arguments?"
+0.0,2020-10-14 10:19:39.640000+00:00,"Scenario : I have  2 source database tables [ Student_INFO, Teachers_INFO] from where I will pull data using a Scheduler in every 1 hour.
+STUDENT_INFO contains :
+Student name
+Student roll number
+Subjects taken by the student for example MATHS, ENG, SCIENCE, ARTS
+TEACHERS_INFO contains :
+Teacher Name
+Subject taught by the teacher for example MATHS
+My expected output is to group against each teacher the students taught by him.
+To do this, I want to
+collect the data from the two sources
+Create a map having teachers name as key and then iterate through students subjects and add them to the teacher map
+Now I have the code ready using a for each loop n MULE 4
+But I am unable to understand how to do the same in batch processing. Can someone please help me visualize the problem from MULE 4 batch processing scope?
+Thanks for your help."
+0.0,2020-10-30 12:59:47.873000+00:00,"The  function calculates statistics for a DataFrame along each of its columns:
+I have a directory of CSV files, each corresponding to a DataFrame. I want to calculate this statistic for each of these DataFrames, but then also output combined statics for the whole directory. I only need count/mean/min/max. Is there any good way to do this, apart from ing all DataFrames together and calling  on this gigantic DataFrame?"
+0.0,2020-10-03 16:47:39.523000+00:00,"receive a cordial greeting from Venezuela.
+I did this question because I did not find a question similar to this one.
+Beginning Android API level 26, there is the startLocalOnlyHotspot() method of the WifiManager class, But unfortunately my current phone is running API level 23, for which the startLocalOnlyHotspot() method is not available.
+When Android starts a WI-FI Hotspot for internet tethering. the network IP address is 192.168.43.1, and the interface name is &quot;ap0&quot;.
+But my question is: When an app starts a WI-FI Hotspot using the method startLocalOnlyHotspot(), what is the network IP address, and the interface name, used for this network?"
+0.0,2020-10-14 15:51:42.703000+00:00,"I'm working on a project and I used to merge but this one is quite confuse.
+Here the way I'm working on:
+Here my problem, as you can see the red line, the merge comes with more than 600 commits (all my commits actually)
+I have tried merging and rebasing and each time it wants to push 600 commits,
+I have also recovered missing commits manually using  from hotfix to pick missing commits made.
+It has been awhile since I worked in this project maybe I've missed something...
+EDIT 1:
+Here what's going on when I try to merge
+EDIT 2:
+Here a part of my git log, the last successful merge of  into  is  (note that if I merge into master the same problem occurs and not in )"
+0.0,2020-10-08 19:24:57.187000+00:00,"I’m using network.request like this:
+and receiving the response in my network listener as such:
+I am receiving the body response of the request but I want to receive the request’s response headers as well. How can I achieve this?
+Thanks a lot!"
+0.0,2020-10-10 18:58:10.643000+00:00,"I'm facing a very strange case and I've been beating my head against the wall for quite a few hours and I can't make sense of it.
+The problem: Passing an expression that was generated in runtime by an expression visitor to the  method would cause EF Core to throw an exception, while passing the EXACT SAME expression but this time written directly in the code would work perfectly.
+Take a look at the below code, it's self-explanatory:
+Using  would cause the following exception to be thrown:
+&quot;When called from 'VisitLambda', rewriting a node of type
+'System.Linq.Expressions.ParameterExpression' must return a non-null
+value of the same type. Alternatively, override 'VisitLambda' and
+change it to not visit children of this type.&quot;
+I have run out of ideas about what's causing this, the expressions are the same, how could EF Core even tell the difference?!
+Thanks in advance.
+Provider and version information:
+EF Core version: 5.0.0 RC1
+Database provider: Microsoft.EntityFrameworkCore.SqlServer
+Target framework: .NET 5.0"
+0.0,2020-10-16 15:44:35.437000+00:00,"if my C program doesn't print out anything, it just returns a value, how can I use gcc to check what value my program returns?
+For example,
+after this I get a a.out, however, if I type &quot;a&quot;, nothing will show since my test.c doesn't print anything it just return a value, so how can I check what value my test.c returns?"
+1.0,2020-10-13 08:36:52.373000+00:00,"Some pieces of my code crash randomly when call  or  on , the code is in a long time runing service . I removed the unimportant part and just keep the most relevant.
+The two function runs on the same thread; code will crash at  or  sometimes, about 1 time a week.
+the backtrace:
+crashed at erase
+crashed at push_back another time
+I was nearly mad, any suggestion appreciated
+Code that receive data over socket is as follows:"
+0.0,2020-10-24 15:38:15.213000+00:00,"I get &quot;An error has occurred&quot; starting Aptana 3, pointing me at the log file. This gives:
+!SESSION 2020-10-24 14:19:20.685
+----------------------------------------------- eclipse.buildId=unknown java.version=11.0.8 java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+!ENTRY org.eclipse.osgi 4 0 2020-10-24 14:19:22.381 !MESSAGE
+Application error !STACK 1 org.eclipse.e4.core.di.InjectionException:
+java.lang.NoClassDefFoundError: javax/annotation/PostConstruct    at
+org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:410)
+at
+org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:318)
+at
+org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:162)
+at
+org.eclipse.e4.ui.internal.workbench.swt.E4Application.createDefaultHeadlessContext(E4Application.java:491)
+at
+org.eclipse.e4.ui.internal.workbench.swt.E4Application.createDefaultContext(E4Application.java:505)
+at
+org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:204)
+at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:614)   at
+org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+at
+org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+at
+org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+at com.aptana.rcp.IDEApplication.start(IDEApplication.java:126)     at
+org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+at
+org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+at
+org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+at
+org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+at
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native
+Method)   at
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)   at
+org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)  at
+org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)     at
+org.eclipse.equinox.launcher.Main.run(Main.java:1499)     at
+org.eclipse.equinox.launcher.Main.main(Main.java:1472) Caused by:
+java.lang.NoClassDefFoundError: javax/annotation/PostConstruct    at
+org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:124)
+at
+org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:399)
+... 23 more Caused by: java.lang.ClassNotFoundException:
+javax.annotation.PostConstruct cannot be found by
+org.eclipse.e4.core.di_1.6.100.v20170421-1418     at
+org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:433)
+at
+org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+at
+org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+at
+org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+... 25 more
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2020-10-24 14:19:22.386
+!MESSAGE FrameworkEvent ERROR !STACK 0 java.lang.NoClassDefFoundError:
+javax/annotation/PreDestroy   at
+org.eclipse.e4.core.internal.di.InjectorImpl.disposed(InjectorImpl.java:450)
+at
+org.eclipse.e4.core.internal.di.Requestor.disposed(Requestor.java:156)
+at
+org.eclipse.e4.core.internal.contexts.ContextObjectSupplier$ContextInjectionListener.update(ContextObjectSupplier.java:78)
+at
+org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:111)
+at
+org.eclipse.e4.core.internal.contexts.TrackableComputationExt.handleInvalid(TrackableComputationExt.java:74)
+at
+org.eclipse.e4.core.internal.contexts.EclipseContext.dispose(EclipseContext.java:178)
+at
+org.eclipse.e4.core.internal.contexts.osgi.EclipseContextOSGi.dispose(EclipseContextOSGi.java:99)
+at
+org.eclipse.e4.core.internal.contexts.osgi.EclipseContextOSGi.bundleChanged(EclipseContextOSGi.java:141)
+at
+org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:908)
+at
+org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+at
+org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+at
+org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:213)
+at
+org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:120)
+at
+org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:112)
+at
+org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:168)
+at org.eclipse.osgi.container.Module.publishEvent(Module.java:476)
+at org.eclipse.osgi.container.Module.doStop(Module.java:634)    at
+org.eclipse.osgi.container.Module.stop(Module.java:498)   at
+org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+at
+org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+at java.base/java.lang.Thread.run(Thread.java:834) Caused by:
+java.lang.ClassNotFoundException: javax.annotation.PreDestroy cannot
+be found by org.eclipse.e4.core.di_1.6.100.v20170421-1418     at
+org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:433)
+at
+org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+at
+org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+at
+org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+... 21 more
+Can anyone please suggest where I go from here?"
+-1.0,2020-10-23 22:43:37.713000+00:00,"Im trying to write the following program, where i have a string that a number is generated possibly like 37 digits.
+Is it possible to fill an array that i know the length but not the rows because the string can be anything.
+And save this in a character array where i know the length from input.lenght() and i dont know the rows
+I know the answer might be something stupid simple but please be coder noob friendly. Thanks"
+0.0,2020-10-11 22:39:00.453000+00:00,"I have a code that displays the news of the day. I want to split my content into two parts, that is, for the first block, create a class named &quot;news1&quot; and for the second &quot;news2&quot; as shown in the picture https://ibb.co/ykv7BN4 How can i do this? here is my code"
+0.0,2020-10-16 00:57:39.407000+00:00,"My code is like this:
+In this part, I want pass an object (thread is an object that get from an ArrayList ${model}), and getPost(object) is a javaScript function. I want make every button to pass the corresponding object to the function and do something, but it shows this strange problem in console"
+0.0,2020-10-11 05:19:14.057000+00:00,"I'll try to add as much information as needed, please tell me if you need any extra info that I haven't added and I'll do my best to provide it.
+The basics of my problem is that whenenver I press a button, it will grab the file I select and save it to a text file. This works fine and I can save as many files as needed. The problem lies in the listbox of my listbox. My app is a soundboard, and I want filenames with their hotkeys to be displayed on the listbox which almost works fine. On loading the application the listbox will take all saved files and display them accordingly once and on adding a file, the file will be added to the listbox and it will be saved. As I said this almost works because for some reason unknown to me, you have to click the listbox for it to add the content. My code is as follows:
+P.S. I'm still a novice at windows forms and this app is still nowhere near done."
+1.0,2020-10-05 18:21:01.550000+00:00,"Overview: I have a GUI-based program that has a multitude of functionality built into buttons and menu selection items. Many of the processes are instantaneous, but several of them can easily take more than 5, 10 or even 20 seconds.
+Current Problem: While I have a dialog box displaying, it will not display the text inside of the box, such as 'Completing Process, please wait...'
+Goal: While a long processes run, I would like to display a 'please wait' dialog box, so that the user knows the program is not stalled and is working on the function the user selected.
+Background info: The GUI is built in PySide2 (aka PyQt5) and Python 3.6.5
+Current Attempts:
+Method 1 - Initially, I used the  module to initiate the primary function to be run. At the start of the function, I would have a call to show the dialog box, which would display as intended and the rest of the function would process/complete in the background.
+Method 1 Problem - This worked great until the program became more complex and I needed to use ThreadPoolExecutor to speed up things. ThreadPoolExecutor and the threading module do not work well, if at all together and will result in a crash without an error message, so I had to abandon that method.
+Method 2 - I tried using the  function of the QDialog box and called the  function
+Method 2 Problem - The dialog box would show and display the text as desired, but setModal(False) had no effect and the processes would be halted until the window was closed.
+Method 3 (current method used) - In the initialization of my ProcessRunning dialog window class, I have created a PySide2 signal, which takes in a string (the string being the message that I want to display). The preceeding line before a call to a long process, I called the  function of my signal, connected to which is the function to display the dialog box.
+Method 3 Problem - The window displays and the background process runs but the window doesn't display the text, almost like that part of the process is held up by the background process.
+Summary: While the question title suggests I don't know how to display a QDialog box, the real problem is displaying the text inside the window which instructs the user to &quot;wait.&quot; I feel that since this isn't happening with my current method, I am not displaying the box &quot;correctly&quot;. So, the &quot;correct&quot; method to achieve this is what I am in search of.
+Here's a &quot;short&quot; example using concepts I have in my full program. :"
+0.0,2020-10-05 13:51:35.627000+00:00,"I am trying to create dynamic shovels in my RabbitMQ instance both via code and using the UI. In both the cases, I am able to create the shovel. However , it's failing later on and is not able to move messages as desired.
+Via Postman
+Response : 
+On the UI -&gt; admin -&gt; Shovel Status
+I receive the same errors when I try to do all of this using code as well as from the UI instead of postman.
+Not sure where I am going wrong."
+1.0,2020-10-30 00:11:31.570000+00:00,"I was wondering if there was any way to initialize a custom  with a content offset so that when it first appears the collection view is offset? I tried setting the content offset in the convenienceinit of my custom  but this did not affect the content offset when the collection view first appeared. Thanks
+The convenience initializer of my custom class:"
+1.0,2020-10-04 09:28:54.077000+00:00,"I need to input a pooling module to the LSTM decoder, and I'm constructing this using a custom layer with the encoder LSTM states and Keras Input layer as inputs. In this custom layer, I need to scatter the updates to the indices:
+with  to create a tensor with shape=(None, 960, 5, 32) , something like this:
+but the problem is that doing this, rises error due to NoneType in shape and I don't want to declare the  in it because it is a Keras layer and only is certain in the learning process. in this state the working version of code is this:
+that has ignored the batch_size in the output.
+Is there any alternative way to construct the needed output tensor instead of  or a way to make this work properly?"
+0.0,2020-10-27 17:28:32.923000+00:00,"I hope you are well.
+I'm a beginner in VBA, I have an UDF to sum cells by colour as below and I'm trying to get the function work even if r2 is not filled in.
+Currently everything works if r1 and r2 are filled in.  But it doesn't work if only r1 is filled in.
+I tried to fix the problem by adding IsEmpty(cl) in the loop without success.
+I assume it's because UNION as it is cannot work if r2 is not fill in but I don't know how to skip errors  in Union.
+Do you have an idea how to make the UDF works even if r2 is not fill in ?
+Many thanks for your help,
+EDIT : The final UDF will contain 10 arguments ( r1,r2,r3...r10) and not 2 (r1,r2)"
+0.0,2020-10-23 08:01:56.403000+00:00,"I have two classes. Class  implements a method  which is a sweep line algorithm to check for intersections in O(nLogN) time.
+It also implements a function  which adds objects of type Segment (two points) to a priority Queue based on the x coordinate.
+The other class  loads data from a CSV file into the priority Queue. This is an intensive process which I only want to do once.
+On the other hand,  is called millions of times.
+I want to check for collisions between the supplied segment and the rest of the segments added in the priority queue from the csv file
+I do not want to be adding elements to the priority queue from scratch each time. This would not be feasible.
+TL;DR
+The problem I am having is that after the first call of  the priority queue has changed since  works by polling elements from the queue, thus altering the queue.
+How do I keep the priority queue created by algoObj.addSegments() from changing between function calls?
+Does this have to do witch shallow and deep copying as explained here?
+I tried creating a copy of the queue at the beginning of the function and then altering the copy:
+This however does not work as it still alters the priority queue of the original .
+I believe this is a beginner's question and stems from my lack of proper understanding when working with OO languages. Any help would be appreciated."
+0.0,2020-10-29 15:34:52.937000+00:00,"I'm about to build a project, in which the client device shows little random messages, that are continually edited on a server, accessible through a simple website. So far so good...
+Programming the client, choosing a random file, and displaying the text, isn't such a big deal, as well as the server and writing the files to a folder on the server. But, the client should be portable, with a cheap SIM Card (500MB monthly data) I never did something like this, so how can I keep the files synchronized on the client and server? Or would it be better to use an SQL database?
+Thanks in advance
+For better understanding, I attached an image of how I imagined the project.
+Project overview"
+1.0,2020-10-07 11:02:53.523000+00:00,"I have a huge NetFlow database, (it contains a Timestamp, Source IP, Dest IP, Protocol, Source and Dest Port Num., Packets Exchanged, Bytes and more). I want to create custom attributes based on the current and previous rows.
+I want to calculate new columns based on the source ip and timestamp of the current row. This what i want to do logically:
+Get the source ip for the current row.
+Get the Timestamp for the current row.
+Based on the source IP, and Timestamp, I want to get all the Previous rows of the entire dataframe, that matches the source IP, and the communicaton happened in the last half an hour. This is very important.
+For the rows(Flows, in my example), that matches the criteria (source ip and happened in the last half hour), I want to count the sum and mean of all the packets and all the bytes.
+One row from the dataset
+Snippets of relevant code:
+I know that there's probably a better, more efficient way to do this, but I'm sadly not the best programmer.
+Thanks."
+0.0,2020-10-28 13:58:23.070000+00:00,"Here is the snippet for register nib:
+then here is the snippet from awakeFrom nib:
+and here my own method returning the nib"
+0.0,2020-10-04 11:07:31.427000+00:00,"I'm new in the Xamarin Forms and I wanna read and then write to XML file some data. I found the article about that in Xamarin documentation, here it is https://docs.microsoft.com/pl-pl/xamarin/xamarin-forms/data-cloud/data/files?tabs=windows. I wanna use File class. The problem is that I can't find the file &quot;temp.txt&quot; in the example project. So, I started looking for sth on the internet. I read that the file should be in the assets folder and the build type should be set to &quot;AndriodAsset&quot; (in the example project this file does not exist there). I did it but it doesn't work and I got an error &quot;Could not find file &quot;/data/user/0/com.companyname.myApp/files/.local/share/someData.xml&quot;&quot;.
+Here is my code:"
+0.0,2020-10-06 00:05:53.043000+00:00,"LOGFILE's Raw Data:
+Code :
+Result :
+this code does 3 things:
+searches for any line containing Data1 records to grab the 3rd, 4th, 5th &amp; 6th column (LOGFile's columns)
+then sort them reversely (r) by result's first column (-k1,1) and normally by result's second column (-k2,2) and excludes any repetition (-u)
+then sums the result's last (4th of awk's result) column to be displayed as &quot;Total&quot;
+is there a better way to write this code ?
+Edit1 :"
+0.0,2020-10-30 14:42:06.620000+00:00,"I have a div called &quot;divOverlay&quot; where it will show out when user hover the row. So I need it to be set as absolute inside a td. Currently it works in the Chrome but when I view it in the Edge, it is at the outside of td as shown as below which is not what I want. I want the button target stay inside the td:
+Is there anyway that I can make it work for both chrome and edge browser?"
+0.0,2020-10-11 07:40:50.807000+00:00,"Using below model, and using TextBoxFor, I see the word  is missing from  property of html input
+ModelView class:
+View:
+HTML source:
+I expect to see  for text input, but I see  instead and this cause to get null for that input when getting Model in post-back
+Controller:
+Edit:
+If I use below code in View instead of using TextBoxFor, it will work properly
+What am I missing?"
+4.0,2020-10-16 22:57:03.880000+00:00,"Consider a dynamic list
+Add 2 itens to it
+Then sum
+The first one works. Second and third don't. Both throw a &quot;Cannot implicitly convert type 'decimal' to 'int'. An explicit conversion exists (are you missing a cast?)&quot; My question is... why ? I wanted to understand a bit better the details regarding the differences between the 3 sum examples and why the first one works while the others don't.
+Shorter version of the sample still fails:
+RuntimeBinderException: Cannot implicitly convert type 'decimal' to 'int'. An explicit conversion exists (are you missing a cast?)
+And if you look at generated IL you'll see references to  (which somewhat makes sense as complier need to pick a type for ...)
+TL;DR: why C# compiler picks  version of Sum (likely at compile time) for dynamics."
+0.0,2020-10-21 17:15:48.903000+00:00,"I am going off of this YouTube video:
+https://www.youtube.com/watch?v=nuZIeJ0ljgo
+He did a good job  explaining, but I am still getting different errors as I go through the steps he did.
+Configuration: “Launch Program”
+Electron Pop Up Error:
+Configuration: “Debug”
+Electron Pop Up Error:
+Here is my configuration, .vscode/launch.json:"
+1.0,2020-10-27 19:45:29.997000+00:00,I have 4 GPU's in my system and I am trying to dedicate each GPU to each notebook(4 GPU's to 4 notebooks in my case). I found that using  work in tensorflow 1 but it is not working in Tensorflow 2.2 version. Also I tried using  to access  in one notebook but unable to achieve it. Could you please help how can I do it in Tensorflow 2.2 version.
+0.0,2020-10-02 18:55:16.013000+00:00,"I am trying to check if a variable has a TextArea attribute, but even if it does it still returns false.
+What am I doing wrong here?"
+0.0,2020-10-21 07:50:00.677000+00:00,"I happen to have a data set like this,
+and the output looks like this:
+I would like to have the decimal points for the whole number shown, I tried the  function, but it could not get the decimal values for the whole table, but I got for each column (I want it to be reflected in the whole table though :P).
+Expected Output, FYR:"
+0.0,2020-10-02 00:27:54.987000+00:00,"I have a program exercise that need assistance with.  This program was created through RARS 1.3.
+So far, this is the code I created to read and input one string at a time.  The program needs to put a (-) between all double consonants in the string.  To do this, I would need to loop through the string to search for double consonants and have a second string to print the result in.  Any suggestions?"
+0.0,2020-10-03 12:30:44.263000+00:00,"I have PostgreSQL running on the docker, I want to make my teammate can also access the database. I searched on google and found that I can use ssh? So every my teammate can connect to my local address using ssh but I didn't succeed, I can access that database but not others."
+0.0,2020-10-29 21:24:22.913000+00:00,"I'm new to python and what I'm trying to do is:
+scores per letter:
+1 point: e, a, i, o, n, r, t, l, s, u
+2 point: d, g
+3 point: b, c, m, p
+4 point: f, h, v, w, y
+5 point: k
+8 point: j, x
+10 point: q, z
+considering the string 'hello' the value in outcome should be: 7 (h= 4, 1= e, 1= l, 1 = o).
+my code :"
+1.0,2020-10-29 15:03:06.157000+00:00,"First things first, I am not a developer! However, I want to pull the following out of a git repository:
+How many lines of code per e.g. quarter (in order to calculate bugs/kloc)
+What I could achieve so far is the following:
+enter image description here
+Now I know already the total number of code lines within this path.
+I also know there is lots of Info out there - I just can´t adapt the given examples :-(
+Thanks in Advace
+Bernd"
+0.0,2020-10-15 13:59:00.543000+00:00,"I have a main class like this
+In order to create a click event for the labels I followed this doc: https://wiki.qt.io/Clickable_QLabel and make a class like this:
+How do I call a function in ImagePuzzle from ClickableLabel::mousePressEvent with the ClickableLabel::id passed as argument?
+[Edited] Following the suggestions I add a signal, but it is not working. (can compiled but do not call the function in main class)
+clickablelabel.h
+clickablelabel.cpp
+imagepuzzle.h
+imagepuzzle.cpp"
+0.0,2020-10-03 13:27:02.637000+00:00,"I'm really having a hard time getting this exercise done. We're supposed to compare a vector in a data frame (the data frame is called &quot;verbs&quot; in R) to log(5) which is 1.609438(verbs$LengthOfTheme &gt; 5). Using a For-Loop I have been able to complete the task only for the mentioned column. But when I try to use the code for the whole data frame, so that at the end I get the new data frame with the column &quot;LengthOfTheme&quot; containing only the variable which are bigger than 5, I get wrong results. My code is the following:
+for the column LengthOfTheme separately:
+now the problematic code:
+The data frame looks like this:
+The data frame looks like this:"
+0.0,2020-10-03 08:59:09.927000+00:00,"I'm trying to update my gradle from 3.4.1 to 6.1.1 and after sync project i get the error: &quot;No value has been specifed for this property&quot;. But for what property i dont know.
+I was trying to run the comand &quot;gradlew --warning-mode all&quot;. I got the message that im using deprecated name such as &quot;archiveFile&quot;, i replaced it with &quot;archiveFileName&quot; but it gave me the same results.
+I also disable/enable checkbox &quot;Only sync the active variant&quot; in File &gt; Settings &gt; Experimental with no luck.
+I know that error may appear when some libraries implementations are too old for current gradle verison 6.1.1. But how can i know which library version is no longer supported ? Or im doing something wrong ?"
+6.0,2020-10-27 08:50:44.673000+00:00,"Problem
+LiveView collapses my opened element.
+Details
+I have an element that starts off as being collapsed on page load:
+If a user clicks on the collapsible, the collapsible has a class .
+But liveview removes that class. Any idea how I can make sure that liveview ignores the parent element  but takes care of the children?
+My first thought was . But now I'm thinking I need to put the logic of the collapsible into the backend. :/
+Additional info
+I use bulma-collapsible with one css change:"
+-1.0,2020-10-08 05:55:09.163000+00:00,"I'm trying to parse a .conf file with ConfigParser, and some of the values have a '%' in the value.
+Example of the config below:
+When I parse this using RawConfigParser, it sets  to
+Where the bunch of  are blank lines between config options.  And when I use the normal , I get an  with the error
+'%' must be followed by '%' or '(', found: '%h server (Samba, Ubuntu)\n\n\n\ndns proxy = no\n\n\n\n\n\n\n\n
+Editing the string before passing it to ConfigParser (replacing % with %%) parses it, but does the same issue as RawConfigParser where it parses the rest of the options as a single line.
+How am I supposed to properly parse values that have a % in them?"
+0.0,2020-10-12 16:54:44.473000+00:00,"I know this has been answered before but they are not helpful.
+So, when I'm building the program,it is succesfull. But when I publish the project I get the following multiple errors -
+Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute
+.NETCoreApp,Version=v3.1.AssemblyAttributes.cs   4   Active
+Any help is appreciated.
+Thanks."
+1.0,2020-10-23 02:11:20.773000+00:00,"I have 3 separate cards inside a container. I want the children in the cards to all take the height of the tallest sibling in the same row, like the attached image.
+Grid version image
+As you can see the price div and the lorem ipsum div take the highest value and apply it to all the divs in the same row
+I achieved this effect using css grid, but I'm not allowed to use that approach for this particular case, I'll leave the code for that in here however.
+https://codesandbox.io/s/same-height-cards-grid-version-vm7vo
+I could however achieve this same effect using flexbox but it only works for one element inside the card. If I apply the class which achieves this effect to any other element inside the card, the effect is lost. The code for that is in here.
+https://codesandbox.io/s/same-height-cards-94dgf?file=/src/styles.scss
+Any solution other than jQuery, grid or html tables is welcomed. Javascript and React hooks are ok.
+Stack: React, Gatsby, SASS"
+0.0,2020-10-20 01:09:22.003000+00:00,"}
+}
+I am trying to create a program that on multiples of 3 it prints &quot;Hippity&quot; and on multiples of 4 it prints &quot;hop&quot;. I seem to be getting a bad operand error. What can I do to fix it?"
+0.0,2020-10-22 13:10:01.240000+00:00,"I implemented custom bullets with amCharts and would now like to add a click listener for each bullet with which I can open a popup with detailed information on the respective bullet.
+We are currently using amcharts/amcharts3-angular and have set up our configuration accordingly.
+My function within my chart service, with which the chart is generated, looks like this (I simplified it for stackoverflow):
+The &quot;tranformInfos2ToBullets&quot; method looks like this:"
+-1.0,2020-10-09 14:16:23.707000+00:00,"All my leaflet markers have associated text information and a subset of these markers have an associated image. Currently I am using the bindTootip() method to show the text on mouseover.
+Is it possible to embed the image in the Tooltip?  Or is there a better way to achieve both text and image presentation on mouseover?"
+-1.0,2020-10-15 05:55:22.283000+00:00,"As stated in the title. I am using JQuery and Validate plugin to validate user inputs in a form.
+I am trying to implement check for duplicate values in a table.
+For this I am using following code:
+Here is the HTML part:
+The PHP code that I am calling is:
+But in this code I have to enable or disable the submit button. Instead of that I want the Validate plugin to handle checking of duplicate values.
+How can we do this?
+TIA"
+0.0,2020-10-06 19:07:30.290000+00:00,"I've run the 2 commands  and  and I don't see any difference in the output, except the UTC object, has a flag is UTC set to true.
+Both return this - 
+What's the difference I should expect to be seeing and how can I test this?
+I know UTC is a universal timecode format that shows an offset but I'm a bit confused by how it works here. An example and explanation would be very appreciated."
+-1.0,2020-10-20 05:11:08.060000+00:00,"I tried string interpolation with single quotes using  but it does not work. When I tried it with double quotes it works. Please explain to me why this is so, if it's possible to do string interpolation with single quotes and how to do so in ruby if it is possible."
+0.0,2020-10-11 17:22:01.453000+00:00,"I'm trying to use plotly to graph state level data currently to the tune of this:
+All of the examples I can find either use only postal code to plot state level data or only use fips to do county level data.
+Do I need to create a new column with state postal code data or is there a way to use the state fips code in the plotly library?"
+0.0,2020-10-18 17:01:34.337000+00:00,"I made a server socket in C++ for Unix (TCP), that accepted only one client socket. Today, I attempted to make it accept multiple ones. For some reason, it ends up only accepting 1, and it's not receiving messages sent by the client that IS able to connect. I believe that the select function isn't working properly. FYI: I'm new to socket programming, so please understand if it's a stupid mistake.
+Here's the code:"
+1.0,2020-10-13 18:28:37.037000+00:00,"Setup:
+I have a RPi 4 with miniDLNA (ReadyMedia) and samba each running in a docker, a SSD connected via USB3 to the RPi and a TV connected via WiFi. All devices are in my locale network. The SSD is formatted as ext4. I have access via samba to a folder on my SSD which also functions as the miniDLNA volume.
+I have transfer speeds of around 90MB/s via LAN and WiFi to my samba share. But the issue is when streaming videos via miniDLNA I notice long buffering times and it usually gets stuck after watching for just a few seconds (both on TV [WiFi] as well as on a Win10 machine [LAN]). Until now, I didn't notice this behaviour with .mp4 files, only with .mkv files. The video files are 1080p.
+The two docker files I use are from dperson/samba and ypopovych/readymedia, respectively.
+I do not think this is an issue with my docker-compose file, rather than  an encoding issue, but nevertheless here is my docker-compose file:
+Does anybody have some pointers or experienced similar behaviours?
+Edit:
+After some further testing I can rule out miniDLNA and samba. I created a share on the SD-card on my RPi and played a mkv video from there. No buffering problems at all. As soon as I play it from my SSD connected via USB3, I get the buffering problems every few seconds. When that happens the SSD does not respond at all for a couple of seconds. This is strange, because reading and writing from the SSD works with constant 90-100MB/s via network."
+1.0,2020-10-17 19:42:14.863000+00:00,"I have the following object as you can see on console line 85.
+And I have the following JavaScript code
+And you can see what this piece of code prints on the console on line 97.
+What I want to achieve is first of all to access the keys,  ,  etc. I can do for example  and it will print those keys. But I want to achieve so such manner that I get the key and the value for each item in that object. Ideally something like  since I do not care about nanoseconds.
+How can I achieve it?
+I am mostly stuck because I treated it like an array an tried  but these cannot be used here."
+3.0,2020-10-10 22:47:50.543000+00:00,"I have a service class like this:
+My context looks like this:
+My unit test for  is:
+But I am getting error for my unit test. It says:
+System.NotSupportedException : Unsupported expression: m =&gt; m.Categories
+Can someone help me to fix the Setup part?"
+-4.0,2020-10-19 17:44:39.783000+00:00,"I have two DateTime columns like  and . these fields contain DateTime value.
+Here itself I need three different outputs. while you search, &quot;15-09-2020 00:00:00&quot; to &quot;26-09-2020 23:59:59&quot; it will display the first two lines. if you search like &quot;26-09-2020 00:00:00&quot; to &quot;13-10-2020 23:59:59&quot;, it should result in three rows.
+Instead of if you search, &quot;10-09-2020 00:00:00&quot; to &quot;18-09-2020 23:59:59&quot;, it will show the first two rows.
+In this case, I am stuck at the query. if I am using between some results won't come. if I am using greater than a symbol, some results won't come."
+3.0,2020-10-27 17:38:42.933000+00:00,"I'm writing a simple program using threading and sockets. I have created a decorated function with some nested functions inside. They look like this:
+I've written the  and  as nested functions just because I found usefull to have some better code-organization. I have defined the  in a nested class inside an existing one as I saw from this link: https://medium.com/@vadimpushtaev/decorator-inside-python-class-1e74d23107f6. I tryied to decorate the nested functions as well, but I have got an error that says: . Are there any solutions?
+Thank you very much for your time and excuse my English, I'm still practising it!"
+0.0,2020-10-14 11:01:39.690000+00:00,"Good morning!
+I've a big problem with ListViews in Xamarin Forms: my items aren't shown.
+This is my xml code:
+and this is my class constructor:
+In this moment method ExecuteQueryWithResponse() returns 3 items, that are detected by ListView, in fact when I start the app, I see 3 ViewCells. The problem is that these viewcells are empty, they're not showing data.
+Someone can help me?"
+0.0,2020-10-17 19:05:13.260000+00:00,"I'm working with the dataframe below. I would like to apply a filter that will create a new dataframe of the filtered result set. The filtered dataset should result in a True condition if the first and last day of a three day rolling lookback window are less or equal to 0.5, the middle value should be excluded.
+Result Should equal"
+0.0,2020-10-23 05:17:36.727000+00:00,"I have a program that we'll call . The  in Next looks like this:
+Seems pretty straightforward. It asynchronously loads an external script, which does add something to the page, but it doesn't remove anything, and it doesn't mess with any event handlers. In my index.js, I use the Button component I've created, which looks like this:
+Again, pretty simple. But after a few hours of scratching my head figuring out why that callback function wasn't firing, I figured it out: when I removed the external js script from the _app.js file, the Button's onClick works. When the external js script is in, the Button's onClick doesn't work. Nothing in the external file messes with the Button or with event handlers. It does add a DOM element to the page (it's a non-React library), so I'm thinking that React is rerendering the page client side once the script finishes loading, and when it rerenders, it does so without the onClick event handler on the Button component. I'm not sure why it would do this though, and how I could get around it. I'm typically leery of workarounds since the developers of React probably put that there for a reason, but I'm not quite sure what I'm supposed to do.
+Am I correct to assume that React is rendering this page twice because of the external script in ?
+If so, what is the reasoning for this? What benefit is there to me not hacking my way around this?
+How can I load that external script without making React rerender completely unrelated components?
+That third question is the kicker. Thanks in advance."
+0.0,2020-10-29 10:16:59.283000+00:00,"This is driving me crazy!
+A simple date, 4th of November 2020.
+Output:
+WHAT!
+So lets try an alternative:
+Lets confirm some things now:
+What is going on?"
+0.0,2020-10-21 10:38:36.867000+00:00,"We had a vulnerability check in our sbt project using Anchor Engine.
+Most of the errors related to the Jackson data bind. We are not even using it as we are using spray JSON for serialization. After searching I found it was used internally by sbt. So I can not upgrade its version. So I tried upgrading the sbt version from 1.2.6 to 1.4.0, to resolve this issue but it didn't work.
+DependencyBrowseGraph
+So can anyone please guide me on how can I resolve these security checks?
+Thanks"
+1.0,2020-10-24 17:03:46.787000+00:00,"I'm using Vue.js and firestore to make a landing page for my project, I've tried to make a registration form to make new account for my website.
+I've created a collection in my firebase project, named &quot;users&quot;, where the user information where stored when the sign up completed. But when I call the function, the error appeared:
+Cannot read property 'collection' of undefined
+What can I do? I'll share my code here:
+Signup.vue
+auth.js
+app.js"
+-2.0,2020-10-10 20:37:27.167000+00:00,"I am using PanNuke: An Open Pan-Cancer Histology Dataset for Nuclei Instance Segmentation and Classification
+Here I have found , an array of approximately 10 GB, shape (2656, 256, 256, 6). Now I want to explore it to look inside data. How can I do this?
+Here is the code:
+(2656, 256, 256, 6)"
+0.0,2020-10-31 03:14:04.313000+00:00,"I want to get a calculation result from a user-inputted string, while using  functions such as  or . I also would like to be able to do it as , not . I thought doing
+would work, because when I import all, it shows as a built-in function, and built-in functions are imported. However, when I ran the code, it showed that the math functions didn't work inside 
+Would I have to add in all of the math functions manually, or is there an easier way to do this?"
+0.0,2020-10-20 07:03:49.900000+00:00,"i stucked in sorting a column which shows the duration of the error i have attached you a screenshot of what im saying, data table is very weird in those things  :
+The first column is the one should be sorted i have added the screenshot here :
+as you can see in the function calculates the month,day,minute from the valuesi get from the database,the values i get are like 16.5607333333333,so the function extract the date from it"
+3.0,2020-10-02 06:55:44.220000+00:00,"Here, I know that  is equivalent to  and that  is equivalent to .
+What I did not know is that it's normal to dereference a null pointer. I thought that any dereferencing for a null pointer would result in an exception.
+After playing with pointers for a bit, I concluded that dereferencing a null pointer itself is not the problem, the problem is trying to read or write to the address pointed to by the null pointer.
+And since the functions are in a well known location in memory, dereferencing a null pointer to a class and calling one of its functions will just result in calling the function with the null object as the first parameter.
+That was new to me, but that's probably not the complete picture.
+I thought at first that this was an OOP concept at first, thus it should work in java for example, but it didn't work here and caused an exception (which makes me think why it doesn't work in java?...):
+So, clearly this is something related to C++ and not OOP in general.
+What are all of the situations under which dereferencing a null pointer will be valid and won't cause exceptions?
+Is there something else other than pointers of structs and classes that can be dereferenced successfully even if they're null pointers?
+Also, why is calling a function of a null pointer without accessing its fields raises an exception in other languages like java?
+One case where dereferencing a null pointer makes sense is in Red-Black trees for example. Null pointers are considered to be black.
+Here, I believe it makes more sense to include the function in the  class itself since it's related to it. It's not very convenient to include all of the logic related to the node inside it except for the one that checks for it being null."
+-6.0,2020-10-23 14:06:11.877000+00:00,How can I change the if else statement in the function with Ternary operator in JavaScript
+0.0,2020-10-29 16:55:02.193000+00:00,"Shouldn't &quot;woocommerce_email_attachments&quot; get triggered when I change an order status from Processing to Completed and customer get the your order has now been completed email?
+My code looks something like this, and works fine when the customer get the thank you for your order email. But once I change the status to completed and they get the your order has now been completed mail, it doesn't trigger the hook at all."
+0.0,2020-10-25 09:17:14.090000+00:00,@tstanisl the error remains the same
+0.0,2020-10-22 01:40:37.370000+00:00,@MichaelPetch how can RAX is used to return the structure back to the caller if the structure has too many fields that's too large for a 64 bit register/combination of registers like RAX?
+0.0,2020-10-02 10:23:47.963000+00:00,Actually it is not clear what is your inclusion / exclusion logic and priorities of rule enforcement. I would advise to clarify these  - and then provide valid examples covering all  possible cases.
+0.0,2020-10-03 00:42:07.663000+00:00,Whats missing is a LocationID in the Films table. And the location table should have like only two records...Example. 1 and 5 are duplicate as is 3 and 6 are duplicate.
+0.0,2020-10-13 03:21:15.937000+00:00,"Thanks Jayce444 for the advice, instead of comparing the arrays I compared the previous and current state in terms of seconds and that is working."
+0.0,2020-10-14 11:26:35.207000+00:00,"No, I access Spyder via the Anaconda Prompt. I was told at university that this was the best option out there, and I sadly do not know much about how Python code runs where to do otherwise."
+0.0,2020-10-12 11:05:38.237000+00:00,"1. Is this a published addon 2. If not, [Edit] to show your  manifest(View>): appscript.json"
+0.0,2020-12-08 13:38:06.450000+00:00,"It's certainly not publicly available (apart from scraping the issue tracker). But someone has to administer the database, get in contact with them and ask for a (anonymised?) copy if you're interested in it for research purposes."
+0.0,2020-10-26 04:38:47.273000+00:00,"Please provide a [mcve]. Your description is unclear. If you bind to func1 and then later to func2, only func2 will run whether you call unbind or not. I can't tell if that's what you want, or if that's what you don't want."
+0.0,2020-10-05 13:44:53.477000+00:00,Are you saying that the grades are not stored in a comma delimited list in a single column?
+0.0,2020-10-10 09:37:44.487000+00:00,"@Eklavya yes, I checked them. Which section should handle my case? I did not see it."
+1.0,2020-10-18 13:24:05.697000+00:00,Here is a nice clean pattern that might help you https://github.com/David-Else/modern-typescript-with-examples-cheat-sheet#reading-json-from-localstorage-using-unknown-example
+0.0,2020-10-15 11:36:29.527000+00:00,"UPDATE>> I tried to build an APK to see if that works, and it did. The problem lies with the Windows Standalone build, I just don't know where..."
+3.0,2020-10-13 07:23:17.727000+00:00,I bellieve it's because you're using `Session::flush` instead of `Session::flash`.  `flush` will remove all the data from the session... And also the login.
+0.0,2020-10-03 12:24:18.370000+00:00,You could also check the `len` of the (stripped) string
+0.0,2020-10-13 20:11:18.743000+00:00,I dont remember changing anything and there has been no update to my discord.py version.
+0.0,2020-10-26 12:43:18.933000+00:00,can you please show me how to do this in right way?
+0.0,2020-10-15 00:56:25.797000+00:00,"What if several arrays are non-empty, what do you you expect in those cases?"
+0.0,2020-10-23 23:42:36.220000+00:00,"Nothing can be discussed further unless you get more details from FRT, https://docs.microsoft.com/en-us/iis/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis"
+0.0,2020-10-19 22:04:04.817000+00:00,Then double check that MySQL server is really reachable via this hostname and this port. Maybe it is listening on a different port?
+1.0,2020-10-23 19:48:47.423000+00:00,Did you try to Google it? E.g. [`std::atomic` on cppref](https://en.cppreference.com/w/cpp/atomic/atomic). You get defined behavior on concurrent read write
+0.0,2020-10-15 09:54:50.863000+00:00,"For future readers notes, the reason for the (apparent) unrelated duplicate is due to the *real* problem being exposed in the comments under my answer."
+0.0,2020-10-07 13:43:47.920000+00:00,"Thank you Quang Hoang and norok2, your comments have cleared up my confusion. I'll amend my code to be more case insensitive."
+0.0,2020-10-04 08:30:11.933000+00:00,"i really don't know , I tried both but same error also tried fetch then it has **can't read has undefined** something."
+0.0,2020-10-26 00:54:49.163000+00:00,@user4642212 Hi! It is found. Turns out it's somehow my laptop problem :/ today when I tried running it again it works alright. Thankyou :)
+0.0,2020-10-18 21:38:33.850000+00:00,"Seems likely you want `order1.Total`, not `Order.Total`, and `order1.SubTotal` instead of `order1.subtotal`. It's also not clear why you have the `UpdateTotal()` method at all...what's the point of that? I find this question neither clear nor useful; it seems most likely that the main issue is a simple typographical error and no answer to this question is likely to help any other user in the future."
+0.0,2020-10-15 22:21:33.540000+00:00,"Tried but still renders the current user's info to the template on any url. Also, get_queryset function hasn't worked. Which is;
+```def get_queryset(self):
+  queryset = super().get_queryset()
+  return queryset.filter(user__username__iexact=self.kwargs.get('user.username'))```"
+1.0,2020-10-16 08:47:59.857000+00:00,https://rstudio.github.io/dygraphs/gallery-series-highlighting.html
+0.0,2020-10-21 01:33:25.047000+00:00,Treat warnings as errors and you will never have similar questions
+0.0,2020-10-19 15:02:47.180000+00:00,"Once you are inside the batch scope, your ""payload"" will be the individual member. For example, you have a payload [""1"", ""2"", ""3""], and you have a batch scope to process individual member, your payload inside your batch step will be ""1"" for one instance, ""2"" for another and so on. Note that each step will be process independently and thus variables introduced when you process ""1"" will not be available when ""2"" is being processed."
+0.0,2020-10-30 13:13:37.053000+00:00,"Would it work to iterate through all CSVs, save each `describe()` as a row in an extra DataFrame and finally calculate min/max as `min()`/`max()`, count as `sum()` and mean as a weighted sum of count and mean?"
+0.0,2020-10-17 02:10:22.873000+00:00,@Dymerz got it. Did any of the branch rewrite history? Did you check if a common commit exist in both the branches?   Can you include the git log output for both the branches before the merge?
+0.0,2020-10-08 21:33:06.997000+00:00,"Have you tried anything, done any research? Please see [ask], [help/on-topic]."
+0.0,2020-10-13 09:59:54.517000+00:00,"@IvanStoev Yes, I agree they must be different, but there is no apparent difference no matter how I measure their equality and that is what's annoying. I finally solved the problem by changing the expression visitor in such a way that it uses a unique parameter name for each parameter within the expression so that no 2 parameters have the same name. That apparently solved the problem, although I'm not really sure why since I have used duplicate parameter names in my directly-written lambda expression and EF didn't complain about that."
+0.0,2020-10-16 15:46:43.593000+00:00,"If you type `a`, I would expect you to get something along the lines of `a: command not found`.  `a` is not the same as `a.out`.  If you want to know the value returned by main when your program executes from a shell, inspect `$?`"
+0.0,2020-10-14 06:00:17.733000+00:00,"@zhuo.quan Good. It looks fairly complicated. Why are you doing `(rxBytes.c_str())[0]` instead of `rxBytes[0]` ? Why are you using checksums? Aren't you using TCP? If you get out of sync (for some reason) it seems like you'll be missing frames. Why not remove the frame information and send a `std::string` with the data to the handler?
+Some of the buffer handling seems spread out (in the socket class and in this class so it's hard to get an overview. I'd try to make the responsibilities for each class clearer. Instead of magic numbers, use proper constants (not `define`s)."
+0.0,2020-10-30 13:44:03.247000+00:00,I've now changed the default back to Java 8 and Aptana works as it should. Thank you to everyone for their help.
+0.0,2020-10-23 23:38:22.987000+00:00,"1, Length of `abcdefg` is 7 not 6.  2. Do you need to save `char` digits `0`, `1`... `9` or actual digits 0, 1.. 9?"
+0.0,2020-10-11 22:47:17.230000+00:00,Many styling options... too many to provide specific help. What have you tried that isn't working that we may assist with?
+0.0,2020-10-16 01:10:46.237000+00:00,"Then you can't use dot notation, try to change the format of the `${thread}` to `xxx.domain['Post@35577a26']` on the server side"
+0.0,2020-10-11 06:23:22.037000+00:00,"`getNumberOfSongs` - there are quite a few problems with this method,"
+0.0,2020-10-30 00:21:34.383000+00:00,are you trying to have the collectionview slide in or something? What's the goal here
+0.0,2020-11-09 21:14:21.733000+00:00,"I am having a similar issue, if you found out a solution please share.. Thank you"
+0.0,2020-10-27 17:43:51.520000+00:00,Meaning that you are not passing a third argument? I may have misunderstood your question then. In that case `r2` should be an `Optional` argument.
+0.0,2020-10-23 08:14:39.217000+00:00,"@user7 I am inserting around 4000 segments to the priority queue. If I do this every time I need to check for an intersection it would be computationally infeasible as this occurs millions of times. Therefore I was trying to find a way where after I check for intersections once, I would be able to restore the original queue via a copy of some sort."
+0.0,2020-10-29 16:09:38.983000+00:00,"Oh, I didnt know, that rsync only works one-way. Youre right, managing the displayed message on the server would be better."
+0.0,2020-10-07 11:13:42.990000+00:00,"`df = pd.read_csv(path, header = None, names=['te','td','sa','da','sp','dp','pr','flg','fwd','stos','pkt','byt','lbl'])`
+I don't see any `'ts'` in this line. But you are converting it in datetime in another row. What does te and td represent in dataframe ?"
+0.0,2020-10-28 15:20:02.643000+00:00,"change the ""`+`"" of that returnNib method to ""`-`"" or call it `[[self class] returnNib]` when you want to keep it as is. (ps: you may have to expose a declaration in your header file)"
+0.0,2020-10-04 18:54:44.597000+00:00,Xamarin.Essentials has a cross-platform `OpenAppPackageFileAsync` method that can read Android Assets: https://docs.microsoft.com/en-us/xamarin/essentials/file-system-helpers?context=xamarin%2Fxamarin-forms&tabs=android
+0.0,2020-10-06 00:33:16.240000+00:00,"If i can, I prefer to leave it here to help others as i was searching for this code and glued it from different post in case someone needs the exact result as me"
+1.0,2020-10-30 14:44:30.910000+00:00,i open the snippet in edge and work. are you sure you don't have any external css override css rule?
+0.0,2020-10-11 12:22:14.850000+00:00,"I suspect if it works when you code it manually, it's because your parameter name in the controller happens to be 'model' and it binds automatically. But the HTML Helper in the view can't know that, so can't generate the correct name."
+3.0,2020-10-16 23:14:32.203000+00:00,Because it is the first overload that matches the signature. See it for yourself: https://github.com/microsoft/referencesource/blob/master/System.Core/System/Linq/Enumerable.cs
+1.0,2020-10-28 02:41:47.433000+00:00,"Hi Ghanem, Thanks for your suggestion. Your suggestion  actually worked Thank you :)"
+0.0,2020-10-02 19:20:40.107000+00:00,Or this: https://stackoverflow.com/questions/653536/difference-between-property-and-field-in-c-sharp-3-0
+0.0,2020-10-21 07:53:14.837000+00:00,If you are ok turning tibble into dataframe. `data.frame(tibble1)` should give you what you want.
+0.0,2020-10-29 21:56:04.257000+00:00,`elif i == 'j' or 'x'` --> `elif i == 'j' or i == 'x'`
+0.0,2020-10-15 14:51:44.860000+00:00,[https://doc.qt.io/qt-5/signalsandslots.html](https://doc.qt.io/qt-5/signalsandslots.html)
+0.0,2020-10-06 16:19:44.390000+00:00,"@Ronak, thank you so much, I tried your suggestion and it worked like it is supposed to be. I appreciate your support."
+0.0,2020-10-03 09:32:02.570000+00:00,invalidate the catches and restart the android studio
+0.0,2021-02-12 12:17:54.090000+00:00,what version of liveview you are using?
+0.0,2020-10-08 05:57:28.907000+00:00,The error message literally says hot to fix it: `'%' must be followed by '%'`
+0.0,2020-10-13 04:25:38.517000+00:00,"@jdweng they are not missing. Normal build works perfect. These only comes when I try to publish, however when I checked the reference they were all good."
+0.0,2020-10-23 07:52:27.957000+00:00,Why can't you use grid? Even IE 10 supports it enough to do this. If you need to support even older/more limited browsers you could use using `display: table-*` or I see nothing wrong with directly using a table in that case. Other than that a JavaScript to loop over the rows and set the heights is relatively trivial to write.
+2.0,2020-10-20 01:17:41.190000+00:00,Well that is your logic.  If the want the code below that to also execute then it should not be an `else`
+0.0,2020-10-22 13:38:36.127000+00:00,Did you try to retrieve the DOM elements of those bullets to register a click events on them ?
+0.0,2020-10-16 11:16:19.657000+00:00,"It is a very bad idea to use `die(mysqli_error($conn));` in your code, because it could potentially leak sensitive information. See this post for more explanation: [mysqli or die, does it have to die?](https://stackoverflow.com/a/15320411/1839439)"
+0.0,2020-10-06 20:30:48.310000+00:00,Are you sure the offset would be 0? doesn't BST create an offset?
+0.0,2020-10-20 05:55:23.133000+00:00,"Can you clarify your question, please? What kind of answer are you looking for other than ""the language specification says so""? If you want to know why the language specification says so, that is a question you will have to ask matz."
+1.0,2020-10-18 19:27:14.530000+00:00,Read  [select(2)](https://man7.org/linux/man-pages/man2/select.2.html) and [poll(2)](https://man7.org/linux/man-pages/man2/poll.2.html) and [select_tut(2)](https://man7.org/linux/man-pages/man2/select_tut.2.html) and [signal(7)](https://man7.org/linux/man-pages/man7/signal.7.html) and [socket(7)](https://man7.org/linux/man-pages/man7/socket.7.html). Consider using [libevent](https://libevent.org/) or [Glib](https://developer.gnome.org/gtk-tutorial/stable/c2023.html) or [Qt](https://qt.io/) or [Wt](https://www.webtoolkit.eu/wt)
+0.0,2020-11-09 07:33:53.397000+00:00,Any update on this?
+0.0,2020-10-17 19:52:18.690000+00:00,Does this answer your question? [How do I loop through or enumerate a JavaScript object?](https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object)
+0.0,2020-10-12 07:05:09.623000+00:00,"Have you considered to use one of the following nuget packages to ease the pain of EF mocking: [EntityFrameworkCore.Testing](https://github.com/rgvlee/EntityFrameworkCore.Testing), [EntityFrameworkCore3Mock](https://github.com/huysentruitw/entity-framework-core3-mock) ? As a prerequisite please make your `DbSet` property `virtual`."
+0.0,2020-10-19 19:34:35.327000+00:00,"Either store dates using a date data type, or don't bother with an RDBMS."
+0.0,2020-10-27 18:16:26.530000+00:00,With `@classmethod` your example code runs without an error.
+0.0,2020-10-14 11:09:40.560000+00:00,"omg, thank you! I've had a really stupid problem: I'didn't use getter and setter methods in my ListNewsItem class. Thank you so much for the answer!"
+2.0,2020-10-21 14:52:42.800000+00:00,sbt has no dependency on Jackson - it uses sjson-new as afar as I can tell. I would suggest using https://github.com/sbt/sbt-dependency-graph to generate a graph of dependencies and checking if something isn't fetching jackson as a transitive dependency.
+0.0,2020-10-31 03:37:06.443000+00:00,"@HansMusgrave - `eval` is for expressions. The `while` will raise a syntax error. Of course you can make evil list comprehensions, and etc..."
+0.0,2020-10-20 09:53:29.147000+00:00,"@Icepickle im asked to show the data like this,if i show the numbers like the sample i gave you,it can be sorted easily since they are numbers,but when i change to this format ,sorting is the problem,all numbers i get is in minutes from the server,like 309500.485966667 which i should convert it to month day and minutes to show it"
+0.0,2020-10-02 07:15:23.993000+00:00,"@PaulMcKenzie actually I am not sure, for me Java is just a tool, I dont know much about how it actually works ;) https://softwareengineering.stackexchange.com/questions/153843/undefined-behaviour-in-java"
+0.0,2020-10-23 14:12:19.633000+00:00,weird looking JavaScript

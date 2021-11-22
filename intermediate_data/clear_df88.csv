@@ -1,0 +1,47 @@
+id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+65100353,Refresh a Random in Google Sheets,"I have a functioning random value generator within a cell in google sheets, that pulls randomly from a range of cells, like this:
+This function works as expected. The issue I am having is that I'd like to be able &quot;refresh&quot; the value on demand such that it pulls a new random cell upon refresh.  Placing the cursor in the cell and hitting enter on the keyboard doesn't seem to do it, and there doesn't seem to be a &quot;refresh&quot; feature in sheets.
+Oddly, changing the value in literally any cell on the spreadsheet triggers the function and I get a new random value.  The trouble is that I do not want to have to change the contents of other cells to get the random to refresh.
+How is this done?",,0,1,,2020-12-02 00:00:08.360000+00:00,,2020-12-02 00:00:08.360000+00:00,,,,,1639164,,1,0,google-sheets,22
+65100354,How to download a file that has no extension in url? or bypass download prompt?,"When clicking on the following link a file is generated and I get a prompt to download and save it to my computer https://www.bmv.com.mx/es/Grupo_BMV/Informacion_de_emisora/_rid/541/_mto/3/_mod/doDownload?idTipoMercado=CGEN_GLOB&amp;idTipoInstrumento=CGEN_ELGA&amp;idTipoEmpresa=&amp;idSector=&amp;idSubsector=&amp;idRamo=&amp;idSubramo=&amp;random=9493
+I'm trying to create a webpage that automatically downloads this file to the server, the problem is that whenever I click on the link I get a prompt to download it to my computer instead.
+I attempted this
+But I believe that would only work if that was the file's URL.
+I attempted this as well, without positive results
+Are there any alternatives to directly generate and download the file to my server?",65101152.0,1,2,,2020-12-02 00:00:36.373000+00:00,,2020-12-02 01:57:27.570000+00:00,2020-12-02 01:17:25.703000+00:00,,10426809.0,,10426809,,1,0,javascript|html|url|curl|php-7,32
+65100358,How should I deal with Activestate removing PPM from their Perl?,"I'm an occasional Perl developer on Windows and Linux. I write or modify Perl scripts a few times a year when Perl is the right tool. With occasional use, I've never become a real Perl expert, but I succeed with the great help I receive in this forum.
+Whenever I build or upgrade a machine, I get the latest Perl version. In 2020, I noticed Activestate was forcing logging in with an account before downloading. I did that, and didn't think much about it at the time.  Later I need to add some modules, and discovered that PPM has been deprecated and removed.
+That seems like a pretty big deal - like installing the latest Ubuntu and discovering apt-get has been eliminated. My understanding is Perl users are supposed to go back to Activestate and have them build a custom installer that bundles desired modules, and then re-install Perl with every change. That seems a step backwards.  Is it a step toward controlling the user base, and eventually turning a free Perl into the &quot;Perl of great price&quot;?
+What does the Perl community think about this, and what do you recommend? Am I misinterpreting the State Tool and how it works? Are you sticking with ActiveState, moving to Strawberry Perl, or something else?",,2,4,,2020-12-02 00:01:06.303000+00:00,,2020-12-03 21:15:53.610000+00:00,2020-12-03 21:15:53.610000+00:00,,2836621.0,,82287,,1,2,perl|activestate,154
+65100359,Why does sorted not sort the array properly?,"I'm trying to use sorted to sort a 2d array by its 4th value from biggest to smallest, but for some reason it's not sorting properly. It seems to sort two values correctly, but not much more. I've tried to look on the internet for how to use sorted but it seems that this should be sorting it correctly:
+This is the output I get:
+[['A', '15', '23', '5'], ['A', '15', '23', '2'], ['A', '15', '23', '17'], ['A', '15', '23', '16'], ['A', '15', '23', '12']]",65100380.0,2,2,,2020-12-02 00:01:25.210000+00:00,,2020-12-02 00:05:25.660000+00:00,,,,,14463869,,1,-1,python|arrays|python-3.x|sorting,28
+65100360,How to return a JSON response in errorHandler Middleware in NodeJS using Express?,"How to return a JSON response from errorHandler Middleware in NodeJS using Express. My code is:
+UserController.js
+index.js
+UserRoute.js
+I would like to get a JSON response from my errorHandler middleware, like that:
+My current code doesn't work. it doesn't return any JSON response.
+Thanks in advance.",,2,0,,2020-12-02 00:01:28.973000+00:00,,2020-12-02 00:46:44.347000+00:00,2020-12-02 00:19:44.253000+00:00,,3260969.0,,3260969,,1,0,node.js|express,36
+65100355,,"Your layout seems very over complicated - are you just trying to clone what you did in Winforms in WPF?
+It doesn't make any sense to have StackPanels or a Grid with only one child control each.
+Try replacing your DockPanel with appropriately sized Grid Rows and Columns.
+The GroupBoxes won't resize if you hard code their widths.
+There's no need to define an ItemTemplate for the ListBox just to display a single string.
+Something like the following would be a good starting point for your layout.",,,1,,2020-12-02 00:00:44.190000+00:00,,2020-12-02 00:00:44.190000+00:00,,,,,967885,65100057,2,1,,
+65100356,,"If I may, I have revised your code a bit.
+The technique you need is event delegation:
+any click on a child element is also a click on its parent elements. we plas the event listener on the parent and we see on which child element it occurred.
+In your case, this only makes one event listerner for all your 'remove' buttons.
+the other idea is not to ignore the DOM, it also keeps the list of tasks, you don't need to keep them in a table in memory, this is redundant.
+here is the code: css is also helfull
+As you can see this code is shorter. You can also use a IIFE unstead of a class, like that :
+I also added a  button...",,,0,,2020-12-02 00:00:54.990000+00:00,,2020-12-02 00:57:39.193000+00:00,2020-12-02 00:57:39.193000+00:00,,10669010.0,,10669010,65099117,2,1,,
+65100357,,"According to mozilla the first parameter in  is the accumulator (the current sum) and the second is the current value from the array
+arr.reduce(callback( accumulator, currentValue, [, index[, array]] )[, initialValue])
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+So if you are trying to total the value from an array of  you will want something like:",,,0,,2020-12-02 00:00:56.047000+00:00,,2020-12-02 00:00:56.047000+00:00,,,,,2655025,65100169,2,1,,
+65100361,,"In your feedback view, once forms is valid it doesn't go to complete.",,,1,,2020-12-02 00:01:30.627000+00:00,,2020-12-02 00:01:30.627000+00:00,,,,,13457299,65100278,2,0,,
+65100363,,"I use Excel as part of Microsoft 365.  I too fought with the screen flickering problem.  Although my macro worked, the flickering was very annoying.  I tried several approaches and stumbled upon this:
+Minimize the second workbook before initiating the macro from the first workbook.  For my situation, the screen no longer flickered.  I also tried the following code to minimize the second workbook from within VBA.  If the second workbook was already minimized, there was no effect.  If the second workbook was not minimized, the screen flickered only once - to enable me to minimize the second workbook.  Subsequent switching back and forth between workbooks did not introduce any screen flickering.
+‘",,,0,,2020-12-02 00:02:08.737000+00:00,,2020-12-02 00:02:08.737000+00:00,,,,,14745472,38896046,2,0,,

@@ -1,0 +1,615 @@
+score,creation_date,body
+0.0,2020-11-11 20:45:09.240000+00:00,"I'm implementing a bst, more precisely an AVL tree in c++. I got pretty much everything working except the balancing. The program will crash when it tries to balance LR or RL. For example if will crash if i insert 7, 5, 6 OR 7, 9, 8 but it will work with: 7, 6, 5 AND 7, 8, 9.
+relevant code(pastebin): https://pastebin.com/cn69XLn5
+relevant code:
+all code (pastebin): https://pastebin.com/uxTQ369i
+all code:
+I'm not sure but I think that the problem is that I'm sending in the wrong node to the function, therefore it crashes because it assumes the node im sending in will have a child but it wont and therefore it tries to access a nullptr. I don't know how to fix this though"
+1.0,2020-11-28 15:15:20+00:00,"I would like to adjust the return value of a method from an instance class and I am not quite sure if it is possible with or without Reflection. I could not figure it out and so I wanted to ask it here. Lets say I have for example the following class Foo:
+Some context:
+Foo class is from an external library
+Foo class is not adjustable
+Foo class is not extendable
+So with this basic example I would like to get Bar returned from the method getName() instead of Foo. To be very explicit:
+Why do I need this?
+Well I need to pass this instance of Foo to another method which only accepts an object of the type Foo. This method will call the method getName() and will do some additional calculation.
+Actual use case:
+I will try to give more context, hopefully it will be a bit more clear. There is a method within a builder class which is accepting an instance of  a method called . This builder class will internally call  on the KeyManagerFactory and it will return 
+The KeyManagerFactory is a final class, it doesn't have a public constructor at all. The getKeyManager method is also final. I already have a  and so I want to hack this KeyManagerFactory to return my own array own KeyManagers instead and supply it to the builder."
+0.0,2020-11-03 19:20:41.983000+00:00,"In HackerRank's Array Reversal problem,I wrote a code like below and it works fine with these test cases:
+n=7
+1 13 15 20 12 13 2
+But for only one test case it didn't work and gave me the error message I wrote in the title.(For this):
+n=6
+16 13 7 2 1 12
+Here is my code"
+0.0,2020-11-06 12:26:14.433000+00:00,"I want to convert the following DateTime to UNIX timestamp to compare with DateTime coming from python data.
+1st DateTime from dataframe-
+output1: str
+2nd DateTime from MSSQL server-
+output2: list
+I want to compare output1 and output2 by converting to Unix timeStamp? any other method? because later on after comparing two DateTime, depend on the condition I want to update the database. Also welcome for a new approach to update database"
+0.0,2020-11-11 12:14:24.510000+00:00,"We have SSIS packages and a SQL Server database. We have to migrate our data and packages to a new database, and our SSIS packages have been troublesome.
+The packages are a SQL task -&gt; Data Flow Task -&gt; SQL Task -&gt; Script Task. SSMS is throwing an error on the script task. I do not have permissions to access the server directly and run VS from there. On my local machine, everything runs fine.
+We determined that the script task is actually unnecessary in the process, so I deleted that step and re-deployed the packages. However, it's throwing the exact same script task error despite the script task not being there anymore.
+If I recreate the package without the script task ever being involved, it runs just fine. I would need to recreate a huge amount of packages, so I'm trying to avoid this at all costs.
+Does anybody have any ideas?"
+0.0,2020-11-30 15:28:34.233000+00:00,"I need to get the following: 
+I wrote the following:
+but I got:"
+3.0,2020-11-30 18:07:51.843000+00:00,"I've a PostgreSQL  table with this complex structure :
+And I've to make a query for filter until the field40 many explication than I saw are for objects mor simple.
+Can you explain me how can I do ?
+Edit :
+The example what I made i more simplest than reality. In reality the object is very very long. If I try to make a simple example with values, that's like that :
+In this example, my Postgres table have two columns, one with the primary key uuid and one with the object in jsonb item
+And what I want, for example is to make a filter on my items where &quot;field41&quot; contains value &quot;gis.stackexchange.com&quot; for et in this example if I search &quot;field41&quot; = &quot;https://yahoo.com/&quot; the tuple with &quot;uuid&quot; = &quot;uuid&quot;: &quot;64fc7a55-be2d-41d8-99c1-d08fa5780731&quot; will not be in the result"
+3.0,2020-11-05 07:30:57.103000+00:00,"We have a table of 130GB and 4000 columns. When we select 2 of these columns, our Spark UI reports a total of 30GB read. However, if we select those two columns and store them as a separate dataset, the total size of the dataset is just 17MB. Given that parquet is columnar storage, something appears not to be working properly. I've found this question but I'm unsure how to diagnose further and what attempts to take to reduce the amount of I/O required.
+It was my understanding that the benefit of columnar storage is that each column can be read more or less independently of each other.
+We're running on Hadoop 2.7.X on Databricks. It occurs both on the 6.X and 7.X versions of databricks (spark 2.4/3.0)"
+0.0,2020-11-02 11:22:12.923000+00:00,"I have the following code to create a role in my discord server:
+I was wondering how I can enable the option below when creating a new role within my code:"
+0.0,2020-11-19 18:13:33.217000+00:00,I am working in JavaScript/Node. I have a UUID using https://www.npmjs.com/package/uuid. I need to convert it to two 64-bit integers. Java has getLeastSignificantBits() and getMostSignificantBits(). Does anybody know if these utility functions have been ported to JavaScript/ECMA6?
+1.0,2020-11-07 05:14:16.200000+00:00,"Prior to macOS Big Sur, I could create an  and hide the default show/hide arrows that expand and collapse groups of items. But now in Big Sur, I can't find any way to get rid of the default arrows. I'm using my own arrow style and functionality.
+Here's a screenshot:
+I have my  set to have a  Style since I also provide my own margins around the rows. But I don't see any options in the storyboard editor for hiding the arrows, nor do I see any options under  in the docs for doing it.
+Does anyone know how to hide the default expand/collapse arrows in Big Sur?"
+0.0,2020-11-13 14:07:03.647000+00:00,"I have a dockerized PHP/Laravel app that's working fine inside a php:7.4-apache container. We had it routed to  for development purposes.
+Now we want this service to be available at  in our network of microservices.  Request to localhost go to an nginx service, and we've set up a rewrite rule in  to achieve this:
+But now some  requests fail. This is what happens:
+The problem seems to affect all URLs that contain a question mark. We stripped it for a request that contains no params, and the request went through. But that's not possible in the above case.
+What is happening here? I'm not sure if the nginx rewrite rule might be to blame as I wouln't expect the browser to notice it's effect at all (and the above error message is from Chrome DevTools).
+edit
+Looking at the network tab in Chrome, I realized there are two similar requests:
+One goes to  as expected. nginx responds with a 301 and a location header .
+The second one goes to , which is precisely the location header from the first request. Again nginx responds, this time with a 404.
+So it seems nginx 'forwards' the first request to itself instead of the Laravel app."
+1.0,2020-11-10 19:10:13.863000+00:00,Trying to have a counter on a web page that does not restart on each different page view within the same user session. Currently using this code (thanks to Praveen Kumar Purushothaman) but this counter resets every time a different page is viewed.
+0.0,2020-11-13 15:08:25.173000+00:00,"i have a problem.I am waiting for your help.Thank you
+index codes are here.Even if i write dataType:JSON it didn't work.
+index.php
+ajax.php"
+0.0,2020-11-09 08:31:00.823000+00:00,"I have a two tables:  and , where  Table stores the information about all the 's and  Table stores real-time data received from an inverter.
+Now, I have 14 different sites from which I get the real-time date of the inverters, as shown below.
+Output
+I am using this same query to find the  of the  column by Grouping them with the TagName
+But the result includes only the first TagName and not all the TagNames as shown below.
+Output
+If I hardcode all the TagNames in the subquery, then I am getting the results from all the sites. I don't want to hardcode them, is there any other way to include all the sites in the query results?
+I am new to T-SQL, I think there maybe something else that I can use instead of the  clause, but I don't know which one. Any help would be much appreciated, thanks!"
+0.0,2020-11-17 12:32:26.507000+00:00,"I am working on video DLL lib. There is the interface of COM frame class. Which is actually an image. While debugging, I want to see what happens to this frame. But only way to do it - to add  method to code and recompile. Is three some better debugging tactics or tools for debugging COM interfaces?
+It is not hard to write some app with import possibility that will visualize frame if I only find the way to export it from MSVS during debug session."
+0.0,2020-11-26 20:32:23.607000+00:00,"I'm trying to install Editor.js using node.js package in my hello-express Glitch project. This is the package via NPM:
+I included the module in my javascript file as mentioned in the editor.js documentation:
+But the following error appears in the browser console:
+Uncaught SyntaxError: Cannot use import statement outside a module
+I'm sure it's a bad installation in my Glitch project but I don't know how to fix it. Could you help me?"
+0.0,2020-11-18 12:42:37.510000+00:00,"I have two fitted pipelineModels, and I want to save them as one pipelineModel.
+Ideally, I want to do something like this:
+but this doesn't work.
+I have found similar question with the same problem in PySpark: Spark add new fitted stage to a exitsting PipelineModel without fitting again, but their solution (  ) does not work for me.
+I tried to rewrite it in Scala like this  but I get the error &quot;no constructor accessible from here&quot;...
+I am trying to avoid combining them as unfitted Pipelines and fitting them together"
+1.0,2020-11-28 14:44:00.883000+00:00,"I am trying to build a neural network that takes in data in form of a matrix and outputs a vector but I don't know what layers to use to perform that.
+My input has shape (10,4) and my desired output has shape (3,).
+My current model is the following :
+this at least results in a vector instead of a matrix but it has (10,) instead of (3,). I could probably find a way to reduce that to (3,) but I doubt I am doing the correct thing with this approach."
+1.0,2020-11-25 09:23:23.107000+00:00,"Grouping an array by multiple properties, iam able to do grouping with single property but iam not getting correct output using 2 properties
+I have an array like this
+i want to group by (branch, school)
+and the output should be
+iam able to do grouping successfully using single property(branch) below code
+grouping= above array
+Any help will be greatly appreciated
+thanks"
+2.0,2020-11-20 19:02:55.953000+00:00,"I have an NMDS ordination that I've plotted using ggplot2. I've added environmental vectors on top (from the  function in ) using  and added corresponding labels to the same coordinates as the segments using  (code below):
+However, since the labels are justified to centre, part of the label sometimes overlaps with the end of the arrow. I want to have the text START at the end of the arrow. In some other cases, if the arrow is pointing up, it pushes into the middle of the text. Essentially, I want to be able to see both the arrow head AND the text.
+I have tried using  from the  package but the placement seems random (and will also repel from other points or text in the plot (or just not do anything at all).
+[EDIT]
+Below are the coordinates of the NMDS vectors (this is the  object from the example code above):"
+0.0,2020-11-02 07:43:24.300000+00:00,"I need to know what is the Queuing model in WLAN toolbox examples, specifically Simulink model: 802.11ax System-Level Simulation with Physical Layer Abstraction in system-level simulation. Nothing is mentioned in documentation and I need to calculate the queuing model matching to this.
+Would appriciate any help."
+1.0,2020-11-11 09:29:23.887000+00:00,"On the click of a button in my app a popup opens. clicks on the button once, then it works fine, but whenever I click on that button continuously 2 3 times then I get the error given below.
+I am getting this error.
+This is my Code
+How can I resolve this error?"
+0.0,2020-11-17 03:23:20.293000+00:00,"The question is asking me to write a code for the trajectory path which I know how to do for one file but its asking for two different file paths box_wb.psf and md.dcd which i'm confused on how to do it for both?
+The file path for box_wb.psf is ubiquitin_run/ubq_files/box_wb.psf
+the file path for md.dcd is ubiquitin_run/ubq_files/md.dcd"
+0.0,2020-11-06 17:00:00.663000+00:00,"I have a system with two database servers I am working with:
+One of them is database first - a database managed by a legacy enterprise application and I don't have full control over changing the database structure.
+The second is code first and I have full control in the code first database to make changes.
+Security policies prevent me from making a view that joins tables from the two database servers in the code first DB which might be a way to make this better according to what i've seen on SO posts.
+I have one context for each database since they are separate.
+The data and structure in the code first tables is designed to be able to join to the non-code first database as if they were all in one database.
+I CAN get what I need working using this set of queries:
+Again, this works and gets my data back in a reasonable but clearly not optimal timeframe that I can work with in my UI that needs this by preloading the data before it is needed. Not the best, but works.
+If I change the variable declarations to not be async which I was told I should do in another SO post, this turns into a cross db query and netcore says no:
+Adding ToListAsync() is what allows the join functionality I need to work.
+Q - Can anyone elaborate on possible downsides and problems with what I am doing?
+Thank you for helping me understand!"
+0.0,2020-11-20 08:46:24.540000+00:00,"I am trying to get the captions from a segment from a live feed. I am running the command
+Output
+`Input #0, mpegts, from 'seg-109853030-v1-a1.ts':
+Duration: 00:00:06.01, start: 57867.901133, bitrate: 2649 kb/s
+Program 1
+My question  is what command should I run  to print out the caption file with the track metadata including label and language."
+-1.0,2020-11-12 15:18:21.400000+00:00,"I need some help here with my game code. It's a game about making some dishes and delivering. You need to  catch some ingredients that are spawned in the ground, when you catch it they go to your inventory.
+There are 3 types of recipes, with 1, 2 and 3 ingredients. Also, the ingredients DON'T need to be in order in your inventory to complete the recipe, it should just verify if you have the right itens. If you have 3 ingredients, it should verify in the list of recipes with 3 ingredients if is there anything with these itens.
+The ingredients have names and Ids.
+The recipes are a list of IIngredient, and the recipe has a name:
+And the inventory
+The player inventory:
+When I deliver the item, I want to check how many itens do I have in my inventory, to know which recipes I should compare, and after, try to match my itens with all the recipes that have the same amount of ingredients. If any recipe match, I want to know who it was.
+I'm using this code, but it's not working:
+The last code block, that I try to verify and check if I have the itens, don't show any result. I don't even know if the code I wrote make sense hehe"
+1.0,2020-12-01 10:20:05.480000+00:00,"my previous research on Google led me to this page:https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html
+here I found some informations … and I startet trying. The testing setup is against a local mosquito. This works so far (it runs without errors), but if I send the PUBLISH message, I get disconnected from mosquito.
+[edit] So the big Question is, what's wrong with the message.
+You may wonder WHY THE HELL I'm trying to hardcode the implementation … it is to understand the functionality. I like to implement the Publishing in a robot system with a special language, which does allow the use of socket with connect / disconneect / send and receive commands to a given adress and port. Therefore I try to get it working in c# to adopt to the robot language.
+Here you find the current code:"
+0.0,2020-11-07 11:32:56.147000+00:00,"(This is my first post, sorry if it's not perfect)
+I am in the process of making an API in nodejs with &quot;express&quot;, &quot;body-parser&quot; and Sequelize.
+My HTTP API is working fine, however I am stuck on something.
+Indeed, I have a &quot;message&quot; table linked to a &quot;user&quot; table
+Association : message/user
+Here is what I would like: Add a prefix to &quot;req.query&quot; when I call an include.
+I have a &quot;getMessages&quot; route allowing me to get all the messages. I have included the &quot;user&quot; table
+When I want to fulfill a condition (example: find all the messages where the user's language is EN)
+I make the following request: http://localhost:8080/message?language=EN
+This query works!
+However I want to put &quot;usermessage.language=EN&quot; instead of &quot;language=EN&quot;, someone can help me please ?"
+0.0,2020-11-26 15:39:43.190000+00:00,"I have a date string  which is passed to the backend ASP NET MVC application.
+I am parsing the date/time string using the below code:
+This code is giving me time which is 1 hour less than the actual time. This is because of Daylight Savings.
+Now, I want to know if daylight saving is active in the timezone or not. So I wrote the below code:
+The above code  condition is hitting multiple times with the following zones satisfying condition.
+Yukon Standard Time
+Pacific Standard Time (Mexico)
+UTC-08
+Pacific Standard Time
+So, I further narrowed down the code
+This time I got three:
+Yukon Standard Time
+Pacific Standard Time (Mexico)
+Pacific Standard Time
+Is it possible to get the exact timezone? (I know this user is in )
+Or is it okay to use any (first one) and add one hour to time to get the correct time?"
+0.0,2020-11-06 05:50:18.990000+00:00,"I am looking to grab the email address only from the records with the UserStatus = FORCE_CHANGE_PASSWORD.
+I've got the following expression below to work but now I need to figure out how to fetch the 3rd Value key that contains the email address while omitting the first 2 Value keys."
+-1.0,2020-11-12 19:10:48.533000+00:00,"I have a .txt file that i wanna sort that looks like this :
+I want to sort every line where the second number in each line is the only important thing for the sort algorithm. I wanna sort them from the highest (e.g. 2,659,074) to the lowest(e.g. 35,744). The important part is that every line's content should not get edited or mixed up with other lines.
+So the result should look like this:"
+-1.0,2020-12-02 14:53:50.017000+00:00,"How can I start a loop on a different thread by pressing a ?
+The main idea is, when  is clicked, start a loop on a , and when  is clicked, stops the loop in the .
+The loop can be done by ,  loop or  loop, but he needs a way to stop by pressing a button."
+0.0,2020-11-02 18:11:07.830000+00:00,"I have a class that has a member of type std::thread, however, when I want to use this class as a member of another class I always get the error that the constructor of the other class was implicitly deleted because std::thread constructor is deleted.
+My class with the std::thread member looks as follows:
+The other class looks like this:
+I was thinking that I already am properly initializing the std::thread class with (here an empty) function. But I still do get this error, so it seems like somewhere there is still a copy constructor called?
+I should also add the I can use the VideoSender class directly without errors. This only happens when used as a member of another class.
+Edit
+I then initialize RemoteCom like this:
+This is really all there is. I reduced it all to this minimal example, the error still exists."
+0.0,2020-11-02 15:04:57.477000+00:00,Would the flock() function prevent file corruption in this case whilst writing the file (in case two processes happen to try and write data to the file at the same time)?
+1.0,2020-11-05 16:28:23.973000+00:00,"i'm working on the extraction of an algorithm from a source existing library. Inside a function there is a declaration of IplImage initialized with a Const cv::mat :
+compiling i get the following error:
+I think this is because the library uses an old version of opencv. So the question is how can i get the same result in the new version of opencv?(i'm using the latest)"
+1.0,2020-11-26 14:40:00.627000+00:00,"This is the sample data,
+I need this data to be read into dataframe without single quotes
+But i am getting the data in single quotes when reading through pandas.
+Can someone please help me"
+0.0,2020-11-25 15:58:06.590000+00:00,I need to digitally sign email using s/mime. I've created a detached signature for my attachment but outlook can't open it: &quot;Cannot open this item. Your Digital ID name cannot be found by the underlying security system&quot;. Certificate is installed on this PC and there is smth need to be tweaked in this code:
+0.0,2020-11-13 12:36:51.677000+00:00,"I have this array called  I want to insert into the database
+Here is my Controller
+I have a One to Many relationship with  and  Models"
+0.0,2020-11-02 12:27:35.863000+00:00,"I have a C socket that listens on port 1001 on localhost. I also have the client code that connects to port 1001 on the ip 127.0.0.1. If I send the client's code to my friend, how could he have access to my machine when we would be on different networks? Is it possible for me just by changing the server code to make my public IP open for connections on port 1001? Below is the simple server code:
+obs: I learning C."
+0.0,2020-11-16 12:03:10.540000+00:00,"I have a websocket server running behind nginx.
+Connecting via http works ok (ws://mywebsite.com) with following nginx config:
+I'd like to connect to this via https (wss://mywebsite.com) and have tried this:
+However, I get a  on the browser side (e.g. with ).
+My understanding is that WSS is a connection to a standard websocket via https, is this correct?
+Is my approach above correct?
+Is there something obvious I'm doing wrong?
+To confirm the cert was installed with certbot, and the e.g. https://example.com works.
+Note also, there is another server block listening on 443, this does not define the /myWebSocket location (I think it is the nginx default ssl block that is superceded by certbot block).
+Edit: note removing that first ssl server block results in the browser side websocket connection error message changing to .
+Another Edit: I was connecting using the server's IP address not the DNS name - that removed the error. :-)"
+0.0,2020-11-21 14:17:39.620000+00:00,"GitLab dedicated runner defined in the Yaml file using the Tags..But the pre build failing due to not able to pull the docker image defined &quot;amazonlinux:latest&quot;,,,,FYI below is where the runner is stuck.....
+Running with gitlab-runner 13.5.0 (ece86343)
+on runner1 xyzf
+Preparing the &quot;docker+machine&quot; executor
+If any experts out there, looking for your valueable suggestions. Thanks."
+1.0,2020-11-03 00:33:58.650000+00:00,"I am using  under the hood for my SwiftUI application since  and  are extremely limited and/or buggy. I have a function called  that needs to take in a SwiftUI view, wrap it in  and then push it on top of the navigation stack:
+Now, most of my calls look like , I have to cast every single view to  which is a bit annoying and unclean.
+Is there a better way to do this so I don't have to cast every single time?"
+-3.0,2020-11-17 16:54:56.843000+00:00,"Ok so the input will be a URL, let just say for example the URL is http://www.pcwebopedia.com/files/index.html
+URL will always have let say the HTTP FTTP: // www. and etc
+The project that Im doing is to break down URL into different parts and I'm stuck on one of the question
+The question ask me to find the position Of Slash 1, as you see in the code rest of URL is
+pcwebopedia.com/files/index.html the position is  15 for the first /
+while http://www.pcwebopedia.com/files/index.html is 26, this is what I want.
+There was a suggestion that said to first find how many characters there is from start of the string to period &quot;www.&quot; and add the value to positionOfSlash1"
+1.0,2020-11-10 17:30:23.743000+00:00,"I have two different models,  and  where  has reference to .
+I am trying to get all the teams that a user belongs and then get all the users that are members in those teams and merge them in one array without duplicates.  I have only managed to get the teams that a user belongs. Any ideas? (I'm a newbie)
+My code:
+my code result:"
+0.0,2020-11-03 12:41:49.887000+00:00,"something weird is happening with my Pycharm setup. I have PYTHONPATH env var set on a python install location for other purposes, and all I want is to be able to create an isolated venv in Pycharm ignoring everything else happening outside of Pycharm.
+But what I get is all the PYTHONPATH interpreter packages being appended to my virtual environment, and I can't uninstall them because they live outside of my venv.
+How can I solve this?
+Thanks"
+0.0,2020-11-07 22:30:52.343000+00:00,"So I used this tutorial to make a typing effect and it appears great in English, I tried
+to use Arabic text (which is a connected letter language) and it appears good on my device.
+when I sent the app prototype for the client to test it, the Arabic language letters appear disconnected in his device! so weird as I couldn't debug it because it does not happen on my laptop and mobile phone!
+I found this library which has a test demo at the bottom of the page, I asked him to test Arabic words on it, it appears like this on his device (iPhone xs max, chrome browser):
+but it appears like this on my device (Linux, chrome browser):
+any idea why this happens and how to solve it?"
+1.0,2020-11-25 15:56:47.727000+00:00,"I am trying to retrieve data from database and display it into Data Table but this error is keep appearing:
+When I tried to check its response in Developer tools (I use Chromium Edge) it does not have any data  and contains only message:
+I have this in my :
+My snippet code from controller file ():
+My snippet code from the index blade file (jscript part at the bottom of blade file):
+And finally where the data will be displayed (index blade file):
+I don't know what's wrong or where's the part that causes an error or problem because it doesn't show any response or data.
+When i try to display the contents of this line by using :
+It does not show any data from database but when I try this code that does the same it retrieves data from the database but still the DataTable error is appearing:
+I don't exactly know whether the data retrieval or data displaying
+implementation or both is the problem.
+What is the cause/s of the error/s or problem/s that results?"
+0.0,2020-11-13 23:08:26.600000+00:00,"We have a complex Google spreadsheet with supporting Google App Script code. We are in the process of verifying the app with Google. Once the app is verified and published what is the best way to protect the API key? Also, once it's published what is the best way to protect the code?"
+1.0,2020-12-01 13:32:31.940000+00:00,"I'm working with API that does not allow in specific scenarios to use &quot;OR&quot; or &quot;AND&quot; in queries.
+So I have to split the query(String) and send one by one which is fine but it has to be with three brackets at start and end of the string, which is causing me troubles.
+So the string I have to split looks like this:
+API has built in methods that I have to use in order to send a query, above string should be separated in two and look like:
+I'm not very familiar with regex, but I did try to remove all brackets to get clean string without them and then just surround String with 3 brackets from each side, which is not working well for obviously example 2, it deletes the brackets that surround IDs. So I assume regex is not the best solution, but I'm not really sure how to properly create parser for this. Any help would be nice!
+EDIT:
+Example of code with regex that is removing brackets:"
+0.0,2020-11-11 12:58:09.873000+00:00,"I have a MySQL docker image running on Windows. I created it like this
+and docker ps returns the ports as
+When I go into MySQL shell and try to connect, I get an error. This is how I connect
+If I am connecting wrongly, how should I connect in MySQL shell and should it work? Is there anything in my docker setup that would stop the connection working?"
+-1.0,2020-11-16 20:06:23.260000+00:00,"I am trying to get the instance id of ec2 that I created. But I get 2 different outputs, why? Please check the print outputs.
+Thansks."
+0.0,2020-11-18 06:09:22.903000+00:00,"I am using selenium + chrome web driver to load a dynamic page:
+Once the page is loaded, I want to get a list of all cards available on the page and then iterate through each card and get its title:
+ seems to be a  method... I am not sure how to apply these selector to card (the type card is ).
+Sample page:"
+0.0,2020-11-03 11:00:12.990000+00:00,"I am writing karma/jasmine test case for the click event, but I am getting null for button. Please suggest me. Thanks in Advance.
+component::
+Html::"
+0.0,2020-11-24 13:51:04.980000+00:00,"I was searching for a way to copy jenkins job with builds using API.
+I tried few Python Wrappers:
+but the copy methods in all of them copies the job without the builds."
+0.0,2020-11-27 12:50:56.630000+00:00,"Is it possible to send emails from office365 graph api with just api keys, like sendgrid/twilio ?
+I have looked up the documentation of Office365 and it feels like an oauth based (registering the application with urls etc) rather than just creating an api key. I would like to use it with curl commands in devops workflows."
+0.0,2020-11-26 10:00:49.177000+00:00,"I want to create video from images (one image per frame).
+When I watch resulting video I see (at least at the end of video) that frames are combined with each other (2 images on each frame overlaps with different transparency ratio). I seems like when source and destination frame rate mismatch.
+I can remove  and  options but result will be the same (with 25 fps).
+What's the problem?
+How to fix it?"
+0.0,2020-11-09 15:54:29.363000+00:00,"I have below 3 packages
+eclipse plugin,
+eclipse feature and
+update site
+Now I have to build eclipse feature in cli as same as right click over feature -&gt; Deployable feature -&gt; archive.zip . Tried with maven tycho but it is building jar not the archive file.
+Otherwise I have to build update site in cli as same as open site.xml -&gt; Build all. Tried with p2 publisher but it is not creating contents.jar, artifact,jar, plugin and feature folders.
+Please help me to automate the build in cli.
+Regards,
+Sunil"
+2.0,2020-11-05 20:17:10.750000+00:00,"I am not really familiar with coding but I have to do an exercise where I have to plot all parameter values of a Monte Carlo run over the objective function.
+Original wording of exercise :
+&quot;Within R, produce so-called &quot;dotty-plots&quot; by plotting individual parameter values against the Reff values obtained in the 10,000 Monte Carlo runs&quot;.
+The columns have each a different parameter name and for each row there is a different value, each parameter has 10000 values.
+How can I dotty plot these parameter values over the objective function (which is also included in the data frame)?"
+0.0,2020-11-30 19:55:14.143000+00:00,"I am developing a panel, which from time to time runs a process and generates an image within it. Once the image is generated, you need to take a photo to save it for the changes that are made.
+I already developed the part where the images change, but when I take the photos, they all come out blank. Add a delay on the screen thinking that it should take a while to take the photo of the panel later, but it still comes out blank and if there is something inside the panel, since I am resizing it according to the size of what is updated.
+Can you help me to see where my error is? Or guide me to obtain an optimal result?, I also tried using a timer, but it gives me the same result, any ideas?
+This is the code developed."
+0.0,2020-11-06 12:32:00.037000+00:00,"I have a DHT sensor and I used mqtt to send data to server. From there I displayed the data to a , so the span value is changing.
+What I want to do is: When sensor stop working, it will display fault in that  and I want to display image only when its fault.
+i tried to use JS to get the  then display image but its not working"
+0.0,2020-11-19 13:16:05.017000+00:00,"I was doing some regex which simplifies to this code:
+I was expecting it to replace  with  as the RE  matches the whole string, the engine should just return that and exit. So I ran the same regex with .
+in the docs it says:
+A|B, where A and B can be arbitrary REs. As the target string is scanned, REs separated by '|'
+are tried from left to right. When one pattern completely matches,
+that branch is accepted. This means that once A matches, B will not be
+tested further, even if it would produce a longer overall match.
+but than why is the regex matching an empty string?"
+0.0,2020-11-11 09:19:34.497000+00:00,"I got an error
+SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more
+than 1 row (SQL: update  set  = 2,  =
+'2020-11-11 09:02:27' where  = 85213835).
+I'm using Eloquent ORM 5.7 and the the code is looks like this
+Previously the code was running well and just got this error recently."
+-1.0,2020-11-09 09:15:56.477000+00:00,"I am creating searching functionality in laravel it works fine for my first home page but when i am clicking on search and move on next page. In next page when i am searching the path became change and it will give error 404.. Why laravel route become change.
+page load:autocomplete
+After going to another page: productDetail/autocomplete,.../autocomplete what will do to avoid this situation.
+Route:
+js:
+header.blade.php:"
+0.0,2020-12-01 14:27:14.477000+00:00,"I'm using winform 4.7. on visual studio 2019.
+First, I carry some documents like the electricity, gaz and leisure bills of person id 3, person id 4 and so on in 3 different languages.
+I have a datagridview that gets its data from a sql table with columln 1 = id (that corresponds to the person id of my documents on my local computer). What i'm trying to do is: when I click on any datagridview's cell of the first column(the id's column), it opens a new form, ask me a choice between the language EN/FR/IT (I guess a listbox within the form), asks me the type of document, &quot;electricity bill&quot; / &quot;gaz bill&quot; / &quot;leisure bill&quot; and then build my output string with the answers I gave or clicked on. Let's say for example, I double cliked on the ID 3 within the datagridview, and selected &quot;English&quot; and &quot;electricity bill&quot; from the form that poped up. Then, it build a string which will ultimately be a hyperlink like this: C://folder/personId3_electricityBill_EN thats will give me the electricity bill of person 3 in english stored in my pc at this adress.
+I worked on a prior project like this where I &quot;mapped&quot; each document in each language for each person in a spreadsheet and loop through it. But it was on excel...
+Now I use a datagridview to display my data, and there isn't any other tab where I can map the things (for the better I guess).
+Before I go anywhere, for what I want to do, is there a more efficient way using C# with a winform (maybe a mapping within a dictionary or any object) ?
+Also, I found out that in the datagridview, either I can click on a cell and gets its value that can be a good starting point or I can directly change my entire column 1 in hyperlink cells.
+What would be the best options ??
+Thanks in advance for helping
+UPDATE
+After clicking one of the cells in the first column I make a new form pops up.
+In my idea, this form will contain one listbox for languages, another for the document's type to get those inputs and build the string output with:"
+-1.0,2020-11-06 10:36:08.390000+00:00,"I created a codesandbox that shows 3 formik fields: first name, last name, and name.
+I'm trying to make the field  display  only until the user modifies the  field themselves, and so the condition  fails, after which the  field should not be automatically updated anymore.
+The challenge is that I'm trying to make this code live in the  file since I need to be reusing that logic of inter-field dependency in other similar  components thereafter, and therefore reuse the &quot;generic&quot;  component without change."
+1.0,2020-11-02 12:54:59.410000+00:00,"Question at hand: https://leetcode.com/problems/same-tree/
+Can someone point out why my JavaScript solution can pass the test cases but fails during the actual submission?"
+0.0,2020-11-08 18:50:39.753000+00:00,"I have script
+in file 
+I am running the  command in linux VM where I have installed IBM MQ version 9.2.0.0 as follows
+I see the following output:"
+0.0,2020-11-10 08:23:27.940000+00:00,"I have a sprite  sheet with country flags and code that puts the shape of a flag in each cell of a selection with two letter country codes.
+This works well if i .Addpicture from an external .png file for each cell.
+When i try to put the .png in an auxiliary sheet and .Duplicate flags from it, the flags are created in the sheet where the spritesheet is, no matter what I try. Stripped example below
+How Can I .Duplicate a shape in a different Sheet?"
+1.0,2020-11-14 22:42:33.787000+00:00,"I want to make my discord bot make an announcement to a certain channel, based on the Channel ID. But in different manuals I find only  and no comments how does it works and what is for discord.py an announcement channel. The problem is also that I need to shove in one command sending text to the channel where the command comes from and to another channel at the same time.
+Instead of the last line, there should be a command that sends a specific message, preferably  to another channel whose ID I will indicate.
+Edited:
+Ok, got it, announcement channels can create only servers with enabled Community func.
+Then another question, how I can do this without an announcement channel?
+Edited: I'm add it like that:
+And what i get it:"
+1.0,2020-11-11 14:33:13.443000+00:00,"I am using NestJS and am trying to install Hot Module replacement, following this page's instructions: https://docs.nestjs.com/recipes/hot-reload
+Since I am using Nest CLI, I followed the first part of the page. However, at the moment I have to use the  command, I get the following error:
+Does anyone know where that could come from and how to fix it?"
+2.0,2020-11-11 00:29:11.077000+00:00,"I am writing a parser for a custom file format constituted of an undetermined number of data structures spanning over multiple lines. The lines constituting each individual structure are garanteed to be contiguous, but can appear in any order. In order to be able to assemble the structure, the offset of the data in the structure on each line is written at the begginning of said line.
+I wrote a lexer that produces 3 types of tokens : , , . But that means it is now up to my parser to discard  and  tokens, and rearrange the lines, which I feel like is not appropriate.
+Should I instead write a lexer that produce only  tokens, representing the structures stripped of the offset and EOL and reassembled into the right order?
+Edit:
+If anyone happens to stumble upon this post, What I ended up doing is a classic lexer/parser which simply tokenize file and builds an AST, then I implemented an &quot;analyser&quot; that can work on the parsed data, rearrange it etc... &quot;Every man to his trade&quot;"
+4.0,2020-11-25 20:51:59.337000+00:00,"The following code works.
+My question is, should 2) not lead to a result very close to 1) ?
+Why is 2) casted to such a small amount ?
+Whereby, maybe worth to note 2) is exactly half of 1):
+The output is:
+18446744073709551616
+9223372036854775808"
+0.0,2020-11-12 16:11:57.250000+00:00,"I have a Spring Boot project and I'm using mapstruct to map 2 objects.
+And I have this king of structure, this is the first object:
+The second object:
+And now using mapstruct I need to do this:
+How can I do it? Any feedback will be apreciated! Thank you!"
+2.0,2020-11-13 02:37:02.013000+00:00,"To catch the hot key , we can use following statement in .
+To catch , we can use:
+The question is how to catch the hot key like ?"
+0.0,2020-11-20 18:30:10.267000+00:00,"realm between query for two dates not working
+i have inserted data in realm like below
+i m fetching data like below
+above query returning 0 result but when change the query like below it return data
+model class
+Note:can anyone here please guide me what i m doing wrong here or give some link where i can find some date related crud operations. help really will be appreciated."
+0.0,2020-11-29 08:21:23.643000+00:00,Will someone please help
+0.0,2020-11-24 15:35:01.953000+00:00,"I am trying to schedule Powershell job to run my logging script every 5 minutes. The reason I don't use Windows Task Scheduler is I want it to run in background without Powershell window poping up. I checked Microsoft documentation here and tried following commands:
+Job was created:
+However the Job did not run. I know that, because my log file was not created. (The Script I run is working well). I wanted to check if there is powershell command for powershell scheduled jobs history but I did not find anything.
+So I checked my Time string. &quot;24/11/2020 15:35:00&quot; This one is ok, because if I flip month and day then I get error.
+So what am I doing wrong?
+Edit 26.11.2020
+So I did few recomended things. Firstly i made fairly simple script I will run with Powershell Jobs. (My Original Script is over 900 lines long and contains few work related data which i can not share.) My script contains:
+Then I executed the commands as before now with different script.
+I checked Task Scheduler as advised. Both Powershell Jobs (My original and Test) are listed but no record in Run History. (History is activated) Manualy Starting the task also does not work.
+As before I also got in Powershell confirmation after creation.
+The path is in this case real. I can run the script manually in Powershell with admin rights with this command:
+With this said I am actually wondering whether the Powershell Jobs tool is blocked by execution policy.
+So I did this:
+I still can not successfully run Powershell Job."
+0.0,2020-11-20 20:42:26.153000+00:00,"Update
+It's throwing the error with a direct call now, and in the relations docs. I got rid of  altogether and just do this:
+Also, it should be noted that the XML document (OSM) has all the node elements first, followed by the way elements, then the relation elements.
+Original post
+I'm writing to multiple JSON files from within Python , using  and . I call a separate function to write to the file.
+This works for some of the elements/documents, but not all. It writes only so many then stops with . The last call to the file write method returns 207, but so do many of the previous calls. And, the next element looks normal:
+Plus, it throws the error at a different element each time I try. And, it sometimes doesn't throw the error.
+Stripped down Python:
+Returns"
+0.0,2020-12-02 19:49:50.960000+00:00,"I recently started in with docker and so far have had really good luck with the basics on singular docker servers. My issue comes when I try to use Docker swarm and specifically docker stack deploy --compose-file docker-compose.yml. I made a simple request (httpd image see below). If I launch this with docker-compose, I get the &quot;It works&quot; page. If I use it with the stack it says it is up and replicated, but I cannot get to it with any address in the cluser. Any advice would be great.
+docker-compose.yml
+In terms of troubleshooting:
+I ensured the mapped ports were indeed opened on all my docker swarm nodes. I have gone back and used docker-compose to ensure that the system works as expected on a single host and it does. Finally I have ensured that my port mapping in the docker compose is correct and has no conflicts with any other container or port mapping. As I stated, I am rather new to docker and it SEEMS like it is working but I am just not hitting some small thing that prevents me from seeing it work right."
+0.0,2020-12-02 15:15:09.597000+00:00,"Why is my bash code:
+outputting:
+I'd expect it to print:
+This must be something super stupid, but as bash beginner I can't seem to figure out where it's going wrong."
+1.0,2020-11-05 20:36:17.663000+00:00,"Hi I want to make a folder and save an image into that folder. Here is what I did but I get error:
+Error:
+'int' object has no attribute 'save'"
+1.0,2020-11-18 07:14:44.367000+00:00,"I am getting this error after upgrading macOS to Big Sur, give me the suggestions to resolve this issue."
+-3.0,2020-11-25 16:11:20.560000+00:00,"I have a table with string field like a|2$5.0| and I need to convert it to the following one a|5.0|5.0|.
+I'm using SQL Server 2016.
+The logic is as follows:
+a - is the first character od each string
+| - is a list elements separator
+$ - if there is a $ sign in string, the element (value between $ and | signs) should be repeated as many times as the value of number preceeding $ sign (in my example 2 times).
+String can be also more complex, but the same logic applies, eg.:
+which should be converted to:
+Any help will be appreciated.
+Thanks in advance."
+0.0,2020-11-03 13:28:02.387000+00:00,"I have a method on @change which recieve these values.
+id could be any number, key could be: color, size, sex, etc..., value could be: red, 8, female, etc. In the first reception the values can be for example: , ,  and they change when the user select another option. For example:   , ,  or  , ,  ...etc
+I want to dynamically fill an array of objects with the values this way for example.
+I want to overwrite the values ​​if the key already exists for the same id. If it does not exist, it must be added for its id.
+I hope I have explained clearly. Thank you very much for your time"
+-1.0,2020-11-21 22:33:09.013000+00:00,"I have biuld a function in python that replicates a circuit of three other functions (defined in the main function) that call eachother while iterating over a given list of numbers required in the main function (In the code there is a way to break out of the recursion circuit). Basically this structure:
+The problem I'm having is that if the list of numbers is larger than 500 values then this error appears:
+I know I can change the limit of recursion but what does that mean, is my computer gonna be affected if I want to operate a list of half a million values?. The code inside the functions is quite simple and short."
+0.0,2020-11-06 00:45:22.783000+00:00,"My app successfully can store the password in sqlite with hashlib.md5 encryption, but I do have a problem when I want to compare the input with the hash. Any help is appreciated!
+UPDATE:
+def chkPass(self):
+Now I have both pass and the encryption but I'm still getting error.Maybe the encryption and decryption are not same type?
+SQLITE HASH -
+pass.input - 
+I don't have any experience with encription. In sqlite the pass is store like: is that ok?
+Here is the code that writes pas into sqlite"
+-1.0,2020-11-30 11:21:38.030000+00:00,"I wanted to trigger some jquery action on an element but got an error. Console shows that here is an error:
+But the thing is that I don't have this chunk of code in my js file at all..
+My js:
+Why does the console show js code which not exist in my js.file?
+Btw document.ready function is not working (all jquery sources are linked properly), I noticed that this chunk of code is not shown in Console at all."
+0.0,2020-11-19 19:17:52.283000+00:00,"I’m fairly new to Verdaccio. Been familiar with the tool for quite some time, but this is my first time trying to use it. I’ve installed it locally for the purpose of trying to figure out the right syntax for handling versioning, tagging and publishing a shared component library for work, but I’m having trouble getting this package published to my locally running instance of Verdaccio, and I’m struggling to understand why the publish command is failing. Was hoping someone here might be able to help.
+First off, I should say that I have it installed and running locally, I can browse to http://localhost:7890 and see the Verdaccio web UI, and it says that I have “No package published yet.” That makes sense, because I haven’t been able to successfully publish anything yet. I’ve created a user with the  command, and then after that I ran the following command to attempt to publish to it: . When I run this command, I get the following error: “EPUBLISHCONFLICT … Cannot publish over existing version.”
+Now, I can in fact see, when I look in  that there is a folder for the scope that I published with, and in that folder, there is a folder for the package that I apparently published, and it only has a  file in it. I’ve attempted to wipe this all clean, reinstall Verdaccio, etc, etc, nothing seems to fix the issue. I can’t seem to make this package go away, OR to get it to display in the UI either. After publishing (unsuccessfully), and despite the face that it says this version of the package exists, I still see nothing in the UI. It still just says “No package published yet”, which I still don’t really understand.
+Any ideas would be appreciated. This has me pretty stumped. Thanks."
+1.0,2020-11-05 14:09:38.053000+00:00,"Hi get the JOSN data dynamically, based on the JOSN will render data in the table. In the JSON nested objects come and those names and properties keys also dynamically. I need to sort based on the table columns up and down button action ASC and DESC. On button action, I get the property names to sort, that properties key names will be placed inside the nested objects or it might be in the upper level. How to identify and sort dynamically number, strings or dates. Greate appreciate.
+Below logic, I have added only work for the Single level JSON objects, not nested level objects.
+Below is the Sample Dynamic JSON data
+From the below JSON, I have 7 columns, If I select the status column ASC/ DESC button, I get statusname property for the sort. it should traverse and sort nested JSON objects based on the key properties statusname. In case, if I select the Details column ASC/ DESC button,I get maindescription property for the sort. it should traverse and sort nested JSON objects based on the key properties maindescription."
+0.0,2020-11-09 19:27:41.843000+00:00,"how are you?
+I ask for help to be able to solve and solve this problem.
+I'm making a Python program to send an array with 3 variables to an arduino with pyserial communication, the arduino returns this value to the python and on the screen requested the pressure value by the arduino. The outputs and inputs in the ardúino are the same and write the same things in the output of the requested value in Python but that does not happen, I have tried several ways and I know that the error is basically in the form that the data is sent in python and that it receives in arduino and also in the form of sending by arduino and receiving in python. What is in comment is what I tried to do to get the result
+Usually the response received is b '\ x08' or 0 \ r \ n or 0
+Below the codes:
+PYTHON
+Arduino :"
+1.0,2020-11-03 08:09:16.213000+00:00,"I am using Fragaria Datepicker and Date range picker to display a date-range picker inline. I want to change the color of a specific date cell. I accept the date itself from another controller and, accordingly, by this date, I need to paint the cell.
+How can I change the color of the date cell without going into the source code of the bootstrap-datarangepicker library?"
+0.0,2020-11-12 10:29:14.980000+00:00,"I'm using  for integration of Vaadin Framework 14 and Spring Boot.
+I would like to override the  and  methods of the  class to do the following things:
+put stuff such as the current route / view path and current user ID into the SLF4J MDC in order to include it in each logging statement
+log the duration of the request
+In Vaadin 8 there was a  class which I could replace by simply annotating my custom subclass with .
+This approach no longer works.  The  integration contains  which contains a direct call to the  constructor:
+They should use a conditional bean here so we could replace it, but unfortunately they're not.
+Just adding a custom  with a copy of the above code (but the constructor call substituted with my own) doesn't work, even with .
+So is there a better way to do what I want than to exclude the whole vaadin-spring autoconfiguration and copy everything in my own configuration bean?  It works but I have to check if everything's still OK after each vaadin-spring upgrade."
+0.0,2020-11-23 14:34:20.013000+00:00,"The following block of code is a loop intended to look for the value of  of  in  and return a value of  if found,  if not in . At the moment, it will error out if it cannot find the value:"
+0.0,2020-11-23 18:05:22.647000+00:00,"I'm have an array of strings:
+Is it better to check content with :
+Or should I convert it to an object with the strings as fieldnames:
+I'm getting the array only once, so I'm only converting to object once, but I'm checking for the strings repeatedly.
+I'm thinking the  is  and field access is ."
+1.0,2020-11-20 03:25:44.650000+00:00,"I need to remove the duplicates products field and keep the one with the lowest price
+The result array that i want after the method is this:
+Im trying to do something like this but it wont work"
+0.0,2020-11-09 22:42:41.787000+00:00,"I want to change the textcolor using a custom style for my TimePicker preference but i can't seem to override the default theme.
+Here is my theme resource file:
+I'm using PreferenceDialogFragmentCompat and DialogPreference to create the custom TimePicker.
+Here is the layout i inflate in the Dialog:
+I tried creating a style but when i use it in the timepicker it doesn't gets applied.
+How can i solve this?"
+0.0,2020-11-29 08:21:30.957000+00:00,"I'm currently learning on Database Seeding in Laravel 8. When runnning the seed I got an error message
+Class 'Database\Seeders\App\Models\Admin' not found
+First I created migration database file called Admin.php in App\Models and I put these codes
+After that I created a seeder called AdminsTableSeeder.php and put these codes
+And finally on DatabaseSeeder.php I put these codes to call AdminsTableSeeder
+After I'm done with all of those, I did composer du and trying to run the seed command but I got the error message.
+EDIT
+I already tried to modify the code from
+to
+But I stil got the error message like
+Seeding: Database\Seeders\AdminsTableSeeder
+PHP Fatal error:  Trait 'Illuminate\Notification\Notifiable' not found in C:\xam
+pp\htdocs\tobacon_web\app\Models\Admin.php on line 11
+Symfony\Component\ErrorHandler\Error\FatalError
+Trait 'Illuminate\Notification\Notifiable' not found"
+0.0,2020-11-22 19:28:38.347000+00:00,"I'm trying to upgrade to spring-boot 2.3.6. I'm using spring-data MongoRepositories, no difrect calls to MongoClient or MongoClient.
+Getting exception:
+Tried to customize
+doesn't help, same exception.
+What is the right way to customize UUID codec in spring-boot 2.3.6?
+Thank you."
+0.0,2020-11-27 16:25:41.590000+00:00,"I want to optimise the queries on my project and after many tentatives of using eager loading with datatables i just give up because there was no query reducing at all.
+Anyway now Im trying to achieve that using , but the problem is that using  clause in  it gives me the following error:
+This is how my code looks like:
+I have tried many suggestion that i found searching for a solution but none worked. Can anyone tell how to achieve this using ?
+EDIT: changed the order and putted  before  and error is still there. The error is on 's"
+1.0,2020-11-11 20:53:55.740000+00:00,"Here is how you fix this.  -- Use the debugger.  Follow the code to see where the code flow is different than what you expect.  Then determine what fixes to make so that the code matches your design, or determine if your design is wrong and needs to be redone.  The bottom line is that a programmer, if they wrote the code themselves, *must* be able to diagnose their own code.  BTW, there is no way that any programmer, whether student or professional, could have written all of this code and *not* have the debugger ready to go."
+0.0,2020-11-29 08:26:51.393000+00:00,@Jens I have updated my initial question to provide more context
+1.0,2020-11-03 19:23:44.577000+00:00,`for(int ncpy=n; ncpy>0; ncpy--)` ==> `for(int ncpy=n-1; ncpy>=0; ncpy--)`
+0.0,2020-11-06 12:44:42.433000+00:00,"thank you, but output1 is str and output2 is list, how to compare it then?"
+0.0,2020-11-11 17:18:56.830000+00:00,"version of visual studio? VS2015+?  We've found it can usually be related to the TargetServerVersion defined on the project.  Right click the project in solution explorer, properties, `General` under Configuration Properties, option called `TargetServerVersion`. Change that to 2017 and redeploy."
+0.0,2020-11-30 15:38:36.083000+00:00,Your rotation is off slightly: `x_bool = x_bool[-2:] + x_bool[:-2]`
+0.0,2020-11-30 19:17:12.057000+00:00,"Oh, I need ti make a filter on the fieldname field40 for example. ""SELECT * FROM mytable WHERE ""(...) I saw many technics but not in this sublevel"
+0.0,2020-11-13 15:50:10.137000+00:00,@pascalwhoop Could you show the code that reproduces this?
+0.0,2020-11-14 13:54:49.390000+00:00,"That's it! The request is working now, I get a 301 first and then a 200. Now that I know this is the solution, it seems quite comprehensible. Thank you again for your efforts!"
+0.0,2020-11-11 01:41:23.333000+00:00,Check it out here: https://output.jsbin.com/jerivotuta/1
+0.0,2020-11-13 15:41:57.977000+00:00,@İrfan Sağdıç can your problem is solved or not??
+0.0,2020-11-09 09:38:47.553000+00:00,@Arvo the TagName columns is 'nvarchar' datatype.
+2.0,2020-11-17 12:35:04.220000+00:00,Do you have source for the COM class?
+0.0,2020-11-18 13:15:34.140000+00:00,Seems it is not a good idea to have opportunity `fit` two bound piplelines independently. What if these two pipelines had being `fit` on different `DataFrame`s? If it can be done in python doesn't mean that it's a good idea for scala API. Python is more *dynamic* language and I think conceptually case with creating `Pipeline()` is abuse of this language feature.
+0.0,2020-11-28 14:47:44.917000+00:00,"Please provide a sufficient reproducible input and expected output. Also, the `(10,)` and `(3,)` information you provide at the end doesn't match the code you have shared. Please be very clear and precise."
+0.0,2020-11-25 09:28:12.007000+00:00,"do yoi habe another example where branch and school is not the same? btw, what have you tried and what does not work?"
+0.0,2020-11-20 19:25:15.790000+00:00,That sounds like a reasonable solution! I've add the coordinates for the vectors in the post.
+0.0,2020-11-03 11:49:25.137000+00:00,"Yes, and they don't provide any information regarding the queuing model. I need to know if it's M/M/1, M/M/S or .."
+0.0,2021-01-13 10:05:41.850000+00:00,@Sneha Singh I did by the answer given below https://stackoverflow.com/a/65699614/10563627
+0.0,2020-11-06 19:19:45.737000+00:00,"Ok, what happened to lead me beleive that this was cross database querying was a message from netcore stating I was not able to make cross database queries... but that was after removing ToListAsync() from the variable declarations at the top of the code. This code works, but without ToListAsync() its mad about cross-db queries. Either way, I understand what you are saying about these all being in memory once I create them as lists now, thank you for helping clarify!"
+0.0,2020-11-20 11:22:34.827000+00:00,Thx but   Im not sure what the command would look like...
+0.0,2020-11-12 15:52:28.450000+00:00,@jdweng do you mind to write it?
+0.0,2020-12-01 11:12:52.263000+00:00,well … in fact there is indirect the Question what I did wrong :-)
+0.0,2020-11-07 11:52:24.830000+00:00,If you add a `where` option to `include` you don't need to indicate an alias there along with fields used in a condition
+0.0,2020-11-26 16:04:13.327000+00:00,"Additionally, if they're really in Pacific Time (and currently observing Pacific Standard Time) then -08:00 is the correct UTC offset, so I don't think any discrepancy *would* be due to DST."
+0.0,2020-11-06 07:23:57.950000+00:00,"You state as a requirement that ""UserStatus = FORCE_CHANGE_PASSWORD"" but your program uses `contains`. Could you perhaps clarify what your actual requirement is?  Also, for future reference, it is usually a good idea to show the expected output.  See e.g. the [mcve] guidelines."
+0.0,2020-11-12 19:22:54.433000+00:00,and perhaps writing it back to a file.
+0.0,2020-11-02 18:38:36.320000+00:00,I tried to replicate the error but : https://repl.it/repls/SmoggySeashellObservatory#main.cpp  Maybe I'm missing something.
+0.0,2020-11-02 15:17:47.180000+00:00,"Just tried this. `flock`  locks the file, so you can't write to it with  `file_put_contents`: _Warning: file_put_contents(): Only 0 of 22 bytes written_"
+0.0,2020-11-06 15:42:30.117000+00:00,By converting the existing library to use `cv::Mat`. Support for `IplImage` has been removed.
+0.0,2020-11-26 14:46:20.080000+00:00,"you can remove the quotes afterwards with `df['id'] = df['id'].str.replace(""'"", """")`"
+0.0,2020-11-25 16:07:16.920000+00:00,See following : https://helpdesk.it.helsinki.fi/en/instructions/information-security-and-cloud-services/information-security/smime-encryption
+0.0,2020-11-13 13:15:13.170000+00:00,Do you allow duplicate values in `Vakke` table because as your request says you will have duplicate with `Mathematics` and `Physical Science` for the same user ?
+1.0,2020-11-02 12:36:29.437000+00:00,What does `obs` stand for?
+0.0,2020-11-16 12:16:27.883000+00:00,Is your TLS cert (from certbot / LetsEncrypt) installed correctly? What do you get if you hit the non-websocket part of that server with a web browser? Please [edit] your question.
+0.0,2020-11-25 14:02:58.797000+00:00,"Thanks for the input..But i have sorted out on that day itself, the issue was, runner ec2 instance was not able to be created."
+0.0,2020-11-17 17:04:25.210000+00:00,"I did     System.out.println(positionOfSlash1+uRL.indexOf(""."")+1); I'm not sure if this is the right way to do it"
+0.0,2020-11-03 13:33:42.633000+00:00,"I had to empty my pythonpath variable to avoid pycharm importing modules from that python location, but it's quite weird."
+0.0,2020-11-07 23:18:57.380000+00:00,Is the problem is with all arabic text or specific when you render it letter by letter ?
+0.0,2020-11-27 04:39:04.690000+00:00,"using `User::where(""status"", 1)` the status code changed to **302 Found** but when I check the response it says: **Failed to load response data**"
+0.0,2020-11-18 01:52:34.310000+00:00,"Our goal is to allow customers to use a copy of the sheet without having to go thru the google authorization. We have started the process of verifying the app with google and we have read that there is an API key that is assigned to a published app and warnings about protecting the API to avoid unauthorized use.  Our application is an accounting spreadsheet for small businesses. The sheet has various scripts attached. The primary function of the scripts is to help the user enter data, categorize, and generate reports within the spreadsheet."
+0.0,2020-12-01 14:37:28.210000+00:00,You are putting too much on regex. There are simply too many corner-cases to occur in an SQL query. I would recommend using a parser as well.
+0.0,2020-11-11 13:19:27.243000+00:00,"I got it to work from the command line using ""mysqlsh --sql --uri=root@localhost -P 3307 --password=r00t"" but before, I was in the shell and it was failing. So what is the in-shell equivalent?"
+0.0,2020-11-16 21:28:51.627000+00:00,Print `instance.instance_id` if you want the ID.
+0.0,2020-11-18 06:57:46.270000+00:00,What you have there already actually works for me on the example you gave... `card.find_element_by_css_selector('h2.title')` returns the h2 element...
+0.0,2020-11-03 16:39:18.057000+00:00,"Can you try this:
+let button = fixture.debugElement.query(By.css('#view-rec'));"
+0.0,2020-11-26 20:53:15.233000+00:00,"@Gyan, http://xk8.ru/f/temp/z.zip (resulting video is included, see it at ≈ 45 sec)... actually I need to use ZMBV codec but result is the same."
+0.0,2020-11-10 16:12:39.953000+00:00,"Yes, that's called POM-less: with [`.mvn/extensions.xml`](https://github.com/howlger/IDEalized/blob/master/.mvn/extensions.xml) no `pom.xml` files are required per plugin/feature folder. Make sure to run Maven 3.6.3 and Tycho 2.1 with Java 11 or higher."
+1.0,2020-11-09 23:19:52.463000+00:00,"Thank you guys but I managed to do the plots with ""ggplot(data = mydataset)"""
+0.0,2020-12-01 01:05:34.340000+00:00,"@Jimi, thank you for your answer.`coordenada` is to get the last position in X of the object in Panel1, this is necessary to resize the Panel1 because Panel1 have more objects inside and need all pictures of this objects. Sorry `nameLine` its a mistake, I updated the code. The timer I dont know why doesnt increase. Taking the photo of that panel is because it is necessary to take the .PNG files to be able to insert them later in a file as evidence"
+0.0,2020-11-06 12:39:45.317000+00:00,i tried that but the results shows empty string cause the sensor fault take some time to send the data
+0.0,2020-11-19 13:39:40.153000+00:00,"No, it does not matter if there is `$` or not since your pattern is just optional. It is simply matches all the string from start to end, or the end of the string. So, when running `re.findall` that returns all matches, you get two. As usual, if you expect just one, use `re.search`."
+0.0,2020-11-11 19:12:29.617000+00:00,Is a `TRIGGER` involved?
+0.0,2020-11-09 09:24:34.210000+00:00,@lagbox solution plz
+1.0,2020-12-01 18:26:09.823000+00:00,You can do the same as you did in excel.  A worksheet is a two dimension object with rows and columns.  So you can create a two dimensional object in c#.  I usually use a DataTable but you can also use List> or a dictionary.
+1.0,2020-11-18 17:11:19.657000+00:00,The way it works right now is that the `name` is updated only if `Display Name` is directly modified. There's no such a thing as `firstName + ' ' + lastName`.
+0.0,2020-11-02 13:17:08.220000+00:00,"But isn't that why I have this line in case the values do not match:
+else if (p == null || q == null || p.val != q.val) {
+      return false;
+    }"
+0.0,2020-11-08 22:27:14.807000+00:00,Run it as mqm not root.
+0.0,2020-11-10 09:31:06.350000+00:00,"See, that's why I suggested to use Copy-Paste instead :-)"
+0.0,2020-11-14 23:10:34.083000+00:00,"Check the [docs](https://discordpy.readthedocs.io/en/latest/api.html?highlight=publish#discord.Message.publish) and [this Discord article](https://support.discord.com/hc/en-us/articles/360032008192-Announcement-Channels-#:~:text=%F0%9F%8E%89%20Anytime%20you%20post%20an,who%20follow%20your%20Announcement%20Channel) on it."
+0.0,2020-11-11 00:35:34.357000+00:00,Not everything has to be shoehorned into your lexer and parser. Patterns and constructs are there to serve your application. Not everything has to fit the pattern. Your parser just needs to make sure that you have all three tokens in the correct order. There's another stage beyond that which actually *consumes* the stream. That's where you'd discard whatever is not necessary.
+1.0,2020-11-25 21:21:11.367000+00:00,It's not *odd* - it's *even* . But MSVC (VS2019) gives the same output; clang-cl gives `0`.
+0.0,2020-11-12 16:15:09.180000+00:00,please show us your findings for the problem that you are facing. You can create a custom mapping to map list by using `@AfterMapping`
+0.0,2020-11-13 05:30:49.840000+00:00,"There is no easy way to do this in WinForms. you'd have to keep a dictionary of bools and keep track of what keys were pressed. Or, you can import WPF runtimes and use `Keyboard.IsKeyDown` in combination with the `KeyDown` event. You could also resort to the Win32 API and using thing like `GetKeyState`"
+0.0,2020-11-20 18:34:20.047000+00:00,"have you tried `between(String fieldName, Date from, Date to)`? It's in the docs at https://realm.io/docs/java/5.8.0/api/io/realm/RealmQuery.html"
+0.0,2020-11-29 08:35:21.830000+00:00,https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+0.0,2020-11-24 16:34:46.770000+00:00,"Please edit your question to show the script you are scheduling. For testing, write the file to an absolute path, edit permissions to allow everyone r/w access to that path. Have a look in task scheduler if the scheduled job has actually run (Microsoft/Windows/PowerShell/ScheduledJobs). In your scheduled script, make sure to check for each possible error. On error, call `Exit 1`, which you will see as the task result in task scheduler."
+0.0,2020-11-20 22:33:26.217000+00:00,"@CharlesDuffy, it is a lot slower. Can I nest ```with open()``` blocks?"
+0.0,2021-02-11 13:35:20.683000+00:00,"Make sure you have swarm enabled:
+`docker info | grep Swarm`  to check if swarm is active
+if not use `docker swarm init ` to active docker swarm mode"
+1.0,2020-11-05 20:48:49.083000+00:00,"You're not telling it to save it in a folder. By calling `open('ImgPath', 'wb')`, you're writing to a file named `ImgPath` in your current directory. If you want to save it to `save_fname`, then use that variable in place of the string `ImgData`."
+0.0,2020-11-18 10:06:42.670000+00:00,"Why `1.10.5`? In your question, it seems like you have defined `1.8.5` in your Gemfile."
+0.0,2020-11-25 16:13:45.490000+00:00,https://idownvotedbecau.se/noattempt/
+0.0,2020-11-21 22:41:03.923000+00:00,Similar question: https://stackoverflow.com/questions/8177073/python-maximum-recursion-depth-exceeded
+0.0,2020-11-06 00:52:26.927000+00:00,What problem specifically?
+0.0,2020-11-30 11:37:27.570000+00:00,"@sergeykuznetsov yes, Site.js"
+0.0,2020-11-25 05:19:41.230000+00:00,are you trying to publish an existing package with the same version that exist on npmjs?
+0.0,2020-11-05 14:32:50.693000+00:00,Wanted to clarify that you would only sort on a single property at a time. That's how your question reads.
+0.0,2020-11-12 20:00:06.847000+00:00,"I changed the if in arduino programation for while, thats works with numbers , but not bigger than 255"
+0.0,2020-11-03 08:20:24.477000+00:00,how can I change the color of the date cell without going into the source code of the bootstrap-datarangepicker library?
+4.0,2020-11-23 14:38:58.430000+00:00,"You can check to see if the variable contains a value after the `.Find` method. Something like `If ETLCell Is Nothing Then ...`. You can either exit the loop, or respond how you need if the variable is nothing."
+0.0,2020-11-23 18:11:40.283000+00:00,I didn't realize javascript had a `Set`. An object is basically a `HashMap` and a `HashMap` of booleans is just a `Set` anyways right.
+0.0,2020-11-29 08:30:18.640000+00:00,`App\Models\Admin::create($record);` to `\App\Models\Admin::create($record);`
+0.0,2020-11-27 17:04:08.397000+00:00,@chegancasb Im sure it make sense because the last ```where``` condition is outside ```DB::raw``` and its refering to ```categories``` table and not to ```reviews``` table
