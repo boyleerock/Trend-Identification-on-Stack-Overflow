@@ -7,6 +7,7 @@ Team 30B repository
 **Project title: Trend Identification on Stack Overflow  
 Client/Supervisor: Dr. Christoph Treude**
 
+## MCI Poster Presentation Team 30B >> [click here](https://www.youtube.com/watch?v=xgLYr9b-5k8)
 
 
 ## About the Team
