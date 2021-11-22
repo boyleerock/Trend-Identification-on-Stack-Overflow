@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block main-page %}
+    <style>
+        .prompt {
+            margin: 20px 280px;
+        }
+    </style>
+    <div class="container" style="margin-top:90px;display:flex">
+        <div class="list-group" style="flex:2;">
+            <a href="#" class="list-group-item active">
+                Upload
+            </a>
+            <a href="/account/myFiles" class="list-group-item">My Key Files</a>
+
+        </div>
+        <div style="flex:10">
+
+            <label id="realBtn" class="btn btn-info" style="margin: 20px 280px;" data-user="{{ request.user }}">
+
+                {% csrf_token %}
+                <input type="file" id="fileInput1" name="file" class="mFileInput"
+                       style="left:-9999px;position:absolute;" accept="application/json" onchange="upload(this)">
+                <span>upload key (.json file)</span>
+            </label>
+            <div id='prompt' class="prompt" style="display: none;">
+                <span id="prompt2">upload successfully</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            upload = function (ths) {
+                console.log($("#fileInput1")[0].files[0])
+                var formData = new FormData();
+                formData.append("file", $("#fileInput1")[0].files[0]);
+                var user = $('#realBtn').attr('data-user')
+                var token = $('input[name="csrfmiddlewaretoken"]').val()
+
+                formData.append("csrfmiddlewaretoken", token);
+                formData.append("user", user);
+
+                $.ajax({
+                    url: '/account/upload/', /*url*/
+                    type: 'post',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.code = -1) {
+
+                            console.log(res);
+                            $('#prompt').attr('style', 'display:block')
+                        }
+
+                    },
+                    error: function (errorMsg) {
+                        $('#prompt').attr('style', 'display:block')
+                        $('#prompt2').text('upload failed')
+                    }
+
+                })
+            }
+        }
+    </script>
+{% endblock %}

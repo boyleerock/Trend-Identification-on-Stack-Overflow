@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block main-page %}
+    <div class="container" style="margin-top:90px;display:flex">
+        <div id='user' class="list-group" style="flex:2;" data-user="{{ request.user }}">
+            <a href="/account/center" class="list-group-item ">
+                Upload
+            </a>
+            <a href="#" class="list-group-item active">My Key Files</a>
+
+        </div>
+        <div style="flex:10;margin-left: 20px;">
+            <div>
+                <span>Current Key:</span>
+                <span id='current'></span>
+            </div>
+            <div class="radio">
+                <ul id='dir' class="list-group">
+
+                </ul>
+
+
+                <input style="margin-top: 10px;" class="btn btn-primary btn-sm" type="submit" name="" id="submitsubmit"
+                       value="Confirm">
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        window.onload = function () {
+            var username
+            getDir = function () {
+                var user = $('#user').attr('data-user')
+                var dir_el = $('#dir')
+                // console.log(user)
+                $.post("/account/getDir/",
+                    {
+                        user: JSON.stringify(user)
+                    },
+                    function (data, status) {
+                        if (status == 'success') {
+                            // console.log(data);
+                            for (var item in data.file_ret) {
+                                var d = JSON.stringify(data.file_ret[item].dir).split('/')[4]
+                                // console.log(d)
+                                // console.log(item);
+                                // console.log(parseInt((data.file_ret[item].status)))
+                                if (parseInt((data.file_ret[item].status)) == 1) {
+                                    $('#current').append(d.replace('"', ''))
+                                    var str = "<li class='list-group-item'><label><input checked='checked' type='radio' name='label'  value=" + JSON.stringify(data.file_ret[item].dir) + " title=" + JSON.stringify(data.file_ret[item].id) + ">" + d.replace('"', '') + "</label></li>"
+
+                                } else {
+                                    var str = "<li class='list-group-item'><label><input type='radio' name='label'  value=" + JSON.stringify(data.file_ret[item].dir) + " title=" + JSON.stringify(data.file_ret[item].id) + ">" + d.replace('"', '') + "</label></li>"
+
+                                }
+                                dir_el.prepend(str + '</br>')
+
+                            }
+                            // alert("Data: " + data + "\nStatus: " + status);
+                            // console.log(data)
+                            // $(data.file_ret).each(function(i){
+                            // })
+                            username = data.username
+                        }
+
+                    }
+                );
+            }()
+
+            //get file id
+            var file_id
+            $(document).on("click", "input[name='label']", function (e) {
+                console.log(e.target);
+                file_id = e.target.getAttribute('title')
+                console.log(file_id)
+
+                //value1 = 1;
+            });
+
+            // set file
+            $('#submitsubmit').on('click', function () {
+                console.log(username);
+                $.post('/account/setFile/',
+                    {
+                        file_id: file_id,
+                        username: username
+                    },
+                    function (data, status) {
+                        if (status = 'success') {
+                            window.location.reload()
+                        }
+                    }
+                )
+            })
+
+
+        }
+    </script>
+
+{% endblock %}

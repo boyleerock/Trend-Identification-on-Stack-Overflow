@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/polls/bootstrap.css' %}">
+    <script src="/static/js/jquery-3.3.1.js"></script>
+
+    <title>Stack</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Trend Identification on Stack Overflow</a>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    
+                <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'account:center' %}">Hi, {{ request.user.username }}</a></li>
+                        <li><a href="{% url 'account:logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'account:login' %}">Login</a></li>
+                        <li><a href="{% url 'account:register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+        
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div></div>
+    {% block main-page %}
+    {% endblock %}
+    
+</body>
+</html>

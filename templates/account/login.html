@@ -1,0 +1,39 @@
+{% extends 'base_r.html' %}
+
+{% block main-page %}
+<link rel="stylesheet" href="/static/polls/login-register.css">
+
+<div style="margin-top: 100px;" class="" >
+    <div  class=" main login v2">
+        <div class="dialog-shadow dialog">
+            {% if message %}
+            <div class="alert alert-danger">{{ message }}</div>
+            {% endif %}
+            <form  class="form-horizontal" method="post" action="{% url 'account:login' %}">
+                {% csrf_token %}
+                <h2 class="form-signin-heading text-center" style="margin: 50px;">Login</h2>
+                <div class="form-group" style="margin: 20px;">
+                    <label class="col-md-2" for="inputEmail" class="sr-only"></label>
+                    <div class="col-md-8">
+                        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="username" required >
+                    </div>
+
+                </div>
+                <div class="form-group" style="margin: 20px;">
+                    <label class="col-md-2" for="password" class="sr-only"></label>
+                    <div class="col-md-8">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="password">
+                    </div>
+
+                </div>
+                <div class=" text-center" style="margin: 50px;">
+                    <button type="submit" class="btn btn-primary" style="margin-right: 10px;border: 1px solid #fff;">login</button>
+                    <a style=" border: 1px solid #fff;" class="btn btn-primary" href="{% url 'account:register' %}">register</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base_r.html' %}
+
+{% block main-page %}
+<link rel="stylesheet" href="/static/polls/login-register.css">
+
+    
+
+<div>
+    <div class=" main login v2">
+        <div class="dialog-shadow dialog">
+            {% if message %}
+
+            <div class="alert alert-danger">{{ message }}</div>
+            {% endif %}
+            <form  class="form-horizontal" method="post" action="{% url 'account:register' %}">
+                {% csrf_token %}
+                <h2 class="form-signin-heading text-center" style="margin: 60px;">Register</h2>
+                <div class="form-group">
+                    <label class="col-md-3" for="inputEmail" class="sr-only"></label>
+                    <div class="col-md-6">
+                        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="username" required>
+                    </div>
+    
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3" for="password" class="sr-only"></label>
+                    <div class="col-md-6">
+                        <input type="password" name="password" id="password" class="form-control" minlength="6" placeholder="password" required>
+                    </div>
+    
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3" for="password2" class="sr-only"></label>
+                    <div class="col-md-6">
+                        <input type="password" name="repassword" id="password2" class="form-control" minlength="6" placeholder="confirm password" required>
+                    </div>
+    
+                </div>
+                <div class=" text-center" style="margin: 50px;">
+                    <button style="border: 1px solid #fff;width: 100px; letter-spacing: 1px;" type="submit" class="btn btn-primary">submit</button>
+                </div>
+    
+            </form>
+        </div>
+
+        
+    </div>
+
+</div>
+    
+
+{% endblock %}

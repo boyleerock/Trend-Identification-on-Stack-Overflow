@@ -1,0 +1,294 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}">
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <title>index.html</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Open+Sans:ital,wght@1,300&family=Orbitron:wght@500&family=Press+Start+2P&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/polls/bootstrap.css' %}">
+    <script src="/static/js/jquery-3.3.1.js"></script>
+
+</head>
+
+
+{#user login#}
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Trend Identification on Stack Overflow</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'account:center' %}">Hi, {{ request.user.username }}</a></li>
+                    <li><a href="{% url 'account:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:login' %}">Login</a></li>
+                    <li><a href="{% url 'account:register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<body style="padding-top: 50px">
+{#<header id="Header">#}
+{#    <div class="title">The Trends Spotter</div>#}
+{#</header>#}
+
+{% if message %}
+    <div class="alert alert-danger" style="color:blue">{{ message }}</div>
+{% endif %}
+
+{#loading#}
+<div id="load-img" class="container text-center" style="margin-top:200px;display: none;">
+    <p><img src="/static/images/loading.gif" alt=""></p>
+</div>
+
+
+<div class="center" id="content-t">
+    <h2>The Trends Spotter</h2>
+    <div class="table">
+        <div style="padding: 0 40px; box-sizing: border-box; font-family: 'Courier New', Courier, monospace;"
+             action="/outPut/" method="post">
+            {% csrf_token %}
+            <div>
+                <!--        start date-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="start">Start date:</label>
+                    <input type="date" id="start" name="start" value="2008-07-31" min="2008-07-31" max="2020-12-31"
+                           onchange="confirmD(this)"/>
+                </div>
+                <!--        end date-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="end">End date:</label>
+                    <input type="date" id="end" name="end" value="2021-02-28" min="2008-07-31" max="2020-12-31"
+                           onchange="confirmD(this)"/>
+                </div>
+                <!--        number of time windows-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="num_window">Number of time windows:</label>
+                    <input id="num_window" type="number" name="num_window" placeholder=">=2" value="2" min="2"
+                           step="1"
+                           onfocus="if (value =='num_window'){value =''}" onblur="if (value ==''){value='num_window'}"/>
+                </div>
+                <!--        limit-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="limit">Limit per time window:</label>
+                    <input id="limit" type="number" name="limit" placeholder="1-1000" value="200" min="0" step="10"
+                           onchange="fakeSubmit()"/>
+                </div>
+                <div id="time"></div>
+
+                <!--        text type (questions/answers)-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="type-select">Choose a type:</label>
+                    <select name="types" id="type-select">
+                        {#                        <option value="">--Please choose an option--</option>#}
+                        <option value="titles">Titles Only</option>
+                        <option value="comments">Comments Only</option>
+                        <option value="questions" selected="selected">Questions Only</option>
+                        <option value="answers">Answers Only</option>
+                        <option value="unrelated_qa">Unrelated Questions and Answers (1:1)</option>
+                        <option value="qa">Questions with Related Answers</option>
+                        <option value="qc">Questions with Related Comments</option>
+                        <option value="ac">Answers with Related Comments</option>
+                    </select>
+                </div>
+                <!--        sort by-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="sort-select">Sort questions by:</label>
+                    <select name="sort" id="sort-select">
+                        {#                        <option value="">--Please choose an option--</option>#}
+                        <option value="creation_date_desc" selected="selected">Most Recent Created</option>
+                        <option value="creation_date_asc">Least Recent Created</option>
+                        <option value="score">Highest Score</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+
+                {#                todo: #}
+                <div><label class="switch"
+                            style="position: relative;margin: 5px 0;font-weight: bolder;">
+                    <input type="checkbox" id="spelling" value="False">
+                    <span class="slider">Spelling Correction</span></label></div>
+
+
+                <div><label class="switch"
+                            style="position: relative;margin: 5px 0;font-weight: bolder;">
+                    <input type="checkbox" id="singularize" value="True">
+                    <span class="slider">Singularize</span></label></div>
+
+                <div style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;color: red;font-size: 12px">
+                    Note: checking the above boxes will slow the program down
+                </div>
+
+                <!--        search for a word-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="word">Phrase contains:</label>
+                    <input type="text" name="word" id="word" placeholder="must not contain space" value=""
+                           onchange="confirmWord(this)">
+                </div>
+
+                <!--        number of lines-->
+                <div class="txt_field"
+                     style="position: relative;margin: 5px 0;border-bottom: 1px solid #adadad;font-weight: bolder;">
+                    <label for="n_lines">Number of phrases to display:</label>
+                    <input id="n_lines" type="number" name="n_lines" placeholder="" value="5" min="1" max="20"
+                           step="1"
+                           onfocus="if (value =='n_lines'){value =''}" onblur="if (value ==''){value='n_lines'}"/>
+                </div>
+
+                <!--        submit-->
+                <div class="btn">
+                    <button class="btn btn-primary text-center" type="submit" onclick="submitData()">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    window.onload = function () {
+        fakeSubmit = function () {
+            console.log(213)
+            limit = document.getElementById("limit"),
+                num_window = document.getElementById("num_window"),
+                output = document.getElementById("time");
+            output.innerHTML = ''
+            //if (input.value > 1000 || input.value < 0 || input.value % 10 > 0) {
+            //    output.insertAdjacentHTML('beforeend', '<div>' + 'invalid input' + "</div>");
+            //}
+            //else {
+            //             todo: add time to request data
+            var a = num_window.value * 20
+            var b = limit.value * num_window.value / 20
+            var c = a+b
+            output.insertAdjacentHTML('beforeend', '<div>' + "Estimated Processing Time: " +
+                c + " sec" + "</div>");
+            //}
+        }
+    }
+
+    // confirm the input data format
+    confirmD = function (that) {
+        let start = document.getElementById("start")
+        let start_value = start.value
+        let end_value = document.getElementById("end").value
+        if (start_value && end_value) {
+            start_f = new Date(start_value)
+            end_f = new Date(end_value)
+            // console.log(start_f)
+            if (start_f >= end_f) {  // default HMS 00:00:00
+                let w = document.createElement('p');
+                console.log("invalid date")
+                // message
+                w.innerText = 'Warning: end date must be greater than start date';
+                w.style = "color:red"
+                start.parentElement.parentElement.insertBefore(w, null)
+                that.value = ""
+            }
+        }
+
+    }
+    confirmWord = function (that) {
+        let word = that.value
+        if (word.indexOf(' ') != -1) {
+            let w = document.createElement('p');
+            console.log("have space")
+            //message
+            w.innerText = 'Warning: the string must not contain space';
+            w.style = "color:red"
+            document.getElementById("word").parentElement.parentElement.insertBefore(w, null)
+            that.value = ""
+
+        }
+    }
+
+    submitData = function () {
+        // var csrfToken = $("input[name='csrfmiddlewaretoken']").val();
+        // console.log(csrfToken)
+        let start = $('#start').val()
+        let end = $('#end').val()
+        let num_window = $('#num_window').val()
+        let limit = $('#limit').val()
+        let types = $('#type-select option:selected').val();  //selected value
+        let sort = $('#sort-select option:selected').val()
+        let word = $('#word').val()
+        let spelling = $("input[id='spelling']").is(':checked')
+        let singularize = $("input[id='singularize']").is(':checked')
+        let n_lines = $('#n_lines').val()
+        console.log(start)
+        console.log(end)
+        console.log(word)
+        var data = {
+            'start': start,
+            'end': end,
+            'num_window': num_window,
+            'limit': limit,
+            'types': types,
+            'sort': sort,
+            'word': word,
+            'spelling': spelling,
+            'singularize': singularize,
+            'n_lines': n_lines
+        }
+        console.log(data)
+        $.ajax({
+            async: true,
+            type: 'POST',
+            url: '/outPut/',
+            // contentType: "application/json;charset=utf-8",
+            data: {
+                data: JSON.stringify(data)
+            },
+            dataType: 'json',
+            success: function (res) {
+                console.log(res)
+                if (res.code == '1') {
+                    window.location.href = "/outPutPage"
+                }
+
+            },
+            error: function (errorMsg) {
+                console.log(errorMsg)
+                console.log("failed to load data");
+                alert('Search Failed. Please validate your inputs and key.')
+                location.reload()
+            },
+
+
+        });
+
+
+        $("#content-t").hide()
+        $("#load-img").show()
+
+    }
+</script>
+
+
+{% if message %}
+    <div class="alert alert-danger" style="color:blue">{{ message }}</div>
+{% endif %}
+
+
+</html>

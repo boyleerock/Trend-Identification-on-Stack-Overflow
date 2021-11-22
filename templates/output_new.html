@@ -1,0 +1,522 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>output_new.html</title>
+
+    <link rel="stylesheet" href="{% static '/polls/bootstrap.css' %}">
+    <script src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <!-- loading css -->
+    <link rel="stylesheet" href="/static/polls/loading.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+
+        .center {
+            text-align: center;
+            margin: auto;
+            width: 60%;
+            border: 3px solid #5F9EA0;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        .main-page {
+        {#margin: auto;#}{#width: 50%;#}{#border: 3px solid green; #}{#padding: 10px;#}
+        }
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Trend Identification on Stack Overflow</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'account:center' %}">Hi, {{ request.user.username }}</a></li>
+                    <li><a href="{% url 'account:logout' %}">logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:login' %}">login</a></li>
+                    <li><a href="{% url 'account:register' %}">register</a></li>
+                {% endif %}
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<div><h1 class="w3-container w3-cursive"
+         style="border: 3px solid #5F9EA0;margin-top: 100px;text-align: center;padding:20px;">
+    Trend Visualization</h1></div>
+{#<div style="width: 1200px;height:600px;margin-top: 0;margin-bottom: 0;margin-left:100px;padding: 10px">#}
+{#    start#}
+<div id='chart'
+     style="width: 1000px;height:750px;margin-top: 0;margin-bottom: 0;margin-left:100px;padding: 10px">
+</div>
+{#    end#}
+{#</div>#}
+<div class="center">Basic Search Information</div>
+<div style="text-align: center;margin: auto;"><a href="/static/csv/merge.csv" download="merge.csv">Download full results
+    as csv</a></div>
+<div>
+    <table class="table table-hover">
+        {#<table class="center">#}
+        <thead>
+        <tr>
+            {#            <th>word 1</th>#}
+            {#            <th>word 2</th>#}
+            {#            <th>frequency</th>#}
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+
+        promise = $.ajax({
+            type: "GET",
+            dataType: "text",
+            url: "../static/csv/info.csv",
+            cache: false
+        });
+
+        promise.done(function (data) {
+
+            //Parse CSV File
+            //split on new line
+            var dataArr = data.split("\n");
+
+            //for each line in array
+            $.each(dataArr, function () {
+                if (this != "") {
+
+                    //split files and create row
+                    var row = new String("");
+                    valArr = this.split(",");
+                    row += "<tr>"
+                    $.each(valArr, function () {
+                        row += "<td>" + this + "</td>"
+                    });
+
+                    row += "</tr>"
+
+                    //Add row to table
+                    $('tbody').append(row);
+                }
+
+            });
+
+        });
+
+        // Run script if request fails
+        promise.fail(function () {
+            console.log('A failure ocurred');
+        });
+
+    });
+</script>
+
+<script>
+    window.onload = function () {
+
+        var app = {};
+        var chartDom = document.getElementById('chart');
+        let c = $('#chart')
+        var myChart = echarts.init(chartDom);
+        myChart.showLoading();
+        var option;
+        app.config = {
+            rotate: 90,
+            align: 'left',
+            verticalAlign: 'middle',
+            position: 'insideBottom',
+            distance: 15,
+            onChange: function () {
+                var labelOption = {
+                    normal: {
+                        rotate: app.config.rotate,
+                        align: app.config.align,
+                        verticalAlign: app.config.verticalAlign,
+                        position: app.config.position,
+                        distance: app.config.distance
+                    }
+                };
+                myChart.setOption({
+                    series: [{
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }]
+                });
+            }
+        };
+
+
+        var fullData = {}
+        var series01 = []
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: '/outPutData/',
+            data: {
+                // hourData:JSON.stringify(hourData)
+            },
+            dataType: 'json',
+            success: function (res) {
+                myChart.hideLoading();
+                console.log(res)
+                fullData = res;
+                for (let key in fullData.cate_names) {
+                    series01.push({
+                        name: fullData.cate_names[key],
+                        type: 'line',
+                        barGap: 0,
+                        label: labelOption,
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: fullData.freqs_matrix[key]
+                    })
+                    console.log(key)
+                    // console.log(fullData.cate_names[key])
+                }
+                console.log(series01)
+
+            },
+            error: function (errorMsg) {
+                console.log("Failed to load data");
+            },
+
+        });
+        console.log(fullData.cate_names)
+
+        var labelOption = {
+            show: true,
+            position: app.config.position,
+            distance: app.config.distance,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            rotate: app.config.rotate,
+            formatter: '{c}  {name|{a}}',
+            fontSize: 16,
+            rich: {
+                name: {}
+            }
+        };
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                // data: ['Forest', 'Steppe', 'Desert', 'Wetland']
+                data: fullData.cate_names,
+                {#right: 'right',#}
+                {#zlevel:3,#}
+                orient: 'vertical',
+                width: 260,
+                height: 50,
+                {#bottom:50,#}
+                {#top:'auto'#}
+            },
+
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {show: false},
+                    // data: ['2012', '2013', '2014', '2015', '2016']
+                    data: fullData.date_list,
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 70 //If the label names are too long you can manage this by rotating the label.
+                    },
+                    nameTextStyle: {fontSize: 20}  //todo
+                    //data: fullData.date_list
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: 'Frequency',
+                    nameLocation: 'middle',
+                    nameGap: 50,
+                    nameTextStyle: {fontSize: 20}
+                }
+            ],
+            grid: {
+                containLabel: true,
+                bottom: '50'
+            },
+
+            series: series01
+
+        };
+
+        option && myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            console.log("resizing")
+            myChart.resize();
+        });
+        //     $(window).resize(function(){
+        //     myChart.resize();
+        // })
+
+        series1 = [];
+
+    }
+
+</script>
+
+
+{#<script>#}
+{#    (function () {#}
+{#        var fullData = {}#}
+{#        $.ajax({#}
+{#            async: false,#}
+{#            type: 'GET',#}
+{#            url: '/outPutData/',#}
+{#            data: {#}
+{#                // hourData:JSON.stringify(hourData)#}
+{#            },#}
+{#            dataType: 'json',#}
+{##}
+{#            success: function (res) {#}
+{#                console.log(res)#}
+{#                fullData = res;#}
+{##}
+{#            },#}
+{#            error: function (errorMsg) {#}
+{#                console.log("Failed to load data");#}
+{#            },#}
+{##}
+{#        });#}
+{#        console.log(fullData.cate_names)#}
+{##}
+{#        var app = {};#}
+{#        var chartDom = document.getElementById('chart');#}
+{#        let c = $('#chart')#}
+{#        var myChart = echarts.init(chartDom);#}
+{#        myChart.showLoading();#}
+{#        var option;#}
+{#        app.config = {#}
+{#            rotate: 90,#}
+{#            align: 'left',#}
+{#            verticalAlign: 'middle',#}
+{#            position: 'insideBottom',#}
+{#            distance: 15,#}
+{#            onChange: function () {#}
+{#                var labelOption = {#}
+{#                    normal: {#}
+{#                        rotate: app.config.rotate,#}
+{#                        align: app.config.align,#}
+{#                        verticalAlign: app.config.verticalAlign,#}
+{#                        position: app.config.position,#}
+{#                        distance: app.config.distance#}
+{#                    }#}
+{#                };#}
+{#                myChart.setOption({#}
+{#                        grid: {#}
+{#                            top: '20%',#}
+{#                            bottom: '20%'#}
+{#                        },#}
+{##}
+{#                        series: [{#}
+{#                            label: labelOption#}
+{#                        }, {#}
+{#                            label: labelOption#}
+{#                        }, {#}
+{#                            label: labelOption#}
+{#                        }, {#}
+{#                            label: labelOption#}
+{#                        }]#}
+{##}
+{#                    }#}
+{#                );#}
+{#            }#}
+{#        }#}
+{#        ;#}
+{##}
+{##}
+{#        var labelOption = {#}
+{#            show: true,#}
+{#            position: app.config.position,#}
+{#            distance: app.config.distance,#}
+{#            align: app.config.align,#}
+{#            verticalAlign: app.config.verticalAlign,#}
+{#            rotate: app.config.rotate,#}
+{#            formatter: '{c}  {name|{a}}',#}
+{#            fontSize: 20,#}
+{#            rich: {#}
+{#                name: {}#}
+{#            }#}
+{#        };#}
+{##}
+{#        option = {#}
+{#            tooltip: {#}
+{#                trigger: 'axis',#}
+{#                axisPointer: {#}
+{#                    type: 'shadow'#}
+{#                }#}
+{#            },#}
+{#            legend: {#}
+{#                // data: ['Forest', 'Steppe', 'Desert', 'Wetland']#}
+{#                data: fullData.cate_names,#}
+{#                textStyle: {#}
+{#                    fontSize: 15#}
+{#                }#}
+{#            },#}
+{##}
+{#            xAxis: [#}
+{#                {#}
+{#                    type: 'category',#}
+{#                    axisTick: {show: false},#}
+{#                    // data: ['2012', '2013', '2014', '2015', '2016']#}
+{#                    data: fullData.date_list,#}
+{#                    axisLabel: {#}
+{#                        interval: 0,#}
+{#                        rotate: 70 //If the label names are too long you can manage this by rotating the label.#}
+{#                    },#}
+{#                    nameTextStyle: {fontSize: 30}  //todo#}
+{#                }#}
+{#            ],#}
+{#            yAxis: [#}
+{#                {#}
+{#                    type: 'value',#}
+{#                    name: 'Frequency',#}
+{#                    nameLocation: 'middle',#}
+{#                    nameGap: 50,#}
+{#                    nameTextStyle: {fontSize: 20}#}
+{#                }#}
+{#            ],#}
+{#            grid: {containLabel: true},#}
+{#            series: [#}
+{#                {#}
+{#                    // name: 'Forest',#}
+{#                    name: fullData.cate_names[0],#}
+{#                    type: 'line',#}
+{#                    barGap: 0,#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [320, 332, 301, 334, 390]#}
+{#                    data: fullData.freqs_matrix[0]#}
+{#                },#}
+{#                {#}
+{#                    // name: 'Steppe',#}
+{#                    name: fullData.cate_names[1],#}
+{##}
+{#                    type: 'line',#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [220, 182, 191, 234, 290]#}
+{#                    data: fullData.freqs_matrix[1]#}
+{##}
+{#                },#}
+{#                {#}
+{#                    // name: 'Desert',#}
+{#                    name: fullData.cate_names[2],#}
+{##}
+{#                    type: 'line',#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [350, 232, 201, 154, 190]#}
+{#                    data: fullData.freqs_matrix[2]#}
+{##}
+{#                },#}
+{#                {#}
+{#                    // name: 'Wetland',#}
+{#                    name: fullData.cate_names[3],#}
+{##}
+{#                    type: 'line',#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [98, 77, 101, 99, 40]#}
+{#                    data: fullData.freqs_matrix[3]#}
+{##}
+{#                },#}
+{#                {#}
+{#                    // name: 'Wetland',#}
+{#                    name: fullData.cate_names[4],#}
+{##}
+{#                    type: 'line',#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [98, 77, 101, 99, 40]#}
+{#                    data: fullData.freqs_matrix[4]#}
+{##}
+{#                },#}
+{#                {#}
+{#                    // name: 'Wetland',#}
+{#                    name: fullData.cate_names[5],#}
+{##}
+{#                    type: 'line',#}
+{#                    // label: labelOption,#}
+{#                    emphasis: {#}
+{#                        focus: 'series'#}
+{#                    },#}
+{#                    // data: [98, 77, 101, 99, 40]#}
+{#                    data: fullData.freqs_matrix[5]#}
+{##}
+{#                }#}
+{##}
+{#            ]#}
+{#        };#}
+{##}
+{#        option && myChart.setOption(option);#}
+{#        window.addEventListener("resize", function () {#}
+{#            console.log("resizing")#}
+{#            myChart.resize();#}
+{#        });#}
+{#        //     $(window).resize(function(){#}
+{#        //     myChart.resize();#}
+{#        // })#}
+{##}
+{#    })#}
+{#    ()#}
+{#</script>#}
+
+
+</body>
+</html>
