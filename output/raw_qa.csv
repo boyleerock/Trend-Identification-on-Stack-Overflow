@@ -1,0 +1,1766 @@
+,id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count,id_1,text,creation_date_1,post_id,user_id,user_display_name,score_1
+0,2634225,,"<p><strong>Solved</strong>. I'd been missing the obvious: the major difference between the active and inactive tabs is visibility, so adding :visible to the penultimate selector (for the tab divs) is all it took.</p>
+
+<pre><code>$(document.documentElement).keyup(function(event) {
+    var direction = null;
+    if (event.keyCode == 37) {
+        direction = 'prev';
+    } else if (event.keyCode == 39) {
+        direction = 'next';
+    }
+    if (direction != null) {
+        $('#content &gt; div:visible').each(function(index) {
+            $('#prev-slide,#next-slide', this)[direction]().click();
+        });
+    }
+});
+</code></pre>",,,0,,2010-04-14 00:59:35.587000+00:00,,2010-04-14 00:59:35.587000+00:00,,,,,315026.0,2626259,2,0,,,,,,,,,
+1,2022262,,"<p>This is an md5 hash of the entire binary contents of the file. The point is that if two files have different md5 hashes, they are different. This helps you determine whether a local file on your computer is the same as the file on the website, without having to download it again. For instance:</p>
+
+<ul>
+<li>You downloaded your local copy somewhere else and think there might be a virus inside.</li>
+<li>Your connection is lossy and you fear the file might be corrupted by the download.</li>
+<li>You have changed the local file name and want to know which version you have. </li>
+</ul>",,,0,,2010-01-07 17:33:58.807000+00:00,,2010-01-07 17:33:58.807000+00:00,,,,,236047.0,2022235,2,1,,,,,,,,,
+2,18401866,,"<pre><code>SELECT
+    SUM(fruit like '%06201%') AS `apple`,
+    SUM(fruit like '%02206%') AS `pears`,
+                                        ^
+                                        here
+FROM grocery
+</code></pre>
+
+<p>You have two commata, but you only need one.</p>",,,1,,2013-08-23 11:35:03.580000+00:00,,2013-08-23 11:35:03.580000+00:00,,,,,1608816.0,18401810,2,3,,,27027461.0,"Ah that work, thanks. I was sure I was doing something silly :)",2013-08-23 11:36:09.447000+00:00,18401866.0,1266723.0,,0.0
+3,7692891,,"<p>are you not missing a</p>
+
+<pre><code>  &lt;beans xmlns=""http://www.springframework.org/schema/beans""
+     xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
+     xmlns:context=""http://www.springframework.org/schema/context""
+     xsi:schemaLocation=""
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd""&gt;
+
+    &lt;context:annotation-config/&gt;
+
+  &lt;/beans&gt;
+</code></pre>
+
+<p>at the beginning of your <code>spring-services.xml</code> file?</p>",,,2,,2011-10-07 21:08:20.323000+00:00,,2011-10-07 21:08:20.323000+00:00,,,,,9641.0,7692855,2,1,,,9359242.0,"hi,thanks for your response.  I only included the code that had my service in it because I thought the rest was boilerplate.  the schema definition is indeed in my file and I have updated my question with the full file.  Thanks, P.",2011-10-08 14:51:55.723000+00:00,7692891.0,984701.0,,0.0
+4,15514850,,"<p>You could use the following:</p>
+
+<pre><code>$('*:focus')
+</code></pre>",,,0,,2013-03-20 03:39:04.607000+00:00,,2013-03-20 03:39:04.607000+00:00,,,,,382982.0,15514695,2,0,,,,,,,,,
+5,8894627,,"<p>From <a href=""http://www.ietf.org/rfc/rfc1738.txt"" rel=""nofollow"">RFC 1738</a> section 3.10:</p>
+
+<p>A file URL takes the form:</p>
+
+<pre><code>   file://&lt;host&gt;/&lt;path&gt;
+</code></pre>
+
+<p>where <em>host</em> is the fully qualified domain name of the system on
+   which the path is accessible, and <em>path</em> is a hierarchical
+   directory path of the form <em>directory/directory/.../name</em>.</p>
+
+<p>So it's file:///path/from/root just like <a href=""http://host/path/from/root"" rel=""nofollow"">http://host/path/from/root</a> because there's an implicit 'localhost' between the second and third slash. But as mentioned above, use Uri.FromFile() to build it.</p>",,,1,,2012-01-17 12:30:44.730000+00:00,,2012-04-19 09:04:43.113000+00:00,2012-04-19 09:04:43.113000+00:00,,444234.0,,444234.0,587917,2,3,,,16006567.0,The part about 3 slash is what I want. Thank you.,2012-08-17 07:05:32.123000+00:00,8894627.0,617232.0,,0.0
+6,2291357,,"<p>You may also use this approach to increase readability and up to certain point independence from the implementation using a more common regexp subset</p>
+
+<pre><code>final Pattern re1 = Pattern.compile("".*;BYDAY=(.*)"");
+final Pattern re2 = Pattern.compile(""(?:([+-]?[0-9]*)([A-Z]{2}),?)"");
+
+final Matcher matcher1 = re1.matcher(rrule);
+if ( matcher1.matches() ) {
+    final String group1 = matcher1.group(1);
+    Matcher matcher2 = re2.matcher(group1);
+    while(matcher2.find()) {
+        System.out.println(""group: "" + matcher2.group(1) + "" "" +
+                    matcher2.group(2));
+    }
+}
+</code></pre>",,,2,,2010-02-18 19:00:41.830000+00:00,,2010-02-18 19:00:41.830000+00:00,,,,,236465.0,2290596,2,1,,,2255776.0,"Ahhhh - I think this is what I'm looking for. I'll try it tomorrow, now I'll get for a Pizza an Beer. It's evening here...",2010-02-18 19:27:14.017000+00:00,2291357.0,178517.0,,0.0
+7,25245678,,"<p>If you're using .net framework 4 or above you could use <a href=""http://msdn.microsoft.com/en-us/library/dd413233(v=vs.110).aspx""><code>Directory.EnumerateFiles</code></a></p>
+
+<pre><code>bool exist = Directory.EnumerateFiles(path, ""*_peach.xml"").Any();
+</code></pre>
+
+<p>This could be more efficient than using <code>Directory.GetFiles</code> since you  avoid iterating trough the entire file list.</p>",,,3,,2014-08-11 14:26:39.137000+00:00,,2015-06-10 20:43:06.063000+00:00,2015-06-10 20:43:06.063000+00:00,,245860.0,,245860.0,1199260,2,68,,,79671591.0,"@Kostadin: missed to answer this before... he doesn't  want to get all files matching a pattern, he wants to know if there is ANY",2017-09-22 02:19:35.357000+00:00,25245678.0,245860.0,,4.0
+8,21768255,,"<p>You should check the following two things:</p>
+
+<p>1) Use generics for the Deque:</p>
+
+<pre><code> private Deque&lt;Level&gt; moves = new ArrayDeque&lt;Level&gt;();
+ //etc...
+</code></pre>
+
+<p>2) Ensure you overwrote the <em>toString()</em>-method in Level, so that the level returns its representation in a String similar to the one used in the constructor:</p>
+
+<pre><code>new Level(""    ######\n    #@#  #\n  ###$   #\n###   $$ #\n#.   $  ##\n#.. $#  # \n#.#  #### \n#.####    \n###       "");
+</code></pre>
+
+<p><strong>EDIT:</strong></p>
+
+<pre><code>        while(true){ //!level.finished()
+        String nextInput = sc.next();
+        if (nextInput.equals(""r"")){
+            Level a = (Level) moves.pop();
+            level = new Level(a.toString());
+            level.display();
+            moves.push(level);
+        }
+        // It is possible that peek returns null (it's the case if the deque is empty)
+        // but this should only be an hint
+        Level b = (Level) moves.peek();
+        level = new Level(b.toString());
+        level.move(nextInput);
+        level.display();
+        moves.push(level);
+    }
+</code></pre>
+
+<p>I think the main problem is, that the method which calculates the number of rows and columns of your field fails and therefor the initialization of the workerLocation-array in the Level-class is skipped. So if you try to access it the first time a Null Pointer Exception occures. Try to get the values of rows amd columns in the Level-class.</p>",,,10,,2014-02-14 00:01:44.227000+00:00,,2014-02-14 00:50:38.417000+00:00,2014-02-14 00:50:38.417000+00:00,,3306321.0,,3306321.0,21767127,2,1,,,32947939.0,You should edit your post and add the code for the rows and columns count.,2014-02-14 11:37:31.930000+00:00,21768255.0,3306321.0,,0.0
+9,5417013,,"<p>Here is a solution:</p>
+
+<pre><code>SELECT * FROM `categories` 
+WHERE
+category_id in (select category_id from categories_features where feature_id = 3) 
+AND
+category_id in (select category_id from categories_features where feature_id = 10)
+</code></pre>",,,0,,2011-03-24 09:21:55.943000+00:00,,2011-04-02 12:45:31.377000+00:00,2011-04-02 12:45:31.377000+00:00,,127193.0,,127193.0,5416864,2,0,,,,,,,,,
+10,2400888,,"<p>Since you can't define a <code>WndProc</code> directly in WPF, you need to obtain a <code>HwndSource</code>, and add a hook to it :</p>
+
+<pre><code>public Window1()
+{
+    InitializeComponent();
+
+    this.SourceInitialized += Window1_SourceInitialized;
+}
+
+private void Window1_SourceInitialized(object sender, EventArgs e)
+{
+    WindowInteropHelper helper = new WindowInteropHelper(this);
+    HwndSource source = HwndSource.FromHwnd(helper.Handle);
+    source.AddHook(WndProc);    
+}
+
+const int WM_SYSCOMMAND = 0x0112;
+const int SC_MOVE = 0xF010;
+
+private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam,  ref bool handled)
+{
+
+   switch(msg)
+   {
+      case WM_SYSCOMMAND:
+          int command = wParam.ToInt32() &amp; 0xfff0;
+          if (command == SC_MOVE)
+          {
+             handled = true;
+          }
+          break;
+      default:
+          break;
+   }
+   return IntPtr.Zero;
+}
+</code></pre>",,,7,,2010-03-08 11:26:25.080000+00:00,,2010-03-08 12:44:55.723000+00:00,2010-03-08 12:44:55.723000+00:00,,98713.0,,98713.0,2400819,2,39,,,24248977.0,"Ah, stupid me! I was combining the code from two posts, and commented on the wrong one! Thanks again :)",2013-05-29 17:51:52.727000+00:00,2400888.0,706346.0,,0.0
+11,13366934,,"<p>To update table you can do this</p>
+
+<pre><code>UPDATE bleaTest
+SET Grade = 'No data'
+WHERE Grade is null;
+</code></pre>
+
+<p>And to select</p>
+
+<pre><code>Select ISNULL(Grade, 'No Data') Grade From bleaTest
+</code></pre>",,,4,,2012-11-13 18:56:58.593000+00:00,,2012-11-13 18:56:58.593000+00:00,,,,,125551.0,13366899,2,3,,,18249781.0,I like `ISNULL` over `COALESCE`,2012-11-13 19:02:50.683000+00:00,13366934.0,125551.0,,1.0
+12,19726125,,"<p>There seems to be an issue with the new user agent string (most sites don’t recognize the new IE) and thus MVC doesn’t enable cookies by default </p>
+
+<p>Force the use of cookies in the authentication token by adding the cookieless attribute in your forms authentication element as follows</p>
+
+<pre><code>&lt;authentication mode=""Forms""&gt;
+  &lt;forms loginUrl=""~/YourLoginUrl"" timeout=""2880"" cookieless=""UseCookies"" /&gt;
+&lt;/authentication&gt;
+</code></pre>
+
+<p>Source: <a href=""http://botsikas.blogspot.co.uk/2013/09/ie11-and-aspnet-session-cookies.html"">http://botsikas.blogspot.co.uk/2013/09/ie11-and-aspnet-session-cookies.html</a> </p>",,,3,,2013-11-01 11:45:32.137000+00:00,,2013-11-01 11:45:32.137000+00:00,,,,,1191903.0,19725827,2,25,,,57088079.0,"Hi all, may i know, why facebook login page display as blank n asp.net(4.0) in IE11? thanks.",2016-01-08 07:14:20.713000+00:00,19726125.0,4773326.0,,0.0
+13,5129918,,"<p>Look at SessionManager.m in the GKRocket example in the docs. Especially the implementations of</p>
+
+<pre><code>-(void) sendPacket:(NSData*)data ofType:(PacketType)type
+</code></pre>
+
+<p>and</p>
+
+<pre><code>- (void) receiveData:(NSData *)data fromPeer:(NSString *)peer inSession:(GKSession *)session context:(void *)context
+</code></pre>",,,0,,2011-02-26 21:39:08.303000+00:00,,2011-02-26 21:39:08.303000+00:00,,,,,280774.0,4673937,2,1,,,,,,,,,
+14,8258858,,"<p>The last URI should work with 'Resource' build action. Try code from <a href=""https://stackoverflow.com/questions/8225163/icons-dont-work-after-publish/8225996#8225996"">this answer</a>.</p>",,,2,,2011-11-24 14:47:50.863000+00:00,,2011-11-24 14:47:50.863000+00:00,2017-05-23 11:44:01.597000+00:00,,-1.0,,956986.0,8250892,2,1,,,10186233.0,"This works if the image is actually included in the project but fails when you include the file by using ""Add Existing Item"" then clicking ""Add As Link"".",2011-11-25 20:26:21.707000+00:00,8258858.0,785251.0,,0.0
+15,21561030,,"<p>Use !newstate! to get variable value, instead of  %newstate%. This is the way of getting delayed variables values. 
+Keep using ""setlocal enabledelayedexpansion"".</p>",,,4,,2014-02-04 18:58:15.390000+00:00,,2014-02-04 18:58:15.390000+00:00,,,,,2970379.0,21560531,2,0,,,32684641.0,"""IP works and hostname does not work"" - indicates there's a problem with DNS functions. You should check in that area. Do all hosts resolve to correct IPs. No conflicts/duplicates etc.",2014-02-07 14:03:37.597000+00:00,21561030.0,2970379.0,,0.0
+16,24089828,,"<p>Thanks.  As mentioned, tests can inject <code>console</code> for <code>$log</code> using <code>$provide</code>.  For posterity, <code>$provide</code> is not available via <code>inject(function(...) { ... })</code> but instead <a href=""http://tech.pro/tutorial/1517/supplying-mocks-for-services-via-provide"">must be injected into a function argument to <code>module</code></a>:</p>
+
+<pre><code>beforeEach(module('myapp', function($provide) {
+  // Output messages
+  $provide.value('$log', console);
+}));
+</code></pre>",,,2,,2014-06-06 20:05:17.957000+00:00,,2014-06-06 20:05:17.957000+00:00,,,,,39396.0,21602750,2,15,,,62639094.0,"Yes, I built on the earlier answer because it was not obvious to me how to properly override the `$log` service in a test.  As mentioned here, `$provide` must be injected using `module`.",2016-06-01 18:15:35.643000+00:00,24089828.0,39396.0,,0.0
+17,10196474,,"<p>Instead of DateTime.Parse() try instantiating a new DateTime.</p>
+
+<pre><code>Session.Query&lt;Movie&gt;()
+.Where(x =&gt; x.Status == ""New"" &amp;&amp; x.ReleaseDate &gt; new DateTime(2012, 4, 3))
+.Dump();
+</code></pre>",,,1,,2012-04-17 18:00:00.920000+00:00,,2012-04-17 18:00:00.920000+00:00,,,,,917932.0,10195649,2,0,,,26094327.0,Why is this marked as the accepted answer? ZVenue should provide an answer to his own question describing the WFNSRAON method and choose that one as accepted.,2013-07-26 00:19:25.757000+00:00,10196474.0,6375.0,,0.0
+18,8819784,,<p>There is no <code>fork</code> system call on Windows.</p>,,,4,,2012-01-11 13:06:23.277000+00:00,,2012-01-11 13:06:23.277000+00:00,,,,,166749.0,8819673,2,3,,,11008083.0,@larsmans: Does windows has any other system call which can replace fork() and sleep()?,2012-01-11 13:08:12.867000+00:00,8819784.0,1105805.0,,0.0
+19,20186797,,"<p>The point of the problem is that you can't pass a list to your function. Your function wants an integer value.</p>
+
+<pre><code>&gt;&gt;&gt; fib(5)
+13
+</code></pre>
+
+<p>As expected. So you should pass just a number (n) to your function to calculate fibonacci of it.</p>",,,0,,2013-11-25 07:23:04.290000+00:00,,2013-11-25 07:23:04.290000+00:00,,,,,538695.0,20186679,2,2,,,,,,,,,
+20,13822756,,"<p>If you are under IE you may have hit the 31 stylesheets limitation this browser has. Add a <strong>RadStyleSheetManager</strong> to your page to combine the requests in a single file. Confirm this by testing in Firefox or Chrome as well. Also, make sure your requests are ok, your stylesheets may not be present on the page in case you are adding them dynamically and something goes wrong with your code.</p>",,,0,,2012-12-11 15:15:58.067000+00:00,,2012-12-11 15:15:58.067000+00:00,,,,,812369.0,13760108,2,1,,,,,,,,,
+21,20774380,,"<p>Try to run <code>mvn validate</code> in your project root (where project <code>pom.xml</code> is located) via cmd. If succeeded, it will download all your dependencies into your local repository. Then you should search for maven repository configuration in netbeans options  and make sure that your local repository is added there.</p>",,,11,,2013-12-25 15:39:58.453000+00:00,,2013-12-25 15:39:58.453000+00:00,,,,,2417043.0,20774288,2,3,,,31138245.0,My repository local path is correct: C:\User\user\m2\repository. But why maven did not download all described libs.,2013-12-25 16:36:35.540000+00:00,20774380.0,3067018.0,,0.0
+22,547584,,"<p>IIS, by default, runs your application within the default Application Pool. On 64-bit Windows, that Application Pool is, by default, 64-bit.</p>
+
+<p>You should create a new Application Pool, and configure IIS to run your 32-bit website in your new 32-bit Application Pool.</p>",,,0,,2009-02-13 20:40:45.650000+00:00,,2009-02-13 20:40:45.650000+00:00,,,,Justice,12349.0,547313,2,1,,,,,,,,,
+23,1180256,,"<p>Find the vertex with smallest y (and largest x if there are ties). Let the vertex be <code>A</code> and the previous vertex in the list be <code>B</code> and the next vertex in the list be <code>C</code>. Now compute the <em>sign</em> of the cross product of <code>AB</code> and <code>AC</code>.</p>
+
+<hr>
+
+<p>References:</p>
+
+<ul>
+<li><p><em>How do I find the orientation of a simple polygon?</em> in 
+<a href=""http://www.faqs.org/faqs/graphics/algorithms-faq/"" rel=""noreferrer"">Frequently Asked Questions: comp.graphics.algorithms</a>.</p></li>
+<li><p><a href=""http://en.wikipedia.org/wiki/Curve_orientation"" rel=""noreferrer"">Curve orientation</a> at Wikipedia.</p></li>
+</ul>",,,5,,2009-07-24 21:30:21.673000+00:00,,2018-12-04 09:08:41.400000+00:00,2018-12-04 09:08:41.400000+00:00,,42813.0,,107090.0,1165647,2,45,,,95893236.0,An implementation of this answer: [c# code to find corner vertex and calculate determinant of angle at that vertex.](https://stackoverflow.com/a/54546353/199364),2019-02-06 03:51:32.213000+00:00,1180256.0,199364.0,,0.0
+24,3821132,,"<p>You don't install fonts on your website, if you want the text on your site to show up in a non-standard font every visitor has to have it on their local machine.</p>
+
+<p>It's easiest to stick to the standard fonts, and any small amounts of text you want in a special font you have to make as images.</p>
+
+<p>If you are still not satisfied then have a look here: <a href=""http://novemberborn.net/2006/12/sifr3beta1-110"" rel=""nofollow"">http://novemberborn.net/2006/12/sifr3beta1-110</a></p>
+
+<p>Beware it is a mission!</p>",,,0,,2010-09-29 11:24:35.387000+00:00,,2010-09-29 11:24:35.387000+00:00,,,,,338547.0,3820537,2,-1,,,,,,,,,
+25,11917962,,"<p>I think you have a recursion's ring (infinite recursion), not a really stack overflow error. If you are got more memory for stack - you will get the overflow error too.</p>
+
+<p><strong>For test it:</strong></p>
+
+<p>Declare a global variable for storing a operable objects:</p>
+
+<pre><code>private Dictionary&lt;int,object&gt; _operableIds = new Dictionary&lt;int,object&gt;();
+
+...
+private void Start()
+{
+    _operableIds.Clear();
+    Recurtion(start_id);
+}
+...
+private void Recurtion(int object_id)
+{
+   if(_operableIds.ContainsKey(object_id))
+      throw new Exception(""Have a ring!"");
+   else
+     _operableIds.Add(object_id, null/*or object*/);
+
+   ...
+   Recurtion(other_id)
+   ...
+   _operableIds.Remove(object_id);
+}
+</code></pre>",,,7,,2012-08-11 21:55:24.043000+00:00,,2012-08-11 22:57:01.677000+00:00,2012-08-11 22:57:01.677000+00:00,,1065790.0,,1065790.0,11917806,2,2,,,15869496.0,"Just test it - add to global `var operableIds = Dictionary<int, object>`- before call recursion's method and remove after. And if we have a ring when we add a object id into `operableIds` it is in dictionary.",2012-08-11 22:34:28.020000+00:00,11917962.0,1065790.0,,0.0
+26,6511158,,"<p>Take a look at the Pager example: <a href=""http://jquery.malsup.com/cycle/pager2.html"" rel=""nofollow"">http://jquery.malsup.com/cycle/pager2.html</a></p>
+
+<p>The pager features takes the user to a specific image in the cycle, which is what you want to do.</p>
+
+<p>However, you might only want to implement a single pager link, not a link for each image in the cycle.</p>",,,0,,2011-06-28 18:13:04.520000+00:00,,2011-06-28 18:13:04.520000+00:00,,,,,512453.0,6511050,2,0,,,,,,,,,
+27,3845786,,"<p>Good question.</p>
+
+<p>From my (somewhat limited knowledge) of the ""under-the-hood"" working of a SQL Connection, many steps are involved, such as:</p>
+
+<p><strong>The Steps Under the Hood</strong></p>
+
+<ol>
+<li>Physical socket/pipe is opened (using given drivers, eg ODBC)</li>
+<li>Handshake with SQL Server</li>
+<li>Connection string/credentials negotiated</li>
+<li>Transaction scoping</li>
+</ol>
+
+<p>Not to mention connection pooling, i believe there is some kind of alogrithm involved (if the connection string matches one for an already existing pool, the connection is added to the pool, otherwise new one is created)</p>
+
+<p><strong>IDiposable</strong></p>
+
+<p>With regards to SQL Connections, we implement IDisposable so that when we call dispose (either via the using directive, or explicity), it places the connection back into the connection pool. This is in stark contrast with just the plain old sqlConnection.Close() - as all this does is close it temporarily, but reserves that connection for later use.</p>
+
+<p>From my understanding, .Close() closes the connection to the database, whereas .Dispose() calls .Close(), and <strong>then</strong> releases unmanaged resources.</p>
+
+<p>Those points in mind, at the very least it is good practice to implement IDisposable.</p>",,,5,,2010-10-02 12:54:30.280000+00:00,,2010-10-02 13:03:37.527000+00:00,2010-10-02 13:03:37.527000+00:00,,321946.0,,321946.0,3845764,2,4,,,4085977.0,"@Jon Hanna - does not (AFAIK), i will find an article proving that.",2010-10-02 12:56:45.890000+00:00,3845786.0,321946.0,,0.0
+28,9172947,,"<p><code>DOMParser</code> constructor isn't defined in the context of SDK modules. You can still get it using <a href=""https://addons.mozilla.org/en-US/developers/docs/sdk/1.14/dev-guide/tutorials/chrome.html"" rel=""noreferrer"">chrome authority</a> however:</p>
+
+<pre class=""lang-js prettyprint-override""><code>var {Cc, Ci} = require(""chrome"");
+var parser = Cc[""@mozilla.org/xmlextras/domparser;1""].createInstance(Ci.nsIDOMParser);
+</code></pre>
+
+<p><a href=""https://developer.mozilla.org/en/nsIDOMParser"" rel=""noreferrer""><code>nsIDOMParser</code> documentation</a>.</p>
+
+<p>That said, your approach with <code>XMLHttpRequest</code> should work as well. You used the <code>new</code> operator incorrectly however, the way you wrote it a new ""require object"" is being created. This way it should work however:</p>
+
+<pre class=""lang-js prettyprint-override""><code>var {XMLHttpRequest} = require(""xhr"");
+var request = new XMLHttpRequest();
+</code></pre>
+
+<p>Please consider using an asynchronous <code>XMLHttpRequest</code> object however, use <code>request.onreadystatechange</code> to attach your listener (the <code>xhr</code> module currently doesn't support other types of listeners or <code>addEventListener</code>).</p>",,,8,,2012-02-07 08:18:02.670000+00:00,,2013-04-23 18:04:32.410000+00:00,2013-04-23 18:04:32.410000+00:00,,1621981.0,,785541.0,9171590,2,14,,,11546071.0,@canuckistani: Now if only `xhr` implemented proper `onload` and `onevent` properties ;) Web developers might be used to `onreadystatechange` but I consider it an ugly solution.,2012-02-07 14:12:40.010000+00:00,9172947.0,785541.0,,0.0
+29,22141712,,"<p>AS Vishrant mentioned *<em>Java follows Zero indexing. So in your case question and responses array is of size 10 which means it will iterate from 0 to 9</em> *</p>
+
+<p>in your tester class, you are trying to access 10th index in loop in 2 places</p>
+
+<pre><code>for(int i = 1; i &lt;= 10; i++)           (1)
+     {
+        noArgSurvey.displayQuestionStats(i);
+     }
+
+for(int i=1; i&lt;11; i++)                 (2)
+     {
+        noArgSurvey.displaySurveyResults(i);
+     }
+</code></pre>
+
+<p>You should to write</p>
+
+<pre><code>for(int i = 0; i &lt; 10; i++)           (1)
+     {
+        noArgSurvey.displayQuestionStats(i);
+     }
+
+for(int i=0; i&lt;10; i++)               (2)
+     {
+        noArgSurvey.displaySurveyResults(i);
+     }
+</code></pre>
+
+<p><strong>EDIT Addition</strong></p>
+
+<pre><code>public void displaySurveyResults (int no)
+{
+   for (int j=0; j&lt;10; j++)
+   System.out.print(""Question""+(no)+"" : "" + question[no]+""Reply"");   &lt;&lt;&lt;--------- change [no-1] to [no]  
+   if (responses[respondentID][no] == 0)
+   {
+       System.out.print(""NO"");
+</code></pre>
+
+<p>}</p>",,,5,,2014-03-03 08:15:15.647000+00:00,,2014-03-03 08:29:01.153000+00:00,2014-03-03 08:29:01.153000+00:00,,2798007.0,,2798007.0,22141209,2,0,,,33596957.0,How can we know which is line number 168??? You Should to show some of your stack trace,2014-03-03 08:21:42.013000+00:00,22141712.0,2798007.0,,0.0
+30,3853004,,"<p>I'm not sure if you've found much by way of google but this search bought up this page as hit 1: <a href=""http://www.oreillynet.com/xml/blog/2006/03/more_statistics_on_user_clicks.html"" rel=""nofollow"">http://www.oreillynet.com/xml/blog/2006/03/more_statistics_on_user_clicks.html</a></p>
+
+<p>Incidentally this question is on page one of the search too :)</p>
+
+<p>Its from 2006, but the first bit has a little about the font size settings in IE.</p>
+
+<p>I doubt there is any documented data for this specific thing. </p>
+
+<p>One thing I can tell you is that in over 10 years of working around computers I've seen about 1 in 10 users having a above default DPI setting. eg. 120 that caused the font size to be bigger than 16px in their browser. It also caused layouts that weren't styled properly to break.</p>",,,1,,2010-10-04 05:16:53.580000+00:00,,2010-10-04 05:16:53.580000+00:00,,,,,425680.0,3852734,2,4,,,4100860.0,"1 in 10 seems about right in my experience as well, maybe a little lower like 1 in 15 at my current job.  I think it would be higher if more people realized the could change it.",2010-10-04 16:40:07.970000+00:00,3853004.0,446591.0,,0.0
+31,11404696,,"<p>EDITED several times. I think this is all you need to do:</p>
+
+<ol>
+<li><p>Find all the pieces that can only fall mutually dependent on each other and combine them into an equivalent larger piece (e.g. the <code>T</code> and backwards <code>C</code> in your picture.)</p></li>
+<li><p>Iterate through all the pieces, moving them the maximum direction down before they hit something. Repeat until nothing moves.</p></li>
+</ol>",,,8,,2012-07-09 23:30:19.373000+00:00,,2012-07-10 03:26:26.937000+00:00,2012-07-10 03:26:26.937000+00:00,,15055.0,,15055.0,11404656,2,2,,,15038293.0,"Piece combination is probably the way to go. You'd have something like `if (pieceA.dependsOn(pieceB) && pieceB.dependsOn(pieceA)) combine(pieceA, pieceB);`",2012-07-09 23:51:31.090000+00:00,11404696.0,439751.0,,0.0
+32,12066718,,"<p>You have to escape the /'s in the regex code.</p>
+
+<p>-EDIT-</p>
+
+<p>ascii-lime also pointed out that you can change the delimiter to another non-alphanumeric character(with exceptions). To do this change the / at the start and end of the expression to the character of choice. Example:</p>
+
+<pre><code>'/.+\/regex.com\/index.html+./'
+</code></pre>
+
+<p>to</p>
+
+<pre><code>'!.+/regex.com/index.html+.!'
+</code></pre>",,,12,,2012-08-22 05:22:54.100000+00:00,,2012-08-22 06:17:13.823000+00:00,2012-08-22 06:17:13.823000+00:00,,1253462.0,,1253462.0,12066642,2,4,,,16117322.0,@RMDan Learn something every day :),2012-08-22 05:43:36.767000+00:00,12066718.0,947478.0,,0.0
+33,9322276,,"<p>The simplest answers are to change your queries for your datasets so they don't return multiple rows: combine the rows in your query.</p>
+
+<p>The really simple version of this is to just wrap your existing query for Dataset2 in an outer Select ... Group By:</p>
+
+<p>Slightly revised Dataset2:</p>
+
+<pre><code>SELECT
+   Username,
+   SUM(totalCol2) as totalCol2
+FROM
+(
+   SELECT Count(*) AS totalCol2, Username FROM database1
+   WHERE condition for this column...
+   GROUP BY Username   
+   UNION ALL
+   SELECT Count(*) AS totalCol2, Username FROM database2
+   WHERE condition for this column...
+   GROUP BY Username
+) AS tableA
+GROUP BY Username
+</code></pre>
+
+<p>A little bigger rewrite would give you:</p>
+
+<pre><code>SELECT
+   Username,
+   COUNT(*) AS totalCol2
+FROM
+   (SELECT UserName FROM database1
+    WHERE Condition
+    UNION ALL
+    SELECT UserName FROM database2
+    WHERE Condition
+    ) AS tableA
+ GROUP BY Username
+</code></pre>
+
+<p>Either of those queries above will work nicely with a lookup function.</p>
+
+<p>But if your database1 and database2
+are the same for all of the ten queries, then I would try to combine them. Maybe something like:</p>
+
+<pre><code>SELECT
+   Username,
+   SUM(Col1) AS totalCol1,
+   SUM(Col2) AS totalCol2,
+   ...
+FROM
+   (SELECT
+      UserName,
+      CASE WHEN [columns meet condition for Col1]
+       THEN 1 ELSE 0 END AS Col1,
+      CASE WHEN [test for condition of Column2]
+       THEN 1 ELSE 0 END AS Col2,
+      ... 
+    FROM database1
+
+    UNION ALL
+    SELECT
+      UserName,
+      CASE WHEN [columns meet condition for Col1]
+       THEN 1 ELSE 0 END AS Col1,
+      CASE WHEN [test for condition of Column2]
+       THEN 1 ELSE 0 END AS Col2,
+      ... 
+    FROM database2
+    ) AS tableA
+ GROUP BY Username
+</code></pre>",,,1,,2012-02-17 02:58:22.920000+00:00,,2012-02-17 02:58:22.920000+00:00,,,,,400375.0,9319779,2,0,,,11762499.0,"Thanks Jamie, that work for now!!   I tested only with 2 dataset, I will go to test with more now!!",2012-02-17 03:31:51.103000+00:00,9322276.0,1004299.0,,0.0
+34,3096921,,"<p>In an .xcconfig file, you can have </p>
+
+<pre><code>OTHER_CFLAGS[sdk=iphoneos*] = foobar
+OTHER_CFLAGS[sdk=iphonesimulator*] = barfoo
+</code></pre>
+
+<p>Any build setting can be conditional on a number of things, for example the shortname for an sdk. The device SDKs are named iphoneos-4.0 for example, and sim iphonesimulator-4.0. The above thus gets you the 'foobar' as CFLAG for the device, and 'barfoo' for the sim.</p>
+
+<p>To get started with xcconfigs quickly: </p>
+
+<ol>
+<li>New file > Other > Configuration Settings File</li>
+<li>Open the project or target editor (cmd-alt-E for the target one)</li>
+<li>Select a setting you want to customize (like cflags), and copy it with cmd-c</li>
+<li>Paste in the new xcconfig file</li>
+<li>Modify as above</li>
+<li>In your project or target editor's lower right corner, select your xcconfig file as ""Based On"". </li>
+</ol>
+
+<p>Notice how the build settings UI now lets you edit the conditionals... You can create new conditionals with the lower left button, but it won't let you set ""iphoneos*"" for example, only specific versions.</p>
+
+<p>Note that the magical $(inherited) lets you make a setting that inherits project settings but overrides just a part of it, like so:</p>
+
+<pre><code>OTHER_CFLAGS[sdk=iphoneos*] = $(inherited) foobar
+OTHER_CFLAGS[sdk=iphonesimulator*] = $(inherited) barfoo
+</code></pre>
+
+<p>I don't know a good resource for xcconfigs, but this'll get you started anyway: <a href=""http://robnapier.net/blog/build-system-1-build-panel-360#more-360"" rel=""noreferrer"">http://robnapier.net/blog/build-system-1-build-panel-360#more-360</a></p>",,,2,,2010-06-22 20:35:06.760000+00:00,,2010-06-22 20:41:20.753000+00:00,2010-06-22 20:41:20.753000+00:00,,48125.0,,48125.0,3096389,2,10,,,3177726.0,ok turns out that xcode doesnt like having the BASE_SDK set in the xcconfig file. if you totally remove it from build settings the dropdown doesnt ive you a choice what basesdk to compile against (simulator or device),2010-06-23 03:49:35.480000+00:00,3096921.0,86886.0,,0.0
+35,2484609,,"<p>I've found it helpful to work with different languages, since they each have their strengths.  Python is extremely powerful, but relies heavily on good coding conventions and practices to keep code maintainable.  In particular, it does not enforce type safety or insulation, which means it is easy to abuse.  C# is a modern object oriented language, with strong typing and other features to help enforce insulation and encapsulation.  It's not as wildly flexible, but I've also found that larger C# programs are much easier to maintain (especially when you inherit them from other developers.)</p>",,,2,,2010-03-20 20:19:19.413000+00:00,,2010-03-20 20:19:19.413000+00:00,,,,,206394.0,2484578,2,0,,,2477714.0,"It is, but the notion of a 'type' is much more mutable, since fields appear by usage rather than definition.  In this sense, Python is strongly typed, but the types themselves are subject to change.  This can be very powerful, but there are also advantages to working within a language with well thought out restrictions.",2010-03-21 00:14:59.787000+00:00,2484609.0,206394.0,,1.0
+36,8352437,,"<p>The Declaration for the dc_card Function should be:</p>
+
+<pre><code>Declare Auto Function dc_card Lib ""dcrf32.dll"" (ByVal icdev As Integer, ByVal mode as Short, snr As Integer) As Short
+</code></pre>
+
+<p>You should be passing the icdev you got from the dc_init function, and the mode of 0, your information will be in the snr variable and the status will be in st.</p>
+
+<pre><code>st = dc_card(ByVal icdev, cardmode, snr)
+</code></pre>
+
+<p>in your declares:</p>
+
+<pre><code>Dim snr, tagtype as Integer
+Dim cardmode as Short
+
+...
+</code></pre>",,,1,,2011-12-02 06:11:53.267000+00:00,,2011-12-02 06:11:53.267000+00:00,,,,,479512.0,8352110,2,0,,,10303124.0,"I'm sorry but in VB.NET  i cannot do this things :
+st = dc_card(ByVal icdev, cardmode, snr)
+
+no like in VB6, i can write ByVal when calling dc_card function, but in VB.NET it's not allowed.
+
+Now i'm passing to another method to finish this proeject. Thanks anyway fot your answer Mark :)",2011-12-02 07:12:31.130000+00:00,8352437.0,1074766.0,,0.0
+37,19524012,,"<p>Seems pretty straightforward to me.</p>
+
+<pre><code>bool WasMouseLeftDown()
+{
+    return currentState.LeftButton == ButtonState.Pressed;
+}
+</code></pre>
+
+<p>This is simply a bool that returns true if the left mouse button is being held down in the current frame.</p>
+
+<p>I think what you really want to do is when they move the mouse while the left mouse button is down so you simply need to check both conditions:</p>
+
+<pre><code>if (WasMouseMoved() &amp;&amp; WasMouseLeftDown())
+{
+    // do something
+}
+</code></pre>
+
+<p>I assume you already have code to check if the mouse moved (comparing the old position to the new position).</p>",,,4,,2013-10-22 17:00:22.030000+00:00,,2013-10-22 17:00:22.030000+00:00,,,,,852555.0,19523863,2,0,,,28965489.0,"Trevor i have the mousemove i can do it with this variables i have:  previousState = currentState;
+            currentState = Mouse.GetState();  but in the IF statemwnt that check if mouse move and leftdown how do i know if i rotate the terrain left right up down like i did with the keys ? with keys its simple W is UP S is DOWN but with the mouse how do i know when i moved the mouse left right up down inside the IF statement ?",2013-10-22 17:21:08.997000+00:00,19524012.0,2841672.0,,0.0
+38,15732024,,<p>The proper thing to do would be to make this a stored procedure at the database and have your C# run that sproc.</p>,,,3,,2013-03-31 17:01:33.460000+00:00,,2013-03-31 17:01:33.460000+00:00,,,,,160527.0,15731968,2,0,,,22351123.0,I thought that may be the case.,2013-03-31 17:21:33.283000+00:00,15732024.0,38900.0,,0.0
+39,7232172,,"<p>It seems it doesn't sort very well... </p>
+
+<pre><code>[3,5,1,5,10,0,99,10,12].sort()
+[0, 1, 10, 10, 12, 3, 5, 5, 99]  // result
+</code></pre>
+
+<p>But you can easily make it sort ok:</p>
+
+<pre><code>[3,5,1,5,10,0,99,10,12].sort(function(a,b) {return parseInt(a) &gt; parseInt(b)})
+[0, 1, 3, 5, 5, 10, 10, 12, 99] // result
+</code></pre>",,,6,,2011-08-29 15:22:31.083000+00:00,,2011-08-29 15:22:31.083000+00:00,,,,,909376.0,7232154,2,0,,,8696421.0,I think it depends on how the algorithm handles equal values. But your function will basically return `0` when `a` is smaller which means that `a` and `b` are equal. The fact that  I cannot find a counter example does not mean that your method will always work ;),2011-08-29 15:43:15.020000+00:00,7232172.0,218196.0,,0.0
+40,6025588,,"<p>I don't think that WPF is actually that hard. I think it's just that WPF definitely requires a slightly different way of thinking. You can tell that it was built with certain principles in mind (like MVVM, as another poster mentioned), and it's very different from most other frameworks. If you try to do it like you did Windows Forms or MFC or ASP.NET or whatever... you'll struggle. You need to be willing to change your mind on how things work.</p>
+
+<p>Frankly, I think the only way to learn it is with experimentation. Come up with some side project to work on using WPF and try your hand at it. Learn a bit and refactor it. Get a good book, read the <a href=""http://groups.google.com/group/wpf-disciples/?pli=1"" rel=""nofollow noreferrer"">WPF disciples</a> list, read anything that <a href=""http://sachabarber.net/"" rel=""nofollow noreferrer"">Sacha Barber</a> writes, read the <a href=""https://stackoverflow.com/questions/tagged/wpf"">WPF section</a> here on SO.</p>
+
+<p>When you have your first ""ah ha!"" moment where you decide to write an Attached Property to solve some obscure problem you're having, you'll know you've finally understood it :)</p>",,,5,,2011-05-17 02:25:29.393000+00:00,,2011-05-17 02:25:29.393000+00:00,2017-05-23 10:34:33.050000+00:00,,-1.0,,228298.0,6025126,2,2,,,6974672.0,"@Digital Stone - My only change I would make to what you said in your second comment there is that I would make sure to read about MVVM or MVP or similar BEFORE you start learning WPF/XAML. You don't need to go in-depth into it, but just make sure you understand the general concepts. It'll make your life alot easier in understanding why people wrote the WPF/XAML code the way they did when you're looking at examples.",2011-05-17 13:37:58.413000+00:00,6025588.0,228298.0,,0.0
+41,15242314,,<p>What's the meaning to catch OutOfMemoryError and do some work in your catch block if your heap space or perm gen space is full? Actually You cannot guess where can this exception actually happen. There is no logic to catch this exception.</p>,,,0,,2013-03-06 08:26:55.957000+00:00,,2013-03-06 08:26:55.957000+00:00,,,,,980092.0,15242207,2,0,,,,,,,,,
+42,23572799,,"<pre><code>SELECT COL1, COL2, DATECOL
+FROM TABLE
+WHERE DATECOL &gt;= ADD_MONTHS (CURRENT_DATE -EXTRACT(DAY FROM CURRENT_DATE) + 1 , -1)
+AND DATECOL &lt; CURRENT_DATE -EXTRACT(DAY FROM CURRENT_DATE) + 1
+</code></pre>
+
+<p>or you might just want to enter date</p>
+
+<pre><code>&gt;=DATE '2014-05-01'
+&lt; DATE '2014-04-01'
+</code></pre>",,,2,,2014-05-09 19:48:53.540000+00:00,,2014-05-09 19:59:22.790000+00:00,2014-05-09 19:59:22.790000+00:00,,2711819.0,,2711819.0,23571248,2,1,,,36175820.0,That's it.  Thanks so much!!,2014-05-09 20:14:51.677000+00:00,23572799.0,1566280.0,,0.0
+43,4129897,,"<p>I think that when it comes down it, it it really depends on your target audience. If you know that your target audience is most likely to have JavaScript enabled, then so be it.</p>
+
+<p>I have a situation at work, however, where I know that some of the people I develop for may be using old browsers and whether I like it or not, I cannot force them to upgrade.</p>
+
+<p>You also want to consider allowing your site to be accessible to all platforms and browsers and this includes audio and text based browsers. It's possible that your site will be inaccessible to people with disabilities. </p>
+
+<p>Whether that's important enough for you to develop a non-JavaScript version of your site, that's up to you.</p>",,,2,,2010-11-09 02:09:42.907000+00:00,,2010-11-09 02:09:42.907000+00:00,,,,,429949.0,4129867,2,3,,,4451847.0,"@davivid - That's important too but not everything. For example, you need to be considerate about putting appropriate `alt=""""` attributes in images so that if a text reader or screen reader comes across it, it'll know (and more importantly the USER will know) what it is. Check out [this site](http://www.w3.org/WAI/intro/wcag.php) for some more info on web accessibility.",2010-11-09 02:34:17.620000+00:00,4129897.0,429949.0,,0.0
+44,21572194,,"<p>There is no problem with the map projection, but the tiles are cut according the TMS notation (with tile [0,0] in the bottom left) in GDAL2Tiles.
+Some tools expect the Google XYZ notation (with tile [0,0] in the upper left corner).
+The tiles are otherwise equal, they have just flipped Y coordinate in the file name.</p>
+
+<p>Have a look at this:</p>
+
+<p><img src=""https://i.stack.imgur.com/c9WWw.png"" width=""256"" height=""256"" alt=""Google XYZ vs TMS - the flipped Y coordinates in map tiles""/></p>
+
+<p>I prepared a website which shows visually the difference and also explains the problem. Have a look at:</p>
+
+<p><a href=""http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/"" rel=""nofollow noreferrer"">http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/</a></p>
+
+<p>There is also a source code for how the tiles and all coordinates are calculated. It is part of the GDAL2Tiles which you mentioned above - which is a code I created some years back.</p>
+
+<p>Your second question is was about MBTiles. The mbutil utility has a parameter ""--scheme tms"" which allows to create the MBTiles file from tiles rendered with gdal2tiles.py.</p>
+
+<p>GDAL reads just the KAP file, where each represents a map in the sheet (in case there are insets).</p>
+
+<p>BTW Do you know that there is <a href=""http://www.maptiler.com/"" rel=""nofollow noreferrer"">http://www.maptiler.com/</a> which solves the problems mentioned above directly? You can just drag&amp;drop into the GUI or pass on the command line the KAP file as it is and choose whether you want tiles in directory or MBTiles and it will directly render the output. The tiles are directly optimised as well, there is support for rendering multiple input files into a single layer and rendering is of magnitude faster then with GDAL2Tiles. </p>",,,1,,2014-02-05 08:35:44.877000+00:00,,2014-02-05 08:35:44.877000+00:00,,,,,2759792.0,16968121,2,4,,,98375605.0,"The  ""--scheme tms"" parameter solved everything for me, Thanks!",2019-04-25 20:28:28.137000+00:00,21572194.0,3301191.0,,0.0
+45,14526197,,"<p>This is NOT guaranteed. It is for a SortedDictionary&lt;>, of course, and also for arrays and lists. But NOT for a Dictionary.</p>
+
+<p>Chances are, it will be stable if the dictionary is not changed - but it's just not guaranteed. You have to ask yourself - do you feel lucky? ;)</p>",,,6,,2013-01-25 16:35:37.657000+00:00,,2013-01-25 16:35:37.657000+00:00,,,,,106159.0,14526147,2,3,,,20257376.0,@MiguelMatos that is correct. Order doesn't matter as long as it's consistent,2013-01-25 18:00:40.377000+00:00,14526197.0,69742.0,,0.0
+46,973613,,"<p>Check out <a href=""http://activescaffold.com/"" rel=""nofollow noreferrer"">http://activescaffold.com/</a>  and Streamlined -- <a href=""http://streamlinedframework.org/"" rel=""nofollow noreferrer"">http://streamlinedframework.org/</a>
+both support nested models on a page.</p>
+
+<p>Note that you probably need some training for your users. A 4 level deep model is not something that people run into every day.</p>",,,2,,2009-06-10 03:53:47.430000+00:00,,2009-06-10 03:53:47.430000+00:00,,,,,64904.0,973599,2,1,,,781901.0,"+1 for ActiveScaffold. For a newspaper website, I've done Issue -> Section -> Article -> Image in nested scaffolding.",2009-06-10 04:11:02.523000+00:00,973613.0,46848.0,,0.0
+47,9440094,,"<pre><code>array( 'loc' =&gt; array( floatval($lon),  floatval($lat)))
+</code></pre>",,,0,,2012-02-25 00:47:48.393000+00:00,,2012-02-25 00:47:48.393000+00:00,,,,,979474.0,9371433,2,0,,,,,,,,,
+48,24694532,,"<p>You can redirect in <code>upload_complete_handler</code> like this</p>
+
+<pre><code>upload_complete_handler: function (file) {
+    var num = this.getStats().files_queued ; //num is the count of file in queue
+    if(num == 0){
+           window.location.href = 'http://url.you.want.to.redirect';
+    } else {
+        this.startUpload(); //next file in queue
+    }
+},
+</code></pre>",,,0,,2014-07-11 09:31:55.560000+00:00,,2014-07-11 09:31:55.560000+00:00,,,,,2651741.0,22780621,2,0,,,,,,,,,
+49,1354357,,"<p>ok, <a href=""http://back2dos.de/grid/?worldsize=10000"" rel=""nofollow noreferrer"">this</a> should show you can really get another category of numbers with other aproaches ...</p>
+
+<p>the limit here is not the number of stars, the limit is density, i.e. the number of stars visible at the same time ... with text disabled, i can get up to 700 @ 30fps, on a Core2Duo, with quite a recent version of the debug player ...</p>
+
+<p>i realized, flash player is not very good at clipping ... and that actually, using the most simple way, you spend a whole lot of time moving around objects, that are far from being visible ...</p>
+
+<p>to really be able to optimize things, i chose to use MVC here ... not in the classic bloated way ... the idea is to handle the model, and if any elements are visible, create views for them ...</p>
+
+<p>now the best aproach is to build up a <strong>spatial tree</strong> ... </p>
+
+<ol>
+<li>you have leaves, containing objects, and nodes containing leaves or nodes</li>
+<li>if you add an object to a leaf and it surpases a certain size, you turn it into a node with n<code>x</code>n leaves, redestributing its children between </li>
+<li>any object added to the background will be added to a grid, determined by the object's coordinates ... grids are created just-in-time, an start off as leaves</li>
+</ol>
+
+<p>the big advantage of this is, that you can quickly isolate the visible nodes/leaves.
+in each iteration, only the nodes/leaves which either turn visible, or are already visible (and may become invisible), are interesting. you need not do any updates in the rest of the tree. after finding all the visible objects, you create views for objects that turn visible, update the position of those that simply stay visible, and destroy views for objects that become invisible ...</p>
+
+<p>this saves an awful lot of everything ... memory and computation power ...
+if you try with a huge world size (100000), you will see, that you run out of RAM quickly, long before CPU does anything ... instantiating 500000 stars uses 700MB ram, with about 50 stars visible, running at 70 fps without any tremendous CPU usage ...</p>
+
+<p>the engine is just a proof of concept ... and code looks awful ... the only feature i am currently proud about is, that it supports object to occupate a certain area, which is why an object can be part of several leafs ... i think, this is something i will remove though, because it should give me a great speed up ... you also see, it stalls a little, while adding stars, which happens, when leafs flip to nodes ...</p>
+
+<p>i am quite sure, this is not the best way for a spatial subdivision tree, it's just that everything i found seemed kind of useless to me ... probably someone who studied (and understood) CS, can refine my approach ... :)</p>
+
+<p>other than that, i used an object pool for the views, and <a href=""http://haxe.org"" rel=""nofollow noreferrer"">Haxe</a>, since it performs better ... a thing that probably is not so clever, is to move all the views individually, instead of putting them on one layer and moving that around ...</p>
+
+<p>some people also render things into <code>BitmapData</code>s manually, to gain performance, which seems to work quite well (just can't find the question right now) ... you should however consider using <code>copyPixels</code> instead of <code>draw</code> ...</p>
+
+<p>hope this helps ... ;)</p>
+
+<hr>
+
+<p><strong>edit:</strong> i decided to turn my detailed answer into a <a href=""http://back2dos.wordpress.com/category/uncategorized/"" rel=""nofollow noreferrer"">blog post</a> ... have fun reading ... ;)</p>
+
+<hr>",,,3,,2009-08-30 17:17:27.243000+00:00,,2019-03-10 15:42:10.403000+00:00,2019-03-10 15:42:10.403000+00:00,,2631715.0,,111466.0,1342892,2,3,,,1191296.0,"...since it will only change the master container's X and Y, not actually causing the non-visible parts to be rendered, right? It's just a variable. Question 4: the link of what you made looks nice. Is the source public? Or can I see how you've done it? Would maybe answer some of my questions. Question 5: what do you mean with an object pool, just an array with objects? Question 6: haXe looks great, first time I see it. Do you recommend me to learn that language and rewrite the whole client again with that language? It's meant for a huge project, a 2d game as you probably know by now. Thanks!",2009-08-30 20:12:24.257000+00:00,1354357.0,45974.0,,0.0
+50,22060980,,"<p>Client side javascript validation is not manditory. It just prevents the client (whose JS is enabled) to submit or reload the page. Server side validation is the most important as JS validation can be bypassed by simply turning off JS. The JavaScript Validation should never be relied alone. </p>
+
+<p>The PHP Validation (server Side Validation) is robest &amp; cant be manipulated by the client. If its not implemented, you may end up with worse data &amp; more worse will be SQL Injection. So in practive we tend to use both JS &amp; PHP validation together </p>",,,2,,2014-02-27 06:43:54.350000+00:00,,2014-02-27 06:43:54.350000+00:00,,,,,3118675.0,22060742,2,1,,,33452065.0,"Just to add to this, JavaScript validation is usually used for the visual aspect of form validation, such as highlighting the text area red if the input was wrong, or some other similar visual effect. PHP is used for the security aspect, ie the actual validation of the form, and is also great for adding dynamic text as it can be imbedded straight into your HTML form",2014-02-27 06:51:15.663000+00:00,22060980.0,2537637.0,,1.0
+51,15229826,,"<p>Yes, you're missing something
+You should try testing your server with something else than a full-blown web browser. try <code>curl</code> for example.</p>
+
+<p>Chrome does a lot of other things than doing what you told it to do.</p>",,,3,,2013-03-05 17:06:31.817000+00:00,,2013-03-05 17:06:31.817000+00:00,,,,,1946228.0,15229642,2,4,,,21470544.0,"I believe you, it makes sense.",2013-03-05 17:17:56.657000+00:00,15229826.0,380562.0,,0.0
+52,25572034,,"<p>You are doing couple of things wrong here.</p>
+
+<ul>
+<li><p>Don't leave exception blocks empty. It hides all the error. Use Log.e to print that.</p></li>
+<li><p>Don't use System.out.println. Use Log.* only for logging. </p></li>
+<li><p>Don't use AsyncTask to upload your file. Use IntentService Instead. And using localbroadcastmanager broadcast upload events for your activity to listen. It will be more configuration change friendly.</p></li>
+<li><p>Instead of doing all this file upload sorcery yourself. Use httpmime library instead. It works simply awesome on android. I have my apps on production using this. Something like this you have to do.</p>
+
+<pre><code>    HttpClient client = new DefaultHttpClient();
+    HttpPost post = new HttpPost(urlToUpload);
+
+    MultipartEntity entity = new MultipartEntity();
+
+    Bitmap bmp = BitmapFactory.decodeFile(sourceFileUri);
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    bmp.compress(CompressFormat.JPEG, 50, bos);
+    InputStream in = new ByteArrayInputStream(bos.toByteArray());
+    ContentBody imageContent = new InputStreamBody(in, ""image/jpeg"", sourceFile.getName());
+
+    entity.addPart(""file"", imageContent);
+    post.setEntity(entity);
+
+    HttpResponse response = client.execute(post);
+</code></pre></li>
+<li><p>You will have your everything in 'response' for you to read.</p>
+
+<pre><code> String responseBody = EntityUtils.toString(response.getEntity());
+</code></pre></li>
+<li><p>From here you can download this library <a href=""http://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.2.5/"" rel=""nofollow"">http://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.2.5/</a></p></li>
+</ul>",,,5,,2014-08-29 16:05:10.117000+00:00,,2014-08-29 16:14:24.970000+00:00,2014-08-29 16:14:24.970000+00:00,,467592.0,,467592.0,25571443,2,0,,,39938667.0,"""just logging the error is effectively the same as hiding it"" - No It isn't. Many a time we don't want to handle the exception or do something when exception occurs. But its important to know if there is anything wrong happening around. So whatever be the case. One should log the exception trace.",2014-08-29 16:50:45.900000+00:00,25572034.0,467592.0,,0.0
+53,4055754,,"<p>perl6 is still a work in progress, so even though perl6 has much improved support for functional programming at the language level (see <a href=""http://perlgeek.de/blog-en/perl-5-to-6/28-currying.html"" rel=""noreferrer"">perlgeek.de on currying in perl6</a>, for example), you'll probably want to start now with perl5 so you can get to work with what's out there. i recommend looking into cpan for higher-level library support...Array::Utils and others (there's a lot!)</p>",,,0,,2010-10-29 20:43:04.993000+00:00,,2010-10-29 20:43:04.993000+00:00,,,,,477693.0,4049896,2,6,,,,,,,,,
+54,6969957,,"<p>Did you check permissions/owner?</p>
+
+<p>From the PHP manual: Note: The results of this function are cached.</p>",,,2,,2011-08-07 00:41:34.960000+00:00,,2011-08-07 00:41:34.960000+00:00,,,,,882288.0,6969901,2,1,,,8312679.0,"i changed permissions on those symlinks and their associated dirs to 777. That should be enough, no?",2011-08-07 00:48:35.123000+00:00,6969957.0,263699.0,,0.0
+55,13231724,,"<p>Try this: </p>
+
+<pre><code>SELECT user_name, pourcentage_c, pourcentage_m, id_user,  
+       COUNT(1) AS crtitique, COUNT(1) AS majeur
+FROM stat_alert  
+LEFT OUTER JOIN user_qdf ON user_qdf.id = id_user  
+GROUP BY id_user, TYPE 
+</code></pre>",,,3,,2012-11-05 12:01:48.007000+00:00,,2014-01-09 10:59:16.570000+00:00,2014-01-09 10:59:16.570000+00:00,,1784834.0,,1784834.0,13231312,2,0,,,18025646.0,column percentage-c shows the percentage when I type = 'C' and porcentagem pourcentage when I display type = 'M' for the sum works perfectly,2012-11-05 13:11:35.917000+00:00,13231724.0,1794019.0,,0.0
+56,13559115,,"<p>Try this:</p>
+
+<pre><code>$classInterest = (isset($_POST['classInterest']) &amp;&amp; $_POST['classInterest'] == 'Yes') ? ""Interested in Classes in "" . $yourCity : '';
+</code></pre>
+
+<p><strong>EDIT</strong></p>
+
+<p><a href=""http://blog.gerv.net/2006/10/firefox_reload_behaviour/"" rel=""nofollow"">http://blog.gerv.net/2006/10/firefox_reload_behaviour/</a> read the article and first comment by Jason</p>",,,9,,2012-11-26 05:27:06.513000+00:00,,2012-11-26 05:43:19.117000+00:00,2012-11-26 05:43:19.117000+00:00,,1722656.0,,1722656.0,13559049,2,2,,,18575473.0,"Another strange thing I'm not understanding-when I refresh the page, the checkbox is staying checked.  It should be unchecked...",2012-11-26 05:39:03.023000+00:00,13559115.0,242181.0,,0.0
+57,17891803,,"<p>Use operator.itemgetter:</p>
+
+<pre><code>from operator import itemgetter
+key1 = itemgetter(""Name1"")
+key2 = itemgetter(""label"")
+key3 = itemgetter(""Status1"")
+for record in b: # this is the longer list of dicts
+    k = key1(record)
+    for record2 in a: #this is the shorter one
+        if key2(record2) == k:
+            record2['Status1'] = key3(record)
+
+print a
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>[{u'score': 0, 'Status1': u'Delayed', u'id': 217110, u'label': u'Business A'}, {u'score': 0, 'Status1': u'Open', u'id': 217111, u'label': u'Business B'}, {u'score': 0, 'Status1': u'Closed', u'id': 217112, u'label': u'Business Yada Yada'}]
+</code></pre>",,,0,,2013-07-26 22:06:23.810000+00:00,,2013-07-26 22:06:23.810000+00:00,,,,,1757620.0,17891303,2,1,,,,,,,,,
+58,23738146,,"<p>I think your problem is that you are not separating your items, so your SQL ends up looking like:</p>
+
+<pre><code>select * 
+from lady_cloth 
+where color in('blue,red')
+</code></pre>
+
+<p>Whereas what you would really want is </p>
+
+<pre><code>select * 
+from lady_cloth 
+where color in('blue','red')
+</code></pre>
+
+<p>If you are using SQL Server 2008 or later then I would recommend using <a href=""http://msdn.microsoft.com/en-us/library/bb675163%28v=vs.110%29.aspx"" rel=""nofollow"">table-valued parameters</a>. The first step would be to create your type:</p>
+
+<pre><code>CREATE TYPE dbo.StringList TABLE (Value NVARCHAR(MAX));
+</code></pre>
+
+<p>I tend to just create generic types that can be easily reused, but this would be your call.</p>
+
+<p>Then in your method you would need to split your values into an array and add them to a datatable:</p>
+
+<pre><code>var colourTable = new DataTable();
+colourTable.Columns.Add(""Value"", typeof(string));
+var colours = Request.QueryString[""vaL1""].Split(',');
+for (int i = 0; i &lt; colours.Length; i++)
+{
+    var newRow = colourTable.NewRow();
+    newRow[0] = colours[i];
+    colourTable.Rows.Add(newRow);
+}
+</code></pre>
+
+<p>You can then add this table to your command as a parameter:</p>
+
+<pre><code>string sql = ""SELECT * FROM lady_clock WHERE Color IN (SELECT Value FROM @Colours)""
+cmd = new SqlCommand(sql, con);
+var parameter = new SqlParameter(""@Colours"", SqlDbType.Structured);
+parameter.Value = colourTable;
+parameter.TypeName = ""dbo.StringList"";
+cmd.Parameters.Add(parameter);
+</code></pre>
+
+<p>Finally, You can reduce your code by just initialising the SqlDataAdapter with your SQL and connection:</p>
+
+<pre><code>public void grid()
+{
+
+    var colourTable = new DataTable();
+    colourTable.Columns.Add(""Value"", typeof(string));
+    var colours = Request.QueryString[""vaL1""].Split(',');
+    for (int i = 0; i &lt; colours.Length; i++)
+    {
+        var newRow = colourTable.NewRow();
+        newRow[0] = colours[i];
+        colourTable.Rows.Add(newRow);
+    }
+    string sql = ""SELECT * FROM lady_clock WHERE Color IN (SELECT Value FROM @Colours)""
+    DataSet ds3 = new DataSet();
+    using (var adapter = new SqlDataAdapter(sql, con))
+    {
+        var parameter = new SqlParameter(""@Colours"", SqlDbType.Structured);
+        parameter.Value = colourTable;
+        parameter.TypeName = ""dbo.StringList"";
+        adapter.Parameters.Add(parameter);
+        con.Open();
+        da1.Fill(ds3);
+    } 
+    if (ds3.Tables[0].Rows.Count &gt; 0)
+    {
+        GridView1.DataSource = ds3;
+        GridView1.DataBind();
+    }
+    else
+    {
+
+    }
+}
+</code></pre>",,,2,,2014-05-19 12:46:48.720000+00:00,,2014-05-20 12:12:43.120000+00:00,2014-05-20 12:12:43.120000+00:00,,1048425.0,,1048425.0,23737416,2,0,,,36531575.0,"I have edited to show the full method that should work. If it does not work still please can you provide more helpful feedback than ""I have an error"", what the error message is, where it is thrown etc. Thanks",2014-05-20 12:14:01.593000+00:00,23738146.0,1048425.0,,0.0
+59,16920265,,"<p>Try setting a 'default' <code>background-color</code>, so no gradient for IE10</p>
+
+<pre><code>.color2 {
+//your gradient background-colors
+background-color: red; /*IE10 fallback */
+//rest of code
+}
+</code></pre>",,,2,,2013-06-04 14:19:22.393000+00:00,,2013-06-04 14:19:22.393000+00:00,,,,,1379394.0,16920142,2,0,,,24424616.0,I just named it color2. but are your calling the navlinks with classes like color2? otherwise you have to change the class name :) I don't know how your style class is called :),2013-06-04 14:27:33.530000+00:00,16920265.0,1379394.0,,0.0
+60,9067456,,"<p>Search path is indeed what you want:</p>
+
+<pre><code>% create schema blarg;
+% set search_path to blarg;
+% create table foo (id int);
+% \d
+       List of relations
+ Schema | Name | Type  | Owner 
+--------+------+-------+-------
+ blarg  | foo  | table | pgsql
+</code></pre>",,,4,,2012-01-30 16:46:58.090000+00:00,,2012-01-30 16:46:58.090000+00:00,,,,,453002.0,9067335,2,33,,,11398205.0,"You can also make it the default for a database: `ALTER DATABASE db SET search_path = ...` or even for a particular user/database combination (on 9.1): `ALTER ROLE user IN DATABASE db SET search_path = ...`, but if you use these settings too much they can cause confusion, and note that it's not clear when they get dumped.",2012-01-31 12:03:30.263000+00:00,9067456.0,85134.0,,2.0
+61,17126907,,"<p>Below is a simplistic, and perhaps slow, example of counting individual letters (and some other characters) in a document.</p>
+
+<pre><code>Sub CountChars()
+    Dim iCount(57) As Integer
+    Dim x As Integer
+    Dim iTotal As Integer
+    Dim iAsc As Integer
+
+    Application.ScreenUpdating = False
+    iTotal = ActiveDocument.Range.Characters.Count
+
+    For x = 1 To iTotal
+        iAsc = Asc(ActiveDocument.Range.Characters(x))
+        If iAsc &gt;= 65 And iAsc &lt;= 122 Then
+        iCount(iAsc - 65) = iCount(iAsc - 65) + 1
+        End If
+    Next x
+    For x = 0 To 57
+        Debug.Print x, iCount(x)
+    Next x
+    Application.ScreenUpdating = True
+End Sub
+</code></pre>
+
+<p>Change to </p>
+
+<pre><code>Debug.Print Chr(x + 65), iCount(x)
+</code></pre>
+
+<p>to display the characters themselves.</p>
+
+<p>It may be possible to use <code>Find</code> (somehow) to count occurrences of characters; otherwise it would require Regex.</p>
+
+<p>Alternative using Replace:</p>
+
+<pre><code>'Tools, References: Microsoft Scripting Runtime
+Sub CountCharsWithReplace()
+    Dim doc As Document
+    Dim rDupe As Range
+    Dim dicChars As Scripting.Dictionary
+    Dim s As String
+    Dim iTotalChars As Integer
+    Dim iTempChars As Integer
+    Dim iDiff As Integer
+    Dim n As Integer
+    Dim blnExec As Boolean
+    Dim lett As Variant
+    Application.ScreenUpdating = False
+    Set doc = ActiveDocument
+    iTotalChars = doc.Range.Characters.Count
+    Set rDupe = doc.Range
+    Set dicChars = New Scripting.Dictionary
+    Do While rDupe.Characters.Count &gt; 1
+        s = rDupe.Characters(1).Text
+        blnExec = rDupe.Find.Execute(s, , , , , , , , , """", wdReplaceAll)
+        iTempChars = doc.Range.Characters.Count
+        iDiff = iTotalChars - iTempChars
+        iTotalChars = iTempChars
+        If Asc(s) &gt;= 65 And Asc(s) &lt;= 122 Then
+            dicChars.Add s, iDiff
+        End If
+        n = n + 1
+    Loop
+    ActiveDocument.Undo Times:=n
+    Application.ScreenUpdating = True
+    For Each lett In dicChars.Keys
+        Debug.Print lett, dicChars(lett)
+    Next lett
+End Sub
+</code></pre>",,,15,,2013-06-15 18:53:50.053000+00:00,,2013-06-16 04:07:57.297000+00:00,2013-06-16 04:07:57.297000+00:00,,620444.0,,620444.0,17126690,2,2,,,24800147.0,"@DougGlancy Yes, I originally had `Count > 0` but there is always at least one character left. It could be worked around, but I'm not too concerned now. My original intention was to `Duplicate` the entire Range and use Replace on this, but this method only copies the range-markers and properties, not the content. It then occurred to me to create a new document and copy the content to this, so that I could perform the replacements without having to Undo. Anyway, I was just exploring the possibilities. Never mind. Regards, Andy.",2013-06-16 18:44:50.973000+00:00,17126907.0,620444.0,,0.0
+62,8586451,,"<p>You need to make some form of path with a list of points, and then move the ""pencil"" from the first to the last.
+Read about linked lists in java, it's easy and everything will be clear. The only problem is making the path. You might have to write some tool in your pc to transform images into paths.
+Another way to achieve this effect, but a bit bolder, is to pick random points in the edges of the picture, sort them, and then move the pencil from the beginning to the end.</p>",,,1,,2011-12-21 07:37:34.373000+00:00,,2011-12-21 07:37:34.373000+00:00,,,,,752901.0,8586404,2,0,,,10649550.0,Thanks alfa it may be happen...but i am new to android so for me it is impossible but anyway thanks for your time,2011-12-21 07:43:29.623000+00:00,8586451.0,994907.0,,0.0
+63,18212735,,"<p>Totally failed to actually write the link in the comment. Here are some tips for speeding up your site: <a href=""https://stackoverflow.com/a/16240746/1037489"">https://stackoverflow.com/a/16240746/1037489</a> And of course, the prebuilt version is the one to use, should be much faster. Click-to-build command is your friend. Make sure you have a source enlistment to be able to use it. </p>",,,0,,2013-08-13 15:07:17.870000+00:00,,2013-08-13 15:07:17.870000+00:00,2017-05-23 11:49:50.187000+00:00,,-1.0,,1037489.0,18195590,2,1,,,,,,,,,
+64,6248426,,"<p>No there is problem with throwing a <code>char</code> array. Just that you should receive as,</p>
+
+<pre><code>catch(const char* const errorMessage) {...}
+</code></pre>
+
+<p>1st <code>const</code> is to add ability to receive any <code>char</code> array <code>char*</code> <code>const char*</code> <code>char[]</code> <code>const char[]</code></p>
+
+<p>2nd <code>const</code> is to specify that <code>errorMessage</code> is not intended to change within <code>catch</code> block</p>",,,8,,2011-06-06 06:21:33.720000+00:00,,2011-06-06 06:21:33.720000+00:00,,,,,514235.0,6248404,2,5,,,7287896.0,"@Tony I think the reason is to maintain coherence between the declarations and the definition, while not exposing the internal details (the const-ness).  The alternative, IMHO, would be to ban the const on the declarations, but use it on the definition (but I think one compiler rejects this, even if it is legal).  Anyway, you're right that it doesn't apply here: there is no externally visible declaration, separate from the catch block.",2011-06-06 09:10:40.757000+00:00,6248426.0,649665.0,,1.0
+65,16798960,,"<p>This is a generic method (based on another SO answer which I can't find) which you can call on any enum.
+By the way, the Browsable attribute is already defined in System.ComponentModel.
+For example:</p>
+
+<pre><code>ComboBox.DataSource = EnumList.Of&lt;DomainTypes&gt;();
+
+...
+
+public class EnumList
+{
+    public static List&lt;T&gt; Of&lt;T&gt;()
+    {
+        return Enum.GetValues(typeof(T))
+            .Cast&lt;T&gt;()
+            .Where(x =&gt; 
+                {
+                    BrowsableAttribute attribute = typeof(T)
+                        .GetField(Enum.GetName(typeof(T), x))
+                        .GetCustomAttributes(typeof(BrowsableAttribute),false)
+                        .FirstOrDefault() as BrowsableAttribute;
+                    return attribute == null || attribute.Browsable == true;
+                }
+            )
+        .ToList();
+    }
+}
+</code></pre>",,,0,,2013-05-28 18:30:36.443000+00:00,,2013-06-04 14:00:50.233000+00:00,2013-06-04 14:00:50.233000+00:00,,733760.0,,733760.0,6415023,2,5,,,,,,,,,
+66,2664457,,"<p>Yes, Sun can (Oracle now, I guess):</p>
+
+<p><a href=""http://www.netlib.org/fdlibm/"" rel=""noreferrer"">fdlibm</a>, the ""freely distributable math library"", has <a href=""http://www.netlib.org/fdlibm/e_sqrt.c"" rel=""noreferrer"">sqrt</a> and <a href=""http://www.netlib.org/fdlibm/e_pow.c"" rel=""noreferrer"">pow</a>, along with many other math functions. </p>
+
+<p>They're fairly high-tech implementations, though, and of course nothing is ever the ""most efficient"" implementation of something like this. Are you after source code to get it done, or are you really not so much looking for <code>pow</code> and <code>sqrt</code>, but actually looking for an education in floating-point algorithms programming?</p>",,,7,,2010-04-18 23:45:24.540000+00:00,,2010-04-18 23:52:11.653000+00:00,2010-04-18 23:52:11.653000+00:00,,13005.0,,13005.0,2664445,2,9,,,2689323.0,"Most of us can do something halfway clever with a Taylor series to implement a function, but finding a really fast way to compute such a function is going to take specialized knowledge, and may vary depending on platform.  You're probably better off just taking somebody else's source and running.",2010-04-19 20:56:19.007000+00:00,2664457.0,14148.0,,0.0
+67,25528983,,"<p>Assuming you get a valid JSON array, a custom converter with JSON.NET would work as well:</p>
+
+<pre><code>public class TupleConverter : JsonConverter
+{
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CanWrite
+    {
+        get { return false; }
+    }
+
+    public override bool CanConvert(Type objectType)
+    {
+        return objectType == typeof(List&lt;Tuple&lt;string, string&gt;&gt;);
+    }
+
+    public override object ReadJson(
+        JsonReader reader,
+        Type objectType,
+        object existingValue,
+        JsonSerializer serializer)
+    {
+        List&lt;Tuple&lt;string, string&gt;&gt; result = null;
+
+        if (reader.TokenType == JsonToken.StartArray)
+        {            
+            JArray deserialized = JArray.Load(reader);
+            result = new List&lt;Tuple&lt;string, string&gt;&gt;(deserialized.Count);
+
+            foreach (var token in deserialized)
+            {
+                if (token.Type == JTokenType.Object)
+                {
+                    result.Add(Tuple.Create(
+                        token[""name""].ToObject&lt;string&gt;(),
+                        token[""value""].ToObject&lt;string&gt;()));
+                }
+            }
+        }
+
+        return result;
+    }
+}
+</code></pre>
+
+<p>Usage:</p>
+
+<pre><code>List&lt;Tuple&lt;string, string&gt;&gt; result = 
+    JsonConvert.DeserializeObject&lt;List&lt;Tuple&lt;string, string&gt;&gt;&gt;(json, new TupleConverter());
+</code></pre>
+
+<p><strong>Example:</strong> <a href=""https://dotnetfiddle.net/TEbNsH"" rel=""nofollow"">https://dotnetfiddle.net/TEbNsH</a></p>",,,2,,2014-08-27 13:51:10.267000+00:00,,2014-08-27 15:28:05.313000+00:00,2014-08-27 15:28:05.313000+00:00,,497356.0,,497356.0,25528235,2,2,,,39858991.0,"+1, but I have a few suggested improvements: if the JSON fragment in the question happens to be part of a larger JSON containing more than just the list of key-value pairs, this converter will try to convert everything and fail, due to the fact that `CanConvert` always returns true.  It would be better if `CanConvert` only returned true when `objectType == List<Tuple<string,string>>`.  Also, you should implement `CanWrite` to return false if `WriteJson` isn't implemented.  `CanRead` returns true by default in the base JsonConverter, so you don't need to override that one.",2014-08-27 14:49:34.837000+00:00,25528983.0,10263.0,,1.0
+68,15069124,,"<p>Figured it out.  Here is simplified version.</p>
+
+<pre><code>&lt;mx:AdvancedDataGrid 
+    id=""myDatagrid""&gt;
+&lt;mx:columns&gt;
+    &lt;mx:AdvancedDataGridColumn 
+            dataField=""Full_Name""&gt;
+    &lt;/mx:AdvancedDataGridColumn&gt;
+&lt;/mx:columns&gt;
+&lt;mx:rendererProviders&gt;
+    &lt;mx:AdvancedDataGridRendererProvider 
+            renderer=""{rendererFactory}""
+            columnSpan=""0""
+            columnIndex=""0""
+            depth=""2""/&gt;
+    &lt;mx:AdvancedDataGridRendererProvider
+            renderer=""{anotherFactory}""
+            columnIndex=""0""
+            columnSpan=""0""
+            depth=""1""/&gt;
+&lt;/mx:rendererProviders&gt;
+</code></pre>
+
+<p></p>
+
+<p>If you change {rendererFactory} (updating existing or creating new), it will not trigger refresh.  After making changes to the factory, i did myDatagrid.rendererProviders=myDatagrid.rendererProviders and that triggered the update and recycled the renderers.</p>",,,0,,2013-02-25 14:20:27.623000+00:00,,2013-02-25 14:20:27.623000+00:00,,,,,2100267.0,15029916,2,2,,,,,,,,,
+69,25067567,,"<p>The best solution probably depends on what exactly you mean by ""a merge operation"". </p>
+
+<p>If what you mean is that you want to insert entities from the set (table, csv-file or whatever) <code>A</code> which aren't already present in set <code>B</code>, you could </p>
+
+<ol>
+<li>define suitable <code>GetHashCode</code> and <code>Equals</code> methods for your entities</li>
+<li>read all existing records in <code>B</code> into memory in one go (assuming they fit in memory), putting them in a <code>HashSet h</code></li>
+<li>read all entities from <code>A</code>, calculate <code>A\h</code>, which should be very fast, and then insert <code>A\h</code> into <code>B</code>, possibly using the bulk insert library.</li>
+</ol>
+
+<p>The key here is to avoid having to do database lookups for each element in <code>A</code>.</p>",,,3,,2014-07-31 19:39:54.170000+00:00,,2014-07-31 19:39:54.170000+00:00,,,,,40348.0,25067389,2,0,,,38997905.0,"Merge operation: http://msdn.microsoft.com/en-us/library/bb510625.aspx. The bottom line is that if I need to, say, update the timestamp of 10000 rows, and insert 50 more, it takes a very long time.",2014-07-31 19:40:55.833000+00:00,25067567.0,472875.0,,0.0
+70,19382225,,"<p>Turns out all I needed to make it work were these two lines of code:</p>
+
+<pre><code>stage.scaleMode = StageScaleMode.SHOW_ALL;
+stage.align = """";
+</code></pre>",,,0,,2013-10-15 13:15:47.867000+00:00,,2013-10-15 13:15:47.867000+00:00,,,,,1736620.0,19286862,2,0,,,,,,,,,
+71,10498673,,"<p>You cannot change the initial key name of an <a href=""http://aws.amazon.com/ec2/"" rel=""nofollow noreferrer"">Amazon EC2</a> instance as shown in the <a href=""http://aws.amazon.com/console/"" rel=""nofollow noreferrer"">AWS Management Console</a>.</p>
+
+<p>However, as you've already explored, it is not a problem to add another key for every day usage and won't be a problem in the long run either; in fact, you could also delete the former key pair via the AWS Management Console with zero impact on your already created instances, please see Eric Hammond's answer to <a href=""https://serverfault.com/a/382137/10305"">consequences of deleted key pair on ec2 instance</a> for more details on the subject matter.</p>",,,3,,2012-05-08 12:31:44.190000+00:00,,2012-05-25 08:35:31.097000+00:00,2017-04-13 12:13:44.287000+00:00,,-1.0,,45773.0,10497842,2,3,,,13627379.0,"hey, thanks for your response. what if I move my existing amazon instance to larger/smaller instance, can that be a problem? i mean since amazon has in their record my old key for that instance so is there any chance that my new key wont work then for sshing?",2012-05-10 13:01:42.787000+00:00,10498673.0,1381910.0,,0.0
+72,11439594,,"<pre><code>setInterval(function() {
+    CountdownAnzeigen('2012-07-16 12:20:00');
+}, 1000);
+</code></pre>",,,5,,2012-07-11 19:00:43.057000+00:00,,2012-07-11 19:02:45.847000+00:00,2012-07-11 19:02:45.847000+00:00,,995876.0,,159145.0,11439499,2,1,,,15094077.0,"I tried your solution with document.write and without, but it doesn't work.",2012-07-11 19:18:56.240000+00:00,11439594.0,1345191.0,,0.0
+73,17042256,,"<p>Most likely the project was imported into IDEA, but it's not a pure Java project.</p>
+
+<p>Note that non-Java projects cannot be imported from the existing sources using the Import option.</p>
+
+<p>You should create a new project, select the appropriate module type and then point to the existing directory with the code when creating the module.</p>
+
+<p>Other options are to import from Maven/Eclipse/Gradle.</p>
+
+<p>There is a <a href=""http://youtrack.jetbrains.com/issue/IDEA-91446"" rel=""noreferrer"">known issue logged</a>.</p>
+
+<p>If it's not the case, please share a sample project (zipped) that will reproduce the problem.</p>",,,1,,2013-06-11 10:46:54.087000+00:00,,2013-06-11 11:18:35.443000+00:00,2013-06-11 11:18:35.443000+00:00,,104891.0,,104891.0,17042113,2,6,,,29764493.0,"Thanks! I tried importing a JRuby on Rails project into IntelliJ and it didn't show many of the directories and files. Like you said, creating a new project works. IntelliJ needs to show the root folder in the Project view, not some of the subfolders.",2013-11-15 01:17:12.193000+00:00,17042256.0,476159.0,,0.0
+74,16957035,,"<p>Share the code you are using plz. The description is very brief. BTW, you can have a look at this link <a href=""https://stackoverflow.com/questions/10259776/how-to-save-state-with-onsaveinstancestate-and-onrestoreinstancestate-while-orie"">how to save state with onSaveInstanceState and onRestoreInstanceState while orientation change</a></p>",,,0,,2013-06-06 08:19:40.273000+00:00,,2013-06-06 08:19:40.273000+00:00,2017-05-23 11:43:16.947000+00:00,,-1.0,,2365416.0,16956709,2,0,,,,,,,,,
+75,6316163,,"<p>Check out the jQuery hotkeys plugin</p>
+
+<p><a href=""http://plugins.jquery.com/project/hotkeys"" rel=""nofollow"">http://plugins.jquery.com/project/hotkeys</a></p>",,,0,,2011-06-11 13:27:29.233000+00:00,,2011-06-11 13:27:29.233000+00:00,,,,,763246.0,6316089,2,2,,,,,,,,,
+76,3812216,,"<p>I'm using <a href=""http://mvcextensions.codeplex.com/SourceControl/changeset/view/f71bcadf0e76#Trunk%2fSample%2fDemo.Web.Common%2fModels%2fProductEditModel.cs"" rel=""nofollow"">MvcExtensions</a>. One of the features is a nice way to describe metadata like this:</p>
+
+<pre><code>public class ProductEditModelConfiguration : 
+  ModelMetadataConfiguration&lt;ProductEditModel&gt;
+{
+  public ProductEditModelConfiguration()
+  {
+    Configure(model =&gt; model.Id).Hide();
+    Configure(model =&gt; model.Name)
+      .DisplayName(() =&gt; LocalizedTexts.Name)
+      .Required(() =&gt; LocalizedTexts.NameCannotBeBlank)
+      .MaximumLength(64, () =&gt; 
+        LocalizedTexts.NameCannotBeMoreThanSixtyFourCharacters);
+  }
+}
+</code></pre>
+
+<p>Neat thing is - this allows to use resources for localization in strongly typed fashion.</p>
+
+<p>Drawback for using this - there's bunch of other things bundled which You might not want to use.</p>",,,3,,2010-09-28 11:26:20.690000+00:00,,2010-09-28 11:26:20.690000+00:00,,,,,82062.0,3811967,2,3,,,4069513.0,"@Piotr Those things are called custom model metadata providers. But I do think that it's quite an overhead to write them by Yourself. Quite tricky. But yeah, MvcExtensions would show You how to do that if You want to go that way: http://bit.ly/aIlaLh. And You might find useful this presentation: http://bit.ly/aFOMJH.",2010-09-30 16:06:17.767000+00:00,3812216.0,82062.0,,0.0
+77,19556335,,"<p>As José Valim said, you can call <code>clear</code> inside iex.</p>
+
+<pre><code>    iex&gt; h clear/0
+    * def clear()
+
+    Clear the console screen.
+</code></pre>",,,0,,2013-10-24 03:24:07.620000+00:00,,2013-10-24 03:24:07.620000+00:00,,,,,1024147.0,17019455,2,36,,,,,,,,,
+78,3148520,,"<p>You can change culture for thread:</p>
+
+<pre><code> System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(""es-ES"");
+ System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+ System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
+</code></pre>",,,1,,2010-06-30 10:56:27.370000+00:00,,2010-06-30 10:56:27.370000+00:00,,,,,379778.0,3148234,2,4,,,80117649.0,"@colmde Looks like the DateTimePicker will always use the OS culture, not the one of your app. See https://support.microsoft.com/en-us/help/889834/the-datetimepicker-and-monthcalendar-control-do-not-reflect-the-curren",2017-10-05 09:42:28.053000+00:00,3148520.0,276648.0,,1.0
+79,20169786,,"<p>I think the best way to explain why this problem occurs is to go through what is happening step-by-step:</p>
+
+<ol>
+<li>The main window is built.</li>
+<li>The user clicks either the <code>pe</code> button or the <code>ep</code> button.</li>
+<li>The <code>convert</code> function, which each button is hooked up to, is invoked.</li>
+<li>The function runs through to this line: <code>money = float( money.get() )</code>.</li>
+<li>Since the user hasn't entered anything yet, <code>money.get()</code> returns an empty string.  Empty strings cannot be made into floats, so a <code>ValueError</code> is thrown.</li>
+</ol>
+
+<p>So, summed up, the problem is that you are not adding any safeties for if <code>money.get</code> returns a string that cannot be converted into a float (i.e. an empty string, a string with letters in it, etc.).</p>
+
+<hr>
+
+<p>You can create a safety like this:</p>
+
+<pre><code>try:
+    money = float(money.get())
+except ValueError:
+    pass
+</code></pre>
+
+<p>or, like this:</p>
+
+<pre><code>money = money.get()
+if money.isdigit():
+    money = float(money)
+</code></pre>
+
+<p>Regardless of how you choose to solve this problem, you need to do <em>something</em> for when the return value of <code>money.get</code> cannot be converted into a float.</p>",,,0,,2013-11-24 00:46:31.243000+00:00,,2013-11-24 00:52:52.190000+00:00,2013-11-24 00:52:52.190000+00:00,user2555451,,user2555451,,20169073,2,1,,,,,,,,,
+80,4381699,,"<p>I suspect that the PDFs in question are ""web enabled"", AKA ""linearized""... possibly including the ones with the ""page 2 bug"".</p>
+
+<p>Basically, a linearized PDF has a bunch of ""hints"" at the beginning of the file giving byte offsets to various relevant bits, particularly the byte range needed to display the first page (which is required to be at the front of the PDF).</p>
+
+<p>Requests to read these byte ranges may be broken up into any number of HTTP requests (including ""one"").  It's not particularly odd that iframe &amp; object tags behave differently.  In one case, the PDF gets an entire window to itself, in the other it must share with HTML content: however thinly wrapped, it <em>is</em> wrapped.</p>
+
+<hr>
+
+<p>Alternatively, one of the requests could be for the beginning of the PDF rather than the entire thing, again related to linearized PDFs (attempting to determine if the PDF is linearized, then reading the whole thing).</p>
+
+<hr>
+
+<p>In either of the above cases, this is normal behavior.  OTOH, if it's requesting the entire PDF twice, that's A Bad Thing... quite possibly a bug in the PDF plugin.</p>",,,2,,2010-12-07 21:18:44.187000+00:00,,2010-12-07 21:18:44.187000+00:00,,,,,477771.0,4377662,2,1,,,4790926.0,"No, not yet I am afraid. It is not yet online, and we need to fix this before it goes live. I will try to make a page that shows the issue, but I need to do so on a site where I have access to log files.. Thanks for your participation",2010-12-09 06:18:49.210000+00:00,4381699.0,295783.0,,0.0
+81,3630259,,"<p>Sure, but you might want to rewrite it as</p>
+
+<pre><code>public IEnumerable&lt;Shape&gt; OnlyBox
+{
+    get { return this.Where(x =&gt; x.ShapeType == ShapeType.Box); }
+}
+</code></pre>
+
+<p>which does the exact same thing.</p>",,,1,,2010-09-02 18:56:59.687000+00:00,,2010-09-02 19:03:45.520000+00:00,2010-09-02 19:03:45.520000+00:00,,3312.0,,55943.0,3630239,2,11,,,3814057.0,"Thanks, yeah this was a bit flaky in my mind. Now I can see it clearly.",2010-09-02 19:01:56.720000+00:00,3630259.0,51816.0,,0.0
+82,15684048,,"<p>Since you are making several calls to a database file (that isn't going to change), I'd start out by defining your connection string and your SQL statements at the top of your class as global values:</p>
+
+<pre><code>private const int ITEMID_INDEX = 0;
+private const int PACKSIZE_INDEX = 1;
+private const string SQL_CONN_STR = ""Data Source=\\badPlace2B\\CCRDB.SDF"";
+private const string SQL_GET_VENDOR_ITEMS = ""SELECT ItemID, PackSize "" + 
+  ""FROM VendorItems "" +
+  ""WHERE VendorID=@VendorID AND VendorItemID=@VendorItemID"";
+</code></pre>
+
+<p>These never change, so there is no reason to define them again each time you call your routine.</p>
+
+<p>Personally, I do not like inserting values into SQL statements, like you have shown. Rather, try to use Parameters.</p>
+
+<p>To use Parameters, you'll need to look into your database to see what type of columns <code>VendorID</code> and <code>VendorItemID</code> are. My guess is that they are both <strong>int</strong> values, but these could be <strong>GUID</strong> like values, requiring <code>VarChar</code> type strings. If these are strings, you should write down what sizes the columns are defined as.</p>
+
+<p><strong>For example:</strong> Below, my <code>Serial_Number</code> column is the <code>SqlDbType.NVarChar</code> and the size is 50. An <code>SqlCeParameter</code> for this column would be:</p>
+
+<pre><code>cmd.Parameters.Add(""@Serial_Number"", SqlDbType.NVarChar, 50).Value = txtSerial_Number.Text.Trim();
+</code></pre>
+
+<p><img src=""https://i.stack.imgur.com/6diFd.png"" alt=""db table definition""></p>
+
+<p>Since I did not know what type of data you use, I created an enumerated type to show how each method would be used. If you do not have access to the table's design, the last resort is ""AddWithValue"" (I personally hate that one, because it makes me look like I don't know what my database has inside).</p>
+
+<pre><code>enum ParamStyle { AddWithValue, AddIntegers, AddVarChar }
+</code></pre>
+
+<p>To use this enumerated type, I modified the signature of your method to pass in that value:</p>
+
+<pre><code>private bool PopulateControlsIfVendorItemsFound(ParamStyle style) {
+</code></pre>
+
+<p>Obviously, you will not need this, because you should know what technique you are going to be coding with.</p>
+
+<p>I wasn't able to figure out what your <code>dbconn</code> object was. Initially, I thought this was your <code>SqlCeConnection</code>, but that does not have an <code>isValidTable</code> method, so I just commented it out:</p>
+
+<pre><code>  //if (dbconn.isValidTable(""VendorItems"") == -1) {
+  //  DUCKBILL.LogMsgs.Append(""VendorItems not a valid table"");//do not see this msg; good! VendorItems is seen as valid...
+  //  return false;
+  //}
+</code></pre>
+
+<p>Speaking of <code>SqlCeConnection</code>...</p>
+
+<p>I combined your <code>SqlCeCommand</code> instance with your <code>SqlCeConnection</code> instance. Less code typically means fewer errors:</p>
+
+<pre><code>  using (var cmd = new SqlCeCommand(SQL_GET_VENDOR_ITEMS, new SqlCeConnection(SQL_CONN_STR))) {
+</code></pre>
+
+<p>The <code>CommandType</code>, by default, is <code>CommandType.Text</code>, so this line is unnecessary:</p>
+
+<pre><code>    // cmd.CommandType = CommandType.Text; (this is the default)
+</code></pre>
+
+<p>I moved most of your variable reading outside of the <code>try/catch</code> routine, as none of that should ever cause an exception to be generated.</p>
+
+<p>Also, I used the more targeted <code>SqlCeException</code> instead of the general <code>Exception</code>. The only thing that could fail in the block is something <code>SqlCe</code> related, and the <code>SqlCeException</code> will give you better/more specific error messages than the general <code>Exception</code> object will.</p>
+
+<pre><code>    } catch (SqlCeException err) {
+</code></pre>
+
+<p>So, what does it look like all put together?</p>
+
+<h2>Code:</h2>
+
+<pre><code>enum ParamStyle { AddWithValue, AddIntegers, AddVarChar }
+private const int ITEMID_INDEX = 0;
+private const int PACKSIZE_INDEX = 1;
+private const string SQL_CONN_STR = ""Data Source=\\badPlace2B\\CCRDB.SDF"";
+private const string SQL_GET_VENDOR_ITEMS = ""SELECT ItemID, PackSize FROM VendorItems WHERE VendorID=@VendorID AND VendorItemID=@VendorItemID"";
+
+private bool PopulateControlsIfVendorItemsFound(ParamStyle style) {
+  bool recordFound = false;
+
+  //DUCKBILL.LogMsgs.Append(""Made it into frmEntry.PopulateControlsIfVendorItemsFound()\r\n"");
+  string itemID = null;
+  string packSize = null;
+  //string vendorId = txtVendor.Text.Trim();
+  //string vendorItemId = txtUPC.Text.Trim();
+  //string query = string.Format(""SELECT ItemID, PackSize FROM VendorItems WHERE VendorID = {0} AND VendorItemID = {1}"", vendorId, vendorItemId);
+
+  //if (dbconn.isValidTable(""VendorItems"") == -1) {
+  //  DUCKBILL.LogMsgs.Append(""VendorItems not a valid table"");//do not see this msg; good! VendorItems is seen as valid...
+  //  return false;
+  //}
+  using (var cmd = new SqlCeCommand(SQL_GET_VENDOR_ITEMS, new SqlCeConnection(SQL_CONN_STR))) {
+    // cmd.CommandType = CommandType.Text; (this is the default)
+    if (style == ParamStyle.AddIntegers) { // Adding Integers:
+      cmd.Parameters.Add(""@VendorID"", SqlDbType.Int).Value = Convert.ToInt32(txtVendor.Text.Trim());
+      cmd.Parameters.Add(""@VendorItemID"", SqlDbType.Int).Value = Convert.ToInt32(txtUPC.Text.Trim());
+    } else if (style == ParamStyle.AddVarChar) { // Adding String Values
+      // NOTE: Here, you should look in your database table and
+      // use the size you defined for your VendorID and VendorItemID columns.
+      cmd.Parameters.Add(""@VendorID"", SqlDbType.VarChar, 25).Value = txtVendor.Text.Trim();
+      cmd.Parameters.Add(""@VendorItemID"", SqlDbType.VarChar, 50).Value = txtUPC.Text.Trim();
+    } else if (style == ParamStyle.AddWithValue) { // Adding as Objects (only if you don't know what the data types are)
+      cmd.Parameters.AddWithValue(""@VendorID"", txtVendor.Text.Trim());
+      cmd.Parameters.AddWithValue(""@VendorItemID"", txtUPC.Text.Trim());
+    }
+    try {
+      cmd.Connection.Open();
+      using (var myReader = cmd.ExecuteReader(CommandBehavior.SingleRow)) {
+        if (myReader.Read()) {
+          itemID = myReader.GetString(ITEMID_INDEX);
+          packSize = myReader.GetString(PACKSIZE_INDEX);
+          recordFound = true;
+        }
+      }
+    } catch (SqlCeException err) {
+      //DUCKBILL.LogMsgs.Append(string.Format(""Exception in PopulateControlsIfVendorItemsFound: {0}\r\n"", err.Message));
+      // (I never return from a 'catch' statement) return recordFound;
+    } finally {
+      if (cmd.Connection.State == ConnectionState.Open) {
+        cmd.Connection.Close();
+      }
+    }
+  }
+  if (recordFound) { // set these last, and set them OUTSIDE of the try/catch block
+    txtID.Text = itemID;
+    txtSize.Text = packSize;
+  }
+  return recordFound;
+}
+</code></pre>
+
+<h2>Happy Coding!</h2>",,,10,,2013-03-28 14:10:35.603000+00:00,,2013-03-28 14:10:35.603000+00:00,,,,,153923.0,15665807,2,2,,,22270998.0,"Hmm, I'll check it out, but previous attempts to view this data failed due to its long-wispy-gray-beardedness; see http://stackoverflow.com/questions/15301469/how-can-i-determine-what-version-sql-server-compact-a-table-is",2013-03-28 15:56:17.080000+00:00,15684048.0,875317.0,,0.0
+83,12662860,,"<pre><code>NSMutableArray *words[26];
+    for (i = 0;i&lt;26;) {
+    words[i] = [[NSMutableArray alloc] init];
+    }
+</code></pre>
+
+<p>you can use it like this </p>
+
+<pre><code>[words[6] addObject:myInt];
+[words[6] insertObject:myInt atIndex:4];
+[words[6] objectAtIndex:4];
+//in this case 6 is the column number and 4 is the row.
+</code></pre>",,,5,,2012-09-30 16:23:28.343000+00:00,,2012-09-30 16:23:28.343000+00:00,,,,,1576350.0,12662828,2,0,,,17084819.0,"ok, well, this is the method for making a multi-dimensional array and I thought that is what you asked for, but maybe I misunderstood.",2012-09-30 16:28:34.970000+00:00,12662860.0,1576350.0,,0.0
+84,7743195,,"<p><strong>Why are they might be different:</strong><br>
+<a href=""http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.16"" rel=""nofollow"">http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.16</a>  </p>
+
+<blockquote>
+  <p>Floating point is an approximation...  </p>
+</blockquote>
+
+<p><a href=""http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17"" rel=""nofollow"">http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17</a>  </p>
+
+<blockquote>
+  <p>The reason floating point will surprise you is that float and double
+  values are normally represented using a finite precision binary
+  format. In other words, floating point numbers are not real numbers.
+  For example, in your machine's floating point format it might be
+  impossible to exactly represent the number 0.1. By way of analogy,
+  it's impossible to exactly represent the number one third in decimal
+  format (unless you use an infinite number of digits)....
+  The message is that some floating point numbers cannot always be
+  represented exactly, so comparisons don't always do what you'd like
+  them to do. In other words, if the computer actually multiplies 10.0
+  by 1.0/10.0, it might not exactly get 1.0 back.</p>
+</blockquote>
+
+<p><strong>How to compare floating point:</strong><br>
+<a href=""http://c-faq.com/fp/strangefp.html"" rel=""nofollow"">http://c-faq.com/fp/strangefp.html</a>  </p>
+
+<blockquote>
+  <p>...some machines have more precision available in floating-point
+  computation registers than in double values stored in memory, which
+  can lead to floating-point inequalities when it would seem that two
+  values just have to be equal.</p>
+</blockquote>
+
+<p><a href=""http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17"" rel=""nofollow"">http://www.parashift.com/c++-faq-lite/newbie.html#faq-29.17</a><br>
+Here's the wrong way to do it:</p>
+
+<pre><code> void dubious(double x, double y)
+ {
+   ...
+   if (x == y)  // Dubious!
+     foo();
+   ...
+ }
+</code></pre>
+
+<p>If what you really want is to make sure they're ""very close"" to each other (e.g., if variable a contains the value 1.0 / 10.0 and you want to see if (10*a == 1)), you'll probably want to do something fancier than the above:</p>
+
+<pre><code> void smarter(double x, double y)
+ {
+   ...
+   if (isEqual(x, y))  // Smarter!
+     foo();
+   ...
+ }
+</code></pre>
+
+<p>There are many ways to define the isEqual() function, including:</p>
+
+<pre><code> #include &lt;cmath&gt;  /* for std::abs(double) */
+
+ inline bool isEqual(double x, double y)
+ {
+   const double epsilon = /* some small number such as 1e-5 */;
+   return std::abs(x - y) &lt;= epsilon * std::abs(x);
+   // see Knuth section 4.2.2 pages 217-218
+ }
+</code></pre>
+
+<p>Note: the above solution is not completely symmetric, meaning it is possible for isEqual(x,y) != isEqual(y,x). From a practical standpoint, does not usually occur when the magnitudes of x and y are significantly larger than epsilon, but your mileage may vary.</p>",,,4,,2011-10-12 16:17:25.353000+00:00,,2011-10-12 16:28:54.843000+00:00,2011-10-12 16:28:54.843000+00:00,,845092.0,,845092.0,7742908,2,2,,,9423684.0,"oh, I focused on the `//this fails`",2011-10-12 16:24:16.797000+00:00,7743195.0,845092.0,,0.0
+85,5155701,,"<p>You could explode with </p>
+
+<pre><code>'&lt;li&gt;'
+</code></pre>
+
+<p>and strip_tags() to get the rows (ignoring the first one), and loop through them and explode with </p>
+
+<pre><code>'] [' 
+</code></pre>
+
+<p>to get the cols.</p>",,,0,,2011-03-01 14:17:27.270000+00:00,,2011-03-01 14:22:42.170000+00:00,2011-03-01 14:22:42.170000+00:00,,219447.0,,219447.0,5155377,2,0,,,,,,,,,
+86,9963944,,"<p>Your code:</p>
+
+<pre><code>$DBH-&gt;prepare(""SELECT * FROM `Admins` WHERE `username` = '$user_name' AND password='$password'"");
+</code></pre>
+
+<p>Prepared statements (in-and-of-themselves) don't protect against SQL injections. You need to <em>bind the parameters</em>. Check out: <a href=""http://php.net/manual/en/pdostatement.bindparam.php"" rel=""nofollow"">http://php.net/manual/en/pdostatement.bindparam.php</a>.</p>
+
+<p>In your example above, SQL injection is entirely possible. I can't see where you define <code>$user_name</code> or <code>$password</code>, so I can't tell for sure whether or not it's safe.</p>",,,0,,2012-04-01 11:17:49.907000+00:00,,2012-04-01 11:17:49.907000+00:00,,,,,215384.0,9963905,2,0,,,,,,,,,
+87,21108163,,"<p>Place this rule in your <code>DOCUMENT_ROOT/.htaccess</code> file:</p>
+
+<pre><code>RewriteEngine On
+RewriteBase /FTS/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/FTS/$1.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+</code></pre>",,,6,,2014-01-14 07:37:31.193000+00:00,,2014-01-16 04:18:00.540000+00:00,2014-01-16 04:18:00.540000+00:00,,548225.0,,548225.0,21107766,2,1,,,31836027.0,"<link rel=""stylesheet"" href=""/var/www/FTS/screen.css"">
+This is what I currently have for my absolute path to css but its not working still. Any suggestions?",2014-01-16 00:44:51.873000+00:00,21108163.0,3192968.0,,0.0
+88,4435588,,"<p>Your <code>doIf</code> is a special case of <a href=""http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-Foldable.html#v:traverse_"" rel=""nofollow""><code>Data.Foldable.traverse_</code></a>.</p>
+
+<p>You can usually find this sort of thing through <a href=""http://www.haskell.org/hoogle/?hoogle=(a+-%3E+IO+())+-%3E+Maybe+a+-%3E+IO+()"" rel=""nofollow"">Hoogle</a>, but it seems to be a little broken at the moment.  The command-line version I have installed on my system gives <code>Data.Foldable.traverse_</code> as the first result for the query <code>(a -&gt; IO ()) -&gt; Maybe a -&gt; IO ()</code>.</p>
+
+<hr>
+
+<p>And sure, you can define that operator, it's just <code>(&lt;#&gt;) = doIf</code> (or <code>(&lt;#&gt;) = Data.Foldable.traverse_</code>).</p>",,,2,,2010-12-14 03:26:38.590000+00:00,,2010-12-14 03:26:38.590000+00:00,,,,,190376.0,4435508,2,7,,,4842398.0,"Thanks, wow ""traverse"" is not the name I would have thought of for that function.",2010-12-14 03:34:25.873000+00:00,4435588.0,1729925.0,,0.0
+89,26117050,,"<p>Ok , but you specified very minimum information to solve this kind of problem , since i have not understood it fully , i have the following suggestion.</p>
+
+<p>How about using before and after interceptor on grails.</p>
+
+<pre><code> class Reservation {
+
+     Date startDate ...
+
+    def beforeInterceptor = {
+
+    //do some date validation here start data or end date
+    //for exmaple you might check that we have 
+    //any start date currently existing on db
+    //by findbyStartDate or endDate
+    //then reject the reservation or saving of this model 
+        println ""validation error here , cancel save""
+    }
+    static constraints = {
+      //do some validation here related to ur constraint
+      startDate max: new Date()
+     }
+  }
+</code></pre>
+
+<p>let me know anything if u need more help . . . </p>",,,3,,2014-09-30 09:16:36.373000+00:00,,2014-09-30 10:20:22.407000+00:00,2014-09-30 10:20:22.407000+00:00,,2281472.0,,2281472.0,26115862,2,0,,,40975257.0,"https://github.com/kaleidos/grails-postgresql-extensions postgresql ranges are still in development. I'm going to implement a simple reservation domain based on the view with a standard start and end date. The domain constraint repeats the database constraint, violating DRY (don't repeat yourself)",2014-10-01 12:17:11.443000+00:00,26117050.0,4003828.0,,1.0
+90,6965917,,"<p>As the syntax of a roll is fairly complex, why not write a parser instead of using a huge regular expression?</p>",,,1,,2011-08-06 09:28:38.357000+00:00,,2011-08-06 09:28:38.357000+00:00,,,,,330644.0,6965907,2,2,,,8310565.0,"Thank you for your answer, I'm sure writing a parser might be a better idea after all.",2011-08-06 17:35:58.653000+00:00,6965917.0,358157.0,,0.0
+91,8425888,,"<p>If you are launching PreCamera activity from TcpClient activity:
+Try this</p>
+
+<pre><code>TcpClient.this.startActivity(intent);
+</code></pre>",,,0,,2011-12-08 03:44:21.643000+00:00,,2011-12-08 03:44:21.643000+00:00,,,,,1057261.0,8425504,2,0,,,,,,,,,
+92,3423738,,"<p>You can delegate the sorting to your own sort function:</p>
+
+<pre><code>function sortnum(a,b) {
+ return parseInt(a,10)-parseInt(b,10);
+}
+var n = [""10"", ""5"", ""40"", ""25"", ""100"", ""1""];
+alert(n.sort(sortnum)); //=&gt;[""1"", ""5"", ""10"", ""25"", ""40"", ""100""]
+</code></pre>",,,3,,2010-08-06 12:30:22.323000+00:00,,2010-08-06 18:45:30.920000+00:00,2010-08-06 18:45:30.920000+00:00,,58186.0,,58186.0,3423394,2,2,,,6410852.0,"Just a well-known tip: parseInt(a,10) can be replaced by ~~a for performance boost.",2011-04-11 18:58:16.170000+00:00,3423738.0,173077.0,,1.0
+93,4228912,,"<p>If you run ProcessExplorer on your server you will notice that an out of band process called nunit-agent is spawned which ends up blocking the nunit runner. </p>
+
+<p>I have not validated that this is fixed in 2.5.9, but it might be some info that could be helpful.</p>",,,2,,2010-11-19 20:04:23.200000+00:00,,2010-11-19 20:04:23.200000+00:00,,,,,322295.0,4204425,2,1,,,4595098.0,"Yes, every time I manually terminate the MSBuild command prompt the nunit-agent stays around.",2010-11-22 06:58:53.737000+00:00,4228912.0,510772.0,,0.0
+94,18295834,,"<p>You can follow the step-by-step tutorial / wizard at <a href=""http://www.buildmypinnedsite.com"" rel=""nofollow"">http://www.buildmypinnedsite.com</a></p>",,,2,,2013-08-18 04:58:38.890000+00:00,,2013-08-18 04:58:38.890000+00:00,,,,,656132.0,17474389,2,4,,,26845576.0,Thank you so much. I followed exactly the instructions on this website without any success.,2013-08-18 08:20:37.637000+00:00,18295834.0,322280.0,,0.0
+95,3564706,,"<pre><code>&lt;Style x:Key=""LinkButton"" 
+       TargetType=""Button""
+       BasedOn=""{StaticResource ResourceKey={x:Type Button}}""
+       &gt;
+
+    &lt;Setter Property=""Width"" Value=""Auto""/&gt;
+
+    &lt;Setter Property=""Template""&gt;
+        &lt;Setter.Value&gt;
+            &lt;ControlTemplate TargetType=""Button""&gt;
+                &lt;ContentPresenter Content=""{TemplateBinding Content}"" 
+                                  ContentTemplate=""{TemplateBinding  ContentTemplate}""
+                                  VerticalAlignment=""Center""
+                                  &gt;
+                    &lt;ContentPresenter.Resources&gt;
+                        &lt;Style TargetType=""{x:Type TextBlock}""&gt;
+                            &lt;Setter Property=""TextDecorations"" Value=""Underline"" /&gt;
+                        &lt;/Style&gt;
+                    &lt;/ContentPresenter.Resources&gt;
+                &lt;/ContentPresenter&gt;
+            &lt;/ControlTemplate&gt;
+        &lt;/Setter.Value&gt;
+    &lt;/Setter&gt;
+    &lt;Setter Property=""Foreground"" Value=""Blue"" /&gt;
+    &lt;Setter Property=""Cursor"" Value=""Hand"" /&gt;
+    &lt;Style.Triggers&gt;
+        &lt;Trigger Property=""IsMouseOver"" Value=""true""&gt;
+            &lt;Setter Property=""Foreground"" Value=""Red"" /&gt;
+        &lt;/Trigger&gt;
+    &lt;/Style.Triggers&gt;
+&lt;/Style&gt;
+</code></pre>
+
+<p>MichaC's and Anderson's version placed the underline slightly wrong, here is an updated version that will just add an underline to any <code>TextBlock</code> that are inside the <code>ContentPresenter</code>.</p>",,,7,2010-08-25 10:02:07.370000+00:00,2010-08-25 10:02:07.370000+00:00,,2013-10-31 11:53:50.527000+00:00,2013-10-31 11:53:50.527000+00:00,,1563172.0,,323002.0,780426,2,34,,,18690288.0,"OK, the issue seems to be that the style only applies to an implicitly generated TextBlock",2012-11-29 14:20:54.310000+00:00,3564706.0,945.0,,0.0
+96,7993398,,"<p>Short answer: <strong>no</strong>.</p>
+
+<p>Long answer:</p>
+
+<p>There is limited introspection available at compilation time, and you can for example (using function overload resolution) detects if a class B is an accessible base class of another class D.</p>
+
+<p>However that's about it.</p>
+
+<p>The Standard does not require full introspection, and notably:</p>
+
+<ul>
+<li>you cannot list the (direct) base classes of a class</li>
+<li>you cannot know whether a class has only one or several base classes</li>
+<li>you cannot even know if a base class is the first base or not</li>
+</ul>
+
+<p>And of course, there is the issue that the object layout is more or less unspecified, anyway (though C++11 adds the ability to distinguish between trivial layout and class with virtual methods if I remember correctly, which helps a bit here!)</p>
+
+<p>Using Clang, and its AST inspection capabilities, I think you could write a dedicated checker, but this seems quite complicated, and is of course totally non-portable.</p>
+
+<p>Therefore, despite your bold claim <em>P.S. Please don't reply with ""why do you want to do this"" or ""this is against the standard"". I know what what all this for, and I have my reasons to do this.</em>, you will have to adapt your ways.</p>
+
+<p>Of course, if we were given a broader picture of your usage of this class, we might be able to pool our brains together and help you figure a better solution.</p>
+
+<hr>
+
+<p>How to implement a similar system ?</p>
+
+<p>I would propose, first, a simple solution:</p>
+
+<ul>
+<li><code>Wrapper&lt;T&gt;</code> is the owner class, non-copyable, non-convertible</li>
+<li><code>WrapperRef&lt;U&gt;</code> implements a proxy over an existing <code>Wrapper&lt;T&gt;</code> (as long as <code>T*</code> is convertible to <code>U*</code>) and provide the conversions facilities.</li>
+</ul>
+
+<p>We will use the fact that all pointers to be manipulated inherit from <code>UnkDisposable</code> (this is a crucial information!)</p>
+
+<p>Code:</p>
+
+<pre><code>namespace details {
+  struct WrapperDeleter {
+    void operator()(UnkDisposable* u) { if (u) { u-&gt;Release(); } }
+  };
+
+
+  typedef std::unique_ptr&lt;UnkDisposable, WrapperDeleter&gt; WrapperImpl;
+}
+
+template &lt;typename T&gt;
+class Wrapper {
+public:
+  Wrapper(): _data() {}
+
+  Wrapper(T* t): _data(t) {}
+
+  Wrapper(Wrapper&amp;&amp; right): _data() {
+    using std::swap;
+    swap(_data, right._data);
+  }
+
+  Wrapper&amp; operator=(Wrapper&amp;&amp; right) {
+    using std::swap;
+    swap(_data, right._data);
+    return *this;
+  }
+
+  T* Get() const { return static_cast&lt;T*&gt;(_data.get()); }
+
+  void Attach(T* t) { _data.reset(t); }
+  void Detach() { _data.release(); }
+
+private:
+  WrapperImpl _data;
+}; // class Wrapper&lt;T&gt;
+</code></pre>
+
+<p>Now that we laid down the foundations, we can make our adaptive proxy. Because we will only manipulate everything through <code>WrapperImpl</code>, we ensure the type-safety (and the meaningful-ness of our <code>static_cast&lt;T*&gt;</code>) by checking conversions through <code>std::enable_if</code> and <code>std::is_base_of</code> in the template constructors:</p>
+
+<pre><code>template &lt;typename T&gt;
+class WrapperRef {
+public:
+  template &lt;typename U&gt;
+  WrapperRef(Wrapper&lt;U&gt;&amp; w,
+    std::enable_if_c&lt; std::is_base_of&lt;T, U&gt; &gt;::value* = 0):
+    _ref(w._data) {}
+
+  // Regular
+  WrapperRef(WrapperRef&amp;&amp; right): _ref(right._ref) {}
+  WrapperRef(WrapperRef const&amp; right): _ref(right._ref) {}
+
+  WrapperRef&amp; operator=(WrapperRef right) {
+    using std::swap;
+    swap(_ref, right._ref);
+    return *this;
+  }
+
+  // template
+  template &lt;typename U&gt;
+  WrapperRef(WrapperRef&lt;U&gt;&amp;&amp; right,
+    std::enable_if_c&lt; std::is_base_of&lt;T, U&gt; &gt;::value* = 0):
+    _ref(right._ref) {}
+
+  template &lt;typename U&gt;
+  WrapperRef(WrapperRef&lt;U&gt; const&amp; right,
+    std::enable_if_c&lt; std::is_base_of&lt;T, U&gt; &gt;::value* = 0):
+    _ref(right._ref) {}
+
+  T* Get() const { return static_cast&lt;T*&gt;(_ref.get()); }
+
+  void Detach() { _ref.release(); }
+
+private:
+  WrapperImpl&amp; _ref;
+}; // class WrapperRef&lt;T&gt;
+</code></pre>
+
+<p>It might be tweaked according to your needs, for example you could remove the ability to Copy and Move the <code>WrapperRef</code> class to avoid situation where it point to a no longer valid <code>Wrapper</code>.</p>
+
+<p>On the other hand, you could also enrich this using a <code>shared_ptr</code>/<code>weak_ptr</code> approach in order to be able to copy and move the wrapper and still guarantee the availability (but beware of memory leaks).</p>
+
+<p><em>Note: it is intentional that <code>WrapperRef</code> does not provide an <code>Attach</code> method, such a method cannot be used with a base class. Otherwise with both <code>Apple</code> and <code>Banana</code> deriving from <code>Fruit</code>, you could attach a <code>Banana</code> through a <code>WrapperRef&lt;Fruit&gt;</code> even though the original <code>Wrapper&lt;T&gt;</code> was a <code>Wrapper&lt;Apple&gt;</code>...</em></p>
+
+<p><em>Note: this is easy because of the common <code>UnkDisposable</code> base class! This is what gives us a common denominator (<code>WrapperImpl</code>).</em></p>",,,16,,2011-11-03 10:32:56.673000+00:00,,2011-11-03 13:28:18.320000+00:00,2011-11-03 13:28:18.320000+00:00,,147192.0,,147192.0,7993128,2,8,,,9783700.0,"However there are drawbacks too. (1) I'm pretty sure there will be some extra code generated, you're creating a temporary obj with non-trivial d'tor (perhaps this is insignificant). (2) I don't like the idea of auto-move-semantics. By such you may loose the object without even noticing it! Suppose you have a function that receives `WrapperRef<Derived>&`, and eventually decides not to take the ownership of the object. But this is too late: the object is already stolen by the temporary, and after the function call it will be deleted!",2011-11-03 15:25:26.940000+00:00,7993398.0,1560850.0,,0.0
+97,24475868,,"<p>Unfortunately, the REST API is still a long ways behind the Classic API with features it provides.  These features you mentioned are things I've seen come up quite a bit, and to my knowledge they are not yet available with the REST services.  </p>
+
+<p>I personally have stuck with Classic as they provide everything and I really see no advantage to using REST myself.  If you happen to be working with PHP (which I always do) you may be interested in my <a href=""http://www.angelleye.com/product/php-class-library-paypal/"" rel=""nofollow"">class library for PayPal</a>.  It makes all of the Classic API calls very quick and easy for you, and it's <a href=""https://packagist.org/packages/angelleye/paypal-php-library"" rel=""nofollow"">available on Packagist</a> so you can use with Composer easily.  </p>",,,2,,2014-06-29 11:59:02.513000+00:00,,2014-06-29 11:59:02.513000+00:00,,,,,1188826.0,24474656,2,3,,,37884578.0,"Thank you Andrew, I'm afraid you're quite right: PayPal REST API are long way behind the Classic API.
+I've found a tricky way to force immediate payment that it seems to be working: append ""&useraction=commit"" to the approval_url
+The no shipping instead is still an open issue as mentioned here: https://github.com/paypal/rest-api-sdk-python/wiki/Existing-Issues-and-Unavailable%5CUpcoming-features
+The sad thing is that PayPal made me waste time because afaik they don't state clearly that paypal rest isn't complete as paypal classic (except for the link mentioned before that is not easy to find)",2014-06-29 13:51:45.877000+00:00,24475868.0,1042989.0,,1.0
+98,10933336,,"<p>You can change the ""Delete on Termination"" setting for your instance to keep an EBS volume even if your instance gets terminated. If you are using the command line tool, you can use the ec2-modify-instance-attribute --block-device-mapping command. Here is a link to Amazon's documentation on this subject. <a href=""http://docs.amazonwebservices.com/AWSEC2/latest/CommandLineReference/ApiReference-cmd-ModifyInstanceAttribute.html?r=4426"" rel=""nofollow noreferrer"">http://docs.amazonwebservices.com/AWSEC2/latest/CommandLineReference/ApiReference-cmd-ModifyInstanceAttribute.html?r=4426</a></p>",,,3,,2012-06-07 13:58:00.433000+00:00,,2012-06-07 13:58:00.433000+00:00,,,,,1136114.0,10923405,2,4,,,14270082.0,"If it crashes, it will likely stay in the running state until you stop and start it from the console/API, as a crash is probably from the OS level. As for hardware failure, the Amazon page on EBS can give you a little more information regarding your options. http://aws.amazon.com/ebs/",2012-06-07 17:58:49.897000+00:00,10933336.0,1136114.0,,0.0
+99,15545278,,"<p>Just use <code>&lt;br&gt;</code> instead of <code>\n</code>. And for passing them to a PHP script you have multiple ways. first you can create a query to send them with JQuery, like:</p>
+
+<pre><code>data = ""Rack=""+rck+""&amp;Flat_shelf=""+totalFlat+""&amp;db=""+db+""&amp;totslan=""+totslan; //These are your variables that you want to send to PHP script
+var saveData = $.ajax({
+      type: 'POST'
+      url: ""page.php"",
+      data: data,
+      dataType: ""text"",
+      success: function(resultData) { alert(""sent"") }
+});
+saveData.error(function() { alert(""Something went wrong""); });
+</code></pre>
+
+<p>Second you can create hidden input elements, and post them with a form.</p>",,,6,,2013-03-21 10:44:28.360000+00:00,,2013-03-21 11:00:19.070000+00:00,2013-03-21 11:00:19.070000+00:00,,655316.0,,655316.0,15545234,2,5,,,22026266.0,Just give a rough idea with a dummy variable name.,2013-03-21 10:57:52.497000+00:00,15545278.0,2149301.0,,0.0
+100,8846552,,"<p>First of all, <em>Git is not lying to you</em>. The file really is tracked in the branch, and really does exist in the work tree, and really is untracked.</p>
+
+<p>Given that you suggest in comments elsewhere that the file doesn't show up in diffs or even <code>git status</code>, it sounds like you've added it to your gitignore (maybe unintentionally via a wildcard pattern). I know you said you didn't, but if it doesn't show up in the output of <code>git status</code> as an untracked file, then it's untracked and ignored. To verify this, you can list all files ignored by .gitignore:</p>
+
+<pre><code>git ls-files -i --exclude-from=.gitignore
+</code></pre>
+
+<p>You can also list all untracked files, ignored or not:</p>
+
+<pre><code>git clean -xdn
+</code></pre>
+
+<p>(You seem to say that you're very sure the file is tracked - if it really were, <code>git show HEAD:path/to/file</code> would show the committed contents of the file. I suspect, however, that that will instead tell ""fatal: Path 'path/to/file' does not exist in 'HEAD'"".)</p>
+
+<p>Another way to verify that the file is untracked and ignored is simply to rename it, then see if <code>git status</code> reports it as deleted; if it doesn't, it wasn't tracked.</p>
+
+<p>Assuming this does list the file in question, you should examine the file in your work tree. You can see what version of the file the other branch has using <code>git show other-branch:path/to/file</code>, to compare. If you're satisfied that you don't need the version in your work tree, simply remove it. If you're worried you might need it, rename it or move it out of the directory. If you realize you do need it, you should figure out what ignore pattern is ignoring it, remove that, add it, and commit it. In any case, once you've dealt with the file, you'll be able to switch branches.</p>",,,4,,2012-01-13 05:57:25.423000+00:00,,2012-01-13 06:16:02.677000+00:00,2012-01-13 06:16:02.677000+00:00,,119963.0,,119963.0,8839247,2,0,,,11058414.0,"Well, then it does sound like something has managed to get out of sync or corrupted somehow, if a clone of the repo, with the working tree identical to the original one, works normally. It's a little hard to believe, since this is a fairly well-tested core part of Git, but if you're confident it's a spurious error, you could report it to the Git mailing list.",2012-01-13 15:31:13.333000+00:00,8846552.0,119963.0,,0.0
+101,14764891,,"<p>here's a simple version.</p>
+
+<pre><code>SELECT  a.PartNumber, a.PartDescription, a.CategoryID, a.StockPrice
+FROM    InventoryPart a
+        INNER JOIN
+        (
+            SELECT  PartNumber, MAX(StockPrice) max_price
+            FROM    Inventorypart
+            GROUP   BY PartNumber
+        ) b ON  a.partNumber = b.PartNumber AND
+                a.StockPrice = b.max_price
+</code></pre>
+
+<p>for better performance, add an <code>INDEX</code> on columns <code>(PartNumber, StockPrice)</code></p>
+
+<pre><code>ALTER TABLE InventoryPart ADD INDEX (PartNumber, StockPrice)
+</code></pre>
+
+<p><strong>UPDATE 1</strong></p>
+
+<pre><code>SELECT  a.PartNumber, a.PartDescription, a.CategoryID, a.StockPrice
+FROM    InventoryPart a
+        INNER JOIN
+        (
+            SELECT  PartNumber, CategoryID, MAX(StockPrice) max_price
+            FROM    Inventorypart
+            GROUP   BY PartNumber, CategoryID
+        ) b ON  a.partNumber = b.PartNumber AND
+                a.StockPrice = b.max_price AND
+                a.CategoryID = b.CategoryID
+</code></pre>
+
+<p>and</p>
+
+<pre><code>ALTER TABLE InventoryPart ADD INDEX (PartNumber, StockPrice, CategoryID)
+</code></pre>",,,3,,2013-02-08 02:44:28.507000+00:00,,2013-02-08 03:10:32.390000+00:00,2013-02-08 03:10:32.390000+00:00,,491243.0,,491243.0,14764760,2,1,,,20667843.0,Don't think this will work -- grouping by partnumber won't return your  max prices -- see fiddle: http://sqlfiddle.com/#!3/f0b43/2 -- group by categoryId only.  Kind regards.,2013-02-08 03:20:09.047000+00:00,14764891.0,1073631.0,,0.0
+102,24547816,,"<p>For 180s... you must ""create"" an iOS Background Task.
+Please, modify your code whit this:</p>
+
+<pre><code>if([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)])
+{
+    NSLog(@""Multitasking Supported"");
+
+    __block UIBackgroundTaskIdentifier background_task;
+    background_task = [application beginBackgroundTaskWithExpirationHandler:^ {
+
+        //Clean up code. Tell the system that we are done.
+        [application endBackgroundTask: background_task];
+        background_task = UIBackgroundTaskInvalid;
+    }];
+
+    //To make the code block asynchronous
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        //### background task starts
+        NSLog(@""Running in the background\n"");
+        while(TRUE)
+        {
+            NSLog(@""Background time Remaining: %f"",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+            [NSThread sleepForTimeInterval:1]; //wait for 1 sec
+        }
+        //#### background task ends
+
+        //Clean up code. Tell the system that we are done.
+        [application endBackgroundTask: background_task];
+        background_task = UIBackgroundTaskInvalid;
+    });
+}
+else
+{
+    NSLog(@""Multitasking Not Supported"");
+}
+</code></pre>
+
+<p>From here:  <a href=""http://hayageek.com/ios-background-task/"" rel=""nofollow"">http://hayageek.com/ios-background-task/</a></p>",,,6,,2014-07-03 07:41:27.947000+00:00,,2014-07-03 07:41:27.947000+00:00,,,,,1702413.0,24542724,2,3,,,39970861.0,This does not work sometime I get 180 sometimes 10 sometimes 30,2014-08-31 08:37:44.583000+00:00,24547816.0,1463518.0,,0.0
+103,2871171,,"<p>Code a little game like tic-tac-toe or pong.  Lots of fun and a sense of accomplishment when you are done, but complex enough to keep you working at it for a while :)</p>
+
+<p>There are also code competition sites like topcode at google and such to keep practiced.  Heck, code kata could help as well.  Like playing an instrument, you must keep practicing to get better.  Ideally, you'd get an entry level / internship position to further improve your abilities under a mentorship.</p>
+
+<p>If you lack a compiler, microsoft has a free version of the latest dev studio available for download.  It can do c, c++, c# and anything in between.  Also, the suggestion of gcc is a good one as it is widely used in various open source developments over at source forge - another place to go and sign up for a project and help out a group project.</p>",,,0,,2010-05-20 05:15:46.923000+00:00,,2010-05-20 05:23:21.883000+00:00,2010-05-20 05:23:21.883000+00:00,,527574.0,,527574.0,2871160,2,10,,,,,,,,,
+104,25567801,,"<p>You could use correlated subqueries for this:</p>
+
+<pre><code>SELECT date,
+       (SELECT COUNT(*)
+        FROM tbl AS t2
+        WHERE t2.date = tbl.date
+         AND status = 'open'
+       ) AS open,
+       (SELECT COUNT(*)
+        FROM tbl AS t2
+        WHERE t2.date = tbl.date
+         AND status = 'closed'
+       ) AS closed
+FROM tbl
+</code></pre>
+
+<p>Alternatively, group by the date, and count how many rows in the group have the desired status:</p>
+
+<pre><code>SELECT date,
+       total(status = 'open') AS open,
+       total(status = 'closed') AS closed
+FROM tbl
+GROUP BY date
+</code></pre>",,,1,,2014-08-29 11:55:18.133000+00:00,,2014-08-29 11:55:18.133000+00:00,,,,,11654.0,25559560,2,0,,,39931791.0,The second query pulled the data correctly. Thanks!,2014-08-29 13:30:56.667000+00:00,25567801.0,3591000.0,,0.0
+105,6443119,,"<p>This'll turn your server into a wide open door for anyone to grab any file they want, but... it does what you want.</p>
+
+<pre><code>&lt;?php
+    readfile($_REQUEST['file']);
+</code></pre>
+
+<p>Enjoy...</p>",,,0,,2011-06-22 16:13:18.923000+00:00,,2011-06-22 16:13:18.923000+00:00,,,,,118068.0,6442830,2,0,,,,,,,,,
+106,16932884,,"<p>There are definitely four options here:</p>
+
+<ul>
+<li><p>Abandon <code>using</code> and just have a <code>try</code>/<code>catch</code>/<code>finally</code>:</p>
+
+<pre><code>var requestStream = request.GetRequestStream();
+try
+{
+    byte[] data = Encoding.UTF8.GetBytes(xmlData);
+    requestStream.Write(data, 0, data.Length);
+}
+catch (IOException e) // Or whatever
+{
+    // Whatever you want
+}
+finally
+{
+    requestStream.Dispose();
+}
+</code></pre></li>
+<li><p>Put just a <code>try</code>/<code>catch</code> block inside the <code>using</code> block:</p>
+
+<pre><code>using (var requestStream = request.GetRequestStream())
+{
+    try
+    {
+        byte[] data = Encoding.UTF8.GetBytes(xmlData);
+        requestStream.Write(data, 0, data.Length);
+    }
+    catch (IOException e) // Or whatever
+    {
+        // Whatever you want
+    }
+}
+</code></pre></li>
+<li><p>The same as the second option, but with the <code>try</code>/<code>catch</code> <em>outside</em> the <code>using</code> block instead of inside. I don't think it makes much difference which you use, to be honest.</p></li>
+<li><p>Catch the exception at a higher level anyway, e.g. in the calling method. Often this is a better approach, as you may well want to handle one type of exception from multiple ""small"" operations in the same way from the perspective of the ""larger"" operation.</p></li>
+</ul>
+
+<p>Personally I generally favour the second approach or the fourth. It's a consistent change: when I want to catch an exception, I introduce a <code>try</code>/<code>catch</code> block. The fact that it <em>happens</em> to be inside a <code>using</code> statement is neither here nor there. It ends up with more nesting, but I find it happens rarely enough that that's not a problem.</p>",,,3,,2013-06-05 06:22:35.187000+00:00,,2013-06-05 06:22:35.187000+00:00,,,,,22656.0,16932850,2,7,,,24470236.0,"Or perhaps, many *smaller* exceptions in different ways from different (new) callers.",2013-06-05 18:12:43.110000+00:00,16932884.0,712526.0,,0.0
+107,2576213,,"<p>What you seem to be looking for is called <a href=""http://en.wikipedia.org/wiki/Homomorphic_encryption"" rel=""nofollow noreferrer"">Homomorphic Encryption</a>: an encryption scheme which allows you to perform operations on encrypted data, with the encrypted result as the outcome. </p>
+
+<p>Such a scheme would allow you to give encrypted data to a 3rd party, which could then do computations on it for you without knowing what they were computing.</p>
+
+<p>In your case, you need two operations: addition and division. Until recently, homomorphic encryption schemes typically supported only 1 operation. But in september 2009 <a href=""http://www.businessweek.com/technology/content/sep2009/tc20090930_463595.htm"" rel=""nofollow noreferrer"">IMB announced the first fully homomorphic cryptosystem</a>. Other researches <a href=""http://eprint.iacr.org/2009/616"" rel=""nofollow noreferrer"">published another system</a> soon after that.</p>
+
+<p>These cryptosystems might be be able to do what you want, but it is all cutting edge computer science research.</p>",,,4,,2010-04-04 23:09:13.993000+00:00,,2011-11-07 15:51:39.610000+00:00,2011-11-07 15:51:39.610000+00:00,,52626.0,,52626.0,2576145,2,13,,,42191544.0,"@heinob: SB correct me if I'm wrong: if you had a large prime P, N numbers n(i), and N secret keys s(i) random in [0, P), then n(i)+s(i) mod P is encrypted.  Then sum(n(i)+s(i)) mod P is sum(n(i)) mod P, encrypted with sum(s(i)) mod P.  Does that sound right?",2014-11-07 20:20:34.570000+00:00,2576213.0,513038.0,,0.0
+108,6534223,,"<p>Instead of ""max-width: 32%"", what if you put ""width: 100%""? If you want an image to fit it's container's width, you should put it's width as 100%. However, I can't visualize your layout properly, so this may not be what you are looking for.</p>",,,1,,2011-06-30 11:47:24.023000+00:00,,2011-06-30 11:47:24.023000+00:00,,,,,546382.0,6534012,2,0,,,7694696.0,"Well, I don't want a single image to fill up all the available space (except in case the container is narrower than 320px - above 320px, I'd want two images to fit in the available width, above 480px - three, and so on).",2011-06-30 11:51:46.070000+00:00,6534223.0,425219.0,,0.0

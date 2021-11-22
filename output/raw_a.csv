@@ -1,0 +1,2422 @@
+,id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+0,52522566,,"<p>The problem is that Xcode Command-line Tools needs to be updated.</p>
+<p><strong>Solution #1</strong></p>
+<p>Go back to your terminal and enter:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<p>You'll then receive the following output:</p>
+<pre><code>xcode-select: note: install requested for command line developer tools
+</code></pre>
+<p>You will then be prompted in a window to update Xcode Command Line tools. (which may take a while)</p>
+<p>Open a new terminal window and your development tools should be returned.</p>
+<p><strong>Addition:</strong> With any major or semi-major update you'll need to update the command line tools in order to get them functioning properly again. Check Xcode with any update. This goes beyond Mojave...</p>
+<p><strong>After that restart your terminal</strong></p>
+<p>Alternatively, <strong>IF that fails,</strong> and it very well might.... you'll get a pop-up box saying &quot;Software not found on server&quot;, see below!</p>
+<p><strong>Solution #2</strong></p>
+<p>and you hit <code>xcode-select --install</code> and it doesn't find the software, log into Apple Developer, and install it via webpage.</p>
+<p>Login or sign up here:</p>
+<p><a href=""https://developer.apple.com/download/more/"" rel=""noreferrer"">https://developer.apple.com/download/more/</a></p>
+<p>Look for: <strong>&quot;Command Line Tools for Xcode 12.x&quot;</strong> in the list of downloads
+Then click the dmg and download.</p>
+<p><a href=""https://i.stack.imgur.com/WwAlF.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/WwAlF.png"" alt=""image of apple developer page and dmg for DL"" /></a></p>",,,35,,2018-09-26 16:43:18.797000+00:00,,2020-12-16 15:16:46.140000+00:00,2020-12-16 15:16:46.140000+00:00,,8221725,,8221725,52522565,2,3437,,
+1,48270314,,"<p>If you take advantage of <a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using"" rel=""noreferrer"">how <code>==</code> works</a>, you could simply create an object with a custom <code>toString</code> (or <code>valueOf</code>) function that changes what it returns each time it is used such that it satisfies all three conditions.</p>
+
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>const a = {
+  i: 1,
+  toString: function () {
+    return a.i++;
+  }
+}
+
+if(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) {
+  console.log('Hello World!');
+}</code></pre>
+</div>
+</div>
+</p>
+
+<hr>
+
+<p>The reason this works is due to the use of the loose equality operator. When using loose equality, if one of the operands is of a different type than the other, the engine will attempt to convert one to the other. In the case of an object on the left and a number on the right, it will attempt to convert the object to a number by first calling <code>valueOf</code> if it is callable, and failing that, it will call <code>toString</code>. I used <code>toString</code> in this case simply because it's what came to mind, <code>valueOf</code> would make more sense. If I instead returned a string from <code>toString</code>, the engine would have then attempted to convert the string to a number giving us the same end result, though with a slightly longer path.</p>",,,19,,2018-01-15 20:35:15.337000+00:00,,2018-01-18 23:07:07.953000+00:00,2018-01-18 23:07:07.953000+00:00,,4020527,,400654,48270127,2,3374,,
+2,39914235,,"<h2>2017 — 2021 update</h2>
+<p>Since 2009 when this question was asked, JavaScript has evolved significantly. All other answers are now obsolete or overly complicated. Here is the current best practice:</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>function sleep(ms) {
+  return new Promise(resolve =&gt; setTimeout(resolve, ms));
+}
+
+async function demo() {
+  console.log('Taking a break...');
+  await sleep(2000);
+  console.log('Two seconds later, showing sleep in a loop...');
+
+  // Sleep in loop
+  for (let i = 0; i &lt; 5; i++) {
+    if (i === 3)
+      await sleep(2000);
+    console.log(i);
+  }
+}
+
+demo();</code></pre>
+</div>
+</div>
+</p>
+<h3>This is it. <code>await sleep(&lt;duration&gt;)</code>.</h3>
+<p>Or as a one-liner:</p>
+<pre><code>await new Promise(r =&gt; setTimeout(r, 2000));
+</code></pre>
+<p>Note that,</p>
+<ol>
+<li><code>await</code> can only be executed in functions prefixed with the <code>async</code> keyword, or at the top level of your script in <a href=""https://stackoverflow.com/questions/46515764/how-can-i-use-async-await-at-the-top-level/56590390#56590390"">an increasing number of environments</a>.</li>
+<li><code>await</code> only pauses the current <code>async</code> function. This means it's not blocking the execution of the rest of the script, which is what you want in the vast majority of the cases. If you do want a blocking construct, see <a href=""https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep/56406126#56406126"">this answer</a> using <a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics"" rel=""noreferrer""><code>Atomics</code></a><code>.wait</code>, but note that most browsers will not allow it on the browser's main thread.</li>
+</ol>
+<p>Two new JavaScript features (as of 2017) helped write this &quot;sleep&quot; function:</p>
+<ul>
+<li><a href=""https://ponyfoo.com/articles/es6-promises-in-depth"" rel=""noreferrer"">Promises, a native feature of ES2015</a> (aka ES6). We also use <a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"" rel=""noreferrer"">arrow functions</a> in the definition of the sleep function.</li>
+<li>The <a href=""https://ponyfoo.com/articles/understanding-javascript-async-await"" rel=""noreferrer""><code>async/await</code></a> feature lets the code explicitly wait for a promise to settle (resolve or reject).</li>
+</ul>
+<h2>Compatibility</h2>
+<ul>
+<li>promises are supported <a href=""http://node.green/#Promise"" rel=""noreferrer"">in Node v0.12+</a> and <a href=""http://caniuse.com/#feat=promises"" rel=""noreferrer"">widely supported in browsers</a>, except IE</li>
+<li><code>async</code>/<code>await</code> landed in V8 and has been <a href=""https://developers.google.com/web/fundamentals/getting-started/primers/async-functions"" rel=""noreferrer"">enabled by default since Chrome 55</a> (released in Dec 2016)
+<ul>
+<li>it landed <a href=""https://blog.risingstack.com/async-await-node-js-7-nightly/"" rel=""noreferrer"">in Node 7 in October 2016</a></li>
+<li>and also landed <a href=""https://blog.nightly.mozilla.org/2016/11/01/async-await-support-in-firefox/"" rel=""noreferrer"">in Firefox Nightly in November 2016</a></li>
+</ul>
+</li>
+</ul>
+<p>If for some weird reason you're using Node older than 7 (which has reached <a href=""https://github.com/nodejs/Release"" rel=""noreferrer"">end of life</a>), or are targeting old browsers, <code>async</code>/<code>await</code> can still be used via <a href=""https://babeljs.io/"" rel=""noreferrer"">Babel</a> (a tool that will <a href=""https://www.stevefenton.co.uk/2012/11/compiling-vs-transpiling/"" rel=""noreferrer"">transpile</a> JavaScript + new features into plain old JavaScript), with the <a href=""https://babeljs.io/docs/en/babel-plugin-transform-async-to-generator"" rel=""noreferrer""><code>transform-async-to-generator</code></a> plugin.</p>",,,27,,2016-10-07 09:44:56.400000+00:00,,2021-02-08 05:53:42.463000+00:00,2021-02-08 05:53:42.463000+00:00,,1269037,,1269037,951021,2,3246,,
+3,37576787,,"<p>Sure the code does work, but I'm pretty sure it doesn't do what you expect it to do. It just fires off multiple asynchronous calls, but the <code>printFiles</code> function does immediately return after that.</p>
+
+<h3>Reading in sequence</h3>
+
+<p>If you want to read the files in sequence, <strong>you cannot use <code>forEach</code></strong> indeed. Just use a modern <code>for … of</code> loop instead, in which <code>await</code> will work as expected:</p>
+
+<pre><code>async function printFiles () {
+  const files = await getFilePaths();
+
+  for (const file of files) {
+    const contents = await fs.readFile(file, 'utf8');
+    console.log(contents);
+  }
+}
+</code></pre>
+
+<h3>Reading in parallel</h3>
+
+<p>If you want to read the files in parallel, <strong>you cannot use <code>forEach</code></strong> indeed. Each of the <code>async</code> callback function calls does return a promise, but you're throwing them away instead of awaiting them. Just use <code>map</code> instead, and you can await the array of promises that you'll get with <code>Promise.all</code>:</p>
+
+<pre><code>async function printFiles () {
+  const files = await getFilePaths();
+
+  await Promise.all(files.map(async (file) =&gt; {
+    const contents = await fs.readFile(file, 'utf8')
+    console.log(contents)
+  }));
+}
+</code></pre>",,,32,,2016-06-01 19:02:09.033000+00:00,,2020-02-08 23:30:30.070000+00:00,2020-02-08 23:30:30.070000+00:00,,2697506,,1048572,37576685,2,3017,,
+4,37938036,,"<p>The default behavior has changed since Git 2.9:</p>
+
+<blockquote>
+  <p>""git merge"" used to allow merging two branches that have no common
+     base by default, which led to a brand new history of an existing
+     project created and then get pulled by an unsuspecting maintainer,
+     which allowed an unnecessary parallel history merged into the
+     existing project. The command has been taught <strong>not to allow this by
+     default</strong>, with an escape hatch <code>--allow-unrelated-histories</code> option
+     to be used in a rare event that merges histories of two projects
+     that started their lives independently.</p>
+</blockquote>
+
+<p>See the <a href=""https://github.com/git/git/blob/master/Documentation/RelNotes/2.9.0.txt#L58-L68"" rel=""noreferrer"">Git release changelog</a> for more information.</p>
+
+<p>You can use <code>--allow-unrelated-histories</code> to force the merge to happen.</p>",,,9,,2016-06-21 07:26:25.087000+00:00,,2019-06-05 11:29:02.397000+00:00,2019-06-05 11:29:02.397000+00:00,,63550,,440564,37937984,2,2959,,
+5,38723094,,"<p>When you [single-]click a file in the left sidebar's file browser or open it from the quick open menu (<kbd>Ctrl</kbd>-<kbd>P</kbd>, type the file name, <kbd>Enter</kbd>), Visual Studio Code opens it in what's called ""Preview Mode"", which allows you to quickly <strong>view</strong> files.</p>
+
+<p>Preview Mode tabs are not kept open. As soon as you go to open another file from the sidebar, the existing Preview Mode tab (if one exists) is used. You can determine if a tab is in Preview Mode, by looking at its title in the tab bar. If the title is <em>italic</em>, the tab is in preview mode.</p>
+
+<p>To open a file for editing (i.e. don't open in Preview Mode), double-click on the file in the sidebar, or single-click it in the sidebar then double click the title of its Preview Mode tab.</p>
+
+<p>If you want to disable Preview Mode all together, you can do so by setting <code>""workbench.editor.enablePreview"": false</code> in your settings file. You can also use the <code>""workbench.editor.enablePreviewFromQuickOpen""</code> option to disable it only from the quick open menu.</p>
+
+<p>Before you can disable Preview Mode, you'll need to open your <a href=""https://code.visualstudio.com/docs/customization/userandworkspace#_settings-file-locations"" rel=""noreferrer"">Settings File</a>.</p>
+
+<p><strong>Pro Tip</strong>: You can use the <a href=""https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette"" rel=""noreferrer"">Command Palette</a>(shortcut Ctrl+Shift+P) to open your settings file, just enter ""<code>Preferences: Open User Settings</code>""!</p>
+
+<p>Once you've opened your settings file (<em>your</em> settings file should be located on the right), add the <code>""workbench.editor.enablePreview""</code> property, and set its value to <code>false</code>.</p>
+
+<p>You can learn more about Visual Studio Code's ""Preview Mode"", <a href=""https://code.visualstudio.com/docs/editor/tabs#_preview-mode"" rel=""noreferrer"">here</a>.</p>",,,10,,2016-08-02 14:22:10.533000+00:00,,2020-05-21 00:50:53.947000+00:00,2020-05-21 00:50:53.947000+00:00,,52277,,6052290,38713405,2,2823,,
+6,50834600,,"<p>According to <a href=""https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted"" rel=""noreferrer"">Network security configuration</a> - </p>
+
+<blockquote>
+  <p>Starting with Android 9 (API level 28), cleartext support is disabled
+  by default.</p>
+</blockquote>
+
+<p>Also have a look at - <a href=""https://koz.io/android-m-and-the-war-on-cleartext-traffic/"" rel=""noreferrer"">https://koz.io/android-m-and-the-war-on-cleartext-traffic/</a></p>
+
+<p>Codelabs explanation - <a href=""https://codelabs.developers.google.com/codelabs/android-network-security-config/index.html"" rel=""noreferrer"">https://codelabs.developers.google.com/codelabs/android-network-security-config/index.html</a></p>
+
+<p><strong>Option 1 -</strong></p>
+
+<p>First try hitting the URL with ""https://"" instead of ""http://""</p>
+
+<p><strong>Option 2 -</strong> </p>
+
+<p>Create file res/xml/network_security_config.xml - </p>
+
+<pre><code>&lt;?xml version=""1.0"" encoding=""utf-8""?&gt;
+&lt;network-security-config&gt;
+    &lt;domain-config cleartextTrafficPermitted=""true""&gt;
+        &lt;domain includeSubdomains=""true""&gt;api.example.com(to be adjusted)&lt;/domain&gt;
+    &lt;/domain-config&gt;
+&lt;/network-security-config&gt;
+</code></pre>
+
+<p>AndroidManifest.xml - </p>
+
+<pre><code>&lt;?xml version=""1.0"" encoding=""utf-8""?&gt;
+&lt;manifest ...&gt;
+    &lt;uses-permission android:name=""android.permission.INTERNET"" /&gt;
+    &lt;application
+        ...
+        android:networkSecurityConfig=""@xml/network_security_config""
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+
+<p><strong>Option 3 -</strong> </p>
+
+<p><a href=""https://developer.android.com/guide/topics/manifest/application-element#usesCleartextTraffic"" rel=""noreferrer"">android:usesCleartextTraffic Doc</a></p>
+
+<p>AndroidManifest.xml - </p>
+
+<pre><code>&lt;?xml version=""1.0"" encoding=""utf-8""?&gt;
+&lt;manifest ...&gt;
+    &lt;uses-permission android:name=""android.permission.INTERNET"" /&gt;
+    &lt;application
+        ...
+        android:usesCleartextTraffic=""true""
+        ...&gt;
+        ...
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+
+<p>Also as <a href=""https://stackoverflow.com/a/45955297/7599300"">@david.s' answer</a> pointed out <code>android:targetSandboxVersion</code> can be a problem too -</p>
+
+<p>According to <a href=""https://developer.android.com/guide/topics/manifest/manifest-element#targetSandboxVersion"" rel=""noreferrer"">Manifest Docs</a> - </p>
+
+<blockquote>
+  <p><code>android:targetSandboxVersion</code></p>
+  
+  <p>The target sandbox for this app to use. The higher the sandbox version
+  number, the higher the level of security. Its default value is 1; you
+  can also set it to 2. Setting this attribute to 2 switches the app to
+  a different SELinux sandbox. The following restrictions apply to a
+  level 2 sandbox:</p>
+  
+  <ul>
+  <li>The default value of <code>usesCleartextTraffic</code> in the Network Security    Config is false.</li>
+  <li>Uid sharing is not permitted.</li>
+  </ul>
+</blockquote>
+
+<p><strong>So Option 4 -</strong> </p>
+
+<p>If you have <code>android:targetSandboxVersion</code> in <code>&lt;manifest&gt;</code> then reduce it to <code>1</code></p>
+
+<p>AndroidManifest.xml - </p>
+
+<pre><code>&lt;?xml version=""1.0"" encoding=""utf-8""?&gt;
+&lt;manifest android:targetSandboxVersion=""1""&gt;
+    &lt;uses-permission android:name=""android.permission.INTERNET"" /&gt;
+    ...
+&lt;/manifest&gt;
+</code></pre>",,,41,,2018-06-13 10:11:09.213000+00:00,,2020-01-13 15:17:22.233000+00:00,2020-01-13 15:17:22.233000+00:00,,3302026,,3302026,45940861,2,2644,,
+7,36796281,,"<p>This is a <strong>default import</strong>:</p>
+
+<pre><code>// B.js
+import A from './A'
+</code></pre>
+
+<p>It only works if <code>A</code> has the <strong>default export</strong>:</p>
+
+<pre><code>// A.js
+export default 42
+</code></pre>
+
+<p>In this case it doesn’t matter what name you assign to it when importing:</p>
+
+<pre><code>// B.js
+import A from './A'
+import MyA from './A'
+import Something from './A'
+</code></pre>
+
+<p>Because it will always resolve to whatever is the <strong>default export</strong> of <code>A</code>.</p>
+
+<hr>
+
+<p>This is a <strong>named import called <code>A</code></strong>:</p>
+
+<pre><code>import { A } from './A'
+</code></pre>
+
+<p>It only works if <code>A</code> contains a <strong>named export called <code>A</code></strong>:</p>
+
+<pre><code>export const A = 42
+</code></pre>
+
+<p>In this case the name matters because you’re importing <strong>a specific thing by its export name</strong>:</p>
+
+<pre><code>// B.js
+import { A } from './A'
+import { myA } from './A' // Doesn't work!
+import { Something } from './A' // Doesn't work!
+</code></pre>
+
+<p>To make these work, you would add a <strong>corresponding named export</strong> to <code>A</code>:</p>
+
+<pre><code>// A.js
+export const A = 42
+export const myA = 43
+export const Something = 44
+</code></pre>
+
+<hr>
+
+<p>A module can only have <strong>one default export</strong>, but <strong>as many named exports as you'd like</strong> (zero, one, two, or many). You can import them all together:</p>
+
+<pre><code>// B.js
+import A, { myA, Something } from './A'
+</code></pre>
+
+<p>Here, we import the default export as <code>A</code>, and named exports called <code>myA</code> and <code>Something</code>, respectively.</p>
+
+<pre><code>// A.js
+export default 42
+export const myA = 43
+export const Something = 44
+</code></pre>
+
+<p>We can also assign them all different names when importing:</p>
+
+<pre><code>// B.js
+import X, { myA as myX, Something as XSomething } from './A'
+</code></pre>
+
+<hr>
+
+<p>The default exports tend to be used for whatever you normally expect to get from the module. The named exports tend to be used for utilities that might be handy, but aren’t always necessary. However it is up to you to choose how to export things: for example, a module might have no default export at all.</p>
+
+<p><a href=""http://www.2ality.com/2014/09/es6-modules-final.html"" rel=""noreferrer"">This is a great guide to ES modules, explaining the difference between default and named exports.</a></p>",,,18,,2016-04-22 14:19:01.617000+00:00,,2017-06-30 15:08:59.273000+00:00,2017-06-30 15:08:59.273000+00:00,,5423108,,458193,36795819,2,2595,,
+8,38896469,,"<p>Yes, that's it. In the <em>app.module.ts</em> file, I just added:</p>
+<pre><code>import { FormsModule } from '@angular/forms';
+
+[...]
+
+@NgModule({
+  imports: [
+    [...]
+    FormsModule
+  ],
+  [...]
+})
+</code></pre>",,,12,,2016-08-11 12:30:09.227000+00:00,,2020-12-17 09:04:22.860000+00:00,2020-12-17 09:04:22.860000+00:00,,63550,,3433751,38892771,2,2181,,
+9,38139500,,"<p><strong>TL;DR</strong></p>
+<blockquote>
+<p>Transient objects are always different; a new instance is provided to
+every controller and every service.</p>
+<p>Scoped objects are the same within a request, but different across
+different requests.</p>
+<p>Singleton objects are the same for every object and every request.</p>
+</blockquote>
+<p>For more clarification, this example from <a href=""https://docs.microsoft.com/dotnet/core/extensions/dependency-injection-usage"" rel=""noreferrer"">.NET documentation</a> shows the difference:</p>
+<p>To demonstrate the difference between these lifetime and registration options, consider a simple interface that represents one or more tasks as an operation with a unique identifier, <code>OperationId</code>. Depending on how we configure the lifetime for this service, the container will provide either the same or different instances of the service to the requesting class. To make it clear which lifetime is being requested, we will create one type per lifetime option:</p>
+<pre><code>using System;
+
+namespace DependencyInjectionSample.Interfaces
+{
+    public interface IOperation
+    {
+        Guid OperationId { get; }
+    }
+
+    public interface IOperationTransient : IOperation
+    {
+    }
+
+    public interface IOperationScoped : IOperation
+    {
+    }
+
+    public interface IOperationSingleton : IOperation
+    {
+    }
+
+    public interface IOperationSingletonInstance : IOperation
+    {
+    }
+}
+</code></pre>
+<p>We implement these interfaces using a single class, <code>Operation</code>, that accepts a GUID in its constructor, or uses a new GUID if none is provided:</p>
+<pre><code>using System;
+using DependencyInjectionSample.Interfaces;
+namespace DependencyInjectionSample.Classes
+{
+    public class Operation : IOperationTransient, IOperationScoped, IOperationSingleton, IOperationSingletonInstance
+    {
+        Guid _guid;
+        public Operation() : this(Guid.NewGuid())
+        {
+
+        }
+
+        public Operation(Guid guid)
+        {
+            _guid = guid;
+        }
+
+        public Guid OperationId =&gt; _guid;
+    }
+}
+</code></pre>
+<p>Next, in <code>ConfigureServices</code>, each type is added to the container according to its named lifetime:</p>
+<pre><code>services.AddTransient&lt;IOperationTransient, Operation&gt;();
+services.AddScoped&lt;IOperationScoped, Operation&gt;();
+services.AddSingleton&lt;IOperationSingleton, Operation&gt;();
+services.AddSingleton&lt;IOperationSingletonInstance&gt;(new Operation(Guid.Empty));
+services.AddTransient&lt;OperationService, OperationService&gt;();
+</code></pre>
+<p>Note that the <code>IOperationSingletonInstance</code> service is using a specific instance with a known ID of <code>Guid.Empty</code>, so it will be clear when this type is in use. We have also registered an <code>OperationService</code> that depends on each of the other <code>Operation</code> types, so that it will be clear within a request whether this service is getting the same instance as the controller, or a new one, for each operation type. All this service does is expose its dependencies as properties, so they can be displayed in the view.</p>
+<pre><code>using DependencyInjectionSample.Interfaces;
+
+namespace DependencyInjectionSample.Services
+{
+    public class OperationService
+    {
+        public IOperationTransient TransientOperation { get; }
+        public IOperationScoped ScopedOperation { get; }
+        public IOperationSingleton SingletonOperation { get; }
+        public IOperationSingletonInstance SingletonInstanceOperation { get; }
+
+        public OperationService(IOperationTransient transientOperation,
+            IOperationScoped scopedOperation,
+            IOperationSingleton singletonOperation,
+            IOperationSingletonInstance instanceOperation)
+        {
+            TransientOperation = transientOperation;
+            ScopedOperation = scopedOperation;
+            SingletonOperation = singletonOperation;
+            SingletonInstanceOperation = instanceOperation;
+        }
+    }
+}
+</code></pre>
+<p>To demonstrate the object lifetimes within and between separate individual requests to the application, the sample includes an <code>OperationsController</code> that requests each kind of <code>IOperation</code> type as well as an <code>OperationService</code>. The <code>Index</code> action then displays all of the controller’s and service’s <code>OperationId</code> values.</p>
+<pre><code>using DependencyInjectionSample.Interfaces;
+using DependencyInjectionSample.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DependencyInjectionSample.Controllers
+{
+    public class OperationsController : Controller
+    {
+        private readonly OperationService _operationService;
+        private readonly IOperationTransient _transientOperation;
+        private readonly IOperationScoped _scopedOperation;
+        private readonly IOperationSingleton _singletonOperation;
+        private readonly IOperationSingletonInstance _singletonInstanceOperation;
+
+        public OperationsController(OperationService operationService,
+            IOperationTransient transientOperation,
+            IOperationScoped scopedOperation,
+            IOperationSingleton singletonOperation,
+            IOperationSingletonInstance singletonInstanceOperation)
+        {
+            _operationService = operationService;
+            _transientOperation = transientOperation;
+            _scopedOperation = scopedOperation;
+            _singletonOperation = singletonOperation;
+            _singletonInstanceOperation = singletonInstanceOperation;
+        }
+
+        public IActionResult Index()
+        {
+            // ViewBag contains controller-requested services
+            ViewBag.Transient = _transientOperation;
+            ViewBag.Scoped = _scopedOperation;
+            ViewBag.Singleton = _singletonOperation;
+            ViewBag.SingletonInstance = _singletonInstanceOperation;
+
+            // Operation service has its own requested services
+            ViewBag.Service = _operationService;
+            return View();
+        }
+    }
+}
+</code></pre>
+<p>Now two separate requests are made to this controller action:</p>
+<p><a href=""https://i.stack.imgur.com/ilUB6.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/ilUB6.png"" alt=""First Request"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/X2QCd.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/X2QCd.png"" alt=""Second Request"" /></a></p>
+<p>Observe which of the <code>OperationId</code> values varies within a request, and between requests.</p>
+<ul>
+<li><p>Transient objects are always different; a new instance is provided to every controller and every service.</p>
+</li>
+<li><p>Scoped objects are the same within a request, but different across different requests</p>
+</li>
+<li><p>Singleton objects are the same for every object and every request (regardless of whether an instance is provided in <code>ConfigureServices</code>)</p>
+</li>
+</ul>",,,9,,2016-07-01 07:27:11.177000+00:00,,2020-10-29 15:03:09.950000+00:00,2020-10-29 15:03:09.950000+00:00,,2410379,,3795379,38138100,2,2102,,
+10,48274520,,"<p>I couldn't resist - the other answers are undoubtedly true, but you really can't walk past the following code:</p>
+
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>var aﾠ = 1;
+var a = 2;
+var ﾠa = 3;
+if(aﾠ==1 &amp;&amp; a== 2 &amp;&amp;ﾠa==3) {
+    console.log(""Why hello there!"")
+}</code></pre>
+</div>
+</div>
+</p>
+
+<p>Note the weird spacing in the <code>if</code> statement (that I copied from your question). It is the half-width Hangul (that's Korean for those not familiar) which is an Unicode space character that is not interpreted by ECMA script as a space character - this means that it is a valid character for an identifier. Therefore there are three completely different variables, one with the Hangul after the a, one with it before and the last one with just a. Replacing the space with <code>_</code> for readability, the same code would look like this:</p>
+
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>var a_ = 1;
+var a = 2;
+var _a = 3;
+if(a_==1 &amp;&amp; a== 2 &amp;&amp;_a==3) {
+    console.log(""Why hello there!"")
+}</code></pre>
+</div>
+</div>
+</p>
+
+<p>Check out <a href=""https://mothereff.in/js-variables#%EF%BE%A0%E1%85%A0%E1%85%9F"" rel=""noreferrer"">the validation on Mathias' variable name validator</a>. If that weird spacing was actually included in their question, I feel sure that it's a hint for this kind of answer.</p>
+
+<p>Don't do this. Seriously.</p>
+
+<p>Edit: It has come to my attention that (although not allowed to start a variable) the <a href=""https://en.wikipedia.org/wiki/Zero-width_joiner"" rel=""noreferrer"">Zero-width joiner</a> and <a href=""https://en.wikipedia.org/wiki/Zero-width_non-joiner"" rel=""noreferrer"">Zero-width non-joiner</a> characters are also permitted in variable names - see <a href=""https://reverseengineering.stackexchange.com/q/53"">Obfuscating JavaScript with zero-width characters - pros and cons?</a>.</p>
+
+<p>This would look like the following:</p>
+
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>var a= 1;
+var a‍= 2; //one zero-width character
+var a‍‍= 3; //two zero-width characters (or you can use the other one)
+if(a==1&amp;&amp;a‍==2&amp;&amp;a‍‍==3) {
+    console.log(""Why hello there!"")
+}</code></pre>
+</div>
+</div>
+</p>",,,13,,2018-01-16 05:14:54.330000+00:00,,2018-01-25 19:47:49.657000+00:00,2018-01-25 19:47:49.657000+00:00,,781965,,781965,48270127,2,2076,,
+11,40356815,,"<p>I go to <code>build.gradle</code> and click <strong>sync now</strong>. Then it worked.</p>
+
+<p><strong>Update</strong> :  </p>
+
+<p><code>File</code> -> <code>Sync Project with Gradle Files</code> <strong>(Android Studio 3.1.1)</strong></p>
+
+<p><code>Tools</code> -> <code>Android</code> -> <code>Sync Project with Gradle Files</code> <strong>(Android Studio 3.0.1)</strong></p>
+
+<p>Or You can click on the icon from the toolbar.</p>
+
+<p><a href=""https://i.stack.imgur.com/YLBLE.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/YLBLE.png"" alt=""Sync Project Icon""></a></p>
+
+<blockquote>
+  <p>This answer may not help works for later version as Android studio Team work on making the tool more better, the way to sync may be different in the next version of Android Studio.</p>
+</blockquote>
+
+<p><strong>COMMON WAY</strong> that may helps is try to <strong>sync project</strong> and then <strong>Invalidate Caches</strong> and <strong>Restart</strong> Android Studio.</p>
+
+<p>Solution for <code>Android Studio 3.1.2</code> <a href=""https://stackoverflow.com/a/50000408/5241603"">[See below answer]</a></p>
+
+<p>See <a href=""https://developer.android.com/studio/preview/"" rel=""noreferrer"">Latest Android Studio version</a></p>",,,2,,2016-11-01 08:57:53.203000+00:00,,2018-11-24 18:28:19.730000+00:00,2018-11-24 18:28:19.730000+00:00,,973919,,5241603,34353220,2,2056,,
+12,50198499,,"<p>After hours of struggling, I solved it by including the following within <strong>app/build.gradle</strong>:</p>
+
+<pre><code>android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+</code></pre>
+
+<p><a href=""https://github.com/mapbox/mapbox-gl-native/issues/11378"" rel=""noreferrer"">https://github.com/mapbox/mapbox-gl-native/issues/11378</a></p>",,,17,,2018-05-06 10:08:13.733000+00:00,,2019-01-11 12:47:09.827000+00:00,2019-01-11 12:47:09.827000+00:00,,6444297,,2106697,49891730,2,2052,,
+13,40355466,,"<p>If you think a 64-bit DIV instruction is a good way to divide by two, then no wonder the compiler's asm output beat your hand-written code, even with <code>-O0</code> (compile fast, no extra optimization, and store/reload to memory after/before every C statement so a debugger can modify variables).</p>
+<p>See <a href=""http://agner.org/optimize/"" rel=""noreferrer"">Agner Fog's Optimizing Assembly guide</a> to learn how to write efficient asm.  He also has instruction tables and a microarch guide for specific details for specific CPUs.  See also the <a href=""/questions/tagged/x86"" class=""post-tag"" title=""show questions tagged &#39;x86&#39;"" rel=""tag"">x86</a> tag wiki for more perf links.</p>
+<p>See also this more general question about beating the compiler with hand-written asm: <a href=""https://stackoverflow.com/questions/9601427"">Is inline assembly language slower than native C++ code?</a>.  TL:DR: yes if you do it wrong (like this question).</p>
+<p>Usually you're fine letting the compiler do its thing, especially if you <strong>try to write C++ that can compile efficiently</strong>.  Also see <a href=""https://stackoverflow.com/questions/1866316/assembly-language-compiled-languages"">is assembly faster than compiled languages?</a>.  One of the answers links to <a href=""http://www.linux-kongress.org/2009/slides/compiler_survey_felix_von_leitner.pdf"" rel=""noreferrer"">these neat slides</a> showing how various C compilers optimize some really simple functions with cool tricks.  <strong>Matt Godbolt's CppCon2017 talk “<a href=""https://youtu.be/bSkpMdDe4g4"" rel=""noreferrer"">What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid</a>” is in a similar vein.</strong></p>
+<hr />
+<pre><code>even:
+    mov rbx, 2
+    xor rdx, rdx
+    div rbx
+</code></pre>
+<p>On Intel Haswell, <strong><code>div r64</code></strong> is 36 uops, with a <strong>latency of 32-96 cycles</strong>, and a throughput of one per 21-74 cycles.  (Plus the 2 uops to set up RBX and zero RDX, but out-of-order execution can run those early).  <a href=""https://stackoverflow.com/q/26907523/224132"">High-uop-count instructions like DIV are microcoded, which can also cause front-end bottlenecks.</a> In this case, latency is the most relevant factor because it's part of a loop-carried dependency chain.</p>
+<p><strong><code>shr rax, 1</code> does the same unsigned division: It's 1 uop, with 1c latency</strong>, and can run 2 per clock cycle.</p>
+<p>For comparison, 32-bit division is faster, but still horrible vs. shifts. <code>idiv r32</code> is 9 uops, 22-29c latency, and one per 8-11c throughput on Haswell.</p>
+<hr />
+<p><strong>As you can see from looking at gcc's <code>-O0</code> asm output (<a href=""http://gcc.godbolt.org/#g:!((g:!((g:!((h:codeEditor,i:(j:1,options:(colouriseAsm:%270%27,compileOnChange:%270%27),source:%27%23include+%3Ciostream%3E%0A%23include+%3Cstdint.h%3E%0Ausing+namespace+std%3B%0A%0A//+unsigned+types+give+better+asm+output+for+divides+by+2.%0A//+Even+with+-O3,+%60long%60+sucks+(try+it:+godbolt+recompiles+automatically+after+edits)%0A//+I+used+this+version+as+a+starting+point+for+hand-optimizing.%0Aint+sequence(uint64_t+n)+%7B%0A++//+CHANGED+FROM+THE+QUESTION!%27S+CODE:+long+-%3E+uint64_t+%0A++++int+count+%3D+1%3B%0A++++while+(n+!!%3D+1)+%7B%0A++++++++if+(n+%25+2+%3D%3D+0)%0A++++++++++++n+/%3D+2%3B%0A++++++++else%0A++++++++++++n+%3D+n*3+%2B+1%3B%0A%0A++++++++%2B%2Bcount%3B%0A++++%7D%0A++++return+count%3B%0A%7D%0A%0Aint+main()+%7B%0A++++int+max+%3D+0,+maxi%3B%0A++++for+(int+i+%3D+999999%3B+i+%3E+0%3B+--i)+%7B%0A++++++++int+s+%3D+sequence(i)%3B%0A++++++++if+(s+%3E+max)+%7B%0A++++++++++++max+%3D+s%3B%0A++++++++++++maxi+%3D+i%3B%0A++++++++%7D%0A++++%7D%0A++++cout+%3C%3C+maxi+%3C%3C+endl%3B%0A%7D%0A%0A//+as+discussed,+gcc+-O0+still+uses+a+multiplicative+inverse%0A//+for+non-power-of-2+constants%0Aunsigned+long+div_by_13(unsigned+long+a)+%7B%0A++return+a/13%3B%0A%7D%0A%27),l:%275%27,n:%271%27,o:%27C%2B%2B+source+%231%27,t:%270%27)),k:40.81295963439001,l:%274%27,n:%270%27,o:%27%27,s:0,t:%270%27),(g:!((h:compiler,i:(compiler:g540,filters:(b:%270%27,commentOnly:%270%27,directives:%270%27,intel:%270%27),options:%27-O0+-std%3Dgnu%2B%2B11+-Wall+-Wextra+-fverbose-asm%27),l:%275%27,n:%270%27,o:%27%231+with+x86-64+gcc+5.4%27,t:%270%27)),k:31.237103409492676,l:%274%27,n:%270%27,o:%27%27,s:0,t:%270%27),(g:!((h:compiler,i:(compiler:g540,filters:(b:%270%27,commentOnly:%270%27,directives:%270%27,intel:%270%27),options:%27-O3+-std%3Dgnu%2B%2B11+-Wall+-Wextra+-fno-verbose-asm%27),l:%275%27,n:%270%27,o:%27%231+with+x86-64+gcc+5.4%27,t:%270%27)),k:27.94993695611732,l:%274%27,n:%270%27,o:%27%27,s:0,t:%270%27)),l:%272%27,n:%270%27,o:%27%27,t:%270%27)),version:4"" rel=""noreferrer"">Godbolt compiler explorer</a>), it only uses shifts instructions</strong>. clang <code>-O0</code> does compile naively like you thought, even using 64-bit IDIV twice. (When optimizing, compilers do use both outputs of IDIV when the source does a division and modulus with the same operands, if they use IDIV at all)</p>
+<p>GCC doesn't have a totally-naive mode; <a href=""https://stackoverflow.com/a/33284629/224132"">it always transforms through GIMPLE, which means some &quot;optimizations&quot; can't be disabled</a>.  This includes recognizing division-by-constant and using shifts (power of 2) or <a href=""https://stackoverflow.com/questions/41183935/why-does-gcc-use-multiplication-by-a-strange-number-in-implementing-integer-divi"">a fixed-point multiplicative inverse</a> (non power of 2) to avoid IDIV (see <code>div_by_13</code> in the above godbolt link).</p>
+<p><code>gcc -Os</code> (optimize for size) <em>does</em> use IDIV for non-power-of-2 division,
+unfortunately even in cases where the multiplicative inverse code is only slightly larger but much faster.</p>
+<hr />
+<h1>Helping the compiler</h1>
+<p>(summary for this case: use <code>uint64_t n</code>)</p>
+<p>First of all, it's only interesting to look at optimized compiler output.  (<code>-O3</code>).  <strong><a href=""https://stackoverflow.com/a/32001196/224132""><code>-O0</code> speed is basically meaningless.</a></strong></p>
+<p>Look at your asm output (on Godbolt, or see <a href=""https://stackoverflow.com/q/38552116/224132"">How to remove &quot;noise&quot; from GCC/clang assembly output?</a>).  When the compiler doesn't make optimal code in the first place: <strong>Writing your C/C++ source in a way that guides the compiler into making better code is usually the best approach</strong>.  You have to know asm, and know what's efficient, but you apply this knowledge indirectly.  Compilers are also a good source of ideas: sometimes clang will do something cool, and you can hand-hold gcc into doing the same thing: see <a href=""https://stackoverflow.com/a/34410357/224132"">this answer</a> and what I did with the non-unrolled loop in @Veedrac's code below.)</p>
+<p>This approach is portable, and in 20 years some future compiler can compile it to whatever is efficient on future hardware (x86 or not), maybe using new ISA extension or auto-vectorizing.  Hand-written x86-64 asm from 15 years ago would usually not be optimally tuned for Skylake.  e.g. compare&amp;branch macro-fusion didn't exist back then.  <strong>What's optimal now for hand-crafted asm for one microarchitecture might not be optimal for other current and future CPUs.</strong>  <a href=""https://stackoverflow.com/questions/40354978/why-is-this-c-code-faster-than-my-hand-written-assembly-for-testing-the-collat#comment67966852_40356449"">Comments on @johnfound's answer</a> discuss major differences between AMD Bulldozer and Intel Haswell, which have a big effect on this code.  But in theory, <code>g++ -O3 -march=bdver3</code> and <code>g++ -O3 -march=skylake</code> will do the right thing.  (Or <code>-march=native</code>.)   Or <code>-mtune=...</code> to just tune, without using instructions that other CPUs might not support.</p>
+<p>My feeling is that guiding the compiler to asm that's good for a current CPU you care about shouldn't be a problem for future compilers.  They're hopefully better than current compilers at finding ways to transform code, and can find a way that works for future CPUs.  Regardless, future x86 probably won't be terrible at anything that's good on current x86, and the future compiler will avoid any asm-specific pitfalls while implementing something like the data movement from your C source, if it doesn't see something better.</p>
+<p>Hand-written asm is a black-box for the optimizer, so constant-propagation doesn't work when inlining makes an input a compile-time constant.  Other optimizations are also affected.  Read <a href=""https://gcc.gnu.org/wiki/DontUseInlineAsm"" rel=""noreferrer"">https://gcc.gnu.org/wiki/DontUseInlineAsm</a> before using asm.  (And avoid MSVC-style inline asm: inputs/outputs have to go through memory <a href=""https://stackoverflow.com/a/35959859/224132"">which adds overhead</a>.)</p>
+<p><strong>In this case</strong>: your <code>n</code> has a signed type, and gcc uses the SAR/SHR/ADD sequence that gives the correct rounding.  (IDIV and arithmetic-shift &quot;round&quot; differently for negative inputs, see the <a href=""http://www.felixcloutier.com/x86/SAL:SAR:SHL:SHR.html"" rel=""noreferrer"">SAR insn set ref manual entry</a>).  (IDK if gcc tried and failed to prove that <code>n</code> can't be negative, or what.  Signed-overflow is undefined behaviour, so it should have been able to.)</p>
+<p>You should have used <code>uint64_t n</code>, so it can just SHR.  And so it's portable to systems where <code>long</code> is only 32-bit (e.g. x86-64 Windows).</p>
+<hr />
+<p>BTW, <strong>gcc's <em>optimized</em> asm output looks pretty good (using <code>unsigned long n</code>)</strong>: the inner loop it inlines into <code>main()</code> does this:</p>
+<pre><code> # from gcc5.4 -O3  plus my comments
+
+ # edx= count=1
+ # rax= uint64_t n
+
+.L9:                   # do{
+    lea    rcx, [rax+1+rax*2]   # rcx = 3*n + 1
+    mov    rdi, rax
+    shr    rdi         # rdi = n&gt;&gt;1;
+    test   al, 1       # set flags based on n%2 (aka n&amp;1)
+    mov    rax, rcx
+    cmove  rax, rdi    # n= (n%2) ? 3*n+1 : n/2;
+    add    edx, 1      # ++count;
+    cmp    rax, 1
+    jne   .L9          #}while(n!=1)
+
+  cmp/branch to update max and maxi, and then do the next n
+</code></pre>
+<p>The inner loop is branchless, and the critical path of the loop-carried dependency chain is:</p>
+<ul>
+<li>3-component LEA (3 cycles)</li>
+<li>cmov (2 cycles on Haswell, 1c on Broadwell or later).</li>
+</ul>
+<p><strong>Total: 5 cycle per iteration, latency bottleneck</strong>.  Out-of-order execution takes care of everything else in parallel with this (in theory: I haven't tested with perf counters to see if it really runs at 5c/iter).</p>
+<p>The FLAGS input of <code>cmov</code> (produced by TEST) is faster to produce than the RAX input (from LEA-&gt;MOV), so it's not on the critical path.</p>
+<p>Similarly, the MOV-&gt;SHR that produces CMOV's RDI input is off the critical path, because it's also faster than the LEA.  MOV on IvyBridge and later has zero latency (handled at register-rename time).  (It still takes a uop, and a slot in the pipeline, so it's not free, just zero latency).  The extra MOV in the LEA dep chain is part of the bottleneck on other CPUs.</p>
+<p>The cmp/jne is also not part of the critical path: it's not loop-carried, because control dependencies are handled with branch prediction + speculative execution, unlike data dependencies on the critical path.</p>
+<hr />
+<h1>Beating the compiler</h1>
+<p>GCC did a pretty good job here.  It could save one code byte by using <a href=""https://stackoverflow.com/a/36510865/224132""><code>inc edx</code> instead of <code>add edx, 1</code></a>, because nobody cares about P4 and its false-dependencies for partial-flag-modifying instructions.</p>
+<p>It could also save all the MOV instructions, and the TEST:  SHR sets CF= the bit shifted out, so we can use <code>cmovc</code> instead of <code>test</code> / <code>cmovz</code>.</p>
+<pre><code> ### Hand-optimized version of what gcc does
+.L9:                       #do{
+    lea     rcx, [rax+1+rax*2] # rcx = 3*n + 1
+    shr     rax, 1         # n&gt;&gt;=1;    CF = n&amp;1 = n%2
+    cmovc   rax, rcx       # n= (n&amp;1) ? 3*n+1 : n/2;
+    inc     edx            # ++count;
+    cmp     rax, 1
+    jne     .L9            #}while(n!=1)
+</code></pre>
+<p>See @johnfound's answer for another clever trick: remove the CMP by branching on SHR's flag result as well as using it for CMOV:  zero only if n was 1 (or 0) to start with.  (Fun fact: <a href=""https://stackoverflow.com/a/36510865/224132"">SHR with count != 1 on Nehalem or earlier causes a stall if you read the flag results</a>.  That's how they made it single-uop.  The shift-by-1 special encoding is fine, though.)</p>
+<p>Avoiding MOV doesn't help with the latency at all on Haswell (<a href=""https://stackoverflow.com/q/44169342"">Can x86&#39;s MOV really be &quot;free&quot;? Why can&#39;t I reproduce this at all?</a>).  It does help <em>significantly</em> on CPUs like Intel pre-IvB, and AMD Bulldozer-family, where MOV is not zero-latency.  The compiler's wasted MOV instructions do affect the critical path.  BD's complex-LEA and CMOV are both lower latency (2c and 1c respectively), so it's a bigger fraction of the latency.  Also, throughput bottlenecks become an issue, because it only has two integer ALU pipes.  <a href=""https://stackoverflow.com/questions/40354978/why-is-this-c-code-faster-than-assembly/40356449#40356449"">See @johnfound's answer</a>, where he has timing results from an AMD CPU.</p>
+<p>Even on Haswell, this version may help a bit by avoiding some occasional delays where a non-critical uop steals an execution port from one on the critical path, delaying execution by 1 cycle.  (This is called a resource conflict).  It also saves a register, which may help when doing multiple <code>n</code> values in parallel in an interleaved loop (see below).</p>
+<p><strong>LEA's latency depends on the addressing mode</strong>, on Intel SnB-family CPUs.  3c for 3 components (<code>[base+idx+const]</code>, which takes two separate adds), but only 1c with 2 or fewer components (one add).  Some CPUs (like Core2) do even a 3-component LEA in a single cycle, but SnB-family doesn't.  Worse, <a href=""https://stackoverflow.com/a/40212446/224132"">Intel SnB-family standardizes latencies so there are no 2c uops</a>, otherwise 3-component LEA would be only 2c like Bulldozer.  (3-component LEA is slower on AMD as well, just not by as much).</p>
+<p>So <code>lea  rcx, [rax + rax*2]</code> / <code>inc rcx</code> is only 2c latency, faster than <code>lea  rcx, [rax + rax*2 + 1]</code>, on Intel SnB-family CPUs like Haswell.  Break-even on BD, and worse on Core2.  It does cost an extra uop, which normally isn't worth it to save 1c latency, but latency is the major bottleneck here and Haswell has a wide enough pipeline to handle the extra uop throughput.</p>
+<p><strong>Neither gcc, icc, nor clang (on godbolt) used SHR's CF output, always using an AND or TEST</strong>.  Silly compilers. :P  They're great pieces of complex machinery, but a clever human can often beat them on small-scale problems.  (Given thousands to millions of times longer to think about it, of course!  Compilers don't use exhaustive algorithms to search for every possible way to do things, because that would take too long when optimizing a lot of inlined code, which is what they do best.  They also don't model the pipeline in the target microarchitecture, at least not in the same detail as <a href=""https://stackoverflow.com/questions/26021337/what-is-iaca-and-how-do-i-use-it"">IACA</a> or other static-analysis tools; they just use some heuristics.)</p>
+<hr />
+<p><strong>Simple loop unrolling won't help</strong>; this loop bottlenecks on the latency of a loop-carried dependency chain, not on loop overhead / throughput.  This means it would do well with hyperthreading (or any other kind of SMT), since the CPU has lots of time to interleave instructions from two threads.  This would mean parallelizing the loop in <code>main</code>, but that's fine because each thread can just check a range of <code>n</code> values and produce a pair of integers as a result.</p>
+<p><strong>Interleaving by hand within a single thread might be viable, too</strong>.  Maybe compute the sequence for a pair of numbers in parallel, since each one only takes a couple registers, and they can all update the same <code>max</code> / <code>maxi</code>.  This creates more <a href=""https://en.wikipedia.org/wiki/Instruction-level_parallelism"" rel=""noreferrer"">instruction-level parallelism</a>.</p>
+<p>The trick is deciding whether to wait until all the <code>n</code> values have reached <code>1</code> before getting another pair of starting <code>n</code> values, or whether to break out and get a new start point for just one that reached the end condition, without touching the registers for the other sequence.  Probably it's best to keep each chain working on useful data, otherwise you'd have to conditionally increment its counter.</p>
+<hr />
+<p>You could maybe even do this with SSE packed-compare stuff to conditionally increment the counter for vector elements where <code>n</code> hadn't reached <code>1</code> yet.  And then to hide the even longer latency of a SIMD conditional-increment implementation, you'd need to keep more vectors of <code>n</code> values up in the air.  Maybe only worth with 256b vector (4x <code>uint64_t</code>).</p>
+<p>I think the best strategy to make detection of a <code>1</code> &quot;sticky&quot; is to mask the vector of all-ones that you add to increment the counter.  So after you've seen a <code>1</code> in an element, the increment-vector will have a zero, and +=0 is a no-op.</p>
+<h3>Untested idea for manual vectorization</h3>
+<pre><code># starting with YMM0 = [ n_d, n_c, n_b, n_a ]  (64-bit elements)
+# ymm4 = _mm256_set1_epi64x(1):  increment vector
+# ymm5 = all-zeros:  count vector
+
+.inner_loop:
+    vpaddq    ymm1, ymm0, xmm0
+    vpaddq    ymm1, ymm1, xmm0
+    vpaddq    ymm1, ymm1, set1_epi64(1)     # ymm1= 3*n + 1.  Maybe could do this more efficiently?
+
+    vprllq    ymm3, ymm0, 63                # shift bit 1 to the sign bit
+
+    vpsrlq    ymm0, ymm0, 1                 # n /= 2
+
+    # FP blend between integer insns may cost extra bypass latency, but integer blends don't have 1 bit controlling a whole qword.
+    vpblendvpd ymm0, ymm0, ymm1, ymm3       # variable blend controlled by the sign bit of each 64-bit element.  I might have the source operands backwards, I always have to look this up.
+
+    # ymm0 = updated n  in each element.
+
+    vpcmpeqq ymm1, ymm0, set1_epi64(1)
+    vpandn   ymm4, ymm1, ymm4         # zero out elements of ymm4 where the compare was true
+
+    vpaddq   ymm5, ymm5, ymm4         # count++ in elements where n has never been == 1
+
+    vptest   ymm4, ymm4
+    jnz  .inner_loop
+    # Fall through when all the n values have reached 1 at some point, and our increment vector is all-zero
+
+    vextracti128 ymm0, ymm5, 1
+    vpmaxq .... crap this doesn't exist
+    # Actually just delay doing a horizontal max until the very very end.  But you need some way to record max and maxi.
+</code></pre>
+<p>You can and should implement this with intrinsics instead of hand-written asm.</p>
+<hr />
+<h2>Algorithmic / implementation improvement:</h2>
+<p>Besides just implementing the same logic with more efficient asm, look for ways to simplify the logic, or avoid redundant work.  e.g. memoize to detect common endings to sequences. Or even better, look at 8 trailing bits at once (gnasher's answer)</p>
+<p>@EOF points out that <code>tzcnt</code> (or <code>bsf</code>) could be used to do multiple <code>n/=2</code> iterations in one step. That's probably better than SIMD vectorizing; no SSE or AVX instruction can do that. It's still compatible with doing multiple scalar <code>n</code>s in parallel in different integer registers, though.</p>
+<p>So the loop might look like this:</p>
+<pre><code>goto loop_entry;  // C++ structured like the asm, for illustration only
+do {
+   n = n*3 + 1;
+  loop_entry:
+   shift = _tzcnt_u64(n);
+   n &gt;&gt;= shift;
+   count += shift;
+} while(n != 1);
+</code></pre>
+<p>This may do significantly fewer iterations, but variable-count shifts are slow on Intel SnB-family CPUs without BMI2. 3 uops, 2c latency.  (They have an input dependency on the FLAGS because count=0 means the flags are unmodified. They handle this as a data dependency, and take multiple uops because a uop can only have 2 inputs (pre-HSW/BDW anyway)).  This is the kind that people complaining about x86's crazy-CISC design are referring to. It makes x86 CPUs slower than they would be if the ISA was designed from scratch today, even in a mostly-similar way.  (i.e. this is part of the &quot;x86 tax&quot; that costs speed / power.) SHRX/SHLX/SARX (BMI2) are a big win (1 uop / 1c latency).</p>
+<p>It also puts tzcnt (3c on Haswell and later) on the critical path, so it significantly lengthens the total latency of the loop-carried dependency chain. It does remove any need for a CMOV, or for preparing a register holding <code>n&gt;&gt;1</code>, though. <strong>@Veedrac's answer overcomes all this by deferring the tzcnt/shift for multiple iterations, which is highly effective (see below).</strong></p>
+<p>We can safely use <a href=""http://www.felixcloutier.com/x86/BSF.html"" rel=""noreferrer"">BSF</a> or <a href=""http://www.felixcloutier.com/x86/TZCNT.html"" rel=""noreferrer"">TZCNT</a> interchangeably, because <code>n</code> can never be zero at that point. TZCNT's machine-code decodes as BSF on CPUs that don't support BMI1. (Meaningless prefixes are ignored, so REP BSF runs as BSF).</p>
+<p>TZCNT performs much better than BSF on AMD CPUs that support it,  so it can be a good idea to use <code>REP BSF</code>, even if you don't care about setting ZF if the input is zero rather than the output.  Some compilers do this when you use <code>__builtin_ctzll</code> even with <code>-mno-bmi</code>.</p>
+<p>They perform the same on Intel CPUs, so just save the byte if that's all that matters. TZCNT on Intel (pre-Skylake) still has a false-dependency on the supposedly write-only output operand, just like BSF, to support the undocumented behaviour that BSF with input = 0 leaves its destination unmodified. So you need to work around that unless optimizing only for Skylake, so there's nothing to gain from the extra REP byte. (Intel often goes above and beyond what the x86 ISA manual requires, to avoid breaking widely-used code that depends on something it shouldn't, or that is retroactively disallowed. e.g. <a href=""http://blog.stuffedcow.net/2015/08/pagewalk-coherence/"" rel=""noreferrer"">Windows 9x's assumes no speculative prefetching of TLB entries</a>, which was safe when the code was written, <a href=""https://stackoverflow.com/questions/17395557/observing-stale-instruction-fetching-on-x86-with-self-modifying-code#comment68191467_18388700"">before Intel updated the TLB management rules</a>.)</p>
+<p>Anyway, LZCNT/TZCNT on Haswell have the same false dep as POPCNT: see <a href=""https://stackoverflow.com/questions/25078285/replacing-a-32-bit-loop-count-variable-with-64-bit-introduces-crazy-performance"">this Q&amp;A</a>. This is why in gcc's asm output for @Veedrac's code, you see it <a href=""https://stackoverflow.com/a/33668295/224132"">breaking the dep chain with xor-zeroing</a> on the register it's about to use as TZCNT's destination when it doesn't use dst=src. Since TZCNT/LZCNT/POPCNT never leave their destination undefined or unmodified, this false dependency on the output on Intel CPUs is a performance bug / limitation. Presumably it's worth some transistors / power to have them behave like other uops that go to the same execution unit. The only perf upside is interaction with another uarch limitation: <a href=""https://stackoverflow.com/questions/26046634/micro-fusion-and-addressing-modes"">they can micro-fuse a memory operand with an indexed addressing mode</a> on Haswell, but on Skylake where Intel removed the false dep for LZCNT/TZCNT they &quot;un-laminate&quot; indexed addressing modes while POPCNT can still micro-fuse any addr mode.</p>
+<hr />
+<h1>Improvements to ideas / code from other answers:</h1>
+<p><strong>@hidefromkgb's answer</strong> has a nice observation that you're guaranteed to be able to do one right shift after a 3n+1.  You can compute this more even more efficiently than just leaving out the checks between steps.  The asm implementation in that answer is broken, though (it depends on OF, which is undefined after SHRD with a count &gt; 1), and slow: <code>ROR rdi,2</code> is faster than <code>SHRD rdi,rdi,2</code>, and using two CMOV instructions on the critical path is slower than an extra TEST that can run in parallel.</p>
+<p>I put tidied / improved C (which guides the compiler to produce better asm), and tested+working faster asm (in comments below the C) up on Godbolt: see the link in <a href=""https://stackoverflow.com/questions/40354978/why-is-this-c-code-faster-than-my-hand-written-assembly-for-testing-the-collat/40367384#40367384"">@hidefromkgb's answer</a>.  (This answer hit the 30k char limit from the large Godbolt URLs, but <a href=""https://meta.stackoverflow.com/questions/319549/how-are-we-supposed-to-post-godbolt-links-now-that-url-shortening-is-blocked/319594#319594"">shortlinks can rot</a> and were too long for goo.gl anyway.)</p>
+<p>Also improved the output-printing to convert to a string and make one <code>write()</code> instead of writing one char at a time. This minimizes impact on timing the whole program with <code>perf stat ./collatz</code> (to record performance counters), and I de-obfuscated some of the non-critical asm.</p>
+<hr />
+<p><strong>@Veedrac's code</strong></p>
+<p>I got a minor speedup from right-shifting as much as we <em>know</em> needs doing, and checking to continue the loop. From 7.5s for limit=1e8 down to 7.275s, on Core2Duo (Merom), with an unroll factor of 16.</p>
+<p>code + comments <a href=""http://gcc.godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAKxAEZTUAHAvVAOwGdK0AbVAV2J4OmAIIcAtiADkABmmk0Exnh6YA8mwDCCAIZtgmGfICUpDgOLIj0gPS2A1BIx4AZnkzoHAN0zEOrGwOqK4OAGqYnsS6yGDSHA5oWCAApLKi9omCxJhsBD5%2BAeyJqMqqmAkA7pg8PA6VhAgOwMjIaRmOAMoAMuoA6g5a6gAi2A59AJIAKgASg92iAHIA4g4QmAAeBNEOAFIAsgAKCXhBBAiYDliufg58TCbt7ZnXt/eMV6gVwWyXAEZ4YAOITABAEAC0HAQbnyjFuwGIAkYpAc%2Bi87B4AE87phdL4qhcgsg%2BCIHERgr5iK4%2BJUAHRPdKZXQ8Cwo86XAIGNSQgiYD7vBz8EQJAAC0OuiIkAGtgH84glecgEGw8ABHfiYBmiFIAJgAzKdifwsA4UnqtMgOAR8HkzdgnvrDTxjZczVpWFacroJHatULTkC2N6KowYhzrWaAEJaq26FjIQWnAgANgALAB9fKc4BqND8PKmvXDByyKMOByZPMFkJkoSMBUIRH8UFki4ONjscGvYg5Lzvdqx%2BOJvJpzMOWOYzzp07pgVm4ulvWR8uZAVoNj4FjFSq6BXEDWo/Lshy5dGhY9YHi6SfoSHQ1z5fvpQd4BPrq0OP6oVB1U6e/gSLk%2BTzg4rjMiIUYxgQcavsOBB6jqY4iOquTWBA/BJghY4bCYpoAOzRukDoGq4G6YKEACqiwAErqN03TpkMVFTMR1ynJcVG0fRjHqMxDi0MmK6OPmiK1J%2B2ICQ4wigbuvJWiADh4bS%2BoJHCxD8ZgAAcTi6KcArQK0ACsykoloJCYDqwz8Kgaz7H4pS4TqtKpssMwAF6PER%2Bqnm47TluW775BheRYfkCJIumARua6RYOJxdEMUxiwsUufn%2BZkyyIpUCR/NiugycgRDqbQsi2HqawgXwwA6hAJVlbhKTYDqKSaQAnC12m0LSeGpp%2BhAcLhuJKsCAgbvS6T%2BRWjgTAQ8rjroNxSaEhCJPozRZSelLYoQfgwdujQCPkqCUtSqANAY42iJNgVwaOR0nTS6YAgQCQgcm5XgutEVRZcABU/E9RW/GyIuhFXf5N3BSmGb3X4p2VJFeDRYWxa0BR9GFloboUnDj3PRwkETeljj6NijBnbcNY6lJCT5VaTAlBuhCBApGJ5eOAZqH1WaYAQKIWPUlzIGtzI0lJ%2BRJjZx5PtqRPllDd3tijDgbIT4Py5hiH5FWwGxaDWqTZU0JcxA2wag1BFpZNUOhQ4UrK6DQmJFeBg6VK3yVCQpJJJcDTnA4abgs9dsOCAthW8TDjdLivjjveLCu%2BgZ1BK4JB3HGfiXZN5ZJ/hYNpK1GsjjD3NqwXRfwVrduGg7ZZTQ4Fw8GpoFpyJP48AG9SNFJWB5K%2BzIlCo3w1sefx8MgUparqepsb8DjTNg1HppGvRaAA0hADWGVjRGyIXFUEdzytBLqgngmwZa2P9Y8BA4v3h3vBfl9nKTbwy%2B/%2BW4azB/OIFsBby4damh1NGWKUpDRlj%2BF6SeS58LFmrmwNoIDdSgOXK/HessP7lhPrFII/1yooNLqlPCwxcL12WIsCigxxzQV5IBPI4JNiMByBwIoF9d77xeOwOI%2BRU7EEMEePQgjLhrjWmBMSh1Wz/FQAQIgEgURokFjQ1QdRfieDJDZfgjB0AZxKPmYROQ2Tfkus8Rw2cW7EAgEmKS85ZCFmXHgN04UtGI2RmWFBKC8BkMrKUFQah/CgX4LUTE4I25iXOMIFEfx%2BDaxdkCJO3wVp/F0OgLEpjzHmIXkvFe6h16bzrpkYAMibKHT8LOb8jB0ynnLH%2BXkKTgihCgbiSeHDyxZOXqvDejxUqtPnlMReHTcldLLnvNp/TsmdPyT0zBYyBk5Lyd0/OjpKI0QSjxPidoHCpnfrMiZQypn51GX0uZkzFk7OOXshZIz97tPmcM6Z08fKuGIl/eK3EkpTELGMTS5zbmnOubswZVyHlHL%2Bfss5vSwXAqWXqJ5LyVlcUSrxZKXz%2BLNUheMoF9zDk3MxXcg5vy8X/JBbik54Ky7eSZs83pL5kDpl3CIYgBAIBvKRRs80IEBIol1DqMJdQgFEBstCUEPKIXq3MZkWl9LWF%2BGZc4ypP0UYgXAYg7lOpeVsFEvy0a%2BQEkcDYDwnSBBhqBX0AQUVAKlprBVQmMAYAQLytcZgbxjhApMPUnqg10h8i5F0GPcMME6UMtlaHCA5zrp%2BHUm6bGPK%2BV6ILJ6w1Eg4zDXlRzaK6CL7qpGTMpWvo9T2lio6n6lqgEeNitTf6xakaalgfXKYIx1AKWJPoIEcJWF4AkDWhs0k/ZNE2NsfKBxjhSTOG2GWz83BWM4GbehwEdTJlPnmjlsVjq4zOk6zyubJoTinDOfsyDkHTPMSkEh9RjaYAgDgrGq6Hobp%2BmKg22dMjDBqNedRmBfBBCgfoJUFQs7ZxtlXKEMJlbpiehhHgCd0yFTcrUK9YrzE4MLYW4sIGHxq3MWWo9aH44FJJugG0QJ7bSSTnPU4UjPzQKnl5Ei/F674A4H6rmx4OyhM1e3O4FSzQADEI6TRfTZFa7Bwx8kPKiMknbfaEko2PVAE8fC6CEGapwgIwQ4ypDSADhsL1rGQxp%2BGm687nKnbU/cc7cLZlzDqjxR6YVf1oAxtwNwcgFk9BnYAHgEh8NbNJGWV8/LDBshAPUWbIy0G6ShxzacqBCnyGtC%2BBb83DC6n5ELYWIv5uwI53%2BsUr1ZYi8A5cJ8QH0bWJ0SIDc8ASlKDKOU8RUScGqGQc9r4mjMh3JiBIeqHDUytHyE4M7cRnno2nJyW6/IzDROCBAP4vDHiUH424ks3ad13BIT8u51HFBbQYOaKprBOF5rN9AqQJpCkuPlLQ%2Bx1BhA0YzTcgRRbYmioiCTOQgSzZ4ERvTKCIsok894TufAXoNPnt0Q4jWvB4lQNVzuepwSLZEwWbo2AroUa9QkZAQh4wD1DOcA2u3QDA2svWCxDgZidD6LSeNBAQB6mQBAVHohcJsBAKmBMTO0e1UeHhLQSxSEoOu7diAOpHggNEMMYYKCbthD8i0ZAClaC8qYN5tOlPqcQx1fTxnzPWfs858znnp7%2BeLEFyA4XYRRfi5XtzzLE1IzDD6LYToa9ugKQZ5%2BTAwsLuDFl8rWgpOUS0DaBNKY0ITg5QqBCYWpIry8kQZiFEHZgQVEsId9c1JXwvRpxT6blQccJ9RJIeoAhvuClJJ0GY1FwR2i0Dx8nluocOElxg%2B%2B5yFYlzYIwHLuCiv8UtZ3scbBIqNmPgVwfmsxw0h/nlrNyZMt1olY4ZNKqgQRISAhIOK01DzZsp7fwQtfHlHUodRgMTR0SeYZ%2B1gQoCj%2BECFEi/0l3Bzw7HSDvSZFYEGUMrGfK1eN2we9Q4SxLUcFiwR8oQo1Ssf9GBS0dUitOV%2B9/9zVpkAsJo%2BghF55WwBBQR8hPYgkvA/hLgmAWBk0eAUR9FVBnZW0rhqsvdZE/B5dWg0VSc1d1INcacdYdcucWdsEQBDIExZcUEq9qIUEjc9QbdLdrcZdbt%2BMMkh8fUv1x8ksC1aBMMMlrYv8S4MB0AqllCQJ8tVDssGpSsStlx1Dj1ND/JFCuNKhZ9ix8sF1F8wZrD/JwC7DZ8G9dD9DcgQDP1cgNC3DsNQFUZ%2B90Ip8CATAUD8MaDXZSMAI/hm8etA5g4UkvBCFXtUBGEthqkRBQxoheQsQUQ%2B0JN/cmNAJzBgxWw4x548gahBhDgKJutuFvUTwO4u0gxeR2h29aMagv5SxGQV9sQSBARTgB4qpXwSiDoL9YDFN/Bc8JB%2BBhoD9SR1t5DroEDy0wjCEnCF9ENrCPC9jCtACjCotTDit%2B9HMFJEsosKVYUWRNQhiOYuRMAeQxNdDgh1IAi2AUQIgogYg5pRjPMgweB0kNdm04lbAFcHBBCo5udJD%2B9pCxd%2B9ZcIBZAJsjkjiStBITi9QG8r074HACFStCsFJCSst%2BJH0jkQjOV7i4U5Z/JT1pc%2BiqUnYrMRFuNd5xUnY%2Bhvw7V5Cv4KSV1UYAETNQhhStAqTw0IZI1MYY11UPC7FXBJQDMxZSiNhlYeV5TzQVYdSpS4hM1DSSVywcgCBBAiQbMrDJpmSI5mSnYjZyhTZ9xnUngSEp5HREFnQTQ3QrRUk8A/haQEBfR0hrFk1Thp14t%2BFkAUQlQlNfpfolNgBvAxTGSgMxxk1NSQJ9Y0zIidINhHFrS4JbYOiADYpaAtIc1rZOBARfgvAchGBSzdZUYgirUIAky2hVDhgxcdkGymzlY4xYd2z%2BFvBX5wtX5Bciy%2BF0IazgA6zU84CixHYGzMYFz%2Bz3FD1IwGzeccUXicxvcti9YAVMgABNAQVaIIemD4Wops2wamYgn3UkIaJoEeWbUkPQAmVpJkRTZ0S4JOfgf1cWEo6EYaXsZY74ckQgExUZHzCIkKKuPAP/TtQgMsRCzZfsxwZqWBcEcELxYzXpLQ%2BCpCZWZCDURBS9LxS1SaIU16AtfM1MzBZ%2BfMki65JizMtC2KQs3cl%2Bd01pW0xk/i2WK6P0kAFASRaNXU9i/U4BambUiSqUzMzDUzGdczICLdLDcSldKUnldBLMTmN4tcK06XdVaSjkstLSmS3S3dLwCjcMtgfsIsOSiy6y6cEfBy1BPyPMXWG9A06QI0vyh5Xi0QaQMwHgGQQyBQNnaQWgBQVAGQLGTc8cdPV0fUGK0gOnOQEKswKUenJSVMVqTSPCVqVMNMAqvUWgPCPCUgMK6QVMBQKQEqWQUgKK%2BQBgGQBQLgJqjK0wUgOAWAJARbE/cgbgY/fxFAOJPUVqJq9wKDQoSgP4YwBQJQOdTQLERa0gfAHIQqPAfEdapMGoRaswUgwILgaQHkdAecOc/gWzcLRzcEYYVldZZKecSScEPoUWBwN6gdHYcEVwSkL8EQcEdbT69QD6ZNKwYMosNAHIHUEK6q8KyK9auKvy1Kruf2DYTSZMcENMOIoEPUWkVqWkVq7qrK0gHKnUTSZyQyVMWgVqEqEqZMVqAqnUeG2qxGzKtq6QDqkALqw63qmARAMSsofxYaiAQasa4AZMFmma3kfwea9a5aoCVazEdaza73FgXajm/amqnq469gU686y6tga6zc2gXqN6j6r6rYH6v6vwAGt44G8EUGz6iQHgNyZAAscECQP4LtamL2n2xCr28034ecDgKUTEK8d2OGmqiK5qpGmQaeRzDUzG7G3qGE5MZSBQEmkwbK%2BnVMIm1MPCWQM2vUSakqzSVMBdVmuq0gBqkGOOjm5G7m3mzKnO1m2Ghu1qpu9Kw6swSkNhdnIAA"" rel=""noreferrer"">on Godbolt</a>. Don't use this version with clang; it does something silly with the defer-loop. Using a tmp counter <code>k</code> and then adding it to <code>count</code> later changes what clang does, but that <em>slightly</em> hurts gcc.</p>
+<p>See discussion in comments: Veedrac's code is <em>excellent</em> on CPUs with BMI1 (i.e. not Celeron/Pentium)</p>",,,71,,2016-11-01 07:04:26.303000+00:00,,2020-05-01 09:32:06.760000+00:00,2020-06-20 09:12:55.060000+00:00,,-1,,224132,40354978,2,1940,,
+14,44210813,,"<p>Yes, <code>package-lock.json</code> is intended to be checked into source control. If you're using npm 5+, you may see this notice on the command line: <code>created a lockfile as package-lock.json. You should commit this file.</code> According to <a href=""https://github.com/npm/cli/blob/release-6.14.7/docs/content/configuring-npm/package-lock-json.md"" rel=""noreferrer""><code>npm help package-lock.json</code></a>:</p>
+<blockquote>
+<p><code>package-lock.json</code> is automatically generated for any operations where npm
+modifies either the <code>node_modules</code> tree, or <code>package.json</code>. It describes the
+exact tree that was generated, such that subsequent installs are able to
+generate identical trees, regardless of intermediate dependency updates.</p>
+<p><strong>This file is intended to be committed into source repositories</strong>, and serves
+various purposes:</p>
+<ul>
+<li><p>Describe a single representation of a dependency tree such that teammates, deployments, and continuous integration are guaranteed to install exactly the same dependencies.</p>
+</li>
+<li><p>Provide a facility for users to &quot;time-travel&quot; to previous states of <code>node_modules</code> without having to commit the directory itself.</p>
+</li>
+<li><p>To facilitate greater visibility of tree changes through readable source control diffs.</p>
+</li>
+<li><p>And optimize the installation process by allowing npm to skip repeated metadata resolutions for previously-installed packages.</p>
+</li>
+</ul>
+<p>One key detail about <code>package-lock.json</code> is that it cannot be published, and it
+will be ignored if found in any place other than the toplevel package. It shares
+a format with npm-shrinkwrap.json, which is essentially the same file, but
+allows publication. This is not recommended unless deploying a CLI tool or
+otherwise using the publication process for producing production packages.</p>
+<p>If both <code>package-lock.json</code> and <code>npm-shrinkwrap.json</code> are present in the root of
+a package, <code>package-lock.json</code> will be completely ignored.</p>
+</blockquote>",,,25,,2017-05-26 22:16:32.407000+00:00,,2020-08-12 09:04:21.493000+00:00,2020-08-12 09:04:21.493000+00:00,,2321452,,2321452,44206782,2,1887,,
+15,42121109,,"<blockquote>
+  <p><strong>React Router v5.1.0 with hooks</strong></p>
+</blockquote>
+
+<p>There is a new <code>useHistory</code> hook in React Router >5.1.0 if you are using React >16.8.0 and functional components.</p>
+
+<pre><code>import { useHistory } from ""react-router-dom"";
+
+function HomeButton() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push(""/home"");
+  }
+
+  return (
+    &lt;button type=""button"" onClick={handleClick}&gt;
+      Go home
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+
+<blockquote>
+  <p><strong>React Router v4</strong></p>
+</blockquote>
+
+<p>With v4 of React Router, there are three approaches that you can take to programmatic routing within components.</p>
+
+<ol>
+<li>Use the <code>withRouter</code> higher-order component.</li>
+<li>Use composition and render a <code>&lt;Route&gt;</code></li>
+<li>Use the <code>context</code>.</li>
+</ol>
+
+<p>React Router is mostly a wrapper around the <a href=""https://github.com/ReactTraining/history"" rel=""noreferrer""><code>history</code></a> library. <code>history</code> handles interaction with the browser's <a href=""https://developer.mozilla.org/en-US/docs/Web/API/Window/history"" rel=""noreferrer""><code>window.history</code></a> for you with its browser and hash histories. It also provides a memory history which is useful for environments that don't have a global history. This is particularly useful in mobile app development (<code>react-native</code>) and unit testing with Node.</p>
+
+<p>A <code>history</code> instance has two methods for navigating: <code>push</code> and <code>replace</code>. If you think of the <code>history</code> as an array of visited locations, <code>push</code> will add a new location to the array and <code>replace</code> will replace the current location in the array with the new one. Typically you will want to use the <code>push</code> method when you are navigating.</p>
+
+<p>In earlier versions of React Router, you had to create your own <code>history</code> instance, but in v4 the <code>&lt;BrowserRouter&gt;</code>, <code>&lt;HashRouter&gt;</code>, and <code>&lt;MemoryRouter&gt;</code> components will create a browser, hash, and memory instances for you. React Router makes the properties and methods of the <code>history</code> instance associated with your router available through the context, under the <code>router</code> object.</p>
+
+<h3>1. Use the <code>withRouter</code> higher-order component</h3>
+
+<p>The <code>withRouter</code> higher-order component will inject the <code>history</code> object as a prop of the component. This allows you to access the <code>push</code> and <code>replace</code> methods without having to deal with the <code>context</code>.</p>
+
+<pre class=""lang-js prettyprint-override""><code>import { withRouter } from 'react-router-dom'
+// this also works with react-router-native
+
+const Button = withRouter(({ history }) =&gt; (
+  &lt;button
+    type='button'
+    onClick={() =&gt; { history.push('/new-location') }}
+  &gt;
+    Click Me!
+  &lt;/button&gt;
+))
+</code></pre>
+
+<h3>2. Use composition and render a <code>&lt;Route&gt;</code></h3>
+
+<p>The <code>&lt;Route&gt;</code> component isn't just for matching locations. You can render a pathless route and <strong>it will always match the current location</strong>. The <code>&lt;Route&gt;</code> component passes the same props as <code>withRouter</code>, so you will be able to access the <code>history</code> methods through the <code>history</code> prop.</p>
+
+<pre class=""lang-js prettyprint-override""><code>import { Route } from 'react-router-dom'
+
+const Button = () =&gt; (
+  &lt;Route render={({ history}) =&gt; (
+    &lt;button
+      type='button'
+      onClick={() =&gt; { history.push('/new-location') }}
+    &gt;
+      Click Me!
+    &lt;/button&gt;
+  )} /&gt;
+)
+</code></pre>
+
+<h3>3. Use the context*</h3>
+
+<p><strong>But you probably should not</strong></p>
+
+<p>The last option is one that you should only use if you feel comfortable working with React's <a href=""https://facebook.github.io/react/docs/context.html"" rel=""noreferrer"">context</a> model (React's Context API is stable as of v16).</p>
+
+<pre class=""lang-js prettyprint-override""><code>const Button = (props, context) =&gt; (
+  &lt;button
+    type='button'
+    onClick={() =&gt; {
+      // context.history.push === history.push
+      context.history.push('/new-location')
+    }}
+  &gt;
+    Click Me!
+  &lt;/button&gt;
+)
+
+// you need to specify the context type so that it
+// is available within the component
+Button.contextTypes = {
+  history: React.PropTypes.shape({
+    push: React.PropTypes.func.isRequired
+  })
+}
+</code></pre>
+
+<p>1 and 2 are the simplest choices to implement, so for most use cases, they are your best bets.</p>",,,20,,2017-02-08 18:39:41.177000+00:00,,2020-04-26 21:27:37.350000+00:00,2020-04-26 21:27:37.350000+00:00,,541208,,444829,31079081,2,1835,,
+16,46694321,,"<p>Here is a shorter way of achieving it:</p>
+
+<pre><code>let result = objArray.map(a =&gt; a.foo);
+</code></pre>
+
+<p>OR</p>
+
+<pre><code>let result = objArray.map(({ foo }) =&gt; foo)
+</code></pre>
+
+<p>You can also check <a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"" rel=""noreferrer""><code>Array.prototype.map()</code></a>.</p>",,,10,,2017-10-11 17:33:48.910000+00:00,,2020-04-19 13:50:51.927000+00:00,2020-04-19 13:50:51.927000+00:00,,806202,,3848424,19590865,2,1711,,
+17,37365955,,"<p><strong>Promise</strong></p>
+<p>A <code>Promise</code> handles a <strong>single event</strong> when an async operation completes or fails.</p>
+<p>Note: There are <code>Promise</code> libraries out there that support cancellation, but ES6 <code>Promise</code> doesn't so far.</p>
+<p><strong>Observable</strong></p>
+<p>An <code>Observable</code> is like a <strong><code>Stream</code></strong> (in many languages) and allows to pass zero or more events where the callback is called for each event.</p>
+<p>Often <code>Observable</code> is preferred over <code>Promise</code> because it provides the features of <code>Promise</code> and more. With <code>Observable</code> it doesn't matter if you want to handle 0, 1, or multiple events. You can utilize the same API in each case.</p>
+<p><code>Observable</code> also has the advantage over <code>Promise</code> to be <strong>cancellable</strong>. If the result of an HTTP request to a server or some other expensive async operation isn't needed anymore, the <code>Subscription</code> of an <code>Observable</code> allows to cancel the subscription, while a <code>Promise</code> will eventually call the success or failed callback even when you don't need the notification or the result it provides anymore.</p>
+<p>While a <code>Promise</code> starts immediately, an <code>Observable</code> only starts if you subscribe to it. This is why Observables are called lazy.</p>
+<p>Observable provides <strong>operators</strong> like <code>map</code>, <code>forEach</code>, <code>reduce</code>, ... similar to an array</p>
+<p>There are also powerful operators like <code>retry()</code>, or <code>replay()</code>, ... that are often quite handy.
+<a href=""https://rxjs-dev.firebaseapp.com/guide/operators"" rel=""noreferrer"">A list of operators shipped with rxjs</a></p>
+<p>Lazy execution allows to build up a chain of operators before the observable is executed by subscribing, to do a more declarative kind of programming.</p>",,,36,,2016-05-21 17:19:35.403000+00:00,,2020-11-03 18:00:37.750000+00:00,2020-11-03 18:00:37.750000+00:00,,217408,,217408,37364973,2,1705,,
+18,41974490,,"<p>Angular version 2+ provides several ways to add classes conditionally:</p>
+<p><strong>type one</strong></p>
+<pre><code>[class.my-class]=&quot;step === 'step1'&quot;
+</code></pre>
+<p><strong>type two</strong></p>
+<pre><code>[ngClass]=&quot;{'my-class': step === 'step1'}&quot;
+</code></pre>
+<p>and multiple option:</p>
+<pre><code>[ngClass]=&quot;{'my-class': step === 'step1', 'my-class2':step === 'step2' }&quot;
+</code></pre>
+<p><strong>type three</strong></p>
+<pre><code>[ngClass]=&quot;{1:'my-class1',2:'my-class2',3:'my-class4'}[step]&quot;
+</code></pre>
+<p><strong>type four</strong></p>
+<pre><code>[ngClass]=&quot;(step=='step1')?'my-class1':'my-class2'&quot;
+</code></pre>",,,10,,2017-02-01 07:50:31.080000+00:00,,2020-12-20 00:32:09.433000+00:00,2020-12-20 00:32:09.433000+00:00,,7795731,,5184681,35269179,2,1673,,
+19,41573588,,"<h1>PyPI packages not in the standard library:</h1>
+
+<ul>
+<li><p><strong><a href=""https://pypi.python.org/pypi/virtualenv"" rel=""noreferrer""><code>virtualenv</code></a></strong> is a very popular tool that creates isolated Python environments for Python libraries. If you're not familiar with this tool, I highly recommend learning it, as it is a very useful tool, and I'll be making comparisons to it for the rest of this answer.</p>
+
+<p>It works by installing a bunch of files in a directory (eg: <code>env/</code>), and then modifying the <code>PATH</code> environment variable to prefix it with a custom <code>bin</code> directory (eg: <code>env/bin/</code>). An exact copy of the <code>python</code> or <code>python3</code> binary is placed in this directory, but Python is programmed to look for libraries relative to its path first, in the environment directory. It's not part of Python's standard library, but is officially blessed by the PyPA (Python Packaging Authority). Once activated, you can install packages in the virtual environment using <code>pip</code>.</p></li>
+<li><p><strong><a href=""https://github.com/yyuu/pyenv"" rel=""noreferrer""><code>pyenv</code></a></strong> is used to isolate Python versions. For example, you may want to test your code against Python 2.7, 3.6, 3.7 and 3.8, so you'll need a way to switch between them. Once activated, it prefixes the <code>PATH</code> environment variable with <code>~/.pyenv/shims</code>, where there are special files matching the Python commands (<code>python</code>, <code>pip</code>). These are not copies of the Python-shipped commands; they are special scripts that decide on the fly which version of Python to run based on the <code>PYENV_VERSION</code> environment variable, or the <code>.python-version</code> file, or the <code>~/.pyenv/version</code> file. <code>pyenv</code> also makes the process of downloading and installing multiple Python versions easier, using the command <code>pyenv install</code>.</p></li>
+<li><p><strong><a href=""https://github.com/yyuu/pyenv-virtualenv"" rel=""noreferrer""><code>pyenv-virtualenv</code></a></strong> is a plugin for <code>pyenv</code> by the same author as <code>pyenv</code>, to allow you to use <code>pyenv</code> and <code>virtualenv</code> at the same time conveniently. However, if you're using Python 3.3 or later, <code>pyenv-virtualenv</code> will try to run <code>python -m venv</code> if it is available, instead of <code>virtualenv</code>. You can use <code>virtualenv</code> and <code>pyenv</code> together without <code>pyenv-virtualenv</code>, if you don't want the convenience features.</p></li>
+<li><p><strong><a href=""https://pypi.python.org/pypi/virtualenvwrapper"" rel=""noreferrer""><code>virtualenvwrapper</code></a></strong> is a set of extensions to <code>virtualenv</code> (see <a href=""http://virtualenvwrapper.readthedocs.io/en/latest/"" rel=""noreferrer"">docs</a>). It gives you commands like <code>mkvirtualenv</code>, <code>lssitepackages</code>, and especially <code>workon</code> for switching between different <code>virtualenv</code> directories. This tool is especially useful if you want multiple <code>virtualenv</code> directories.</p></li>
+<li><p><strong><a href=""https://github.com/yyuu/pyenv-virtualenvwrapper"" rel=""noreferrer""><code>pyenv-virtualenvwrapper</code></a></strong> is a plugin for <code>pyenv</code> by the same author as <code>pyenv</code>, to conveniently integrate <code>virtualenvwrapper</code> into <code>pyenv</code>.</p></li>
+<li><p><strong><a href=""https://pypi.python.org/pypi/pipenv"" rel=""noreferrer""><code>pipenv</code></a></strong> aims to combine <code>Pipfile</code>, <code>pip</code> and <code>virtualenv</code> into one command on the command-line. The <code>virtualenv</code> directory typically gets placed in <code>~/.local/share/virtualenvs/XXX</code>, with <code>XXX</code> being a hash of the path of the project directory. This is different from <code>virtualenv</code>, where the directory is typically in the current working directory. <code>pipenv</code> is meant to be used when developing Python applications (as opposed to libraries). There are alternatives to <code>pipenv</code>, such as <code>poetry</code>, which I won't list here since this question is only about the packages that are similarly named.</p></li>
+</ul>
+
+<h1>Standard library:</h1>
+
+<ul>
+<li><p><strong><code>pyvenv</code></strong> is a script shipped with Python 3 but <a href=""https://docs.python.org/dev/whatsnew/3.6.html#id8"" rel=""noreferrer"">deprecated in Python 3.6</a> as it had problems (not to mention the confusing name). In Python 3.6+, the exact equivalent is <code>python3 -m venv</code>.</p></li>
+<li><p><strong><a href=""https://docs.python.org/3/library/venv.html"" rel=""noreferrer""><code>venv</code></a></strong> is a package shipped with Python 3, which you can run using <code>python3 -m venv</code> (although for some reason some distros separate it out into a separate distro package, such as <code>python3-venv</code> on Ubuntu/Debian). It serves the same purpose as <code>virtualenv</code>, but only has a subset of its features (<a href=""https://virtualenv.pypa.io/en/latest/"" rel=""noreferrer"">see a comparison here</a>). <code>virtualenv</code> continues to be more popular than <code>venv</code>, especially since the former supports both Python 2 and 3.</p></li>
+</ul>
+
+<h1>Recommendation for beginners:</h1>
+
+<p>This is my personal recommendation for beginners: start by learning <a href=""https://pypi.org/project/virtualenv/"" rel=""noreferrer""><code>virtualenv</code></a> and <a href=""https://pypi.org/project/pip/"" rel=""noreferrer""><code>pip</code></a>, tools which work with both Python 2 and 3 and in a variety of situations, and pick up other tools once you start needing them.</p>",,,26,,2017-01-10 16:27:43.207000+00:00,,2020-05-29 08:14:45.480000+00:00,2020-05-29 08:14:45.480000+00:00,,247696,,247696,41573587,2,1643,,
+20,39152110,,"<p><strong>RC5 FIX</strong></p>
+
+<p>You need to <code>import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms'</code> in your controller and add it to <code>directives</code> in <code>@Component</code>. That will fix the problem.</p>
+
+<p>After you fix that, you will probably get another error because you didn't add <code>formControlName=""name""</code> to your input in form.</p>
+
+<p><strong>RC6/RC7/Final release FIX</strong></p>
+
+<p>To fix this error, you just need to import <code>ReactiveFormsModule</code> from <code>@angular/forms</code> in your module. Here's the example of a basic module with <code>ReactiveFormsModule</code> import:</p>
+
+<pre><code>import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppComponent }  from './app.component';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+</code></pre>
+
+<p>To explain further, <code>formGroup</code> is a selector for directive named <code>FormGroupDirective</code> that is a part of <code>ReactiveFormsModule</code>, hence the need to import it. It is used to bind an existing <code>FormGroup</code> to a DOM element. You can read more about it on <a href=""https://angular.io/docs/ts/latest/api/forms/index/FormGroupDirective-directive.html"">Angular's official docs page</a>.</p>",,,13,,2016-08-25 18:11:27.123000+00:00,,2016-09-28 00:13:44+00:00,2016-09-28 00:13:44+00:00,,6677986,,6677986,39152071,2,1613,,
+21,38004193,,"<p>Try deleting <code>index.lock</code> file in your <code>.git</code> directory.</p>
+
+<p><code>rm -f .git/index.lock</code></p>
+
+<p>Such problems generally occur when you execute two <code>git</code> commands simultaneously; maybe one from the command prompt and one from an IDE.</p>",,,18,,2016-06-24 01:05:37.173000+00:00,,2018-10-10 10:05:11.687000+00:00,2018-10-10 10:05:11.687000+00:00,,636987,,4498523,38004148,2,1594,,
+22,44781228,,"<h3>Steps for deleting a branch:</h3>
+
+<p>For deleting the <strong>remote branch:</strong></p>
+
+<pre><code>git push origin --delete &lt;your_branch&gt;
+</code></pre>
+
+<p>For deleting the <strong>local branch</strong>, you have <strong>three ways</strong>:</p>
+
+<pre><code>1: git branch -D &lt;branch_name&gt;
+
+2: git branch --delete --force &lt;branch_name&gt;  # Same as -D
+
+3: git branch --delete  &lt;branch_name&gt;         # Error on unmerge
+</code></pre>
+
+<p><strong>Explain:</strong> OK, just explain what's going on here!</p>
+
+<p>Simply do <code>git push origin --delete</code> to <strong>delete your remote branch <em>only</em></strong>, add the name of the branch at the end and this will delete and <strong>push it to remote</strong> at the same time...</p>
+
+<p>Also, <code>git branch -D</code>, which simply delete the local branch <strong><em>only</em></strong>!...</p>
+
+<p><code>-D</code> stands for <code>--delete --force</code> which will delete the branch even it's not merged (force delete), but you can also use <code>-d</code> which stands for <code>--delete</code> which throw an error respective of the branch merge status...</p>
+
+<p>I also create the <strong>image below</strong> to show the steps:</p>
+
+<p><a href=""https://i.stack.imgur.com/AKWYx.jpg"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/AKWYx.jpg"" alt=""Delete a remote and local branch in git""></a></p>",,,4,,2017-06-27 13:13:15.943000+00:00,,2020-04-11 11:59:19.620000+00:00,2020-04-11 11:59:19.620000+00:00,,63550,,5423108,2003505,2,1580,,
+23,39461256,,"<p>Try this:</p>
+
+<p>1- From Xcode menu open: Product > Scheme > Edit Scheme </p>
+
+<p>2- On your Environment Variables set <code>OS_ACTIVITY_MODE</code> = <code>disable</code></p>
+
+<p><a href=""https://i.stack.imgur.com/p7BlV.png""><img src=""https://i.stack.imgur.com/p7BlV.png"" alt=""Screenshot""></a></p>",,,24,,2016-09-13 02:11:47.247000+00:00,,2016-11-01 14:38:00.780000+00:00,2016-11-01 14:38:00.780000+00:00,,1496935,,1496935,37800790,2,1543,,
+24,36882426,,"<p>Try this one </p>
+
+<p>Open Visual Studio Code and press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>F1</kbd> then type <code>Shell</code> in command palette now you are able to find this option like <code>Shell Command : Install code in PATH</code> from suggested list in command palette. Select that options.</p>
+
+<p><a href=""https://i.stack.imgur.com/Ng886.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/Ng886.png"" alt=""Open VSCode via Terminal/Command Prompt""></a></p>
+
+<p>That's it.</p>
+
+<p>Now open your terminal type.</p>
+
+<pre><code>$ code .
+</code></pre>",,,6,,2016-04-27 06:52:03.290000+00:00,,2020-05-26 07:32:17.400000+00:00,2020-05-26 07:32:17.400000+00:00,,8836784,,777147,30065227,2,1541,,
+25,39633428,,"<p><strong>Step 1:</strong></p>
+<p>Open up cmd.exe (note: you <em>may</em> need to run it as an administrator, but this isn't always necessary), then run the below command:</p>
+<blockquote>
+<p><code>netstat -ano | findstr :&lt;PORT&gt;</code></p>
+</blockquote>
+<p>(Replace <code>&lt;PORT&gt;</code> with the port number you want, but keep the colon)</p>
+<p><img src=""https://i.stack.imgur.com/lEpCZ.png"" alt="""" /></p>
+<p>The area circled in red shows the PID (process identifier). Locate the PID of the process that's using the port you want.</p>
+<p><strong>Step 2:</strong></p>
+<p>Next, run the following command:</p>
+<blockquote>
+<p><code>taskkill /PID &lt;PID&gt; /F</code></p>
+</blockquote>
+<p>(No colon this time)</p>
+<p><img src=""https://i.stack.imgur.com/8k64x.png"" alt="""" /></p>
+<p>Lastly, you can check whether the operation succeeded or not by re-running the command in &quot;Step 1&quot;. If it was successful you shouldn't see any more search results for that port number.</p>",,,11,,2016-09-22 07:59:14.253000+00:00,,2020-07-17 11:31:27.323000+00:00,2020-07-17 11:31:27.323000+00:00,,4008392,,3626371,39632667,2,1523,,
+26,50719379,,"<p>The issue might be occurring because of multiple Plist or other files within App-</p>
+
+<p><em>Solution -> Open target -> Build phases > Copy Bundle Resources</em> and remove <code>info.plist</code> from there.</p>
+
+<p><a href=""https://i.stack.imgur.com/whT0P.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/whT0P.png"" alt=""enter image description here""></a> </p>
+
+<p><strong>Note:</strong> If you have developed a watch app too then you will have to remove the plist from the watch and watch-extension too.</p>",,,34,,2018-06-06 11:32:11.030000+00:00,,2019-02-19 16:03:32.950000+00:00,2019-02-19 16:03:32.950000+00:00,,3024579,,3024579,50718018,2,1481,,
+27,39604469,,"<h3>1. Make sure you drag Visual Studio Code app into the -Applications- folder</h3>
+<p><em>Otherwise (as noted in the comments) you'll have to go through this process again after reboot</em></p>
+<hr />
+<h3>2. Next, open Visual Studio Code</h3>
+<p>Open the <strong>Command Palette</strong> via <strong>(⇧⌘P)</strong> and type <code>shell command</code> to find the Shell Command:</p>
+<h3>&gt; Install 'code' command in PATH** command.</h3>
+<p><a href=""https://i.stack.imgur.com/3gYHb.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/3gYHb.png"" alt=""![Command Palette"" /></a></p>
+<blockquote>
+<p>After executing the command, restart the terminal for the new $PATH
+value to take effect. You'll be able to simply type 'code .' in any
+folder to start editing files in that folder. The &quot;.&quot; Simply means &quot;current directory&quot;</p>
+</blockquote>
+<p>(Source: <a href=""https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line"" rel=""noreferrer"">VS Code documentation</a>)</p>
+<hr />
+<p><strong>NOTE:</strong> If you're running a build based off the OSS repository... You will need to run <code>code-oss .</code> <a href=""https://stackoverflow.com/users/1366137/dzeimsas-zvirblis"">@Dzeimsas Zvirblis</a></p>",,,9,,2016-09-20 22:06:40.673000+00:00,,2020-08-17 13:22:48.620000+00:00,2020-08-17 13:22:48.620000+00:00,,1492009,,1492009,29955500,2,1456,,
+28,56996020,,"<h2>app/build.gradle</h2>
+
+<pre><code>android {
+    ...
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+</code></pre>
+
+<p>GL</p>
+
+<p><a href=""https://developer.android.com/studio/write/java8-support"" rel=""noreferrer"">Use Java 8 language features</a></p>",,,18,,2019-07-11 19:21:58.390000+00:00,,2020-02-17 13:38:15.977000+00:00,2020-02-17 13:38:15.977000+00:00,,5279996,,5279996,48988778,2,1445,,
+29,36358502,,"<p>To update the local list of remote branches:</p>
+
+<pre><code>git remote update origin --prune
+</code></pre>
+
+<p>To show all local and remote branches that (local) Git knows about</p>
+
+<pre><code>git branch -a
+</code></pre>",,,11,,2016-04-01 14:09:03.513000+00:00,,2019-11-23 15:09:39.717000+00:00,2019-11-23 15:09:39.717000+00:00,,2865345,,5991910,36358265,2,1439,,
+30,38858040,,"<p>If your <code>targetSdkVersion &gt;= 24</code>, then we have to use <code>FileProvider</code> class to give access to the particular file or folder to make them accessible for other apps. We create our own class inheriting <code>FileProvider</code> in order to make sure our FileProvider doesn't conflict with FileProviders declared in imported dependencies as described <a href=""https://commonsware.com/blog/2017/06/27/fileprovider-libraries.html"" rel=""noreferrer"">here</a>.</p>
+<p>Steps to replace <code>file://</code> URI with <code>content://</code> URI:</p>
+<ul>
+<li>Add a FileProvider <code>&lt;provider&gt;</code> tag in <code>AndroidManifest.xml</code> under <code>&lt;application&gt;</code> tag. Specify a unique authority for the <code>android:authorities</code> attribute to avoid conflicts, imported dependencies might specify <code>${applicationId}.provider</code> and other commonly used authorities.</li>
+</ul>
+<pre class=""lang-xml prettyprint-override""><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    ...
+    &lt;application
+        ...
+        &lt;provider
+            android:name=&quot;androidx.core.content.FileProvider&quot;
+            android:authorities=&quot;${applicationId}.provider&quot;
+            android:exported=&quot;false&quot;
+            android:grantUriPermissions=&quot;true&quot;&gt;
+            &lt;meta-data
+                android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot;
+                android:resource=&quot;@xml/provider_paths&quot; /&gt;
+        &lt;/provider&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+<ul>
+<li>Then create a <code>provider_paths.xml</code> file in <code>res/xml</code> folder. A folder may be needed to be created if it doesn't exist yet. The content of the file is shown below. It describes that we would like to share access to the External Storage at root folder <code>(path=&quot;.&quot;)</code> with the name <strong>external_files</strong>.</li>
+</ul>
+<pre class=""lang-xml prettyprint-override""><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;paths&gt;
+    &lt;external-path name=&quot;external_files&quot; path=&quot;.&quot;/&gt;
+&lt;/paths&gt;
+</code></pre>
+<ul>
+<li><p>The final step is to change the line of code below in</p>
+<pre><code> Uri photoURI = Uri.fromFile(createImageFile());
+</code></pre>
+<p>to</p>
+<pre><code> Uri photoURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + &quot;.provider&quot;, createImageFile());
+</code></pre>
+</li>
+<li><p><strong>Edit:</strong> If you're using an intent to make the system open your file, you may need to add the following line of code:</p>
+<pre><code> intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+</code></pre>
+</li>
+</ul>
+<p>Please refer to the full code and solution that have been explained <a href=""https://inthecheesefactory.com/blog/how-to-share-access-to-file-with-fileprovider-on-android-nougat/en"" rel=""noreferrer"">here.</a></p>",,,37,,2016-08-09 18:33:21.063000+00:00,,2020-11-28 15:16:41.997000+00:00,2020-11-28 15:16:41.997000+00:00,,7619808,,6696517,38200282,2,1427,,
+31,40107973,,"<p>In my case, the error was just <code>fatal: refusing to merge unrelated histories</code> on every try, especially the first pull request after remotely adding a Git repository.</p>
+
+<p>Using the <code>--allow-unrelated-histories</code> flag worked with a pull request in this way:</p>
+
+<pre><code>git pull origin branchname --allow-unrelated-histories
+</code></pre>",,,11,,2016-10-18 12:13:29.207000+00:00,,2019-06-05 11:30:37.063000+00:00,2019-06-05 11:30:37.063000+00:00,,63550,,3151337,37937984,2,1399,,
+32,43574427,,"<p>The JAXB APIs are considered to be Java EE APIs and therefore are no longer contained on the default classpath in Java SE 9. In Java 11, they are completely removed from the JDK.</p>
+<p>Java 9 introduces the concepts of modules, and by default, the <code>java.se</code> aggregate module is available on the classpath (or rather, module-path). As the name implies, the <code>java.se</code> aggregate module does <em>not</em> include the Java EE APIs that have been traditionally bundled with Java 6/7/8.</p>
+<p>Fortunately, these Java EE APIs that were provided in JDK 6/7/8 are still in the JDK, but they just aren't on the classpath by default. The extra Java EE APIs are provided in the following modules:</p>
+<pre><code>java.activation
+java.corba
+java.transaction
+java.xml.bind  &lt;&lt; This one contains the JAXB APIs
+java.xml.ws
+java.xml.ws.annotation
+</code></pre>
+<p><strong>Quick and dirty solution: (JDK 9/10 only)</strong></p>
+<p>To make the JAXB APIs available at runtime, specify the following command-line option:</p>
+<p><code>--add-modules java.xml.bind</code></p>
+<p><strong>But I still need this to work with Java 8!!!</strong></p>
+<p>If you try specifying <code>--add-modules</code> with an older JDK, it will blow up because it's an unrecognized option. I suggest one of two options:</p>
+<ol>
+<li>You can set any Java 9+ only options using the <code>JDK_JAVA_OPTIONS</code> environment variable. This environment variable is <a href=""https://www.oracle.com/technetwork/java/javase/9-new-features-3745613.html#JDK-8170832"" rel=""noreferrer"">automatically read</a> by the <code>java</code> launcher for Java 9+.</li>
+<li>You can add the <code>-XX:+IgnoreUnrecognizedVMOptions</code> to make the JVM silently ignore unrecognized options, instead of blowing up. But beware! Any other command-line arguments you use will no longer be validated for you by the JVM. This option works with Oracle/OpenJDK as well as IBM JDK (as of JDK 8sr4).</li>
+</ol>
+<hr />
+<p><strong>Alternate quick solution: (JDK 9/10 only)</strong></p>
+<p>Note that you can make all of the above Java EE modules available at run time by specifying the <code>--add-modules java.se.ee</code> option. The <code>java.se.ee</code> module is an aggregate module that includes <code>java.se.ee</code> as well as the above Java EE API modules. Note, this <strong>doesn't work on Java 11</strong> because <code>java.se.ee</code> was removed in Java 11.</p>
+<hr />
+<h2>Proper long-term solution: (JDK 9 and beyond)</h2>
+<p>The Java EE API modules listed above are all marked <code>@Deprecated(forRemoval=true)</code> because they are <a href=""http://openjdk.java.net/jeps/320"" rel=""noreferrer"">scheduled for removal</a> in <a href=""http://openjdk.java.net/projects/jdk/11/"" rel=""noreferrer"">Java 11</a>. So the <code>--add-module</code> approach will no longer work in Java 11 out-of-the-box.</p>
+<p>What you will need to do in Java 11 and forward is include your own copy of the Java EE APIs on the classpath or module path. For example, you can add the JAX-B APIs as a Maven dependency like this:</p>
+<pre><code>&lt;!-- API, java.xml.bind module --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;jakarta.xml.bind&lt;/groupId&gt;
+    &lt;artifactId&gt;jakarta.xml.bind-api&lt;/artifactId&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Runtime, com.sun.xml.bind module --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.glassfish.jaxb&lt;/groupId&gt;
+    &lt;artifactId&gt;jaxb-runtime&lt;/artifactId&gt;
+    &lt;version&gt;2.3.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>See the <a href=""https://eclipse-ee4j.github.io/jaxb-ri/"" rel=""noreferrer"">JAXB Reference Implementation page</a> for more details on JAXB.</p>
+<p>For full details on Java modularity, see <a href=""http://openjdk.java.net/jeps/261"" rel=""noreferrer"">JEP 261: Module System</a></p>
+<p><strong>For Gradle or Android Studio developer: (JDK 9 and beyond)</strong></p>
+<p>Add the following dependencies to your <code>build.gradle</code> file:</p>
+<pre><code>dependencies {
+    // JAX-B dependencies for JDK 9+
+    implementation &quot;jakarta.xml.bind:jakarta.xml.bind-api:2.3.2&quot;
+    implementation &quot;org.glassfish.jaxb:jaxb-runtime:2.3.2&quot;
+}
+</code></pre>",,,30,,2017-04-23 17:40:23.460000+00:00,,2020-09-08 11:47:07.783000+00:00,2020-09-08 11:47:07.783000+00:00,,1746118,,3814029,43574426,2,1397,,
+33,41407246,,"<p>Below you can find colors reference of text to command when running node.js application:</p>
+
+<pre><code>console.log('\x1b[36m%s\x1b[0m', 'I am cyan');  //cyan
+console.log('\x1b[33m%s\x1b[0m', stringToMakeYellow);  //yellow
+</code></pre>
+
+<p>Note <code>%s</code> is where in the string (the second argument) gets injected. <code>\x1b[0m</code> resets the terminal color so it doesn't continue to be the chosen color anymore after this point.</p>
+
+<p><strong>Colors reference</strong></p>
+
+<pre><code>Reset = ""\x1b[0m""
+Bright = ""\x1b[1m""
+Dim = ""\x1b[2m""
+Underscore = ""\x1b[4m""
+Blink = ""\x1b[5m""
+Reverse = ""\x1b[7m""
+Hidden = ""\x1b[8m""
+
+FgBlack = ""\x1b[30m""
+FgRed = ""\x1b[31m""
+FgGreen = ""\x1b[32m""
+FgYellow = ""\x1b[33m""
+FgBlue = ""\x1b[34m""
+FgMagenta = ""\x1b[35m""
+FgCyan = ""\x1b[36m""
+FgWhite = ""\x1b[37m""
+
+BgBlack = ""\x1b[40m""
+BgRed = ""\x1b[41m""
+BgGreen = ""\x1b[42m""
+BgYellow = ""\x1b[43m""
+BgBlue = ""\x1b[44m""
+BgMagenta = ""\x1b[45m""
+BgCyan = ""\x1b[46m""
+BgWhite = ""\x1b[47m""
+</code></pre>
+
+<p>EDIT:</p>
+
+<p>For example, <code>\x1b[31m</code> is an <em>escape sequence</em> that will be intercepted by your terminal and instructs it to switch to the red color. In fact, <code>\x1b</code> is the code for the <strong>non-printable control character</strong> <code>escape</code>. Escape sequences dealing only with colors and styles are also known as <strong><a href=""https://en.wikipedia.org/wiki/ANSI_escape_code#Colors"" rel=""noreferrer"">ANSI escape code</a></strong> and are standardized, so therefore they (should) work on any platform.</p>
+
+<p>Wikipedia has a nice comparison of how different terminals display colors 
+<a href=""https://en.wikipedia.org/wiki/ANSI_escape_code#Colors"" rel=""noreferrer"">https://en.wikipedia.org/wiki/ANSI_escape_code#Colors</a></p>",,,10,,2016-12-31 09:53:38.580000+00:00,,2018-10-19 17:46:05.030000+00:00,2018-10-19 17:46:05.030000+00:00,,457245,,632524,9781218,2,1393,,
+34,44493379,,"<p><strong>tl;dr</strong></p>
+<p>Just replace:</p>
+<ul>
+<li><code>compile</code> with <code>implementation</code> (if you don't need transitivity) or <code>api</code> (if you need transitivity)</li>
+<li><code>testCompile</code> with <code>testImplementation</code></li>
+<li><code>debugCompile</code> with <code>debugImplementation</code></li>
+<li><code>androidTestCompile</code> with <code>androidTestImplementation</code></li>
+<li><code>compileOnly</code> is still valid. It was added in 3.0 to replace provided and not compile. (<code>provided</code> introduced when Gradle didn't have a configuration name for that use-case and named it after Maven's provided scope.)</li>
+</ul>
+<p>It is one of the breaking changes coming with <a href=""https://developer.android.com/studio/releases/gradle-plugin#3-0-0"" rel=""noreferrer"">Android Gradle plugin 3.0</a> that Google <a href=""https://youtu.be/7ll-rkLCtyk?t=22m20s"" rel=""noreferrer"">announced at IO17</a>.</p>
+<p>The <code>compile</code> configuration is <a href=""https://youtu.be/7ll-rkLCtyk?t=29m18s"" rel=""noreferrer"">now deprecated</a> and should be replaced by <code>implementation</code> or <code>api</code></p>
+<p>From the <a href=""https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation"" rel=""noreferrer"">Gradle documentation</a>:</p>
+<blockquote>
+<pre><code>dependencies {
+    api 'commons-httpclient:commons-httpclient:3.1'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+}
+</code></pre>
+<p>Dependencies appearing in the <code>api</code> configurations will be
+transitively exposed to consumers of the library, and as such will
+appear on the compile classpath of consumers.</p>
+<p>Dependencies found in the <code>implementation</code> configuration will, on the
+other hand, not be exposed to consumers, and therefore not leak into
+the consumers' compile classpath. This comes with several benefits:</p>
+<ul>
+<li>dependencies do not leak into the compile classpath of consumers anymore, so you will never accidentally depend on a transitive
+dependency</li>
+<li>faster compilation thanks to reduced classpath size</li>
+<li>less recompilations when implementation dependencies change: consumers would not need to be recompiled</li>
+<li>cleaner publishing: when used in conjunction with the new maven-publish plugin, Java libraries produce POM files that
+distinguish exactly between what is required to compile against the
+library and what is required to use the library at runtime (in other
+words, don't mix what is needed to compile the library itself and what
+is needed to compile against the library).</li>
+</ul>
+<p><strong>The compile configuration still exists, but should not be used as it will not offer the guarantees that the <code>api</code> and <code>implementation</code> configurations provide.</strong></p>
+</blockquote>
+<hr />
+<p><strong>Note:</strong> if you are only using a library in your app module -the common case- you won't notice any difference.<br />
+you will only see the difference if you have a complex project with modules depending on each other, or you are creating a library.</p>",,,29,,2017-06-12 07:13:13.100000+00:00,,2020-09-07 14:46:00.517000+00:00,2020-09-07 14:46:00.517000+00:00,,9298629,,3998402,44493378,2,1390,,
+35,42742610,,"<p>Some systems like Ubuntu, mysql is using by default the <a href=""https://dev.mysql.com/doc/mysql-security-excerpt/5.5/en/socket-pluggable-authentication.html"" rel=""noreferrer"">UNIX auth_socket plugin</a>.</p>
+<p>Basically means that: <em>db_users using it, will be &quot;auth&quot; by <strong>the system user credentias.</strong></em> You can see if your <code>root</code> user is set up like this by doing the following:</p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; SELECT User, Host, plugin FROM mysql.user;
+
++------------------+-----------------------+
+| User             | plugin                |
++------------------+-----------------------+
+| root             | auth_socket           |
+| mysql.sys        | mysql_native_password |
+| debian-sys-maint | mysql_native_password |
++------------------+-----------------------+
+</code></pre>
+<p>As you can see in the query, the <code>root</code> user is using the <code>auth_socket</code> plugin</p>
+<p>There are 2 ways to solve this:</p>
+<ol>
+<li>You can set the root user to use the <code>mysql_native_password</code> plugin</li>
+<li>You can create a new <code>db_user</code> with you <code>system_user</code> (recommended)</li>
+</ol>
+<p><strong>Option 1:</strong></p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; exit;
+
+$ sudo service mysql restart
+</code></pre>
+<p><strong>Option 2:</strong> (replace YOUR_SYSTEM_USER with the username you have)</p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; CREATE USER 'YOUR_SYSTEM_USER'@'localhost' IDENTIFIED BY 'YOUR_PASSWD';
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'YOUR_SYSTEM_USER'@'localhost';
+mysql&gt; UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; exit;
+
+$ sudo service mysql restart
+</code></pre>
+<p>Remember that if you use option #2 you'll have to connect to mysql as your system username (<code>mysql -u YOUR_SYSTEM_USER</code>)</p>
+<p><strong>Note:</strong> On some systems (e.g., Debian stretch) 'auth_socket' plugin is called <a href=""https://mariadb.com/kb/en/library/authentication-plugin-unix-socket/"" rel=""noreferrer"">'unix_socket'</a>, so the corresponding SQL command should be: <code>UPDATE user SET plugin='unix_socket' WHERE User='YOUR_SYSTEM_USER';</code></p>
+<p><strong>Update:</strong>
+from @andy's comment seems that mysql 8.x.x updated/replaced the <code>auth_socket</code> for <code>caching_sha2_password</code> I don't have a system setup with mysql 8.x.x to test this, however the steps above should help you to understand the issue. Here's the reply:</p>
+<p><em>One change as of MySQL 8.0.4 is that the new default authentication plugin is 'caching_sha2_password'. The new 'YOUR_SYSTEM_USER' will have this auth plugin and you can login from the bash shell now with &quot;mysql -u YOUR_SYSTEM_USER -p&quot; and provide the password for this user on the prompt. No need for the &quot;UPDATE user SET plugin&quot; step. For the 8.0.4 default auth plugin update see, <a href=""https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/"" rel=""noreferrer"">https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/</a></em></p>",,,27,,2017-03-12 01:17:59.197000+00:00,,2020-12-16 19:59:36.867000+00:00,2020-12-16 19:59:36.867000+00:00,,2580302,,2580302,39281594,2,1347,,
+36,36033983,,"<p><strong>Solution 1:</strong>
+Remove <strong>ONLY_FULL_GROUP_BY</strong> from mysql console</p>
+
+<pre><code>mysql &gt; SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+</code></pre>
+
+<p>you can read more <a href=""http://johnemb.blogspot.com.ng/2014/09/adding-or-removing-individual-sql-modes.html"" rel=""noreferrer"">here</a> </p>
+
+<p><strong>Solution 2:</strong> Remove <strong>ONLY_FULL_GROUP_BY</strong> from phpmyadmin</p>
+
+<ul>
+<li>Open phpmyadmin &amp; select localhost  </li>
+<li>Click on menu Variables &amp; scroll down for sql mode</li>
+<li>Click on edit button to change the values &amp; remove <strong>ONLY_FULL_GROUP_BY</strong> &amp; click on save.
+<a href=""https://i.stack.imgur.com/5CQdo.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/5CQdo.png"" alt=""enter image description here""></a></li>
+</ul>",,,25,,2016-03-16 11:11:40.887000+00:00,,2018-02-01 08:35:08.317000+00:00,2018-02-01 08:35:08.317000+00:00,,4398075,,4398075,23921117,2,1305,,
+37,35979751,,"<h3>Let's start by explaining what a tag in git is</h3>
+<p><a href=""https://i.stack.imgur.com/yRIIc.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/yRIIc.png"" alt=""enter image description here"" /></a></p>
+<blockquote>
+<p>A tag is used to label and mark a specific <strong>commit</strong> in the history.<br />
+It is usually used to mark release points (eg. v1.0, etc.).</p>
+</blockquote>
+<blockquote>
+<p>Although a tag may appear similar to a branch, <strong>a tag, however, does not change</strong>. It points <strong>directly</strong> to a <strong>specific commit</strong> in the history and will not change unless explicitly updated.</p>
+</blockquote>
+<p><a href=""https://i.stack.imgur.com/Xy20U.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/Xy20U.png"" alt=""enter image description here"" /></a></p>
+<hr />
+<p>You will not be able to checkout the tags if it's not locally in your repository so first, you have to <code>fetch</code> the tags to your local repository.</p>
+<p><strong>First, make sure that the tag exists locally by doing</strong></p>
+<pre><code># --all will fetch all the remotes.
+# --tags will fetch all tags as well
+$ git fetch --all --tags --prune
+</code></pre>
+<p><strong>Then check out the tag by running</strong></p>
+<pre><code>$ git checkout tags/&lt;tag_name&gt; -b &lt;branch_name&gt;
+</code></pre>
+<p>Instead of <code>origin</code> use the <code>tags/</code> prefix.</p>
+<hr />
+<p>In this sample you have 2 tags version 1.0 &amp; version 1.1 you can check them out with any of the following:</p>
+<pre><code>$ git checkout A  ...
+$ git checkout version 1.0  ...
+$ git checkout tags/version 1.0  ...
+</code></pre>
+<p>All of the above will do the same since the tag is only a pointer to a given commit.</p>
+<p><a href=""https://i.stack.imgur.com/X4lvg.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/X4lvg.png"" alt=""enter image description here"" /></a><br />
+origin: <a href=""https://backlog.com/git-tutorial/img/post/stepup/capture_stepup4_1_1.png"" rel=""noreferrer"">https://backlog.com/git-tutorial/img/post/stepup/capture_stepup4_1_1.png</a></p>
+<hr />
+<h1>How to see the list of all tags?</h1>
+<pre><code># list all tags
+$ git tag
+
+# list all tags with given pattern ex: v-
+$ git tag --list 'v-*'
+</code></pre>
+<hr />
+<h1>How to create tags?</h1>
+<p>There are 2 ways to create a tag:</p>
+<pre><code># lightweight tag 
+$ git tag 
+
+# annotated tag
+$ git tag -a
+</code></pre>
+<p>The difference between the 2 is that when creating an annotated tag you can add metadata as you have in a git commit:<br />
+name, e-mail, date, comment &amp; signature</p>
+<p><a href=""https://i.stack.imgur.com/EwBtF.jpg"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/EwBtF.jpg"" alt=""enter image description here"" /></a></p>
+<h1>How to delete tags?</h1>
+<h3>Delete a local tag</h3>
+<pre><code>$ git tag -d &lt;tag_name&gt;
+Deleted tag &lt;tag_name&gt; (was 000000)
+</code></pre>
+<p><strong>Note:</strong> If you try to delete a non existig Git tag, there will be see the following error:</p>
+<pre><code>$ git tag -d &lt;tag_name&gt;
+error: tag '&lt;tag_name&gt;' not found.
+</code></pre>
+<h3>Delete remote tags</h3>
+<pre><code># Delete a tag from the server with push tags
+$ git push --delete origin &lt;tag name&gt;
+</code></pre>
+<h1>How to clone a specific tag?</h1>
+<p>In order to grab the content of a given tag, you can use the <code>checkout</code> command. As explained above tags are like any other commits so we can use <code>checkout</code> and instead of using the SHA-1 simply replacing it with the <em>tag_name</em></p>
+<p><strong>Option 1:</strong></p>
+<pre><code># Update the local git repo with the latest tags from all remotes
+$ git fetch --all
+
+# checkout the specific tag
+$ git checkout tags/&lt;tag&gt; -b &lt;branch&gt;
+</code></pre>
+<p><strong>Option 2:</strong></p>
+<h3>Using the clone command</h3>
+<p>Since git supports <em>shallow clone</em> by adding the <code>--branch</code> to the clone command we can use the tag name instead of the branch name. Git knows how to &quot;translate&quot; the given SHA-1 to the relevant commit</p>
+<pre><code># Clone a specific tag name using git clone 
+$ git clone &lt;url&gt; --branch=&lt;tag_name&gt;
+</code></pre>
+<blockquote>
+<p><strong>git clone --branch=</strong></p>
+<p><em><code>--branch</code> can also take tags and detaches the HEAD at that commit in the resulting repository.</em></p>
+</blockquote>
+<hr />
+<h1>How to push tags?</h1>
+<h3><strong><code>git push --tags</code></strong></h3>
+<p>To push all tags:</p>
+<pre><code># Push all tags
+$ git push --tags 
+</code></pre>
+<h3>Using the <code>refs/tags</code> instead of just specifying the <code>&lt;tagname&gt;</code>.</h3>
+<p>Why?</p>
+<ul>
+<li>It's recommended to use <code>refs/tags</code> since sometimes tags can have the same name as your branches and a simple git push will push the branch instead of the tag</li>
+</ul>
+<p>To push annotated tags and current history chain tags use:</p>
+<h3><strong><code>git push --follow-tags</code></strong></h3>
+<p>This flag <code>--follow-tags</code> pushes both <strong>commits</strong> and <strong>only tags</strong> that are both:</p>
+<ul>
+<li>Annotated tags (so you can skip local/temp build tags)</li>
+<li>Reachable tags (an ancestor) from the current branch (located on the history)</li>
+</ul>
+<p><a href=""https://i.stack.imgur.com/qLEtr.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/qLEtr.png"" alt=""enter image description here"" /></a></p>
+<p>From Git 2.4 you can set it using configuration</p>
+<pre><code>$ git config --global push.followTags true
+</code></pre>
+<hr />
+<p>Cheatsheet:
+<a href=""https://i.stack.imgur.com/xR2sf.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/xR2sf.png"" alt=""enter image description here"" /></a></p>
+<hr />",,,8,,2016-03-14 04:49:44.130000+00:00,,2020-12-15 11:14:09.430000+00:00,2020-12-15 11:14:09.430000+00:00,,1755598,,1755598,35979642,2,1302,,
+38,36623117,,"<p><sub>Looking at the comments on the accepted answer and the generic nature of this question ('don't work'), I thought this might be a good place for some general explanations about the issues involved here. So this answer is intended as background info / elaboration on the specific use case of the OP. Please bear with me.</sub></p>
+<h3>Server-side vs Client-side</h3>
+<p>The first big thing to understand about this is that there are now 2 places where the URL is interpreted, whereas there used to be only 1 in 'the old days'. In the past, when life was simple, some user sent a request for <code>http://example.com/about</code> to the server, which inspected the path part of the URL, determined the user was requesting the about page, and then sent back that page.</p>
+<p>With client-side routing, which is what React-Router provides, things are less simple. At first, the client does not have any JS code loaded yet. So the very first request will always be to the server. That will then return a page that contains the needed script tags to load React and React Router etc. Only when those scripts have loaded does phase 2 start. In phase 2, when the user clicks on the 'About us' navigation link, for example, the URL is changed <em>locally only</em> to <code>http://example.com/about</code> (made possible by the <a href=""https://developer.mozilla.org/en-US/docs/Web/API/History_API"" rel=""noreferrer"">History API</a>), but <strong>no request to the server is made</strong>.  Instead, React Router does its thing on the client-side, determines which React view to render, and renders it. Assuming your about page does not need to make any REST calls, it's done already. You have transitioned from Home to About Us without any server request having fired.</p>
+<p>So basically when you click a link, some Javascript runs that manipulates the URL in the address bar, <em>without causing a page refresh</em>, which in turn causes React Router to perform a page transition <strong>on the client-side</strong>.</p>
+<p>But now consider what happens if you copy-paste the URL in the address bar and e-mail it to a friend. Your friend has not loaded your website yet. In other words, she is still in <em>phase 1</em>. No React Router is running on her machine yet. So her browser will make a <strong>server request</strong> to <code>http://example.com/about</code>.</p>
+<p>And this is where your trouble starts. Until now, you could get away with just placing a static HTML at the webroot of your server. But that would give <code>404</code> errors for all other URLs <em>when requested from the server</em>. Those same URLs work fine <em>on the client-side</em>, because there React Router is doing the routing for you, but they fail <em>on the server-side</em> unless you make your server understand them.</p>
+<h3>Combining server- and client-side routing</h3>
+<p>If you want the <code>http://example.com/about</code> URL to work on both the server- and the client-side, you need to set up routes for it on both the server- and the client-side. Makes sense right?</p>
+<p>And this is where your choices begin. Solutions range from bypassing the problem altogether, via a catch-all route that returns the bootstrap HTML, to the full-on isomorphic approach where both the server and the client run the same JS code.</p>
+<p>.</p>
+<h2>Bypassing the problem altogether: Hash History</h2>
+<p>With <a href=""https://github.com/jintoppy/react-training/blob/master/basic/node_modules/react-router/docs/guides/Histories.md#hashhistory"" rel=""noreferrer"">Hash History</a> instead of <a href=""https://github.com/jintoppy/react-training/blob/master/basic/node_modules/react-router/docs/guides/Histories.md#browserhistory"" rel=""noreferrer"">Browser History</a>, your URL for the about page would look something like this:
+<code>http://example.com/#/about</code>
+The part after the hash (<code>#</code>) symbol is not sent to the server. So the server only sees <code>http://example.com/</code> and sends the index page as expected. React-Router will pick up the <code>#/about</code> part and show the correct page.</p>
+<p><strong>Downsides</strong>:</p>
+<ul>
+<li>'ugly' URLs</li>
+<li>Server-side rendering is not possible with this approach. As far as Search Engine Optimization (SEO) is concerned, your website consists of a single page with hardly any content on it.</li>
+</ul>
+<p>.</p>
+<h2>Catch-all</h2>
+<p>With this approach, you do use Browser History but just set up a catch-all on the server that sends <code>/*</code> to <code>index.html</code>, effectively giving you much the same situation as with Hash History. You do have clean URLs however and you could improve upon this scheme later without having to invalidate all your user's favorites.</p>
+<p><strong>Downsides</strong>:</p>
+<ul>
+<li>More complex to set up</li>
+<li>Still no good SEO</li>
+</ul>
+<p>.</p>
+<h2>Hybrid</h2>
+<p>In the hybrid approach, you expand upon the catch-all scenario by adding specific scripts for specific routes. You could make some simple PHP scripts to return the most important pages of your site with content included, so Googlebot can at least see what's on your page.</p>
+<p><strong>Downsides</strong>:</p>
+<ul>
+<li>Even more complex to set up</li>
+<li>Only good SEO for those routes you give the special treatment</li>
+<li>Duplicating code for rendering content on server and client</li>
+</ul>
+<p>.</p>
+<h2>Isomorphic</h2>
+<p>What if we use Node JS as our server so we can run <em>the same</em> JS code on both ends? Now, we have all our routes defined in a single react-router config and we don't need to duplicate our rendering code. This is 'the holy grail' so to speak. The server sends the exact same markup as we would end up with if the page transition had happened on the client. This solution is optimal in terms of SEO.</p>
+<p><strong>Downsides</strong>:</p>
+<ul>
+<li>Server <em>must</em> (be able to) run JS. I've experimented with Java i.c.w. Nashorn but it's not working for me. In practice, it mostly means you must use a Node JS based server.</li>
+<li>Many tricky environmental issues (using <code>window</code> on server-side etc)</li>
+<li>Steep learning curve</li>
+</ul>
+<p>.</p>
+<h3>Which should I use?</h3>
+<p>Choose the one that you can get away with. Personally, I think the catch-all is simple enough to set up, so that would be my minimum. This setup allows you to improve on things over time. If you are already using Node JS as your server platform, I'd definitely investigate doing an isomorphic app. Yes, it's tough at first, but once you get the hang of it it's actually a very elegant solution to the problem.</p>
+<p>So basically, for me, that would be the deciding factor. If my server runs on Node JS, I'd go isomorphic; otherwise, I would go for the Catch-all solution and just expand on it (Hybrid solution) as time progresses and SEO requirements demand it.</p>
+<p>If you'd like to learn more about isomorphic (also called 'universal') rendering with React, there are some good tutorials on the subject:</p>
+<ul>
+<li><a href=""https://www.smashingmagazine.com/2015/04/react-to-the-future-with-isomorphic-apps/"" rel=""noreferrer"">React to the future with isomorphic apps</a></li>
+<li><a href=""https://reactjsnews.com/isomorphic-react-in-real-life"" rel=""noreferrer"">The Pain and the Joy of creating isomorphic apps in ReactJS</a></li>
+<li><a href=""https://strongloop.com/strongblog/node-js-react-isomorphic-javascript-why-it-matters/"" rel=""noreferrer"">How to Implement Node + React Isomorphic JavaScript &amp; Why it Matters</a></li>
+</ul>
+<p>Also, to get you started, I recommend looking at some starter kits. Pick one that matches your choices for the technology stack (remember, React is just the V in MVC, you need more stuff to build a full app). Start with looking at the one published by Facebook itself:</p>
+<ul>
+<li><a href=""https://github.com/facebookincubator/create-react-app"" rel=""noreferrer"">Create React App</a></li>
+</ul>
+<p>Or pick one of the many by the community. There is a nice site now that tries to index all of them:</p>
+<ul>
+<li><a href=""http://andrewhfarmer.com/starter-project/"" rel=""noreferrer"">Pick your perfect React starter project</a></li>
+</ul>
+<p>I started with these:</p>
+<ul>
+<li><a href=""https://github.com/RickWong/react-isomorphic-starterkit"" rel=""noreferrer"">React Isomorphic Starterkit</a></li>
+<li><a href=""https://github.com/erikras/react-redux-universal-hot-example"" rel=""noreferrer"">React Redux Universal Hot Example</a></li>
+</ul>
+<p>Currently, I am using a home-brew version of universal rendering that was inspired by the two starter kits above, but they are out of date now.</p>
+<p>Good luck with your quest!</p>",,,37,,2016-04-14 12:27:49.427000+00:00,,2021-01-22 11:11:00.723000+00:00,2021-01-22 11:11:00.723000+00:00,,1151144,,286685,27928372,2,1294,,
+39,38060437,,"<h1>Language features:</h1>
+
+<h2>Templates and Generic Code</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0091r3.html"" rel=""noreferrer"">Template argument deduction for class templates</a></p>
+
+<ul>
+<li>Like how functions deduce template arguments, now constructors can deduce the template arguments of the class</li>
+<li><a href=""http://wg21.link/p0433r2"" rel=""noreferrer"">http://wg21.link/p0433r2</a> <a href=""http://wg21.link/p0620r0"" rel=""noreferrer"">http://wg21.link/p0620r0</a> <a href=""http://wg21.link/p0512r0"" rel=""noreferrer"">http://wg21.link/p0512r0</a></li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0127r2.html"" rel=""noreferrer""><code>template &lt;auto&gt;</code></a></p>
+
+<ul>
+<li>Represents a value of any (non-type template argument) type.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4268.html"" rel=""noreferrer"">Non-type template arguments fixes</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4051.html"" rel=""noreferrer""><code>template&lt;template&lt;class...&gt;typename bob&gt; struct foo {}</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4295.html"" rel=""noreferrer"">( Folding + ... + expressions ) </a> and <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0036r0.pdf"" rel=""noreferrer"">Revisions</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3922.html"" rel=""noreferrer""><code>auto x{8};</code> is an <code>int</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0195r1.html"" rel=""noreferrer"">modernizing <code>using</code> with <code>...</code> and lists</a></p></li>
+</ul>
+
+<h2>Lambda</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0170r1.pdf"" rel=""noreferrer"">constexpr lambdas</a></p>
+
+<ul>
+<li>Lambdas are implicitly constexpr if they qualify</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0018r3.html"" rel=""noreferrer"">Capturing <code>*this</code> in lambdas</a></p>
+
+<ul>
+<li><code>[*this]{ std::cout &lt;&lt; could &lt;&lt; "" be "" &lt;&lt; useful &lt;&lt; '\n'; }</code></li>
+</ul></li>
+</ul>
+
+<h2>Attributes</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0188r1.pdf"" rel=""noreferrer""><code>[[fallthrough]]</code></a>, <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0189r1.pdf"" rel=""noreferrer""><code>[[nodiscard]]</code></a>, <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0212r1.pdf"" rel=""noreferrer""><code>[[maybe_unused]]</code></a> attributes </p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4266.html"" rel=""noreferrer""><code>[[attributes]]</code> on <code>namespace</code>s and <code>enum { erator[[s]] }</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0028r4.html"" rel=""noreferrer""><code>using</code> in attributes</a> to avoid having to repeat an attribute namespace.</p></li>
+<li><p>Compilers are now <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0283r2.html"" rel=""noreferrer"">required to ignore non-standard attributes they don't recognize</a>.</p>
+
+<ul>
+<li>The C++14 wording allowed compilers to reject unknown scoped attributes.</li>
+</ul></li>
+</ul>
+
+<h2>Syntax cleanup</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0386r2.pdf"" rel=""noreferrer"">Inline variables</a></p>
+
+<ul>
+<li>Like inline functions</li>
+<li>Compiler picks where the instance is instantiated</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0386r2.pdf"" rel=""noreferrer"">Deprecate static constexpr redeclaration</a>, now implicitly inline.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4230.html"" rel=""noreferrer""><code>namespace A::B</code></a></p></li>
+<li><p>Simple <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3928.pdf"" rel=""noreferrer""><code>static_assert(expression);</code></a> with no string</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0003r4.html"" rel=""noreferrer"">no <code>throw</code> unless <code>throw()</code></a>, and <code>throw()</code> is <code>noexcept(true)</code>.</p></li>
+</ul>
+
+<h2>Cleaner multi-return and flow control</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0217r3.html"" rel=""noreferrer"">Structured bindings</a></p>
+
+<ul>
+<li>Basically, first-class <code>std::tie</code> with <code>auto</code></li>
+<li>Example:
+
+<ul>
+<li><code>const auto [it, inserted] = map.insert( {""foo"", bar} );</code></li>
+<li>Creates variables <code>it</code> and <code>inserted</code> with deduced type from the <code>pair</code> that <code>map::insert</code> returns.</li>
+</ul></li>
+<li>Works with tuple/pair-likes &amp; <code>std::array</code>s and relatively flat structs</li>
+<li>Actually named <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0615r0.html"" rel=""noreferrer"">structured bindings</a> in standard</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0305r1.html"" rel=""noreferrer""><code>if (init; condition)</code> and <code>switch (init; condition)</code></a></p>
+
+<ul>
+<li><code>if (const auto [it, inserted] = map.insert( {""foo"", bar} ); inserted)</code></li>
+<li>Extends the <code>if(decl)</code> to cases where <code>decl</code> isn't convertible-to-bool sensibly.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0184r0.html"" rel=""noreferrer"">Generalizing range-based for loops</a></p>
+
+<ul>
+<li>Appears to be mostly support for sentinels, or end iterators that are not the same type as begin iterators, which helps with null-terminated loops and the like.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0292r2.html"" rel=""noreferrer"">if constexpr</a></p>
+
+<ul>
+<li>Much requested feature to simplify almost-generic code.</li>
+</ul></li>
+</ul>
+
+<h2>Misc</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0245r1.html"" rel=""noreferrer"">Hexadecimal float point literals</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0035r4.html"" rel=""noreferrer"">Dynamic memory allocation for over-aligned data</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0135r1.html"" rel=""noreferrer"">Guaranteed copy elision</a></p>
+
+<ul>
+<li>Finally!</li>
+<li>Not in all cases, but distinguishes syntax where you are ""just creating something"" that was called elision, from ""genuine elision"".</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf"" rel=""noreferrer"">Fixed order-of-evaluation for (some) expressions</a> with some <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0400r0.html"" rel=""noreferrer"">modifications</a></p>
+
+<ul>
+<li>Not including function arguments, but function argument evaluation interleaving now banned</li>
+<li>Makes a bunch of broken code work mostly, and makes <code>.then</code> on future work.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0138r2.pdf"" rel=""noreferrer"">Direct list-initialization of enums</a></p></li>
+<li><p>Forward progress guarantees (FPG) (also, <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0299r0.html"" rel=""noreferrer"">FPGs for parallel algorithms</a>)</p>
+
+<ul>
+<li>I think this is saying ""the implementation may not stall threads forever""?</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4267.html"" rel=""noreferrer""><code>u8'U', u8'T', u8'F', u8'8'</code></a> character literals (string already existed)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0012r1.html"" rel=""noreferrer"">""noexcept"" in the type system</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0061r1.html"" rel=""noreferrer""><code>__has_include</code></a></p>
+
+<ul>
+<li>Test if a header file include would be an error</li>
+<li>makes migrating from experimental to std almost seamless</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4261.html"" rel=""noreferrer"">Arrays of pointer conversion fixes</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0136r1.html"" rel=""noreferrer"">inherited constructors</a> fixes to some corner cases (see <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0136r0.html"" rel=""noreferrer"">P0136R0</a> for examples of behavior changes)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0017r0.html"" rel=""noreferrer"">aggregate initialization with inheritance</a>.</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0137r1.html"" rel=""noreferrer""><code>std::launder</code>, type punning, etc</a></p></li>
+</ul>
+
+<h1>Library additions:</h1>
+
+<h2>Data types</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0088r3.html"" rel=""noreferrer""><code>std::variant&lt;Ts...&gt;</code></a></p>
+
+<ul>
+<li>Almost-always non-empty last I checked?</li>
+<li>Tagged union type</li>
+<li>{awesome|useful}</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#optional"" rel=""noreferrer""><code>std::optional</code></a></p>
+
+<ul>
+<li>Maybe holds one of something</li>
+<li>Ridiculously useful</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#any"" rel=""noreferrer""><code>std::any</code></a></p>
+
+<ul>
+<li>Holds one of anything (that is copyable)</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#string.view"" rel=""noreferrer""><code>std::string_view</code></a></p>
+
+<ul>
+<li><code>std::string</code> like reference-to-character-array or substring</li>
+<li>Never take a <code>string const&amp;</code> again.  Also can make parsing a bajillion times faster.</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0403r0.html"" rel=""noreferrer""><code>""hello world""sv</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0426r0.html"" rel=""noreferrer"">constexpr <code>char_traits</code></a></li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0298r3.pdf"" rel=""noreferrer""><code>std::byte</code></a> off more than they could chew.</p>
+
+<ul>
+<li>Neither an integer nor a character, just data</li>
+</ul></li>
+</ul>
+
+<h2>Invoke stuff</h2>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4169.html"" rel=""noreferrer""><code>std::invoke</code></a>
+
+<ul>
+<li>Call any callable (function pointer, function, member pointer) with one syntax.  From the standard INVOKE concept.</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r1.html"" rel=""noreferrer""><code>std::apply</code></a>
+
+<ul>
+<li>Takes a function-like and a tuple, and unpacks the tuple into the call.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0209r2.pdf"" rel=""noreferrer""><code>std::make_from_tuple</code></a>, <code>std::apply</code> applied to object construction</p></li>
+<li><p><code>is_invocable</code>, <code>is_invocable_r</code>, <code>invoke_result</code></p>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0077r2.html"" rel=""noreferrer"">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0077r2.html</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0604r0.html"" rel=""noreferrer"">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0604r0.html</a></li>
+<li>Deprecates <code>result_of</code></li>
+<li><code>is_invocable&lt;Foo(Args...), R&gt;</code> is ""can you call <code>Foo</code> with <code>Args...</code> and get something compatible with <code>R</code>"", where <code>R=void</code> is default.</li>
+<li><code>invoke_result&lt;Foo, Args...&gt;</code> is <code>std::result_of_t&lt;Foo(Args...)&gt;</code> but apparently less confusing?</li>
+</ul></li>
+</ul>
+
+<h2><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html"" rel=""noreferrer"">File System TS v1</a></h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#class-path"" rel=""noreferrer""><code>[class.path]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#Class-filesystem_error"" rel=""noreferrer""><code>[class.filesystem.error]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#file_status"" rel=""noreferrer""><code>[class.file_status]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#Class-directory_entry"" rel=""noreferrer""><code>[class.directory_entry]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#Class-directory_iterator"" rel=""noreferrer""><code>[class.directory_iterator]</code></a> and <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#class.rec.dir.itr"" rel=""noreferrer""><code>[class.recursive_directory_iterator]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r0.html#Operational-functions"" rel=""noreferrer""><code>[fs.ops.funcs]</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0610r0.html#2676"" rel=""noreferrer""><code>fstream</code>s can be opened with <code>path</code>s, as well as with <code>const path::value_type*</code> strings.</a></p></li>
+</ul>
+
+<h2><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0024r2.html"" rel=""noreferrer"">New algorithms</a></h2>
+
+<ul>
+<li><p><code>for_each_n</code></p></li>
+<li><p><code>reduce</code></p></li>
+<li><p><code>transform_reduce</code></p></li>
+<li><p><code>exclusive_scan</code></p></li>
+<li><p><code>inclusive_scan</code></p></li>
+<li><p><code>transform_exclusive_scan</code></p></li>
+<li><p><code>transform_inclusive_scan</code></p></li>
+<li><p>Added for threading purposes, exposed even if you aren't using them threaded</p></li>
+</ul>
+
+<h2>Threading</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4508.html"" rel=""noreferrer""><code>std::shared_mutex</code></a></p>
+
+<ul>
+<li>Untimed, which can be more efficient if you don't need it.</li>
+</ul></li>
+<li><p><code>atomic&lt;T&gt;</code><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0152r1.html"" rel=""noreferrer""><code>::is_always_lockfree</code></a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0156r2.html"" rel=""noreferrer""><code>scoped_lock&lt;Mutexes...&gt;</code></a></p>
+
+<ul>
+<li>Saves some <code>std::lock</code> pain when locking more than one mutex at a time.</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/paper/2014/n4071.htm"" rel=""noreferrer"">Parallelism TS v1</a></p>
+
+<ul>
+<li>The linked paper from 2014, may be out of date</li>
+<li>Parallel versions of <code>std</code> algorithms, and related machinery</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0154r0.html"" rel=""noreferrer"">hardware_*_interference_size</a></p></li>
+</ul>
+
+<h2>(parts of) <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r1.html"" rel=""noreferrer"">Library Fundamentals TS v1</a> not covered above or below</h2>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#func.searchers"" rel=""noreferrer""><code>[func.searchers]</code></a> and <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#alg.search"" rel=""noreferrer""><code>[alg.search]</code></a>
+
+<ul>
+<li>A searching algorithm and techniques</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r1.html"" rel=""noreferrer""><code>[pmr]</code></a></p>
+
+<ul>
+<li>Polymorphic allocator, like <code>std::function</code> for allocators</li>
+<li>And some <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#memory.resource.pool"" rel=""noreferrer"">standard memory resources to go with it</a>.</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html"" rel=""noreferrer"">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html</a></li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html#alg.random.sample"" rel=""noreferrer""><code>std::sample</code></a>, sampling from a range?</p></li>
+</ul>
+
+<h2>Container Improvements</h2>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4279.html"" rel=""noreferrer""><code>try_emplace</code></a> and <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4279.html"" rel=""noreferrer""><code>insert_or_assign</code></a></p>
+
+<ul>
+<li>gives better guarantees in some cases where spurious move/copy would be bad</li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0083r3.pdf"" rel=""noreferrer"">Splicing for <code>map&lt;&gt;</code>, <code>unordered_map&lt;&gt;</code>, <code>set&lt;&gt;</code>, and <code>unordered_set&lt;&gt;</code></a></p>
+
+<ul>
+<li>Move nodes between containers cheaply.</li>
+<li>Merge whole containers cheaply.</li>
+</ul></li>
+<li><p>non-const <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0272r1.html"" rel=""noreferrer""><code>.data()</code></a> for string.</p></li>
+<li><p>non-member <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4280.pdf"" rel=""noreferrer""><code>std::size</code>, <code>std::empty</code>, <code>std::data</code></a></p>
+
+<ul>
+<li>like <code>std::begin</code>/<code>end</code></li>
+</ul></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4510.html"" rel=""noreferrer"">Minimal incomplete type support in containers</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4284.html"" rel=""noreferrer"">Contiguous iterator ""concept""</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0031r0.html"" rel=""noreferrer""><code>constexpr</code> iterators</a></p></li>
+<li><p>The <code>emplace</code> family of functions <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0084r2.pdf"" rel=""noreferrer"">now returns a reference to the created object</a>.</p></li>
+</ul>
+
+<h2>Smart pointer changes</h2>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4089.pdf"" rel=""noreferrer""><code>unique_ptr&lt;T[]&gt;</code> fixes</a> and other <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4366.html"" rel=""noreferrer""><code>unique_ptr</code></a> tweaks.</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0033r1.html"" rel=""noreferrer""><code>weak_from_this</code></a> and some fixed to shared from this</li>
+</ul>
+
+<h2>Other <code>std</code> datatype improvements:</h2>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4387"" rel=""noreferrer""><code>{}</code> construction of <code>std::tuple</code> and other improvements</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4277.html"" rel=""noreferrer"">TriviallyCopyable reference_wrapper</a>, can be performance boost</li>
+</ul>
+
+<h2>Misc</h2>
+
+<ul>
+<li><p>C++17 library is based on <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0063r2.html"" rel=""noreferrer"">C11 instead of C99</a></p></li>
+<li><p>Reserved <code>std[0-9]+</code> for <a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0180r1.html"" rel=""noreferrer"">future standard libraries</a></p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0040r2.html"" rel=""noreferrer""><code>destroy(_at|_n)</code>, <code>uninitialized_move(_n)</code>, <code>uninitialized_value_construct(_n)</code>, <code>uninitialized_default_construct(_n)</code></a></p>
+
+<ul>
+<li>utility code already in most <code>std</code> implementations exposed</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0226r1.pdf"" rel=""noreferrer"">Special math functions</a>
+
+<ul>
+<li>scientists may like them</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0025r0.html"" rel=""noreferrer""><code>std::clamp()</code></a>
+
+<ul>
+<li><code>std::clamp( a, b, c ) == std::max( b, std::min( a, c ) )</code> roughly</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0295r0.pdf"" rel=""noreferrer""><code>gcd</code> and <code>lcm</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4259.pdf"" rel=""noreferrer""><code>std::uncaught_exceptions</code></a>
+
+<ul>
+<li>Required if you want to only throw if safe from destructors</li>
+</ul></li>
+<li><a href=""http://open-std.org/JTC1/SC22/WG21/docs/papers/2015/p0007r1.html"" rel=""noreferrer""><code>std::as_const</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4389.html"" rel=""noreferrer""><code>std::bool_constant</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0006r0.html"" rel=""noreferrer"">A whole bunch of <code>_v</code> template variables</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3911.pdf"" rel=""noreferrer""><code>std::void_t&lt;T&gt;</code></a>
+
+<ul>
+<li>Surprisingly useful when writing templates</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0074r0.html"" rel=""noreferrer""><code>std::owner_less&lt;void&gt;</code></a>
+
+<ul>
+<li>like <code>std::less&lt;void&gt;</code>, but for smart pointers to sort based on contents</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0092r1.html"" rel=""noreferrer""><code>std::chrono</code> polish</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0013r1.html"" rel=""noreferrer""><code>std::conjunction</code>, <code>std::disjunction</code>, <code>std::negation</code></a> exposed</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0005r4.html#6.10"" rel=""noreferrer""><code>std::not_fn</code></a>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html"" rel=""noreferrer"">http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html</a></li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4258.pdf"" rel=""noreferrer"">Rules for noexcept within <code>std</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0258r1.html"" rel=""noreferrer"">std::is_contiguous_layout</a>, useful for efficient hashing</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0067r5.html"" rel=""noreferrer"">std::to_chars/std::from_chars</a>, high performance, locale agnostic number conversion; finally a way to serialize/deserialize to human readable formats (JSON &amp; co) </li>
+<li><s><a href=""http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0181r1.html"" rel=""noreferrer"">std::default_order</a>, indirection over <code>std::less</code>.</s> (<a href=""https://www.reddit.com/r/cpp/comments/56zkbx/c1417_features_and_stl_fixes_in_vs_15_preview_5/d8npapy/"" rel=""noreferrer"">breaks ABI of some compilers</a> due to name mangling, removed.)</li>
+</ul>
+
+<h2>Traits</h2>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0185r1.html"" rel=""noreferrer"">swap</a></li>
+<li><a href=""https://cplusplus.github.io/LWG/lwg-defects.html#2911"" rel=""noreferrer"">is_aggregate</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0258r2.html"" rel=""noreferrer"">has_unique_object_representations</a></li>
+</ul>
+
+<h2>Deprecated</h2>
+
+<ul>
+<li><a href=""http://wg21.link/p0063r3"" rel=""noreferrer"">Some C libraries</a>, </li>
+<li><a href=""http://wg21.link/p0618r0"" rel=""noreferrer""><code>&lt;codecvt&gt;</code></a></li>
+<li><a href=""http://wg21.link/p0371r1"" rel=""noreferrer""><code>memory_order_consume</code></a></li>
+<li><a href=""http://wg21.link/p0604r0"" rel=""noreferrer""><code>result_of</code></a>, replaced with <code>invoke_result</code></li>
+<li><a href=""http://wg21.link/p0521r0"" rel=""noreferrer""><code>shared_ptr::unique</code></a>, it isn't very threadsafe</li>
+</ul>
+
+<p><a href=""https://isocpp.org/files/papers/p0636r0.html"" rel=""noreferrer"">Isocpp.org has</a> has an independent list of changes since C++14; it has been partly pillaged.</p>
+
+<p>Naturally TS work continues in parallel, so there are some TS that are not-quite-ripe that will have to wait for the next iteration.  The target for the next iteration is C++20 as previously planned, not C++19 as some rumors implied.  C++1O has been avoided.</p>
+
+<p>Initial list taken from <a href=""https://www.reddit.com/r/cpp/comments/48zp05/what_we_added_to_the_c17_working_draft/"" rel=""noreferrer"">this reddit post</a> and <a href=""https://www.reddit.com/r/cpp/comments/4pmlpz/what_the_iso_c_committee_added_to_the_c17_working/"" rel=""noreferrer"">this reddit post</a>, with links added via googling or from the above isocpp.org page.</p>
+
+<p>Additional entries pillaged from <a href=""https://isocpp.org/std/standing-documents/sd-6-sg10-feature-test-recommendations"" rel=""noreferrer"">SD-6</a> feature-test list.</p>
+
+<p><a href=""http://clang.llvm.org/cxx_status.html#cxx17"" rel=""noreferrer"">clang's feature list</a> and <a href=""http://libcxx.llvm.org/cxx1z_status.html"" rel=""noreferrer"">library feature list</a> are next to be pillaged.  This doesn't seem to be reliable, as it is C++1z, not C++17.</p>
+
+<p><a href=""https://codeplay.com/public/uploaded/filehost/0cbdaf_c++17post-oulu2016.pdf"" rel=""noreferrer"">these slides</a> had some features missing elsewhere.</p>
+
+<p>While ""what was removed"" was not asked, here is a short list of a few things ((mostly?) previous deprecated) that are removed in C++17 from C++:</p>
+
+<h1>Removed:</h1>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0001r1.html#6.10"" rel=""noreferrer""><code>register</code></a>, keyword reserved for future use</li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0002r1.html"" rel=""noreferrer""><code>bool b; ++b;</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4086.html"" rel=""noreferrer"">trigraphs</a>
+
+<ul>
+<li>if you still need them, they are now part of your source file encoding, not part of language</li>
+</ul></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0004r1.html"" rel=""noreferrer"">ios aliases</a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4190.htm"" rel=""noreferrer"">auto_ptr, old <code>&lt;functional&gt;</code> stuff, <code>random_shuffle</code></a></li>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0302r1.html"" rel=""noreferrer"">allocators in <code>std::function</code></a></li>
+</ul>
+
+<p>There were rewordings.  I am unsure if these have any impact on code, or if they are just cleanups in the standard:</p>
+
+<h1>Papers not yet integrated into above:</h1>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0505r0.html"" rel=""noreferrer"">P0505R0</a> (constexpr chrono)</p></li>
+<li><p><a href=""http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0418r2.html"" rel=""noreferrer"">P0418R2</a> (atomic tweaks)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0512r0.pdf"" rel=""noreferrer"">P0512R0</a> (template argument deduction tweaks)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0490r0.html"" rel=""noreferrer"">P0490R0</a> (structured binding tweaks)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0513r0.pdf"" rel=""noreferrer"">P0513R0</a> (changes to <code>std::hash</code>)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0502r0.html"" rel=""noreferrer"">P0502R0</a> (parallel exceptions)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0509r1.pdf"" rel=""noreferrer"">P0509R1</a> (updating restrictions on exception handling)</p></li>
+<li><p><a href=""http://wg21.link/p0012r1"" rel=""noreferrer"">P0012R1</a> (make exception specifications be part of the type system)</p></li>
+<li><p><a href=""http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0510r0.html"" rel=""noreferrer"">P0510R0</a> (restrictions on variants)</p></li>
+<li><p><a href=""http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0504r0.html"" rel=""noreferrer"">P0504R0</a> (tags for optional/variant/any)</p></li>
+<li><p><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0497r0.html"" rel=""noreferrer"">P0497R0</a> (shared ptr tweaks)</p></li>
+<li><p><a href=""http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0508r0.html"" rel=""noreferrer"">P0508R0</a> (structured bindings node handles)</p></li>
+<li><p><a href=""http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2016/p0521r0.html"" rel=""noreferrer"">P0521R0</a> (shared pointer use count and unique changes?)</p></li>
+</ul>
+
+<h1>Spec changes:</h1>
+
+<ul>
+<li><a href=""http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4285.html"" rel=""noreferrer"">exception specs and throw expressions</a></li>
+</ul>
+
+<h1>Further reference:</h1>
+
+<ul>
+<li><p><a href=""http://www.open-std.org/JTC1/SC22/WG21/docs/papers/"" rel=""noreferrer"">papers grouped by year; not all accepted</a></p></li>
+<li><p><a href=""https://isocpp.org/files/papers/p0636r0.html"" rel=""noreferrer"">https://isocpp.org/files/papers/p0636r0.html</a></p>
+
+<ul>
+<li>Should be updated to ""Modifications to existing features"" here.</li>
+</ul></li>
+</ul>",,,1,2020-07-31 07:59:12.857000+00:00,2016-06-27 18:06:32.597000+00:00,,2017-10-26 14:54:09.640000+00:00,2017-10-26 14:54:09.640000+00:00,,1774667,,1774667,38060436,2,1285,,
+40,48924212,,"<p>Since Git 2.16.1(2) you can use</p>
+<pre><code>C:\&gt; git update-git-for-windows
+</code></pre>
+<p>In version between 2.14.2 and 2.16.1, the command was</p>
+<pre><code>C:\&gt; git update
+</code></pre>
+<p>(It was later renamed to avoid confusion with updating the local repository, e.g. like <code>svn update</code> does it.)</p>
+<p>That command does not exist in Git 2.13 and before.</p>
+<p>If this errors with &quot;is not a git command&quot; then either you don't actually have Git for Windows, or your version is very old.</p>
+<p>In which case, simply get the latest installer from <a href=""https://git-scm.com/download"" rel=""noreferrer"">https://git-scm.com/download</a> (check whether you want 32- or 64-bit) and run it to upgrade.</p>
+<p>If you already have the latest version it does nothing, in which case you can manually run the installer to reinstall.</p>
+<pre><code>C:\&gt; git update-git-for-windows
+Git for Windows 2.17.0.windows.1 (64bit)
+Up to date
+</code></pre>",,,11,,2018-02-22 09:48:41.523000+00:00,,2020-09-27 15:38:15.247000+00:00,2020-09-27 15:38:15.247000+00:00,,1746118,,2446509,13790592,2,1266,,
+41,42458207,,"<p>I had accidentally enabled a different mode for the tab key. Fixed it by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>(for Mac only)+<kbd>M</kbd>.</p>
+<p>From the <a href=""https://code.visualstudio.com/docs/getstarted/keybindings"" rel=""noreferrer"">Visual Studio Code Keybinding docs</a>:</p>
+<blockquote>
+<pre class=""lang-none prettyprint-override""><code>| Key      | Command                                 | Command id                       |
+| Ctrl + M | Toggle Use of Tab Key for Setting Focus | editor.action.toggleTabFocusMode |
+</code></pre>
+</blockquote>
+<p>The current tab control mode should also show up in the status bar:</p>
+<p><a href=""https://i.stack.imgur.com/RTMqF.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/RTMqF.png"" alt=""enter image description here"" /></a></p>",,,9,,2017-02-25 15:56:27.583000+00:00,,2020-08-26 19:21:23.387000+00:00,2020-08-26 19:21:23.387000+00:00,,4722345,,25280,35519538,2,1240,,
+42,43012779,,"<p>While there are a lot of modal toggles and navigation shortcuts for VS Code, there isn't one specifically for ""move from editor to terminal, and back again"". However you can compose the two steps by overloading the <code>key</code> and using the <code>when</code> <a href=""https://code.visualstudio.com/docs/getstarted/keybindings#_when-clause-contexts"" rel=""noreferrer"">clause</a>.</p>
+
+<p>Open the keybindings.json from the editor: CMD-SHIFT-P -> Preferences: Open Keyboard Shortcuts File and add these entries:</p>
+
+<pre><code>// Toggle between terminal and editor focus
+{ ""key"": ""ctrl+`"", ""command"": ""workbench.action.terminal.focus""},
+{ ""key"": ""ctrl+`"", ""command"": ""workbench.action.focusActiveEditorGroup"", ""when"": ""terminalFocus""}
+</code></pre>
+
+<p>With these shortcuts I will focus between the editor and the Integrated Terminal using the same keystroke.</p>",,,27,,2017-03-25 05:10:11.113000+00:00,,2019-11-08 19:51:48.293000+00:00,2019-11-08 19:51:48.293000+00:00,,1320636,,2529592,42796887,2,1232,,
+43,36134133,,"<p>The Typescript way to do this would be:</p>
+
+<pre><code>Number('1234') // 1234
+Number('9BX9') // NaN
+</code></pre>
+
+<p>as answered here: <a href=""https://stackoverflow.com/a/23440948/2083492"">https://stackoverflow.com/a/23440948/2083492</a></p>",,,6,,2016-03-21 14:44:16.827000+00:00,,2016-03-22 10:44:49.870000+00:00,2017-05-23 12:18:28.387000+00:00,,-1,,2083492,14667713,2,1219,,
+44,53453588,,"<p>There is a slight difference in the ordering of the bytecode.</p>
+<p><code>2 * (i * i)</code>:</p>
+<pre><code>     iconst_2
+     iload0
+     iload0
+     imul
+     imul
+     iadd
+</code></pre>
+<p>vs <code>2 * i * i</code>:</p>
+<pre><code>     iconst_2
+     iload0
+     imul
+     iload0
+     imul
+     iadd
+</code></pre>
+<p>At first sight this should not make a difference; if anything the second version is more optimal since it uses one slot less.</p>
+<p>So we need to dig deeper into the lower level (JIT)<sup>1</sup>.</p>
+<p>Remember that JIT tends to unroll small loops very aggressively. Indeed we observe a 16x unrolling for the <code>2 * (i * i)</code> case:</p>
+<pre><code>030   B2: # B2 B3 &lt;- B1 B2  Loop: B2-B2 inner main of N18 Freq: 1e+006
+030     addl    R11, RBP    # int
+033     movl    RBP, R13    # spill
+036     addl    RBP, #14    # int
+039     imull   RBP, RBP    # int
+03c     movl    R9, R13 # spill
+03f     addl    R9, #13 # int
+043     imull   R9, R9  # int
+047     sall    RBP, #1
+049     sall    R9, #1
+04c     movl    R8, R13 # spill
+04f     addl    R8, #15 # int
+053     movl    R10, R8 # spill
+056     movdl   XMM1, R8    # spill
+05b     imull   R10, R8 # int
+05f     movl    R8, R13 # spill
+062     addl    R8, #12 # int
+066     imull   R8, R8  # int
+06a     sall    R10, #1
+06d     movl    [rsp + #32], R10    # spill
+072     sall    R8, #1
+075     movl    RBX, R13    # spill
+078     addl    RBX, #11    # int
+07b     imull   RBX, RBX    # int
+07e     movl    RCX, R13    # spill
+081     addl    RCX, #10    # int
+084     imull   RCX, RCX    # int
+087     sall    RBX, #1
+089     sall    RCX, #1
+08b     movl    RDX, R13    # spill
+08e     addl    RDX, #8 # int
+091     imull   RDX, RDX    # int
+094     movl    RDI, R13    # spill
+097     addl    RDI, #7 # int
+09a     imull   RDI, RDI    # int
+09d     sall    RDX, #1
+09f     sall    RDI, #1
+0a1     movl    RAX, R13    # spill
+0a4     addl    RAX, #6 # int
+0a7     imull   RAX, RAX    # int
+0aa     movl    RSI, R13    # spill
+0ad     addl    RSI, #4 # int
+0b0     imull   RSI, RSI    # int
+0b3     sall    RAX, #1
+0b5     sall    RSI, #1
+0b7     movl    R10, R13    # spill
+0ba     addl    R10, #2 # int
+0be     imull   R10, R10    # int
+0c2     movl    R14, R13    # spill
+0c5     incl    R14 # int
+0c8     imull   R14, R14    # int
+0cc     sall    R10, #1
+0cf     sall    R14, #1
+0d2     addl    R14, R11    # int
+0d5     addl    R14, R10    # int
+0d8     movl    R10, R13    # spill
+0db     addl    R10, #3 # int
+0df     imull   R10, R10    # int
+0e3     movl    R11, R13    # spill
+0e6     addl    R11, #5 # int
+0ea     imull   R11, R11    # int
+0ee     sall    R10, #1
+0f1     addl    R10, R14    # int
+0f4     addl    R10, RSI    # int
+0f7     sall    R11, #1
+0fa     addl    R11, R10    # int
+0fd     addl    R11, RAX    # int
+100     addl    R11, RDI    # int
+103     addl    R11, RDX    # int
+106     movl    R10, R13    # spill
+109     addl    R10, #9 # int
+10d     imull   R10, R10    # int
+111     sall    R10, #1
+114     addl    R10, R11    # int
+117     addl    R10, RCX    # int
+11a     addl    R10, RBX    # int
+11d     addl    R10, R8 # int
+120     addl    R9, R10 # int
+123     addl    RBP, R9 # int
+126     addl    RBP, [RSP + #32 (32-bit)]   # int
+12a     addl    R13, #16    # int
+12e     movl    R11, R13    # spill
+131     imull   R11, R13    # int
+135     sall    R11, #1
+138     cmpl    R13, #999999985
+13f     jl     B2   # loop end  P=1.000000 C=6554623.000000
+</code></pre>
+<p>We see that there is 1 register that is &quot;spilled&quot; onto the stack.</p>
+<p>And for the <code>2 * i * i</code> version:</p>
+<pre><code>05a   B3: # B2 B4 &lt;- B1 B2  Loop: B3-B2 inner main of N18 Freq: 1e+006
+05a     addl    RBX, R11    # int
+05d     movl    [rsp + #32], RBX    # spill
+061     movl    R11, R8 # spill
+064     addl    R11, #15    # int
+068     movl    [rsp + #36], R11    # spill
+06d     movl    R11, R8 # spill
+070     addl    R11, #14    # int
+074     movl    R10, R9 # spill
+077     addl    R10, #16    # int
+07b     movdl   XMM2, R10   # spill
+080     movl    RCX, R9 # spill
+083     addl    RCX, #14    # int
+086     movdl   XMM1, RCX   # spill
+08a     movl    R10, R9 # spill
+08d     addl    R10, #12    # int
+091     movdl   XMM4, R10   # spill
+096     movl    RCX, R9 # spill
+099     addl    RCX, #10    # int
+09c     movdl   XMM6, RCX   # spill
+0a0     movl    RBX, R9 # spill
+0a3     addl    RBX, #8 # int
+0a6     movl    RCX, R9 # spill
+0a9     addl    RCX, #6 # int
+0ac     movl    RDX, R9 # spill
+0af     addl    RDX, #4 # int
+0b2     addl    R9, #2  # int
+0b6     movl    R10, R14    # spill
+0b9     addl    R10, #22    # int
+0bd     movdl   XMM3, R10   # spill
+0c2     movl    RDI, R14    # spill
+0c5     addl    RDI, #20    # int
+0c8     movl    RAX, R14    # spill
+0cb     addl    RAX, #32    # int
+0ce     movl    RSI, R14    # spill
+0d1     addl    RSI, #18    # int
+0d4     movl    R13, R14    # spill
+0d7     addl    R13, #24    # int
+0db     movl    R10, R14    # spill
+0de     addl    R10, #26    # int
+0e2     movl    [rsp + #40], R10    # spill
+0e7     movl    RBP, R14    # spill
+0ea     addl    RBP, #28    # int
+0ed     imull   RBP, R11    # int
+0f1     addl    R14, #30    # int
+0f5     imull   R14, [RSP + #36 (32-bit)]   # int
+0fb     movl    R10, R8 # spill
+0fe     addl    R10, #11    # int
+102     movdl   R11, XMM3   # spill
+107     imull   R11, R10    # int
+10b     movl    [rsp + #44], R11    # spill
+110     movl    R10, R8 # spill
+113     addl    R10, #10    # int
+117     imull   RDI, R10    # int
+11b     movl    R11, R8 # spill
+11e     addl    R11, #8 # int
+122     movdl   R10, XMM2   # spill
+127     imull   R10, R11    # int
+12b     movl    [rsp + #48], R10    # spill
+130     movl    R10, R8 # spill
+133     addl    R10, #7 # int
+137     movdl   R11, XMM1   # spill
+13c     imull   R11, R10    # int
+140     movl    [rsp + #52], R11    # spill
+145     movl    R11, R8 # spill
+148     addl    R11, #6 # int
+14c     movdl   R10, XMM4   # spill
+151     imull   R10, R11    # int
+155     movl    [rsp + #56], R10    # spill
+15a     movl    R10, R8 # spill
+15d     addl    R10, #5 # int
+161     movdl   R11, XMM6   # spill
+166     imull   R11, R10    # int
+16a     movl    [rsp + #60], R11    # spill
+16f     movl    R11, R8 # spill
+172     addl    R11, #4 # int
+176     imull   RBX, R11    # int
+17a     movl    R11, R8 # spill
+17d     addl    R11, #3 # int
+181     imull   RCX, R11    # int
+185     movl    R10, R8 # spill
+188     addl    R10, #2 # int
+18c     imull   RDX, R10    # int
+190     movl    R11, R8 # spill
+193     incl    R11 # int
+196     imull   R9, R11 # int
+19a     addl    R9, [RSP + #32 (32-bit)]    # int
+19f     addl    R9, RDX # int
+1a2     addl    R9, RCX # int
+1a5     addl    R9, RBX # int
+1a8     addl    R9, [RSP + #60 (32-bit)]    # int
+1ad     addl    R9, [RSP + #56 (32-bit)]    # int
+1b2     addl    R9, [RSP + #52 (32-bit)]    # int
+1b7     addl    R9, [RSP + #48 (32-bit)]    # int
+1bc     movl    R10, R8 # spill
+1bf     addl    R10, #9 # int
+1c3     imull   R10, RSI    # int
+1c7     addl    R10, R9 # int
+1ca     addl    R10, RDI    # int
+1cd     addl    R10, [RSP + #44 (32-bit)]   # int
+1d2     movl    R11, R8 # spill
+1d5     addl    R11, #12    # int
+1d9     imull   R13, R11    # int
+1dd     addl    R13, R10    # int
+1e0     movl    R10, R8 # spill
+1e3     addl    R10, #13    # int
+1e7     imull   R10, [RSP + #40 (32-bit)]   # int
+1ed     addl    R10, R13    # int
+1f0     addl    RBP, R10    # int
+1f3     addl    R14, RBP    # int
+1f6     movl    R10, R8 # spill
+1f9     addl    R10, #16    # int
+1fd     cmpl    R10, #999999985
+204     jl     B2   # loop end  P=1.000000 C=7419903.000000
+</code></pre>
+<p>Here we observe much more &quot;spilling&quot; and more accesses to the stack <code>[RSP + ...]</code>, due to more intermediate results that need to be preserved.</p>
+<p>Thus the answer to the question is simple: <code>2 * (i * i)</code> is faster than <code>2 * i * i</code> because the JIT generates more optimal assembly code for the first case.</p>
+<hr />
+<p>But of course it is obvious that neither the first nor the second version is any good; the loop could really benefit from vectorization, since any x86-64 CPU has at least SSE2 support.</p>
+<p>So it's an issue of the optimizer; as is often the case, it unrolls too aggressively and shoots itself in the foot, all the while missing out on various other opportunities.</p>
+<p>In fact, modern x86-64 CPUs break down the instructions further into micro-ops (µops) and with features like register renaming, µop caches and loop buffers, loop optimization takes a lot more finesse than a simple unrolling for optimal performance. <a href=""https://www.agner.org/optimize/microarchitecture.pdf"" rel=""noreferrer"">According to Agner Fog's optimization guide</a>:</p>
+<blockquote>
+<p>The gain in performance due to the µop cache can be quite
+considerable if the average instruction length is more than 4 bytes.
+The following methods of optimizing the use of the µop cache may
+be considered:</p>
+<ul>
+<li>Make sure that critical loops are small enough to fit into the µop cache.</li>
+<li>Align the most critical loop entries and function entries by 32.</li>
+<li>Avoid unnecessary loop unrolling.</li>
+<li>Avoid instructions that have extra load time<br />
+. . .</li>
+</ul>
+</blockquote>
+<p>Regarding those load times - <a href=""https://stackoverflow.com/questions/4087280/approximate-cost-to-access-various-caches-and-main-memory"">even the fastest L1D hit costs 4 cycles</a>, an extra register and µop, so yes, even a few accesses to memory will hurt performance in tight loops.</p>
+<p>But back to the vectorization opportunity - to see how fast it can be, <a href=""https://gcc.godbolt.org/z/DdEDny"" rel=""noreferrer"">we can compile a similar C application with GCC</a>, which outright vectorizes it (AVX2 is shown, SSE2 is similar)<sup>2</sup>:</p>
+<pre><code>  vmovdqa ymm0, YMMWORD PTR .LC0[rip]
+  vmovdqa ymm3, YMMWORD PTR .LC1[rip]
+  xor eax, eax
+  vpxor xmm2, xmm2, xmm2
+.L2:
+  vpmulld ymm1, ymm0, ymm0
+  inc eax
+  vpaddd ymm0, ymm0, ymm3
+  vpslld ymm1, ymm1, 1
+  vpaddd ymm2, ymm2, ymm1
+  cmp eax, 125000000      ; 8 calculations per iteration
+  jne .L2
+  vmovdqa xmm0, xmm2
+  vextracti128 xmm2, ymm2, 1
+  vpaddd xmm2, xmm0, xmm2
+  vpsrldq xmm0, xmm2, 8
+  vpaddd xmm0, xmm2, xmm0
+  vpsrldq xmm1, xmm0, 4
+  vpaddd xmm0, xmm0, xmm1
+  vmovd eax, xmm0
+  vzeroupper
+</code></pre>
+<p>With run times:</p>
+<ul>
+<li>SSE: 0.24 s, or 2 times as fast.</li>
+<li>AVX: 0.15 s, or 3 times as fast.</li>
+<li>AVX2: 0.08 s, or 5 times as fast.</li>
+</ul>
+<hr />
+<p><sup>1</sup> <sub>To get JIT generated assembly output, <a href=""https://github.com/ojdkbuild/ojdkbuild/releases"" rel=""noreferrer"">get a debug JVM</a> and run with <code>-XX:+PrintOptoAssembly</code></sub></p>
+<p><sup>2</sup> <sub>The C version is compiled with the <code>-fwrapv</code> flag, which enables GCC to treat signed integer overflow as a two's-complement wrap-around.</sub></p>",,,22,,2018-11-23 22:40:27.097000+00:00,,2020-07-03 07:55:04.620000+00:00,2020-07-03 07:55:04.620000+00:00,,7008416,,485343,53452713,2,1214,,
+45,46584412,,"<p>There is a <code>lateinit</code> improvement in Kotlin 1.2 that allows to check the initialization state of <code>lateinit</code> variable directly:</p>
+
+<pre><code>lateinit var file: File    
+
+if (this::file.isInitialized) { ... }
+</code></pre>
+
+<p>See the annoucement on <a href=""https://blog.jetbrains.com/kotlin/2017/09/kotlin-1-2-beta-is-out/"" rel=""noreferrer"">JetBrains blog</a> or the <a href=""https://github.com/Kotlin/KEEP/pull/73"" rel=""noreferrer"">KEEP proposal</a>.</p>
+
+<p><strong>UPDATE:</strong> Kotlin 1.2 has been released. You can find <code>lateinit</code> enhancements here:</p>
+
+<ul>
+<li><a href=""http://kotlinlang.org/docs/reference/whatsnew12.html#checking-whether-a-lateinit-var-is-initialized"" rel=""noreferrer"">Checking whether a lateinit var is initialized</a></li>
+<li><a href=""http://kotlinlang.org/docs/reference/whatsnew12.html#lateinit-top-level-properties-and-local-variables"" rel=""noreferrer"">Lateinit top-level properties and local variables</a></li>
+</ul>",,,10,,2017-10-05 11:23:26.657000+00:00,,2020-04-11 23:15:50.007000+00:00,2020-04-11 23:15:50.007000+00:00,,2415921,,2862474,37618738,2,1204,,
+46,37511463,,"<p>With ES2015/ES6 <a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"" rel=""noreferrer"">String.prototype.normalize()</a>,</p>
+<pre><code>const str = &quot;Crème Brulée&quot;
+str.normalize(&quot;NFD&quot;).replace(/[\u0300-\u036f]/g, &quot;&quot;)
+&gt; &quot;Creme Brulee&quot;
+</code></pre>
+<p>Two things are happening here:</p>
+<ol>
+<li><code>normalize()</code>ing to <code>NFD</code> Unicode normal form decomposes combined graphemes into the combination of simple ones. The <code>è</code> of <code>Crème</code> ends up expressed as <code>e</code> + <code> ̀</code>.</li>
+<li>Using a regex <a href=""http://www.regular-expressions.info/charclass.html"" rel=""noreferrer"">character class</a> to match the U+0300 → U+036F range, it is now trivial to globally get rid of the diacritics, which the Unicode standard conveniently groups as the <a href=""https://en.wikipedia.org/wiki/Combining_Diacritical_Marks"" rel=""noreferrer"">Combining Diacritical Marks</a> Unicode block.</li>
+</ol>
+<p>See comment for performance testing.</p>
+<p><strong>Alternatively, if you just want sorting</strong></p>
+<p><a href=""https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Collator"" rel=""noreferrer"">Intl.Collator</a> has sufficient support <a href=""https://caniuse.com/#search=intl.collator"" rel=""noreferrer"">~95% right now</a>, a polyfill is also available <a href=""https://github.com/andyearnshaw/Intl.js/"" rel=""noreferrer"">here</a> but I haven't tested it.</p>
+<pre><code>const c = new Intl.Collator();
+[&quot;creme brulee&quot;, &quot;crème brulée&quot;, &quot;crame brulai&quot;, &quot;crome brouillé&quot;,
+&quot;creme brulay&quot;, &quot;creme brulfé&quot;, &quot;creme bruléa&quot;].sort(c.compare)
+[&quot;crame brulai&quot;, &quot;creme brulay&quot;, &quot;creme bruléa&quot;, &quot;creme brulee&quot;,
+&quot;crème brulée&quot;, &quot;creme brulfé&quot;, &quot;crome brouillé&quot;]
+
+
+[&quot;creme brulee&quot;, &quot;crème brulée&quot;, &quot;crame brulai&quot;, &quot;crome brouillé&quot;].sort((a,b) =&gt; a&gt;b)
+[&quot;crame brulai&quot;, &quot;creme brulee&quot;, &quot;crome brouillé&quot;, &quot;crème brulée&quot;]
+</code></pre>",,,23,,2016-05-29 15:06:27.167000+00:00,,2020-08-20 01:56:04.353000+00:00,2020-08-20 01:56:04.353000+00:00,,1698813,,1698813,990904,2,1163,,
+47,40560953,,"<p>I think @InspiredJW did it with ES5, and as @trincot pointed out, using es6 is a better approach.  But we can add a bit more sugar, by using the spread operator, and logical AND short circuit evaluation:</p>
+
+<pre><code>const a = {
+   ...(someCondition &amp;&amp; {b: 5})
+}
+</code></pre>",,,25,,2016-11-12 08:22:24.297000+00:00,,2018-05-09 11:16:31.697000+00:00,2018-05-09 11:16:31.697000+00:00,,1839360,,1216032,11704267,2,1156,,
+48,43881141,,"<p>This answer covers a lot of ground, so it’s divided into three parts:</p>
+<ul>
+<li>How to use a CORS proxy to get around <em>“No Access-Control-Allow-Origin header”</em> problems</li>
+<li>How to avoid the CORS preflight</li>
+<li>How to fix <em>“Access-Control-Allow-Origin header must not be the wildcard”</em> problems</li>
+</ul>
+<hr />
+<p><strong>How to use a CORS proxy to avoid <em>“No Access-Control-Allow-Origin header”</em> problems</strong></p>
+<p>If you don’t control the server your frontend code is sending a request to, and the problem with the response from that server is just the lack of the necessary <code>Access-Control-Allow-Origin</code> header, you can still get things to work—by making the request through a CORS proxy.</p>
+<p>You can easily run your own proxy using code from <a href=""https://github.com/Rob--W/cors-anywhere/"" rel=""noreferrer"">https://github.com/Rob--W/cors-anywhere/</a>.<br>
+You can also easily deploy your own proxy to Heroku in just 2-3 minutes, with 5 commands:</p>
+<pre><code>git clone https://github.com/Rob--W/cors-anywhere.git
+cd cors-anywhere/
+npm install
+heroku create
+git push heroku master
+</code></pre>
+<p>After running those commands, you’ll end up with your own CORS Anywhere server running at, e.g., <code>https://cryptic-headland-94862.herokuapp.com/</code>.</p>
+<p>Now, prefix your request URL with the URL for your proxy:</p>
+<pre><code>https://cryptic-headland-94862.herokuapp.com/https://example.com
+</code></pre>
+<p>Adding the proxy URL as a prefix causes the request to get made through your proxy, which then:</p>
+<ol>
+<li>Forwards the request to <code>https://example.com</code>.</li>
+<li>Receives the response from <code>https://example.com</code>.</li>
+<li>Adds the <code>Access-Control-Allow-Origin</code> header to the response.</li>
+<li>Passes that response, with that added header, back to the requesting frontend code.</li>
+</ol>
+<p>The browser then allows the frontend code to access the response, because that response with the <code>Access-Control-Allow-Origin</code> response header is what the browser sees.</p>
+<p>This works even if the request is one that triggers browsers to do a CORS preflight <code>OPTIONS</code> request, because in that case, the proxy also sends back the <code>Access-Control-Allow-Headers</code> and <code>Access-Control-Allow-Methods</code> headers needed to make the preflight successful.</p>
+<hr />
+<p><strong>How to avoid the CORS preflight</strong></p>
+<p>The code in the question triggers a CORS preflight—since it sends an <code>Authorization</code> header.</p>
+<p><a href=""https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS#Preflighted_requests"" rel=""noreferrer"">https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS#Preflighted_requests</a></p>
+<p>Even without that, the <code>Content-Type: application/json</code> header would also trigger a preflight.</p>
+<p>What “preflight” means: before the browser tries the <code>POST</code> in the code in the question, it’ll first send an <code>OPTIONS</code> request to the server — to determine if the server is opting-in to receiving a cross-origin <code>POST</code> that has <code>Authorization</code> and <code>Content-Type: application/json</code> headers.</p>
+<blockquote>
+<p>It works pretty well with a small curl script - I get my data.</p>
+</blockquote>
+<p>To properly test with <code>curl</code>, you must emulate the preflight <code>OPTIONS</code> request the browser sends:</p>
+<pre><code>curl -i -X OPTIONS -H &quot;Origin: http://127.0.0.1:3000&quot; \
+    -H 'Access-Control-Request-Method: POST' \
+    -H 'Access-Control-Request-Headers: Content-Type, Authorization' \
+    &quot;https://the.sign_in.url&quot;
+</code></pre>
+<p>…with <code>https://the.sign_in.url</code> replaced by whatever your actual <code>sign_in</code> URL is.</p>
+<p>The response the browser needs to see from that <code>OPTIONS</code> request must have headers like this:</p>
+<pre class=""lang-none prettyprint-override""><code>Access-Control-Allow-Origin:  http://127.0.0.1:3000
+Access-Control-Allow-Methods: POST
+Access-Control-Allow-Headers: Content-Type, Authorization
+</code></pre>
+<p>If the <code>OPTIONS</code> response doesn’t include those headers, then the browser will stop right there and never even attempt to send the <code>POST</code> request. Also, the HTTP status code for the response must be a 2xx—typically 200 or 204. If it’s any other status code, the browser will stop right there.</p>
+<p>The server in the question is responding to the <code>OPTIONS</code> request with a 501 status code, which apparently means it’s trying to indicate it doesn’t implement support for <code>OPTIONS</code> requests. Other servers typically respond with a 405 “Method not allowed” status code in this case.</p>
+<p>So you’re never going to be able to make <code>POST</code> requests directly to that server from your frontend JavaScript code if the server responds to that <code>OPTIONS</code> request with a 405 or 501 or anything other than a 200 or 204 or if doesn’t respond with those necessary response headers.</p>
+<p>The way to avoid triggering a preflight for the case in the question would be:</p>
+<ul>
+<li>if the server didn’t require an <code>Authorization</code> request header but instead, e.g., relied on authentication data embedded in the body of the <code>POST</code> request or as a query param</li>
+<li>if the server didn’t require the <code>POST</code> body to have a <code>Content-Type: application/json</code> media type but instead accepted the <code>POST</code> body as <code>application/x-www-form-urlencoded</code> with a parameter named <code>json</code> (or whatever) whose value is the JSON data</li>
+</ul>
+<hr />
+<p><strong>How to fix <em>“Access-Control-Allow-Origin header must not be the wildcard”</em> problems</strong></p>
+<blockquote>
+<p>I am getting another error message:</p>
+<p>The value of the 'Access-Control-Allow-Origin' header in the response
+must not be the wildcard '*' when the request's credentials mode is
+'include'. Origin 'http://127.0.0.1:3000' is therefore not allowed
+access. The credentials mode of requests initiated by the
+XMLHttpRequest is controlled by the withCredentials attribute.</p>
+</blockquote>
+<p>For a request that includes credentials, browsers won’t let your frontend JavaScript code access the response if the value of the <code>Access-Control-Allow-Origin</code> response header is <code>*</code>. Instead the value in that case must exactly match your frontend code’s origin, <code>http://127.0.0.1:3000</code>.</p>
+<p>See <a href=""https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS#Credentialed_requests_and_wildcards"" rel=""noreferrer""><em>Credentialed requests and wildcards</em></a> in the MDN HTTP access control (CORS) article.</p>
+<p>If you control the server you’re sending the request to, then a common way to deal with this case is to configure the server to take the value of the <code>Origin</code> request header, and echo/reflect that back into the value of the <code>Access-Control-Allow-Origin</code> response header; e.g., with nginx:</p>
+<pre class=""lang-none prettyprint-override""><code>add_header Access-Control-Allow-Origin $http_origin
+</code></pre>
+<p>But that’s just an example; other (web) server systems provide similar ways to echo origin values.</p>
+<hr />
+<blockquote>
+<p>I am using Chrome. I also tried using that Chrome CORS Plugin</p>
+</blockquote>
+<p>That Chrome CORS plugin apparently just simplemindedly injects an <code>Access-Control-Allow-Origin: *</code> header into the response the browser sees. If the plugin were smarter, what it would be doing is setting the value of that fake <code>Access-Control-Allow-Origin</code> response header to the actual origin of your frontend JavaScript code, <code>http://127.0.0.1:3000</code>.</p>
+<p>So avoid using that plugin, even for testing. It’s just a distraction. To test what responses you get from the server with no browser filtering them, you’re better off using <code>curl -H</code> as above.</p>
+<hr />
+<p>As far as the frontend JavaScript code for the <code>fetch(…)</code> request in the question:</p>
+<pre><code>headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+headers.append('Access-Control-Allow-Credentials', 'true');
+</code></pre>
+<p>Remove those lines. The <code>Access-Control-Allow-*</code> headers are <em>response</em> headers. You never want to send them in a request. The only effect that’ll have is to trigger a browser to do a preflight.</p>",,,19,,2017-05-09 23:03:53.547000+00:00,,2021-02-07 23:03:13.910000+00:00,2021-02-07 23:03:13.910000+00:00,,441757,,441757,43871637,2,1153,,
+49,37801602,,"<p>The syntax is simply:</p>
+
+<pre><code>// to run something in 0.1 seconds
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+    // your code here
+}
+</code></pre>
+
+<hr>
+
+<p>Note, the above syntax of adding <code>seconds</code> as a <code>Double</code> seems to be a source of confusion (esp since we were accustomed to adding nsec). That ""add seconds as <code>Double</code>"" syntax works because <code>deadline</code> is a <code>DispatchTime</code> and, behind the scenes, there is a <code>+</code> operator that will take a <code>Double</code> and add that many seconds to the <code>DispatchTime</code>:</p>
+
+<pre><code>public func +(time: DispatchTime, seconds: Double) -&gt; DispatchTime
+</code></pre>
+
+<p>But, if you really want to add an integer number of msec, μs, or nsec to the <code>DispatchTime</code>, you can also add a <code>DispatchTimeInterval</code> to a <code>DispatchTime</code>. That means you can do:</p>
+
+<pre><code>DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+    os_log(""500 msec seconds later"")
+}
+
+DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(1_000_000)) {
+    os_log(""1m μs seconds later"")
+}
+
+DispatchQueue.main.asyncAfter(deadline: .now() + .nanoseconds(1_500_000_000)) {
+    os_log(""1.5b nsec seconds later"")
+}
+</code></pre>
+
+<p>These all seamlessly work because of this separate overload method for the <code>+</code> operator in the <code>DispatchTime</code> class.</p>
+
+<pre><code>public func +(time: DispatchTime, interval: DispatchTimeInterval) -&gt; DispatchTime
+</code></pre>
+
+<hr>
+
+<p>It was asked how one goes about canceling a dispatched task. To do this, use <code>DispatchWorkItem</code>. For example, this starts a task that will fire in five seconds, or if the view controller is dismissed and deallocated, its <code>deinit</code> will cancel the task:</p>
+
+<pre><code>class ViewController: UIViewController {
+
+    private var item: DispatchWorkItem?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        item = DispatchWorkItem { [weak self] in
+            self?.doSomething()
+            self?.item = nil
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: item!)
+    }
+
+    deinit {
+        item?.cancel()
+    }
+
+    func doSomething() { ... }
+
+}
+</code></pre>
+
+<p>Note the use of the <code>[weak self]</code> capture list in the <code>DispatchWorkItem</code>. This is essential to avoid a strong reference cycle. Also note that this does not do a preemptive cancelation, but rather just stops the task from starting if it hasn’t already. But if it has already started by the time it encounters the <code>cancel()</code> call, the block will finish its execution (unless you’re manually checking <code>isCancelled</code> inside the block).</p>",,,7,,2016-06-14 01:31:08.670000+00:00,,2019-04-24 23:23:18.093000+00:00,2019-04-24 23:23:18.093000+00:00,,1271826,,1271826,37801436,2,1149,,

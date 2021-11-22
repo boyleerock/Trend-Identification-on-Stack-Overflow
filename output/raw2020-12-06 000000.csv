@@ -1,0 +1,2629 @@
+,id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+0,65305433,Dynamically loading objects from properties file at runtime using Spring,"<p>I have a properties file as such:</p>
+<p><code>myapp.properties</code></p>
+<pre><code>shape.circle.radius=10
+shape.circle.perimeter=63
+
+shape.square.side=10
+shape.square.perimeter=40
+</code></pre>
+<p>Where circle and square are POJO. How do I construct the circle / square object dynamically? Ideally I want something like this:</p>
+<pre><code>Circle circle = environment.get(&quot;shape.circle&quot;);
+Square square = environment.get(&quot;shape.square&quot;);
+</code></pre>
+<p>Is there any way I can do it by not reading the properties one by one from the file and loading the objects manually? I can't use SpEL because I know the parameter <code>circle / square</code> only at runtime</p>",,1,2,,2020-12-15 11:59:59.197000+00:00,,2020-12-15 12:27:34.617000+00:00,,,,,9646647,,1,0,java|spring|spring-boot,22
+1,65305432,wkhtmltopdf failed to load images at random at each execution,"<p>My version is wkhtmltopdf 0.12.6 (with patched qt)</p>
+<p>I execute wkhtmltopdf on a local html file which includes many img tags that point to an online source.</p>
+<p>This is my execution:</p>
+<pre><code>wkhtmltopdf --allow &quot;css/styles.css&quot; --enable-local-file-access toc &quot;handbook.html&quot; &quot;handbook.pdf&quot;
+</code></pre>
+<p>and it always randomly doesn't include some images:</p>
+<pre><code>Loading pages (1/6)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/tomedo-handbuch-csv-import-export-backupmodus-2.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-tipps-uns-tricks-vorgefilterte-einstellungen-kartei.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-tipps-uns-tricks-einstellungen-ariba.jpg (ignore)
+Counting pages (2/6)                                               
+Loading TOC (3/6)                                                           
+Resolving links (4/6)                                              
+Loading headers and footers (5/6)                                           
+Printing pages (6/6)  
+</code></pre>
+<pre><code>Loading pages (1/6)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-drucker-scanner-scansnap-einrichten.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-automatischer-datei-import-lauscher.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-elektronische-laboranforderungen-auftragsbestaetigung.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-applescript-portieren.jpg (ignore)
+Warning: Failed to load https://hilfe.tomedo.de/wp-content/uploads/2019/10/tomedo-handbuch-tipps-uns-tricks-einstellungen-ariba.jpg (ignore)
+Counting pages (2/6)                                               
+Loading TOC (3/6)     
+</code></pre>
+<p>and so on ...</p>
+<p>the html file is very big and it's loading about 300 images</p>
+<p>If I cut half of the html content away it works so it could be a memory problem</p>
+<p>I also found this solution but it had no effect on the loading error issue</p>
+<pre><code>ulimit -n 4096
+</code></pre>
+<p>Did anyone else encounter this problem and find a solution for it?</p>",,0,1,,2020-12-15 11:59:59.160000+00:00,,2021-01-23 21:25:43.750000+00:00,2021-01-23 21:25:43.750000+00:00,,13302.0,,6717304,,1,1,html|wkhtmltopdf,47
+2,65305430,use placeholder value as value of input,"<p>I have a form where a user can edit a product on their website. it works fine if the user edits all fields, but if they don't, then it still sends the update query to the db, but replaces the fields they didn't fill in as empty. I have placeholders set on each input field so they can see which product they are editing and what they have in those fields already, so I was wondering what's the best way to basically do, if the value of the input field is empty, then set the value to whatever the placeholder is?</p>
+<p>my code so far looks like this:</p>
+<pre><code>&lt;form method=&quot;GET&quot; action=&quot;/submitEdit&quot; style=&quot;border: 2px solid black&quot;&gt;
+
+&lt;input type=&quot;hidden&quot; id=&quot;ogItem&quot; name=&quot;ogItem&quot; value=&quot;&lt;%= itemName %&gt;&quot; style=&quot;border: 1px solid black&quot; &gt;
+
+
+&lt;fieldset&gt;
+        &lt;legend&gt;&lt;a href=&quot;/index&quot;&gt;&lt;span class=&quot;number&quot;&gt;?&lt;/a&gt;&lt;/span&gt;Enter The Following Details&lt;/legend&gt;
+    &lt;label for=&quot;productName&quot;&gt;Product Name:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;item&quot; name=&quot;item&quot; placeholder=&quot;&lt;%= itemName %&gt;&quot; style=&quot;border: 1px solid black&quot; &gt;
+    
+    &lt;label for=&quot;productPrice&quot;&gt;Price:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;price&quot; name=&quot;price&quot; placeholder=&quot;&lt;%= itemPrice %&gt;&quot; style=&quot;border: 1px solid black&quot;&gt;
+
+    &lt;!-- &lt;label for=&quot;productCategory&quot;&gt;Category:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;category&quot; name=&quot;category&quot; placeholder=&quot;Socks&quot; style=&quot;border: 1px solid black&quot;equired&gt; --&gt;
+      
+      &lt;label for=&quot;productCategory&quot;&gt;SIZES (OPTIONAL):&lt;/label&gt;
+      &lt;input type=&quot;text&quot; id=&quot;size&quot; name=&quot;size&quot; placeholder=&quot;&lt;%= itemSize %&gt;&quot; style=&quot;border: 1px solid black&quot;&gt;
+
+       &lt;!-- submit image --&gt;
+
+    &lt;button id=&quot;upload_widget&quot; class=&quot;cloudinary-button&quot;&gt;Upload Product Image&lt;/button&gt;
+
+    &lt;script src=&quot;https://widget.cloudinary.com/v2.0/global/all.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;  
+
+    &lt;script type=&quot;text/javascript&quot;&gt;  
+    var myWidget = cloudinary.createUploadWidget({
+      cloudName: 'xxx', 
+      uploadPreset: 'xxx'}, (error, result) =&gt; { 
+        if (!error &amp;&amp; result &amp;&amp; result.event === &quot;success&quot;) { 
+          console.log('Done! Here is the image info: ', result.info); 
+          console.log(result.info.secure_url)
+          var result_url = result.info.secure_url;
+          console.log(&quot;result url is &quot; + result_url)
+          document.getElementById(&quot;url&quot;).value = result_url;
+        }
+      }
+    )
+
+    document.getElementById(&quot;upload_widget&quot;).addEventListener(&quot;click&quot;, function(){
+      myWidget.open();
+
+      }, false);
+    &lt;/script&gt;
+
+    &lt;!-- submit image end --&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;url&quot; id=&quot;url&quot; value=&quot;&quot;&gt;
+
+  &lt;/fieldset&gt;
+  &lt;script&gt;
+    var itemid = document.getElementById('item')
+    var itemid2 = document.getElementById('price')
+    var itemid2 = document.getElementById('description')
+    submitButton.addEventListener('click', function() {
+      if (itemid.value == &quot;&quot;){
+        document.write('&lt;input type=&quot;hidden&quot; id=&quot;item&quot; name=&quot;item&quot; value=&quot;&lt;%= itemName %&gt;&quot; style=&quot;border: 1px solid black&quot; &gt;')
+      } else {
+      alert(&quot;product added successfully \n &quot;)
+      }
+    })
+  &lt;/script&gt;
+
+  &lt;fieldset&gt;
+    &lt;label for=&quot;bio&quot;&gt;Description:&lt;/label&gt;
+    &lt;textarea id=&quot;bio&quot; name=&quot;description&quot; placeholder=&quot;&lt;%= itemDesc %&gt;&quot; style=&quot;border: 1px solid black&quot; &gt;&lt;/textarea&gt;
+  &lt;/fieldset&gt;
+&lt;button id=&quot;submitButton&quot; type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+</code></pre>
+  
+<p>I was thinking to use javascript to say something like, if (itemid.value == &quot;&quot;) { set value of placeholder to the value of input}, but not sure if this is possible. Is this the best way to go about is since I need to check each input field and basically check which are empty and set the values to the placeholders? thanks in advance.</p>",,0,2,,2020-12-15 11:59:46.953000+00:00,,2020-12-15 11:59:46.953000+00:00,,,,,14376347,,1,0,javascript|html|node.js|ejs,23
+3,65305429,Vuejs How to display the data from date/time input,"<p>I have two inputs in a form. The first one's type is date and the other one is time. What I want to do is when the user select the date and the time, they should be displayed in somewhere else (but in the same component) like<code>&quot;Current Time: {{date, time}}&quot;</code></p>
+<p>I also have another option to select the time which is a select element. I have bunch of timezone options in a <code>select</code> element and what I want is when the user selects a timezone from my <code>select</code> element, I want it to be displayed in a different place as I explained above. How do I do that? Here is the code;</p>
+<pre><code>                &lt;!-- DatePicker --&gt;
+                &lt;div v-show=&quot;showTimepicker&quot;&gt;
+                    &lt;div&gt;
+                        &lt;div&gt;
+                            &lt;label&gt;Select the Date&lt;/label&gt;
+                            &lt;input type=&quot;date&quot; value=&quot;&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- Timepicker --&gt;
+                    &lt;div class=&quot;w-full lg:w-4/12&quot;&gt;
+                        &lt;div&gt;
+                            &lt;label&gt;Select the Time&lt;/label&gt;
+                            &lt;input type=&quot;time&quot; value=&quot;&quot;/&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+</code></pre>
+<p>And this is the place that I want them to be displayed;</p>
+<pre><code>            &lt;label&gt;Current Time:&lt;/label&gt;&amp;nbsp;
+            &lt;label&gt;TEST&lt;/label&gt;
+</code></pre>
+<p>I know that the second label should have a syntax like <code>{{time}}</code> but to do that I need a data, so how do I put the selection of time and date, and put it in a data so that I can display it somewhere else?</p>
+<p>I also need to do that with a <code>select</code> element. Thanks in advance!</p>",,0,1,,2020-12-15 11:59:38.310000+00:00,,2020-12-15 11:59:38.310000+00:00,,,,,12352427,,1,0,vue.js|data-binding|datetimepicker,58
+4,65305427,Shopware 6 product api,"<p>Whenever i'm try to create product using product api it will returns below error</p>
+<pre><code>{
+&quot;status&quot;: 0,
+&quot;error_response&quot;: {
+    &quot;errors&quot;: [
+        {
+            &quot;code&quot;: &quot;0&quot;,
+            &quot;status&quot;: &quot;500&quot;,
+            &quot;title&quot;: &quot;Internal Server Error&quot;,
+            &quot;detail&quot;: &quot;Malformed UTF-8 characters, possibly incorrectly encoded&quot;
+        }
+    ]
+},
+&quot;result&quot;: &quot;&quot;,
+&quot;link&quot;: &quot;https://host/api/v3/_action/sync?_response&quot;
+}
+</code></pre>
+<p>Anyone help me.
+Thanks in advance...</p>",,0,0,,2020-12-15 11:59:30.940000+00:00,,2020-12-22 05:41:15.693000+00:00,,,,,12024091,,1,0,api|restapi|shopware,72
+5,65305426,Loop over list of data.tables and lists,"<p>Say I have a list (input_data) that consists of approximately 20 data.tables and 5 lists. (i.e. class(input_data$a) == list and class(input_data$b) == data.table. Each data.table has a column named &quot;Scenario&quot; which has either &quot;TC1&quot; till &quot;TC30&quot; or &quot;Regular&quot;.</p>
+<p>I want to loop over the list so that the first output is a list similar to input_data, however only with the rows that have &quot;Scenario&quot; == &quot;TC1&quot; or &quot;Regular&quot;. Next &quot;TC2&quot; or &quot;regular&quot; etcetera.</p>
+<p>The following gives an example of input_data:</p>
+<pre><code>table1 &lt;- data.table::data.table(Scenario = 
+                                c(rep(
+                                  c(&quot;TC1&quot;, &quot;TC1&quot;, &quot;TC2&quot;, &quot;Regular&quot;), 
+                                  4)),
+                              A = c(
+                                rep(&quot;x&quot;, 4), rep(&quot;b&quot;, 4), rep(&quot;s&quot;, 4),
+                                rep(&quot;u&quot;, 4)),
+                              Correlation = c(1, 0.125, 0.1, 0, 
+                                              0.125, 1, 0.2, 0, 
+                                              0.1, 0.2,   1, 0, 
+                                              0,     0,   0, 1),
+                              Matrix = &quot;IM&quot;,
+                              stringsAsFactors = FALSE,
+                              check.names = FALSE)
+table2 &lt;- data.table::data.table(Scenario = 
+                             c(rep(
+                               c(&quot;TC2&quot;, &quot;TC1&quot;, &quot;TC2&quot;, &quot;TC1&quot;), 
+                               4)),
+                           A = c(
+                             rep(&quot;x&quot;, 4), rep(&quot;b&quot;, 4), rep(&quot;s&quot;, 4),
+                             rep(&quot;u&quot;, 4)),
+                           Correlation = c(1, 0.125, 0.1, 0, 
+                                           0.125, 1, 0.2, 0, 
+                                           0.1, 0.2,   1, 0, 
+                                           0,     0,   0, 1),
+                           Matrix = &quot;IM&quot;,
+                           stringsAsFactors = FALSE,
+                           check.names = FALSE)
+
+table3 &lt;- data.table::data.table(Scenario = 
+                             c(rep(
+                               c(&quot;TC1&quot;, &quot;Regular&quot;, &quot;TC2&quot;, &quot;Regular&quot;), 
+                               4)),
+                           A = c(
+                             rep(&quot;x&quot;, 4), rep(&quot;b&quot;, 4), rep(&quot;s&quot;, 4),
+                             rep(&quot;u&quot;, 4)),
+                           Correlation = c(1, 0.125, 0.1, 0, 
+                                           0.125, 1, 0.2, 0, 
+                                           0.1, 0.2,   1, 0, 
+                                           0,     0,   0, 1),
+                           Matrix = &quot;IM&quot;,
+                           stringsAsFactors = FALSE,
+                           check.names = FALSE)
+
+list1 &lt;- list(&quot;a&quot; = &quot;2019&quot;, &quot;b&quot; = &quot;2020&quot;, &quot;c&quot; = &quot;2021&quot;)
+list2 &lt;- list(&quot;a&quot; = &quot;test&quot;, &quot;b&quot; = &quot;test&quot;, &quot;c&quot; = &quot;test&quot;)
+
+input_data &lt;- list(&quot;table1&quot; = table1, &quot;table2&quot; = table2, &quot;table3&quot; = table3, 
+&quot;list1&quot;=list1, &quot;list2&quot; = list2)
+</code></pre>
+<p>The output of the first loop should be the same, without every row containing &gt;=TC2 (thus only TC1 and Regular), second loop only TC2 and regular etc.</p>",,0,1,,2020-12-15 11:59:21.303000+00:00,,2020-12-15 12:37:01.697000+00:00,2020-12-15 12:37:01.697000+00:00,,9968404.0,,9968404,,1,0,r|loops|data.table,40
+6,65305425,Type Object Is Not Subscriptable,"<p>I'm trying to create a program which multiplies user input (streams) by data from the list given at the start of the code. It says that the type object is not subscriptable and and there are incompatible types in the assignment</p>
+<pre><code>services =  &quot;'Spotify', 'Apple Music', 'Google Play Music', 'Deezer', 'Pandora', 'Amazon Music Unlimited', 'Tidal'&quot; #variable of the row names
+possiblePayment = [0.00318,0.00563,0.00551,0.00436,0.00151,0.01196,0.00989]
+possiblePayment = float
+
+streams=input(&quot;How many streams would you like to calculate: &quot;) #user input
+streams=int
+print(&quot;The options of streaming services are &quot; + services) #gives user the options of streaming services they can choose from
+platform=input(&quot;What platform would you like to calculate your streams on: (Case Sensitive! Please type name as it appears above) &quot;) #user chooses service
+    
+if platform == &quot;Spotify&quot;:
+    print(&quot;Spotify will pay you $&quot; + str(possiblePayment[0]) + &quot; per stream&quot;) #if the user chooses Spotify, take data from row 2 (the row with spotify in it) of the file
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[0])) #multiplies &quot;streams&quot; by the data in row 2 of the file (DOES NOT WORK, HERE IS WHERE THE ERRORS OCCUR)
+            
+elif platform == &quot;Apple Music&quot;:
+    print(&quot;Apple Music will pay you $&quot; + str(possiblePayment[1]) + &quot; per stream&quot;) #see above
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[1])) 
+            
+elif platform == &quot;Google Play Music&quot;:
+    print(&quot;Google Play Music will pay you $&quot; + str(possiblePayment[2]) + &quot; per stream&quot;)
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[2]))
+            
+elif platform == &quot;Deezer&quot;:
+    print(&quot;Deezer will pay you $&quot; + str(possiblePayment[3])+ &quot; per stream&quot;)
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[3]))
+            
+elif platform == &quot;Pandora&quot;:
+    print(&quot;Pandora will pay you $&quot; + str(possiblePayment[4]) + &quot; per stream&quot;)
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[4]))
+            
+elif platform == &quot;Amazon Music Unlimited&quot;:
+    print(&quot;Amazon Music Unlimited will pay you $&quot; + str(possiblePayment[5]) + &quot; per stream&quot;)
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[5]))
+            
+elif platform == &quot;Tidal&quot;:
+    print(&quot;Tidal will pay you $&quot; + str(possiblePayment[6]) + &quot; per stream&quot;)
+    print(&quot;You would earn $&quot; + str(streams*possiblePayment[6]))
+            
+else:
+    print(&quot;Invalid Input&quot;) #if they dont give the name of a streaming service
+</code></pre>",65305492.0,1,3,,2020-12-15 11:59:19.063000+00:00,,2020-12-15 12:04:44.567000+00:00,,,,,14719759,,1,-1,python|list|if-statement,29
+7,65305421,Applying same operation to different figures,"<p>I'm using <a href=""http://docs.enthought.com/mayavi/mayavi/mlab.html"" rel=""nofollow noreferrer"">mayavi.mlab</a> to plot figures from data files as follows.</p>
+<pre class=""lang-py prettyprint-override""><code>from mayavi import mlab
+
+@mlab.show
+def show():
+    x,y,z = read_data_from_file(&quot;./a.dat&quot;)
+    mlab.points3d(x,y,z)
+
+if __name__ = '__main__':
+    show()
+</code></pre>
+<p>After the GUI is launched and I do some operations (change colors, move camera positions, etc.), I want to apply them to figures created from other files.</p>
+<p>However, <a href=""http://docs.enthought.com/mayavi/mayavi/application.html#recording-mayavi-actions-to-a-script"" rel=""nofollow noreferrer"">recording actions</a> and <code>exec()</code>-ing the recorded script doesn't work.</p>
+<pre><code>for file in [&quot;./b.dat&quot;, &quot;./c.dat&quot;, ...]:
+    x,y,z = read_data_from_file(file)
+    mlab.points3d(x,y,z)
+    with open(&quot;saved_script.py&quot;) as f:
+        exec(f.read())
+# Result
+#   IndexError: list index out of range
+</code></pre>
+<p>Is there any way?</p>",,0,0,,2020-12-15 11:59:14.087000+00:00,,2020-12-15 11:59:14.087000+00:00,,,,,9796650,,1,0,python|mayavi|mayavi.mlab,12
+8,65305419,Select N points across a line using Matplotlib,"<p>I'm trying to select a random sample of points across a line, using <code>random</code> library but all I get are some weird lines.
+The red line is generated from a list of 2-uples, by selecting the first index of each tuple, of each index of the list.</p>
+<p>Here is the script sample:</p>
+<pre><code>path =[(403, 0), (403, 1), (403, 2), (403, 3), (403, 4), (403, 5), (403, 6), (403, 7), (403, 8), (403, 9), (403, 10)]
+
+path_to_plot = [x[0] for x in path]#List only with the rows numbers
+
+#Representation of the matrix
+#plt.matshow(path_to_plot)
+random_list = random.sample(path_to_plot,N_PLOT_SAMPLES)
+random_list_y = random.sample(path_to_plot,N_PLOT_SAMPLES)
+print(&quot;Random list:\n&quot;,random_list)
+            
+plt.plot(random_list, random_list_y)
+plt.plot(path_to_plot,color='r',label=&quot;Path&quot;)#Plots the path
+plt.show()
+</code></pre>
+<p>The generated plot is the following <a href=""https://i.stack.imgur.com/itFl1.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/itFl1.png"" alt=""enter image description here"" /></a></p>
+<p>Is there a way to generate N points across that red line?</p>",65305700.0,1,0,,2020-12-15 11:59:01.597000+00:00,,2020-12-15 14:28:03.797000+00:00,2020-12-15 14:28:03.797000+00:00,,8881141.0,,13185389,,1,1,python|matplotlib,43
+9,65305418,Terraform allow AKS to use ACR,"<p>This my Terraform code to create an AKS cluster and allow it to use my ACR (in the same subscription) :</p>
+<pre><code>resource &quot;azurerm_kubernetes_cluster&quot; &quot;aks&quot; {
+  name                      = var.aks-cluster-name
+  location                  = azurerm_resource_group.rg.location
+  resource_group_name       = azurerm_resource_group.rg.name
+  kubernetes_version        = &quot;1.18.8&quot;
+  dns_prefix                = &quot;${var.aks-cluster-name}-dns&quot;
+
+  default_node_pool {
+    name                  = &quot;default&quot;
+    vm_size               = &quot;Standard_D2_v2&quot;
+    enable_auto_scaling   = false
+    node_count            = 3
+    availability_zones    = [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]
+    type                  = &quot;VirtualMachineScaleSets&quot;
+    enable_node_public_ip = false
+  }
+
+  network_profile {
+    network_plugin = &quot;azure&quot;
+    load_balancer_sku = &quot;standard&quot;
+  }
+
+  identity {
+    type = &quot;SystemAssigned&quot;
+  }
+
+  addon_profile {
+    oms_agent {
+      enabled                    = true
+      log_analytics_workspace_id = data.azurerm_log_analytics_workspace.log_workspace.id
+    }
+    kube_dashboard {
+      enabled = false
+    }
+    azure_policy {
+      enabled = false
+    }
+  }
+}
+
+data &quot;azurerm_container_registry&quot; &quot;acr_name&quot; {
+  name = &quot;myacr&quot;
+  resource_group_name = &quot;acr_rg&quot;
+}
+
+resource &quot;azurerm_role_assignment&quot; &quot;aks_to_acr_role&quot; {
+  scope                = data.azurerm_container_registry.acr_name.id
+  role_definition_name = &quot;AcrPull&quot;
+  principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
+}
+</code></pre>
+<p>I got this error (Status=403 Code=&quot;AuthorizationFailed&quot;):</p>
+<pre><code>azurerm_role_assignment.aks_to_acr_role: Creating...
+Error: authorization.RoleAssignmentsClient#Create: Failure responding to request: StatusCode=403 -- Original Error: autorest/azure: Service returned an error. Status=403 Code=&quot;AuthorizationFailed&quot; Message=&quot;The client 'xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx' with object id 'xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx' does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
+        d/resourceGroups/acr_rg/providers/Microsoft.ContainerRegistry/registries/gcrclientacr/providers/Microsoft.Authorization/roleAssignments/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx' or the scope is invalid. If access was recently granted, please refresh your credentials.&quot;
+              
+    on main.tf line 91, in resource &quot;azurerm_role_assignment&quot; &quot;aks_to_acr_role&quot;:
+    91: resource &quot;azurerm_role_assignment&quot; &quot;aks_to_acr_role&quot; {
+</code></pre>
+<p>I used a managed identity and not a principal service for my AKS.</p>
+<p>Thanks for your help ..</p>",65306524.0,1,0,,2020-12-15 11:59:00.220000+00:00,,2020-12-15 13:08:58.890000+00:00,,,,,8781374,,1,1,terraform|azure-aks|terraform-provider-azure|azure-managed-identity|azure-acr,67
+10,65305415,D3 scaleBand() resulting in path attribute error,"<p>I am using D3 v4 and I am trying to use an <a href=""https://bl.ocks.org/Andrew-Reid/1ba11865ee0d0585f0274a0976324358"" rel=""nofollow noreferrer"">example</a> to create a new chart</p>
+<p>The modifications I have made to the original chart are:</p>
+<ol>
+<li>Used a scaleBand() instead of scaleTime() - in order to plot only weekdays</li>
+<li>Changed the plotted curve from an area curve to a line</li>
+<li>Hard coded the data directly into the page (to avoid CORS related errors)</li>
+</ol>
+<p>Here is my modified code:</p>
+<pre><code>&lt;!-- code is from: https://bl.ocks.org/Andrew-Reid/1ba11865ee0d0585f0274a0976324358 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;style&gt;
+            .line {
+                fill: steelblue;
+                clip-path: url(#clip);
+            }
+
+            .zoom {
+                cursor: move;
+                fill: none;
+                pointer-events: all;
+            }
+        &lt;/style&gt;
+        &lt;svg width=&quot;960&quot; height=&quot;500&quot;&gt;&lt;/svg&gt;
+        &lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+        
+
+        &lt;script&gt;
+        const pricedata = [
+  {
+    &quot;dt&quot;: &quot;15 Dec 2020&quot;,
+    &quot;op&quot;: 133.7,
+    &quot;hi&quot;: 135.2,
+    &quot;lo&quot;: 131.75,
+    &quot;cl&quot;: 132.05,
+    &quot;adj&quot;: 132.05,
+    &quot;vol&quot;: &quot;1,158,230&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;14 Dec 2020&quot;,
+    &quot;op&quot;: 133,
+    &quot;hi&quot;: 138.9,
+    &quot;lo&quot;: 132.05,
+    &quot;cl&quot;: 134.75,
+    &quot;adj&quot;: 134.75,
+    &quot;vol&quot;: &quot;8,933,077&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;11 Dec 2020&quot;,
+    &quot;op&quot;: 136,
+    &quot;hi&quot;: 136.65,
+    &quot;lo&quot;: 129.25,
+    &quot;cl&quot;: 129.65,
+    &quot;adj&quot;: 129.65,
+    &quot;vol&quot;: &quot;8,437,503&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;10 Dec 2020&quot;,
+    &quot;op&quot;: 142,
+    &quot;hi&quot;: 143.5,
+    &quot;lo&quot;: 133.35,
+    &quot;cl&quot;: 136.75,
+    &quot;adj&quot;: 136.75,
+    &quot;vol&quot;: &quot;10,062,738&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;09 Dec 2020&quot;,
+    &quot;op&quot;: 138.1,
+    &quot;hi&quot;: 144.4,
+    &quot;lo&quot;: 137.93,
+    &quot;cl&quot;: 143,
+    &quot;adj&quot;: 143,
+    &quot;vol&quot;: &quot;11,262,427&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;08 Dec 2020&quot;,
+    &quot;op&quot;: 137.25,
+    &quot;hi&quot;: 139.75,
+    &quot;lo&quot;: 135.25,
+    &quot;cl&quot;: 137.15,
+    &quot;adj&quot;: 137.15,
+    &quot;vol&quot;: &quot;7,236,160&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;07 Dec 2020&quot;,
+    &quot;op&quot;: 143.1,
+    &quot;hi&quot;: 143.45,
+    &quot;lo&quot;: 136.79,
+    &quot;cl&quot;: 138.5,
+    &quot;adj&quot;: 138.5,
+    &quot;vol&quot;: &quot;16,040,094&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;04 Dec 2020&quot;,
+    &quot;op&quot;: 144.45,
+    &quot;hi&quot;: 146.7,
+    &quot;lo&quot;: 142,
+    &quot;cl&quot;: 142.5,
+    &quot;adj&quot;: 142.5,
+    &quot;vol&quot;: &quot;20,987,485&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;03 Dec 2020&quot;,
+    &quot;op&quot;: 136.05,
+    &quot;hi&quot;: 142.67,
+    &quot;lo&quot;: 135.1,
+    &quot;cl&quot;: 142.15,
+    &quot;adj&quot;: 142.15,
+    &quot;vol&quot;: &quot;11,920,513&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;02 Dec 2020&quot;,
+    &quot;op&quot;: 133.45,
+    &quot;hi&quot;: 135,
+    &quot;lo&quot;: 130.15,
+    &quot;cl&quot;: 135,
+    &quot;adj&quot;: 135,
+    &quot;vol&quot;: &quot;10,223,921&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;01 Dec 2020&quot;,
+    &quot;op&quot;: 126,
+    &quot;hi&quot;: 133.4,
+    &quot;lo&quot;: 125.5,
+    &quot;cl&quot;: 132.75,
+    &quot;adj&quot;: 132.75,
+    &quot;vol&quot;: &quot;9,723,223&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;30 Nov 2020&quot;,
+    &quot;op&quot;: 128.25,
+    &quot;hi&quot;: 131.3,
+    &quot;lo&quot;: 125.75,
+    &quot;cl&quot;: 125.75,
+    &quot;adj&quot;: 125.75,
+    &quot;vol&quot;: &quot;9,568,687&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;27 Nov 2020&quot;,
+    &quot;op&quot;: 128.1,
+    &quot;hi&quot;: 129.35,
+    &quot;lo&quot;: 125.69,
+    &quot;cl&quot;: 127.4,
+    &quot;adj&quot;: 127.4,
+    &quot;vol&quot;: &quot;13,239,940&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;26 Nov 2020&quot;,
+    &quot;op&quot;: 135.75,
+    &quot;hi&quot;: 136.46,
+    &quot;lo&quot;: 130,
+    &quot;cl&quot;: 130.2,
+    &quot;adj&quot;: 130.2,
+    &quot;vol&quot;: &quot;8,373,964&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;25 Nov 2020&quot;,
+    &quot;op&quot;: 140.4,
+    &quot;hi&quot;: 140.7,
+    &quot;lo&quot;: 133.7,
+    &quot;cl&quot;: 135.4,
+    &quot;adj&quot;: 135.4,
+    &quot;vol&quot;: &quot;10,564,115&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;24 Nov 2020&quot;,
+    &quot;op&quot;: 135.5,
+    &quot;hi&quot;: 140.6,
+    &quot;lo&quot;: 135.5,
+    &quot;cl&quot;: 140.3,
+    &quot;adj&quot;: 140.3,
+    &quot;vol&quot;: &quot;12,663,546&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;23 Nov 2020&quot;,
+    &quot;op&quot;: 134,
+    &quot;hi&quot;: 136.99,
+    &quot;lo&quot;: 132.45,
+    &quot;cl&quot;: 135.05,
+    &quot;adj&quot;: 135.05,
+    &quot;vol&quot;: &quot;27,877,155&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;20 Nov 2020&quot;,
+    &quot;op&quot;: 131.3,
+    &quot;hi&quot;: 135.5,
+    &quot;lo&quot;: 130.18,
+    &quot;cl&quot;: 132.6,
+    &quot;adj&quot;: 132.6,
+    &quot;vol&quot;: &quot;13,918,358&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;19 Nov 2020&quot;,
+    &quot;op&quot;: 129.65,
+    &quot;hi&quot;: 132.35,
+    &quot;lo&quot;: 128.8,
+    &quot;cl&quot;: 130.75,
+    &quot;adj&quot;: 130.75,
+    &quot;vol&quot;: &quot;11,469,991&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;18 Nov 2020&quot;,
+    &quot;op&quot;: 125.4,
+    &quot;hi&quot;: 132.2,
+    &quot;lo&quot;: 125.4,
+    &quot;cl&quot;: 132.2,
+    &quot;adj&quot;: 132.2,
+    &quot;vol&quot;: &quot;14,009,691&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;17 Nov 2020&quot;,
+    &quot;op&quot;: 127.55,
+    &quot;hi&quot;: 129.34,
+    &quot;lo&quot;: 125.95,
+    &quot;cl&quot;: 128.4,
+    &quot;adj&quot;: 128.4,
+    &quot;vol&quot;: &quot;10,252,282&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;16 Nov 2020&quot;,
+    &quot;op&quot;: 125,
+    &quot;hi&quot;: 128.45,
+    &quot;lo&quot;: 123.95,
+    &quot;cl&quot;: 126.5,
+    &quot;adj&quot;: 126.5,
+    &quot;vol&quot;: &quot;11,281,500&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;13 Nov 2020&quot;,
+    &quot;op&quot;: 120.65,
+    &quot;hi&quot;: 124.5,
+    &quot;lo&quot;: 119.5,
+    &quot;cl&quot;: 123.75,
+    &quot;adj&quot;: 123.75,
+    &quot;vol&quot;: &quot;10,763,617&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;12 Nov 2020&quot;,
+    &quot;op&quot;: 119.35,
+    &quot;hi&quot;: 122.59,
+    &quot;lo&quot;: 118.6,
+    &quot;cl&quot;: 121,
+    &quot;adj&quot;: 121,
+    &quot;vol&quot;: &quot;10,520,933&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;11 Nov 2020&quot;,
+    &quot;op&quot;: 119.55,
+    &quot;hi&quot;: 122.55,
+    &quot;lo&quot;: 116.4,
+    &quot;cl&quot;: 120.7,
+    &quot;adj&quot;: 120.7,
+    &quot;vol&quot;: &quot;17,563,320&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;10 Nov 2020&quot;,
+    &quot;op&quot;: 111.35,
+    &quot;hi&quot;: 123.5,
+    &quot;lo&quot;: 110.74,
+    &quot;cl&quot;: 120.45,
+    &quot;adj&quot;: 120.45,
+    &quot;vol&quot;: &quot;32,038,342&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;09 Nov 2020&quot;,
+    &quot;op&quot;: 97.16,
+    &quot;hi&quot;: 117.3,
+    &quot;lo&quot;: 97.16,
+    &quot;cl&quot;: 112.5,
+    &quot;adj&quot;: 112.5,
+    &quot;vol&quot;: &quot;33,591,091&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;06 Nov 2020&quot;,
+    &quot;op&quot;: 95.08,
+    &quot;hi&quot;: 98.44,
+    &quot;lo&quot;: 94.64,
+    &quot;cl&quot;: 96.18,
+    &quot;adj&quot;: 96.18,
+    &quot;vol&quot;: &quot;12,902,167&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;05 Nov 2020&quot;,
+    &quot;op&quot;: 98.02,
+    &quot;hi&quot;: 98.22,
+    &quot;lo&quot;: 94.28,
+    &quot;cl&quot;: 95.9,
+    &quot;adj&quot;: 95.9,
+    &quot;vol&quot;: &quot;9,951,931&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;04 Nov 2020&quot;,
+    &quot;op&quot;: 94.82,
+    &quot;hi&quot;: 98.42,
+    &quot;lo&quot;: 91.85,
+    &quot;cl&quot;: 96.5,
+    &quot;adj&quot;: 96.5,
+    &quot;vol&quot;: &quot;13,958,508&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;03 Nov 2020&quot;,
+    &quot;op&quot;: 91.44,
+    &quot;hi&quot;: 94.02,
+    &quot;lo&quot;: 90.74,
+    &quot;cl&quot;: 92,
+    &quot;adj&quot;: 92,
+    &quot;vol&quot;: &quot;9,987,164&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;02 Nov 2020&quot;,
+    &quot;op&quot;: 88.96,
+    &quot;hi&quot;: 91.84,
+    &quot;lo&quot;: 86.55,
+    &quot;cl&quot;: 90.52,
+    &quot;adj&quot;: 90.52,
+    &quot;vol&quot;: &quot;7,279,269&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;30 Oct 2020&quot;,
+    &quot;op&quot;: 88.56,
+    &quot;hi&quot;: 90.55,
+    &quot;lo&quot;: 86.44,
+    &quot;cl&quot;: 89.14,
+    &quot;adj&quot;: 89.14,
+    &quot;vol&quot;: &quot;11,586,654&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;29 Oct 2020&quot;,
+    &quot;op&quot;: 92.4,
+    &quot;hi&quot;: 92.58,
+    &quot;lo&quot;: 88.28,
+    &quot;cl&quot;: 88.72,
+    &quot;adj&quot;: 88.72,
+    &quot;vol&quot;: &quot;12,337,941&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;28 Oct 2020&quot;,
+    &quot;op&quot;: 92.58,
+    &quot;hi&quot;: 93.27,
+    &quot;lo&quot;: 89.4,
+    &quot;cl&quot;: 91.5,
+    &quot;adj&quot;: 91.5,
+    &quot;vol&quot;: &quot;11,967,865&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;27 Oct 2020&quot;,
+    &quot;op&quot;: 95.3,
+    &quot;hi&quot;: 96.04,
+    &quot;lo&quot;: 92.97,
+    &quot;cl&quot;: 93.46,
+    &quot;adj&quot;: 93.46,
+    &quot;vol&quot;: &quot;14,907,344&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;26 Oct 2020&quot;,
+    &quot;op&quot;: 96.4,
+    &quot;hi&quot;: 100.2,
+    &quot;lo&quot;: 95.24,
+    &quot;cl&quot;: 95.24,
+    &quot;adj&quot;: 95.24,
+    &quot;vol&quot;: &quot;6,958,130&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;23 Oct 2020&quot;,
+    &quot;op&quot;: 97.54,
+    &quot;hi&quot;: 100.15,
+    &quot;lo&quot;: 96.5,
+    &quot;cl&quot;: 97.84,
+    &quot;adj&quot;: 97.84,
+    &quot;vol&quot;: &quot;12,581,866&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;22 Oct 2020&quot;,
+    &quot;op&quot;: 93,
+    &quot;hi&quot;: 97.98,
+    &quot;lo&quot;: 93,
+    &quot;cl&quot;: 97.66,
+    &quot;adj&quot;: 97.66,
+    &quot;vol&quot;: &quot;8,312,519&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;21 Oct 2020&quot;,
+    &quot;op&quot;: 93.38,
+    &quot;hi&quot;: 96.44,
+    &quot;lo&quot;: 92.98,
+    &quot;cl&quot;: 95.1,
+    &quot;adj&quot;: 95.1,
+    &quot;vol&quot;: &quot;10,556,543&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;20 Oct 2020&quot;,
+    &quot;op&quot;: 91.1,
+    &quot;hi&quot;: 93.66,
+    &quot;lo&quot;: 91.1,
+    &quot;cl&quot;: 92.56,
+    &quot;adj&quot;: 92.56,
+    &quot;vol&quot;: &quot;8,624,783&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;19 Oct 2020&quot;,
+    &quot;op&quot;: 91.5,
+    &quot;hi&quot;: 93.08,
+    &quot;lo&quot;: 91.3,
+    &quot;cl&quot;: 92.56,
+    &quot;adj&quot;: 92.56,
+    &quot;vol&quot;: &quot;6,989,064&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;16 Oct 2020&quot;,
+    &quot;op&quot;: 92.32,
+    &quot;hi&quot;: 94.4,
+    &quot;lo&quot;: 90.82,
+    &quot;cl&quot;: 91.16,
+    &quot;adj&quot;: 91.16,
+    &quot;vol&quot;: &quot;10,976,679&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;15 Oct 2020&quot;,
+    &quot;op&quot;: 94.2,
+    &quot;hi&quot;: 95.32,
+    &quot;lo&quot;: 91.52,
+    &quot;cl&quot;: 92,
+    &quot;adj&quot;: 92,
+    &quot;vol&quot;: &quot;16,485,788&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;14 Oct 2020&quot;,
+    &quot;op&quot;: 94.7,
+    &quot;hi&quot;: 95.98,
+    &quot;lo&quot;: 93.26,
+    &quot;cl&quot;: 94.2,
+    &quot;adj&quot;: 94.2,
+    &quot;vol&quot;: &quot;10,562,462&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;13 Oct 2020&quot;,
+    &quot;op&quot;: 97.66,
+    &quot;hi&quot;: 98.46,
+    &quot;lo&quot;: 93.28,
+    &quot;cl&quot;: 94.82,
+    &quot;adj&quot;: 94.82,
+    &quot;vol&quot;: &quot;14,119,377&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;12 Oct 2020&quot;,
+    &quot;op&quot;: 99,
+    &quot;hi&quot;: 100.35,
+    &quot;lo&quot;: 97.4,
+    &quot;cl&quot;: 97.54,
+    &quot;adj&quot;: 97.54,
+    &quot;vol&quot;: &quot;7,174,030&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;16 Jan 2020&quot;,
+    &quot;op&quot;: 180,
+    &quot;hi&quot;: 184.35,
+    &quot;lo&quot;: 179.9,
+    &quot;cl&quot;: 184.1,
+    &quot;adj&quot;: 184.1,
+    &quot;vol&quot;: &quot;12,533,036&quot;
+  },
+  {
+    &quot;dt&quot;: &quot;15 Jan 2020&quot;,
+    &quot;op&quot;: 184.7,
+    &quot;hi&quot;: 185.25,
+    &quot;lo&quot;: 180.09,
+    &quot;cl&quot;: 180.85,
+    &quot;adj&quot;: 180.85,
+    &quot;vol&quot;: &quot;12,612,188&quot;
+  },
+];
+        /* Format data */
+        const parseDate = d3.timeParse(&quot;%d %b %Y&quot;);
+
+        const data = pricedata;
+        data.forEach(function(d, i){
+            d = format_data(d);
+        });  
+
+        const svg = d3.select(&quot;svg&quot;),
+            margin = {top: 20, right: 20, bottom: 110, left: 40},
+            margin2 = {top: 430, right: 20, bottom: 30, left: 40},
+            width = +svg.attr(&quot;width&quot;) - margin.left - margin.right,
+            height = +svg.attr(&quot;height&quot;) - margin.top - margin.bottom,
+            height2 = +svg.attr(&quot;height&quot;) - margin2.top - margin2.bottom;
+
+
+        /* One of the subtleties of plotting stock data is that markets are only open on weekdays: 
+            if you were to plot the behavior of a stock using a time scale, you’d see distracting 
+            gaps every weekend. This chart therefore uses a band scale whose domain is every weekday 
+            in the dataset. A few gaps remain for holiday weekdays, such as Christmas, 
+            but these are infrequent and allow the labelling of Mondays.*/
+
+       const x = d3.scaleBand()
+                    .domain(d3.utcDay
+                        .range(data[0].dt, +data[data.length - 1].dt + 1)
+                        .filter(d =&gt; d.getUTCDay() !== 0 &amp;&amp; d.getUTCDay() !== 6))
+                    .range([margin.left, width - margin.right])
+                    .padding(0.2);
+
+        const x2 = d3.scaleBand()
+                    .domain(d3.utcDay
+                        .range(data[0].dt, +data[data.length - 1].dt + 1)
+                        .filter(d =&gt; d.getUTCDay() !== 0 &amp;&amp; d.getUTCDay() !== 6))
+                    .range([margin.left, width - margin.right])
+                    .padding(0.2);     
+
+        /* const x = d3.scaleTime().range([0, width]),
+            x2 = d3.scaleTime().range([0, width]), */
+        const y = d3.scaleLinear().range([height, 0]),
+              y2 = d3.scaleLinear().range([height2, 0]);
+
+        const xAxis = d3.axisBottom(x),
+              xAxis2 = d3.axisBottom(x2),
+              yAxis = d3.axisLeft(y);
+
+        const brush = d3.brushX()
+                          .extent([[0, 0], [width, height2]])
+                          .on(&quot;brush end&quot;, brushed);
+
+        const zoom = d3.zoom()
+                      .scaleExtent([1, Infinity])
+                      .translateExtent([[0, 0], [width, height]])
+                      .extent([[0, 0], [width, height]])
+                      .on(&quot;zoom&quot;, zoomed);
+
+        const line = d3.line()
+                      .x(function(d) { return x(d.dt); })
+                      .y(function(d) { return y(d.hi); });   
+            
+        const line2 = d3.line()
+                      .x(function(d) { return x(d.dt); })
+                      .y(function(d) { return y(d.hi); });              
+
+            /*
+        const area = d3.area()
+            .curve(d3.curveMonotoneX)
+            .x(function(d) { return x(d.dt); })
+            .y0(height)
+            .y1(function(d) { return y(d.cl); });
+
+        const area2 = d3.area()
+            .curve(d3.curveMonotoneX)
+            .x(function(d) { return x2(d.dt); })
+            .y0(height2)
+            .y1(function(d) { return y2(d.cl); }); */
+
+        svg.append(&quot;defs&quot;).append(&quot;clipPath&quot;)
+            .attr(&quot;id&quot;, &quot;clip&quot;)
+        .append(&quot;rect&quot;)
+            .attr(&quot;width&quot;, width)
+            .attr(&quot;height&quot;, height);
+
+        var focus = svg.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;focus&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
+
+        var context = svg.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;context&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(&quot; + margin2.left + &quot;,&quot; + margin2.top + &quot;)&quot;);
+            
+        var identity = d3.zoomIdentity;
+
+        ///
+        /*d3.csv(&quot;sp500.csv&quot;, type, function(error, data) {
+        if (error) throw error; */
+
+        //x.domain(d3.extent(data, function(d) { return d.dt; }));
+        //y.domain([0, d3.max(data, function(d) { return d.cl; })]);
+        x2.domain(x.domain());
+        y2.domain(y.domain());
+
+        focus.append(&quot;path&quot;)
+            .datum(data)
+            .attr(&quot;class&quot;, &quot;line&quot;)
+            .attr(&quot;d&quot;, line);
+
+        focus.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
+            .call(xAxis);
+
+        focus.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;axis axis--y&quot;)
+            .call(yAxis);
+
+        context.append(&quot;path&quot;)
+            .datum(data)
+            .attr(&quot;class&quot;, &quot;line&quot;)
+            .attr(&quot;d&quot;, line2);
+
+        context.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;axis axis--x&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(0,&quot; + height2 + &quot;)&quot;)
+            .call(xAxis2);
+
+        context.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;brush&quot;)
+            .call(brush)
+            .call(brush.move, x.range());
+
+        svg.append(&quot;rect&quot;)
+            .attr(&quot;class&quot;, &quot;zoom&quot;)
+            .attr(&quot;width&quot;, width)
+            .attr(&quot;height&quot;, height)
+            .attr(&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;)
+            .call(zoom);
+        /* }); */
+        ///
+
+
+        function brushed() {
+        if (d3.event.sourceEvent &amp;&amp; d3.event.sourceEvent.type === &quot;zoom&quot;) 
+            return; // ignore brush-by-zoom
+
+        let s = d3.event.selection || x2.range();
+        x.domain(s.map(x2.invert, x2));
+        focus.select(&quot;.area&quot;).attr(&quot;d&quot;, line);
+        focus.select(&quot;.axis--x&quot;).call(xAxis);
+        svg.select(&quot;.zoom&quot;).call(zoom.transform, d3.zoomIdentity
+            .scale(width / (s[1] - s[0]))
+            .translate(-s[0], 0));           
+        }
+
+        function zoomed() {
+            if (d3.event.sourceEvent &amp;&amp; d3.event.sourceEvent.type === &quot;brush&quot;) 
+                return; // ignore zoom-by-brush
+
+            let t = d3.event.transform;
+            transform = t;
+            console.log(d3.event.transform);
+            x.domain(t.rescaleX(x2).domain());
+            focus.select(&quot;.area&quot;).attr(&quot;d&quot;, line);
+            focus.select(&quot;.axis--x&quot;).call(xAxis);
+            context.select(&quot;.brush&quot;).call(brush.move, x.range().map(t.invertX, t));
+        }
+
+        function format_data(d) {
+            d.dt = parseDate(d.dt);
+            d.op = +d.op;
+            d.hi = +d.hi;
+            d.lo = +d.lo;
+            d.cl = +d.cl;
+            d.adj = +d.adj;
+            d.vol = +d.vol;
+            return d;
+        }
+
+
+        d3.select(&quot;body&quot;)
+        .on(&quot;keypress&quot;, function() {
+            // zoom out
+            if (d3.event.key == &quot;s&quot;) {
+                var x0 = x2(x.domain()[0]);
+                var x1 = x2(x.domain()[1]);
+                var currentDifference = Math.abs(x0-x1);
+                
+                x0 -= currentDifference / 2 / 3
+                x1 += currentDifference / 2 / 3
+                
+                updateBrushAndZoom(x0,x1);
+            }
+            // zoom in
+            else if (d3.event.key == &quot;w&quot;) {
+                var x0 = x2(x.domain()[0]);
+                var x1 = x2(x.domain()[1]);
+                var currentDifference = Math.abs(x0-x1);
+                
+                x0 += currentDifference / 2 / 3
+                x1 -= currentDifference / 2 / 3
+                
+                updateBrushAndZoom(x0,x1);
+            }
+            // pan left:
+            else if (d3.event.key == &quot;a&quot;) {
+                var x0 = x2(x.domain()[0]);
+                var x1 = x2(x.domain()[1]);
+                    
+                var currentDifference = Math.abs(x0-x1);
+                
+                x0 -= currentDifference / 2 / 3
+                x1 -= currentDifference / 2 / 3
+
+                updateBrushAndZoom(x0,x1);
+            }
+            // pan right
+            else if (d3.event.key == &quot;d&quot;) {
+                var x0 = x2(x.domain()[0]);
+                var x1 = x2(x.domain()[1]);
+                var currentDifference = Math.abs(x0-x1);
+                
+                x0 += currentDifference / 2 / 3;
+                x1 += currentDifference / 2 / 3;
+
+                updateBrushAndZoom(x0,x1);
+            }
+            
+        })
+        
+        
+        function updateBrushAndZoom(x0,x1) {
+            if (x0 &lt; x2.range()[0]) x0 = x2.range()[0];
+            if (x1 &gt; x2.range()[1]) x1 = x2.range()[1];
+            
+            x.domain([x0,x1].map(x2.invert, x2));
+            focus.select(&quot;.area&quot;).attr(&quot;d&quot;, line);
+            focus.select(&quot;.axis--x&quot;).call(xAxis);
+                
+            var identity = d3.zoomIdentity
+            .scale(width/ (x1 - x0))
+            .translate(-x0, 0);
+                
+            context.select(&quot;.brush&quot;).call(brush.move, x.range().map(identity.invertX, identity));  
+            svg.select(&quot;.zoom&quot;).call(zoom.transform, identity);
+        }
+
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>When I load this page in my browser, I get the following error:</p>
+<pre><code>Error: &lt;path&gt; attribute d: Expected number, &quot;MNaN,-49653.99999…&quot;.
+(anonymous) @ d3.v4.min.js:2
+each @ d3.v4.min.js:2
+attr @ d3.v4.min.js:2
+(anonymous) @ brush_example.html:2327
+d3.v4.min.js:2 Error: &lt;path&gt; attribute d: Expected number, &quot;MNaN,-49653.99999…&quot;.
+(anonymous) @ d3.v4.min.js:2
+each @ d3.v4.min.js:2
+attr @ d3.v4.min.js:2
+(anonymous) @ brush_example.html:2341
+brush_example.html:2368 Uncaught TypeError: undefined is not a function
+    at Array.map (&lt;anonymous&gt;)
+    at SVGGElement.brushed (brush_example.html:2368)
+    at k.apply (d3.v4.min.js:2)
+    at it (d3.v4.min.js:2)
+    at o.emit (d3.v4.min.js:2)
+    at o.brush (d3.v4.min.js:2)
+    at SVGGElement.&lt;anonymous&gt; (d3.v4.min.js:2)
+    at ut.each (d3.v4.min.js:2)
+    at Kn.e.move (d3.v4.min.js:2)
+    at ut.call (d3.v4.min.js:2)
+</code></pre>
+<p>I have no idea what is causing this, as the error is not very informative - and appears to be being raised deep inside D3's internals.</p>
+<p>How can I fix the code so that I use the correct scale type and also change the plotted chart type?</p>",,1,0,,2020-12-15 11:58:54.407000+00:00,,2020-12-15 20:21:43.147000+00:00,,,,,962891,,1,0,d3.js,27
+11,65305410,How can I catch all 500 and above errors in DRF and log them?,"<p>I've looked through much of the SO responses regarding implementing this but I can't seem to find something that isn't deprecated or one that actually works for my use case.</p>
+<p>Basically, I have some API methods that return their own status codes. However, if for any reason there is a 500 Server Error or anything above 500 which indicates something strange happened (for example lets say the database connection got timeout), I want that to be logged to a file or e-mailed to an admin.</p>
+<p>I have tried using a custom exception handler but not all 500 errors are exceptions.</p>
+<p>So I resorted to writing custom middleware, which looked something like this</p>
+<pre><code>class CustomApiLoggingMiddleware(MiddlewareMixin):
+    def process_response(self, request, response):
+        if response.path.startswith('/api/'):
+            ...do stuff here
+</code></pre>
+<p>The issue, however, is that there doesn't seem to be a <code>status_code</code>. To be frank I don't really know which response I'm actually getting. There's the 500 response returned by my API intentionally as a result of the API method, and there's the 500 response generated by Django in the backend if some kind of condition isn't met (let's say they sent a request without a proper header)</p>
+<p>I tried to generate a 500 response / error intentionally by returning <code>Response(status=status.HTTP_500)</code> in some basic <code>/500</code> route. Even though this triggers the middleware, there is no <code>status_code</code> that I can use to check whether the response is actually a 500 or not.</p>
+<p>I'm not even sure I'm doing this right, but hopefully you understand my intention. I would basically like to blanket catch all uncaught exceptions that can happen as a result of my API calls and log them or send them to an admin. Most calls that return some 40X or whatever are handled in the way that I want already.</p>",65322841.0,1,2,,2020-12-15 11:58:23.910000+00:00,,2020-12-16 12:00:55.960000+00:00,,,,,4992644,,1,0,django|exception|logging|django-rest-framework|middleware,41
+12,65305405,I am trying to develop r4 scenarios in ruby on rails,"<p>The below is the scenario and the json for input</p>
+<p>&lt;% if required_by_us_core_spec_DAR_fields == true %&gt;</p>
+<p>Scenario Outline: The &lt;%= resource_name %&gt; retrieve service validates missing fields required by the US Core implementation guide.
+Given a request to the server with valid headers
+And the &lt;%= resource_name.downcase %&gt; id is valid
+And the &lt;%= depends_on_field %&gt; field is populated as &lt;%= depends_on_value %&gt; for a particular &lt;%= resource_name.downcase %&gt;
+And the  field is missing for the same &lt;%= resource_name %&gt;
+When the &lt;%= resource_name %&gt; retrieve service is called
+Then the service returns status '200 OK'
+And the service returns an &lt;%= resource_name %&gt; resource populating  with  code from the DataAbsentReason Code System
+Examples:</p>
+<pre><code>Given a request to the server with valid headers
+And the &lt;%= resource_name.downcase %&gt; id is valid
+And the &lt;%= depends_on_field %&gt; field is populated as &lt;%= depends_on_value %&gt; for a particular &lt;%= resource_name.downcase %&gt;
+And the &lt;field&gt; field is missing for the same &lt;%= resource_name %&gt;
+When the &lt;%= resource_name %&gt; retrieve service is called
+Then the service returns status '200 OK'
+And the service returns an &lt;%= resource_name %&gt; resource populating &lt;field&gt; with &lt;value&gt; code from the DataAbsentReason Code System
+Examples:
+</code></pre>
+<p>&lt;%= darFields %&gt; &lt;% else %&gt; &lt;% end %&gt; &lt;% end %&gt;</p>
+<p>json :</p>
+<p>&quot;required_by_us_core_spec_DAR_fields&quot;: [
+{
+&quot;codableDAR&quot;: &quot;false&quot;,
+&quot;field&quot;: &quot;start&quot;
+},
+{
+&quot;codableDAR&quot;: &quot;true&quot;,
+&quot;field&quot;: &quot;statusreason&quot;,
+&quot;value&quot;: &quot;unknown&quot;,
+&quot;depends_on_field&quot;: &quot;status&quot;,
+&quot;depends_on_value&quot;: &quot;xyz&quot;
+},
+{
+&quot;codableDAR&quot;: &quot;true&quot;,
+&quot;field&quot;: &quot;statusreason1&quot;,
+&quot;value&quot;: &quot;unknown1&quot;,
+&quot;depends_on_field&quot;: &quot;status&quot;,
+&quot;depends_on_value&quot;: &quot;xyz&quot;
+},
+{
+&quot;codableDAR&quot;: &quot;true&quot;,
+&quot;field&quot;: &quot;statusreason2&quot;,
+&quot;value&quot;: &quot;unknown2&quot;,
+&quot;depends_on_field&quot;: &quot;status2&quot;,
+&quot;depends_on_value&quot;: &quot;abc&quot;
+}
+]</p>
+<p>expected output:</p>
+<p>Given a request to the server with valid headers
+And the &lt;%= resource_name.downcase %&gt; id is valid
+And the status field is populated as xyz for a particular &lt;%= resource_name.downcase %&gt;
+And the  field is missing for the same &lt;%= resource_name %&gt;
+When the &lt;%= resource_name %&gt; retrieve service is called
+Then the service returns status '200 OK'
+And the service returns an &lt;%= resource_name %&gt; resource populating  with  code from the DataAbsentReason Code System
+Examples:
+|  field        | value    |
+| statusreason  | unknown  |
+| statusreason1 | unknown1 |</p>
+<p>Given a request to the server with valid headers
+And the &lt;%= resource_name.downcase %&gt; id is valid
+And the status2 field is populated as abc for a particular &lt;%= resource_name.downcase %&gt;
+And the  field is missing for the same &lt;%= resource_name %&gt;
+When the &lt;%= resource_name %&gt; retrieve service is called
+Then the service returns status '200 OK'
+And the service returns an &lt;%= resource_name %&gt; resource populating  with  code from the DataAbsentReason Code System
+Examples:
+|  field        | value    |
+| statusreason2 | unknown2 |</p>",,0,0,,2020-12-15 11:58:04.710000+00:00,,2020-12-15 11:58:04.710000+00:00,,,,,14829935,,1,0,ruby-on-rails,9
+13,65305403,pvc storage capacity update,"<p>I am trying to update the pvc (persistent volume claim) size and trying to set it in pvc status.capacity.storage field. After running yaml command I can see the update in annotation but not in status.capacity.storage field.</p>
+<p>I have updated using below code:</p>
+<pre><code>memorySize := resource.NewQuantity(int64(volumeExpansionStatus.Size)*1024*1024*1024, resource.BinarySI)
+pvc.Status.Capacity[v1.ResourceStorage] = *memorySize
+kube.UpdatePersistentVolumeClaim(ctx, pvc)
+</code></pre>
+<p><strong>Below is the log after execution:</strong></p>
+<p>Status:PersistentVolumeClaimStatus{Phase:Bound,AccessModes:[ReadWriteOnce],<em><strong>Capacity:ResourceList{storage: {{42949672960 0} {}  BinarySI},</strong></em>},Conditions:[]PersistentVolumeClaimCondition{},}</p>
+<p><strong>Below is the log before execution:</strong></p>
+<p>Status:PersistentVolumeClaimStatus{Phase:Bound,AccessModes:[ReadWriteOnce],<em><strong>Capacity:ResourceList{storage: {{21474836480 0} {} 20Gi BinarySI}</strong></em>,},Conditions:[]PersistentVolumeClaimCondition{},},}</p>
+<p>As you can see the difference 20Gi is missing in updated field. How can I get this value as no field available for it?</p>",,0,2,,2020-12-15 11:58:00.903000+00:00,,2020-12-15 12:19:09.857000+00:00,2020-12-15 12:19:09.857000+00:00,,13860.0,,2279196,,1,0,go|kubernetes|cloud,24
+14,65305402,My sticky on scroll header is covering the content,"<p>So I've made a sticky on scroll header/navigation bar successfully.</p>
+<p><a href=""https://i.stack.imgur.com/6IKPJ.png"" rel=""nofollow noreferrer"">How it looks like now</a></p>
+<p>But I have a problem. When it reaches the top, it will automatically 'cover' the top part of my content, which has text on it so I wouldn't actually want it that way.</p>
+<p><a href=""https://i.stack.imgur.com/bobff.png"" rel=""nofollow noreferrer"">How I want it to be. Notice the space between header and photo (content).</a></p>
+<p>I've tried adding a padding/margin to the content, but it doesn't work. It still scrolls down right to the content so it is covered.</p>
+<p>Is there any way I could fix it so there is a 'space' between the header and the content?</p>
+<p>Here is how my code looks like:</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>var stickyOffset = $('.nav').offset().top;
+
+            $(window).scroll(function(){
+            var sticky = $('.nav'),
+                scroll = $(window).scrollTop();
+
+            if (scroll &gt;= stickyOffset) sticky.addClass('nav-fixed');
+            else sticky.removeClass('nav-fixed');
+            });</code></pre>
+<pre class=""snippet-code-css lang-css prettyprint-override""><code>.top p, .bottom p {
+font-size: 18px;
+}
+
+
+.nav {
+                box-shadow: 0 4px 8px 0 rgba(121, 121, 121, 0.1);
+                z-index: 99;
+                display: table;
+                height: 100px;
+                width: 100%;
+                background-color: #fff672;
+            }
+            #home_btn_header {
+                margin: 0;
+                width: 90px; height: 85px;
+                background-image: url(drone.png);
+                background-size: cover;
+                background-color: transparent;
+                border: transparent;
+                cursor: pointer;
+            }
+            nav {
+                display: table-cell;
+                vertical-align: middle;
+                padding-right: 8%;
+            }
+            nav ul {
+                float: right;
+                list-style: none;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            nav ul::after {
+                content: """";
+                display: table;
+                clear: both;
+            }
+            nav ul li {
+                font-family: 'Sifonn Pro';
+                background-color: transparent;
+                border: transparent;
+                cursor: pointer;
+                text-align: center;
+                display: inline;
+            }
+            .nav a {
+                color: #061127;
+                text-decoration: none;
+                position: relative;
+                font-size: 20px;
+                margin: 0 6px;
+                padding: 12px 12px;
+                display: inline-block;
+            }
+            .nav-fixed {
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%;
+            }</code></pre>
+<pre class=""snippet-code-html lang-html prettyprint-override""><code>&lt;script src=""https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js""&gt;&lt;/script&gt;
+&lt;div class=""top""&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=""nav""&gt;
+        &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=""about.html""&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=""technology.html""&gt;Technology&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=""help-centre.html""&gt;Help Centre&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+        
+&lt;div class=""bottom""&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</p>
+<p>Notice that the lorem ipsum text skipped lines (covered by the header).</p>",,2,1,,2020-12-15 11:57:54.660000+00:00,,2020-12-15 12:17:28.567000+00:00,,,,,14719477,,1,0,javascript|html|jquery|css|header,29
+15,65305396,Page reload by jquery after ajax function,"<p>My code is working, except <code>location.reload();</code> is not working. My purpose is to reload the page after unchecking the last checkbox.</p>
+<pre class=""lang-js prettyprint-override""><code>$(&quot;.catcf, .coursetype, .yearcf, .manthcf, .venucf&quot;).on('click', function() {
+  $checkedInputs = $('input.catcf:checked');
+  $coursetypeInputs = $('input.coursetype:checked');
+  $yearcfInputs = $('input.yearcf:checked');
+  $manthcfInputs = $('input.manthcf:checked');
+  $venucfInputs = $('input.venucf:checked');
+
+  if (($checkedInputs.length &gt; 0) || ($coursetypeInputs.length &gt; 0) || ($yearcfInputs.length &gt; 0) || ($manthcfInputs.length &gt; 0) || ($venucfInputs.length &gt; 0) || (styleviwe &gt; 0)) {
+    // Some AJAX code here...
+  } else {
+    // Here I can't reload the page with the last uncheck box but it's not working
+    location.reload();
+  }
+});
+</code></pre>",,1,1,,2020-12-15 11:57:27.053000+00:00,,2020-12-15 16:10:55.600000+00:00,2020-12-15 12:01:09.747000+00:00,,519413.0,,14506761,,1,0,html|jquery|ajax,30
+16,65305395,How to pass database name explicitly in application.properties file not through the datasource.URL,"<p>How to pass database name explicitly in
+<code>application.properties</code>
+file not through the datasource.URL</p>
+<pre><code>spring.datasource.url = jdbc:mysql://localhost:3306/mydatabase
+spring.datasource.username = root
+spring.datasource.password = root
+</code></pre>",,1,0,,2020-12-15 11:57:27.013000+00:00,,2020-12-17 09:01:50.990000+00:00,2020-12-17 09:01:50.990000+00:00,,1000551.0,,14258109,,1,0,java|spring|spring-boot|jdbc,28
+17,65305394,nginx Unable to issue letsencrypt ssl certificate with Laravel Forge,"<p>I have a Laravel project deployed with Laravel Forge in nginx.
+This application has several aliases.
+I am trying to issue ssl certificates for each aliases, but I get the following error:</p>
+<pre><code>ERROR: Challenge is invalid! (returned: invalid) (result: [&quot;type&quot;]  &quot;http-01&quot;
+[&quot;status&quot;]  &quot;invalid&quot;
+[&quot;error&quot;,&quot;type&quot;]    &quot;urn:ietf:params:acme:error:unauthorized&quot;
+[&quot;error&quot;,&quot;detail&quot;]  &quot;Invalid response from example.com/.well-known/acme-challenge/xxxxxxxxxxxxxxx [xxx.xx.xxx.xx]: \&quot;\u003c!DOCTYPE html PUBLIC \\\&quot;-//W3C//DTD XHTML 1.0 Transitional//EN\\\&quot; \\\&quot;DTD/xhtml1-transitional.dtd\\\&quot;\u003e\\n\u003chtml xmlns=\\\&quot;http://www.w3.org/199\&quot;&quot;
+[&quot;error&quot;,&quot;status&quot;]  403
+[&quot;error&quot;]   {&quot;type&quot;:&quot;urn:ietf:params:acme:error:unauthorized&quot;,&quot;detail&quot;:&quot;Invalid response from example.com/.well-known/acme-challenge/xxxxxxxxxxxxxxx [xxx.xx.xxx.xx]: \&quot;\u003c!DOCTYPE html PUBLIC \\\&quot;-//W3C//DTD XHTML 1.0 Transitional//EN\\\&quot; \\\&quot;DTD/xhtml1-transitional.dtd\\\&quot;\u003e\\n\u003chtml xmlns=\\\&quot;http://www.w3.org/199\&quot;&quot;,&quot;status&quot;:403}
+[&quot;url&quot;] &quot;https://acme-v02.api.letsencrypt.org/acme/chall-v3/xxxxxxx/xxxxxx&quot;
+[&quot;token&quot;]   &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;
+[&quot;validationRecord&quot;,0,&quot;url&quot;]    &quot;example.com/.well-known/acme-challenge/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;
+[&quot;validationRecord&quot;,0,&quot;hostname&quot;]   &quot;example.com&quot;
+[&quot;validationRecord&quot;,0,&quot;port&quot;]   &quot;80&quot;
+[&quot;validationRecord&quot;,0,&quot;addressesResolved&quot;,0]    &quot;xxx.xx.xxx.xx&quot;
+[&quot;validationRecord&quot;,0,&quot;addressesResolved&quot;]  [&quot;xxx.xx.xxx.xx&quot;]
+[&quot;validationRecord&quot;,0,&quot;addressUsed&quot;]    &quot;xxx.xx.xxx.xx&quot;
+[&quot;validationRecord&quot;,0]  {&quot;url&quot;:&quot;example.com/.well-known/acme-challenge/xxxxxxxxxxxxxxx&quot;,&quot;hostname&quot;:&quot;example.com&quot;,&quot;port&quot;:&quot;80&quot;,&quot;addressesResolved&quot;: 
+[&quot;xxx.xx.xxx.xx&quot;],&quot;addressUsed&quot;:&quot;xxx.xx.xxx.xx&quot;}
+[&quot;validationRecord&quot;]    [{&quot;url&quot;:&quot;example.com/.well-known/acme-challenge/xxxxxxxxxxxxxxxxxx&quot;,&quot;hostname&quot;:&quot;example.com&quot;,&quot;port&quot;:&quot;80&quot;,&quot;addressesResolved&quot;:[&quot;xxx.xx.xxx.xx&quot;],&quot;addressUsed&quot;:&quot;xxx.xx.xxx.xx&quot;}])
+</code></pre>
+<p>Thanks in advance for help.</p>",65314273.0,1,0,,2020-12-15 11:57:24.767000+00:00,,2020-12-15 22:02:58.737000+00:00,,,,,1816322,,1,1,laravel|nginx|ssl|lets-encrypt|laravel-forge,63
+18,65305391,Transcoding muticast source thru VLC to stream to shoutcast issue,"<p>I am trying to stream my multicast source on icecast using the following</p>
+<pre><code>$ cvlc -v rtp://@239.192.17.57:30000 \
+  --sout &quot;#transcode{vcodec=none,acodec=mp3,ab=64,channels=1,samplerate=44100}:gather:std{access=shout,mux=dummy,dst=source:stupidpassword@10.18.221.234:/test&quot;
+</code></pre>
+<p>I get the following weird error</p>
+<pre><code>VLC media player 3.0.11.1 Vetinari (revision 3.0.11.1-0-g52483f3ca2)
+[00000000023059e0] dbus interface error: Failed to connect to the D-Bus session daemon: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[00000000023059e0] main interface error: no suitable interface module
+[000000000223c1c0] main libvlc error: interface &quot;dbus,none&quot; initialization failed
+[0000000002307af0] main interface error: no suitable interface module
+[000000000223c1c0] main libvlc error: interface &quot;globalhotkeys,none&quot; initialization failed
+[0000000002307af0] dummy interface: using the dummy interface module...
+[00007f4bf80027e0] access_output_shout access out error: failed to initialize shout streaming to source:0/(null)
+[00007f4bf80013f0] stream_out_standard stream out error: no suitable sout access module for `shout/dummy://source:rY3Y394Hfd283056NR#@10.18.221.234:/test'
+[00007f4bf8000ca0] main stream output error: stream chain failed for `transcode{vcodec=none,acodec=mp3,ab=64,channels=1,samplerate=44100}:gather:std{access=shout,mux=dummy,dst=source:stupidpassword@10.18.221.234:/test'
+[00007f4bf40009e0] main input error: cannot start stream output instance, aborting
+</code></pre>
+<p>What obvious thing am I missing here ? Sout access module is in the vlc -l list.</p>",,0,1,,2020-12-15 11:57:19.493000+00:00,,2020-12-15 11:57:19.493000+00:00,,,,,4232790,,1,0,vlc|icecast,28
+19,65305389,How can I select the max for a maths operation and also other elements without the max displaying all results,"<p>I am trying to find the maximum value of something, while also selecting other attributes at the same time. When i do the max statement on its own, it works as intended, but when I select another attribute it displays every attribute as if the max statement wasn't there. How do I get this to work?</p>
+<p>code that works:</p>
+<pre><code>select max(contract_end - contract_start)
+from contract 
+</code></pre>
+<p>code that returns all data, not just the max:</p>
+<pre><code>select contract_id, emp_name, job_desc, max(contract_end - contract_start)
+from contract join employer on emp_id = contract_client
+              join job on job_id = contract_job
+group by contract_id, emp_name, job_desc
+</code></pre>",65305503.0,2,0,,2020-12-15 11:57:14.563000+00:00,,2020-12-15 12:35:09.223000+00:00,2020-12-15 12:35:09.223000+00:00,,10676716.0,,14829927,,1,1,sql|oracle|datetime|sql-order-by|greatest-n-per-group,35
+20,65305387,How can we allocate memory for varchar query cache plan for only certain length unlike defaulting to max (8000)?,"<p>We have simple entity class with <code>String</code> and when we look at the query cache plan for the query which is using the corresponding field, the maximum length is being allocated to for the same underneath.</p>
+<p>Is there some way to let underneath platform know to allocate only certain memory?</p>
+<p><a href=""https://stackoverflow.com/a/54417765"">This</a> link suggested to use <code>@Size</code> and <code>@Valiadate</code> for the same purpose, but it did not work.</p>
+<p>We are using following entity:</p>
+<pre><code>@Entity 
+public class Product{
+   @Id 
+   private Integer id; 
+
+  @Column(name = &quot;number&quot;)
+   private String number; 
+
+}
+
+</code></pre>
+<p>The query is any standard <code>jpql find by</code> query</p>
+<pre><code>@Validate
+public interface FooJpaRepository extends JpaRepository&lt;Foo, Integer&gt; {
+
+    List&lt;Foo&gt; findByNumber(@Size(max = 16) String number);
+}
+</code></pre>
+<p>And execution plan result, after adding @size and @Validate as suggested by another answer:</p>
+<pre><code>DECLARE @P0 varchar(8000); select product0_.id as product_id1_1_, product0_.NAME as name2_1_,
+from p.[Product] product0_ where product0_.name=@P0 
+</code></pre>
+<hr />",,0,0,,2020-12-15 11:57:10.380000+00:00,,2020-12-15 11:57:10.380000+00:00,,,,,1579080,,1,1,mysql|performance|spring-data-jpa|sql-execution-plan,16
+21,65305386,SBCL save-lisp-and-die: Can I set different names for executable and source file?,"<p>I can compile a lisp source to a self contained executable with overwriting source by binary file.
+My call:</p>
+<pre><code>(sb-ext:save-lisp-and-die #P&quot;test.lisp&quot; :toplevel #'main :executable t)
+</code></pre>
+<p>It is working well. Is it possible to specify different names for source and exe and thus avoid overwriting of source?</p>",,1,1,,2020-12-15 11:57:10.020000+00:00,,2020-12-16 14:16:37.213000+00:00,2020-12-16 14:16:37.213000+00:00,,69545.0,,6395492,,1,0,lisp|common-lisp|sbcl,60
+22,65305379,Does SAX in Python have an index that tells me where I am in an XML file? And how would I find that out?,"<p>I have a specific and a general question.</p>
+<p>Suppose I'm using SAX to deal with the below XML, but it's actually 17MB and far more complex. There are no errors with the code, but because it's so complex and I probably shouldn't have gone near SAX in the first place, I'm getting a frustrating logic error - it's sometimes outputting a value that I'm not interested in, sometimes rightly ignoring it. This logic error is the only thing stopping me from finishing the project. I'm trying to debug the code, but that's very frustrating because even my truncated test XML file has 42,000 lines.</p>
+<p>So my specific question is how can I see which line of the XML file is triggering any given startElement. Does startElement or ContentHandler have an index or something that tells you where in the file it's up to?</p>
+<p>My general question is how can I find out how to do this for myself? I can flail around on Google, and Stack Overflow is a tremendous resource that I'm very grateful for, but if I could independently investigate the attributes of the things I'm working with, that would be much more satisfying. For instance, is there a way, in my code, I can get a list of all the things that hang off startElement or a variable or anything, really. Len() tells me how long something is, Type() tells me what type it is. Are there other useful meta commands that I can fall back on when I'm not sure what <em>kind</em> of problem I'm having?</p>
+<p>I kind of anticipate being shouted at for asking two questions in one, but I can see how to ask the general question without being shouted at for being too nebulous.</p>
+<p>Credit to <a href=""http://pyxml.sourceforge.net/topics/howto/node12.html"" rel=""nofollow noreferrer"">http://pyxml.sourceforge.net/topics/howto/node12.html</a> for this code.</p>
+<pre><code>&lt;collection&gt;
+  &lt;comic title=&quot;Sandman&quot; number='62'&gt;
+    &lt;writer&gt;Neil Gaiman&lt;/writer&gt;
+    &lt;penciller pages='1-9,18-24'&gt;Glyn Dillon&lt;/penciller&gt;
+    &lt;penciller pages=&quot;10-17&quot;&gt;Charles Vess&lt;/penciller&gt;
+  &lt;/comic&gt;
+&lt;/collection&gt;
+</code></pre>
+<p>I deal with the XML with the below code:</p>
+<pre><code>from xml.sax import saxutils
+
+class FindIssue(saxutils.handler.ContentHandler):
+    def __init__(self, title, number):
+        self.search_title, self.search_number = title, number
+
+    def startElement(self, name, attrs):
+        # If it's not a comic element, ignore it
+        if name != 'comic': return
+
+        # Look for the title and number attributes (see text)
+        title = attrs.get('title', None)
+        number = attrs.get('number', None)
+        if (title == self.search_title and number == self.search_number):
+            print (title, '#' + str(number), 'found')
+            
+from xml.sax import make_parser
+from xml.sax.handler import feature_namespaces
+
+if __name__ == '__main__':
+    # Create a parser
+    parser = make_parser()
+
+    # Tell the parser we are not interested in XML namespaces
+    parser.setFeature(feature_namespaces, 0)
+
+    # Create the handler
+    dh = FindIssue('Sandman', '62')
+
+    # Tell the parser to use our handler
+    parser.setContentHandler(dh)
+
+    # Parse the input
+    parser.parse(&quot;test.xml&quot;)
+</code></pre>",65305532.0,1,3,,2020-12-15 11:56:25.310000+00:00,,2020-12-15 12:07:50.830000+00:00,,,,,10857227,,1,0,python|xml|debugging|sax,33
+23,65305375,Easiest way to get the index of a node in a Binary Tree c#,"<p>I want to get the index of all the nodes in a bst. The code i am using to insert the values and search a node is</p>
+<pre><code>public class BTS
+{
+    public class Node
+    {
+        public int value;
+        public Node Left;
+        public Node Right;
+    }
+
+
+    public Node Insert(Node nod,int value)
+    {
+        if (nod == null)
+        {
+            nod = new Node();
+            nod.value = value;
+        }
+        else if(value &lt; nod.value)
+        {
+            nod.Left = Insert(nod.Left, value);
+        }
+        else if(value &gt; nod.value)
+        {
+            nod.Right = Insert(nod.Right, value);
+        }
+        return nod;
+    }
+
+    public string FindNode(Node node, int s)
+    {
+        string Output = &quot;&quot;;
+        if (node == null)
+            return Output = &quot;not found&quot;;
+        else if (s.CompareTo(node.value) &lt; 0)
+            return FindNode(node.Left, s);
+        else if (s.CompareTo(node.value) &gt; 0)
+            return FindNode(node.Right, s);
+
+        return Output = &quot;found&quot;;
+    }
+    static void Main()
+    {
+        Node N = null;
+        BTS bs = new BTS();
+        N = bs.Insert(N, 10);
+        N = bs.Insert(N, 9);
+        N = bs.Insert(N, 8);
+        N = bs.Insert(N, 11);
+        N = bs.Insert(N, 12);
+        bs.FindNode(N,9);
+    }
+}
+</code></pre>
+<p>the above code gives me the value as true if the node 9 is present. But i want to get the index of the node just like how we get index for an array.</p>
+<p>Thank you in advance.</p>",65305746.0,1,10,,2020-12-15 11:56:19.750000+00:00,,2020-12-15 12:35:49.470000+00:00,,,,,13757087,,1,2,c#|binary-tree,58
+24,65305373,Your current user or role does not have access to Kubernetes objects on this EKS cluster - EKS,"<p>I'm trying to create an EKS Cluster with Managed Node Group. I'm being thrown this error when the Managed node group gets created. <strong>Your current user or role does not have access to Kubernetes objects on this EKS cluster. This may be due to the current user or role not having Kubernetes RBAC permissions to describe cluster resources or not having an entry in the cluster’s auth config map.</strong>. I have setup all the necessary IAM roles and policies needed for the EKS Cluster to run. Any help will be appreciated.</p>
+<p>EKS Version: 1.18</p>",,0,5,,2020-12-15 11:56:12.803000+00:00,,2020-12-16 04:41:29.230000+00:00,2020-12-16 04:41:29.230000+00:00,,6186966.0,,6186966,,1,2,amazon-web-services|kubernetes|amazon-eks,1784
+25,65305366,How could I make Paste bin only allow certain requests? [SOLVED],"<p>I wanted to make it only possible to use PostAsync with a specific key so if anyone else tries to do it with a fake key or no key at all it would not go through, is that possible?</p>
+<p>Solved: You need to provide a developer key to make :Post requests.</p>",,0,0,,2020-12-15 11:55:41.550000+00:00,,2020-12-15 12:41:42.637000+00:00,2020-12-15 12:41:42.637000+00:00,,14226486.0,,14226486,,1,0,lua|roblox|pastebin,32
+26,65305364,Pass parameter to .bat file and git clone using ssh,"<p>My last question was associated with resolved quesiton and closed, but it is not true, that was about https and its easy, my problem is how to pass password <strong>using SSH</strong>.</p>
+<p>Question:</p>
+<p>I'm trying to invoke a <code>.bat</code> file with parameter as password to ssh.</p>
+<p>my <code>.bat</code> script:</p>
+<pre><code>git clone ssh://git@domain.com/project
+</code></pre>
+<p>I haven't found specific command git clone, like: <code>git clone -passphrase $passphrase$ ssh://git@domain.com/project</code></p>
+<p>Is there a command that meets my expectations or is there any other way to do it?</p>
+<p>I work on windows. <strong>And I can use only ssh</strong>, the answers on stack are only for https, so don't close my question.</p>",,1,6,,2020-12-15 11:55:39.503000+00:00,1.0,2021-01-25 02:36:42.733000+00:00,,,,,10405000,,1,1,git|batch-file|github|ssh|command-line,35
+27,65305362,Streaming dataframe: lag function unusable?,"<p>Given a pyspark <strong>streaming</strong> dataframe as below, I'd like to get value of the previous row for the <code>category</code> column:</p>
+<pre><code># just for demo, DataFrame should be a streaming one
+df = spark.createDataFrame(
+   [(1, '2020-10-01T00:00:00', 'A'), 
+    (1, '2020-10-01T01:00:00', 'B'),
+    (2, '2020-10-01T02:00:00', 'A'),
+    (2, '2020-10-01T03:00:00', 'A'),
+    (2, '2020-10-01T04:00:00', 'B'),     
+    ['uid', 'timestamp', 'category'],
+    StructType([
+    StructField('uid', IntegerType(), True),
+    StructField('timestamp', TimestampType(), True),
+    StructField('category', StringType(), True)])
+)
+</code></pre>
+<p>Doing so by using the <code>lag</code> function gives the following error:</p>
+<pre><code>w = Window.partitionBy('timestamp').orderBy('timestamp')
+df = df.withColumn('lag_category', lag(df['category']).over(w))
+
+# AnalysisException:  
+# Non-time-based windows are not supported on streaming DataFrames/Datasets
+</code></pre>
+<p>Based on the Exception, I'd think that using the <code>lag</code> function is possible.<br />
+However, with the limitation that the <code>partitionBy</code> and <code>orderBy</code> arguments need to be time-based.<br />
+But I guess this impression must be wrong, since the above code is not working.<br />
+Thus, is <code>lag</code> completely unusable for a streaming dataframe?</p>
+<hr />
+<p>What I'd actually like to do:<br />
+Filter <code>B</code> rows that have a preceding <code>A</code> in the previous row within a <code>uid</code> window, i.e. <code>partitionBy('uid')</code>.</p>
+<p>Is there an alternative way of doing this with a streaming dataframe?<br />
+Maybe this is possible using joins somehow?</p>",,0,0,,2020-12-15 11:55:37.350000+00:00,,2020-12-15 21:21:29.670000+00:00,2020-12-15 21:21:29.670000+00:00,,1305344.0,,3955022,,1,0,apache-spark|pyspark|spark-structured-streaming,26
+28,65305355,How to listen array update or other variable in swift,"<p>I am an android developer and I started to learn Swift. So far I managed to do everything I wanted, but I struggle with listening to updates in <code>SwiftUI</code>.</p>
+<p>I implemented a service that uses <code>Firestore</code> to read from a database. This service is an <code>ObservableObject</code>. Inside the service, I have a variable that is annotated as <code>@Published</code>:</p>
+<pre><code>@Published var events = [Event]()
+</code></pre>
+<p>I have implemented Google Maps and I want to fetch these events and do something with them but I don't know how to listen and do something when the call is done.</p>
+<p>Google Maps class:</p>
+<pre><code>import SwiftUI
+import GoogleMaps
+
+struct GoogleMapsView: UIViewRepresentable {
+    
+    @ObservedObject var databaseService = DatabaseService()
+    
+    func makeUIView(context: Self.Context) -&gt; GMSMapView {
+        let camera = GMSCameraPosition.camera(withLatitude: 45.764375, longitude: 24.994272, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        // Here I think I call .getEvents
+        databaseService.getEvents()          
+        
+        return mapView
+    }
+    
+    func updateUIView(_ mapView: GMSMapView, context: Context) {
+        // Listen to events update and update them like this, but I don't know how...
+
+        for event in self.databaseService.events {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: event.lat, longitude: event.long)
+            marker.title = event.title
+            marker.snippet = event.title
+            marker.map = mapView
+        }
+    }
+}
+
+struct GoogleMapsView_Previews: PreviewProvider {
+    static var previews: some View {
+        GoogleMapsView()
+    }
+}
+</code></pre>
+<p>And my <code>SwiftUI</code> View:</p>
+<pre><code>import SwiftUI
+
+struct CommunicationsView: View {
+    
+    @ObservedObject var databaseService = DatabaseService()
+    
+    var body: some View {
+        TabView() {
+            GoogleMapsView()
+                .edgesIgnoringSafeArea(.top)
+                .tabItem {
+                    Image(systemName: &quot;leaf.fill&quot;)
+                    Text(&quot;Campanii&quot;)
+            }
+        }.accentColor(.green)
+    }
+}
+
+struct CommunicationsView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommunicationsView()
+    }
+}
+</code></pre>
+<p>Also, here is my service:</p>
+<pre><code>class DatabaseService : ObservableObject {
+
+let db: Firestore
+@Published var events = [Event]()
+
+init() {
+    db = Firestore.firestore()
+}
+
+func getEvents() -&gt; Void {
+    var tempoEvents = [Event]()
+    db.collection(DatabaseName.CAMPAIGNS.rawValue).getDocuments { (query: QuerySnapshot?, error: Error?) in
+        for document in query!.documents {
+            let data = document.data()
+            let title = data[&quot;title&quot;] as? String ?? &quot;&quot;
+            let details = data[&quot;details&quot;] as? String ?? &quot;&quot;
+            let lat = data[&quot;lat&quot;] as? Double ?? 0.0
+            let long = data[&quot;long&quot;] as? Double ?? 0.0
+            let date = data[&quot;date&quot;] as? Date ?? Date()
+            let author = data[&quot;author&quot;] as? String ?? &quot;&quot;
+            tempoEvents.append(Event(id: document.documentID, title: title, details: details, lat: lat, long: long, date: date, author: author))
+        }
+        
+        self.events.append(contentsOf: tempoEvents)
+    }
+}
+}
+</code></pre>",65305610.0,1,0,,2020-12-15 11:55:00.950000+00:00,,2020-12-15 12:28:20.673000+00:00,2020-12-15 12:20:20.963000+00:00,,14016301.0,,4190598,,1,2,swift|swiftui,66
+29,65305354,is AWS CloudFormation supports Cloudformer feature to create template from existing infrastructure,"<p>I would like to create a CloudFormation YAML template from the existing resources and faces some issues. However, I don't see this coming when creating the stack from the AWS dashboard.</p>
+<p><a href=""https://i.stack.imgur.com/JBJ7f.png"" rel=""nofollow noreferrer"">enter image description here</a></p>
+<p>Apparently, it supposes to be in the tools section which they deleted the template and created a new way for the template. Do I miss anything here?</p>",,1,0,,2020-12-15 11:55:00.020000+00:00,,2020-12-15 12:19:01.130000+00:00,,,,,10217802,,1,0,amazon-web-services|amazon-cloudformation,28
+30,65305350,Why display inline-block breaks overflow-wrap: break-word,"<p>I have a container that has <code>overflow-wrap: break-word;</code> every child element breaks the word nicely except one anchor tag that has <code>display: inline-block;</code>. Why does that happen?</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-css lang-css prettyprint-override""><code>a {
+  font-size: 0.875rem;
+  color: #006fdd;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.container {
+   max-width: 100px;
+   overflow-wrap: break-word;
+   background-color: yellow;
+   padding: 10px;
+   margin-bottom: 20px;
+}</code></pre>
+<pre class=""snippet-code-html lang-html prettyprint-override""><code>&lt;div class=""container""&gt;
+  &lt;a class=""inline-block""&gt;display: inline-block longlonglonglonglonglonglonglonglonglonglonglonglonglongtext@something&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class=""container""&gt;
+  &lt;a&gt;display: inline longlonglonglonglonglonglonglonglonglonglonglonglonglongtext@something&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class=""container""&gt;
+  &lt;div&gt;longlonglonglonglonglonglonglonglonglonglonglonglonglongtext@something&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</p>",65305571.0,1,2,,2020-12-15 11:54:44.677000+00:00,,2020-12-15 12:14:19.597000+00:00,,,,,7075122,,1,0,html|css,33
+31,65305349,Stuck on function,"<p><strong>Greetings</strong>,</p>
+<p>I'm using SG90 Micro Servo for simulating the door lock where the door is unlocked after typing in the password.</p>
+<p>What I'm trying to do is so the program starts with the servo rotate at 90 degrees angle so it looks like its lock, and then if the code is right it rotates at 0 degrees and after about 10 seconds it reset back to 90 degrees.</p>
+<p>The problem is the servo seems stuck on function <code>lock()</code> at the beginning and <code>unlock()</code> and not continue to complete the program.</p>
+<p>What can I do about this situation? Thank you</p>
+<p><strong>door-lock.py</strong></p>
+<pre class=""lang-py prettyprint-override""><code>import time
+import RPi.GPIO as GPIO
+from servo import *
+
+code = 1234
+
+
+try:
+    while True:
+        lock() # The rotating thingy is at 90 degree
+        pass_code = input(&quot;&quot;)
+            if pass_code == code:
+                print(&quot;Opening the door&quot;)
+                unlock() # The rotating thingy is at 0 degree
+                time.sleep(10)
+                print(&quot;Locking the door&quot;)
+                lock() # The rotating thingy is back at 90 degree
+            
+except KeyboardInterrupt:
+    servo.stop() # or lock(), Im not sure
+</code></pre>
+<p><strong>servo.py</strong></p>
+<pre class=""lang-py prettyprint-override""><code>def unlock():
+    servo.ChangeDutyCycle(7) # The rotating part is at 180 degree
+
+
+def lock():
+    servo.ChangeDutyCycle(0) # The rotating part is at 90 degree
+</code></pre>",65305513.0,2,7,,2020-12-15 11:54:44.113000+00:00,,2020-12-15 12:12:46.727000+00:00,2020-12-15 12:06:14.713000+00:00,,8562586.0,,8562586,,1,1,python|raspberry-pi|gpio|servo,39
+32,65305340,Lost xdebug after 20.04 upgrade,"<p>After 19.10 to 20.04 upgrade I lost php7.3 xdebug. After complete php reinstall following <a href=""https://pixelspress.com/how-to-insta...-ubuntu-19-10/"" rel=""nofollow noreferrer"">https://pixelspress.com/how-to-insta...-ubuntu-19-10/</a> (20.04 version not found), I get that error message:</p>
+<pre><code># systemctl reload php7.3-fpm
+...
+Failed loading /usr/lib/php/20190902/xdebug.so: /usr/lib/php/20190902/xdebug.so: undefined symbol: zend_get_properties_for
+</code></pre>
+<p>Here is my php7.3 install state:</p>
+<pre><code># dpkg -l *php7.3* |grep ii
+ii libapache2-mod-php7.3 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 server-side, HTML-embedded scripting language (Apache 2 module)
+ii php7.3 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 all server-side, HTML-embedded scripting language (metapackage)
+ii php7.3-bcmath 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 Bcmath module for PHP
+ii php7.3-bz2 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 bzip2 module for PHP
+ii php7.3-cli 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 command-line interpreter for the PHP scripting language
+ii php7.3-common 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 documentation, examples and common module for PHP
+ii php7.3-curl 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 CURL module for PHP
+ii php7.3-fpm 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 server-side, HTML-embedded scripting language (FPM-CGI binary)
+ii php7.3-gd 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 GD module for PHP
+ii php7.3-imagick 3.4.4-10+ubuntu20.04.1+deb.sury.org+4 amd64 Provides a wrapper to the ImageMagick library
+ii php7.3-imap 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 IMAP module for PHP
+ii php7.3-intl 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 Internationalisation module for PHP
+ii php7.3-json 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 JSON module for PHP
+ii php7.3-ldap 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 LDAP module for PHP
+ii php7.3-mbstring 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 MBSTRING module for PHP
+ii php7.3-mysql 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 MySQL module for PHP
+ii php7.3-opcache 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 Zend OpCache module for PHP
+ii php7.3-readline 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 readline module for PHP
+ii php7.3-recode 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 recode module for PHP
+ii php7.3-tidy 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 tidy module for PHP
+ii php7.3-xdebug 3.0.1+2.9.8+2.8.1+2.5.5-1+ubuntu20.04.1+deb.sury.org+1 amd64 Xdebug Module for PHP
+ii php7.3-xml 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+ii php7.3-xmlrpc 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 XMLRPC-EPI module for PHP
+ii php7.3-zip 7.3.24-3+ubuntu20.04.1+deb.sury.org+1 amd64 Zip module for PHP
+</code></pre>
+<p>Any help greatly apreciated</p>",,1,2,,2020-12-15 11:54:11.693000+00:00,,2020-12-15 15:42:47.803000+00:00,,,,,6165734,,1,0,php|ubuntu|xdebug,52
+33,65305339,How to set the height of table to be the size of the screen?,"<p>I'm creating a table in HTML and CSS that has its own scrollbars (as opposed to the page's scrollbars).</p>
+<pre><code>&lt;div class = &quot;results&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Header&lt;/th&gt;
+        &lt;th&gt;Header2&lt;/th&gt;
+        &lt;th&gt;Header3&lt;/th&gt;
+        &lt;th&gt;Header4&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Value1&lt;/td&gt;
+        &lt;td&gt;Value2&lt;/td&gt;
+        &lt;td&gt;Value3&lt;/td&gt;
+        &lt;td&gt;Value4&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code>body {
+  overflow: hidden;
+}
+
+.results {
+  overflow: auto;
+  height: 600px;
+}
+</code></pre>
+<p>This achieves what I want but only on my screen. If I look at this table on another screen or resolution then the bottom scrollbar is in a different position. How do I make sure the bottom scrollbar is always at the bottom of the screen? I tried doing this with percentages instead and the bottom bar doesn't appear at all. I also tried doing <code>vh</code> instead of <code>px</code> but that just does the same thing. I can't seem to figure out how to make sure the bottom scrollbar will always be on the bottom of the screen. It seems I have to explicitly set the height in order for the table to have its own scrollbars.</p>
+<p>I also tried setting the height to <code>auto</code> but that makes it so I can't scroll at all. It looks like the height has to be a specific value.</p>
+<p>Using <code>vh</code> is a lot better than using <code>px</code> but the bottom bar still doesn't always appear at the bottom.</p>",65306036.0,2,7,,2020-12-15 11:54:10.650000+00:00,,2020-12-15 12:58:08.903000+00:00,2020-12-15 12:44:58.430000+00:00,,215552.0,,11058297,,1,1,html|css,49
+34,65305338,image/icon hidden behind footer,"<p>I'm working on a bigCommerce website. I added some css to my footer, as it had an ugly white space underneath. But now, the mcAfee image/icon is hiding behind the footer. I've tried many solutions I found online, but nothing seems to help.
+here is my code
+I have now added the html file as well:</p>
+<pre><code>&lt;div class=&quot;mfes-trustmark loaded&quot; data-type=&quot;102&quot; data-width=&quot;120&quot; data-height=&quot;50&quot; title=&quot;McAfee SECURE&quot; aria-label=&quot;McAfee SECURE&quot; tabindex=&quot;0&quot; style=&quot;width: 120px; height: 49px; display: inline-block; background-image: url(&amp;quot;https://cdn.ywxi.net/meter/24hr.supply/102.svg?ts=1607105520051&amp;amp;l=en-US&amp;quot;); background-size: contain; background-position: center top; background-repeat: no-repeat; cursor: pointer;&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>and here is the code for the footer:</p>
+<pre><code>.footer {
+    padding: 0;
+    border-top: 0;
+    color: #fff;
+    position: absolute;
+     width: 100%;
+}
+my template
+</code></pre>
+
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;section class=&quot;footer-info&quot;&gt;
+
+        &lt;article class=&quot;footer-info-col&quot; data-section-type=&quot;footer-categories&quot;&gt;
+            &lt;h5 class=&quot;footer-info-heading&quot;&gt;Categories&lt;/h5&gt;
+            &lt;ul class=&quot;footer-info-list&quot;&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;Kitchen &amp;amp; Bath&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;septic risers&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;Heating&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https:xxx/&quot;&gt;Plumbing&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/article&gt;
+
+        &lt;article class=&quot;footer-info-col&quot; data-section-type=&quot;footer-webPages&quot;&gt;
+            &lt;h5 class=&quot;footer-info-heading&quot;&gt;Navigate&lt;/h5&gt;
+            &lt;ul class=&quot;footer-info-list&quot;&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;Privacy Policy&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;Terms &amp;amp; Conditions&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;/account.php&quot;&gt;My Account&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;/account.php?action=order_status&quot;&gt;Orders&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;Shipping &amp;amp; Returns&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxx/&quot;&gt;FAQ&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;https://xxxcation/&quot;&gt;RSS Syndication&lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/article&gt;
+
+        &lt;article class=&quot;footer-info-col&quot; data-section-type=&quot;storeInfo&quot;&gt;
+
+            &lt;ul class=&quot;fa-ul&quot;&gt;
+                &lt;li&gt;&lt;i class=&quot;fa-li sl-icon-phone&quot;&gt;&lt;/i&gt;&lt;a href=&quot;tel:xxx&quot;&gt;xxx&lt;/a&gt;&lt;/li&gt;
+
+                &lt;li&gt;&lt;i class=&quot;far fa-envelope fa-li&quot;&gt;&lt;/i&gt;&lt;a href=&quot;/contact-us/&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;i class=&quot;fas fa-at fa-li&quot;&gt;&lt;/i&gt;&lt;a href=&quot;mailto:xxxr.supply&quot;&gt;xxx.supply&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;We accept all major credit cards.&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;img width=&quot;200&quot; height=&quot;31&quot;
+                     src=&quot;https://cdn11.bigcommerce.com/s-f88khxqj3n/product_images/uploaded_images/credit-card-logos-1.jpg&quot;&gt;
+            &lt;/ul&gt;
+
+        &lt;/article&gt;
+
+
+        &lt;article class=&quot;footer-info-col footer-info-col--newsletter&quot;&gt;
+            &lt;div class=&quot;emthemesModez-newsletterSection emthemesModez-newsletterSection--hasSocials&quot;&gt;
+                &lt;article class=&quot;&quot; data-section-type=&quot;newsletterSubscription&quot;&gt;
+                    &lt;h5 class=&quot;footer-info-heading&quot;&gt;Signup&lt;/h5&gt;
+                    &lt;p&gt;Get the latest updates on new products and upcoming sales&lt;/p&gt;
+
+                    &lt;form class=&quot;form&quot; action=&quot;/subscribe.php&quot; method=&quot;post&quot;&gt;
+                        &lt;fieldset class=&quot;form-fieldset&quot;&gt;
+                            &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;subscribe&quot;&gt;
+                            &lt;input type=&quot;hidden&quot; name=&quot;nl_first_name&quot; value=&quot;bc&quot;&gt;
+                            &lt;input type=&quot;hidden&quot; name=&quot;check&quot; value=&quot;1&quot;&gt;
+                            &lt;div class=&quot;form-field&quot;&gt;
+                                &lt;label class=&quot;form-label is-srOnly&quot; for=&quot;nl_email&quot;&gt;Email Address&lt;/label&gt;
+                                &lt;div class=&quot;form-prefixPostfix wrap&quot;&gt;
+                                    &lt;input class=&quot;form-input form-prefixPostfix-input&quot; id=&quot;nl_email&quot; name=&quot;nl_email&quot;
+                                           type=&quot;email&quot; value=&quot;&quot; placeholder=&quot;Your email address&quot;&gt;
+                                    &lt;button class=&quot;button form-prefixPostfix-button--postfix&quot; type=&quot;submit&quot;&gt;&lt;i
+                                            class=&quot;fas fa-chevron-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/fieldset&gt;
+                    &lt;/form&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+
+    &lt;/section&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer-copyright&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;p class=&quot;powered-by&quot;&gt;
+            © &lt;span id=&quot;copyright_year&quot;&gt;2020&lt;/span&gt; xxx.
+            &lt;script type=&quot;text/javascript&quot;&gt;
+                document.getElementById(&quot;copyright_year&quot;).innerHTML = new Date().getFullYear();
+            &lt;/script&gt;
+
+            &lt;a href=&quot;/sitemap.php&quot;&gt;Sitemap&lt;/a&gt;
+        &lt;/p&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+```",,1,5,,2020-12-15 11:54:09.567000+00:00,,2020-12-15 14:00:26.427000+00:00,2020-12-15 13:46:16.483000+00:00,,11371376.0,,11371376,,1,1,css|footer,42
+35,65305337,Unmarshall an XML file and save to database in Java,"<p>I have the following XML file being uploaded in Java to unmarshall:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;MyValues&gt;
+    &lt;Type Value=&quot;ABC&quot;&gt;
+        &lt;CustomerName&gt;Sample&lt;/CustomerName&gt;
+        &lt;EmailAddress&gt;sample@abcd.com&lt;/EmailAddress&gt;
+        &lt;PhoneNumber&gt;1234567890&lt;/PhoneNumber&gt;
+        &lt;HardwareKey&gt;abc-def-123-456&lt;/HardwareKey&gt;
+    &lt;/Type&gt;
+&lt;/MyValues&gt;
+</code></pre>
+<p>I want to upload this file's values to my database in my Spring Application. The Java code to unmarshall is:</p>
+<pre><code>String transformedFileName = TRANSFORMED_FILE_DIRECTORY+&quot;/&quot;+fileName;
+
+JAXBContext context = JAXBContext.newInstance(CustomerDetails.class);
+        Unmarshaller um = context.createUnmarshaller();
+
+        customerDetails = (CustomerDetails) um.unmarshal(new InputStreamReader(
+                new FileInputStream(transformedFileName), StandardCharsets.UTF_8));
+        
+        System.out.println(customerDetails);
+</code></pre>
+<p>and the CustomerDetails.java is:</p>
+<pre><code>
+@Entity
+@Table(name=&quot;customerDetails&quot;)
+@EntityListeners(AuditingEntityListener.class)
+public class CustomerDetails {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+    
+    private String type;
+    
+    private String hardwareKey;
+    
+    private String emailAddress;
+    
+    private Long phoneNumber;
+    
+    private String customerName;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getHardwareKey() {
+        return hardwareKey;
+    }
+
+    public void setHardwareKey(String hardwareKey) {
+        this.hardwareKey = hardwareKey;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public Long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(Long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+}
+
+</code></pre>
+<p>This is the error I am getting while running this:</p>
+<pre><code>javax.xml.bind.UnmarshalException: unexpected element (uri:&quot;&quot;, local:&quot;MyValues&quot;). Expected elements are (none)
+</code></pre>
+<p>I cannot change the file values and structure, and have to save the file values in database. How to overcome this error and how to save the values? What am I doing wrong?</p>",,2,0,,2020-12-15 11:53:59.313000+00:00,,2020-12-15 13:58:30.833000+00:00,,,,,10996165,,1,0,java|spring|xml-parsing|jaxb|unmarshalling,33
+36,65305334,Node.js: modify excel header and remove some columns,"<p>I have an excel file of which I want to rename some headers and remove certain columns. I have the below code</p>
+<pre><code>
+const options = {
+ sharedStrings: 'emit',
+ hyperlinks: 'emit',
+ worksheets: 'emit',
+};
+let ws = fs.createWriteStream(fpath);
+const workbookWriter = new ExcelJS.stream.xlsx.WorkbookWriter(ws);
+const myworksheet = workbookWriter.addWorksheet('sheet1');
+const workbookReader = new ExcelJS.stream.xlsx.WorkbookReader(sheet.path, options);
+workbookReader.read();
+
+workbookReader.on('worksheet', worksheet =&gt; {
+    worksheet.on('row', row =&gt; {
+        console.log('processing row');
+        //myworksheet.addRow(row).commit();
+        //myworksheet.addRow({id: 1, name: 'theName', etc: 'someOtherDetail'}).commit(); 
+//not sure what to do here above....
+    });
+});
+
+workbookReader.on('end', () =&gt; {
+    workbookWriter.commit();
+});
+</code></pre>
+<ol>
+<li>How can i manipulate the headers of the excel above and remove certain columns</li>
+<li><code>myworksheet.addRow(row).commit();</code> does not seem to do anything. May be i am missing something. I see the file getting created by no data inside the file. To test i hardcoded values like <code>myworksheet.addRow({id: 1, name: 'theName', etc: 'someOtherDetail'}).commit()</code> but even this does not do anything.</li>
+</ol>
+<p>Any help on how to fix this will be really great, Thanks.</p>",,0,0,,2020-12-15 11:53:53.787000+00:00,,2020-12-15 11:53:53.787000+00:00,,,,,1858727,,1,0,javascript|node.js|exceljs,85
+37,65305331,Javascript count daily elements from DB,"<p>I have a website that performs some queries to a database and then creates tables. Right now I need to build an array which contains, for every day, the number of occurrences (items). In order to do that I'm now trying to save the result of the query, a json, into a variable, and then parsing that variable, but that's not working. How can I do that? Here's my code:</p>
+<pre><code>var someVar = [];
+
+connection.query(&quot;https://blahblabblah?param1=val&amp;param2=val2&quot;, function(err, rows){
+  if(err) {
+    throw err;
+  } else {
+    setValue(rows);
+  }
+});
+
+function setValue(value) {
+  someVar = value;
+  console.log(someVar);
+}
+
+dayCounts = someVar.reduce(function (result, order) {
+    var day = moment(someVar.CreationDate).format(&quot;YYYY-MM-DD&quot;);
+    if (!result[day]) {
+        result[day] = 0;
+    }
+    result[day]++;
+    return result;
+}, {});
+
+console.log(dayCounts);
+</code></pre>
+<p>The resulting dayCounts would be something similar to this:</p>
+<pre><code>{[2020-10-01, 160], //[day, sum of elements found in that day]
+ [2020-10-02, 69],
+[2020-10-03, 110],
+[...]}
+</code></pre>
+<p>Right now I'm experiencing issues and I can't connect and perform that query.
+How can I achieve this result? Thank you</p>
+<p>EDIT:
+my returning variable is this:</p>
+<pre><code>[{Id, Var1, Var2, CreationDate},
+{1, 123, Var2, 2020-01-01},
+{2, 1234, Var2, 2020-01-01},
+{3, 12345, Var2, 2020-01-01},
+{4, 1234, Var2, 2020-01-02},
+{5, 321, Var2, 2020-01-02},
+{6, 3214, Var2, 2020-01-02},
+{7, 5432, Var2, 2020-01-03},
+{8, 5431, Var2, 2020-01-03}]
+</code></pre>",65305973.0,1,2,,2020-12-15 11:53:27.133000+00:00,,2020-12-15 12:35:55.890000+00:00,2020-12-15 12:01:44.233000+00:00,,11779800.0,,11779800,,1,0,javascript|database|count,34
+38,65305329,media query overriding each other?,"<p>I'm a new beginner to HTML and CSS in general so any advice would be greatly appreciated!
+This is the main index.html file:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;module 2 assignment&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;module2-solutioncss/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to my first website!&lt;/h1&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-lg-6 col-md-4 col-sm-2&quot;&gt;lorem ipsum1&lt;/div&gt;
+        &lt;div class=&quot;col-lg-6 col-md-4 col-sm-2&quot;&gt;lorem ipsum2&lt;/div&gt;
+        &lt;div class=&quot;col-lg-6 col-md-4 col-sm-2&quot;&gt;lorem ipsum3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This is the Css file i created:</p>
+<pre><code>/*** Base Styles ***/
+
+body {
+    margin:0;
+    padding:0;
+}
+.row&gt;div {
+    border:1px solid black;
+    position: relative;
+    min-height: 1px;
+    padding-right:15px;
+    padding-left:15px; 
+    box-sizing: border-box;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+/***desktop devices***/
+@media(min-width: 992px) {
+    .col-lg-6 {
+        width:30%;
+        float: left;
+    }
+}
+/***small devices***/
+@media (min-width: 1px) and (max-width: 767px) {
+    .col-sm-2 {
+        width:50%;
+        float:none;
+    }
+}
+/***medium devices***/
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-4 {
+        width:45%;
+        float: left;
+    }
+}
+</code></pre>
+<p>I can't seem to get the media query from 1px-&gt;767px to work which I suspect is due to it being overwritten? I'm trying to create a website where the 3 columns will collapse depending on the width of the device. Thanks!</p>",,0,2,,2020-12-15 11:53:07.523000+00:00,,2020-12-15 12:26:28.577000+00:00,2020-12-15 12:23:14.497000+00:00,,1336174.0,,14829908,,1,1,html|css,25
+39,65305328,Launching DialogFragment from Adapter,"<p>There is a <code>RecyclerView</code> in which there is an <code>item</code>, I need to open the <code>DialogFragment</code> on click.</p>
+<p>To switch to a regular <code>Fragment</code> using I write the following:</p>
+<pre><code>  holder.ll_main.setOnClickListener(v -&gt; {
+            FragmentBabyIsland fragment = new FragmentBabyIsland(); // you fragment
+            FragmentManager fragmentManager = ((FragmentActivity) v.getContext()).getSupportFragmentManager(); // instantiate your view context
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.animator.nav_default_enter_anim, R.animator.nav_default_exit_anim,
+                    R.animator.nav_default_pop_enter_anim, R.animator.nav_default_pop_exit_anim);
+            fragmentTransaction.replace(R.id.fragment, fragment);// your container and your fragment
+            fragmentTransaction.addToBackStack(&quot;tag&quot;);
+            fragmentTransaction.commit();
+
+        });
+</code></pre>
+<p>To go to DialogFragment, I write the following</p>
+<pre><code> holder.ll_main.setOnClickListener(v -&gt; {
+            openDialog();
+        });
+
+    private void openDialog() {
+        DialogSort dialogSort = new DialogSort();
+        dialogSort.show(requireActivity().getSupportFragmentManager(), &quot;SortDialog&quot;);
+    }
+</code></pre>
+<p>But due to the fact that it is an Adapter, it swears at <code>requireActivity()</code>
+How to fix it?</p>",,1,1,,2020-12-15 11:53:05.550000+00:00,,2020-12-16 05:55:24.543000+00:00,,,,,14592582,,1,0,java|android|android-adapter|android-dialogfragment,34
+40,65305326,C++ SFINAE double nested initializer_list vs. variadic template constructor,"<h2>Problem</h2>
+<p>I am writing a small math library that has <code>Vector</code> and <code>Matrix</code> classes. I'd like to make it convenient to intialize objects of these classes with <strong>strict rules</strong> for how they can be initialized.</p>
+<p>The <code>Vector</code> class constructor already works as i intended. It is restricted such that only the correct size <code>N</code> is accepted and on top of that all arguments are of the same type (see below).</p>
+<p><code>Vector</code></p>
+<pre><code>template &lt;std::size_t N, typename T&gt;
+class Vector{
+  public:
+    template &lt;typename... TArgs,
+            std::enable_if_t&lt;
+                sizeof...(TArgs) == N &amp;&amp;
+                    (std::is_same_v&lt;T, std::remove_reference_t&lt;TArgs&gt;&gt; &amp;&amp; ...),int&gt; = 0&gt;
+    Vector(TArgs &amp;&amp;... args) : data_{std::forward&lt;TArgs&gt;(args)...} {}
+
+    // ...
+
+  private:
+    std::array&lt;T,N&gt; data;
+}
+</code></pre>
+<p>Example initialization (works, is restricted)</p>
+<pre><code>Vector&lt;3,int&gt; v{1,2,3}
+</code></pre>
+<p><code>Matrix</code></p>
+<pre><code>template &lt;std::size_t N, std::size_t M, typename T&gt;
+class Matrix{
+  public:
+    /* put restriction rules here */
+    Matrix(std::initializer_list&lt;std::initializer_list&lt;T&gt;&gt; lst) {
+      int i = 0;
+      int j = 0;
+      for (const auto &amp;l : lst) {
+        for (const auto &amp;v : l) {
+          data[i][j] = v;
+          ++j;
+        }
+        j = 0;
+        ++i;
+      }
+    }
+
+    // ...
+
+  private:
+    std::array&lt;Vector&lt;M, T&gt;, N&gt; data;
+}
+</code></pre>
+<p>Example initialization 1 (works, is not restricted)</p>
+<pre><code>Matrix&lt;2,3,int&gt; m{ {1,2,3}, {4,5,6} }
+</code></pre>
+<p>Example initialization 2 (compiles, but shouldn't!!)</p>
+<pre><code>Matrix&lt;2,3,int&gt; m{ {1,'a',3}, {4,5,6,7,8,9} }
+</code></pre>
+<h2>Question</h2>
+<p>I wasn't able to implement the <code>Matrix</code> class constructor for the double-nested initialization with a variadic template, so i used nested <code>std::initializer_list</code>´s (from <a href=""https://stackoverflow.com/questions/15810171/is-there-a-way-to-pass-nested-initializer-lists-in-c11-to-construct-a-2d-matri"">this</a> post). It works, but i'd like to have the same restrictions on this constructor as for the <code>Vector</code> class.</p>
+<p>How can i do this?</p>
+<ul>
+<li>the list size must be N (rows)</li>
+<li>the list-list size must always be M (columns)</li>
+<li>the encapsulated value type must always be T</li>
+</ul>
+<h2>additional info</h2>
+<p>regarding this post here... <a href=""https://stackoverflow.com/questions/37139379/stdinitializer-list-vs-variadic-templates"">::std::initializer_list vs variadic templates</a> i can say that i don't really care for using initializer_list or a variadic template. Either one seems fine in this case, but as far as i understand getting the size of an <code>std::initializer_list</code> at compile time is somewhat difficult.</p>",65308666.0,2,0,,2020-12-15 11:53:00.410000+00:00,1.0,2020-12-15 15:17:46.573000+00:00,,,,,4059407,,1,1,c++|c++14|variadic-templates|sfinae|initializer-list,79
+41,65305323,change WORDPRESS search widget li tag,"<p>I need to change WORDPRESS li tag to div and replace the class by custom class and change title tag H2 to H3 can help me ?</p>
+<pre><code>&lt;li id=&quot;search-5&quot; class=&quot;widget widget_search&quot;&gt;&lt;h2 class=&quot;widgettitle&quot;&gt;Search&lt;/h2&gt;
+   &lt;!-- Search Widget --&gt;
+   &lt;div class=&quot;widget widget_search&quot;&gt;
+   &lt;form action=&quot;http://127.0.0.1/&quot; role=&quot;search&quot; method=&quot;get&quot;&gt;
+       &lt;input type=&quot;text&quot; value=&quot;Search&quot; default-value=&quot;Search&quot;&gt;
+   &lt;/form&gt;
+   &lt;/div&gt;
+ &lt;/li&gt;
+</code></pre>
+<p>to this:</p>
+<pre><code>    &lt;div id=&quot;search-5&quot; class=&quot;widget widget_search&quot;&gt;
+    &lt;h3 class=&quot;widgettitle&quot;&gt;Search&lt;/h3&gt;
+   &lt;!-- Search Widget --&gt;
+   &lt;div class=&quot;widget widget_search&quot;&gt;
+   &lt;form action=&quot;http://127.0.0.1/&quot; role=&quot;search&quot; method=&quot;get&quot;&gt;
+       &lt;input type=&quot;text&quot; value=&quot;Search&quot; default-value=&quot;Search&quot;&gt;
+   &lt;/form&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre>",,0,0,,2020-12-15 11:52:55.157000+00:00,,2020-12-15 11:52:55.157000+00:00,,,,,9960694,,1,1,wordpress,11
+42,65305322,Poll for new sub-folders inside a directory using Apache Camel,"<p>I want to write a camel route for watching new subfolders inside a directory. There is an input directory to which the daily website feed comes as a new sub-folder with a name as a date. Every sub-folder uploaded has a similar structure. I want to pull the new date folder whenever it is uploaded.</p>
+<p>Also, the camel provides readlock but it works only on Files. Is there a way to put readlock on the folder?</p>
+<ul>
+<li>inputDirectory
+<ul>
+<li>11/12/2020
+<ul>
+<li>products</li>
+<li>taxonomy</li>
+</ul>
+</li>
+<li>12/12/2020
+<ul>
+<li>products</li>
+<li>taxonomy</li>
+</ul>
+</li>
+<li>13/12/2020
+<ul>
+<li>products</li>
+<li>taxonomy</li>
+</ul>
+</li>
+<li>etc..</li>
+</ul>
+</li>
+</ul>
+<p>I tried using 'recursive=true' but no luck with that (we cannot use include and antInclude as we are dealing with a folder here). I know a camel is mostly for files but want to know if the above requirement can be met with the camel.</p>
+<p>I'm pretty new to Camel and please help me with this.</p>",65311415.0,1,0,,2020-12-15 11:52:54.067000+00:00,,2020-12-16 12:43:30+00:00,2020-12-16 12:43:30+00:00,,13899010.0,,14829030,,1,1,apache-camel,27
+43,65305321,How to use by email instead of username in spring security without using .formLogin(),"<p>In Spring oauth2,
+[localhost:8080/oauth/token ] in this URL we are providing username, password, grant_type.<br>
+1- if instead of username I want to use a user or email or instead of password I want to use/ write pwd how can I do it?<br>
+I extended AuthorizationServerConfigurerAdapter and wrote following code : <br>
+<a href=""https://i.stack.imgur.com/f9Jaf.png"" rel=""nofollow noreferrer"">AuthorizationServerConfigurerAdapter</a>
+<br>
+<a href=""https://i.stack.imgur.com/pJ0Cr.jpg"" rel=""nofollow noreferrer"">Problem Image</a><br>
+pls check the image for better understanding <br>
+2- if I want to add more parameters like mobile number, UUID, device, with username, password, grant_type.</p>
+<p>any help or suggestions are welcome.</p>",,0,1,,2020-12-15 11:52:49.727000+00:00,,2020-12-16 03:59:28.100000+00:00,2020-12-16 03:59:28.100000+00:00,,4220066.0,,4220066,,1,0,spring-boot|spring-security|spring-oauth2,26
+44,65305313,Laravel-echo not joining presence-channel in production,"<p>I am using laravel-echo for handling events with pusher-js. Running it local in dev works fine but as soon as I take it live on the server and run it in prod, it's not joining the presence-channel, but still connecting to pusher.</p>
+<p>Pushers debug console, if I open the site locally:
+<a href=""https://i.stack.imgur.com/LhEMt.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/LhEMt.png"" alt=""Pusher debug console local dev"" /></a></p>
+<p>Pushers debug consle, if I open the site in prod / live:
+<a href=""https://i.stack.imgur.com/K0jA3.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/K0jA3.png"" alt=""Pusher debug console live prod"" /></a></p>
+<p>bootstrap.js:</p>
+<pre class=""lang-js prettyprint-override""><code>
+import Echo from &quot;laravel-echo&quot;;
+
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+  broadcaster: 'pusher',
+  key: process.env.MIX_PUSHER_APP_KEY,
+  cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+  enabledTransports: [&quot;ws&quot;, &quot;wss&quot;]
+});
+</code></pre>
+<p>Relevant part from my component:</p>
+<pre class=""lang-js prettyprint-override""><code>computed: {
+    channel () {
+      return window.Echo.join(&quot;jobs&quot;);
+    },
+    connection () {
+      return window.Echo.connector.pusher.connection;
+    }
+  },
+  created () {
+    let app = this;
+
+    app.channel
+      .subscribed(user =&gt; {
+        // do stuff
+      })
+      .joining(user =&gt; {
+        // do stuff
+      })
+      .leaving(user =&gt; {
+        // do stuff
+      })
+      .listen(&quot;JobsUpdated&quot;, e =&gt; {
+        app.refreshData();
+      })
+      .on(&quot;RefreshClient&quot;, e =&gt; {
+        app.refreshClient();
+      });
+
+    app.bindPusherStateChangeEvents();
+
+    window.setInterval(function () {
+      app.refreshClient();
+    }, 600000);
+  },
+  beforeDestroy () {
+    window.Echo.leave(&quot;jobs&quot;);
+  },
+</code></pre>
+<p>routes/channels.php:</p>
+<pre class=""lang-php prettyprint-override""><code>Broadcast::channel('jobs', function ($user) {
+    return $user;
+});
+</code></pre>
+<p>config/broadcasting.php</p>
+<pre class=""lang-php prettyprint-override""><code>'pusher' =&gt; [
+            'driver' =&gt; 'pusher',
+            'key' =&gt; env('PUSHER_APP_KEY'),
+            'secret' =&gt; env('PUSHER_APP_SECRET'),
+            'app_id' =&gt; env('PUSHER_APP_ID'),
+            'options' =&gt; [
+                'cluster' =&gt; env('PUSHER_APP_CLUSTER'),
+                'encrypted' =&gt; false,
+           ]
+</code></pre>
+<p>I already tried a couple of solutions from stackoverflow and laracasts such as setting encrypted to true or forcing TLS, but none worked yet. I might be missing something, but don't know what...</p>",,0,6,,2020-12-15 11:52:39.807000+00:00,1.0,2020-12-15 11:52:39.807000+00:00,,,,,11916702,,1,1,php|laravel|vue.js|pusher|laravel-echo,95
+45,65305306,"Aapt2.exe stopped working,How to solve it?","<p>I had Started building an app in android studio 4.0 on windows 7 64 bit .In that it doesn't show any error while writing code but when i start debugging the app in my real device it shows error that Aapt2.exe stopped working.can anyone guide to solve this problem?</p>
+<p><strong>Errors</strong></p>
+<p>Execution failed for task ':app:processDebugResources'.</p>
+<blockquote>
+<p>Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+Failed to transform play-services-base-17.1.0.aar (com.google.android.gms:play-services-base:17.1.0) to match attributes {artifactType=android-compiled-dependencies-resources, org.gradle.status=release}.
+&gt; Execution failed for AarResourcesCompilerTransform: C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0.
+&gt; AAPT2 aapt2-4.1.1-6503028-windows Daemon #0: Unexpected error during compile 'C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png', attempting to stop daemon.
+This should not happen under normal circumstances, please file an issue if it does.
+Failed to transform play-services-base-17.1.0.aar (com.google.android.gms:play-services-base:17.1.0) to match attributes {artifactType=android-compiled-dependencies-resources, org.gradle.status=release}.
+&gt; Execution failed for AarResourcesCompilerTransform: C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0.
+&gt; AAPT2 aapt2-4.1.1-6503028-windows Daemon #0: Unexpected error during compile 'C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png', attempting to stop daemon.
+This should not happen under normal circumstances, please file an issue if it does.
+Failed to transform play-services-base-17.1.0.aar (com.google.android.gms:play-services-base:17.1.0) to match attributes {artifactType=android-compiled-dependencies-resources, org.gradle.status=release}.
+&gt; Execution failed for AarResourcesCompilerTransform: C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0.
+&gt; AAPT2 aapt2-4.1.1-6503028-windows Daemon #0: Unexpected error during compile 'C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png', attempting to stop daemon.
+This should not happen under normal circumstances, please file an issue if it does.
+Failed to transform play-services-base-17.1.0.aar (com.google.android.gms:play-services-base:17.1.0) to match attributes {artifactType=android-compiled-dependencies-resources, org.gradle.status=release}.
+&gt; Execution failed for AarResourcesCompilerTransform: C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0.
+&gt; AAPT2 aapt2-4.1.1-6503028-windows Daemon #0: Unexpected error during compile 'C:\Users\Admin.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png', attempting to stop daemon.
+This should not happen under normal circumstances, please file an issue if it does.</p>
+</blockquote>
+<p><strong>And second error</strong></p>
+<p>AAPT2 process unexpectedly exit. Error output:</p>
+<p><a href=""https://i.stack.imgur.com/8FPBc.png"" rel=""nofollow noreferrer"">image of Aapt2 window</a></p>
+<p>can anyone help?</p>",,2,7,,2020-12-15 11:52:20.090000+00:00,,2020-12-16 14:40:35.607000+00:00,,,,,14772790,,1,0,java|android|android-studio,105
+46,65305298,Jmeter transaction per minute,"<p>How to achieve transactions per minute in jmeter while using transaction controller instead of request level?</p>
+<p>For example, in the below screenshot i want to achieve transaction_2 and transaction_3 to achieve 100/minute.</p>
+<p><a href=""https://i.stack.imgur.com/AYWaj.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/AYWaj.png"" alt=""enter image description here"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/bdmMm.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/bdmMm.png"" alt=""enter image description here"" /></a></p>",65305723.0,1,0,,2020-12-15 11:51:44.483000+00:00,,2020-12-15 12:19:32.630000+00:00,,,,,10258449,,1,0,jmeter|jmeter-plugins|jmeter-5.0|jmeter-4.0|jmeter-3.2,18
+47,65305297,"Difference between ParseUser.getCurrentUser.getList(""isFollowing"").add(users.get(p)) and ParseUser.getCurrentUser.add(""isFollowing"", users.get(p))","<p>I am making a simple twitter like app where a user can follow or post.</p>
+<p>I am using parse android for this.</p>
+<p>In the users table I have created a column called &quot;isFollowing&quot; which indicates name of followers.</p>
+<pre><code>listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+                CheckedTextView checkedTextView=(CheckedTextView)view;
+                if (checkedTextView.isChecked()){
+                    ParseUser.getCurrentUser().getList(&quot;isFollowing&quot;).add(users.get(position));
+                }else {
+                    ParseUser.getCurrentUser().getList(&quot;isFollowing&quot;).remove(users.get(position));
+                }
+                ParseUser.getCurrentUser().saveInBackground();
+            }
+        });
+</code></pre>
+<p>The <code>users</code> arrayList contains the number of users present. If we click on list view then the name of the user will be added into <code>isFollowing</code> array in the parse database.</p>
+<p>I am using <code>ParseUser.getCurrentUser().getList(&quot;isFollowing&quot;).add(users.get(position));</code> to add the username to my array which is giving me a null pointer exception.</p>
+<p>But if I use <code>ParseUser.getCurrentUser.add(&quot;isFollowing&quot;, users.get(position))</code>, then it is getting executed correctly.</p>
+<p>Why is this happening?</p>",65309424.0,1,0,,2020-12-15 11:51:38.553000+00:00,,2020-12-16 16:06:49.967000+00:00,2020-12-15 15:45:47.537000+00:00,,14809209.0,,14809209,,1,0,java|android|arraylist|parse-platform|parse-dashboard,32
+48,65305293,Pygame Pacman - Enemy Random Movement,"<p>Ive made a pacman game using python and pygame and I have one of the ghosts that just makes random movements around the maze. Does anyone know if there is a way for me to make the random enemy more AI controlled? I still want it to be random but at the moment the random movement code I have makes it so that the ghost can sometimes get stuck in the box that the ghosts start in or it will just go back and forth from one place to another.</p>
+<p>This is the Random movement method that I Have:</p>
+<pre><code>def get_random_direction(self):
+            while True:
+                number = random.randint(-2, 1)
+                if number == -2:
+                    x_dir, y_dir = 1, 0
+                elif number == -1:
+                    x_dir, y_dir = 0, 1
+                elif number == 0:
+                    x_dir, y_dir = -1, 0
+                else:
+                    x_dir, y_dir = 0, -1
+                next_pos = vec(self.grid_pos.x + x_dir, self.grid_pos.y + y_dir)
+                if next_pos not in self.app.walls:
+                    break
+            return vec(x_dir, y_dir)
+</code></pre>
+<p>I assume the code above is the part that I will need to edit for the random movement to be changed I just don't know what to do to change it.</p>
+<p>this is the full class for my enemies that holds all the code used by the enemies:</p>
+<pre><code>        import pygame
+    import random
+    from settings import *
+
+    vec = pygame.math.Vector2
+
+
+    class Enemy:
+        def __init__(self, app, pos, number):
+            self.app = app
+            self.grid_pos = pos
+            self.starting_pos = [pos.x, pos.y]
+            self.pix_pos = self.get_pix_pos()
+            self.radius = int(self.app.cell_width//2.3)
+            self.number = number
+            self.colour = self.set_colour()
+            self.direction = vec(0, 0)
+            self.personality = self.set_personality()
+            self.target = None
+            self.speed = self.set_speed()
+
+        def update(self):
+            self.target = self.set_target()
+            if self.target != self.grid_pos:
+                self.pix_pos += self.direction * self.speed
+                if self.time_to_move():
+                    self.move()
+
+            # Setting grid position in reference to pix position
+            self.grid_pos[0] = (self.pix_pos[0]-TOP_BOTTOM_BUFFER +
+                                self.app.cell_width//2)//self.app.cell_width+1
+            self.grid_pos[1] = (self.pix_pos[1]-TOP_BOTTOM_BUFFER +
+                                self.app.cell_height//2)//self.app.cell_height+1
+
+        def draw(self):
+            pygame.draw.circle(self.app.screen, self.colour,
+                               (int(self.pix_pos.x), int(self.pix_pos.y)), self.radius)
+
+        def set_speed(self):
+            if self.personality in [&quot;rapid&quot;, &quot;frightened&quot;]:
+                speed = 1
+            else:
+                speed = 0.90
+            return speed
+
+        def set_target(self):
+            if self.personality == &quot;rapid&quot; or self.personality == &quot;sluggish&quot;:
+                return self.app.player.grid_pos
+            else:
+                if self.app.player.grid_pos[0] &gt; COLS//2 and self.app.player.grid_pos[1] &gt; ROWS//2:
+                    return vec(1, 1)
+                if self.app.player.grid_pos[0] &gt; COLS//2 and self.app.player.grid_pos[1] &lt; ROWS//2:
+                    return vec(1, ROWS-2)
+                if self.app.player.grid_pos[0] &lt; COLS//2 and self.app.player.grid_pos[1] &gt; ROWS//2:
+                    return vec(COLS-2, 1)
+                else:
+                    return vec(COLS-2, ROWS-2)
+
+        def time_to_move(self):
+            if int(self.pix_pos.x+TOP_BOTTOM_BUFFER//2) % self.app.cell_width == 0:
+                if self.direction == vec(1, 0) or self.direction == vec(-1, 0) or self.direction == vec(0, 0):
+                    return True
+            if int(self.pix_pos.y+TOP_BOTTOM_BUFFER//2) % self.app.cell_height == 0:
+                if self.direction == vec(0, 1) or self.direction == vec(0, -1) or self.direction == vec(0, 0):
+                    return True
+            return False
+
+        def move(self):
+            if self.personality == &quot;random&quot;:
+                self.direction = self.get_random_direction()
+            if self.personality == &quot;sluggish&quot;:
+                self.direction = self.get_path_direction(self.target)
+            if self.personality == &quot;rapid&quot;:
+                self.direction = self.get_path_direction(self.target)
+            if self.personality == &quot;frightened&quot;:
+                self.direction = self.get_path_direction(self.target)
+
+        def get_path_direction(self, target):
+            next_cell = self.find_next_cell_in_path(target)
+            xdir = next_cell[0] - self.grid_pos[0]
+            ydir = next_cell[1] - self.grid_pos[1]
+            return vec(xdir, ydir)
+
+        def find_next_cell_in_path(self, target):
+            path = self.BFS([int(self.grid_pos.x), int(self.grid_pos.y)], [
+                            int(target[0]), int(target[1])])
+            return path[1]
+
+        def BFS(self, start, target):
+            grid = [[0 for x in range(28)] for x in range(30)]
+            for cell in self.app.walls:
+                if cell.x &lt; 28 and cell.y &lt; 30:
+                    grid[int(cell.y)][int(cell.x)] = 1
+            queue = [start]
+            path = []
+            visited = []
+            while queue:
+                current = queue[0]
+                queue.remove(queue[0])
+                visited.append(current)
+                if current == target:
+                    break
+                else:
+                    neighbours = [[0, -1], [1, 0], [0, 1], [-1, 0]]
+                    for neighbour in neighbours:
+                        if neighbour[0]+current[0] &gt;= 0 and neighbour[0] + current[0] &lt; len(grid[0]):
+                            if neighbour[1]+current[1] &gt;= 0 and neighbour[1] + current[1] &lt; len(grid):
+                                next_cell = [neighbour[0] + current[0], neighbour[1] + current[1]]
+                                if next_cell not in visited:
+                                    if grid[next_cell[1]][next_cell[0]] != 1:
+                                        queue.append(next_cell)
+                                        path.append({&quot;Current&quot;: current, &quot;Next&quot;: next_cell})
+            shortest = [target]
+            while target != start:
+                for step in path:
+                    if step[&quot;Next&quot;] == target:
+                        target = step[&quot;Current&quot;]
+                        shortest.insert(0, step[&quot;Current&quot;])
+            return shortest
+
+        def get_random_direction(self):
+            while True:
+                number = random.randint(-2, 1)
+                if number == -2:
+                    x_dir, y_dir = 1, 0
+                elif number == -1:
+                    x_dir, y_dir = 0, 1
+                elif number == 0:
+                    x_dir, y_dir = -1, 0
+                else:
+                    x_dir, y_dir = 0, -1
+                next_pos = vec(self.grid_pos.x + x_dir, self.grid_pos.y + y_dir)
+                if next_pos not in self.app.walls:
+                    break
+            return vec(x_dir, y_dir)
+
+        def get_pix_pos(self):
+            return vec((self.grid_pos.x*self.app.cell_width)+TOP_BOTTOM_BUFFER//2+self.app.cell_width//2,
+                       (self.grid_pos.y*self.app.cell_height)+TOP_BOTTOM_BUFFER//2 +
+                       self.app.cell_height//2)
+
+        def set_colour(self):
+            if self.number == 0:
+                return (52, 235, 61)
+            if self.number == 1:
+                return (3, 242, 255)
+            if self.number == 2:
+                return (255, 158, 3)
+            if self.number == 3:
+                return (255, 3, 3)
+
+        def set_personality(self):
+            if self.number == 0:
+                return &quot;rapid&quot;
+            elif self.number == 1:
+                return &quot;sluggish&quot;
+            elif self.number == 2:
+                return &quot;random&quot;
+            else:
+                return &quot;frightened&quot;
+</code></pre>",65305605.0,1,2,,2020-12-15 11:50:40.710000+00:00,,2020-12-15 12:17:34.407000+00:00,,,,,14694791,,1,1,python|pygame,37
+49,65305286,"unity app crashes, when signing in with google, using firebase","<p>I am trying to add a 'sign in with google' option to my app, using firebase. However when I click the button which calls the sign in script on my android device, the app crashes and closes completely.</p>
+<p>I cannot run this script in the editor. so is there another way of finding out what the error is?</p>
+<p>I am using the script found here <a href=""https://www.dropbox.com/s/qss2wk4v52d48j4/GoogleSignInDemo.cs?dl=0"" rel=""nofollow noreferrer"">https://www.dropbox.com/s/qss2wk4v52d48j4/GoogleSignInDemo.cs?dl=0</a>
+and have taken the web client id from my firebase project, and enabled google sign in.</p>
+<p>I have also added the sha1 fingerprint to my firebase project and have copied the google-services.json file to my unity project.
+I am using Unity 2020.1.6f1
+My firebase packages are version 7.0.1
+and the google sign in plugin 1.0.4</p>
+<p>Would appreciate all help on fixing this issue and getting the sign in with google option to work.</p>
+<p>I have found that my code breaks here:</p>
+<pre><code> GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
+</code></pre>
+<p>This is the OnAuthenticationFinished method:</p>
+<pre><code>internal void OnAuthenticationFinished(Task&lt;GoogleSignInUser&gt; task){}
+</code></pre>
+<p>I have left it empty to make sure the problem isn't inside the method</p>",,3,3,,2020-12-15 11:50:10.983000+00:00,,2021-02-24 10:33:45.633000+00:00,2020-12-16 15:11:56.800000+00:00,,14828492.0,,14828492,,1,1,firebase|unity3d|google-signin,181

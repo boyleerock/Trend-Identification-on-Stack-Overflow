@@ -1,0 +1,211 @@
+,id,creation_date,text,score
+0,41440542,2014-10-15 23:59:59.697000+00:00,what i mean by HERE i mean make it public,0
+1,41440541,2014-10-15 23:59:59.313000+00:00,"@charlietfl I have added more information, please let me know if it's still not clear.",0
+2,41440540,2014-10-15 23:59:58.727000+00:00,"Currently , this code doesn't highlight anything maybe I'm doing something wrong? ,of course more than a once highlighting would be preferred.",0
+3,41440539,2014-10-15 23:59:56.447000+00:00,"Another data point: according to the consume memory order proposal at http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1444.htm, some embedded MIPS CPUs can also avoid barriers by using dependencies (older, ""true"" MIPS are supposedly seq-cst). Also, given that `smp_read_barrier_depends()` in the Linux kernel is only a barrier for Alpha, it seems that if there is a (possibly fake) address dependency on the reading side, the read barrier can be avoided (save for Alpha). Making the compiler preserve the dependency is a whole another issue.",0
+4,41440536,2014-10-15 23:59:48.707000+00:00,"This is still unclear. Which string is which? `@""pork""` will be found in `@""pork*""`, but [not the other way around](https://gist.github.com/woolsweater/dc3e19bd45ad5fde509f). Please put up a [_fully runnable_ example that demonstrates the problem you have](http://stackoverflow.com/help/mcve).",0
+5,41440534,2014-10-15 23:59:37.920000+00:00,"So, do  you want there to be a horisontal scrollbar for the table?",0
+6,41440532,2014-10-15 23:59:32.490000+00:00,"The problem with things like `CInt` and `CStr` is that they can be used to either cast or convert.  There's noting in the Framework itself that does both.  In some cases, the correct replacement would be to use an explicit cast while in others it would be appropriate to use the `Convert` class or the like.  There is no one replacement that will work in all cases.",0
+7,41440531,2014-10-15 23:59:29.833000+00:00,"I am also having same problem, and am stumped so far.",0
+8,41440530,2014-10-15 23:59:26.633000+00:00,what you are showing is syntactically incorrect so it is very hard to help without seeing some real code,0
+9,41440529,2014-10-15 23:59:23.523000+00:00,"Try closing the port after the first byte, then reopen it again and adjust the settings before sending the rest.",0
+10,41440527,2014-10-15 23:59:22.393000+00:00,"Generics isn't the problem its creating the new object. I can get the type, get its properties but then how do I create the anonymous type dynamically without using ExpandoObject?",0
+11,41440525,2014-10-15 23:59:02.093000+00:00,"ok, doesn't matter I solved it with chatr: for (r in 1:nrow(df)) {df[r,3]<-chartr(""áéíóú"", ""aeiou"",df[r,2])}",0
+12,41440524,2014-10-15 23:58:48.937000+00:00,"What @aarosil said. However I would just store a small token about the sort-order on the client itself, with [webstorage](http://en.wikipedia.org/wiki/Web_storage) if possible. Retrieve it and restore the sort order from within Angular.",0
+13,41440523,2014-10-15 23:58:48.173000+00:00,"I'll give it a shot - I don't think I can assign a char value directly like that, but there should be an easy conversion.",0
+14,41440522,2014-10-15 23:58:44.247000+00:00,I like my view models having a 1:1 relationship with the views/controls. That prevents side effects you're experiencing now (since using entities doesn't work in your case) and generally makes data representation easier because you're flattening the data structures. It also allows you to loosly couple your data access layer and your UI.,0
+15,41440521,2014-10-15 23:58:35.637000+00:00,"Again, the bigger problem is that it is highly likely that your key control and mouse control classes should **not** subclass from the main class. Again this looks to be a gross mis-use of inheritance.",1
+16,41440520,2014-10-15 23:58:31.850000+00:00,Follow-up on the IE oddity: It works fine when loaded as a normal web page. Must just be a JSFiddle quirk.,0
+17,41440518,2014-10-15 23:58:27.977000+00:00,"@Alohci how do I get the form.elements array in a constant time having an input named ""elements"" ?",0
+18,41440517,2014-10-15 23:58:20.283000+00:00,@user3487121: just remove that line. It does not produce any observable effects.,2
+19,41440516,2014-10-15 23:58:14.967000+00:00,Does the [`div.clearfix.visible-sm-block`](http://getbootstrap.com/css/#grid-responsive-resets) approach not work?,0
+20,41440514,2014-10-15 23:58:11.993000+00:00,"Edited, try the above.",0
+21,41440513,2014-10-15 23:58:10.783000+00:00,`free()` did deallocate the allocated memory. Your attempt to access that memory after it was deallocated has undefined behavior. Just don't do that.,0
+22,41440512,2014-10-15 23:58:02.953000+00:00,`struct trie *mainTrie = malloc(size * sizeof *mainTrie );`,1
+23,41440511,2014-10-15 23:57:56.780000+00:00,"ok, whats the best way to work around it without making the world hot? @Darren",0
+24,41440509,2014-10-15 23:57:42.557000+00:00,"My apologies. The error is ""State cannot be resolved to a variable"". So I would assume you are right, but I know next to nothing about this stuff. I thought that State would be inherited by the Keying class because I declared it in the main class? It works for MouseInput.",0
+25,41440507,2014-10-15 23:57:42.147000+00:00,Whats the logic for populating the second one? Is it based on the selected value of the first one. Google [MVC cascading select](https://www.google.com.au/search?q=mvc+cascading+select&oq=mvc+cascading+select&aqs=chrome.0.69i59j0.7918j0j7&sourceid=chrome&espv=2&es_sm=122&ie=UTF-8). There are plenty of examples of how to do this,0
+26,41440503,2014-10-15 23:57:20.930000+00:00,Swift treats integer literals differently from integer instances. Literals can be converted seamlessly to essentially any numeric type.,1
+27,41440502,2014-10-15 23:57:15.727000+00:00,"TM1 as in Cognos TM1? I've added that as a tag. If the database field is indexed, you must ensure you don't wrap any functions around the database column as it stops an index being used. I guess the querying is occurring in Turbo Integrator so you are constrained by that tool?",0
+28,41440499,2014-10-15 23:56:59.233000+00:00,"See this post here:
+http://stackoverflow.com/questions/22839836/cannot-connect-to-postgresql-db-in-play-framework/25474256#25474256",0
+29,41440498,2014-10-15 23:56:58.240000+00:00,"The idea can be extended to an infinite number of arbitrary labels, not just ""A"", ""B"", and ""C"".  Think in terms of a `Map<String, List<String>>`",0
+30,41440494,2014-10-15 23:56:45.173000+00:00,@mgilson Wow. You are exactly right. My world just got turned upside down. I have been typing unnecessary characters in 2.7 for FAR TOO LONG to not be ashamed of it.,1
+31,41440492,2014-10-15 23:56:42.760000+00:00,The OP wants the URL to be `site.com/search?q=blabla`.,1
+32,41440491,2014-10-15 23:56:39.443000+00:00,"+1 to zerk, [*and this is why*](https://i.chzbgr.com/maxW500/7461525248/hFA8479D2/). @Fred-ii- thoughts?",1
+33,41440488,2014-10-15 23:56:10.130000+00:00,what IR services mongoDB has ? any ranking method to retrive results?,0
+34,41440486,2014-10-15 23:56:04.317000+00:00,"But in this case, you can just leave the query string alone and rewrite `search/` to `index.php`.",0
+35,41440485,2014-10-15 23:55:58.953000+00:00,"You need to also show the code that periodically sets a new value for `_TimeNow`, and also the process that causes that code to periodically execute. The code you've shown, by itself, will only do what you describe: set the value once, and only once.",0
+36,41440484,2014-10-15 23:55:50.070000+00:00,@Brad You're right... I guess I was just thinking out loud. Thanks for the info.,0
+37,41440482,2014-10-15 23:55:46.027000+00:00,"Here's an alternate stab at removing the empty gap left behind, using border-width-bottom: http://jsfiddle.net/troygizzi/2d4ar7jr/ -- but it seems to be a bit flaky in IE; it works after I click Run, but not when the page is first loaded. Not sure if that's just a JSFiddle issue or what...",1
+38,41440480,2014-10-15 23:55:45.060000+00:00,"And to elaborate, there are the Console.CursorLeft and CursorTop properties that allow you to position where the text will be written within the window. So you can extent Dai's suggestion to rewrite the text anywhere on the console screen to achieve your goal. Of course, if the screen scrolls and moves the text you've already written, all bets are off. No one said console-based graphics was going to be easy. :)",0
+39,41440479,2014-10-15 23:55:37.217000+00:00,"Ok, that is useful thank you.",0
+40,41440478,2014-10-15 23:55:31.120000+00:00,I've never tried using a JTAG probe with Linux.,0
+41,41440477,2014-10-15 23:55:29.227000+00:00,"Noted. But most of the above mentioned could be solved with proper regex pattern, or a series of regex patterns for that matter.",0
+42,41440476,2014-10-15 23:55:28.200000+00:00,Windows supports self-executing scripts?  Is there a shebang line?,0
+43,41440475,2014-10-15 23:55:19.910000+00:00,"Thanks a lot for the help, I'll give those things a shot. I only have the one href in there.",0
+44,41440474,2014-10-15 23:55:18.437000+00:00,"Nope, Node.js is not single-threaded. Take a look at my answer below.",0
+45,41440473,2014-10-15 23:55:17.990000+00:00,ViewWillAppear does not seem to be available as an overrideable method. Neither is ViewDidAppear. Any ideas?,0
+46,41440472,2014-10-15 23:55:12.750000+00:00,"Welcome to Stack Overflow. In the future, it would be best to link to a working example instead a of just images of the problem. Cheers and good luck.",0
+47,41440471,2014-10-15 23:55:03.383000+00:00,"Avoid using keywords as names. If you must, then you must go through the tedious property of managing a broken state. Remove the name from the element, save the location of `.submit` or `.elements`, and then reassign the name.",2
+48,41440470,2014-10-15 23:54:55.680000+00:00,Thank you very much. That solved it. Resolved plunkr incorporating your change - http://plnkr.co/edit/oFDpd6vQ9IizZNxC0GbI?p=preview. I am only drawing the axis once. drawAxis is only called from within drawChart.,0
+49,41440468,2014-10-15 23:54:50.983000+00:00,Have you considered using a parser?,4
+50,41440467,2014-10-15 23:54:45.663000+00:00,"If you're seeing an error, it makes sense to post the error message, no? You appear to be trying to reference an undeclared variable in Battle, but that's just a guess. A bigger question though would be why would your mouse and your key control classes subclass the main class? This looks like possible misuse of inheritance.",0
+51,41440466,2014-10-15 23:54:44.270000+00:00,"I can't browse to it, but it is being shown in the files list and I want to hide it.. Is it possible?",1
+52,41440465,2014-10-15 23:54:44.090000+00:00,"If you want to keep your current approach, then *notifyVehicleUpdated()* should be called inside of both *notifyAndXxxxRow()* methods, because its intention, at least my first idea, is to notify the other Coordinator/model that something has happened and it should act in consequence. @Gioce90",0
+53,41440464,2014-10-15 23:54:30.187000+00:00,"Yes, sorrie, I will update..",0
+54,41440463,2014-10-15 23:54:29.700000+00:00,"I'd love some clarification on the downvote too.  @ilir: It's a good point my not showing I tried anything (I did try to do this using a double `sapply` loop but threw up a little in my mouth), so I'll add some clarification.  Thanks!",0
+55,41440460,2014-10-15 23:54:20.340000+00:00,have you tried RTCPeerConnection?,0
+56,41440459,2014-10-15 23:54:19.760000+00:00,"@Christina I mean, it includes all the LESS variable settings and LESS file exclusions. There's nothing built-in to make it work with Grunt, but you could easily take a `config.json` and write a little script to output a corresponding `variables.less`.",0
+57,41440457,2014-10-15 23:54:10.520000+00:00,"No, you shall enjoy lack of logic.",1
+58,41440456,2014-10-15 23:54:09.210000+00:00,"@Gas Thanks. Thing is that the controller references an EJB, which in turn creates other EJBs, which dynamically create other EJBs etc. I think I'm probably going to use the thread as the key to a hashmap in my aggregator. I'm not planning to do anything async. I don't see why the thread would change over the course of a request, and I don't see how more than one request can use it at the same time, so I think that should do the trick. Admittedly kludgy, but it's good enough for the production parameters I'm working with.",0
+59,41440454,2014-10-15 23:54:03.710000+00:00,is `Timer` `threading.Timer`?,0
+60,41440453,2014-10-15 23:53:56.403000+00:00,"It would be nice if in SQL Server Management Studio if you could right click on a database and say show only this database for this profile. But it would never be that easy. My scenario is when I log onto my SQL Server at Godaddy using SQL Server Management Studio I see hundreds of other databases and have to scroll down everytime. Next time I will name my database ""_AAAMydatabase""",0
+61,41440452,2014-10-15 23:53:47.840000+00:00,by arguments your referring the values in `sys.argv`?,0
+62,41440451,2014-10-15 23:53:44.993000+00:00,Solutions? The answer to that would be a big NO.,0
+63,41440450,2014-10-15 23:53:44.613000+00:00,"What if one column is a label with spaces and commas in it and my other data file is space separated and not suitable for awk piping? Ahhh, I'll just put double quotes around my labels according to this post: http://stackoverflow.com/questions/15013134/gnuplot-how-to-include-a-space-character-in-key-titles",0
+64,41440448,2014-10-15 23:53:38.793000+00:00,You can use `RewriteCond` to capture query strings. See [here](http://zenverse.net/capture-query-string-get-data-in-htaccess-rewrite/) or [here](http://stackoverflow.com/questions/15212981/query-string-rewriting-using-htaccess).,0
+65,41440446,2014-10-15 23:53:36.590000+00:00,"`$username = ""$username"";` worked for me and now echoes the userid and firstname of the user who's logged in. so I shall enjoy the global warming lol. @BillKarwin",0
+66,41440445,2014-10-15 23:53:32.197000+00:00,...my old trade. ^^^,1
+67,41440444,2014-10-15 23:53:31.977000+00:00,"You're welcome, but please keep in mind that you're duplicating the amount of data resources your program uses for each use of this code snippet. If the amount of data you pass through this snippet is very large, this approach could have a noticeable performance impact. **Usually**, you will be fine with the quick and dirty method, but it's good to understand the consequences going in.",0
+68,41440443,2014-10-15 23:53:29.850000+00:00,possible duplicate of [Illegal modifier error for static class](http://stackoverflow.com/questions/11831791/illegal-modifier-error-for-static-class),0
+69,41440442,2014-10-15 23:53:27.727000+00:00,You can't because the file was both moved and modified.,1
+70,41440441,2014-10-15 23:53:27.553000+00:00,"*""read data in decimal""* -- Actually that's ambiguous.  Do you mean ASCII decimal?  If so, then the text could be ready by a *terminal emulator* program on the PC side.",0
+71,41440439,2014-10-15 23:53:14.333000+00:00,"I don't think that'll work for me, I'm looking for a way to hold every open object id in Session - along with a timestamp. So that when a new request comes in it will know the object is being accessed by another user. I think the solution will include javascript and server side session handling",0
+72,41440437,2014-10-15 23:53:13.507000+00:00,"You can drop the integer index in python2.7 as well.  AFAIK, python2.6 is the only version that supports `.format` where the index is required for positional arguments.",0
+73,41440436,2014-10-15 23:53:10.277000+00:00,"No problem.  Depending on how this needs to scale, you might be better off going the attribute way, but sometimes it's refreshing to try another approach :)",0
+74,41440434,2014-10-15 23:53:03.613000+00:00,@Bergi: This feedback made us realize that there was simply no reason for the boolean casts in the and/or functions.  They're removed in HEAD and won't be in the next release.,0
+75,41440433,2014-10-15 23:52:52.563000+00:00,"@MShack - In that case, you might also want to place `text-indent: -9999px;` at 100%. Removing all height will remove the div, but not any text. `text-indent: -9999px;` can do that for you.",0
+76,41440432,2014-10-15 23:52:49.817000+00:00,"The columns are always A,B,C but the input may be large, as in, it can be a cyclic. It can read thousands of records for each a, B and C",0
+77,41440431,2014-10-15 23:52:49.773000+00:00,web.config should be automatically hidden as per IIS security rules. You shouldn't be able to browse to it.,0
+78,41440430,2014-10-15 23:52:40.197000+00:00,"@MichalSzyndel, are you going to provide any comments of value or continue to be snide and vague? If you have a claim, back it up with an alternative -- specifically identify the points you're refuting instead of posting sweeping generalizations. As it stands right now, you're acting like a jerk and doing the precise opposite of SO's ""be nice"" policy.",0
+79,41440429,2014-10-15 23:52:40.177000+00:00,This answer assumes the CF server has recently interacted with the other server in order for the mac/ip to be cached in arp but the op didn't necessarily state that. That's why I suggested pinging each ip in the ip range to ensure recent contact.,1
+80,41440428,2014-10-15 23:52:38.130000+00:00,"Nope.  Don't do this.  Seriously, use `SimpleDateFormat` if you are parsing dates and times.  If you're having trouble with it, post another question.",4
+81,41440427,2014-10-15 23:52:30.977000+00:00,"Thanks for the reply. My requirement got changed i.e. to put the private key file in filesystem and your suggestion helped :). Thanks much!. btw do you have any suggestions if in case, key is required to be put in classpath?..",0
+82,41440426,2014-10-15 23:52:29.790000+00:00,What properties can't you find another way to access?,0
+83,41440425,2014-10-15 23:52:16.693000+00:00,"I make it to number 45,the line is still there",0
+84,41440424,2014-10-15 23:52:14.463000+00:00,@Vishal I am following you in youtube. thanks in advance.,0
+85,41440423,2014-10-15 23:52:13.327000+00:00,"Names are Case Sensitive in C#. So, just copy the name of lblResult from its property Window and paste that in your code.",0
+86,41440422,2014-10-15 23:52:12.523000+00:00,I'm not even referencing ModelName in the loop or in the class getter/setter for Price. I've traced through the entire loop with F11. All of the Price data members are getting set at the same time and on the same line (`myclass.Price = 0.00`) AFTER returning from the MyClass.Price setter. I honestly don't see how any of my code is doing this...,0
+87,41440419,2014-10-15 23:51:56.843000+00:00,What I meant is: isn't there a way to prevent Java from reverse-DNSing ?,0
+88,41440418,2014-10-15 23:51:56.120000+00:00,"@Dagon, an idea for a tee shirt?",1
+89,41440417,2014-10-15 23:51:53.150000+00:00,"A CURSOR is defined over a specific table. In order for SQL to create the cursor definition when CREATE PROCEDURE runs, it needs to know which table is used. You can't send the table name for a cursor into the procedure after the procedure is created because SQL doesn't know how to define the cursor so it can't create the procedure.",0
+90,41440416,2014-10-15 23:51:48.560000+00:00,"I was not able to recreate your error on Matlab R2014a, Ubuntu 12.04.",0
+91,41440415,2014-10-15 23:51:43.827000+00:00,"Nowhere do you save the new order after the UI is updated.  You would have to listen for the event from ui-sortable that a user rearranged the list, then save all the elements again with their new order #.  Also it looks like in your backend api you don't expose anyway to update an existing question, so that would be your first step.",0
+92,41440412,2014-10-15 23:51:35.493000+00:00,"@Anders use those hex values in your Replace deal. like maybe `char r1 = 0xc2 , r2 = 0xa0;` then pass to replace",0
+93,41440411,2014-10-15 23:51:34.513000+00:00,"This happened to us because we changed the Debug Information Format from ""DWARF with dSYM File"" to ""DWARF"" for performance reasons. We have the format set to ""DWARF with dSYM File"" in another scheme. So we just have to change schemes whenever we want to profile.",0
+94,41440410,2014-10-15 23:51:31.893000+00:00,"OK, you have my upvote, even though your answer isn't really to my taste.",0
+95,41440408,2014-10-15 23:51:23.807000+00:00,"@CRQUERYPARAM, i just dont want to put all the code here , but thanks for asking, cool username by the way",0
+96,41440407,2014-10-15 23:51:22.720000+00:00,You might consider re-editing existing code of merge sort algorithm on this case http://interactivepython.org/runestone/static/pythonds/SortSearch/TheMergeSort.html,0
+97,41440406,2014-10-15 23:51:22.410000+00:00,":( no lucky. Could you help me understand the object type that I need to return inside Java transformer? Let me share my issue. I need to read the payload returned from MySQL and apply some rules, like remove special chars, change some values before send set the procedure parameter, etc. Thank you very much for your answer, I will try all your advices.",0
+98,41440405,2014-10-15 23:51:21.540000+00:00,"Your question remains unclear. Give me a sample input, and sample output. Thanks.",0
+99,41440404,2014-10-15 23:51:11.513000+00:00,this will only return 32bit servers if compiled as 32bit app and the same for 64bit,1
+100,41440402,2014-10-15 23:51:07.037000+00:00,unless a user is actully called **$username** (gives me an idea :-0 ),0
+101,41440400,2014-10-15 23:50:54.493000+00:00,@SchizoidSpag Since forever: http://ideone.com/VeZqHE,2
+102,41440399,2014-10-15 23:50:51.083000+00:00,"Thanks @Zachary you are right! My bad, since, I was working in multiple VM's I got the Version number wrong, the issue was in 140228 revision. And after I went through the release notes of Sitecore 7.2 update 2, I found that there are lot of fix and enhancements to Media upload functionality.",0
+103,41440397,2014-10-15 23:50:42.687000+00:00,trying to show that `$username = $_SESSION['username'];`,0
+104,41440395,2014-10-15 23:50:34.320000+00:00,"It sounds like a database error, not an issue with your username/password. If it can't connect to the DB, Weblogic will fail to start. See similar questions like: https://community.oracle.com/thread/2296545?start=0 You can attempt to hand edit the <domain>/config/config.xml and <domain>/config/jdbc/*.xml files to see if one of them is wrong",0
+105,41440394,2014-10-15 23:50:32.917000+00:00,"`$username = ""$username"";` causes only global warming.",2
+106,41440393,2014-10-15 23:50:26.030000+00:00,"@RobG: I would suggest to use an array of booleans with the same length as the string instead (both for simplicity, and for words that are longer than 31 characters)",0
+107,41440391,2014-10-15 23:50:22.717000+00:00,"None of those links seem to use ""virtual memory"" as you do, but use it in a conventional sense.  The third link doesn't even contain the words ""virtual memory"" in a sentence.  Only you seem to insist that ""virtual memory"" means vmalloced memory.",0
+108,41440390,2014-10-15 23:50:18.747000+00:00,Aaaand now I'm banned from asking any more questions. Thank you Stack Overflow community.,0
+109,41440389,2014-10-15 23:50:10.053000+00:00,"Doesn't work with exponent decimalformats, say format(""0.0E00""). It will in this example round 0.0155 to 0.0E00 instead of 1.6E-02.",0
+110,41440388,2014-10-15 23:50:09.170000+00:00,"+1 Yeah, for simple cases I definitely prefer this too. `switch` would be good though.",0
+111,41440386,2014-10-15 23:49:57.400000+00:00,"@Dagon, no, but it guarantees you won't match any username.",0
+112,41440385,2014-10-15 23:49:56.327000+00:00,"@AdrienBe good comment. The question was how to sort select options, and I think the answer illustrates that. The sort algorithm depends on what is being sorted and how it should be sorted.",0
+113,41440384,2014-10-15 23:49:55.413000+00:00,"Why use sessions if you're not going to be using it in your second page? Use `session_start();` inside all pages using sessions or intending on, then pass that variable in the query page.",0
+114,41440382,2014-10-15 23:49:53.950000+00:00,"Leigh, that's exactly what I was suggesting. Parse the  arp output to find the mac address, then find the ip on the same line.  Basically what Mark said, but he just explained it a bit more thoroughly.  If they ping each ip in the octect like I suggested, they should all be in cache, though there may be a limit to the cache size.",0
+115,41440381,2014-10-15 23:49:48.720000+00:00,"Off the top of your head, can the config.json be used with LESS too?",0
+116,41440379,2014-10-15 23:49:41.293000+00:00,"something like this? but this doesn't work `if( $(""select"").val() != """" ) {
+    $(this).css('color','red')
+}`",0
+117,41440378,2014-10-15 23:49:40.853000+00:00,I do. The error only occurs after making this change.,0
+118,41440377,2014-10-15 23:49:33.107000+00:00,[Media queries?](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries),1
+119,41440376,2014-10-15 23:49:32.773000+00:00,@RadioSpace Yes .You are right.,0
+120,41440375,2014-10-15 23:49:31.263000+00:00,This is wrong. Probably he's pasting it in the console rather than running the .sql file which is the right way to do it.,0
+121,41440374,2014-10-15 23:49:28.213000+00:00,i was able to get it working by using max-height:500 and then in keyframes setting to max-height:0   TY guys !,1
+122,41440373,2014-10-15 23:49:15.750000+00:00,"I wasted 4 hours trying to use a tricky approach. Belive me, this was the first thing I thought but for an unknown reason I started to play with attributes. It seems that I'm an XML-feticist. Thank you Will.",0
+123,41440372,2014-10-15 23:49:14.223000+00:00,possible duplicate of [selectively escape percent (%) in python](http://stackoverflow.com/questions/10678229/selectively-escape-percent-in-python),0
+124,41440371,2014-10-15 23:49:13.827000+00:00,"If I am reading it correctly, when you run the script without 'python' ahead of it, the script runs but does not acquire arguments past the first py filename. If you do write python ahead of the filename, everything is fine. Is this correct?",0
+125,41440366,2014-10-15 23:49:00.993000+00:00,To OP: the cleanest way to extend `std::string`'s functionality is to provide non-member functions. `std::string` already has too many member functions.,0
+126,41440365,2014-10-15 23:48:58.987000+00:00,"@pkyeck Was the directory you were watching initially empty?  If so, [there's apparently a bug in `gaze` that prevents it from seeing new files in an initially empty dir](https://github.com/shama/gaze/pull/103)",0
+127,41440364,2014-10-15 23:48:58.773000+00:00,doubt you will get much help if you don't provide more detail than `insert a placeholder`. As it currently stands have absolutely no idea what your expectations are,0
+128,41440363,2014-10-15 23:48:57.440000+00:00,"For anyone that's using the latter of @natevw's solution, I filled in the remaining values using `window, 1`. The entire call looks like: `e.initUIEvent(""click"", true, true, window, 1);`",6
+129,41440361,2014-10-15 23:48:54.763000+00:00,How are you using the query? Pasting it into the console? or running a .sql file? (Hint: you should run the .sql script),0
+130,41440360,2014-10-15 23:48:52.223000+00:00,"this particular implementation of this particular algorithm is perfectly amenable to the change described in the answer linked in my comment. It already works up to the sqrt of n, all that's needed is to split the sieve array in two. No need to use anything *but* the sieve of Eratosthenes for this. It absolutely does *not* require enumerating all the primes up to `x` to start producing the primes after `x`.",0
+131,41440358,2014-10-15 23:48:48.040000+00:00,Wouldn't that throw a [different error](http://stackoverflow.com/questions/93128/mysql-error-1153-got-a-packet-bigger-than-max-allowed-packet-bytes)?,0
+132,41440357,2014-10-15 23:48:47.140000+00:00,"Read about the order of precedence of arithmetic operation.
+As to your question about the boolean expression. Yes ""yes or no"" is yes. (are you a human OR are you older than 1000 years old) is yes because you are a human",0
+133,41440356,2014-10-15 23:48:42.290000+00:00,Sorry I meant (app) flavor specific.,0
+134,41440354,2014-10-15 23:48:38.327000+00:00,@coverage. I have already created a project using the code I have posted at it works fine. Put breakpoints in you script and in he controller method and debug it.,0
+135,41440351,2014-10-15 23:48:27.200000+00:00,"Probably, it is cheating to use `Collections.sort(List<T> list)` and `Collections.sort(List<T> list,  Comparator<? super T> c)`, but definitely worth looking into how they implement that",0
+136,41440346,2014-10-15 23:48:08.070000+00:00,What does the form look like? Nothing is being sent so of course nothing gets saved.,1
+137,41440345,2014-10-15 23:48:07.953000+00:00,"are you suggesting `$username = ""$username"";` actully makes sense?",0
+138,41440344,2014-10-15 23:48:05.793000+00:00,Firefox with firebug is great for following ajax calls through and finding the issue.,0
+139,41440342,2014-10-15 23:47:56.673000+00:00,add size = size -(int)string.length(yourtext),0
+140,41440341,2014-10-15 23:47:53.803000+00:00,can you write more details?,0
+141,41440339,2014-10-15 23:47:40.953000+00:00,What time is set to _TimeNow?,0
+142,41440337,2014-10-15 23:47:39.783000+00:00,Maybe it is being set but the page is cached (especially if you're using IE). Try setting no-cache headers on the page.,0
+143,41440335,2014-10-15 23:47:34.437000+00:00,thanks @MattMcNabb for the correction! I agree with you.,0
+144,41440333,2014-10-15 23:47:17.790000+00:00,The only problem with this solution is that if you resize the chart  the drawn rectangle will be in the wrong place. You will need to implement the redraw() function and move the rectangle.,0
+145,41440332,2014-10-15 23:47:17.570000+00:00,@SchizoidSpag That's where `using` comes in.,0
+146,41440329,2014-10-15 23:47:10.160000+00:00,"Why would I use a older sdk? Thats not good, specially when Facebook will remove apps that use old SDKs from April 2015, so I will use a sdk that will work after April 2015 too.",0
+147,41440328,2014-10-15 23:47:07.850000+00:00,"Also, I tried using the  wks.Rows as well and got the same error.",0
+148,41440327,2014-10-15 23:46:58.800000+00:00,"Yes.  Same target.
+I've deleted the derived data & did an option-clean of build folder.
+Same problem.",0
+149,41440324,2014-10-15 23:46:47.640000+00:00,"I just ran into this as well.  AFIK there's no way for the user to ""fail"" out of Touch-ID other than to hit cancel, so the result code is just errSecAuthFailed.",0
+150,41440323,2014-10-15 23:46:46.963000+00:00,Sorry for the confusion - This is with reference to TFS !,0
+151,41440322,2014-10-15 23:46:46.337000+00:00,"Typically the memory is not released to the OS, just made available for further allocations from the same process. (This depends on a lot of things of course)",5
+152,41440321,2014-10-15 23:46:45.333000+00:00,Thanks! I made a silly mistake. But with : it still produces 'could not find or load main class' error.  Really confusing.,0
+153,41440319,2014-10-15 23:46:36.697000+00:00,possible duplicate of [Why must the copy assignment operator return a reference/const reference?](http://stackoverflow.com/questions/3105798/why-must-the-copy-assignment-operator-return-a-reference-const-reference),0
+154,41440318,2014-10-15 23:46:36.547000+00:00,"The problem is that `create` (or `init`) actually intialises *the class itself*, instead of creating an *instance of the class*. Your terminology ""*shared between each class instance*"" is ambigous, do you mean the class objects or the instance objects?",0
+155,41440317,2014-10-15 23:46:35.507000+00:00,Order of predence...,0
+156,41440316,2014-10-15 23:46:34.940000+00:00,"I looked into SimpleDateFormat but i was having trouble implementing it, and someone suggested that i do this",0
+157,41440314,2014-10-15 23:46:30.417000+00:00,"@developerwjk, it's a mysqldump file for a Wordpress database.",0
+158,41440313,2014-10-15 23:46:27.823000+00:00,`$username = '$username';` <--- what's this?,5
+159,41440312,2014-10-15 23:46:27.553000+00:00,do the commands work if called from the command line?,0
+160,41440311,2014-10-15 23:46:21.550000+00:00,"@dynasty1121: it's impossible to answer specific performance questions with a complete code example. Even with one, it can be a challenge because of platform differences.",0
+161,41440310,2014-10-15 23:46:18.133000+00:00,Nevermind I was not running the script as root. DUH!!! Thankyou for you assistance with this its working perfectly now.,0
+162,41440309,2014-10-15 23:46:12.117000+00:00,"What did you expect to happen, and why?",1
+163,41440308,2014-10-15 23:46:10.603000+00:00,Here is another good post on locking - http://www.codeproject.com/Articles/114262/ways-of-doing-locking-in-NET-Pessimistic-and-opt,0
+164,41440307,2014-10-15 23:46:09.350000+00:00,55/10=5; 5*10=50 ;55-50=5,1
+165,41440306,2014-10-15 23:46:04.443000+00:00,Thanks - yeah that's definitely something I need to change if I were to publish this as a library for other projects to consume. My plan is to add support for Firebase as well so the API could then handle three different storage methods. Then I'll look at re-writing it in JavaScript and publishing as a library for others. Thanks for your help!,1
+166,41440305,2014-10-15 23:45:39.930000+00:00,"Thanks for the reply. But, I don't want the user to add a .exe into the game. For example. There's a wall in my game scene. I want to add something like a webpage or a .exe file or file explorer to my scene, to be show on the wall. Better if I could embed the explorer.exe to be shown on the wall, please tell me anyhow to do this(using coding) or something. What I want to do is, add some interactive lessons into my unity3d game(into the 3d space) Please answer!",0
+167,41440303,2014-10-15 23:45:39.333000+00:00,"I might be in the minority here, but I've never had a reason to put interfaces in a separate project from their implementation unless there are _additional_ implementations being added in certain special cases.",0
+168,41440301,2014-10-15 23:45:20.857000+00:00,"Hey, it's happened on my Samsung Galaxy S4, on Genymotion's Google Galaxy Nexus and Nexus 7 emulators.",0
+169,41440300,2014-10-15 23:45:15.813000+00:00,"@SchizoidSpag That is likely. But it could be a relatively safe way to get the ""stuff"" without too much typing :-)",1
+170,41440299,2014-10-15 23:45:14.587000+00:00,"I solved using another distro (always Arch-based), and working inside one of the Makefiles. Thanks for your help.",0
+171,41440296,2014-10-15 23:45:04.183000+00:00,"Thanks petelids. I changed that value but get an Out of Memory error at this line: object[,] values = (object[,])range.Value2;",0
+172,41440291,2014-10-15 23:44:43.997000+00:00,:) Sure i will post it as answer..,0
+173,41440290,2014-10-15 23:44:40.287000+00:00,Have you tried passing an empty argument to the -i switch?  It appears to be required on the Mac version of sed.  See one of the comments on this answer: http://stackoverflow.com/a/5410784/153430,0
+174,41440289,2014-10-15 23:44:37.347000+00:00,Are the missing values throughout the document or only at the end?,0
+175,41440288,2014-10-15 23:44:26.943000+00:00,"True, but it's obvious the OP doesn't even know what private inheritance is doing either.",0
+176,41440286,2014-10-15 23:44:13.107000+00:00,Just what I was about to say!,0
+177,41440285,2014-10-15 23:44:11.073000+00:00,"@user342192 Are you validating dates and times?  If so, don't re-invent the wheel.  Check out `SimpleDateFormat`.",0
+178,41440283,2014-10-15 23:43:59.117000+00:00,"In general there are two approaches to handling multiple updates to the same object - optimistic concurrency and pessimistic concurrency. You are trying to implement pessimistic concurrency.
+
+This is a good post on it - http://stackoverflow.com/questions/617934/how-do-i-implement-pessimistic-locking-in-an-asp-net-application Here",0
+179,41440281,2014-10-15 23:43:51.913000+00:00,"Doing it in `/etc/hosts` is only a workaround of course, you should do it directly in the network DNS somehow. How is platform-dependent.",0
+180,41440280,2014-10-15 23:43:51.063000+00:00,"Gary - I don't believe so.  It should be able to accept an Int because the default syntax looks like
+   view.backgroundColor = UIColor(red: 100/255.0, (and so on) )",0
+181,41440279,2014-10-15 23:43:47.387000+00:00,that is what i am doing now but i asked this question because before it was working like this but now it its not and i wanted to know why it is not working now,0
+182,41440278,2014-10-15 23:43:44.997000+00:00,"Just for kicks: A [CSS-only countdown](http://jsfiddle.net/troygizzi/mcLwhxnu/)! :-D ...but oh, the ugliness when scaled to 90 seconds instead of just 3...",1
+183,41440277,2014-10-15 23:43:44.800000+00:00,@MShack - have you got `position: relative` on the element it self? `position: relative` cannot be in the keyframes... Does it look exactly like my example?,0
+184,41440276,2014-10-15 23:43:43.330000+00:00,"PSL, you are all over it as usual. I think the extend example works for me. Post it as the answer for the points. Thank you.",0
+185,41440274,2014-10-15 23:43:35.410000+00:00,@SchizoidSpag It would be harder for private inheritance to cause a disaster.,0
+186,41440273,2014-10-15 23:43:22.220000+00:00,possible duplicate of [What is a NullReferenceException and how do I fix it?](http://stackoverflow.com/questions/4660142/what-is-a-nullreferenceexception-and-how-do-i-fix-it),0
+187,41440271,2014-10-15 23:43:13.833000+00:00,"To make a dropdown that insert a placeholder instead of text. I put the question on the title, I will edit my post as well",0
+188,41440270,2014-10-15 23:43:10.077000+00:00,"UTF-8 is not locale-dependent. It can represent any Unicode codepoint, used by any language. I don't think the problem lies in the conversion performed by `wcout`. I'd check two things. First, whether the string literal makes its way into the binary intact. Do `wcout << (int)L'П';` - this should print `1055`; if it doesn't, the character is mangled by the compiler. Second, whether the console is set up to display non-English characters. Redirect output to a file, examine it with hex viewer. Cyrillic `'П'` should be represented as two bytes `D0 9F`",2
+189,41440269,2014-10-15 23:43:08.357000+00:00,"@DavidWallace `myString.matches(""0*([1-9]|[12][0-9]|3[01])"")` for leading zeros?",0
+190,41440268,2014-10-15 23:43:03.427000+00:00,"Vector2 is a class. If Vector2 were a struct, that wouldn't explain how the three `new` above were allocated, but the `new` in the operator overloads weren't.",0
+191,41440267,2014-10-15 23:43:00.803000+00:00,"One more question, what if i wanted to do the same thing but instead of 1-31 i wanted 1-59",0
+192,41440265,2014-10-15 23:42:58.863000+00:00,"@DavidRR: You're right. And the browser needs the redirect because the name resolution has to happen from inside `directory` (otherwise, `image.png` in `http://hostname/directory` would point to `http://hostname/image.png`).
+I was just saying that the distinction between a file and a directory may not be very important from the user's point of view.",1
+193,41440262,2014-10-15 23:42:46.687000+00:00,@Keith Actually this feature has got changed from 3.2 to 3.4 as is evident from a user response at https://theantlrguy.atlassian.net/wiki/display/ANTLR3/Five+minute+introduction+to+ANTLR+3,0
+194,41440259,2014-10-15 23:42:32.923000+00:00,"as an aside, for completeness it is also good idea to throw an exception if toIndex < fromIndex.",0
+195,41440258,2014-10-15 23:42:31.577000+00:00,@BrianDishaw that is what i am using now instead of declaring a variable but before it was working fine but now it is not so that is why i am confused,0
+196,41440257,2014-10-15 23:42:28.993000+00:00,i've tried and shown him and had argue with him :) thanks for helping :),0
+197,41440256,2014-10-15 23:42:25.373000+00:00,To try to figure out whether the issue is the jquery attaching the function to the correct place or the ajax post function. Add an alert(); to where I've written //code here and see if that fires.,0
+198,41440255,2014-10-15 23:42:24.383000+00:00,I just tested it some more. It looks like the only thing not working is `Private Sub Workbook_Open()` and `Private Sub Workbook_BeforeClose()` Also `Option Explicit` seems to deactivate the code all together,0
+199,41440253,2014-10-15 23:42:20.467000+00:00,"You're privately inheriting, which is an ugly form of composition. std::string doesn't have a virtual destructor, so any attempt at public inheritance could lead to disaster.  Furthermore, you also have a string data member in addition to the private inheritance.  That's wasteful.  Just write a wrapper around it with your added functionality.",1

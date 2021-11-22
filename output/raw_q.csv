@@ -1,0 +1,1157 @@
+,id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+0,48270127,Can (a== 1 && a ==2 && a==3) ever evaluate to true?,"<blockquote>
+  <p><strong>Moderator note:</strong> Please resist the urge to edit the code or remove this notice. The pattern of whitespace may be part of the question and therefore should not be tampered with unnecessarily. If you are in the ""whitespace is insignificant"" camp, you should be able to accept the code as is.</p>
+</blockquote>
+
+<p>Is it ever possible that <code>(a== 1 &amp;&amp; a ==2 &amp;&amp; a==3)</code> could evaluate to <code>true</code> in JavaScript?</p>
+
+<p>This is an interview question asked by a major tech company. It happened two weeks back, but I'm still trying to find the answer. I know we never write such code in our day-to-day job, but I'm curious.</p>",48270314.0,26,17,,2018-01-15 20:20:47.787000+00:00,905,2020-10-25 13:30:34.890000+00:00,2018-11-26 16:21:37.623000+00:00,,19679.0,,1165332.0,,1,2540,javascript|ecmascript-6,377446
+1,37937984,Git refusing to merge unrelated histories on rebase,"<p>During <code>git rebase origin/development</code> the following error message is shown from Git:</p>
+
+<pre><code>fatal: refusing to merge unrelated histories
+Error redoing merge 1234deadbeef1234deadbeef
+</code></pre>
+
+<p>My Git version is 2.9.0. It used to work fine in the previous version. </p>
+
+<p>How can I continue this rebase allowing unrelated histories with the forced flag introduced in the new release?</p>",,23,7,,2016-06-21 07:23:00.370000+00:00,675,2020-12-19 04:52:15.350000+00:00,2019-06-05 11:27:42.847000+00:00,,63550.0,,2670370.0,,1,2510,git|rebase,1615514
+2,52522565,Git is not working after macOS Update (xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools),"<p>I updated to macOS Mojave (this happens on Catalina update too, and seems to potentially occur on every major update thereafter)</p>
+<p>This morning I navigated to my work's codebase in the Command Line on my MacBook pro, typed in &quot;git status&quot; in the repository and received the error:</p>
+<pre><code>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+</code></pre>
+<p>How do i fix git, and command line tools?</p>",52522566.0,28,5,,2018-09-26 16:43:18.797000+00:00,267,2021-02-13 18:55:42.903000+00:00,2021-02-10 20:03:23.703000+00:00,,8221725.0,,8221725.0,,1,2070,xcode|git|macos|command-line|terminal,663038
+3,44206782,Do I commit the package-lock.json file created by npm 5?,"<p><a href=""http://blog.npmjs.org/post/161081169345/v500"" rel=""noreferrer"">npm 5 was released today</a> and one of the new features include deterministic installs with the creation of a <code>package-lock.json</code> file.</p>
+
+<p>Is this file supposed to be kept in source control?</p>
+
+<p>I'm assuming it's similar to <a href=""https://stackoverflow.com/questions/39990017/should-i-commit-the-yarn-lock-file-and-what-is-it-for""><code>yarn.lock</code></a> and <a href=""https://stackoverflow.com/questions/12896780/should-composer-lock-be-committed-to-version-control""><code>composer.lock</code></a>, both of which are supposed to be kept in source control. </p>",44210813.0,12,5,,2017-05-26 17:03:32.577000+00:00,248,2021-02-23 18:22:43.633000+00:00,,,,,404623.0,,1,1701,node.js|git|npm|version-control|lockfile,586406
+4,38892771,Can't bind to 'ngModel' since it isn't a known property of 'input',"<p>I've got the following error when launching my Angular app, even if the component is not displayed.</p>
+
+<p>I have to comment out the <code>&lt;input&gt;</code> so that my app works.</p>
+
+<pre class=""lang-none prettyprint-override""><code>zone.js:461 Unhandled Promise rejection: Template parse errors:
+Can't bind to 'ngModel' since it isn't a known property of 'input'. (""
+   &lt;div&gt;
+      &lt;label&gt;Created:&lt;/label&gt;
+      &lt;input  type=""text"" [ERROR -&gt;][(ngModel)]=""test"" placeholder=""foo"" /&gt;
+   &lt;/div&gt;
+&lt;/div&gt;""): InterventionDetails@4:28 ; Zone: &lt;root&gt; ; Task: Promise.then ; Value: 
+</code></pre>
+
+<p>I'm looking at the Hero plunker, but I don't see any difference from my code.</p>
+
+<p>Here is the component file:</p>
+
+<pre><code>import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Intervention } from '../../model/intervention';
+
+@Component({
+   selector: 'intervention-details',
+   templateUrl: 'app/intervention/details/intervention.details.html',
+   styleUrls: ['app/intervention/details/intervention.details.css']
+})
+
+export class InterventionDetails
+{
+   @Input() intervention: Intervention;
+
+   public test : string = ""toto"";
+}
+</code></pre>",38896469.0,42,9,,2016-08-11 09:44:32.477000+00:00,154,2021-01-26 05:02:44.133000+00:00,2020-03-27 17:43:53.967000+00:00,,12820864.0,,3433751.0,,1,1589,javascript|angular|typescript|input,1006309
+5,37576685,Using async/await with a forEach loop,"<p>Are there any issues with using <code>async</code>/<code>await</code> in a <code>forEach</code> loop? I'm trying to loop through an array of files and <code>await</code> on the contents of each file. </p>
+
+<pre><code>import fs from 'fs-promise'
+
+async function printFiles () {
+  const files = await getFilePaths() // Assume this works fine
+
+  files.forEach(async (file) =&gt; {
+    const contents = await fs.readFile(file, 'utf8')
+    console.log(contents)
+  })
+}
+
+printFiles()
+</code></pre>
+
+<p>This code does work, but could something go wrong with this? I had someone tell me that you're not supposed to use <code>async</code>/<code>await</code> in a higher order function like this, so I just wanted to ask if there was any issue with this.</p>",37576787.0,24,2,,2016-06-01 18:55:58.750000+00:00,551,2021-02-11 01:45:56.730000+00:00,2020-01-29 01:58:41.257000+00:00,,3533365.0,,3533365.0,,1,1574,javascript|node.js|promise|async-await|ecmascript-2017,762358
+6,37364973,What is the difference between Promises and Observables?,"<p>What is the difference between <code>Promise</code> and <code>Observable</code> in Angular?</p>
+
+<p>An example on each would be helpful in understanding both the cases. In what scenario can we use each case?</p>",37365955.0,30,7,,2016-05-21 15:43:27.463000+00:00,528,2020-11-03 18:00:37.750000+00:00,2020-01-11 02:11:23.453000+00:00,,63550.0,,6364715.0,,1,1532,angular|promise|rxjs|angular-promise|angular-observable,540952
+7,38713405,Open files always in a new tab,"<p>I am using Visual Studio Code 1.3.1 with the newly introduced tabs.</p>
+
+<p>When I click on files, the first file will open in a tab. If I do not make any changes to this file, the second clicked file will open in the same tab.</p>
+
+<p>How can I avoid this and make Visual Studio Code always open a new tab?</p>",38723094.0,26,2,,2016-08-02 06:43:01.913000+00:00,266,2021-01-03 16:48:04.923000+00:00,2019-07-19 16:36:45.167000+00:00,,3345644.0,,2629219.0,,1,1520,visual-studio-code,404462
+8,36827659,Compiling an application for use in highly radioactive environments,"<p>We are compiling an embedded C++ application that is deployed in a shielded device in an environment bombarded with <a href=""https://en.wikipedia.org/wiki/Ionizing_radiation"" rel=""noreferrer"">ionizing radiation</a>. We are using GCC and cross-compiling for ARM. When deployed, our application generates some erroneous data and crashes more often than we would like. The hardware is designed for this environment, and our application has run on this platform for several years.</p>
+<p>Are there changes we can make to our code, or compile-time improvements that can be made to identify/correct <a href=""https://en.wikipedia.org/wiki/Soft_error"" rel=""noreferrer"">soft errors</a> and memory-corruption caused by <a href=""https://en.wikipedia.org/wiki/Single_event_upset"" rel=""noreferrer"">single event upsets</a>? Have any other developers had success in reducing the harmful effects of soft errors on a long-running application?</p>",36831344.0,23,7,,2016-04-24 19:09:40.713000+00:00,539,2020-11-24 14:07:15.703000+00:00,2020-11-24 14:07:15.703000+00:00,,7076153.0,,183528.0,,1,1498,c++|c|gcc|embedded|fault-tolerance,121634
+9,41573587,"What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc?","<p>Python 3.3 includes in its standard library the new package <code>venv</code>. What does it do, and how does it differ from all the other packages that seem to match the regex <code>(py)?(v|virtual|pip)?env</code>?</p>",41573588.0,6,8,,2017-01-10 16:27:43.207000+00:00,662,2021-02-28 01:04:19.930000+00:00,2017-01-24 14:35:49.700000+00:00,,247696.0,,247696.0,,1,1296,python|virtualenv|virtualenvwrapper|pyenv|python-venv,298506
+10,45940861,Android 8: Cleartext HTTP traffic not permitted,"<p>I had reports from users with Android 8 that my app (that uses back-end feed) does not show content. After investigation I found following Exception happening on Android 8:</p>
+
+<pre><code>08-29 12:03:11.246 11285-11285/ E/: [12:03:11.245, main]: Exception: IOException java.io.IOException: Cleartext HTTP traffic to * not permitted
+at com.android.okhttp.HttpHandler$CleartextURLFilter.checkURLPermitted(HttpHandler.java:115)
+at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:458)
+at com.android.okhttp.internal.huc.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:127)
+at com.deiw.android.generic.tasks.AbstractHttpAsyncTask.doConnection(AbstractHttpAsyncTask.java:207)
+at com.deiw.android.generic.tasks.AbstractHttpAsyncTask.extendedDoInBackground(AbstractHttpAsyncTask.java:102)
+at com.deiw.android.generic.tasks.AbstractAsyncTask.doInBackground(AbstractAsyncTask.java:88)
+at android.os.AsyncTask$2.call(AsyncTask.java:333)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:245)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1162)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:636)
+at java.lang.Thread.run(Thread.java:764)
+</code></pre>
+
+<p>(I've removed package name, URL and other possible identifiers)</p>
+
+<p>On Android 7 and lower everything works, I do not set <code>android:usesCleartextTraffic</code> in Manifest (and setting it to <code>true</code> does not help, that is the default value anyway), neither do I use Network Security Information. If I call <code>NetworkSecurityPolicy.getInstance().isCleartextTrafficPermitted()</code>, it returns <code>false</code> for Android 8, <code>true</code> for older version, using the same apk file.
+I tried to find some mention of this on Google info about Android O, but without success.</p>",50834600.0,33,2,,2017-08-29 13:48:06.670000+00:00,341,2021-02-24 16:31:06.957000+00:00,,,,,2881509.0,,1,1273,android|http|https,874084
+11,38138100,"AddTransient, AddScoped and AddSingleton Services Differences","<p>I want to implement <a href=""https://en.wikipedia.org/wiki/Dependency_injection"" rel=""noreferrer"">dependency injection</a> (DI) in ASP.NET Core. So after adding this code to <strong><em><code>ConfigureServices</code></em></strong> method, both ways work.</p>
+
+<p>What is the difference between the <code>services.AddTransient</code> and <code>service.AddScoped</code> methods in ASP.NET Core?</p>
+
+<pre><code>public void ConfigureServices(IServiceCollection services)
+{
+    // Add framework services.
+
+    // Add application services.
+    services.AddTransient&lt;IEmailSender, AuthMessageSender&gt;();
+    services.AddScoped&lt;IEmailSender, AuthMessageSender&gt;();
+}
+</code></pre>",38139500.0,8,10,,2016-07-01 06:03:02.523000+00:00,419,2020-11-17 06:26:16.150000+00:00,2020-03-07 21:21:56.440000+00:00,,63550.0,,1368240.0,,1,1209,c#|asp.net-core|.net-core,551321
+12,44493378,What's the difference between implementation and compile in Gradle?,"<p>After updating to Android Studio 3.0 and creating a new project, I noticed that in <code>build.gradle</code> there is a new way to add new dependencies instead of <code>compile</code> there is <code>implementation</code> and instead of <code>testCompile</code> there is <code>testImplementation</code>.</p>
+
+<p>Example:</p>
+
+<pre><code> implementation 'com.android.support:appcompat-v7:25.0.0'
+ testImplementation 'junit:junit:4.12'
+</code></pre>
+
+<p>instead of</p>
+
+<pre><code> compile 'com.android.support:appcompat-v7:25.0.0'
+ testCompile 'junit:junit:4.12'
+</code></pre>
+
+<p>What's the difference between them and what should I be using?</p>",44493379.0,10,0,,2017-06-12 07:13:13.100000+00:00,276,2021-02-21 09:38:45.517000+00:00,2018-11-22 06:15:09.057000+00:00,,3990767.0,,3998402.0,,1,1143,gradle|build.gradle|dependency-management|gradle-plugin|transitive-dependency,382367
+13,37233735,TypeScript: Interfaces vs Types,"<p>What is the difference between these statements (interface vs type)?</p>
+
+<pre><code>interface X {
+    a: number
+    b: string
+}
+
+type X = {
+    a: number
+    b: string
+};
+</code></pre>",37233777.0,16,3,,2016-05-15 01:53:52.903000+00:00,241,2021-02-21 01:18:32.197000+00:00,2020-02-27 14:49:30.457000+00:00,user6101582,271200.0,user6101582,,,1,1055,typescript,222004
+14,38060436,What are the new features in C++17?,"<p>C++17 is now feature complete, so unlikely to experience large changes. Hundreds of proposals were put forward for C++17.</p>
+
+<p>Which of those features were added to C++ in C++17?</p>
+
+<p>When using a C++ compiler that supports ""C++1z"", which of those features are going to be available when the compiler updates to C++17?</p>",38060437.0,1,5,2020-07-31 07:59:12.857000+00:00,2016-06-27 18:06:32.597000+00:00,551,2020-04-03 07:53:21.373000+00:00,2018-01-16 18:41:01.417000+00:00,,5377495.0,,1774667.0,,1,1006,c++|standards|c++-faq|c++17,229479
+15,43574426,Java: How to resolve java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException,"<p>I have some code that uses JAXB API classes which have been provided as a part of the JDK in Java 6/7/8.  When I run the same code with Java 9, at runtime I get errors indicating that JAXB classes can not be found.</p>
+
+<p>The JAXB classes have been provided as a part of the JDK since Java 6, so why can Java 9 no longer find these classes?</p>",43574427.0,35,4,,2017-04-23 17:40:23.460000+00:00,270,2021-02-11 03:21:53.283000+00:00,2020-10-06 08:46:46.710000+00:00,,10907864.0,,3814029.0,,1,945,java|jaxb|java-9|java-11|java-10,759925
+16,39152071,Can't bind to 'formGroup' since it isn't a known property of 'form',"<p><strong>THE SITUATION:</strong></p>
+
+<p>Please help! I am trying to make what should be a very simple form in my Angular2 app but no matter what it never works.</p>
+
+<p><strong>ANGULAR VERSION:</strong></p>
+
+<p>Angular 2.0.0 Rc5</p>
+
+<p><strong>THE ERROR:</strong></p>
+
+<pre class=""lang-none prettyprint-override""><code>Can't bind to 'formGroup' since it isn't a known property of 'form'
+</code></pre>
+
+<p><a href=""https://i.stack.imgur.com/7elmg.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/7elmg.png"" alt=""enter image description here""></a></p>
+
+<p><strong>THE CODE:</strong></p>
+
+<p><strong>The view:</strong></p>
+
+<pre class=""lang-html prettyprint-override""><code>&lt;form [formGroup]=""newTaskForm"" (submit)=""createNewTask()""&gt;
+   &lt;div class=""form-group""&gt;
+      &lt;label for=""name""&gt;Name&lt;/label&gt;
+      &lt;input type=""text"" name=""name"" required&gt;
+   &lt;/div&gt;
+   &lt;button type=""submit"" class=""btn btn-default""&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p><strong>The controller:</strong></p>
+
+<pre><code>import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { Task } from './task';
+
+@Component({
+    selector: 'task-add',
+    templateUrl: 'app/task-add.component.html'
+
+})
+export class TaskAddComponent {
+
+    newTaskForm: FormGroup;
+
+    constructor(fb: FormBuilder) 
+    {
+        this.newTaskForm = fb.group({
+            name: ["""", Validators.required]
+        });
+    }
+
+    createNewTask()
+    {
+        console.log(this.newTaskForm.value)
+    } 
+}
+</code></pre>
+
+<p><strong>The ngModule:</strong></p>
+
+<pre><code>import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+
+import { routing }        from './app.routing';
+import { AppComponent }  from './app.component';
+import { TaskService } from './task.service'
+
+@NgModule({
+    imports: [ 
+        BrowserModule,
+        routing,
+        FormsModule
+    ],
+    declarations: [ AppComponent ],
+    providers: [
+        TaskService
+    ],
+    bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+</code></pre>
+
+<p><strong>THE QUESTION:</strong></p>
+
+<p>Why am I getting that error?</p>
+
+<p>Am I missing something?</p>",39152110.0,32,1,,2016-08-25 18:09:06.380000+00:00,101,2021-01-09 13:40:56.357000+00:00,2020-05-30 08:06:23.567000+00:00,,5377805.0,,2433664.0,,1,942,angular|typescript|angular2-forms,785495
+17,42939454,What is the difference between .NET Core and .NET Standard Class Library project types?,"<p>In Visual Studio, there are at least three different types of class libraries you can create:</p>
+<ul>
+<li>Class Library (.NET Framework)</li>
+<li>Class Library (.NET Standard)</li>
+<li>Class Library (.NET Core)</li>
+</ul>
+<p>While the first is what we've been using for years, a major point of confusion I've been having is when to use the .NET Standard and .NET Core class library types. I've been bitten by this recently when attempting to <a href=""https://stackoverflow.com/a/42748869/983064"">multi-target different framework versions</a>, and <a href=""https://stackoverflow.com/questions/42938879/cant-get-xunit-tests-to-run-with-net-core"">creating a unit test project</a>.</p>
+<p>So, what is the difference between <em>Class Library (.NET Standard)</em> and <em>Class Library (.NET Core)</em>, why do both exist, and when should we use one over the other?</p>",42940138.0,11,9,,2017-03-21 22:34:24.367000+00:00,258,2020-08-07 04:42:42.263000+00:00,2020-08-06 14:48:30.867000+00:00,,63550.0,,983064.0,,1,894,.net|.net-core|class-library|.net-standard,197211
+18,53452713,Why is 2 * (i * i) faster than 2 * i * i in Java?,"<p>The following Java program takes on average between 0.50 secs and 0.55 secs to run:</p>
+
+<pre><code>public static void main(String[] args) {
+    long startTime = System.nanoTime();
+    int n = 0;
+    for (int i = 0; i &lt; 1000000000; i++) {
+        n += 2 * (i * i);
+    }
+    System.out.println((double) (System.nanoTime() - startTime) / 1000000000 + "" s"");
+    System.out.println(""n = "" + n);
+}
+</code></pre>
+
+<p>If I replace <code>2 * (i * i)</code> with <code>2 * i * i</code>, it takes between 0.60 and 0.65 secs to run. How come?</p>
+
+<p>I ran each version of the program 15 times, alternating between the two. Here are the results:</p>
+
+<pre><code> 2*(i*i)  |  2*i*i
+----------+----------
+0.5183738 | 0.6246434
+0.5298337 | 0.6049722
+0.5308647 | 0.6603363
+0.5133458 | 0.6243328
+0.5003011 | 0.6541802
+0.5366181 | 0.6312638
+0.515149  | 0.6241105
+0.5237389 | 0.627815
+0.5249942 | 0.6114252
+0.5641624 | 0.6781033
+0.538412  | 0.6393969
+0.5466744 | 0.6608845
+0.531159  | 0.6201077
+0.5048032 | 0.6511559
+0.5232789 | 0.6544526
+</code></pre>
+
+<p>The fastest run of <code>2 * i * i</code> took longer than the slowest run of <code>2 * (i * i)</code>. If they had the same efficiency, the probability of this happening would be less than <code>1/2^15 * 100% = 0.00305%</code>.</p>",53453588.0,10,15,,2018-11-23 20:40:10.073000+00:00,293,2020-07-03 08:22:14.607000+00:00,2019-12-25 04:47:51.850000+00:00,,9194639.0,,10339589.0,,1,869,java|performance|benchmarking|bytecode|jit,248035
+19,36795819,When should I use curly braces for ES6 import?,"<p>It seems to be obvious, but I found myself a bit confused about when to use curly braces for importing a single module in ES6. For example, in the React-Native project I am working on, I have the following file and its content:</p>
+<h3>File <em>initialState.js</em></h3>
+<pre><code>var initialState = {
+    todo: {
+        todos: [
+            {id: 1, task: 'Finish Coding', completed: false},
+            {id: 2, task: 'Do Laundry', completed: false},
+            {id: 2, task: 'Shopping Groceries', completed: false},
+        ]
+    }
+};
+
+export default initialState;
+</code></pre>
+<p>In the TodoReducer.js, I have to import it without curly braces:</p>
+<pre><code>import initialState from './todoInitialState';
+</code></pre>
+<p>If I enclose the <code>initialState</code> in curly braces, I get the following error for the following line of code:</p>
+<blockquote>
+<p>Cannot read property todo of undefined</p>
+</blockquote>
+<h3>File <em>TodoReducer.js</em>:</h3>
+<pre><code>export default function todos(state = initialState.todo, action) {
+    // ...
+}
+</code></pre>
+<p>Similar errors also happen to my components with the curly braces. I was wondering when I should use curly braces for a single import, because obviously, when importing multiple component/modules, you have to enclose them in curly braces, which I know.</p>
+<p>The Stack Overflow post at <a href=""https://stackoverflow.com/questions/31096597/using-brackets-with-javascript-import-syntax"">here</a> does not answer my question, instead I am asking <em>when</em> I should or should not use curly braces for importing a <strong>single</strong> module, or I should never use curly braces for importing a single module in ES6 (this is apparently not the case, as I have seen single import with curly braces required).</p>",36796281.0,11,3,,2016-04-22 13:58:14.347000+00:00,529,2020-12-31 03:48:30.603000+00:00,2020-12-31 02:00:16.490000+00:00,,63550.0,,2228325.0,,1,868,javascript|import|ecmascript-6,218703
+20,40354978,Why does C++ code for testing the Collatz conjecture run faster than hand-written assembly?,"<p>I wrote these two solutions for <a href=""https://projecteuler.net/problem=14"" rel=""noreferrer"">Project Euler Q14</a>, in assembly and in C++. They implement identical brute force approach for testing the <a href=""https://en.wikipedia.org/wiki/Collatz_conjecture"" rel=""noreferrer"">Collatz conjecture</a>. The assembly solution was assembled with:</p>
+<pre class=""lang-none prettyprint-override""><code>nasm -felf64 p14.asm &amp;&amp; gcc p14.o -o p14
+</code></pre>
+<p>The C++ was compiled with:</p>
+<pre class=""lang-none prettyprint-override""><code>g++ p14.cpp -o p14
+</code></pre>
+<p>Assembly, <code>p14.asm</code>:</p>
+<pre class=""lang-asm prettyprint-override""><code>section .data
+    fmt db &quot;%d&quot;, 10, 0
+
+global main
+extern printf
+
+section .text
+
+main:
+    mov rcx, 1000000
+    xor rdi, rdi        ; max i
+    xor rsi, rsi        ; i
+
+l1:
+    dec rcx
+    xor r10, r10        ; count
+    mov rax, rcx
+
+l2:
+    test rax, 1
+    jpe even
+
+    mov rbx, 3
+    mul rbx
+    inc rax
+    jmp c1
+
+even:
+    mov rbx, 2
+    xor rdx, rdx
+    div rbx
+
+c1:
+    inc r10
+    cmp rax, 1
+    jne l2
+
+    cmp rdi, r10
+    cmovl rdi, r10
+    cmovl rsi, rcx
+
+    cmp rcx, 2
+    jne l1
+
+    mov rdi, fmt
+    xor rax, rax
+    call printf
+    ret
+</code></pre>
+<p>C++, <code>p14.cpp</code>:</p>
+<pre class=""lang-cc prettyprint-override""><code>#include &lt;iostream&gt;
+
+int sequence(long n) {
+    int count = 1;
+    while (n != 1) {
+        if (n % 2 == 0)
+            n /= 2;
+        else
+            n = 3*n + 1;
+        ++count;
+    }
+    return count;
+}
+
+int main() {
+    int max = 0, maxi;
+    for (int i = 999999; i &gt; 0; --i) {
+        int s = sequence(i);
+        if (s &gt; max) {
+            max = s;
+            maxi = i;
+        }
+    }
+    std::cout &lt;&lt; maxi &lt;&lt; std::endl;
+}
+</code></pre>
+<p>I know about the compiler optimizations to improve speed and everything, but I don’t see many ways to further optimize my assembly solution (speaking programmatically, not mathematically).</p>
+<p>The C++ code uses modulus every term and division every other term, while the assembly code only uses a single division every other term.</p>
+<p>But the assembly is taking on average 1 second longer than the C++ solution. Why is this? I am asking mainly out of curiosity.</p>
+<h3>Execution times</h3>
+<p>My system: 64-bit Linux on 1.4 GHz Intel Celeron 2955U (Haswell microarchitecture).</p>
+<ul>
+<li><code>g++</code> (unoptimized): avg 1272 ms.</li>
+<li><code>g++ -O3</code>: avg 578 ms.</li>
+<li><code>asm (div)</code> (original): avg 2650 ms.</li>
+<li><code>asm (shr)</code>: avg 679 ms.</li>
+<li><a href=""https://stackoverflow.com/a/40356449/4322363"">@johnfound asm</a> (assembled with NASM): avg 501 ms.</li>
+<li><a href=""https://stackoverflow.com/a/40367384/4322363"">@hidefromkgb asm</a>: avg 200 ms.</li>
+<li><a href=""http://gcc.godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAKxAEZTUAHAvVAOwGdK0AbVAV2J4OmAIIcAtiADkABmmk0Exnh6YA8mwDCCAIZtgmGfICUpDgOLIj0gKQAmAMx42yHvywBqW460cC%2BKgAdAg%2B2Layog7Oru5ePn4BLgQhYRFRTi5uHpjevskEAJ6MmBypjuGR6fzJAGwALAD6BJ4iAI78mK6YEDVsBA3NrXgAXpiknn0DTS0AVIy6BAgm3gDsAELpntuTdTOeEroAHnh5ACKeshOHR8jnlz6bVZE7ngBmJJ69e0OnPhcQDijXIAWk8tBWtlWWnBj22fwqnnscM8pxB/yRkI2W1eOymgxabHueEe6WieDeDxeuO2%2BP2dwxyMcT1ENO2AHcEKpclAiRjed57LVPI4TD4AGJfPkVMLgyH2daePkK8GeEBSvLhRH2Ey6zWYnFsnYMhWM0lVJyYHgiQ24ulDBmOC6yc2stnoVBrFlG14Ael9Is8s08GHQ91DE30YYc61oB10AGtSqiWpgAG5dILbADKnqWmGImDA0g4nl0PHZukKpcWnjUun8IbYuTSFTjRE8HrLbwIBbLIrYMdotqNJs2TqRrp9O39ngIyk8ad0xFLFjnCFyShUamInmQ%2BnjBGQCDLkk87MIJ4sgmsBxIuX4Ije/B4PEKI7Z9tTGbYjXTXXuCBpS1bADWZD8ZwDLduVLDsAFl1AANUFRVswACQAJRQzwABlsCialpy/Tx/1/UNAOA2UIWw5VFWHZltlncs13ZEgE1LD5d3zEN0HQP8fz3BtMAgnYRMYqDUGUGC509PDWRjTx0KwoDPQQ5Dm0wLB0DMVo8y5UsJHvEEtzUI4SKORhCw4IF2FRUtj0wXQSi4z103LfhFmEwi2VnAAjfgWnzIluOgnclUwTSayJTAjgIYhdE8NSZNaXQM3XXISDwYAXHLJUJjXQhPF88t9GsUsBAIdJZ2nXZ%2BgJHi%2BNIwCgLyLQEjlGjsJ1TUqJREif0aciMVDfiuinI1Z0Kj1k1QDNiDePh2V09gCwmJYBGABAs08ABVVxJIkLpAs9R8vLdadpQBZVhVFCV%2Bq6QbeLVe7f1I8aaShC5OW5DV9R1V1oi6fA3g/ESKQ1f5GTFbzRxjOHwJhnZwYgR1QJuZAsW9GqbgRC4SQR86fXR%2B5kHe3FPttCnvPmRYTwxdGycLAhBCJHGAdWM4yUiZJ4xcCBMdtYiceuY5SYJ20cfudpOm6CBaFkBXFYmBxanRsUCdeSzkjeCAHGRewAFY9c8AAFDCAEl%2BAaQV7GVw3jbNy3rb12wDa0Qd7Ft%2BMThF251ax7YmZZh5xY5rnRF9WYtjcfRgEcIIAE5i1LPgmHSIIcPWdZZEaRx1RqgujWiHYTeXI7cNQJhPCznP7E8M5MGYUInWHRHtkMtNcWIeWJisI4RI4BBd1eburiRQvi8HGUKmRZ5Cdeesu/QI5lYN9Y%2B662YN4U5EDc5tvWiHpf%2B7no1e0bY0eAmRwRI7rvkBXzxiGXkTkA73JA4f3v5fDo1dCekeCcJiz3nsaBcI8v6TgPlQBKngM411ziJdIxAE7/DQPwfo/wXQMSfg/f4U8zgkkiEEVOjBHpYB/PnQUjgmxvibLkNS20tACB4GGDgqVchLFrBeJY/YFq6GAGoayIJB4UhaBAJSAANc8l49wCH6KiIkCVCzZX8AWaGoDtiLxHsvVe68H6b23iqXe%2B9NGH2HjsZ%2BZk2TFxGm9F4t9Zq4kco/TABjtjF3YWlTK2U2C5SJCxTcB5z6BQ3HWVAS1fKEFLC4dKcjGCFC%2BEsYQdk4lxTwMgBMZZXyBlCgWAywgRDaQHkfCBj866vEnq2LUZw66xMYDwXQ1hf5shCbics19X4dzYCMT%2Bj8rGiScHWTyrg8DJjeMQSSnhLLphTAWdUVj1QmRio0OSMYlJ9PVBs7Y/DgBcESkhGMAAVbA2YjktJpP/MMgDgFdMYPfcpIkYHbBIZXMhoZ7EES%2BSgtB8jKpOmwYqXB/cnQEKIaIV5TBRpsFDCARxncdH9LwQfcmThtGWJ7t4NeRi6KuwuIMmh5ZezED8SwNKHZCzoH4LeRpvZXCJM4k/Ze6oIByWHNCJSYoFRspKRYwOL8D7ov5Y/V2%2BizIKQGQpYce8CVKhotUuMUqLm4jvq8FxEw3EnzMYPPlwLbkHzaa8DpIoumzR6X03uy9ZW0q6MgMZHFJkSGmYWTuhB5lMqOOqNS6zMIxmWUcVZ%2BFtp9y2Zhbauz9neoVCcs5yqjUAMsUAqBZi373LKfqsxzy4GkOhaGcOPynToMwQClEfd8H/HBZ4jh/Ykq%2BUSVuAKLhgBKmqXXCZUyp4gTjICLIuRCDJyVKgFotkQpCBYPuHg0zaYaOLsxPMiZkzcSSqgN4lJR2EAyblBYvDGXlknVoE2O0OD5V7SmJ%2BGCYlEgWPFV8VoZG8O4m8PAK4WhKXTjm0iI1CynUaKInscKD6qssccXuyKzEfTRY5Y%2BeicWwhlbK4gF7FFTpvWoSdPCTzcT/ZVA%2BOqHliVRY4K50HgXTlnTwYlpK8Dks9JS6luQbX0veJ8RZXweUcswly9YogzgXEZMgfKuhDqnkUr6hUSkJgenZESdtTr6ik0FVBxFMGDESuONhaV%2BLZWdrCIqlUtFYSnzZHhsphcfRVOntgL2HpmzIYIKxVovZGCli%2BIx5A74nT/SMzSQ1OxjU3wPm/M1vS9UeutSMu14zHXOtmW64gCzmVvoVP6wNUQnT1GDQ/UNGEfUYXDY0vZXrDnRtOecmGxciAEFyqQ4yy4hCaU7I3PcegXDqnNv0O9aFswAHV1TDgVDfBUdcMS1GQNtdQu5%2BuxhjMNic8myyhM3KgRsK6yzRVivFRRHA2DbXWGcbrvpswAGkcLqgNncT4jgxsjmLmZguog4IXHWC%2BVhqAxjxdhENoc9xzvjcm0Ob7GIrtfELB0Z9yYNlRlwvhZKiGiSxMfc%2Bxs7m3C5F0D2PsG9fJuMksmQs/9CgTAwxVA5yE1HlibZ4bAkjZCt3nrdu7jOmeM5NtydAQg5qHd7EJyZt7dz7iJF2Lh4i4dsEp3fYgDRSCS/qE2TwogADiO1ZC%2BghBMfyLRnuvg9O9wSbBiwpA0YRxSeAJCqGXG%2BCY7XeyTpmSCc2aZCjrzwOgQwXwkpVaTKWWgdwocHhim4xttlGAkAICsQ4iTUDIH3DZPxr5EnY8a40woDW61P1KJYW8aA2ALQyQQY9RUAqHxYWGRPhl/B0KBGbxpLlPBde68Mbo6VEl6DSjQ0QOEj1xr8wmwOSaQGjnAZYyBA%2B2RZshWQz9vFGjfpEL%2BrkPZw5L7ngWs4Rb/lnEBcPkFZwwVkiGVIkUIImAFih7soRq4F8tC8cmJKLh/CIeQCwdgpYIAa/CpFORGCWixOUZgVRxKJg20aEDY7IVok6cOMSP%2BRItA/ATAEwPuwydK7mQQyCtA9EZw9AT8tATItS76byua0%2B6wcE5s9gAG2qQ81iwqoG/S6BEGNCkqE4OmbYBG9BQq2BY8oqsGmmlSQyAu568OV6y4e6d6GGcS2GrBhGxGymHBZGQyRKBYVGNG6eVKNKEWDKLGzKbG%2BE7KWgUiXGPGpiRo7BViMGVqEqqmKoPBHiQyzB2AemioBmdOIkvm2wbgnSuGlB6aoW3cFSvBDBqmTBraROl4JO6ObwbiLABg7wBWHApqaY5qPhVqchNCbm9q7w0WMyrqxK%2BcrGUifqkkDSKyck2%2B2W0iMRAi%2ByMaZW4GzORcQylW1WbytWxA9WYYWA9yx4ugrWng1unWPW6o9QM29wo2f2k4X26Wvui2ciK2lI/uG2CU9%2BO22we2B2x2p2ng52IYu4V2qB3m7SveT8/edyDyGaRo4%2BH6P4I0xBpBy%2Bbo6AyAxUBK0QLxTgrxNCcEVYieYBeukwIgFReyrQmALQaeeGphW23OYYq21REo3eRovICQCQ1ECkThkIlmhmboEoyACsOwg41I2JOJ2wU8bUvgzhKoiscY2wzhTokMNJdJnM9JOIkiNOlJRyG4lEbYQJ%2BengWg4oLSWJvklJcqNhNC5EpEWYvkX%2BrCRUuQsg2xGJHijg4ogpcpRJiJpJ%2B%2BioFJOw1JDJeptJ%2BpNJ1IkiRwvkqpbJAECqe49YK4PJfJRmWJ8suJsqTUea%2BJ8sqpLavgSJmplwCsQpupBpQZjJxpWgdBngFpHJ9hXJpYvJrwAAcifpJqgKUPrtIC0BuDwIwHcf6LmXmfmbma8EBAqvKI4RpjiFiYSS2tSLCUqdibiQqr6dqVSWSIyW2YaUYZ4MycgM4TWXWYKc6SKQ1C9BKVKaXrKfKXToqXyf2Q2ZZmSVqf6Tqa2R2cGfqcaSab5PyXWU6USS6QJKGNtJKRII%2BCCbkN2kOhuMQBeP8YVKxC%2BOOS9C9EbnkDOeKD2XOV2k2UuS2VUO2WuZDBuVoJ6biImSUMmamQbp4JmYwBMALlBVQKeXOKUNMYtEVIVKtskuVLuBYIdMkgYDmQWURQGFyFgLJgmMAL5AOnoGwOgCCOyGOnSqeBIFVMRSsZMkmESNjvuKdKJhhBcPWBmKWOoJKBgmRS4A1mIdhl/golRHsbUYpEJrkIyhhOoFhJ4PxebMAjsBAN9MeJ2CmbBGEuwsJvhc2u/m8A2IAfJekAAAKHCtZMlqUaXZhaUuXmzjQlGaV6IYRaDSJKp7wAzUi2WkLkGvCGHuW3LizeReVnCSI%2BVnDmzYSaWzDDbGJ4pkwbL8XxWwg4KM7FwDJuYMrRbPynA2q7hxZLKFGmSpbYQbIYgZbbAQATbjHTZOjA62QPZnAzreRKQXDeUaWJVRVAopG9EdY8DqjA5FX5TAkcSxHbSJnDrBRhLIBjqbq260yN63hDEVDxzbBdXqjChwTH7ObXx3BFVfCWSoDFS%2BR0K%2BRDoEBqDNiZLlTLWTL8CbSMABQvnbBaBqQ4SDVuXZV9Q1TFwmyFggirHqj2DnXqHyWvB/VITZiA0TDA15Wg1DLg2YCQ37bQ2w3IHvgop1HG6NGTo1b7itFjLtFNZdGxJPXABLBtbjXVz7aHYnaHVjbbB9GTr17qgAAcnN8uj2k1AOCoiqE4WxEAV1N1d1D1T1biCYlOI6Q8G0CAX1LQAYVkme2N2eueT%2BHAPVhMf1JsKNk4GsngAAUqyCFW8kFV8rML6DmbMM7S7a7W7cGCwPgA1vwPcnNLHiGJSKRZgORZRQOpyKgGoHIlgCEQ%2BkPBFJ2BSBEYWAoi4M2LuKQqWO7Vna7cqqSAxEcqbk2g6lMglMwoWPYGcHAVTrULUDiRAPYEEPUArmhCMDpHBAWFMmbqtagMuMeG6k/oIJgNtCjNVTFCCCURiIgdNTyd6hOHXHAc5veieDDUgbaoUIbZUuBAxG1KaCqCwGbgYK/mIRIPWvWM2HRT7YuPkqwESJhWEjCMLmWAPXuvWoUdJNjgQIAVzKglvYqFoI0gYPHHzZ4CCOoDQiCIcFYM3LvosNRkYJ4PUHzXXBIKWDGL6GCLIEEINgbMxruDg4WM5t/XnYqMANHgbEEBUqA%2BA5A8ePgrAxmGdo4HzSgyhOg5cEELIEMYbDsp8Pg43HEfscQzKY2DRXRczOfcxVfSuDfeqKpVhFDm0txFyJtOPFEvnoMY4Dgyw4ynw4Q3PN/YItdblL%2BlVsQDhqICY8uAQOQREAnBLrQI4OgAgekPvU2jPo3I5NY%2BkElJgH5QgYrIrHbbY1gHcJqt/VDpqhMCCCArY0cJ8JgL5LBSRIk9/XE7uAk64r5Fqt/fYwbE4yas8AnIPBAbQAbBMLUH4XCN3DgxiLIIKR6Zg0EFmLU7cIrE0zZb/R3ubArvGeCMKIqeOIqDBUZS2J7GhUVcbKQnLu3Y6ttNmAgCXmmRmYIEtWtoUGZXZQ5WwDY7IAnJIs5aUHgBqkCN/SUZgENViusL5f5VYRlX%2BYM/LjhN0707QMKFeX2qWKxCuJwjRYOmZbg4lB3SxRaAbODC6MQpcV0F%2BpgD%2BthlQkI2XZgHXDM1MvXY3c3a3dsPUBUwcK/jo%2Bns5j9Sqk4iPCBkyuCmZo8CYbopc6VeWfBgMwIZeihiIehrIlhlfrykvEcwqRPMyNIZYjS3S%2BZgxAoSSvQ5wrRppPRqvUxoyqxqyjoVCHoZxjGBFfxoJsJg2HxblsmdJhkVMvJiJNSyKtivgNhPFOKrcwy4y3YQ4XKkqvsa8CZoKzy0KflQxHYdZitHZg5moova5uof8F5l8mfChe0lfAUymt0iFqVZalQXCGkVFlMlkXMh9osklusClmsulsGvgNlrlvlpUUVohMcqVjdgxKTeEkwC0W0Y1p0S1ts2NTbnXgMZ9usINusLNhcKMdsC1VNlNt2wg1MXEmgLMWtuZHFIsZwMsSzWsezZsRdjsdduVujcTTsF1dXC9jru6oO4DhLYLf26LbGPcMDhAKDjUFZHxWtmGCURShgnZmEk%2Bi%2BnuIUKjt2MSuSzKUoHjo5OgITkvSTklOTjwJTtTrThWyNeu9B8TazmoOznA8QFzo5BILzmFPwULnoCLhgmLtERLlLjLnLorsrqrjpO/lrq9rrvBemUEES3kKhIXTXpbs23enbg7k7kIK7jyB7gut7r7rRROwHsgEHleqHuHlWCGNHg2DfS/TKUnlWKnoklrTeEtjnqB/rerkXoPCXnJ%2BXo9YklXubrXvXltT85gC3tWu3p3gI6G2yAK9sIc2cWyKmty05zSBcQQVPnxLPpgPPmIvvgbFaODL2WloM3CNmGwOsCCBMmMrRXQnrItCCBM57PnIq6ILoZymq7xvCJwJCQHdDhY/6nVb6hC551cdPotLSvnEI5oDyfeMi0C4MbUAbCw2IRTsABI1s9W4wNtIg7ICwxAPiwQwbUvYOtkllGwIdAorpbIg0CCGo%2BnoCYyv%2BMQOs1yAYHBctlEc2jFFOxpdTjFk%2BkcKUHRzsEBoHGS6VQRia2YX8Na1pvR0y8hteqy6Nxy/554bqnG7y3/IceCcK0XKKxRooRK7DtK2oQTQCwq%2BxiqxhAYdlxqylFq6WJmxJgZfq7JsO0gsyDd7S%2Ba2pla7ija3CHa51I67ZzSC6/ym63UST8EQZbZgjn605i5hABM55hva0uG0apGwFtG8FtT/G3CWWIcY58moPmmq6257iB51Cl540JV4sEvobFaDaC8DbUwDswnGsrs9lQlUlQpClWlYqCYt/W%2Brr3Fc4/cyDX1abQNUyECnCCJZMLRcHRJeOTxf8evrpnM5KBiHGRiI0o2At9hg1hVL6C4NtAbI4A3diwbJ7MAwN0N/wysGIW0tU9/ZMnyt97PKgrs49872JW7xIyPd/rpisD6PUI4BlgnA47UKsKsLi18Mn4S29%2BGxn4U75t9x318sQ7Yx3LY%2BqiROa4D3/fV0iOiy3Vi6sOQ7QHzbUHzbQAnE34N7wwSwba2WF7szqrYzn5v%2BaAnCErY/5svgnEFgkb0t3wKr3%2BjYjYhADQNWjVByKw8xaf8TZlBV8wmOqC4E%2BmLr2N122gmxlsQIW6oknzCJIv%2BcuBKMDCTrlwu6kyXulyF7AD1Cw54LkPpT0CMASgnAZKCIBaDO9YBBYcuJjxRYSAOmUHO/sjUf5xUQaL/OEO/iwqpJxK//K0IkhhQtBLKjYRlNzR5KHoyg39QwrY1ORuUYmuzY2rY3t7f0ratjDXtmRBZAwKQLSCers2wCW9LmGEVyvS07J39QIIgiYGoMkQtJja3gXZpgHWAmwDBrlHEHf0VDmDLBVOawdSFsEkR1gOVXxkYKMzZgdoioQfn42TRW1PA9lboniVDYhNsCjjLYFQHNSuMDA7jEoEr30YMQy0AKBbOuBSQh5kg8NTwGk0H74ANU%2BAWxo8CSiSCLm1zHEFckH6QIf4%2BjXZgPzMFksEmkvR4NnjmgtBJYz7fwKfwlxAhe4HAeQQRCKb8BJSK4JJg0HDi2VCAPdeIZ4y153wuCJzPeHBUnSPdmw7IUDs2G/rhDpGdlKYboEaBdF4sOINJsP1cTX9tg%2BATuGE2pDEZ0AkbYsLIGLA4h5h2KRYWcEkw8AcQ2wk5tSDaRD8XE6QC2vGVAiTCiA%2Bww4S0kXhD8uCWTbQYywIaeM4kUzRlFhkwAdBbUDGLoAzVCC/Dw2GTDVFk2eEkt8Rw/IhMv1EgMQ74JI8FqICBEgi9hMwxIbZyyA7BNIZIoobszhBsj/glJBim6neDoAcQ6KTSKa3Xj9CYw4wwKpyM5EMQRRPIjkGOlyB1oUBfyHEBwGGGsiaWhzDkT/UVDsA6E3ENCjH3Qrck76uQIgcnVvApJCwagJcP0HyiegfiH/dMh/jDCaCHBmgjykZiyC78fhXyWyhVEYBhU7wVwslq3Dz4RjwuAATWzCNA%2BRvYNUdWAnSfC54UIsllwXx4qgDYqCKUaIBOFsiCh4KDgEmL3Thxs62dX0NIDMATVpABsBQNs2kC0AFAqAGQDvU2AqhrwVgUZo4CbGkBrGcgKsWYG/61BaAHDBOPYCQb1BPYDQBoKsCAQ1j6gCgKQB6VIANj5ADAGQAoC4BXB%2BxpgUgHAFgBIA8kZACgCPSkg7gUAADOOAnCuBPpgeK4SgL5GMAKAlAU3AgJoDfDPjSA%2BAQsE/jgZcABx5Acas%2BLMBMBn8nAGQCCFuAgNuse6GCbt02zRc5o91EQCCAbBOoqGIDGhtA3YS0VCgvkTjoYCrGkAaxdY1cV%2BJbF2AnAcYMQkcHn4ghrYMcaIvHATgcMFAu44iRACPFv0dw5AbgDxPmTAAKmpAO8cSi4Bv4vxr4o6B%2BMKBfifxkRf8V%2BOSBWgQJDAZgDfQAlQS7gIiAIP8A678AE4y/EELBJyTGSEJCUJCQWBQnY10JIDMBsRNIn1iKJMgaIDRNkR0TagDE2XKQzuC1AKG7E1SVxJQACSTx/E88fMgyQ9lVgIk1QGJMfGSSDo0ktgJ%2BMAnyS/xQlJScBIHGgT1JL%2BSCdBOMlwSzJCxEBm8BhQghkJy2GyWeEwkQMkB/wXCf%2BwIku4iJ1YmQGRLXHNiXJ1E0bh5K8moho84IVYAFOylDiQATDROLIFWC0AZ%2BDfTRpo09gkSZAi40gMuIVjkTAJlErcSAFtgcTdQS06QPYCcmbTNxfYkCWYD9oyN6gQAA"" rel=""noreferrer"">@hidefromkgb asm, optimized by @Peter Cordes</a>: avg 145 ms.</li>
+<li><a href=""https://godbolt.org/g/1N70Ib"" rel=""noreferrer"">@Veedrac C++</a>: avg 81 ms with <code>-O3</code>, 305 ms with <code>-O0</code>.</li>
+</ul>",40355466.0,11,47,,2016-11-01 06:12:06.097000+00:00,504,2020-12-29 12:59:34.793000+00:00,2020-09-26 02:35:42.687000+00:00,,254635.0,,4322363.0,,1,860,c++|performance|assembly|optimization|x86,153904
+21,38200282,android.os.FileUriExposedException: file:///storage/emulated/0/test.txt exposed beyond app through Intent.getData(),"<p>The app is crashing when I'm trying to open a file. It works below Android Nougat, but on Android Nougat it crashes. It only crashes when I try to open a file from the SD card, not from the system partition. Some permission problem?</p>
+
+<p>Sample code:</p>
+
+<pre><code>File file = new File(""/storage/emulated/0/test.txt"");
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setDataAndType(Uri.fromFile(file), ""text/*"");
+intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+startActivity(intent); // Crashes on this line
+</code></pre>
+
+<p>Log: </p>
+
+<blockquote>
+  <p>android.os.FileUriExposedException:
+  file:///storage/emulated/0/test.txt exposed beyond app through
+  Intent.getData()</p>
+</blockquote>
+
+<p><strong>Edit:</strong></p>
+
+<p>When targeting Android Nougat, <code>file://</code> URIs are not allowed anymore. We should use <code>content://</code> URIs instead. However, my app needs to open files in root directories. Any ideas?</p>",38858040.0,28,3,,2016-07-05 09:51:40.530000+00:00,292,2020-12-06 23:55:05.433000+00:00,2018-02-02 17:32:47.750000+00:00,,4583267.0,,4583267.0,,1,802,android|android-file|android-7.0-nougat,489272
+22,38008334,Angular/RxJs When should I unsubscribe from `Subscription`,"<p>When should I store the <code>Subscription</code> instances and invoke <code>unsubscribe()</code> during the NgOnDestroy life cycle and when can I simply ignore them?</p>
+<p>Saving all subscriptions introduces a lot of mess into component code.</p>
+<p><a href=""https://angular.io/docs/ts/latest/guide/server-communication.html"" rel=""noreferrer"">HTTP Client Guide</a> ignore subscriptions like this:</p>
+<pre class=""lang-js prettyprint-override""><code>getHeroes() {
+  this.heroService.getHeroes()
+                  .subscribe(
+                     heroes =&gt; this.heroes = heroes,
+                     error =&gt;  this.errorMessage = &lt;any&gt;error);
+}
+</code></pre>
+<p>In the same time <a href=""https://angular.io/docs/ts/latest/guide/router.html"" rel=""noreferrer"">Route &amp; Navigation Guide</a> says that:</p>
+<blockquote>
+<p>Eventually, we'll navigate somewhere else. The router will remove this component from the DOM and destroy it. We need to clean up after ourselves before that happens. Specifically, we must unsubscribe before Angular destroys the component. Failure to do so could create a memory leak.</p>
+<p>We unsubscribe from our <code>Observable</code> in the <code>ngOnDestroy</code> method.</p>
+</blockquote>
+<pre class=""lang-js prettyprint-override""><code>private sub: any;
+
+ngOnInit() {
+  this.sub = this.route.params.subscribe(params =&gt; {
+     let id = +params['id']; // (+) converts string 'id' to a number
+     this.service.getHero(id).then(hero =&gt; this.hero = hero);
+   });
+}
+
+ngOnDestroy() {
+  this.sub.unsubscribe();
+}
+</code></pre>",41177163.0,24,2,,2016-06-24 07:52:45.577000+00:00,448,2021-02-25 18:49:41.730000+00:00,2020-09-15 08:09:01.187000+00:00,,5377805.0,,1429493.0,,1,797,angular|rxjs|observable|subscription|angular-component-life-cycle,209951
+23,42374151,All com.android.support libraries must use the exact same version specification,"<p>After updating to android studio 2.3 I got this error message.
+I know it's just a hint as the app run normally but it's really strange.</p>
+
+<blockquote>
+  <p>All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 25.1.1, 24.0.0. Examples include com.android.support:animated-vector-drawable:25.1.1 and com.android.support:mediarouter-v7:24.0.0</p>
+</blockquote>
+
+<p><a href=""https://i.stack.imgur.com/trji5.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/trji5.png"" alt=""enter image description here""></a></p>
+
+<p>my gradle:</p>
+
+<pre><code>dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:recyclerview-v7:25.1.1'
+    compile 'com.android.support:cardview-v7:25.1.1'
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
+    compile 'com.google.android.gms:play-services:10.2.0'
+
+    compile 'io.reactivex.rxjava2:rxjava:2.0.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.blankj:utilcode:1.3.6'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.facebook.stetho:stetho:1.4.2'
+
+    provided 'com.google.auto.value:auto-value:1.2'
+    annotationProcessor 'com.google.auto.value:auto-value:1.2'
+    annotationProcessor 'com.ryanharter.auto.value:auto-value-parcel:0.2.5'
+
+    compile 'com.mikepenz:iconics-core:2.8.2@aar'
+    compile('com.mikepenz:materialdrawer:5.8.1@aar') { transitive = true }
+    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.3.0'
+    compile 'com.github.GrenderG:Toasty:1.1.1'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.0'
+    compile 'com.github.MAXDeliveryNG:slideview:1.0.0'
+
+    compile 'com.facebook.fresco:fresco:1.0.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'com.google.maps.android:android-maps-utils:0.4.4'
+    compile 'com.github.jd-alexander:library:1.1.0'
+}
+</code></pre>",42374426.0,54,1,,2017-02-21 17:35:02.123000+00:00,232,2020-02-17 16:23:47.370000+00:00,2019-06-22 10:16:05.217000+00:00,,6296561.0,,3998402.0,,1,795,android|build.gradle,377596
+24,38004148,Another git process seems to be running in this repository,"<p>I'm trying to learn how to use Git and have created a small project with an HTML, CSS, and Javascript file. I made a branch from my basically empty project and then made some changes to my code. I tried staging the changes but I get the following error message:</p>
+
+<pre><code>Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+</code></pre>
+
+<p>Granted, I did run into problems trying to commit my empty project earlier and just quit git bash since I didn't know how to get out of where I somehow had gotten. </p>
+
+<p>Is there any way for me to fix this or should I just start a new repository?</p>",38004193.0,29,3,,2016-06-24 00:59:24.897000+00:00,168,2021-01-28 00:15:13.603000+00:00,2018-04-20 20:01:57.783000+00:00,,9132582.0,,6242376.0,,1,795,git,463961
+25,39494058,BehaviorSubject vs Observable?,"<p>I'm looking into Angular RxJs patterns and I don't understand the difference between a <code>BehaviorSubject</code> and an <code>Observable</code>.</p>
+
+<p>From my understanding, a <code>BehaviorSubject</code> is a value that can change over time (can be subscribed to and subscribers can receive updated results). This seems to be the exact same purpose of an <code>Observable</code>.  </p>
+
+<p>When would you use an <code>Observable</code> vs a <code>BehaviorSubject</code>? Are there benefits to using a <code>BehaviorSubject</code> over an <code>Observable</code> or vice versa?</p>",40231605.0,10,0,,2016-09-14 15:14:44.443000+00:00,283,2020-07-23 10:16:16.090000+00:00,2020-02-26 10:38:08.293000+00:00,,5377805.0,,6620551.0,,1,789,angular|rxjs|behaviorsubject|rxjs-observables,417903
+26,50683786,"Why does array[idx++]+=""a"" increase idx once in Java 8 but twice in Java 9 and 10?","<p>For a challenge, <a href=""https://stackoverflow.com/users/1682559/kevin-cruijssen"">a fellow code golfer</a> <a href=""https://codegolf.stackexchange.com/questions/166012/exchange-capitalization/166081?noredirect=1#comment401670_166081"">wrote the following code</a>:</p>
+
+<pre><code>import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+    int size = 3;
+    String[] array = new String[size];
+    Arrays.fill(array, """");
+    for(int i = 0; i &lt;= 100; ) {
+      array[i++%size] += i + "" "";
+    }
+    for(String element: array) {
+      System.out.println(element);
+    }
+  }
+}
+</code></pre>
+
+<p><a href=""https://tio.run/##TY3BTsMwEETv@YpRJKSEgFXEjZADH8CpxyoH07rVps46sjdFFcq3BzduKafdnXkz2@mTfnaD4W53nGfqB@cFXRTVKGTVY51lw/hlaYut1SHgUxPjJwOuahAtcZwc7dBHr1iLJz5sWmh/COWCAsQCRoPXejn/MV6fo87m@yZym5iPixXUnqwtFuwJeV4mb@98camkGF3Vcbw3eFnF7fYPqXlDVfXALaomMhVy5Ck//bWkpzDW9IblLcXuLetzENMrN4oaIiiWiyta3pumbJrnXw"" rel=""noreferrer"">When running this code in Java 8, we get the following result:</a></p>
+
+<pre><code>1 4 7 10 13 16 19 22 25 28 31 34 37 40 43 46 49 52 55 58 61 64 67 70 73 76 79 82 85 88 91 94 97 100 
+2 5 8 11 14 17 20 23 26 29 32 35 38 41 44 47 50 53 56 59 62 65 68 71 74 77 80 83 86 89 92 95 98 101 
+3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99 
+</code></pre>
+
+<p><a href=""https://tio.run/##TY3NboMwEITvPMUIqRKU1krUWymHPkBPOUYcnMSJlpgF2UuqqOLZiYPz09Puznwz2@iTfm92x2mitu@coAmCGoSsei2TpB82lrbYWu09fjQx/hLgpnrREsapox3a4GUrccSHdQ3tDj6fUYBYwKjwUc7nP8bpc9DZ/N5FriPzfbW82pO12Yy9IU3z6O07l10rKUQXZRhfFZaLsN3/ITavqSheuEZRBaZAijTmx0dLfApjTWtYPmPs2bI6ezGt6gZRfQDFcnZD82fTmIzTdAE"" rel=""noreferrer"">When running this code in Java 10, we get the following result:</a></p>
+
+<pre><code>2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 
+</code></pre>
+
+<p>The numbering is entirely off using Java 10. So what is happening here? Is it a bug in Java 10?</p>
+
+<h2>Follow ups from the comments:</h2>
+
+<ul>
+<li>The issue appears when compiled with Java 9 or later (we found it in Java 10). Compiling this code on Java 8, then running in Java 9 or any later version, including Java 11 early access, gives the expected result.</li>
+<li>This kind of code is non-standard, but is valid according to the spec. It was found by <a href=""https://stackoverflow.com/users/1682559/kevin-cruijssen"">Kevin Cruijssen</a> in a <a href=""https://codegolf.stackexchange.com/questions/166012/exchange-capitalization/166081?noredirect=1#comment401670_166081"">discussion in a <strong>golfing challenge</strong></a>, hence the weird use case encountered.</li>
+<li><p><a href=""https://stackoverflow.com/users/525036/didier-l"">Didier L</a> found out that the issue can be reproduced with the much smaller and more understandable code:</p>
+
+<pre><code>class Main {
+  public static void main(String[] args) {
+    String[] array = { """" };
+    array[test()] += ""a"";
+  }
+  static int test() {
+    System.out.println(""evaluated"");
+    return 0;
+  }
+}
+</code></pre>
+
+<p><a href=""https://tio.run/##TYxBCoMwFET3PcWQVaRUui8eoasuxcWvBomNUZIfQcSzp6lpoYthYN7wBlroMs3KDt0rxtaQ97iTtthOwByeRrfwTJxqmXSHMTH5YKdtXzcg1/viuAJ/o6MVFTYIgf12wGOrWXmWRYNzBUHiQ/aUr15bRj78hKtnNZZT4HJOajZWCrWQCcSqE0UWO8XBWVyzbI/xDQ"" rel=""noreferrer"">Result when compiled in Java 8:</a></p>
+
+<pre><code>evaluated
+</code></pre>
+
+<p><a href=""https://tio.run/##TYxBCoMwFET3PcWQlaFUui8eoasuxcWvBomNUZIfQcSzp6lpoYthYN7wBlroMnSvGFtD3uNO2mI7AXN4Gt3CM3GqZdIdxsSKBztt@7oBud7L4wr8jY5WVNggBPbbAY@tZuW5kA3OFQSJD9lTvnptGfnwE66e1VhOgcs5qdnYQqiFTCBWnZBZ7BQHZ3HNsj3GNw"" rel=""noreferrer"">Result when compiled in Java 9 and 10:</a></p>
+
+<pre><code>evaluated
+evaluated
+</code></pre></li>
+<li><p>The issue seems to be limited to the string concatenation and assignment operator (<code>+=</code>) with an expression with side effect(s) as the left operand, like in <code>array[test()]+=""a""</code>, <code>array[ix++]+=""a""</code>, <code>test()[index]+=""a""</code>, or <code>test().field+=""a""</code>. To enable string concatenation, at least one of the sides must have type <code>String</code>. Trying to reproduce this on other types or constructs failed.</p></li>
+</ul>",50686658.0,1,14,,2018-06-04 15:16:14.077000+00:00,159,2018-07-19 13:51:18.933000+00:00,2018-06-07 17:31:21.867000+00:00,,1779477.0,,180719.0,,1,763,java|java-8|javac|java-9|java-10,72062
+27,44629890,What is a 'workspace' in Visual Studio Code?,"<p>I can't quite believe I am asking this question, but I have not been able to find a definition in the documentation. <em>In case it isn't painfully obvious, I am (very) new to Visual Studio Code.</em></p>
+
+<p>For example, Visual Studio Code talks about <a href=""https://code.visualstudio.com/docs/getstarted/settings"" rel=""noreferrer"">applying settings at the user level vs the workspace level</a>.</p>
+
+<p>On the one hand,</p>
+
+<ul>
+<li>(a) it could refer to a project directory that you have opened; or</li>
+<li>(b) it could refer to everything you have opened in a particular window.</li>
+</ul>
+
+<p>The page referenced above says</p>
+
+<blockquote>
+<pre><code>""Workspace: These settings are stored inside your workspace
+in a .vscode folder and only apply when the workspace is opened.""
+</code></pre>
+</blockquote>",57134632.0,16,8,,2017-06-19 11:53:36.503000+00:00,136,2021-02-02 23:24:07.990000+00:00,2020-03-16 23:11:01.980000+00:00,,63550.0,,1527750.0,,1,749,visual-studio-code,293634
+28,50718018,Xcode 10 Error: Multiple commands produce,"<blockquote>
+  <p>error: Multiple commands produce '/Users/uesr/Library/Developer/Xcode/DerivedData/OptimalLive-fxatvygbofczeyhjsawtebkimvwx/Build/Products/Debug-iphoneos/OptimalLive.app/Info.plist':
+      1) Target 'OptimalLive' has copy command from '/Users/uesr/Desktop/workSpace/SEALIVE/SeaLive1.1/OptimalLive/Info.plist' to '/Users/uesr/Library/Developer/Xcode/DerivedData/OptimalLive-fxatvygbofczeyhjsawtebkimvwx/Build/Products/Debug-iphoneos/OptimalLive.app/Info.plist'
+      2) Target 'OptimalLive' has copy command from '/Users/uesr/Desktop/workSpace/SEALIVE/SeaLive1.1/OptimalLive/Server/Masonry/Info.plist' to '/Users/uesr/Library/Developer/Xcode/DerivedData/OptimalLive-fxatvygbofczeyhjsawtebkimvwx/Build/Products/Debug-iphoneos/OptimalLive.app/Info.plist'
+      3) Target 'OptimalLive' has process command with input '/Users/uesr/Desktop/workSpace/SEALIVE/SeaLive1.1/OptimalLive/Info.plist'</p>
+</blockquote>
+
+<p>Running the code in Xcode9 works, but there is a error in Xcode10.</p>",50719379.0,77,4,,2018-06-06 10:22:16.673000+00:00,146,2021-01-26 21:22:11.147000+00:00,2019-12-26 06:11:29.257000+00:00,,9194639.0,,9594997.0,,1,742,info.plist|xcode10,455971
+29,44619165,GitHub satanically messing with Markdown - changes 666 to DCLXVI,"<p><a href=""https://github.com/aaronryank/Forked/tree/fa599eaee537e05657d6d73116ee8c177eeb2c50"" rel=""noreferrer"">My GitHub repository</a> has nothing but a readme in it. In this readme, locally I wrote this:</p>
+
+<pre><code>Factoids:
+ - There are about six different ways to do everything in Forked.
+ - There are actually six different ways to enter loops.
+ - There are six directionals and six I/O commands.
+ - 666. ha.
+</code></pre>
+
+<p>Emphasis on the last line.
+What GitHub decided to show was <em>not</em> <code>666</code>.</p>
+
+<p><a href=""https://i.stack.imgur.com/AVSsT.png"" rel=""noreferrer""><img src=""https://i.stack.imgur.com/AVSsT.png"" alt=""dclxvi""></a></p>
+
+<p><code>DCLXVI</code> is the Roman Numeral number for <a href=""https://en.wikipedia.org/wiki/666_(number)"" rel=""noreferrer"">666</a>.</p>
+
+<p>This really creeped me out. My local file and <a href=""https://raw.githubusercontent.com/aaronryank/Forked/fa599eaee537e05657d6d73116ee8c177eeb2c50/README.md"" rel=""noreferrer"">the raw file</a> both show <code>666</code>.</p>
+
+<p>What is GitHub doing, and why is the indentation on the un-numbered list messed up? Is this an easter egg, or some satanic bug?</p>",44619272.0,3,16,,2017-06-18 20:18:00.613000+00:00,108,2017-07-10 15:46:07.857000+00:00,2017-07-10 15:46:07.857000+00:00,,7659995.0,,7659995.0,,1,741,github|markdown,82134
+30,40352684,What is the equivalent of Java static methods in Kotlin?,"<p>There is no <code>static</code> keyword in Kotlin.</p>
+
+<p>What is the best way to represent a <code>static</code> Java method in Kotlin?</p>",40352734.0,29,5,,2016-11-01 00:52:33.640000+00:00,74,2021-02-12 16:23:09.463000+00:00,2021-02-12 03:44:43.120000+00:00,,15181309.0,,14316.0,,1,726,java|kotlin|static,274100
+31,43006550,How to use *ngIf else?,"<p>I'm using Angular and I want to use <code>*ngIf else</code> (available since version 4) in this example: </p>
+
+<pre><code>&lt;div *ngIf=""isValid""&gt;
+  content here ...
+&lt;/div&gt;
+
+&lt;div *ngIf=""!isValid""&gt;
+ other content here...
+&lt;/div&gt;
+</code></pre>
+
+<p>How can I acheive the same behavior with <code>ngIf else</code> ?</p>",43006589.0,18,1,,2017-03-24 18:18:26.513000+00:00,131,2021-02-14 12:39:24.003000+00:00,2018-10-08 21:15:17.890000+00:00,,3345644.0,,5486494.0,,1,726,angular|if-statement|angular-template,790568
+32,37800790,Hide strange unwanted Xcode logs,"<p>When using the Xcode 8+ and creating a new blank project, the following logs appear when running the application:</p>
+
+<pre><code>2016-06-13 16:33:34.406093 TestiOS10[8209:100611] bundleid: com.appc.TestiOS10, enable_level: 0, persist_level: 0, propagate_with_activity: 0
+2016-06-13 16:33:34.406323 TestiOS10[8209:100607] Created DB, header sequence number = 248
+2016-06-13 16:33:34.409564 TestiOS10[8209:100611] subsystem: com.apple.UIKit, category: HIDEvents, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 0
+2016-06-13 16:33:34.504117 TestiOS10[8209:100607] Created DB, header sequence number = 248
+2016-06-13 16:33:34.548023 TestiOS10[8209:100607] subsystem: com.apple.BaseBoard, category: MachPort, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 0
+2016-06-13 16:33:34.568458 TestiOS10[8209:100608] subsystem: com.apple.FrontBoard, category: Common, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 0
+</code></pre>
+
+<p>Maybe someone already found a configuration for this to handle?</p>",39461256.0,13,7,,2016-06-13 23:39:11.920000+00:00,274,2020-09-29 21:41:29.320000+00:00,2017-09-20 10:36:05.830000+00:00,,5537752.0,,5537752.0,,1,718,ios|xcode|logging|xcode8|ios10,200076
+33,47068709,Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2,"<p>I am new to TensorFlow. I have recently installed it (Windows CPU version) and received the following message:</p>
+
+<blockquote>
+  <p>Successfully installed tensorflow-1.4.0 tensorflow-tensorboard-0.4.0rc2</p>
+</blockquote>
+
+<p>Then when I tried to run</p>
+
+<pre class=""lang-py prettyprint-override""><code>import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+sess.run(hello)
+'Hello, TensorFlow!'
+a = tf.constant(10)
+b = tf.constant(32)
+sess.run(a + b)
+42
+sess.close()
+</code></pre>
+
+<p>(which I found through <a href=""https://github.com/tensorflow/tensorflow"" rel=""noreferrer"">https://github.com/tensorflow/tensorflow</a>)</p>
+
+<p>I received the following message:</p>
+
+<blockquote>
+  <p>2017-11-02 01:56:21.698935: I C:\tf_jenkins\home\workspace\rel-win\M\windows\PY\36\tensorflow\core\platform\cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2</p>
+</blockquote>
+
+<p>But when I ran </p>
+
+<pre class=""lang-py prettyprint-override""><code>import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello))
+</code></pre>
+
+<p>it ran as it should and output <code>Hello, TensorFlow!</code>, which indicates that the installation was successful indeed but there is something else that is wrong.</p>
+
+<p>Do you know what the problem is and how to fix it?</p>",47227886.0,9,6,,2017-11-02 06:10:46.210000+00:00,235,2021-01-26 19:44:53.353000+00:00,2019-11-07 11:03:06.973000+00:00,,996815.0,,8977639.0,,1,709,tensorflow|cpu|avx,561680
+34,48988778,Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6,"<p>When trying to run the Example CorDapp (<a href=""https://github.com/corda/cordapp-example"" rel=""noreferrer"">GitHub CorDapp</a>) via IntelliJ, I receive the following error:</p>
+<blockquote>
+<p>Cannot inline bytecode built with JVM target 1.8 into bytecode that is
+being built with JVM target 1.6</p>
+</blockquote>
+<p>How can I modify the IntelliJ settings so that all the bytecode is built with the same JVM target?</p>",48988779.0,33,3,,2018-02-26 12:41:42.127000+00:00,82,2020-12-21 14:09:12.187000+00:00,2020-07-23 15:37:01.470000+00:00,,13363205.0,,4620025.0,,1,690,android|intellij-idea|kotlin|jvm|corda,165400
+35,43871637,No 'Access-Control-Allow-Origin' header is present on the requested resource—when trying to get data from a REST API,"<p>I'm trying to fetch some data from the REST API of HP Alm. It works pretty well with a small curl script - I get my data.</p>
+
+<p>Now doing that with JavaScript, fetch and ES6 (more or less) seems to be a bigger issue. I keep getting this error message:</p>
+
+<blockquote>
+  <p>Fetch API cannot load . Response to preflight request doesn't
+  pass access control check: No 'Access-Control-Allow-Origin' header is
+  present on the requested resource. Origin '<a href=""http://127.0.0.1:3000"" rel=""noreferrer"">http://127.0.0.1:3000</a>' is
+  therefore not allowed access. The response had HTTP status code 501.
+  If an opaque response serves your needs, set the request's mode to
+  'no-cors' to fetch the resource with CORS disabled.</p>
+</blockquote>
+
+<p>I understand that this is because I am trying to fetch that data from within my localhost and the solution should be using CORS. Now I thought I actually did that, but somehow it either ignores what I write in the header or the problem is something else? </p>
+
+<p>So, is there an implementation issue? Am I doing it wrong? I can't check the server logs unfortunately. I'm really a bit stuck here.</p>
+
+<pre><code>function performSignIn() {
+
+  let headers = new Headers();
+
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+
+  headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+  headers.append('Access-Control-Allow-Credentials', 'true');
+
+  headers.append('GET', 'POST', 'OPTIONS');
+
+  headers.append('Authorization', 'Basic ' + base64.encode(username + "":"" + password));
+
+  fetch(sign_in, {
+      //mode: 'no-cors',
+      credentials: 'include',
+      method: 'POST',
+      headers: headers
+    })
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json))
+    .catch(error =&gt; console.log('Authorization failed : ' + error.message));
+}
+</code></pre>
+
+<p>I am using Chrome. I also tried using that Chrome CORS Plugin, but then I am getting another error message:</p>
+
+<blockquote>
+  <p>The value of the 'Access-Control-Allow-Origin' header in the response
+  must not be the wildcard '*' when the request's credentials mode is
+  'include'. Origin '<a href=""http://127.0.0.1:3000"" rel=""noreferrer"">http://127.0.0.1:3000</a>' is therefore not allowed
+  access. The credentials mode of requests initiated by the
+  XMLHttpRequest is controlled by the withCredentials attribute.</p>
+</blockquote>",43881141.0,14,0,,2017-05-09 13:47:47.647000+00:00,411,2021-02-07 23:03:13.910000+00:00,2021-01-01 01:33:14.380000+00:00,,213269.0,,1331465.0,,1,679,javascript|cors|fetch-api|preflight|access-control-allow-origin,1643292
+36,45022048,"Why does ""npm install"" rewrite package-lock.json?","<p>I just recently upgraded to <em>npm@5</em>.  I now have a <em>package-lock.json</em> file with everything from <em>package.json</em>.  I would expect that, when I run <code>npm install</code> that the dependency versions would be pulled from the lock file to determine what should be installed in my <em>node_modules</em> directory.  What's strange is that it actually ends up modifying and rewriting my <em>package-lock.json</em> file.</p>
+
+<p>For example, the lock file had typescript specified to be at version <em>2.1.6</em>.  Then, after the <code>npm install</code> command, the version was changed to <em>2.4.1</em>.  That seems to defeat the whole purpose of a lock file.</p>
+
+<p>What am I missing?  How do I get npm to actually respect my lock file?</p>",45566871.0,11,7,,2017-07-10 21:38:49.340000+00:00,128,2020-08-23 10:54:25.483000+00:00,2020-04-01 20:43:32.563000+00:00,,617950.0,,1141343.0,,1,672,node.js|npm|npm-install|package-lock.json,233742
+37,42796887,Switch focus between editor and integrated terminal in Visual Studio Code,<p>Does anyone know the keyboard shortcut (Mac and Linux) to switch the focus between editor and integrated terminal in Visual Studio Code?</p>,43012779.0,18,5,,2017-03-14 21:29:52.673000+00:00,209,2021-02-13 17:42:47.500000+00:00,2020-04-08 06:22:25.307000+00:00,,711006.0,,859961.0,,1,670,visual-studio-code,152078
+38,39632667,How do I kill the process currently using a port on localhost in Windows?,"<p>How can I remove the current process/application which is already assigned to a port?</p>
+
+<p>For example: <code>localhost:8080</code></p>",39633428.0,20,1,,2016-09-22 07:19:51.100000+00:00,400,2021-02-06 18:43:48.247000+00:00,2020-01-20 09:21:58.440000+00:00,,63550.0,,3626371.0,,1,665,windows|cmd|localhost|port|command-prompt,1319616
+39,50605219,Difference between npx and npm?,"<p>I have just started learning React, and Facebook helps in simplifying the initial setup by providing the <a href=""https://github.com/facebook/create-react-app"" rel=""noreferrer"">following ready-made project</a>.  </p>
+
+<p>If I have to install the skeleton project I have to type <code>npx create-react-app my-app</code> in command-line.</p>
+
+<p>I was wondering why does the Facebook in Github have <code>npx create-react-app my-app</code> rather than <code>npm create-react-app my-app</code>?</p>",52018825.0,7,3,,2018-05-30 12:51:54.103000+00:00,183,2020-12-12 01:35:13.300000+00:00,2020-05-15 20:34:57.163000+00:00,,2874896.0,,9279156.0,,1,660,javascript|npm|npx,231149
+40,37300811,Android Studio: /dev/kvm device permission denied,"<p>When I try to run my Android app on an emulator I get this error: </p>
+
+<blockquote>
+  <p>/dev/kvm permission denied. </p>
+</blockquote>
+
+<p>I checked the permissions and added the user I am currently logged in with to the kvm group. What is wrong?</p>",,27,1,,2016-05-18 13:16:50.097000+00:00,177,2020-10-14 18:10:58.057000+00:00,2018-05-22 20:55:28.323000+00:00,,1788806.0,,6351152.0,,1,629,64-bit|ubuntu-14.04|kvm|android-studio-2.0|ubuntu-18.04,397088
+41,42273853,"In Typescript, what is the ! (exclamation mark / bang) operator when dereferencing a member?","<p>When looking at the sourcecode for a tslint rule, I came across the following statement:</p>
+
+<pre><code>if (node.parent!.kind === ts.SyntaxKind.ObjectLiteralExpression) {
+    return;
+}
+</code></pre>
+
+<p>Notice the <code>!</code> operator after <code>node.parent</code>. Interesting!</p>
+
+<p>I first tried compiling the file locally with my currently installed version of TS (1.5.3). The resulting error pointed to the exact location of the bang:</p>
+
+<pre><code>$ tsc --noImplicitAny memberAccessRule.ts 
+noPublicModifierRule.ts(57,24): error TS1005: ')' expected.
+</code></pre>
+
+<p>Next I upgraded to the latest TS (2.1.6), which compiled it without issue. So it seems to be feature of TS 2.x. <strong>But</strong> the transpilation ignored the bang completely, resulting in the following JS:</p>
+
+<pre><code>if (node.parent.kind === ts.SyntaxKind.ObjectLiteralExpression) {
+    return;
+}
+</code></pre>
+
+<p>My Google fu has thus far failed me. </p>
+
+<p><strong><em>What is TS's exclamation mark operator, and how does it work?</em></strong></p>",42274019.0,3,0,,2017-02-16 12:22:26.833000+00:00,104,2020-10-14 08:42:03.650000+00:00,2017-05-10 11:21:38.580000+00:00,,289319.0,,289319.0,,1,622,typescript|tslint,188307
+42,42964102,Syntax for async arrow function,"<p>I can mark a javascript function as ""async"" (i.e. returning a promise) with the <code>async</code> keyword.  Like this:</p>
+
+<pre><code>async function foo() {
+  // do something
+}
+</code></pre>
+
+<p>What is the equivalent syntax for arrow functions?</p>",42964310.0,7,12,,2017-03-22 22:50:39.383000+00:00,105,2020-09-05 16:59:51.463000+00:00,2019-01-08 02:07:40.697000+00:00,,38765.0,,3769905.0,,1,617,javascript|promise|async-await|arrow-functions,315391
+43,38718690,Huge number of files generated for every Angular project,"<p>I wanted to start a simple hello world app for Angular.</p>
+
+<p>When I followed the instructions in the official <a href=""https://angular.io/docs/js/latest/quickstart.html"" rel=""noreferrer"">quickstart</a> the installation created 32,000 files in my project.</p>
+
+<p>I figured this is some mistake or I missed something, so I decided to use <a href=""https://cli.angular.io/"" rel=""noreferrer"">angular-cli</a>, but after setting up the project I counted 41,000 files.</p>
+
+<p>Where did I go wrong? Am I missing something really really obvious?</p>",38719154.0,14,25,,2016-08-02 11:04:31.423000+00:00,69,2019-08-22 02:12:04.950000+00:00,2017-03-08 16:14:57.277000+00:00,,577167.0,,998318.0,,1,616,javascript|angular,57870
+44,38896424,TensorFlow not found using pip,"<p>I'm trying to install TensorFlow using pip:</p>
+ <pre class=""lang-none prettyprint-override""><code>$ pip install tensorflow --user
+Collecting tensorflow
+Could not find a version that satisfies the requirement tensorflow (from versions: )
+No matching distribution found for tensorflow
+</code></pre>
+<p>What am I doing wrong? So far I've used Python and pip with no issues.</p>",,53,14,,2016-08-11 12:28:24.660000+00:00,148,2021-02-05 04:16:12.300000+00:00,2021-01-30 02:51:04.447000+00:00,,3750257.0,user6574649,,,1,613,python|tensorflow|pip,753846
+45,50333003,"Could not find module ""@angular-devkit/build-angular""","<p>After updating to Angular 6.0.1, I get the following error on <code>ng serve</code>:</p>
+
+<pre><code>Could not find module ""@angular-devkit/build-angular"" from ""/home/Projects/myProjectName"".
+Error: Could not find module ""@angular-devkit/build-angular"" from ""/home/Projects/myProjectName"".
+    at Object.resolve (/home/Projects/myProjectName/node_modules/@angular-devkit/core/node/resolve.js:141:11)
+    at Observable.rxjs_1.Observable [as _subscribe] (/home/Projects/myProjectName/node_modules/@angular-devkit/architect/src/architect.js:132:40)
+</code></pre>
+
+<p><code>ng update</code> says everything is in order. Deleting <code>node_modules</code> folder and a fresh <code>npm install</code> install did not help either. </p>
+
+<p>My project is based on <a href=""https://github.com/akveo/ngx-admin"" rel=""noreferrer"">ng2-admin(Angular4 version)</a>. Here is my package.json dependecies:</p>
+
+<pre><code> ""dependencies"": {
+    ""@angular/animations"": ""^6.0.1"",
+    ""@angular/common"": ""^6.0.1"",
+    ""@angular/compiler"": ""^6.0.1"",
+    ""@angular/core"": ""^6.0.1"",
+    ""@angular/forms"": ""^6.0.1"",
+    ""@angular/http"": ""^6.0.1"",
+    ""@angular/platform-browser"": ""^6.0.1"",
+    ""@angular/platform-browser-dynamic"": ""^6.0.1"",
+    ""@angular/platform-server"": ""^6.0.1"",
+    ""@angular/router"": ""^6.0.1"",
+    ""@ng-bootstrap/ng-bootstrap"": ""1.0.0-alpha.26"",
+    ""@ngx-translate/core"": ""^10.0.1"",
+    ""@ngx-translate/http-loader"": ""^3.0.1"",
+    ""amcharts3"": ""github:amcharts/amcharts3"",
+    ""ammap3"": ""github:amcharts/ammap3"",
+    ""angular-table"": ""^1.0.4"",
+    ""angular2-csv"": ""^0.2.5"",
+    ""angular2-datatable"": ""0.6.0"",
+    ""animate.css"": ""3.5.2"",
+    ""bootstrap"": ""4.0.0-alpha.6"",
+    ""bower"": ""^1.8.4"",
+    ""chart.js"": ""1.1.1"",
+    ""chartist"": ""0.10.1"",
+    ""chroma-js"": ""1.3.3"",
+    ""ckeditor"": ""4.6.2"",
+    ""core-js"": ""2.4.1"",
+    ""easy-pie-chart"": ""2.1.7"",
+    ""font-awesome"": ""4.7.0"",
+    ""fullcalendar"": ""3.3.1"",
+    ""google-maps"": ""3.2.1"",
+    ""ionicons"": ""2.0.1"",
+    ""jquery"": ""3.2.1"",
+    ""jquery-slimscroll"": ""1.3.8"",
+    ""leaflet"": ""0.7.7"",
+    ""leaflet-map"": ""0.2.1"",
+    ""lodash"": ""4.17.4"",
+    ""ng2-ckeditor"": ""1.1.6"",
+    ""ng2-completer"": ""^1.6.3"",
+    ""ng2-handsontable"": ""^2.1.0-rc.3"",
+    ""ng2-slim-loading-bar"": ""^4.0.0"",
+    ""ng2-smart-table"": ""^1.0.3"",
+    ""ng2-tree"": ""2.0.0-alpha.5"",
+    ""ngx-uploader"": ""4.2.4"",
+    ""normalize.css"": ""6.0.0"",
+    ""roboto-fontface"": ""0.7.0"",
+    ""rxjs"": ""^6.1.0"",
+    ""rxjs-compat"": ""^6.1.0"",
+    ""zone.js"": ""0.8.26""
+  },
+  ""devDependencies"": {
+    ""@angular/cli"": ""^6.0.1"",
+    ""@angular/compiler-cli"": ""^6.0.1"",
+    ""@types/fullcalendar"": ""2.7.40"",
+    ""@types/jasmine"": ""2.5.38"",
+    ""@types/jquery"": ""2.0.41"",
+    ""@types/jquery.slimscroll"": ""1.3.30"",
+    ""@types/lodash"": ""4.14.61"",
+    ""@types/node"": ""6.0.69"",
+    ""codelyzer"": ""3.0.1"",
+    ""gh-pages"": ""0.12.0"",
+    ""jasmine-core"": ""2.5.2"",
+    ""jasmine-spec-reporter"": ""3.2.0"",
+    ""karma"": ""1.4.1"",
+    ""karma-chrome-launcher"": ""2.0.0"",
+    ""karma-cli"": ""1.0.1"",
+    ""karma-coverage-istanbul-reporter"": ""0.2.0"",
+    ""karma-jasmine"": ""1.1.0"",
+    ""karma-jasmine-html-reporter"": ""0.2.2"",
+    ""npm-run-all"": ""4.0.2"",
+    ""protractor"": ""5.1.0"",
+    ""rimraf"": ""2.6.1"",
+    ""standard-changelog"": ""1.0.1"",
+    ""stylelint"": ""7.10.1"",
+    ""ts-node"": ""2.1.2"",
+    ""tslint"": ""5.2.0"",
+    ""tslint-eslint-rules"": ""4.0.0"",
+    ""tslint-language-service"": ""0.9.6"",
+    ""typescript"": ""^2.7.2"",
+    ""typogr"": ""0.6.6"",
+    ""underscore"": ""1.8.3"",
+    ""wintersmith"": ""2.2.5"",
+    ""wintersmith-sassy"": ""1.1.0""
+  }
+</code></pre>
+
+<p>and my angular.json:</p>
+
+<pre><code>{
+  ""$schema"": ""./node_modules/@angular/cli/lib/config/schema.json"",
+  ""version"": 1,
+  ""newProjectRoot"": ""projects"",
+  ""projects"": {
+    ""ng2-admin"": {
+      ""root"": """",
+      ""sourceRoot"": ""src"",
+      ""projectType"": ""application"",
+      ""architect"": {
+        ""build"": {
+          ""builder"": ""@angular-devkit/build-angular:browser"",
+          ""options"": {
+            ""outputPath"": ""dist"",
+            ""index"": ""src/index.html"",
+            ""main"": ""src/main.ts"",
+            ""tsConfig"": ""src/tsconfig.app.json"",
+            ""polyfills"": ""src/polyfills.ts"",
+            ""assets"": [
+              ""src/assets"",
+              ""src/favicon.ico""
+            ],
+            ""styles"": [
+              ""node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss"",
+              ""node_modules/normalize.css/normalize.css"",
+              ""node_modules/font-awesome/scss/font-awesome.scss"",
+              ""node_modules/ionicons/scss/ionicons.scss"",
+              ""node_modules/bootstrap/scss/bootstrap.scss"",
+              ""node_modules/leaflet/dist/leaflet.css"",
+              ""node_modules/chartist/dist/chartist.css"",
+              ""node_modules/fullcalendar/dist/fullcalendar.css"",
+              ""node_modules/handsontable/dist/handsontable.full.css"",
+              ""node_modules/ng2-slim-loading-bar/style.css"",
+              ""src/app/theme/theme.scss"",
+              ""src/styles.scss""
+            ],
+            ""scripts"": [
+              ""node_modules/jquery/dist/jquery.js"",
+              ""node_modules/easy-pie-chart/dist/jquery.easypiechart.js"",
+              ""node_modules/jquery-slimscroll/jquery.slimscroll.js"",
+              ""node_modules/tether/dist/js/tether.js"",
+              ""node_modules/bootstrap/dist/js/bootstrap.js"",
+              ""node_modules/handsontable/dist/handsontable.full.js"",
+              ""node_modules/chroma-js/chroma.js""
+            ]
+          },
+          ""configurations"": {
+            ""production"": {
+              ""optimization"": true,
+              ""outputHashing"": ""all"",
+              ""sourceMap"": false,
+              ""extractCss"": true,
+              ""namedChunks"": false,
+              ""aot"": true,
+              ""extractLicenses"": true,
+              ""vendorChunk"": false,
+              ""buildOptimizer"": true,
+              ""fileReplacements"": [
+                {
+                  ""replace"": ""src/environments/environment.ts"",
+                  ""with"": ""src/environments/environment.prod.ts""
+                }
+              ]
+            }
+          }
+        },
+        ""serve"": {
+          ""builder"": ""@angular-devkit/build-angular:dev-server"",
+          ""options"": {
+            ""browserTarget"": ""ng2-admin:build""
+          },
+          ""configurations"": {
+            ""production"": {
+              ""browserTarget"": ""ng2-admin:build:production""
+            }
+          }
+        },
+        ""extract-i18n"": {
+          ""builder"": ""@angular-devkit/build-angular:extract-i18n"",
+          ""options"": {
+            ""browserTarget"": ""ng2-admin:build""
+          }
+        },
+        ""test"": {
+          ""builder"": ""@angular-devkit/build-angular:karma"",
+          ""options"": {
+            ""main"": ""src/test.ts"",
+            ""karmaConfig"": ""./karma.conf.js"",
+            ""polyfills"": ""src/polyfills.ts"",
+            ""tsConfig"": ""src/tsconfig.spec.json"",
+            ""scripts"": [
+              ""node_modules/jquery/dist/jquery.js"",
+              ""node_modules/easy-pie-chart/dist/jquery.easypiechart.js"",
+              ""node_modules/jquery-slimscroll/jquery.slimscroll.js"",
+              ""node_modules/tether/dist/js/tether.js"",
+              ""node_modules/bootstrap/dist/js/bootstrap.js"",
+              ""node_modules/handsontable/dist/handsontable.full.js"",
+              ""node_modules/chroma-js/chroma.js""
+            ],
+            ""styles"": [
+              ""node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss"",
+              ""node_modules/normalize.css/normalize.css"",
+              ""node_modules/font-awesome/scss/font-awesome.scss"",
+              ""node_modules/ionicons/scss/ionicons.scss"",
+              ""node_modules/bootstrap/scss/bootstrap.scss"",
+              ""node_modules/leaflet/dist/leaflet.css"",
+              ""node_modules/chartist/dist/chartist.css"",
+              ""node_modules/fullcalendar/dist/fullcalendar.css"",
+              ""node_modules/handsontable/dist/handsontable.full.css"",
+              ""node_modules/ng2-slim-loading-bar/style.css"",
+              ""src/app/theme/theme.scss"",
+              ""src/styles.scss""
+            ],
+            ""assets"": [
+              ""src/assets"",
+              ""src/favicon.ico""
+            ]
+          }
+        },
+        ""lint"": {
+          ""builder"": ""@angular-devkit/build-angular:tslint"",
+          ""options"": {
+            ""tsConfig"": [
+              ""src/tsconfig.app.json"",
+              ""src/tsconfig.spec.json""
+            ],
+            ""exclude"": []
+          }
+        }
+      }
+    },
+    ""ng2-admin-e2e"": {
+      ""root"": """",
+      ""sourceRoot"": """",
+      ""projectType"": ""application"",
+      ""architect"": {
+        ""e2e"": {
+          ""builder"": ""@angular-devkit/build-angular:protractor"",
+          ""options"": {
+            ""protractorConfig"": ""./protractor.conf.js"",
+            ""devServerTarget"": ""ng2-admin:serve""
+          }
+        },
+        ""lint"": {
+          ""builder"": ""@angular-devkit/build-angular:tslint"",
+          ""options"": {
+            ""tsConfig"": [
+              ""e2e/tsconfig.e2e.json""
+            ],
+            ""exclude"": []
+          }
+        }
+      }
+    }
+  },
+  ""defaultProject"": ""ng2-admin"",
+  ""schematics"": {
+    ""@schematics/angular:component"": {
+      ""prefix"": ""app"",
+      ""styleext"": ""scss""
+    },
+    ""@schematics/angular:directive"": {
+      ""prefix"": ""app""
+    }
+  }
+}
+</code></pre>",50333128.0,47,1,,2018-05-14 14:38:46.117000+00:00,137,2021-02-04 17:12:03.867000+00:00,2020-04-13 16:35:44.663000+00:00,,3486691.0,,3486691.0,,1,612,angular|angular-cli|angular6|angular-cli-v6,1015655
+46,37949981,Call child method from parent,"<p>I have two components:</p>
+<ol>
+<li>Parent component</li>
+<li>Child component</li>
+</ol>
+<p>I was trying to call Child's method from Parent, I tried this way but couldn't get a result:</p>
+<pre><code>class Parent extends Component {
+  render() {
+    return (
+      &lt;Child&gt;
+        &lt;button onClick={Child.getAlert()}&gt;Click&lt;/button&gt;
+      &lt;/Child&gt;
+      );
+    }
+  }
+
+class Child extends Component {
+  getAlert() {
+    alert('clicked');
+  }
+ 
+  render() {
+    return (
+      &lt;h1 ref=&quot;hello&quot;&gt;Hello&lt;/h1&gt;
+    );
+  }
+}
+</code></pre>
+<p>Is there a way to call Child's method from Parent?</p>
+<p>Note: Child and Parent components are in two different files.</p>",37950970.0,18,3,,2016-06-21 16:34:48.777000+00:00,187,2021-01-27 10:41:26.307000+00:00,2020-12-17 17:50:18.920000+00:00,,468632.0,,2299167.0,,1,608,javascript|reactjs,426021
+47,43027980,"Purpose of ""%matplotlib inline""",<p>Could someone explain to me what exactly is the use of <code>%matplotlib inline</code>? </p>,,10,3,,2017-03-26 11:11:36.967000+00:00,167,2020-04-18 12:28:05.290000+00:00,2020-03-25 20:04:07.667000+00:00,,2142994.0,,7659166.0,,1,608,python|matplotlib|jupyter-notebook|ipython,537544
+48,57456188,Why is the result of ('b'+'a'+ + 'a' + 'a').toLowerCase() 'banana'?,"<p>I was practicing some JavaScript when one of my friends came across this JavaScript code:</p>
+
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>document.write(('b' + 'a' + + 'a' + 'a').toLowerCase());</code></pre>
+</div>
+</div>
+</p>
+
+<p>The above code answers <code>""banana""</code>!
+Can anyone explain why?</p>",57456236.0,8,7,,2019-08-12 05:50:43.860000+00:00,104,2020-12-30 03:42:42.890000+00:00,2019-08-24 23:24:31.470000+00:00,,4076315.0,,6271167.0,,1,606,javascript|type-conversion,85204
+49,35979642,"What is git tag, How to create tags & How to checkout git remote tag(s)","<p>when I checkout remote git tag use command like this:</p>
+
+<pre><code>git checkout -b local_branch_name origin/remote_tag_name
+</code></pre>
+
+<p>I got error like this:</p>
+
+<pre><code>error: pathspec `origin/remote_tag_name` did not match any file(s) known to git.
+</code></pre>
+
+<p>I can find remote_tag_name when I use git tag command.</p>",35979751.0,5,1,,2016-03-14 04:38:50.963000+00:00,245,2021-01-15 09:48:13.890000+00:00,2018-11-09 22:52:43.760000+00:00,,1755598.0,,4591230.0,,1,591,git|git-checkout|git-tag,702044

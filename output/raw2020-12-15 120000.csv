@@ -1,0 +1,1721 @@
+,id,title,body,accepted_answer_id,answer_count,comment_count,community_owned_date,creation_date,favorite_count,last_activity_date,last_edit_date,last_editor_display_name,last_editor_user_id,owner_display_name,owner_user_id,parent_id,post_type_id,score,tags,view_count
+0,65444196,How to have window's batch file detect when the screensaver is on?,"<p>How to program a batch program to determine if a the screensaver is running or if the user went to sleep, or locked the computer?</p>
+<p>In bash in Ubuntu Linux I am using the code: <code>/gnome-screensaver-command -q | grep &quot;is active&quot;</code> to determine if screensaver is running.</p>
+<p>Note: I am not seeking recommendations for books, tools, software libraries...</p>
+<p>Unless there is a better approach, I am working off of this script to look for processes running.  But I have to find the name of the screensaver process.</p>
+<pre><code>@echo off
+set pn=%1
+echo looking for %pn%
+tasklist /FI &quot;IMAGENAME eq %pn%&quot; 2&gt;NUL | find /I /N &quot;%pn%&quot;&gt;NUL
+if %ERRORLEVEL%==0 (
+    echo Found program running
+) else (
+    echo NOT FOUND running  
+)
+</code></pre>",65444620.0,2,1,,2020-12-24 23:59:21.060000+00:00,,2020-12-29 04:53:38.267000+00:00,2020-12-25 01:13:31.443000+00:00,,767829.0,,767829,,1,1,windows|batch-file|windows-10|windows-screensaver,117
+1,65444193,"Get ""Killed"" when I run ""ssl._create_unverified_context()"" in python3.7","<p>Ok let's start. I cross compile the Python with version 3.7.7. With a cross compile version OpenSSL3.1.1.
+i can import ssl without any error. But When I run ssl._create_unverified_context().It just get &quot;Killed&quot;.</p>
+<pre><code>Python 3.7.7 (default, Dec 25 2020, 02:54:57)
+[GCC 6.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import ssl                                                               
+&gt;&gt;&gt; ssl.OPENSSL_VERSION                                                              
+'LibreSSL 3.1.1'
+&gt;&gt;&gt; ssl._create_unverified_context()
+Killed 
+</code></pre>
+<p>CPU: armv71 ；
+Mem: 256MB ；</p>
+<p>How can I get more infomation in Python? Or how can i check somewhere to findout the problem is .</p>",,0,0,,2020-12-24 23:58:25.107000+00:00,,2020-12-25 00:28:01.357000+00:00,2020-12-25 00:28:01.357000+00:00,,14465132.0,,14465132,,1,0,python|ssl,29
+2,65444192,How to read subclass JSON with GSON,"<p>this is my code, and i can get strings like status, but for example &quot;proxy&quot; i cannot because is inside of &quot;8.8.8.8&quot;, my question is, how can I get the value of &quot;proxy&quot; with GSON.</p>
+<pre><code>{
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;8.8.8.8&quot;: {
+        &quot;asn&quot;: &quot;AS15169&quot;,
+        &quot;provider&quot;: &quot;Google LLC&quot;,
+        &quot;continent&quot;: &quot;North America&quot;,
+        &quot;country&quot;: &quot;United States&quot;,
+        &quot;isocode&quot;: &quot;US&quot;,
+        &quot;latitude&quot;: 37.751,
+        &quot;longitude&quot;: -97.822,
+        &quot;proxy&quot;: &quot;no&quot;,
+        &quot;type&quot;: &quot;Business&quot;
+    }
+}
+</code></pre>
+<pre><code>    public static void main(String[] args) {
+
+        URL url = null;
+
+        try {
+            url = new URL(&quot;https://proxycheck.io/v2/8.8.8.8?vpn=1&amp;asn=1&amp;tag=proxycheck.io&quot;);
+            URLConnection request = url.openConnection();
+            request.connect();
+
+            JsonParser jp = new JsonParser();
+
+            JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+            System.out.println(root);
+
+            JsonObject rootobj = root.getAsJsonObject();
+
+            JsonElement proxy = rootobj.get(&quot;8.8.8.8&quot;);
+            System.out.println(proxy);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+</code></pre>",,2,3,,2020-12-24 23:57:38.407000+00:00,,2020-12-25 01:44:07.047000+00:00,,,,,10249767,,1,0,java|gson,46
+3,65444188,How to use dynamodb:LeadingKeys when Partition key has more than one kind of values,"<p>My Dynamo Tables have tenant_id as the partition key in my multi-tenant application but my partition key also has other types of entities in it in addition to tenant_id.</p>
+<p>For example: (This is a small example, we are using this pattern throughout)</p>
+<pre><code>PK                                        SK                               Att
+Customer-4312a674-54a                  user-abc                            672453782
+user-abc                                   user-abc                            672453782
+</code></pre>
+<p>I would like to use  <code>dynamodb:LeadingKeys</code>  to ensure data of one tenant can never be accessed by another tenant. How can I go about that in this case when <code>PK</code> is overloaded and has other entities in it as well.</p>",65476354.0,1,4,,2020-12-24 23:55:47.500000+00:00,,2020-12-28 10:41:29.367000+00:00,2020-12-25 00:01:33.583000+00:00,,2699001.0,,2699001,,1,1,amazon-web-services|security|amazon-dynamodb|multi-tenant|saas,39
+4,65444187,trigger_topic not working on terraform resource google_cloudfunctions_function,"<p>I have the following resource defined for terraform to create a cloud function. I want to be able to get it triggered thru a pubsub message.<br />
+which one of the block do I use ? event_trigger or trigger_topic</p>
+<pre><code>resource &quot;google_cloudfunctions_function&quot; &quot;function&quot; {
+
+    name                      = var.appname
+    entry_point               = &quot;entry&quot;
+    available_memory_mb       = 128
+    timeout                   = 120
+    project                   = var.gcpproject
+    region                    = var.region
+    #trigger_topic             = &quot;projects/${var.gcpproject}/topics/cloud-builds-topic&quot;**
+    source_archive_bucket     = var.google_storage_bucket
+    source_archive_object     = &quot;code/${var.appname}.zip&quot;
+    runtime     = &quot;python3.7&quot;
+   #event_trigger = {
+   #   event_type= &quot;google.pubsub.topic.publish&quot;
+   #   resource= &quot;projects/${var.gcpproject}/topics/cloud-builds-topic&quot;
+   #   service= &quot;pubsub.googleapis.com&quot;
+   #   failure_policy= {}
+   # }
+}
+</code></pre>
+<p>When i use trigger_topic, it errors with</p>
+<pre><code>Error: Unsupported argument
+
+  on main.tf line 12, in resource &quot;google_cloudfunctions_function&quot; &quot;function&quot;:
+  12:     trigger_topic             = &quot;projects/${var.gcpproject}/topics/cloud-builds-topic&quot;
+
+An argument named &quot;trigger_topic&quot; is not expected here.
+</code></pre>
+<p>and when i use event_trigger, it errors with</p>
+<pre><code>Error: Unsupported argument
+
+  on main.tf line 16, in resource &quot;google_cloudfunctions_function&quot; &quot;function&quot;:
+  16:     event_trigger = {
+
+An argument named &quot;event_trigger&quot; is not expected here. Did you mean to define
+a block of type &quot;event_trigger&quot;?
+</code></pre>",65444288.0,1,0,,2020-12-24 23:55:37.770000+00:00,,2020-12-25 00:25:19.323000+00:00,,,,,1615052,,1,1,google-cloud-functions|terraform,100
+5,65444185,R is giving the wrong max date,"<p>I am having an annoying issue in R that is not recognizing the correct date in my dataframe as the max date. I am creating a weighted average based on subtracting the date in the dataframe from the max date, so this is an annoying issue to deal with. I have tried reformatting all of the dates, this did not work.</p>
+<p>Anything that I can try? The dates range from 1/1/2020 to 12/23/2020. But when I use max(PlayerData$Date) I am getting 3/9/2020.</p>
+<p>Thanks</p>",65444227.0,1,1,,2020-12-24 23:55:03.517000+00:00,,2020-12-25 00:06:55.233000+00:00,,,,,14031540,,1,1,r,46
+6,65444184,react useRef : current value is undefined,"<p>I'm following a beginner's tutorial for the <em>useState</em> and <em>useRef</em> hooks, trying to implement a simple timer in react.</p>
+<p>I'm using the <code>interval</code> variable to store the value from <code>setInterval()</code></p>
+<p>On click of start button, I am able to console.log the value of the interval correctly.
+However on click of stop button, <code>interval.current</code> is console logged as <code>undefined</code>. The <code>stopTimer()</code> hence does not function as expected.</p>
+<p>Why does interval.current print undefined when it is clearly set in startTimer (and logged there)? What am I missing here?</p>
+<pre><code>import React, { useState, useRef } from 'react';
+
+const pad = (time) =&gt; {
+  return time.toString().padStart(2, &quot;0&quot;);
+};
+
+
+function App() {
+  const [title, setTitle] = useState(&quot;Pomodoro!&quot;);
+  const [timeLeft, setTimeLeft] = useState(5);
+  const interval = useRef(null);
+
+  const startTimer = () =&gt; {
+    interval.current = setInterval(() =&gt; {
+      setTimeLeft((timeLeft) =&gt; {
+        if (timeLeft &gt;= 1) {
+          return timeLeft - 1;
+        }
+        return 0;
+      });
+    }, 1000);
+    console.log(interval.current, &quot; :in start&quot;);
+  }
+
+  const stopTimer = (interval) =&gt; {
+    console.log(&quot;in stop: &quot;, interval.current);
+    clearInterval(interval.current);
+  }
+
+  const resetTimer = () =&gt; { }
+
+  const minutes = pad(Math.floor(timeLeft / 60));
+  const seconds = pad((timeLeft - minutes * 60));
+
+
+  return (
+
+    &lt;div&gt;
+      &lt;div&gt;{title}&lt;/div&gt;
+      &lt;div&gt;
+        &lt;span&gt;{minutes}&lt;/span&gt;
+        &lt;span&gt;:&lt;/span&gt;
+        &lt;span&gt;{seconds}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;button onClick={startTimer}&gt;Start&lt;/button&gt;
+        &lt;button onClick={stopTimer}&gt;Stop&lt;/button&gt;
+        &lt;button onClick={resetTimer}&gt;Reset&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>output in console</p>
+<blockquote>
+<p>6 &quot; :in start&quot;
+in stop:  undefined</p>
+</blockquote>
+<p>Thanks</p>",65444240.0,2,0,,2020-12-24 23:54:42.543000+00:00,,2020-12-25 00:11:03.207000+00:00,2020-12-25 00:01:40.407000+00:00,,7316608.0,,7316608,,1,1,reactjs,224
+7,65444181,ServiceStack based REST service gives timeout for log running process,"<p>I need to run a 1-time long-running operation (around 10 minutes) via a ServiceStack service. I run this all on my local machine with ServiceStack running on IIS and .NET 5. Now it gives a timeout and I have no clue what is the cause (I also checked my IIS settings by the way). Part of my code (I removed some not relevant code):</p>
+<pre><code>static async Task Main(string[] args)
+{
+   var jsonServiceClient = new JsonServiceClient(&quot;http://localhost/services&quot;);
+   jsonServiceClient.Timeout = TimeSpan.FromMinutes(20);
+   await CorrectCreationDates(jsonServiceClient);
+}
+
+private static async Task CorrectCreationDates(JsonServiceClient jsonServiceClient)
+{
+   var request = new CorrectCreationDatesRequest();
+   var result = await jsonServiceClient.PostAsync(request);
+}
+</code></pre>
+<p>This is the exception:</p>
+<p>System.Net.WebException: 'The operation has timed out.'</p>
+<p>This exception was originally thrown at this call stack:
+ServiceStack.AsyncServiceClient.SendWebRequestAsync(string, string, object, System.Threading.CancellationToken, bool) in AsyncServiceClient.cs
+System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+Gloneco.Importer.Program.CorrectCreationDates(ServiceStack.JsonServiceClient) in Program.cs
+System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(System.Threading.Tasks.Task)
+System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+...
+[Call Stack Truncated]</p>",,1,2,,2020-12-24 23:54:24.817000+00:00,,2020-12-25 03:26:37.087000+00:00,2020-12-24 23:58:44.633000+00:00,,12340058.0,,12340058,,1,0,c#|rest|servicestack,24
+8,65444177,What is the signature of a method with params?,"<p>I was about to bind <code>Expression.Lambda</code> programmatically (because of unknown/variable type parameters), and found out that if the target method uses <code>params</code>, the reflected calling is a bit different than calling directly.</p>
+<p>First, in the <a href=""https://docs.microsoft.com/en-us/dotnet/api/system.linq.expressions.expression.lambda?view=net-5.0#System_Linq_Expressions_Expression_Lambda__1_System_Linq_Expressions_Expression_System_Linq_Expressions_ParameterExpression___"" rel=""nofollow noreferrer"">official documentation</a>, the &quot;signature&quot; (although this is more like a XML-doc):</p>
+<pre><code>public static
+System.Linq.Expressions.Expression&lt;TDelegate&gt;
+    Lambda&lt;TDelegate&gt;(
+        System.Linq.Expressions.Expression body,
+        params System.Linq.Expressions.ParameterExpression[]? parameters
+    );
+</code></pre>
+<p>Notice that it the 2nd param is marked as optional, and we can write <code>Expression.Lambda&lt;T&gt;(...)</code>. If in Visual Studio, you go to the disassembled declaration list, you can see this:</p>
+<pre><code>public static
+Expression&lt;TDelegate&gt;
+    Lambda&lt;TDelegate&gt;(
+        Expression body,
+        params ParameterExpression[] parameters
+    );
+</code></pre>
+<p>2nd parameter is no longer marked as option. Now when I tried to invoke this method using reflection as:</p>
+<pre><code>    var lambdaFactory = typeof(Expression)
+        .GetMethods()
+        // Filter overloads
+        .Single(x =&gt; x.ToString() == &quot;System.Linq.Expressions.Expression`1[TDelegate] Lambda[TDelegate](System.Linq.Expressions.Expression, System.Linq.Expressions.ParameterExpression[])&quot;)
+        .MakeGenericMethod(myTypeArgument);
+    var lambda = (LambdaExpression) lambdaFactory.Invoke(
+            null,
+            new object[] {
+                ...
+                // ,null
+            }
+        );
+</code></pre>
+<p>, I got <code>TargetParameterCountException: Parameter count mismatch.</code>. But if <code>null</code> is added as another parameter, it works perfectly.</p>
+<p>This is a bit strange for me. Why does the MS Docs use <code>?</code> (optional marker)? Is the <code>params</code> argument really optional similarly to regualr option arguments, like <code>string Foo(int a = 1); var result = Foo();</code>? Or it is just a syntactic sugar? So that's why I may call directly <code>Expression.Lambda&lt;T&gt;(...)</code> in the editor, but the compiled code can be different (which is compatible with the reflection system too). If so, does that mean the method always receives the <code>null</code> value, even if I don't specify values? But if a method uses <code>params</code> argument, and nothing is passed, the argument from the method body is a valid array with <code>.Count == 0</code>, not <code>null</code>. Is it safe to pass <code>null</code> using reflection, or I should create an empty object array?</p>",65444333.0,1,1,,2020-12-24 23:53:31.203000+00:00,,2020-12-25 00:36:24.950000+00:00,,,,,2625561,,1,0,c#|reflection|signature,39
+9,65444173,handling status code error try catch axios on dead connection,"<p>I am trying to use a proper way to handling my errors in my React app with axios.
+When the connection is dead, I won't get a status code, so I can't check the status code of the response. What is the elegant way to handle errors with no status code?</p>
+<pre><code>try {
+    const res = await axios.get(&quot;/login&quot;);
+} catch (error) {
+    const {status} = error.response;
+    if (status === 401) doSomething();
+}
+</code></pre>
+<p>I get this error:</p>
+<pre><code>[Unhandled promise rejection: TypeError: undefined is not an object
+</code></pre>",,1,0,,2020-12-24 23:53:09.797000+00:00,,2020-12-25 00:13:47.327000+00:00,,,,,10566935,,1,0,javascript|reactjs|react-native|http|axios,39
+10,65444172,Python code with requests.get().json() runs infinitely,"<p>I have the following code to scrape data from a table on <a href=""https://www.nba.com/stats/"" rel=""nofollow noreferrer"">https://www.nba.com/stats/</a></p>
+<pre><code>import pandas as pd
+import requests
+import json
+
+headers = {'Host': 'stats.nba.com','User-Agent': 'Firefox/55.0','Accept': 'application/json, text/plain, */*','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Referer': 'https://stats.nba.com/','x-nba-stats-origin': 'stats','x-nba-stats-token': 'true','DNT': '1',}
+
+url = 'https://stats.nba.com/stats/leaguedashplayerstats?College=&amp;Conference=&amp;Country=&amp;DateFrom=&amp;DateTo=&amp;Division=&amp;DraftPick=&amp;DraftYear=&amp;GameScope=&amp;GameSegment=&amp;Height=&amp;LastNGames=0&amp;LeagueID=00&amp;Location=&amp;MeasureType=Base&amp;Month=0&amp;OpponentTeamID=0&amp;Outcome=&amp;PORound=0&amp;PaceAdjust=N&amp;PerMode=PerGame&amp;Period=0&amp;PlayerExperience=&amp;PlayerPosition=&amp;PlusMinus=N&amp;Rank=N&amp;Season=2020-21&amp;SeasonSegment=&amp;SeasonType=Regular+Season&amp;ShotClockRange=&amp;StarterBench=&amp;TeamID=0&amp;TwoWay=0&amp;VsConference=&amp;VsDivision=&amp;Weight='
+
+json = requests.get(url, headers=headers).json() # the line which the code never gets past
+
+data = json['resultSets'][0]['rowSet']
+columns = json['resultSets'][0]['headers']
+
+df = pd.DataFrame.from_records(data, columns=columns)
+</code></pre>
+<p>This code used to properly create a DataFrame from the data on the site, but it no longer does and it doesn't output an error either. I use JupyterLab to run the code and it just runs infinitely.</p>
+<p>My guess is that the headers are outdated in some way, but I'm not sure how to go about updating them.</p>",,1,4,,2020-12-24 23:52:58.757000+00:00,,2020-12-25 00:21:34.937000+00:00,,,,,14885684,,1,0,python|json|python-requests,47
+11,65444171,"C library works by itself in executable form, but when used as Rust library using CC, it no longer works","<p>I am trying to inject a dll into a specific application in rust. I gave up trying to do so in pure rust, as it was not working no matter what. So, I used a C injector and compiled it and it worked perfectly. However, when I use the CC crate to compile it and use the function, it no longer works at all. In this case, I was simply trying to inject a dll I made.</p>
+<p>The code for the C is:</p>
+<pre><code>// test.c
+#include &lt;windows.h&gt;
+#include &lt;TlHelp32.h&gt; 
+#include &lt;stdio.h&gt; 
+
+#pragma comment(lib, &quot;ntdll.lib&quot;)
+EXTERN_C NTSYSAPI NTSTATUS NTAPI NtCreateThreadEx(PHANDLE,
+    ACCESS_MASK, LPVOID, HANDLE, LPTHREAD_START_ROUTINE, LPVOID,
+    BOOL, SIZE_T, SIZE_T, SIZE_T, LPVOID);
+
+struct NtCreateThreadExBuffer
+{
+    SIZE_T Size;
+    SIZE_T Unknown1;
+    SIZE_T Unknown2;
+    PULONG Unknown3;
+    SIZE_T Unknown4;
+    SIZE_T Unknown5;
+    SIZE_T Unknown6;
+    PULONG Unknown7;
+    SIZE_T Unknown8;
+};
+
+
+DWORD GetPid(const wchar_t *targetProcess)
+{
+    HANDLE snap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    PROCESSENTRY32 procEntry;
+    procEntry.dwSize = sizeof(procEntry);
+
+    if (snap &amp;&amp; snap != INVALID_HANDLE_VALUE &amp;&amp; Process32First(snap, &amp;procEntry))
+    {
+        do
+        {
+            if (!wcscmp(procEntry.szExeFile, targetProcess))
+            {
+                break;
+            }
+        } while (Process32Next(snap, &amp;procEntry));
+    }
+    CloseHandle(snap);
+    return procEntry.th32ProcessID;
+}
+
+void injectAmongUs()
+{
+    DWORD dwPid = GetPid(L&quot;Among Us.exe&quot;);
+    struct NtCreateThreadExBuffer ntbuffer;
+
+    memset(&amp;ntbuffer, 0, sizeof(struct NtCreateThreadExBuffer));
+    DWORD temp1 = 0;
+    DWORD temp2 = 0;
+
+    ntbuffer.Size = sizeof(struct NtCreateThreadExBuffer);
+    ntbuffer.Unknown1 = 0x10003;
+    ntbuffer.Unknown2 = 0x8;
+    ntbuffer.Unknown3 = (DWORD *)&amp;temp2;
+    ntbuffer.Unknown4 = 0;
+    ntbuffer.Unknown5 = 0x10004;
+    ntbuffer.Unknown6 = 4;
+    ntbuffer.Unknown7 = &amp;temp1;
+    ntbuffer.Unknown8 = 0;
+
+    HANDLE proc = OpenProcess(GENERIC_ALL, 0, dwPid);
+    HANDLE hThread;
+    wchar_t path[] = L&quot;path/to/dll&quot;;
+    LPVOID allocAddr = VirtualAllocEx(proc, 0, sizeof(path), MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
+    WriteProcessMemory(proc, allocAddr, path, sizeof(path), NULL);
+    NTSTATUS status = NtCreateThreadEx(&amp;hThread, GENERIC_ALL, NULL, proc,
+        (LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L&quot;kernel32.dll&quot;), &quot;LoadLibraryW&quot;), allocAddr,
+        FALSE, NULL, NULL, NULL, &amp;ntbuffer);
+
+}
+</code></pre>
+<p>If I compile this file exactly the way it is but add a main method:</p>
+<pre><code>int main()
+{
+    injectAmongUs();
+
+    return 1;
+}
+</code></pre>
+<p>It works perfectly as intended. However, if I remove the main method and use CC with this build script:</p>
+<pre><code>// build.rs
+fn main() {
+    cc::Build::new()
+        .file(&quot;test.c&quot;)
+        .compile(&quot;injector.dll&quot;);
+}
+</code></pre>
+<p>and then call it in main with</p>
+<pre><code>//main.rs
+extern &quot;C&quot; {
+    fn injectAmongUs();
+}
+
+fn main() {
+    unsafe {
+        injectAmongUs();;
+    }
+}
+</code></pre>
+<p>which results in <code>(exit code: 0xc0000005, STATUS_ACCESS_VIOLATION)</code>.
+How can I get it to successfully inject as if I just ran the .exe normally? Currently I just put the .exe with it, but that is not desirable and would rather it be built and used as a library. Note, I am trying to inject Among Us, and so I am running this as 32 bit with <code>cargo run --target i686-pc-windows-msvc</code>.</p>",,0,1,,2020-12-24 23:52:22.043000+00:00,,2020-12-25 00:20:12.507000+00:00,2020-12-25 00:20:12.507000+00:00,,3756718.0,,3756718,,1,1,c|windows|winapi|rust|dll-injection,53
+12,65444168,How to format strings with jinja/ansible?,"<p>Friends,</p>
+<p>I am learning Ansible here and trying to apply what I am learning to one of my simple projects. I got stuck trying to format some strings. I getting the following error:</p>
+<pre><code>fatal: [localhost]: FAILED! =&gt; {&quot;changed&quot;: false, &quot;msg&quot;: 
+&quot;AnsibleError: template error while templating string: 
+**unexpected ']', expected ')'**. 
+
+String: 
+
+cluster_name = \&quot;{{ terraform['%s' | format(env)].cluster_name }}\&quot;
+\ncredentials = \&quot;{{ terraform['%s' | format(env)].credentials }}\&quot;
+\ninitial_node_count = \&quot;{{ terraform['%s' | format(env]].initial_node_count }}
+\format(env)].project }}\&quot;&quot;}
+    ...
+</code></pre>
+<p>This is how my jinja2 file looks like:</p>
+<pre><code>cluster_name = &quot;{{ terraform['%s' | format(env)].cluster_name }}&quot;
+credentials = &quot;{{ terraform['%s' | format(env)].credentials }}&quot;
+initial_node_count = &quot;{{ terraform['%s' | format(env]].initial_node_count }}&quot;
+...
+</code></pre>
+<p>I want to generate strings like this <code>terraform['testing'].credentials</code> when I run <code>ansible-playbook site.yaml -e env=testing</code>and write them to a file. I can't figure out another way to get this done. Any Idea?</p>",,2,1,,2020-12-24 23:51:27.560000+00:00,,2020-12-26 20:08:22.593000+00:00,2020-12-26 20:08:22.593000+00:00,,14329835.0,,14329835,,1,-1,ansible|jinja2,61
+13,65444166,To to unsubscribe from events before scene will be changed,"<p>I have 2 scenes and I need to unsubscribe from events before first scene will be changed.</p>
+<pre><code>public event Action ObjIndexChanged = () =&gt; { };
+
+void HandleCommand(Command command)
+    {
+        switch (command.name)
+        {
+            case &quot;LAUNCH&quot;:
+                GameSettings.ObjIndex = Convert.ToInt32(command.data[&quot;structureId&quot;]) - 1;
+                SceneManager.LoadScene(&quot;Main&quot;, LoadSceneMode.Single);
+                break;
+            case &quot;CHANGE&quot;:
+                GameSettings.ObjIndex = Convert.ToInt32(command.data[&quot;structureId&quot;]) - 1;
+                ObjIndexChanged.Invoke();
+                break;
+            case &quot;EXIT&quot;:
+                SceneManager.LoadScene(&quot;Background&quot;, LoadSceneMode.Single);
+                break;
+            default:
+                break;
+        }
+    }
+</code></pre>
+<p>And my GameManager:</p>
+<pre><code>private void Start()
+{
+    commandsReceiver.ObjIndexChanged += OnIndexChanged;
+}
+
+private void OnIndexChanged()
+{
+    //GameLogic
+}
+
+private void OnDestroy()
+{
+    commandsReceiver.ObjIndexChanged -= OnIndexChanged;
+}
+</code></pre>
+<ol>
+<li>I load MainScene. Action was invoked 1 time</li>
+<li>Load Background scene</li>
+<li>Load MainScene. Action was invoked 2 times</li>
+<li>Load Background scene</li>
+<li>Load MainScene. Action was invoked 3 times</li>
+</ol>
+<p>Where is my mistake? Thanks</p>",,1,0,,2020-12-24 23:51:13.990000+00:00,,2020-12-25 17:03:51.280000+00:00,,,,,6265559,,1,-1,c#|unity3d|action,21
+14,65444163,Kivy: ScreenManager stretches over the whole window,"<p>I have a problem with ScreenManager and Screen in kivy file. I want to have a ScreenManager in BoxLayout, and it work when I don't use .kv file. But when I use kivy file, ScreenManager with &quot;ContentScreenManager&quot; id stretches to full window and does't see the previous code, and I only see the &quot;ok2&quot; button.</p>
+<p>I hope I have explained my problem well :)</p>
+<p>Python File</p>
+<pre><code>from kivy.app import App
+from kivy.lang.builder import Builder
+
+builder = Builder.load_file(&quot;index.kv&quot;)
+
+class mainApp(App):
+    def build(self):
+        return builder
+
+
+if __name__ == '__main__':
+    mainApp().run()
+</code></pre>
+<p>.kv file</p>
+<pre><code>&lt;Main&gt;
+ScreenManager:
+    id: MainScreensManager
+    Screen:
+        name: &quot;MainScreen&quot;
+        manager: 'MainScreensManager'
+        BoxLayout:
+            Label:
+                text: &quot;ok&quot;
+            Label:
+                text: &quot;ok1&quot;
+        BoxLayout:
+            ScreenManager:
+                id: ContentScreensManager
+                Screen:
+                    name: &quot;FilmsScreen&quot;
+                    manager: &quot;ContentScreensManager&quot;
+                    BoxLayout:
+                        Button:
+                            text: &quot;ok2&quot;
+</code></pre>
+<p>Thanks for the help!</p>",65444546.0,1,0,,2020-12-24 23:50:50.313000+00:00,,2020-12-25 01:37:46.830000+00:00,,,,,14885396,,1,1,kivy,21
+15,65444158,How to compare Strings ignoring cases in Java,"<p>Newbie here I am trying to compare the brand and display to an array of Strings. Seems to be working now but I don't know how to make the comparison case-insensitive. All the options I found so far is to compare a string to another string. There is any way I can make that comparison? Right now only accept the values as stated in the array of strings.</p>
+<p>P.S. This was an existing homework that our instructor wanted us to build on it, hence why I am using the &quot;isValid&quot; methods for validation.</p>
+<p>Thanks!</p>
+<pre><code>    import com.entertainment.Television;
+    import java.util.Arrays;
+    import java.util.Scanner;
+    
+    class TelevisionConsoleClient {
+    
+        private static final Scanner scanner = new Scanner(System.in);
+    
+        public static void main(String[] args) {
+            welcomeMessage();
+        }
+    
+        public static void welcomeMessage() {
+    
+            //Welcome message to buyer
+            System.out.println(&quot;Welcome to Our Online Ordering System.&quot;);
+            System.out.println(&quot;Please answer the questions below to submit your order.&quot;);
+    
+            String brand = brandChoice();
+            String display = displayChoice();
+            int size = sizeChoice();
+    
+            System.out.println(&quot;Thank you. The television you ordered is: &quot;);
+            television(brand, display, size);
+    
+            //close scanner
+            scanner.close();
+        }
+    
+    
+        public static String brandChoice() {
+            String brandChoice = null;
+            boolean hasBrand = false;
+    
+            while (!hasBrand) {
+    
+                System.out.println(&quot;Please enter the desired brand &quot; + Arrays.toString(Television.VALID_BRANDS) + &quot;:&quot;);
+                brandChoice = scanner.nextLine();
+    
+                if (Television.isValidBrand(brandChoice))
+                    hasBrand = true;
+                else
+                    System.out.println(&quot;Sorry &quot; + brandChoice + &quot; is not a valid brand&quot;);
+            }
+            return brandChoice;
+        }
+    
+        private static String displayChoice() {
+            String displayChoice = null;
+            boolean hasDisplay = false;
+    
+            while (!hasDisplay) {
+    
+                System.out.println(&quot;Please enter the desired display type &quot; + Arrays.toString(Television.VALID_DISPLAY) + &quot;:&quot;);
+                displayChoice = scanner.nextLine();
+    
+                if (Television.isValidDisplay(displayChoice))
+                    hasDisplay = true;
+                else
+                    System.out.println(&quot;Sorry &quot; + displayChoice + &quot; is not a valid display type&quot;);
+            }
+            return displayChoice;
+        }
+    
+        private static int sizeChoice() {
+            Integer sizeChoice = null;
+            boolean hasSize = false;
+    
+            while (!hasSize) {
+    
+                System.out.println(&quot;Please enter the desired size &quot; + Arrays.toString(Television.VALID_SIZES) + &quot;:&quot;);
+                sizeChoice = Integer.parseInt(scanner.nextLine());
+    
+                if (Television.isValidSize(sizeChoice))
+                    hasSize = true;
+                else
+                    System.out.println(&quot;Sorry &quot; + sizeChoice + &quot; is not a valid size&quot;);
+            }
+            return sizeChoice;
+        }
+    
+        private static void television(String brand, String display, int size) {
+            System.out.println(new Television(brand, display, size));
+        }
+    
+    }
+
+
+package com.entertainment;
+
+public class Television {
+
+    // CLASS OR STATIC VARIABLES - STORED IN THE SHARED AREA ASSOCIATED WITH A CLASS
+    public static final String[] VALID_BRANDS = {&quot;Samsung&quot;, &quot;LG&quot;, &quot;Sony&quot;, &quot;Toshiba&quot;};
+    public static final String[] VALID_DISPLAY = {&quot;LED&quot;, &quot;OLED&quot;, &quot;PLASMA&quot;, &quot;LCD&quot;, &quot;CRT&quot;};
+    public static final int[] VALID_SIZES = {32, 40, 43, 50, 55, 60, 65, 70, 75, 80};
+
+    // FIELDS - AKA 'INSTANCE VARIABLES', 'ATTRIBUTES', 'PROPERTIES'
+    private String brand;
+    private String display;
+    private int size;
+
+
+    // CONSTRUCTORS
+    // No-arg constructor.
+    public Television() {
+        // possible additional &quot;setup&quot; or initialization code here
+        // want it to run for every instance created
+    }
+
+    // 3-arg constructor
+    public Television(String brand, String display, int size) {
+        this.brand = brand;
+        this.display = display;
+        this.size = size;
+    }
+
+
+    // ACCESSOR METHODS (getters/setters)
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getDisplay() {
+        return display;
+    }
+
+    public int getSize() { return size; }
+
+
+    public static boolean isValidBrand(String brand) {
+        boolean isValid = false;
+
+        for (String currentBrand : VALID_BRANDS) {
+            if (currentBrand.equals(brand)) {
+                isValid = true;
+                break;
+            }
+        }
+        return isValid;
+    }
+
+    public static boolean isValidDisplay(String display) {
+        boolean isValid = false;
+
+        for (String currentDisplay : VALID_DISPLAY) {
+            if (currentDisplay.equals(display)) {
+                isValid = true;
+                break;
+            }
+        }
+        return isValid;
+    }
+
+    public static boolean isValidSize(int size) {
+        boolean isValid = false;
+
+        for (int currentSize : VALID_SIZES) {
+            if (currentSize == size) {
+                isValid = true;
+                break;
+            }
+        }
+        return isValid;
+    }
+
+    public String toString() {
+        return &quot;Television: &quot; + getBrand() + &quot;, Display: &quot; + getDisplay() + &quot;, Size: &quot; + getSize() + &quot; inches.&quot;;
+    }
+}
+</code></pre>",65444170.0,1,0,,2020-12-24 23:50:11.920000+00:00,,2020-12-25 21:22:45.387000+00:00,2020-12-25 21:22:45.387000+00:00,,12181863.0,,12815178,,1,1,java|ignore-case,55
+16,65444157,How to stat multiple objects in a single request on minio,"<p>I'm working with <a href=""https://docs.minio.io/docs/javascript-client-api-reference.html"" rel=""nofollow noreferrer"">Minio</a> and graphql in NodeJS and I'd like to set up a dataloader for my minio resources.</p>
+<p>I'm aware of the <a href=""https://docs.minio.io/docs/javascript-client-api-reference.html#statObject"" rel=""nofollow noreferrer"">statObject</a> function that lets me get the metadata of a resource by providing the bucket and name of the resource.</p>
+<p>I'd like to be able to pass in multiple names and essentially get an array containing the metadata of the objects with the names I passed.</p>
+<p>For example, something like:</p>
+<pre class=""lang-js prettyprint-override""><code>const objectNames = ['a.txt', 'b.txt', 'c.txt'];
+
+minioClient.statObjects('bucket', objectNames, (err, res) =&gt; {});
+</code></pre>
+<p>I haven't found anything like this in the documentation or when I was searching on the web. Does something like this exist?</p>",65460916.0,1,0,,2020-12-24 23:50:03.790000+00:00,,2020-12-26 21:35:38.863000+00:00,,,,,10237430,,1,0,javascript|node.js|minio,52
+17,65444156,Mockito - Mock a method inside async method that is under test,"<p>Hi I am trying to do some unit tests with async methods. below is my code. the first line of methodUnderTest() where I mocked the doWork is returning null during execution and test fails. I tried different things related to async but nothing worked. What am I missing here.</p>
+<pre><code> public class AServiceImpl{
+   @Autowired
+   BService bService;
+
+   @Async
+   public CompletableFuture&lt;String&gt; methodUnderTest(String input){
+     String s = bService.doWork(input.substring(3));
+     //blah blah blah
+     return CompletableFuture.completedFuture(s);
+   }
+}
+
+
+public class AServiceTest{
+  private BService bService;
+  private AService aService;
+  @Before
+  void beforeTest(){
+     aService = new AServiceImpl();
+     bService = mock(BService.class);
+     //blah blah blah
+  }
+
+  @Test
+  public void someUnitTest(){
+     Mockito.when(bService.doWork(any())).thenReturn(&quot;ABC&quot;);
+     String s = aService.methodUnderTest(&quot;ABCDEF&quot;).get();
+     Assert.assertNotNull(s);
+  }
+}
+</code></pre>",65444376.0,2,0,,2020-12-24 23:50:00.220000+00:00,,2020-12-25 21:33:39.423000+00:00,2020-12-25 21:33:39.423000+00:00,,557091.0,,7706230,,1,2,spring|mockito,52
+18,65444148,Issue with Ipython Clusters,"<p>I open jupyter notebook from F drive on my pc however when i try to click on start Ipython Clusters from jupyter notebook then jupyter notebook stop responding. I am unable to open any file.</p>
+<p>When i am launching jupyter notebook from C drive and clicks on Ipython Clusters then it works.
+Any idea how to fix it without uninstalling anything.</p>",,0,0,,2020-12-24 23:49:03.017000+00:00,,2020-12-24 23:49:03.017000+00:00,,,,,13884263,,1,0,python-3.x|jupyter-notebook|ipython-parallel,12
+19,65444146,"Django - KeyError at /auctions/create 'category.' (New to Django, any help is appreciated!)","<p>I am new to Django and creating a dropdown menu so that users can choose a category from the dropdown. This category will be saved on an entry on the website, when a user creates a new entry. I migrated the model, but I'm getting: KeyError at /auctions/create
+'category.' Any help is really appreciated.</p>
+<p>Views.py (Code for creating the dropdown menu for categories)</p>
+<p><a href=""https://i.stack.imgur.com/nHeCq.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/nHeCq.png"" alt=""views.py"" /></a></p>
+<p>models.py</p>
+<p><a href=""https://i.stack.imgur.com/luAWi.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/luAWi.png"" alt=""models.py"" /></a></p>
+<p>forms.py</p>
+<p><a href=""https://i.stack.imgur.com/gKpgn.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/gKpgn.png"" alt=""forms.py"" /></a></p>
+<p>Here is the create part in views.py for creating a new entry. 'form' for CreateForm() is the model form for creating the entry. 'form1' for CategoryForm() is the model form for the category drop down list. The create function was working completely fine, until I added in the parts for the categories and category form.</p>
+<p><a href=""https://i.stack.imgur.com/DTeCj.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/DTeCj.png"" alt=""create"" /></a></p>
+<p>urls.py for applicable functions (I have tried many variations for the category one but I'm still having trouble figuring out what it should be, I have tried str and int.)
+Sorry I'm a beginner but any help would be great!</p>
+<pre><code>path(&quot;auctions/create&quot;, views.create, name=&quot;create&quot;),
+path(&quot;listings/&lt;int:id&gt;&quot;, views.listingpage, name=&quot;listingpage&quot;),
+path(&quot;cat/&lt;int:id&gt;&quot;, views.cat, name=&quot;cat&quot;),
+</code></pre>",,1,0,,2020-12-24 23:48:31.640000+00:00,,2020-12-25 07:02:59.110000+00:00,,,,,14567126,,1,0,python|django|django-models|django-views|django-forms,28
+20,65444144,Cannot migrate model in django,"<p>I'm trying to create a following/follower system on my django project, and I created a model to do so, but I cannot migrate it.  Here is the code:</p>
+<pre><code>from django.db import models
+from django.contrib.auth.models import User
+
+class Follow(models.Model):
+    follow_user = models.ForeignKey(User, models.DO_NOTHING, related_name=&quot;user&quot;)
+    follow_followed = models.ForeignKey(User, models.DO_NOTHING, related_name=&quot;followed&quot;)
+
+</code></pre>
+<p>I can create the migration, but when I migrate, it gives me this error:</p>
+<pre><code>django.db.utils.OperationalError: foreign key mismatch - &quot;blog_main_following_following&quot; referencing &quot;blog_main_following&quot;
+</code></pre>
+<p>I have no idea what this means.  Can anyone help me resolve this error?</p>",,0,0,,2020-12-24 23:48:23.820000+00:00,,2020-12-24 23:48:23.820000+00:00,,,,,14690595,,1,0,python|django|django-models,20
+21,65444139,How to delete a Label in tkinter?,"<p>Didn't really get a specific answer in any similar questions.</p>
+<pre><code>def addApp():
+    for widget in frame.winfo_children():
+        widget.destroy()
+
+    filename = filedialog.askopenfilename(initialdir=&quot;/&quot;, title=&quot;Select File&quot;,
+                             filetypes=(('Apps','*.exe'), ('All files', '*.*')))
+    apps.append(filename)
+    print(filename)
+
+    for app in apps:
+        label = tk.Label(frame, text=app, bg='#8FC10E')
+        label.pack()
+
+    openFile = tk.Button(root, text=&quot;Open File&quot;, padx=10,
+                     pady=1.6, fg=&quot;#E8E7E7&quot;, bg=&quot;#677D30&quot;, command=addApp)
+    openFile.pack()
+</code></pre>
+<p>This is how I defined to add programs from my PC to show in GUI.</p>
+<pre><code>    deleteApps = tk.Button(root, text=&quot;Delete Apps&quot;, padx=4,
+                           pady=1.6, fg=&quot;#E8E7E7&quot;, bg=&quot;#677D30&quot;)
+    deleteApps.pack()
+</code></pre>
+<p>How can I make this button to do the same, just not to add programs, but to delete them from GUI?</p>",,0,3,,2020-12-24 23:47:01.953000+00:00,,2020-12-24 23:53:11.470000+00:00,2020-12-24 23:53:11.470000+00:00,,355230.0,,14881031,,1,0,python|tkinter,45
+22,65444138,Does code navigation (specifically - go to function definition - F12) require an extension in VSCode for python when using Remote-SSH?,"<p>I run VScode on Windows10 and navigate python code. However, F12 doesnt take me to the function definition. I've tried the following so far:</p>
+<p>When the python script (singe file), is physically located on my Windows machine, the following works as <strong>expected</strong>:</p>
+<ol>
+<li>Autocompletion (for any method already defined in the file)</li>
+<li>Code navigation on pressing F12 (for any method already defined in the file).</li>
+</ol>
+<p>If the same python file is opened over a Remote-SSH connection to a Centos7 machine, then the following works as <strong>expected</strong>:</p>
+<ol>
+<li>Autocompletion (for any method already defined in the file)</li>
+</ol>
+<p>However, the following <strong>does nothing</strong>:</p>
+<ol start=""2"">
+<li>Code navigation on pressing F12 (for any method already defined in the file).</li>
+</ol>
+<p>Note:
+I believe I've disabled all plugins except for &quot;Remote - SSH&quot;.</p>
+<p>I have updated my VScode this morning to the latest</p>",,0,0,,2020-12-24 23:46:54.800000+00:00,,2020-12-24 23:52:16.617000+00:00,2020-12-24 23:52:16.617000+00:00,,6454363.0,,6454363,,1,0,visual-studio-code,24
+23,65444137,Unable to navigate page with inertia-link if route is dynamic,"<p>I cant find a way to navigate to a new page when inertia-link is clicked when using a dynamic route in laravel.</p>
+<p>route:</p>
+<pre><code> This two is not added together in the code. I tried both way to tested so i put both here
+ Route::get('/{clothesCategory}', 'ClothesController@getCalsas'); // this doesnt work
+ Route::get('/NotDynamic, 'ClothesController@getCalsas'); // this work
+</code></pre>
+<p>Html:</p>
+<pre><code>&lt;inertia-link href=&quot;/NotDynamic&quot;&gt;Not Working&lt;/inertia-link&gt; //this only works with NotDynamic route
+&lt;a href=&quot;/NotDynamic&quot;&gt;Working&lt;/a&gt; // this works with both routes
+</code></pre>
+<p>Why is this happening I dont understand the reason behind it? also how can I get the inertia-link to work with the Dynamic route?</p>",65444210.0,2,0,,2020-12-24 23:46:52.780000+00:00,,2020-12-30 12:51:13.833000+00:00,2020-12-24 23:52:46.827000+00:00,,11824731.0,,11824731,,1,-1,laravel|vue.js|inertiajs,132
+24,65444136,Hiding divs with overflow,"<p>I want the blue square to be visible and red square to be hidden below the blue square. Blue and red should not overlap, they need to be ordered one after the other. But my CSS is not doing this. What am I missing?</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-js lang-js prettyprint-override""><code>document.getElementById('startAnim').addEventListener('click', function() {
+  document.getElementById('red').classList.add('animate');
+});</code></pre>
+<pre class=""snippet-code-css lang-css prettyprint-override""><code>#background {
+  position: relative;
+  background-color: #3CF;
+  width: 50px;
+  height: 50px;
+  overflow-y: hidden;
+  border: medium;
+}
+
+#blue {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  border: thin;
+  top: 0%;
+  border-color: #000;
+  border-width: 1px;
+}
+
+#red {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  border: thin;
+  border-color: #000;
+  border-width: 1px;
+}
+
+.sq {
+  position: absolute;
+}
+
+.animate {
+  -webkit-animation-name: slidediv;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s;
+  /* Chrome, Safari, Opera */
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+
+/* Standard syntax */
+
+@keyframes slidediv {
+  0% {
+    top: 10px;
+  }
+  100% {
+    top: 100px;
+  }
+}</code></pre>
+<pre class=""snippet-code-html lang-html prettyprint-override""><code>&lt;div id=""background""&gt;
+  &lt;div id=""blue"" class='sq'&gt;&lt;/div&gt;
+  &lt;div id=""red"" class='sq'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;button id=""startAnim""&gt; Start &lt;/button&gt;</code></pre>
+</div>
+</div>
+</p>",65444876.0,2,1,,2020-12-24 23:46:41.620000+00:00,,2020-12-25 02:57:50.797000+00:00,2020-12-25 00:01:58.060000+00:00,,1001532.0,,1001532,,1,1,css|css-position|overflow,48
+25,65444131,testing if a value == NaT,"<p>converted a pandas column to datetime and I am left with some NaT values.  If the value is NaT I want to turn it into a specific date.</p>
+<pre><code>df['column'].iloc[122].isnull()
+
+df['column'].iloc[122].isnull(pd.NaT)
+</code></pre>
+<p>tried it both ways where it am left with this error:
+AttributeError: 'NaTType' object has no attribute 'isnull'</p>
+<p>I just want to be able to loop through my column and have it perform like this:</p>
+<pre><code>for i in range(0, df.shape[0]):
+    if (df['column'].iloc[i] == NaT):
+          df['column'].iloc[i] = datetime(2000, 1, 1)
+</code></pre>
+<p>thank you</p>",,0,2,,2020-12-24 23:46:00.690000+00:00,,2020-12-24 23:51:29.957000+00:00,2020-12-24 23:49:46.657000+00:00,,4909087.0,,6545550,,1,0,python|python-3.x|pandas,42
+26,65444126,How to write a loop when the database column status updates,"<p>I am new to Kotlin programming.</p>
+<p>I created a Maven automation project with Rest Assured and <code>TestNG</code>.
+I am using test annotations as @<code>Test(invocationCount = 4)</code> to repeat the same test for 4 times. I was using the <code>TimeUnit.SECONDS.sleep(30)</code> code to stop my test for about 30 seconds. But it's not working for me as expected. So I was planning to write a loop that runs my test when the order status gets updated in the database.</p>
+<p>When I run the Get API call it returns a <code>JSON</code> response body as below</p>
+<pre><code>{
+    &quot;id&quot;: 13,
+    &quot;orderNo&quot;: &quot;87748&quot;,
+    &quot;isVerificationRequired&quot;: false,
+    &quot;paymentMethodType&quot;: &quot;CreditCard&quot;,
+    &quot;paymentMethod&quot;: {
+        &quot;paymentstatus&quot;: &quot;VerificationRequired&quot;,
+        &quot;dateLastUsed&quot;: 1608848423000,
+        &quot;dateCreated&quot;: 1608848177000,
+        &quot;dateUpdated&quot;: 1608848423000
+    },
+    &quot;invoice&quot;: {
+        &quot;Invoicestatus&quot;: &quot;Completed&quot;,
+        &quot;dateCreated&quot;: 1608848180000
+    },
+    &quot;dateCreated&quot;: 1608848180000,
+    &quot;dateUpdated&quot;: 1608848266000,
+    &quot;orderstatus&quot;: &quot;Authorized&quot;
+}
+</code></pre>
+<p>In the above JSON response, the orderstatus gets updated every 30 seconds, when the stored procedure triggers. The orderstatus gets updated as follows</p>
+<ol>
+<li>Authorized to Fulfilling in first 30 seconds</li>
+<li>Fulfilling to Settled in the second 30 seconds and</li>
+<li>Settled to Delivered in the last 30 seconds.</li>
+</ol>
+<p>So my question is, I want to write a loop that checks the database status continually, and when the orderstatus changes from Authorized to Fulfilling the Get API should run again for the second time. And when the orderstatus changes again after 30 seconds the Get API should run again from Fulfilling to Settled.</p>
+<p>Please find the code below and please let me know where can I add the For or While loop.</p>
+<p><strong>code:</strong></p>
+<pre><code>@Test(invocationCount = 4)
+fun GetOrderByID() {
+        RestAssured.baseURI = baseQAURL
+        //Test the Create Order POST API
+        val response = RestAssured.given()
+                .log()
+                .all()
+                .contentType(ordercontentType)
+                .`when`()
+                .get(&quot;/orders/13&quot;)
+                .then()
+                .log()
+                .all().extract().response().thenReturn()
+        assertEquals(response.statusCode, 200)
+        if (response.statusCode == 200) {
+            //connect to db and run query
+            var database = DbConnection()
+            var con = database.connection()
+            var statement = con?.createStatement()
+            val query = CreateOrderQuery + JsonIncommOrderID.toString()
+            val SQLqueryResult = statement?.executeQuery(query)
+            //if condition to check the SQLqueryResult is not null
+            if (SQLqueryResult != null) while (SQLqueryResult.next()) {
+                DBOrderStatus = SQLqueryResult.getString(&quot;status&quot;)
+            }
+            // Read json response body and store the required value in a variable.
+            val createOrderIcSB: StringBuilder = StringBuilder(response.getBody().asString())
+            val createOrderIcJsonObj: JsonObject = parser.parse(createOrderIcSB) as JsonObject
+            JsonOrderStatus = createOrderIcJsonObj.string(&quot;status&quot;).toString()
+            assertEquals(JsonOrderStatus, DBOrderStatus)
+        }
+        TimeUnit.SECONDS.sleep(30)
+    }
+</code></pre>
+<p><a href=""https://i.stack.imgur.com/RmmrY.png"" rel=""nofollow noreferrer"">enter image description here</a></p>
+<p>Can someone please help me? Please............................ Just give me an idea of how can I do it.</p>
+<p>I was googling and I found Awaitility methods. Can anyone guide me is it the correct approach or not.</p>",,0,0,,2020-12-24 23:45:31.460000+00:00,,2020-12-27 06:59:50.430000+00:00,2020-12-27 06:59:50.430000+00:00,,14573349.0,,14573349,,1,0,java|for-loop|kotlin|while-loop|do-while,39
+27,65444125,scoped_allocator_adaptor seems to require allocator to be default constructed,"<p>In my experiments with scoped_allocator_adaptor, I'm trying to pass the allocator obtained from main(..) into S1's constructor (more generally there would be multiple different types within S1 that would all use the allocator that was made available in the constructor). However, I get the compile error below indicating that the allocator should be default constructible. Can someone help explain why this might be the case? Is there some conversion taking place leading to the default constructed version of the allocator being needed?</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cassert&gt;
+#include &lt;vector&gt;
+#include &lt;scoped_allocator&gt;
+
+// Move allocator and container aliases into namepsace 
+namespace custom
+{
+    template &lt;typename T&gt;
+    struct MyAlloc
+    {
+        using value_type = T;
+        MyAlloc(const std::string &amp;scope) noexcept : _scope(scope)  {} 
+
+        // Rebinding allocatos to different type 
+        template &lt;class U&gt; 
+        MyAlloc(const MyAlloc&lt;U&gt; &amp; other) noexcept : _scope(other._scope)  {}
+
+        // Allow for move operations to be noexcept
+        //using is_always_equal = std::true_type;
+
+        value_type*  allocate(std::size_t n) noexcept
+        {
+            std::cout &lt;&lt; &quot;Allocating &quot; &lt;&lt; n &lt;&lt; &quot; objects within &quot; &lt;&lt; _scope &lt;&lt; &quot; from &quot; &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; std::endl;
+            return static_cast&lt;value_type*&gt;(::operator new (n*sizeof(value_type)));
+        }
+        void deallocate(value_type* p, std::size_t n) noexcept
+        {
+            std::cout &lt;&lt; &quot;Deallocating &quot; &lt;&lt; n &lt;&lt; &quot; objects within &quot; &lt;&lt; _scope &lt;&lt; &quot; from &quot; &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; std::endl;
+            ::operator delete(p);
+        }
+        std::string _scope;
+    };
+
+    // Allocators compare equal to enable one allocator to de-allocate memory
+    // from another
+    template &lt;typename T&gt;
+    bool operator==(const MyAlloc&lt;T&gt; &amp;x1, const MyAlloc&lt;T&gt; &amp;x2) noexcept
+    {
+        return true;
+    }
+
+    template &lt;typename T&gt;
+    bool operator!=(const MyAlloc&lt;T&gt; &amp;x1, const MyAlloc&lt;T&gt; &amp;x2) noexcept
+    {
+        return !(x1 == x2);
+    }
+
+    template &lt;typename T&gt;
+    using allocator = std::scoped_allocator_adaptor&lt;MyAlloc&lt;T&gt;&gt;;
+
+    template &lt;typename T&gt; //  adaptor to propagate
+    using vector = std::vector&lt;T, allocator&lt;T&gt;&gt;;
+
+    template &lt;typename T&gt; 
+    using bstr = std::basic_string&lt;T, std::char_traits&lt;T&gt;, allocator&lt;T&gt;&gt;;
+    using string = bstr&lt;char&gt;;
+}
+
+struct S1
+{
+   using allocator_type = custom::allocator&lt;std::byte&gt;;
+   S1(allocator_type alloc) : str(&quot;This is a very long string indeed..&quot;, std::allocator_traits&lt;allocator_type&gt;::rebind_alloc&lt;char&gt;(alloc))
+   {
+      std::cout &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; std::endl;
+   }
+   S1(const S1 &amp;other, allocator_type al)  : str(other.str, std::allocator_traits&lt;allocator_type&gt;::rebind_alloc&lt;char&gt;(al))
+   {
+      std::cout &lt;&lt; __PRETTY_FUNCTION__ &lt;&lt; std::endl;
+   }
+   custom::string str;
+};
+
+
+
+int main()
+{
+   custom::allocator&lt;std::byte&gt; sc{&quot;scope&quot;};
+   custom::vector&lt;S1&gt; cv{sc};
+//   cv.emplace_back();
+}
+</code></pre>
+<p>Compile error:</p>
+<pre><code>/usr/include/c++/10/scoped_allocator: In instantiation of ‘std::scoped_allocator_adaptor&lt;_OuterAlloc, _InnerAllocs&gt;::scoped_allocator_adaptor() [with _OuterAlloc = custom::MyAlloc&lt;S1&gt;; _InnerAllocs = {}]’:
+/usr/include/c++/10/bits/stl_vector.h:626:35:   required from here
+/usr/include/c++/10/scoped_allocator:304:60: error: no matching function for call to ‘custom::MyAlloc&lt;S1&gt;::MyAlloc()’
+  304 |       scoped_allocator_adaptor() : _OuterAlloc(), _M_inner() { }
+      |                                                            ^
+d2.cc:17:9: note: candidate: ‘template&lt;class U&gt; custom::MyAlloc&lt;T&gt;::MyAlloc(const custom::MyAlloc&lt;U&gt;&amp;) [with U = U; T = S1]’
+   17 |         MyAlloc(const MyAlloc&lt;U&gt; &amp; other) noexcept : _scope(other._scope)  {}
+      |         ^~~~~~~
+d2.cc:17:9: note:   template argument deduction/substitution failed:
+In file included from d2.cc:4:
+/usr/include/c++/10/scoped_allocator:304:60: note:   candidate expects 1 argument, 0 provided
+  304 |       scoped_allocator_adaptor() : _OuterAlloc(), _M_inner() { }
+      |                                                            ^
+d2.cc:13:9: note: candidate: ‘custom::MyAlloc&lt;T&gt;::MyAlloc(const string&amp;) [with T = S1; std::string = std::__cxx11::basic_string&lt;char&gt;]’
+   13 |         MyAlloc(const std::string &amp;scope) noexcept : _scope(scope)  {}
+      |         ^~~~~~~
+d2.cc:13:9: note:   candidate expects 1 argument, 0 provided
+d2.cc:10:12: note: candidate: ‘custom::MyAlloc&lt;S1&gt;::MyAlloc(const custom::MyAlloc&lt;S1&gt;&amp;)’
+   10 |     struct MyAlloc
+      |            ^~~~~~~
+d2.cc:10:12: note:   candidate expects 1 argument, 0 provided
+d2.cc:10:12: note: candidate: ‘custom::MyAlloc&lt;S1&gt;::MyAlloc(custom::MyAlloc&lt;S1&gt;&amp;&amp;)’
+d2.cc:10:12: note:   candidate expects 1 argument, 0 provided
+</code></pre>",65444388.0,1,0,,2020-12-24 23:45:31.390000+00:00,,2020-12-25 00:53:16.083000+00:00,,,,,3882729,,1,0,c++|c++11|templates|stl|allocator,39
+28,65444124,How to get docker and npm workspaces to work fine without copying root master node_modules everywhere,"<p>I have a project structure like so:</p>
+<pre><code>+-- node_modules
++-- package-lock.json
++-- package.json
+`-- workspace-a
+   `-- package.json &lt;---includes common as a dependency
+`-- common
+   `-- package.json
+</code></pre>
+<p>and I have a <code>Dockerfile</code> as follows:</p>
+<pre><code>FROM node:alpine as builder
+
+# from monorepo root
+WORKDIR /app
+
+COPY ./package*.json ./
+
+COPY ./common/package*.json ./common/
+
+COPY ./workspace-a/package*.json ./workspace-a/
+
+RUN npm config set optional
+
+RUN npm i
+
+# build common library
+WORKDIR /app/common
+
+COPY ./common ./
+
+RUN npm run build
+
+# build workspace-a using built common library as dependency
+WORKDIR /app/workspace-a
+
+COPY ./auth ./
+
+CMD [&quot;npm&quot;,&quot;run&quot;, &quot;build&quot;]
+
+FROM node:alpine
+ENV CI=true
+
+WORKDIR /app
+
+COPY --from=builder /app/workspace-a/build .
+
+COPY ./workspace-a/package*.json .
+
+# RUN npm i --only=prod &lt;--- this step will complain about &quot;common&quot; not being available, but added it just to try it
+
+CMD [&quot;npm&quot;,&quot;start&quot;]
+</code></pre>
+<p>I was wondering how I can avoid having to copy <code>node_modules</code>, which I believe is a giant consolidated folder of all the dependencies that eliminates the need for the submodules to have their own separate <code>node_modules</code> folder, over to each of the containers that will use it. For example, I plan to have a <code>workspace-b</code> added eventually, which will also have its own <code>Dockerfile</code> that will be more or less identical to the one for <code>workspace-a</code> as shown above.</p>",,1,0,,2020-12-24 23:45:29.210000+00:00,,2020-12-25 00:39:47.793000+00:00,,,,,11086815,,1,0,node.js|docker|npm,21
+29,65444116,How to show only coefficient section including the signif codes from summary(model) in rmarkdown?,"<p>This one may be very simple but I just couldn't find anywhere that shows me how to do it, maybe it's the keywords I put in.</p>
+<p>Basically, in rmarkdown, when I input below, I will get the full output from the summary.</p>
+<pre><code>model = lm(y~x,data=xxx)
+summary(model)
+</code></pre>
+<p>However, I'm only interested in showing the coefficients section. I've tried to use below to output the coefficients only, but the *** sign disappears (signif codes). Is there a way to output the coefficients section including the *** sign?</p>
+<pre><code>summary(model)$coefficients
+</code></pre>",65444694.0,2,0,,2020-12-24 23:44:18.040000+00:00,,2020-12-25 02:15:53.810000+00:00,,,,,14494483,,1,0,r|r-markdown,48
+30,65444115,How to place two check boxes at the same row in Vaadin CRUD?,"<p>I have an <code>entity</code> that has these two fields.</p>
+<pre><code>private boolean alarmActive;
+private boolean messageHasBeenSent;
+</code></pre>
+<p>And when I show this with Vaadin CRUD API.</p>
+<pre><code>GridCrud&lt;Alarm&gt; alarmCrud = new GridCrud&lt;&gt;(Alarm.class);
+CrudFormFactory&lt;Alarm&gt; crudFormFactory = new DefaultCrudFormFactory&lt;Alarm&gt;(Alarm.class);
+alarmCrud.setCrudFormFactory(crudFormFactory);
+alarmCrud.getGrid().setColumns(&quot;name&quot;, &quot;email&quot;, &quot;message&quot;, &quot;alarmActive&quot;, &quot;messageHasBeenSent&quot;, &quot;sa0Min&quot;, &quot;sa0Max&quot;, &quot;sa1Min&quot;, &quot;sa1Max&quot;, &quot;sa1dMin&quot;, &quot;sa1dMax&quot;, &quot;sa2dMin&quot;, &quot;sa2dMax&quot;, &quot;sa3dMin&quot;, &quot;sa3dMax&quot;, &quot;a0Min&quot;, &quot;a0Max&quot;, &quot;a1Min&quot;, &quot;a1Max&quot;, &quot;a2Min&quot;, &quot;a2Max&quot;, &quot;a3Min&quot;, &quot;a3Max&quot;);
+alarmCrud.getGrid().setColumnReorderingAllowed(true);
+crudFormFactory.setUseBeanValidation(true);
+crudFormFactory.setVisibleProperties(new String[] { &quot;name&quot;, &quot;email&quot;, &quot;message&quot;, &quot;alarmActive&quot;, &quot;messageHasBeenSent&quot;, &quot;sa0Min&quot;, &quot;sa0Max&quot;, &quot;sa1Min&quot;, &quot;sa1Max&quot;, &quot;sa1dMin&quot;, &quot;sa1dMax&quot;, &quot;sa2dMin&quot;, &quot;sa2dMax&quot;, &quot;sa3dMin&quot;, &quot;sa3dMax&quot;, &quot;a0Min&quot;, &quot;a0Max&quot;, &quot;a1Min&quot;, &quot;a1Max&quot;, &quot;a2Min&quot;, &quot;a2Max&quot;, &quot;a3Min&quot;, &quot;a3Max&quot; });
+        
+</code></pre>
+<p>I get this view when I try to add a new row in the CRUD database.</p>
+<p><a href=""https://i.stack.imgur.com/2976W.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/2976W.png"" alt=""enter image description here"" /></a></p>
+<p><strong>Question:</strong></p>
+<p>I want to have both check boxes on the same row? How can I do that with this current entity?</p>
+<p>I know there is a way to have multiple check boxes at the same row, but that method is not the correct because it depends each checkbox need to become an entity and that entity is not connected to my database CRUD entity.</p>
+<p>In this example below, he have used</p>
+<pre><code>@ManyToMany
+@Fetch(FetchMode.JOIN)
+@NotNull
+private Set&lt;Group&gt; groups = new HashSet&lt;&gt;();
+</code></pre>
+<p>To create multiple check boxes at one row. The problem is that the entity <code>Group</code> is distinct from entity <code>User</code> if they begins with empty.</p>
+<p>Here he loads the <code>groupService</code> into a check box provider and this creates multiple check boxes on the same row.</p>
+<pre><code>crud.getCrudFormFactory().setFieldProvider(&quot;groups&quot;, new CheckBoxGroupProvider&lt;&gt;(&quot;Groups&quot;, groupService.findAll(), Group::getName));
+</code></pre>
+<p><a href=""https://github.com/alejandro-du/crudui/blob/master/demo/src/main/java/org/vaadin/crudui/demo/ui/view/SimpleCrudView.java"" rel=""nofollow noreferrer"">https://github.com/alejandro-du/crudui/blob/master/demo/src/main/java/org/vaadin/crudui/demo/ui/view/SimpleCrudView.java</a></p>",,2,0,,2020-12-24 23:44:10.463000+00:00,,2020-12-28 22:53:16.543000+00:00,2020-12-24 23:53:52.453000+00:00,,1008405.0,,1008405,,1,0,java|vaadin|crud|vaadin14,47
+31,65444114,"modal pop-up via ajax call and php function, passing function issues","<p>I have a button with on onclick event that passes the I am trying to have a pop up load through an ajax call via a php function with jquery. I am getting a response of Uncaught type error  $ is not a function, coming from the Ajax function. Clearly I am not passing this correctly but am unsure of the solution?</p>
+<p><strong>ONCLICK CALL</strong></p>
+<pre><code>&lt;a href=&quot;javascript:void(0)&quot; class=&quot;button seated-btn&quot; onclick=&quot;toptions('+val.wait_id+')&quot; data-id=&quot;'+val.wait_id+'&quot;&gt; 
+</code></pre>
+<p><strong>AJAX CALL</strong></p>
+<pre><code>    function toptions(){
+            jQuery.ajax({
+                type: 'post',
+        url: my_ajax.ajax_url,
+        data: {
+        action: 'options'
+                },      
+        success: function (data) {
+        $(&quot;#myModal&quot;).show()
+                 ;}
+            }); 
+        }
+</code></pre>
+<p><strong>PHP FUNCTION</strong></p>
+<pre><code>function options(){ 
+    ?&gt;
+&lt;button id=&quot;myBtn&quot;&gt;Open Modal&lt;/button&gt;
+
+&lt;!-- The Modal --&gt;
+&lt;div id=&quot;myModal&quot; class=&quot;modal&quot;&gt;
+
+  &lt;!-- Modal content --&gt;
+  &lt;div class=&quot;modal-content&quot;&gt;
+    &lt;span class=&quot;close&quot;&gt;&amp;times;&lt;/span&gt;
+    &lt;p&gt;Some text in the Modal..&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+jQuery('document').ready(function(){
+// Get the modal
+var modal = document.getElementById(&quot;myModal&quot;);
+
+// Get the button that opens the modal
+var btn = document.getElementById(&quot;myBtn&quot;);
+
+// Get the &lt;span&gt; element that closes the modal
+var span = document.getElementsByClassName(&quot;close&quot;)[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = &quot;block&quot;;
+}
+
+// When the user clicks on &lt;span&gt; (x), close the modal
+span.onclick = function() {
+  modal.style.display = &quot;none&quot;;
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = &quot;none&quot;;
+  }
+} 
+});
+&lt;/script&gt;
+        &lt;?php
+}
+</code></pre>",65444340.0,1,6,,2020-12-24 23:43:59.200000+00:00,,2020-12-25 00:38:33.310000+00:00,2020-12-24 23:53:34.080000+00:00,,14316738.0,,14316738,,1,1,php|html|jquery,26
+32,65444112,Facebook login verification using nodejs in the backend and react native in the frontend,"<p>I am trying to verify a user in the backend using nodejs who is login in a frontend made it in react native (I am not the one who made it) using the facebook sdk. I did it with google and I got the user email, first name y last name, that is what I am trying do to with facebook too. I tried this:</p>
+<pre><code>clien_id = process.env.FACEBOOK_CLIENT_ID;
+client_secret = process.env.FACEBOOK_SECRET;
+
+app_link = 'https://graph.facebook.com/oauth/access_token?client_id=' + clien_id + '&amp;client_secret=' + client_secret + '&amp;grant_type=client_credentials';
+const getAppAccessToken = async () =&gt; {
+    try {
+      return await axios.get(app_link);
+    } catch (error) {
+        console.log('error')
+      console.error(error)
+    }
+}
+
+const app_access_token_request = await getAppAccessToken();
+let app_access_token = app_access_token_request.data.access_token;
+
+link = 'https://graph.facebook.com/debug_token?input_token=' + user_token + '&amp;access_token=' + app_access_token;
+const getAccessToken = async () =&gt; {
+    try {
+      return await axios.get(link);
+    } catch (error) {
+        console.log('error')
+      console.error(error)
+    }
+};
+
+const access_token_request = await getAccessToken();
+console.log(access_token_request.data); 
+</code></pre>
+<p>I am receiving something like this from the frontend:</p>
+<pre><code>{&quot;picture&quot;:{&quot;data&quot;:{&quot;width&quot;:200,&quot;url&quot;:&quot;https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10223918859348530&amp;height=200&amp;width=200&amp;ext=2344322919&amp;hash=AeT4ls-37DYOyKh45678&quot;,&quot;is_silhouette&quot;:false,&quot;height&quot;:200}},&quot;id&quot;:&quot;23453918859345432&quot;,&quot;name&quot;:&quot;Alfredo Mujica&quot;}
+</code></pre>
+<p>I am using the id in this response as the user token but I got an error because that is not a token. So at this point I do not know what to do to get the user email, first name and last name when this one is loged in facebook.</p>",,0,0,,2020-12-24 23:43:45.747000+00:00,,2020-12-24 23:43:45.747000+00:00,,,,,10387269,,1,0,node.js|react-native|facebook|sdk,18
+33,65444111,SQLite how to store decimal 0.00 and 1.10 instead of 0 and 1.1?,"<p>This is my SQLite query:</p>
+<pre><code>CREATE TABLE IF NOT EXISTS `accounts` (id INTEGER NOT NULL, price DECIMAL(10,2) default 0.00);&quot;, conn);
+</code></pre>
+<p>I want to avoid saving 0 instead of 0.00 or 1.1 instead of 1.10. Is it possible in SQLite?</p>",,2,1,,2020-12-24 23:43:26.293000+00:00,,2020-12-25 09:07:43.910000+00:00,2020-12-25 00:14:08.687000+00:00,,9661424.0,,14884068,,1,-1,sqlite,53
+34,65444104,In psql how to run a Loop for a Select query with CTEs and get the output shown if I run it in a read-only db?,"<p>My initial question is posted here (<a href=""https://stackoverflow.com/questions/65443310/in-psql-how-to-run-a-loop-for-a-select-query-with-ctes-and-get-the-output-shown"">In psql how to run a Loop for a Select query with CTEs and get the output shown in read-only db?</a>), which isn't defined well, so I am creating new question here.
+I want to know how can I use a loop variable (or something similar) inside a Select query with CTEs .
+I hope the following is a minimal reproducible example:</p>
+<pre><code>CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+insert into persons values (4,'Smith','Eric','713 Louise Circle','Paris');
+insert into persons values (5,'Smith2','Eric2','715 Louise Circle','London');
+insert into persons values (8,'Smith3','Eric3','718 Louise Circle','Madrid');
+</code></pre>
+<p>Now I run the following for different values of  (1,2,3)</p>
+<pre><code>WITH params AS 
+( 
+       SELECT &lt;ROWNUMBER&gt; AS rownumber ),
+person AS 
+( 
+         SELECT   personid, lastname, firstname, address 
+         FROM     params, persons 
+         ORDER BY personid DESC 
+         LIMIT 1 
+         OFFSET ( SELECT rownumber - 1 
+                  FROM   params) ), 
+filtered AS 
+( 
+       SELECT * 
+       FROM   person 
+       WHERE  address ~ (SELECT rownumber::text FROM params)
+)
+SELECT * 
+FROM   filtered;
+</code></pre>
+<p>and getting these outputs respectively for 1,2 and 3:</p>
+<pre class=""lang-none prettyprint-override""><code>
+| personid | lastname | firstname |      address
+|----------|----------|-----------|-------------------
+|        8 | Smith3   | Eric3     | 718 Louise Circle
+(1 row)
+
+| personid | lastname | firstname | address
+|----------|----------|-----------|---------
+(0 rows)
+
+| personid | lastname | firstname |      address
+|----------|----------|-----------|-------------------
+|        4 | Smith    | Eric      | 713 Louise Circle
+(1 row)
+</code></pre>
+<p>My goal is to have a single query with loop or any other means to get the union of all 3 above select runs. I only have read-only access to db, so can't output in a new table. The GUI software I use have options to output in an internal window or export to a plain text file. The desired result would be:</p>
+<pre class=""lang-none prettyprint-override""><code>|personid  | lastname | firstname |      address
+|----------|----------|-----------|-------------------
+|        4 | Smith    | Eric      | 713 Louise Circle
+|        8 | Smith3   | Eric3     | 718 Louise Circle
+(2 rows)
+</code></pre>
+<p>In reality the the loop variable is used in a more complicated way.</p>",65444559.0,1,0,,2020-12-24 23:42:03.787000+00:00,,2020-12-25 06:01:42.730000+00:00,2020-12-24 23:44:57.220000+00:00,,330315.0,,2766803,,1,1,postgresql|loops,32
+35,65444103,Troubleshooting Elasticsearch returning unstable results. Can I query only a particular node in the cluster?,"<p>I am querying Elasticsearch every 30 minutes for some count of events collected in the last 30 minutes. And I am expecting results ranging from <code>6</code> to <code>8</code>. But from time to time Elasticsearch returns <code>0</code> which is a false query result. (I am seeing the events in Kibana and there is no deviation from the range <code>6-8</code> messages per 30 minutes).</p>
+<p>The query ran for months correctly with no false results and 1 week ago it started to return the incorrect results.</p>
+<p>I am using Elasticsearch version <code>7.3.1</code>.</p>
+<p><strong>What I have researched so far</strong></p>
+<p><strong>Were there any Elasticsearch upgrades/patches around the time it started?</strong> The service provider told me there were not.</p>
+<p><strong>Was there in increase in Elasticsearch usage (ingestion/queries)?</strong> I see no deviation from the last month averages.</p>
+<p><strong>Is the status of the cluster green?</strong> Yes, the cluster is in green health status.</p>
+<p><strong>Are all the indexes having a green status?</strong> Yes, all the indexes have the green health status.</p>
+<p>Here is my query:</p>
+<pre><code>POST /*parsed*/_search?size=0&amp;filter_path=hits.total.value
+{
+  &quot;query&quot;: {
+    &quot;bool&quot;: {
+      &quot;must&quot;: [
+        {
+          &quot;match_phrase&quot;: {
+            &quot;app&quot;: {
+              &quot;query&quot;: &quot;billing-processor&quot;
+            }
+          }
+        },
+        {
+          &quot;match_phrase&quot;: {
+            &quot;message&quot;: {
+              &quot;query&quot;: &quot;BillingRecords and finished&quot;
+            }
+          }
+        },
+        {
+          &quot;range&quot;: {
+            &quot;@timestamp&quot;: {
+              &quot;format&quot;: &quot;strict_date_optional_time&quot;,
+              &quot;gte&quot;: &quot;now-30m&quot;,
+              &quot;lte&quot;: &quot;now&quot;
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+<p>The Elasticsearch cluster has 3 nodes (all with all 3 roles:<code>ingest</code>, <code>master</code>, <code>data</code>) and replication factor 2 for index shards.</p>
+<p>I came to analyse the Elasticsearch cluster node advanced analytics and I see these suspicious JVM Heap charts for 2 of the nodes:</p>
+<p><a href=""https://i.stack.imgur.com/ryXa8.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/ryXa8.png"" alt=""node instance-0000000000"" /></a></p>
+<p><a href=""https://i.stack.imgur.com/658qk.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/658qk.png"" alt=""node instance-0000000002"" /></a></p>
+<p>(the 3rd node has a very smooth chart)</p>
+<p>And these are the times when the query returned false results (blue dots) compared to all executions (green bars):</p>
+<p><a href=""https://i.stack.imgur.com/MCUj8.png"" rel=""nofollow noreferrer""><img src=""https://i.stack.imgur.com/MCUj8.png"" alt=""enter image description here"" /></a></p>
+<p>I am suspecting that when the query hits a certain node, the query result is sometimes incorrect while for other nodes the query is always correct.</p>
+<p><strong>Question</strong>: How can I query only a particular node of Elasticsearch? (the cluster is provided as a service and I am only exposed a load balancer FQDN for the cluster: <code>https://182a33a5c22a4db7840457a555773ed5.elasticsearch.my-service-provider.net</code>). Can I provide hints in the query or request metadata that I want my results delivered by a certain node?</p>",,1,0,,2020-12-24 23:41:51.707000+00:00,,2020-12-25 01:40:30.080000+00:00,2020-12-24 23:53:06.950000+00:00,,454103.0,,454103,,1,0,elasticsearch,21
+36,65444102,"Explanation on globals(), and getattr() with (Python 3 within Jupiter Notebook)","<hr />
+<p>I was looking for a way to get all the import version numbers within Jupiter's notebook, and I ran into this <a href=""https://stackoverflow.com/questions/40428931/package-for-listing-version-of-packages-used-in-a-jupyter-notebook"">post</a>. The code is working well, however, I would like to understand the globals(), and getters() part of the code.</p>
+<p>What I understand so far is that m.name and m.version are being joined together as a string. Then for every m in globals() which referred to all the library is being printed, however, what throws me off is what's in the if statement. The getattr() returns the value of the named attribute, so in this case, it'll return the name of the library. I'm not sure if I'm understanding this correctly.(&quot;<code>if getattr(m, '__version__', None))&quot; </code>)</p>
+<pre><code># In[1]:
+import pandas as pd
+import numpy as np
+import tensorflow as tf
+
+print('\n'.join(f'{m.__name__} {m.__version__}' for m in globals().values() if getattr(m, '__version__', None)))
+</code></pre>
+<p>Output</p>
+<pre><code>pandas 1.1.1
+numpy 1.19.1
+tensorflow 2.2.0
+</code></pre>",,1,0,,2020-12-24 23:41:33.347000+00:00,,2020-12-25 00:07:09.670000+00:00,2020-12-25 00:07:09.670000+00:00,,2823755.0,,14519031,,1,0,python|python-3.x|jupyter-notebook,32
+37,65444099,Wordpress ask user's their desired role as a dropdown menu while registration,"<p>I want to add a custom field to the Wordpress registration form without using any plugins. I want to add a dropdown menu with user-roles ( some roles I have created). Once the registration is complete the user should not have the ability to change their roles ( only admin can do that, selecting role as admin should not be allowed).
+Any help will be appreciated.</p>",,1,2,,2020-12-24 23:41:28.367000+00:00,,2020-12-25 13:58:30.063000+00:00,2020-12-25 13:54:40.973000+00:00,,436560.0,,14698357,,1,0,php|wordpress,23
+38,65444096,Fragment animation,"<p>I have read the documentation for the <a href=""https://developer.android.com/guide/fragments/animate#set-animations"" rel=""nofollow noreferrer"">Animate transitions betwwen fregments</a> and implemented it into my code
+and have seen videos on how to make animations when switching from fragment to another
+but nothing happens</p>
+<p>this is the code in my Main Activity for replacing the fragment by another</p>
+<pre><code>getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, fragment)
+                        .setCustomAnimations(R.anim.slide_in,R.anim.slide_out)
+                        .commit();
+</code></pre>
+<p>I tried to use addToBackstack() method to see if it have something with the animation but nothing happens</p>
+<p>the <em><strong>fragment</strong></em> in the code above is made when i press on a BottomNavigationView item</p>
+<p>here's the xml for the animation in and out</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;translate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;@android:integer/config_shortAnimTime&quot;
+    android:interpolator=&quot;@android:anim/decelerate_interpolator&quot;
+    android:fromXDelta=&quot;100%&quot;
+    android:toXDelta=&quot;0%&quot; /&gt;
+</code></pre>
+<pre><code>&lt;translate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;@android:integer/config_shortAnimTime&quot;
+    android:interpolator=&quot;@android:anim/decelerate_interpolator&quot;
+    android:fromXDelta=&quot;0%&quot;
+    android:toXDelta=&quot;100%&quot; /&gt;
+</code></pre>",65458044.0,1,0,,2020-12-24 23:40:45.410000+00:00,,2020-12-27 15:04:53.003000+00:00,,,,,11725672,,1,0,android-fragments|animation,13
+39,65444095,How can I implement the iMessage gradient in Swift iOS?,"<p><strong>What I'm trying to Achieve</strong></p>
+<p>I am trying to implement the gradient bubble effect in Swift iOS, where the chat bubbles towards the top are a lighter color and the chat bubbles towards the bottom are a darker color, and when you scroll a bubble you see the gradient change.</p>
+<p>The link below is an example of the iMessage gradient effect.</p>
+<p><a href=""https://i.stack.imgur.com/e4doX.jpg"" rel=""nofollow noreferrer"">An example image of the iMessage gradients</a></p>
+<p><strong>What I've Tried</strong></p>
+<ol>
+<li>I created a view and added a gradient layer:</li>
+</ol>
+<pre class=""lang-swift prettyprint-override""><code>let gradient = CAGradientLayer()
+gradient.startPoint = CGPoint(x: 1, y: 0)
+gradient.endPoint = CGPoint(x: 0, y: 1)
+gradient.colors = [UIColor.systemBlue.cgColor, UIColor.systemPink.cgColor]
+gradient.frame = UIScreen.main.bounds
+
+view.layer.addSublayer(gradient)
+view.backgroundColor = .yellow
+</code></pre>
+<ol start=""2"">
+<li>I created a view and used it as a mask</li>
+</ol>
+<pre class=""lang-swift prettyprint-override""><code>mask.backgroundColor = .yellow
+mask.alpha = 1
+mask.frame.size = CGSize(width: 100, height: 100)
+mask.center = view.center
+view.mask = mask
+</code></pre>
+<p>The result is like this Gif below:</p>
+<p><a href=""https://i.stack.imgur.com/NftsB.gif"" rel=""nofollow noreferrer"">Example of my progress using a Mask View</a></p>
+<p>I was originally hoping to add a gradient to a <code>UICollectionView</code> and have the <code>UICollectionViewCells</code> mask the gradient to achieve the above iMessage gradient effect, but then I realized I can only apply one mask to a <code>UIView</code> (not multiple), so I'm stuck on using this approach.</p>
+<p><strong>Other Ideas</strong>
+My other ideas were to apply a gradient to each <code>UICollectionViewCell</code> and determine the gradient offset of each <code>UICollectionViewCell</code> manually based on the location of the cell, however, my main concern is this is not going to have good performance.</p>
+<p><strong>Please Help</strong>
+I was hoping to see if anyone could outline a general method or link to how to achieve the iMessage gradient background effect?</p>
+<p>I understand this is a more general question and often times general questions are &quot;bad&quot; questions for stack overflow, but I'm really stuck on this problem and would incredibly appreciate any help or advice for achieving this effect!</p>
+<p>Thank you for your time!</p>
+<h2>Solution Figured Out</h2>
+<p>Wow, this is sketchy/hacky to implement. Below is a GitHub Gist of how its done.</p>
+<p><a href=""https://gist.github.com/josharnoldjosh/e04d41f10de6ab378da931ab11370d11"" rel=""nofollow noreferrer"">https://gist.github.com/josharnoldjosh/e04d41f10de6ab378da931ab11370d11</a></p>
+<p>The way it works is you set a background to the gradient, then, you mask each individual cell, &quot;cutting out&quot; a hole in the cell to be transparent. The rest of the cell must be white to simulate the background being white.</p>",65445088.0,1,2,,2020-12-24 23:40:30.413000+00:00,,2020-12-26 12:54:17.130000+00:00,2020-12-26 02:10:08.337000+00:00,,14602519.0,,14602519,,1,1,ios|swift|uikit|chat|imessage,82
+40,65444094,Define common functions in kotlin,"<p>For define Util(common functions) we can use 3 approach :</p>
+<p><strong>First :</strong></p>
+<p>We can define a <code>File</code> and add <code>function</code> to it like this :</p>
+<pre><code>fun func1(): String {
+    return &quot;x&quot;
+}
+
+fun func2(): String {
+    return &quot;y&quot;
+}
+</code></pre>
+<p>Then we can use this in every where like this :</p>
+<pre><code>fileName.func1()
+</code></pre>
+<p><strong>Second :</strong></p>
+<p>We can define a <code>class</code> and add these <code>functions</code> to <code>class</code> like this :</p>
+<pre><code>class Util{
+fun func1(): String {
+    return &quot;x&quot;
+}
+
+fun func2(): String {
+    return &quot;y&quot;
+}
+}
+</code></pre>
+<p>we can <code>inject</code> it and use this like :</p>
+<pre><code> private val mUtil: Util by inject()
+
+mutil.func1()
+</code></pre>
+<p><strong>Third:</strong></p>
+<p>We can define an <code>object</code> like this :</p>
+<pre><code>object Util{
+fun func1(): String {
+    return &quot;x&quot;
+}
+
+fun func2(): String {
+    return &quot;y&quot;
+}
+</code></pre>
+<p>Then we can use this like :</p>
+<pre><code>Util.func1()
+</code></pre>
+<p><em><strong>suppose that we have reusable <code>fun</code> that it use in different <code>class</code> , <code>activity</code> or <code>fragment</code> now is better to use first , second or third ?</strong></em></p>",,2,3,,2020-12-24 23:40:29.890000+00:00,,2020-12-25 22:54:22.813000+00:00,2020-12-25 08:59:47.583000+00:00,,10003284.0,,10003284,,1,0,android|kotlin|dependency-injection,84
+41,65444092,Delphi fillpath,"<p>So first some background. Im developing a really simple 2D game, in Delphi 10.3, FMX, which at the bottom of the screen draws a random terrain for each level of the game.
+Anyway, the terrain is just some random numbers which are used in Tpathdata and then i use fillpath to draw this 2d &quot;terrain&quot;.
+I want to check when a &quot;falling&quot; object, a trect for example, intersects with this terrain.
+My idea was to get all the points of the tpathdata, every Y position of every X position of the screen width. This way i could easily check when an object intersects with the terrain.
+I just cannout figure the way how to do it, or if anyone has any other solution. Id really appreciate any help. Thanks</p>",65445908.0,1,0,,2020-12-24 23:40:05.200000+00:00,,2020-12-25 06:51:47.400000+00:00,,,,,5645250,,1,0,delphi|path|polygon|intersect,60
+42,65444089,Stripe PaymentIntents + Subscription,"<p>Anyone know how to make a Stripe subscription charge a card automatically on future period payments using the new PaymentsIntent SCA approach?</p>
+<p>Stripe's docs are in need of major pruning. I've never seen such convoluted and confusing docs as these ones.</p>
+<p>One of the confusing parts is where they say in the docs for PaymentsIntents:</p>
+<pre><code>confirmation_method:
+
+automatic
+(Default) PaymentIntent can be confirmed using a publishable key. After next_actions are handled, no additional confirmation is required to complete the payment.
+
+manual
+All payment attempts must be made using a secret key. The PaymentIntent returns to the requires_confirmation state after handling next_actions, and requires your server to initiate each payment attempt with an explicit confirmation.
+</code></pre>
+<p>If I put automatic, the handleCardAction doesn't work anymore on the front end. If it has to be manual, does that mean that all future recurring payments (say Month 2, 3, etc) will need some kind of SCA confirmation by the user?</p>
+<p>I haven't found any elements examples for paymentintents and subscriptions with SCA and varying plans and prices not pre-set on the backend as they depend on each individual's parameters.</p>
+<p>If I use manual and handleCardAction, the subscription stays incomplete, despite the payment going through. If I use confirmCardPayment, the SCA popup never shows.</p>
+<p>Looking further into the subscription and intent objects, I noticed that a new subscription created on the server comes with its own paymentIntent object. So does it mean one has to stop creating a separate paymentIntent with own id? If you do, it doesn't work for completing the subscription, which stays as incomplete.</p>
+<p>However, the subscription's paymentIntent has a confirmation_method set as automatic by default -- this results in an error after SCA on the frontend: &quot;You cannot confirm this PaymentIntent because it has already succeeded after being previously confirmed&quot;. Interesting, why did it ask for the SCA then in the status: &quot;requires_action&quot;?? Are we supposed to change manually the confirmation_method on a subscription to &quot;manual&quot;??</p>
+<p>All this is quite confusing how to make subscription / paymentIntent work with SCA.</p>
+<p>My logic is simple: user customises a subscription and enters card details, all of which gets sent to the server =&gt; Server creates a new plan, product, customer and subscription =&gt; Sends intent (from Subscription?) back to FE =&gt; If required, SCA is performed and the subscription is confirmed. Is this not how it's supposed to be done? I don't have pre-set plans as they can vary. I just need the ability to charge a user automatically the same amount they paid for the next period.</p>
+<p>The examples and docs I've seen so far don't address the above use case. If anyone knows how to do it or can point to an example of how stripe elements and paymentIntents work with SCA and subscriptions that actually works and activates the subscription?</p>",,1,2,,2020-12-24 23:39:31.503000+00:00,1.0,2020-12-26 21:06:33.247000+00:00,2020-12-25 21:22:08.873000+00:00,,5369792.0,,5369792,,1,2,stripe-payments,127
+43,65444088,How to flatten many nested layers of pattern matches?,"<p>I have code that requires enums to be a certain type before continuing (and if they are not then it is an unrecoverable error). Expressing this with the <code>if let</code> pattern is leading to a lot of indentation and syntax noise. Here's an example:</p>
+<pre><code>enum Fruit {
+    Apple(i32),
+    Banana(i32, i32),
+}
+
+enum Veggie {
+    Tomato(bool),
+    Pepper(i32),
+}
+
+fn test() -&gt; i32 {
+    let fruit = fruit_producing_func();
+    if let Fruit::Apple(x) = fruit {
+        let veggie = veggie_producing_func(x);
+        if let Veggie::Pepper(y) = veggie {
+            y
+        } else {
+            panic!();
+        }
+    } else {
+        panic!();
+    }
+}
+</code></pre>
+<p>In my code this nesting gets much larger than 2 layers. Is there a more concise way to express this which avoids creating extra blocks, or even the repetition of the <code>panic!</code> statements? Simply doing:</p>
+<pre><code>let Fruit::Apple(x) = fruit;
+</code></pre>
+<p>leads to an error because let bindings have to be exhaustive (I was hoping it would just panic on failed match).</p>",65444203.0,2,0,,2020-12-24 23:39:22.513000+00:00,,2021-02-20 13:31:02.310000+00:00,2021-02-20 13:31:02.310000+00:00,,2766908.0,,3788493,,1,1,rust|enums|pattern-matching|flatten,75
+44,65444084,Pyenv issues with Big Sur 11.1,"<p>I can't run
+<code>pyenv install 3.8.0</code> I get crazy errors and have tried everything. How can I fix this?</p>
+<pre><code>jazab@Jazabs-MacBook-Pro ~ % pyenv install 3.8.0
+python-build: use openssl@1.1 from homebrew
+python-build: use readline from homebrew
+Downloading Python-3.8.0.tar.xz...
+-&gt; https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tar.xz
+Installing Python-3.8.0...
+python-build: use readline from homebrew
+python-build: use zlib from xcode sdk
+
+BUILD FAILED (OS X 11.1 using python-build 20180424)
+
+Inspect or clean up the working tree at /var/folders/1z/s1vxbsqs503drc76hq8njghr0000gn/T/python-build.20201224183625.52487
+Results logged to /var/folders/1z/s1vxbsqs503drc76hq8njghr0000gn/T/python-build.20201224183625.52487.log
+
+Last 10 log lines:
+                                                     ^
+clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include   -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include   -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration  -I./Include/internal  -I. -I./Include -I/usr/local/opt/readline/include -I/usr/local/opt/readline/include -I/Users/jazab/.pyenv/versions/3.8.0/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/usr/local/opt/readline/include -I/Users/jazab/.pyenv/versions/3.8.0/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include  -DPy_BUILD_CORE_BUILTIN  -c ./Modules/pwdmodule.c -o Modules/pwdmodule.o
+clang -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include   -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include   -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Wstrict-prototypes -Werror=implicit-function-declaration  -I./Include/internal  -I. -I./Include -I/usr/local/opt/readline/include -I/usr/local/opt/readline/include -I/Users/jazab/.pyenv/versions/3.8.0/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/usr/local/opt/readline/include -I/Users/jazab/.pyenv/versions/3.8.0/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include  -DPy_BUILD_CORE_BUILTIN  -c ./Modules/_sre.c -o Modules/_sre.o
+./Modules/posixmodule.c:9084:15: error: implicit declaration of function 'sendfile' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+        ret = sendfile(in, out, offset, &amp;sbytes, &amp;sf, flags);
+              ^
+1 error generated.
+make: *** [Modules/posixmodule.o] Error 1
+make: *** Waiting for unfinished jobs....
+1 warning generated.
+</code></pre>",,0,1,,2020-12-24 23:39:08.617000+00:00,5.0,2020-12-24 23:39:08.617000+00:00,,,,,13364476,,1,9,python|macos|pyenv|macos-big-sur,767
+45,65444082,Unrar the files with the name of the rar files,"<p>I have folder with 4 rar (zipped) files.</p>
+<p><a href=""https://ibb.co/0J9TKwh"" rel=""nofollow noreferrer"">screenshot #1: rar files and names</a></p>
+<p>This is the python code to unrar them:</p>
+<pre><code>#!/usr/bin/python
+import os, zipfile, pyunpack, sys
+import tkinter as tk
+from tkinter import filedialog
+from tkinter.filedialog import askdirectory
+
+root = tk.Tk()
+root.withdraw()
+
+basis_folder = askdirectory(title='Select Folder')
+    
+for root, dirs, files in os.walk(basis_folder):
+    for filename in files:
+        if filename.endswith(&quot;.rar&quot;) :
+            print('RAR:'+os.path.join(root,filename))
+        elif filename.endswith(&quot;.zip&quot;):
+            print('ZIP:'+os.path.join(root,filename))
+        name = os.path.splitext(os.path.basename(filename))[0]
+        if filename.endswith(&quot;.rar&quot;) or filename.endswith(&quot;.zip&quot;):
+            try:
+                arch = pyunpack.Archive(os.path.join(root,filename))
+                # os.mkdir(name)
+                arch.extractall(directory=root)
+                os.remove(os.path.join(root,filename))
+            except Exception as e:
+                print(&quot;ERROR: BAD ARCHIVE &quot;+os.path.join(root,filename))
+                print(e)
+                try:
+                    # os.path.join(root,filename)os.remove(filename)
+                    pass
+                except OSError as e: # this would be &quot;except OSError, e:&quot; before Python 2.6
+                    if e.errno != errno.ENOENT: # errno.ENOENT = no such file or directory
+                        raise # re-raise exception if a different error occured
+                    sys.exit()
+os._exit(0)
+</code></pre>
+<p>After unrar process, the code deletes the rar files and extract the files inside rar files. I want the rename of the files as file1 from rarfile1, file2 from rarfile1, file3 from rarfile1, file1 from rarfile2, so on...</p>
+<p>This is the result I want:</p>
+<p><a href=""https://ibb.co/TL8pySP"" rel=""nofollow noreferrer"">[screenshot #2: unrar files and their new names]</a></p>",,1,0,,2020-12-24 23:39:07.837000+00:00,,2020-12-25 02:01:54.730000+00:00,2020-12-24 23:45:17.093000+00:00,,11405347.0,,11405347,,1,0,python|unrar,39
+46,65444074,How to Integrate Bitbucket Pipeline to Consul,"<p>I'm trying to configure Bitbucket Pipeline and here is my problem; We are using Consul KV Store for application variables and before docker build phase, it should be completed so our variables can be replaced with the actual values.
+But I couldn't find any solution except custom base image or downloading confd command before build phase to be able to use consul. And to me,these solutions I found have some downsides. First, we are using AWS ECR and because of this, my images contains sensitive information such as account name. Bitbucket pipeline forces me to write it down openly.</p>
+<pre><code>image:
+  name: ${AWS_ECR_URL}/&lt;some-path&gt;:&lt;some-tag&gt;
+  aws: 
+    access-key: $AWS_ACCESS_KEY_ID
+    secret-key: $AWS_SECRET_ACCESS_KEY
+</code></pre>
+<p>I couldn't define image like above.
+Second, If I decide to download it before docker build commands, it will be downloading everytime pipeline works, over and over again and it will make deployments last a lot longer.</p>
+<p>If you have any other integrations or workarounds, it will be much appreciated.
+Thank you.</p>",,0,0,,2020-12-24 23:37:48.217000+00:00,,2020-12-24 23:37:48.217000+00:00,,,,,10423024,,1,0,bitbucket|consul|bitbucket-pipelines,9
+47,65444065,Google Apps Script. JSON to Spreadsheet - Result too long (API to Sheet) Work only with 100 reg,"<p>Good morning, I have made a Script that connects with an APi, it returns a JSON, I serialize it and complete an array with it .. then I paste it in a Google Spreadsheet, but it only works with 100 records. However if in the same Script, under the JSON my Google Drive makes it complete.
+When I check the Logger it tells me the result is too long ...</p>
+<p>My code.</p>
+<pre><code>function getOT() {
+  
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('OT');
+  var url ='https://app.XXXXX.com/api/work_orders';
+  var authorization=XXXXXXApi(XXX,'app.XXXXXX.com','/api/work_orders','GET','443');
+  var Options ={
+  &quot;url&quot;: &quot;https://app.XXXXXX.com/api/work_orders&quot;,
+  &quot;method&quot;: &quot;GET&quot;,
+  &quot;timeout&quot;: 0,
+  &quot;headers&quot;: {  &quot;Authorization&quot;: &quot;Hawk id=\&quot;&quot;+authorization.cID+&quot;\&quot;, ts=\&quot;&quot;+ authorization.cTS+&quot;\&quot;, nonce=\&quot;&quot;+authorization.cNONCE+&quot;\&quot;, mac=\&quot;&quot;+authorization.cHMAC+&quot;\&quot;&quot;,
+  },
+};
+
+ var response = UrlFetchApp.fetch('https://app.XXXX.com/api/work_orders', Options);
+ var array = [];
+ var CC = response.getContentText();
+ var datos = JSON.parse(CC);
+ Logger.log (CC)
+
+ for (var i = 0; i &lt; datos.data.length ;i++) {
+  array.push([datos.data[i]['wo_folio']],[datos.data[i]['description']],[datos.data[i]['personnel_description']],[datos.data[i]['items_log_description']])
+  
+ };
+           
+  for (var i = 0; i &lt; datos.data.length ;i++){
+     var startrow=2 + +i;
+    sheet.getRange(startrow, 1).setValue(datos.data[i]['wo_folio']);
+    sheet.getRange(startrow, 2).setValue(datos.data[i]['description']);
+    sheet.getRange(startrow, 3).setValue(datos.data[i]['personnel_description']);
+    sheet.getRange(startrow, 4).setValue(datos.data[i]['items_log_description']);
+   }
+ 
+DriveApp.createFile('XX.csv', CC); //copio el JSON a mi drive
+
+}
+
+</code></pre>",65475834.0,2,6,,2020-12-24 23:37:04.650000+00:00,,2021-01-03 03:20:16.417000+00:00,2020-12-24 23:42:40.417000+00:00,,11225291.0,,14885662,,1,0,json|google-apps-script,87
+48,65444064,Algorithmic problem solution without using for loop,"<p>I am trying to solve the next case without using a for loop... Meaning trying to use only filter, reduce, map or combination of them.</p>
+<p>I got an array of Objects:</p>
+<pre class=""lang-js prettyprint-override""><code>const items = 
+  [ { label: 1, count: 22, isRefined: false } 
+  , { label: 2, count: 10, isRefined: false } 
+  , { label: 3, count:  3, isRefined: false } 
+  , { label: 4, count:  1, isRefined: false } 
+  ]
+ 
+const products = 
+  [ { Locations: [{ LocationType: 1 } , { LocationType: 2 } , { LocationType: 3 } ]} 
+  , { Locations: [{ LocationType: 1 } , { LocationType: 3 }                       ]} 
+  , { Locations: [{ LocationType: 1 } , { LocationType: 3 } , { LocationType: 4 } ]} 
+  , { Locations: [{ LocationType: 1 }                                             ]} 
+  , { Locations: [{ LocationType: 1 } , { LocationType: 2 } , { LocationType: 3 } ]} 
+  ]
+</code></pre>
+<p>The case is next:</p>
+<p>I need to overwrite each item's inner Object count key with the value of corresponding products with the Objects in which the Locations objects contain the matching Location Type to the items object label...</p>
+<p>For example, the output here should be</p>
+<pre class=""lang-js prettyprint-override""><code>const output = 
+  [ { label: 1, count: 5, isRefined: false } 
+  , { label: 2, count: 2, isRefined: false } 
+  , { label: 3, count: 4, isRefined: false } 
+  , { label: 4, count: 1, isRefined: false } 
+  ] 
+</code></pre>
+<p>I am totally stuck on trying to come to a solution without using a for loop or any kind of for loop, help would be much appreciated! Thank you</p>",65444231.0,4,6,,2020-12-24 23:37:03.857000+00:00,1.0,2020-12-25 01:47:58.187000+00:00,2020-12-25 00:35:05.597000+00:00,,10669010.0,,14885666,,1,0,javascript|arrays|reactjs|algorithm|dictionary,109
+49,65444063,How to apply a map in a lambda?,"<p>I have a column named &quot;Increasing_sequence&quot; in a dataset:</p>
+<pre><code>dict = {&quot;Increasin_Sequence&quot;: [[[0.98, 1.1, 1.25], [1.18, 1.28]],[[1.2, 1.2], [1.1, 1.25]],[[0.85, 1.2, 1.29, 1.31, 1.4]],
+[[1.19, 1.29, 1.39, 1.49]], [[1.0, 1.0, 1.0, 1.0]]] }
+dt = pd.DataFrame(dict)
+
+
+             Increasin_Sequence
+0  [[0.98, 1.1, 1.25], [1.18, 1.28]]
+1          [[1.0, 1.2], [1.1, 1.25]]
+2     [[0.85, 1.2, 1.29, 1.31, 1.4]]
+3         [[1.19, 1.29, 1.39, 1.49]]
+4             [[1.0, 1.0, 1.0, 1.0]]
+</code></pre>
+<p>Each column consists of a list of &quot;non-decreasing&quot; lists. I want to keep lists which meet two following requirements (in a new column named &quot;spikes&quot;):</p>
+<p>1- [the biggest number] - [the smallest number] &gt;= .1</p>
+<p>2- [the biggest number] &gt; 1.2</p>
+<p>so a desired <strong>output</strong> could be as following:</p>
+<pre><code>               spikes
+0  [[0.98, 1.1, 1.25], [1.18, 1.28]]
+1                      [[1.1, 1.25]]
+2     [[0.85, 1.2, 1.29, 1.31, 1.4]]
+3         [[1.19, 1.29, 1.39, 1.49]]
+4                                 []
+</code></pre>
+<p>I have developed the following code:</p>
+<pre><code>   def spikes_finder(dt):
+        dt['IncreasingSequences'].apply(lambda x: map(apply_spike_conditions, x))
+
+
+   def apply_spike_conditions(increasing_sequence ):
+
+        pick = increasing_sequence[-1]
+        valley = increasing_sequence[0]
+        pick_to_valley_difference = pick - valley
+        if (pick_to_valley_difference &gt;= .1) and (pick &gt; 1.2):
+            return increasing_sequence
+</code></pre>
+<p>Running this code, <code>apply</code> function doesn't execute, I also tried to use a for loop which is not a efficient way so I'd rather to use the apply or map function</p>",65444098.0,1,1,,2020-12-24 23:37:02.663000+00:00,,2020-12-24 23:55:02.520000+00:00,2020-12-24 23:55:02.520000+00:00,,4001592.0,,4968908,,1,1,python|pandas|list|lambda|apply,45
