@@ -9,7 +9,9 @@ Client/Supervisor: Dr. Christoph Treude**
 
 Business case >> [click here](https://github.com/boyleerock/Trend-Identification-on-Stack-Overflow/blob/main/Business%20Case%20and%20Draft%20Plan%20-%20Trend%20Identification%20on%20Stack%20Overflow%20-%20Team%2030-3-1.pdf)         
 Poster Presentation >> [click the video!](https://www.youtube.com/watch?v=xgLYr9b-5k8)             
-Poster >> [click here](https://github.com/boyleerock/Trend-Identification-on-Stack-Overflow/blob/main/MCI%20Poster%2030B%200406%20.pdf)         
+Poster >> [click here](https://github.com/boyleerock/Trend-Identification-on-Stack-Overflow/blob/main/MCI%20Poster%2030B%200406%20.pdf)  
+![poster_trend identification on stackoverflow](https://user-images.githubusercontent.com/61671531/142989517-6240ccca-44b3-4772-99b8-3b4bdd58bd30.png)
+
 Final report (包含使用說明) >> [click here](https://github.com/boyleerock/Trend-Identification-on-Stack-Overflow/blob/main/MCIP_Final_report_Team30B_Po-Yi%20Lee.pdf)              
 
 ## About the Team
